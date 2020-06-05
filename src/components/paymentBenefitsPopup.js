@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import { Modal, Button } from 'react-bootstrap';
 
 const Paymentbenefitoption = (props) => {
-	console.log('props=', props.popData);
 	const [show, setShow] = useState(true);
 	if (props.popData.length === 0) {
 		return (
