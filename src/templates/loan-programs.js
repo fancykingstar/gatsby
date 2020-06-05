@@ -11,16 +11,16 @@ import Paymentbenefitoption from "../components/paymentBenefitsPopup"
 
 const LoanProgramPage = ({ data }) => {
 
-	const [visible, setVisible] = useState('none');
+	const [visible, setVisible] = useState(false);
 	const [popData, setPopData] = useState('');
 	const showbenefitpopup = param => event => {
 		event.preventDefault();
 		setPopData(param)
-		setVisible('block');
+		setVisible(true);
 	}
 	const hidebenefitpopup = () => {
 		console.log('hidebenefitpopup');
-		setVisible('none');
+		setVisible(false);
 	}
 	return (
 		<Layout>
