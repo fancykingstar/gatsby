@@ -1,24 +1,14 @@
-# WP GraphQL Gatsby Starter
+# WP GraphQL Gatsby Enerbank Project
 
-> A super simple, bare-bone starter based on the Gatsby Starter for the front end and the WP GraphQL plugin on your WordPress install. 
+> The website developed based on the Gatsby for the front end and the WP GraphQL plugin on your WordPress install. 
 
-This is a basic "headless CMS" setup. This starter will pull posts, pages, categories, tags, and a menu from your WordPress site. You should use either the TwentyNineteen or TwentyTwenty WordPress themes on your WordPress install. 
-
-The example here uses the WordPress Theme Unit Test Data for post and page dummy content. 
-
-**Find something wrong?** Issues are welcome on the starter reository. 
-
-This Stater should get you started at 💯💯💯💯 across the board on Chrome Lighthouse Audits
+This is a wordpress "headless CMS" project. In this project developed posts, pages, categories, and a menu from your WordPress site.
 
 ![Lighthouse scores](src/images/lighthouse-score.jpg)
 
 ## Get Started
 
-I've tried to make this as simple and straightforward to get started. 
-
-Here's the [DEMO](https://wp-graphql-gatsby-starter.netlify.com/).
-
-The demo site here uses the good ol' [WordPress Theme Unit Test](https://codex.wordpress.org/Theme_Unit_Test) for demo posts.
+I've tried to make this as simple and straightforward to get started.
 
 If you've already got your WordPress site set up, or you are just looking to play around, here's what you need to do...
 
