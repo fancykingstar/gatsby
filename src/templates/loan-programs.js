@@ -8,15 +8,18 @@ import { graphql } from "gatsby";
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import Paymentbenefitoption from "../components/paymentBenefitsPopup"
+import LoanProgramPopup from "../components/loanProgramPopup"
 
 const LoanProgramPage = ({ data }) => {
 
 	const [visible, setVisible] = useState(false);
+	const [popType, setPopType] = useState('payment_options');
 	const [popData, setPopData] = useState('');
-	const showbenefitpopup = param => event => {
+	const showbenefitpopup = (param, type) => event => {
 		event.preventDefault();
 		setPopData(param)
 		setVisible(true);
+		setPopType(type)
 	}
 	const hidebenefitpopup = () => {
 		console.log('hidebenefitpopup');
@@ -62,12 +65,12 @@ const LoanProgramPage = ({ data }) => {
 							{data.wpgraphql.page.loan_program.paymentOptionsBenefits.paymentOptions.map((item, i) =>
 								(
 									<li key={item.fieldGroupName + i}>
-										<Link onClick={showbenefitpopup(item)} to="/" data-target="#paymentModal" data-title={item.paymentOptionTitle} data-content="Advertising payment options is a great way to set you apart from your competitors and produce more leads for your business.">
+										<a onClick={showbenefitpopup(item, 'payment_options')} href="#" data-target="#paymentModal" data-title={item.paymentOptionTitle} data-content="Advertising payment options is a great way to set you apart from your competitors and produce more leads for your business.">
 											<div className="box-circle icon bg-blue content-center">
 												<img src={item.paymentOptionIcon.sourceUrl} alt={item.fieldGroupName} />
 											</div>
 											<p dangerouslySetInnerHTML={{ __html: item.paymentOptionTitle }} />
-										</Link>
+										</a>
 									</li>
 								)
 							)}
@@ -114,6 +117,7 @@ const LoanProgramPage = ({ data }) => {
 													<img src={item.programMethodsBgImage.sourceUrl} className="card-img-top" alt="Dealer Resource Center" />
 												</div>
 												<div className="card-body" dangerouslySetInnerHTML={{ __html: item.programMethodBrif }} />
+												<a onClick={showbenefitpopup(item, 'loan_options')} href="#" class="btn">Learn More</a>
 											</div>
 										</div>
 									)
@@ -228,8 +232,14 @@ const LoanProgramPage = ({ data }) => {
 					</Carousel>
 				</>
 			)}
-
-			<Paymentbenefitoption visiblity={visible} handleClose={hidebenefitpopup} popData={popData} />
+			{(() => {
+				console.log('popType=', popType);
+				if (popType === 'payment_options') {
+					return <Paymentbenefitoption visiblity={visible} handleClose={hidebenefitpopup} popData={popData} />;
+				} else {
+					return <LoanProgramPopup visiblity={visible} handleClose={hidebenefitpopup} popData={popData} />
+				}
+			})()}
 		</Layout>
 
 	)

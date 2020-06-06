@@ -618,3 +618,29 @@ body.mobile-nav-active #mobile-nav-toggle { color: #fff }
 .modal .close{ position: absolute; right: 13px; top: 10px; }
 .text-blue { color: #0079c2; }
 .gift_card img{ width: 100%; }
+
+.modal .modal-full {
+    width: 80%;
+    max-width: none;
+    margin: 0 auto;
+}
+.modal .modal-content {
+    height: 100%;
+    border: 0;
+    border-radius: 0;
+}
+.heading_bg {
+    background: #0079C2;
+    padding: 30px 30px;
+    text-align: center;
+}
+.heading_bg h3 {
+    color: #fff !important;
+    text-align: center;
+    margin: 0px;
+    padding: 0px;
+    line-height: normal;
+}
+.modal_content {
+    background: #fff;
+}

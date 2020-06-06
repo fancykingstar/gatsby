@@ -1,8 +1,14 @@
-import React from 'react';
+import React, {useState} from 'react';
 import { Modal } from 'react-bootstrap';
 
 const Paymentbenefitoption = (props) => {
-	if (props.popData.length !== 0) {		
+	const [show, setShow] = useState(true);
+	if (props.popData.length === 0) {
+		return (
+			<div className="modal fade show" style={{ display: props.visiblity }}>s
+			</div>
+		)
+	} else {
 		return (
 			<Modal show={props.visiblity} animation={true} centered={true} size="lg">
 				<div className="d-sm-flex">
@@ -16,12 +22,6 @@ const Paymentbenefitoption = (props) => {
 					</div>
 				</div>
 			</Modal>
-		)
-	} else {
-        return (
-			<Modal show={props.visiblity} animation={true} centered={true} size="lg">
-                <div>Data not found!</div>
-            </Modal>
 		)
 	} 
 }
