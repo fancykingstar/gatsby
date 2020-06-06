@@ -62,12 +62,12 @@ const LoanProgramPage = ({ data }) => {
 							{data.wpgraphql.page.loan_program.paymentOptionsBenefits.paymentOptions.map((item, i) =>
 								(
 									<li key={item.fieldGroupName + i}>
-										<a onClick={showbenefitpopup(item)} href="#" data-target="#paymentModal" data-title={item.paymentOptionTitle} data-content="Advertising payment options is a great way to set you apart from your competitors and produce more leads for your business.">
+										<Link onClick={showbenefitpopup(item)} to="/" data-target="#paymentModal" data-title={item.paymentOptionTitle} data-content="Advertising payment options is a great way to set you apart from your competitors and produce more leads for your business.">
 											<div className="box-circle icon bg-blue content-center">
 												<img src={item.paymentOptionIcon.sourceUrl} alt={item.fieldGroupName} />
 											</div>
 											<p dangerouslySetInnerHTML={{ __html: item.paymentOptionTitle }} />
-										</a>
+										</Link>
 									</li>
 								)
 							)}
@@ -191,7 +191,7 @@ const LoanProgramPage = ({ data }) => {
 
 					<div className="row">
 						{data.wpgraphql.page.loan_program.loanServices.map((item, i) => (
-							<div className="col-lg-4 mb-4 mb-lg-0">
+							<div className="col-lg-4 mb-4 mb-lg-0" key={item.fieldGroupName+i}>
 								<div className="single-offer card-body">
 									<i className="icon_circil">
 										<img className="img-fluid" src={item.serviceIcon.sourceUrl} alt="News" />
@@ -327,16 +327,17 @@ export const query = graphql`
           }
 
           loanServices {
-                serviceHeading
-                serviceText
-                serviceLink {
-                    target
-                    title
-                    url
-                }
-                serviceIcon {
-                    sourceUrl
-                }    
+            fieldGroupName
+            serviceHeading
+            serviceText
+            serviceLink {
+                target
+                title
+                url
+            }
+            serviceIcon {
+                sourceUrl
+            }    
           }
 
 

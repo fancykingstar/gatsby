@@ -7,13 +7,20 @@ import close_icon from '../images/close_icon.svg'
 
 const Header = ({ siteTitle }) => {
     const [accLogin, togglePanel] = useState(false);
+    const loginForm = () => {
+      togglePanel(true);
+    }
+
+    const closeLoginForm = () => {
+      togglePanel(false);
+    }
 
       return(
       <>
         {accLogin && (
           <div className="info-panel">
               <div id="loginBox"> 
-                  <div id="closeButton" onClick={() => togglePanel(!accLogin) }><img src="https://enerbank.bwpcommunications.com/wp-content/themes/enerbank/img/close_icon.svg" alt="close icon" /></div>
+                  <div id="closeButton" onClick={closeLoginForm}><img src="https://enerbank.bwpcommunications.com/wp-content/themes/enerbank/img/close_icon.svg" alt="close icon" /></div>
                     <form id="loginForm">
                         <h3>Account Log In</h3>
                         <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonumy nibh euismod tinci ut laoreet dolore. Sed et pharetra dolor, et nibh euismod vehicula sem. </p>
@@ -32,7 +39,7 @@ const Header = ({ siteTitle }) => {
               <div className="row">
                 <div className="ml-auto header-top-right no-padding">
                   <ul>
-                    <li onClick={() => togglePanel('true') }><span>Account Log In</span>|</li>
+                    <li onClick={loginForm}><span>Account Log In</span>|</li>
                     <li><Link to="/">View / Sign Loan Docs</Link>|</li>
                     <li><Link to="/">PartnerPortal</Link>|</li>
                     <li><Link to="/">Dealer Resource Center</Link></li>

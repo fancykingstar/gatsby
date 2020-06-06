@@ -107,8 +107,8 @@ exports.createPages = async ({ graphql, actions }) => {
             break;
       }}
   });
-
-
+  
+  
   /**
    * Create Category Pages
    */
@@ -127,18 +127,8 @@ exports.createPages = async ({ graphql, actions }) => {
       }
     }
   `);
-  
+
   categoryPageResults.data.wpgraphql.categories.edges.forEach(({ node }) => {
-    
-    // createPage({
-    //   path: `/careers`,
-    //   component: path.resolve(`./src/templates/careers.js`),
-    //   context: {
-    //     slug: node.slug,
-    //     databaseId: node.databaseId,
-    //     name: node.name
-    //   },
-    // })
     createPage({
       path: `/category/${node.slug}`,
       component: path.resolve(`./src/templates/category-page-template.js`),
@@ -149,6 +139,41 @@ exports.createPages = async ({ graphql, actions }) => {
       },
     })
   });
+
+
+  const categoryList = await graphql(`
+    query GET_CATEGORIES {
+      wpgraphql {
+        categories {
+          edges {
+            node {
+              id
+              databaseId
+              name
+              slug
+            }
+          }
+        }
+      }
+    }
+  `);
+
+  
+  categoryList.data.wpgraphql.categories.edges.forEach(({ node }) => {
+      if(node.name == 'career_position'){
+          createPage({
+            path: `/careers`,
+            component: path.resolve(`./src/templates/careers.js`),
+            context: {
+              slug: node.slug,
+              databaseId: node.databaseId,
+              name: node.name,
+              id: node.id
+            },
+          })
+      }
+  });
+  
 
   /**
    * Create Tags Pages
