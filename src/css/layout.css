@@ -617,3 +617,11 @@ body.mobile-nav-active #mobile-nav-toggle { color: #fff }
 .modal .close{ position: absolute; right: 13px; top: 10px; }
 .text-blue { color: #0079c2; }
 .gift_card img{ width: 100%; }
+
+
+/* accordians */
+.accordion-panel--between, .accordion-panel--last{  border-top: none !important; }
+[data-state="tabbordion"] { clip: rect(0 0 0 0); height: 1px; position: absolute; position: fixed; width: 1px; z-index: -1; }
+.accordion-title--checked, .accordion-animator--checked, .accordion-title--unchecked, .accordion-animator--unchecked{ background: #fff !important; border-radius: 0 !important; }
+.accordion-title{ color:#0079c2 !important; }
+.accordion-panel .accordion-title--checked:before { background: none; }

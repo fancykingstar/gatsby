@@ -4,8 +4,19 @@ import "react-responsive-carousel/lib/styles/carousel.min.css";
 import { Link } from "gatsby";
 import { graphql } from "gatsby";
 
+import { Tabbordion, TabPanel, TabLabel, TabContent } from 'react-tabbordion';
+import "react-tabbordion/demo/accordion.css";
+
 import Layout from "../components/layout"
 import SEO from "../components/seo"
+
+// accordian
+const blockElements = {
+    animator: 'accordion-animator',
+    content: 'accordion-content',
+    panel: 'accordion-panel',
+    label: 'accordion-title',
+}
 
 const HomeOwnerPage = ({data}) => {
   return (  
@@ -43,28 +54,18 @@ const HomeOwnerPage = ({data}) => {
         <section className="section-gap container">
             {/* <div dangerouslySetInnerHTML={{ __html: data.wpgraphql.page.home_owner.makePaymentWay}} /> */}
 
-            <div className="accordion loan_offer mx-4 mx-lg-5" id="accordionExample">
-                <button className="d-block w-100 text-left btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">Interior Remodeling</button>
-                <div id="collapseOne" className="collapse" aria-labelledby="headingOne" data-parent="#accordionExample">
-                    <div className="card-body">Does your customer need an extra bedroom, or maybe want to knock out a wall for that killer entertainment cave? Are they turning the dining room into a library, or updating the kitchen? Is it time for an extra bathroom? Ready for new flooring? These are just a few of the interior jobs that EnerBank can fund. Great loans for these job types include Same-As-Cash Loans and Reduced Interest Loans.</div>
-                </div>
-                <button className="d-block w-100 text-left btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">Additions</button>
-                <div id="collapseTwo" className="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
-                    <div className="card-body">Are you building an add-on for your customer, to increase the total square footage? EnerBank has loans for that type of project. The best loan type for an addition is a Reduced Interest Loan.</div>
-                </div>
-                <button className="d-block w-100 text-left btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">Exterior Remodeling</button>
-                <div id="collapseThree" className="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
-                    <div className="card-body">These projects include pain, siding, and even new paving stones. EnerBank is ready to provide the loans your customer needs for all exterior projects, including Same-As-Cash Loans and Zero Interest Loans.</div>
-                </div>
-                <button className="d-block w-100 text-left btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseFour" aria-expanded="false" aria-controls="collapseThree">HVAC</button>
-                <div id="collapseFour" className="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
-                    <div className="card-body">Heating, ventilation and air conditioning jobs are served well by offering payment options, because many times they’re unexpected expenses for which a customer could use some financial flexibility. Be sure to offer a Same-As-Cash Loan option and perhaps something with a longer term.</div>
-                </div>
-                <button className="d-block w-100 text-left btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseFive" aria-expanded="false" aria-controls="collapseThree">Solar</button>
-                <div id="collapseFive" className="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
-                    <div className="card-body">EnerBank proudly offers several customized loan options for funding solar PV projects, including Same-As-Cash, a Combo EZ Loan, and our popular Triple Option Loan that really helps homeowners decide for themselves how best to manage their liquidity.</div>
-                </div>
-            </div>
+            <Tabbordion blockElements={blockElements} animateContent={'height'} mode={'toggle'} className="accordion loan_offer mx-4 mx-lg-5" name="accordion">
+                {data.wpgraphql.page.accordion.tabpanel.map((item, i) =>
+                    (
+                        <TabPanel>
+                            <TabLabel className="w-100 text-left btn btn-link">{item.tablabel}</TabLabel>
+                            <TabContent>
+                                <div dangerouslySetInnerHTML={{ __html: item.tabcontent}} />
+                            </TabContent>
+                        </TabPanel>
+                    )
+                 )}
+            </Tabbordion>
 
             <div className="text-center mt-4">
                 <Link to="/" className="btn btn-primary f-bold equal-wd mb-4">Account Log In</Link>
@@ -110,6 +111,14 @@ export const query = graphql`
                     makePaymentWay
                     paymentBanner {
                         sourceUrl
+                    }
+                }
+
+                accordion {
+                    tabpanel {
+                        fieldGroupName
+                        tabcontent
+                        tablabel
                     }
                 }
             }
