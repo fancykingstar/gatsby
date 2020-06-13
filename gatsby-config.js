@@ -26,7 +26,7 @@ module.exports = {
         fieldName: `wpgraphql`,
         // fieldName: `WordPress`,
         // Url to query from
-        url: `http://devbwp.enerbank.com/dev/graphql`,
+        url: `http://devgb.enerbank.com/graphql`,
 	      //url: `${config.wordPressUrl}/ennerbank/graphql`,
         refetchInterval: 60
       },
