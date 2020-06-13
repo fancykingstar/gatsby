@@ -1,15 +1,30 @@
-import React from "react"
-import { Link } from "gatsby"
-import { graphql } from "gatsby"
+import React, {useRef} from "react";
+import { Link } from "gatsby";
+import { graphql } from "gatsby";
+import Player from '@vimeo/player';
 
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 
-const CareersPage = ({data}) => {
+
+const CareersPage = ({data, props}) => {
+  const handstick = useRef(null);
+  
+  // const player = new Player(handstick.current, {
+  //   id: 19231868,
+  //   width: 640
+  // });
+
+  // player.on('play', function() {
+  //     console.log('played the video!');
+  // });
+
+  console.log(handstick.current)
+
   return (  
     <Layout>
       <SEO title={data.wpgraphql.category.name} description={data.wpgraphql.category.name}/>
-
+      <div ref={handstick}></div>
       <section className="video-section">
         <div className="container">
           <div className="row d-flex align-items-end">
