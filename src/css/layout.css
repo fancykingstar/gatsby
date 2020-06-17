@@ -598,8 +598,10 @@ body.mobile-nav-active #mobile-nav-toggle { color: #fff }
 .carousel .control-next.control-arrow{ right:15% !important; }
 .carousel .control-next.control-arrow:before{ transform: rotate(45deg); border-left: none !important; border-bottom: none !important; right: 50%; }
 .joinLoanProgram .brif{ padding: 3rem 5rem; font-weight: 500; font-size: 22px; }
+.wygbox .card-title{font-size: 24px;
+    margin-bottom: 1.25rem;}
 .wygbox { text-align: center; line-height: normal; height: 100%; border-radius: 0.6rem; border: none; }
-.wygbox .btn { font-size: 22px; font-weight: 500; }
+.wygbox .btn { font-size: 22px; font-weight: 500; color: #0079c2; }
 .loan_offer .btn {
     margin-bottom: 12px;
     border-bottom: 2px solid #333;

@@ -4,6 +4,8 @@ import { Carousel } from 'react-responsive-carousel';
 import { Tabbordion, TabPanel, TabLabel, TabContent } from 'react-tabbordion';
 import "react-tabbordion/demo/accordion.css";
 
+import Video from "../components/video";
+
 import { Link } from "gatsby";
 import { graphql } from "gatsby";
 
@@ -56,6 +58,17 @@ const LoanProgramPage = ({ data }) => {
 				</section>
 			)}
 
+			<section className="video-section">
+				<div className="container">
+					<div className="row">
+					<div className="m-auto col-md-10">
+						{/* <img src="http://devgb.enerbank.com/wp-content/themes/enerbank/img/loanPrograms_video.jpg" className="img-fluid box-shadow"> */}
+						<Video videoSrcURL="https://player.vimeo.com/video/371895200" videoTitle="Official Music Video on YouTube" videoWidth="100%" videoHeight="500" />
+						<p className="text-center font-weight-bold mt-2 mb-4">WATCH: Discover the key to unlocking business growth</p>
+					</div>      
+					</div>
+				</div>
+				</section>
 			{content.loan_program.paymentOptionsBenefits.paymentOptionHeading && (
 				<div className="bg-blue">
 					<h1 className="container text-center py-4 h2 text-white">
@@ -127,8 +140,10 @@ const LoanProgramPage = ({ data }) => {
 												<div className="wygthumb apps">
 													<img src={item.programMethodsBgImage.sourceUrl} className="card-img-top" alt="Dealer Resource Center" />
 												</div>
-												<div className="card-body" dangerouslySetInnerHTML={{ __html: item.programMethodBrif }} />
-												<a onClick={showbenefitpopup(item, 'loan_options')} href="#">Learn More</a>
+												<div className="card-body">
+													<div dangerouslySetInnerHTML={{ __html: item.programMethodBrif }} />
+													<a href="#" class="btn mt-3">Learn More</a>
+												</div>
 											</div>
 										</div>
 									)
