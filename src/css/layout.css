@@ -619,23 +619,39 @@ body.mobile-nav-active #mobile-nav-toggle { color: #fff }
 .text-blue { color: #0079c2; }
 .gift_card img{ width: 100%; }
 
-
 /* accordians */
 .accordion-panel--between, .accordion-panel--last{  border-top: none !important; }
 [data-state="tabbordion"] { clip: rect(0 0 0 0); height: 1px; position: absolute; position: fixed; width: 1px; z-index: -1; }
 .accordion-title--checked, .accordion-animator--checked, .accordion-title--unchecked, .accordion-animator--unchecked{ background: #fff !important; border-radius: 0 !important; }
 .accordion-title{ color:#0079c2 !important; }
 .accordion-panel .accordion-title--checked:before { background: none; }
-.video{
-    position: relative;
-    padding-bottom: 56.25%;
-    padding-top: 25px;
-    height: 0;
-}
-.video iframe {
+.video{ position: relative; padding-bottom: 56.25%; padding-top: 25px; height: 0; }
+.video iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }
+
+.howselectloan { display: flex; align-items: center; font-size: 22px; font-weight: 500; }
+.box-20 { background: #0079c2; border: 10px solid #0079c2; border-bottom-right-radius: 15px; border-top-left-radius: 10px; padding: 0 0 0 10px;
+    color: #fff; font-size: 62px; line-height: 62px; font-weight: 600; margin: 0 30px; }
+
+.createLoanProgram { padding: 3rem 0; }
+.bg-grey { background: #dfdfdf; color: #000; }
+.query { font-size: 22px; font-weight: 500; }
+.createLoanProgram ul { padding: 20px 60px; list-style: none; }
+.createLoanProgram ul li { padding: 20px; list-style-position: outside; position: relative; width: 49%; display: inline-block; font-size: 20px; font-weight: 500; }
+.createLoanProgram ul li:before { position: absolute; content: ""; width: 8px; height: 8px; border-radius: 50%; left: 0; top: 50%; transform: translateY(-50%); background-color: #0079c2; }
+
+.wygthumb {  position: relative; }
+.wygthumb:after {
+    content: "";
+    color: #fff;
+    background: rgba(77, 77, 77, 0.6);
+    height: 100%;
+    width: 100%;
     position: absolute;
     top: 0;
     left: 0;
-    width: 100%;
-    height: 100%;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
