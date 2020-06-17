@@ -1,38 +1,47 @@
-import React, {useRef, useEffect} from "react";
-// import lifecycle from 'react-pure-lifecycle';
+import React from "react";
+import lifecycle from 'react-pure-lifecycle';
 import { Link } from "gatsby";
 import { graphql } from "gatsby";
-// import Player from '@vimeo/player';
+import Player from '@vimeo/player';
+
 import Layout from "../components/layout"
 import SEO from "../components/seo"
-// import { any } from "prop-types";
-import Video from "../components/video";
 
-const CareerPage = ({data, props}) => {
-  const handstick = useRef(null)
-  // let player = any;
 
-  // useEffect(() => {
-  //   player = new Player(handstick.current, {
-  //     id: 371895200,
-  //     width: 900
-  //   });
+
+class Career extends React.Component{
+  constructor(props) {
+    super(props)
+    this.handstick = React.createRef(null);
+    this.handleClick = this.handleClick.bind(this);
+  }
+  handleClick(){
+    console.log('clicked')
+  }
+
+  componentDidMount(){
+    const player = new Player(this.handstick.current, {
+      id: 19231868,
+      width: 640
+    });
     
-  //   player.on('play', function() {
-  //     console.log('played the video!');
-  //   });
-  // })
-  // console.log(player)
-
+    player.on('play', function() {
+      console.log('played the video!');
+    });
+  }
+  
+render(){
+  const data = this.props.data;
+  // console.log(this)
   return (  
     <Layout>
-      <SEO title={data.wpgraphql.category.name} description={data.wpgraphql.category.name}/>      
+      <SEO title={data.wpgraphql.category.name} description={data.wpgraphql.category.name}/>
+      
       <section className="video-section">
         <div className="container">
           <div className="row d-flex align-items-end">
-            <div className="col-md-10 m-auto" ref={handstick}>  {/*  onClick={this.handleClick} */}
-                <Video videoSrcURL="https://player.vimeo.com/video/371895200" videoTitle="Official Music Video on YouTube" videoWidth="100%" videoHeight="500" />
-                {/* <img src="http://devgb.enerbank.com/wp-content/themes/enerbank/img/careers_video.png" alt="career video" /> */}
+            <div className="col-md-10 m-auto" ref={this.handstick}>
+                <img src="http://devgb.enerbank.com/wp-content/themes/enerbank/img/careers_video.png" alt="career video" onClick={this.handleClick} />
             </div>
           </div>
         </div>
@@ -67,7 +76,8 @@ const CareerPage = ({data, props}) => {
     </Layout>
   )
  }
-export default CareerPage
+}
+export default Career
 
 export const query = graphql`
   query($databaseId: ID!) {
