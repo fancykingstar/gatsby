@@ -1,9 +1,9 @@
 
 module.exports = {
   siteMetadata: {
-    title: `WP GraphQL Gatsby Starter`,
-    description: `Keeping it clever...`,
-    author: `@n8finch`,
+    title: `EnerBankUSA`,
+    description: `America's home improvement lender of choice`,
+    author: `@enerbank`,
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
@@ -27,7 +27,6 @@ module.exports = {
         // fieldName: `WordPress`,
         // Url to query from
         url: `http://devgb.enerbank.com/graphql`,
-	      //url: `${config.wordPressUrl}/ennerbank/graphql`,
         refetchInterval: 60
       },
     },
@@ -40,7 +39,7 @@ module.exports = {
         background_color: `#663399`,
         theme_color: `#663399`,
         display: `minimal-ui`,
-        icon: `src/images/gatsby-icon.png`, // This path is relative to the root of the site.
+        icon: `src/images/favicon-icon.png`, // This path is relative to the root of the site.
       },
     },
     `gatsby-plugin-offline`,

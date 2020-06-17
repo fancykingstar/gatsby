@@ -233,7 +233,6 @@ const LoanProgramPage = ({ data }) => {
 				</>
 			)}
 			{(() => {
-				console.log('popType=', popType);
 				if (popType === 'payment_options') {
 					return <Paymentbenefitoption visiblity={visible} handleClose={hidebenefitpopup} popData={popData} />;
 				} else {

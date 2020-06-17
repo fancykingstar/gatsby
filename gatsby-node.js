@@ -94,7 +94,17 @@ exports.createPages = async ({ graphql, actions }) => {
                     databaseId: node.databaseId,
                   },
                 })
-            break;          
+            break;
+          case "loan-type":
+                createPage({
+                  path: "loan-type",
+                  component: path.resolve(`./src/templates/loan-type.js`),
+                  context: {
+                    slug: node.slug,
+                    databaseId: node.databaseId,
+                  },
+                })
+            break;
           default:
                 createPage({
                   path: node.slug,
