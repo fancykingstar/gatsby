@@ -153,6 +153,16 @@ exports.createPages = async ({ graphql, actions }) => {
                     },
                   })
             break;
+            case "training":
+                    createPage({
+                      path: "training",
+                      component: path.resolve(`./src/templates/training.js`),
+                      context: {
+                        slug: node.slug,
+                        databaseId: node.databaseId,
+                      },
+                    })
+              break;
           default:
                 createPage({
                   path: node.slug,
