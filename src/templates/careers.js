@@ -22,7 +22,7 @@ const CareerPage = ({data, props}) => {
   //     console.log('played the video!');
   //   });
   // })
-  // console.log(player)
+  console.log(data)
 
   return (  
     <Layout>
@@ -72,6 +72,17 @@ export default CareerPage
 export const query = graphql`
   query($databaseId: ID!) {
     wpgraphql {
+      page(id: $databaseId, idType: DATABASE_ID) {
+        title
+        date
+        content(format: RENDERED)
+        featuredImage {
+          altText
+          title(format: RENDERED)
+          mediaItemUrl
+          slug
+        }
+      }
       category(id: $databaseId, idType: DATABASE_ID) {
         id
         name

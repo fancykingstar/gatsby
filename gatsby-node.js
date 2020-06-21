@@ -228,7 +228,7 @@ exports.createPages = async ({ graphql, actions }) => {
 
   
   categoryList.data.wpgraphql.categories.edges.forEach(({ node }) => {
-      if(node.name == 'career_position'){
+      if(node.slug == 'career_position'){
           createPage({
             path: `/careers`,
             component: path.resolve(`./src/templates/careers.js`),
