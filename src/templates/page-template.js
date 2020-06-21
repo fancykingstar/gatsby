@@ -1,7 +1,6 @@
 import React from "react";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import { Carousel } from 'react-responsive-carousel';
-// import { withKnobs, boolean, number } from '@storybook/addon-knobs';
 
 import { Link } from "gatsby";
 import { graphql } from "gatsby";
@@ -13,12 +12,6 @@ const SecondPage = ({data}) => {
   return (  
   <Layout>
     <SEO title={data.wpgraphql.page.title} description={data.wpgraphql.page.excerpt}/>
-        
-    {/* {data.wpgraphql.page.featuredImage && (
-      <img src={data.wpgraphql.page.featuredImage.mediaItemUrl} alt={data.wpgraphql.page.title} />
-    )}
-    <h1 dangerouslySetInnerHTML={{ __html: data.wpgraphql.page.title }} />
-    <div dangerouslySetInnerHTML={{ __html: data.wpgraphql.page.content }} /> */}
     {data.wpgraphql.page.top_banner.banner.backgroundImage && (
       <section className="banner-area" id="home" style={{ backgroundImage: "url(" + data.wpgraphql.page.top_banner.banner.backgroundImage.sourceUrl + ")" }}>
         <div className="container">
