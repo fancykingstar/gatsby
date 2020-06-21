@@ -43,6 +43,24 @@ exports.createPages = async ({ graphql, actions }) => {
     })
   });
 
+
+  // const careerresult = await graphql(`
+  //   query {
+  //     wpgraphql {
+  //       categories {
+  //         edges{
+  //           node{
+  //             id
+  //             name
+  //           }
+  //         }
+  //       }
+  //     }
+  //   }
+  // `)
+
+  // console.log(careerresult);
+
   /**
    * Create Pages
    */
@@ -95,15 +113,45 @@ exports.createPages = async ({ graphql, actions }) => {
                   },
                 })
             break;
-          case "loan-type":
+          case "loan-types":
                 createPage({
-                  path: "loan-type",
-                  component: path.resolve(`./src/templates/loan-type.js`),
+                  path: "loan-types",
+                  component: path.resolve(`./src/templates/loan-types.js`),
                   context: {
                     slug: node.slug,
                     databaseId: node.databaseId,
                   },
                 })
+            break;
+          case "application-methods":
+                createPage({
+                  path: "application-methods",
+                  component: path.resolve(`./src/templates/application-methods.js`),
+                  context: {
+                    slug: node.slug,
+                    databaseId: node.databaseId,
+                  },
+                })
+            break;
+          case "partner-portal":
+                createPage({
+                  path: "partner-portal",
+                  component: path.resolve(`./src/templates/partner-portal.js`),
+                  context: {
+                    slug: node.slug,
+                    databaseId: node.databaseId,
+                  },
+                })
+            break;
+          case "dealer-resource-center":
+                  createPage({
+                    path: "dealer-resource-center",
+                    component: path.resolve(`./src/templates/dealer-resource-center.js`),
+                    context: {
+                      slug: node.slug,
+                      databaseId: node.databaseId,
+                    },
+                  })
             break;
           default:
                 createPage({

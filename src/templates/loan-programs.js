@@ -63,7 +63,7 @@ const LoanProgramPage = ({ data }) => {
 					<div className="row">
 					<div className="m-auto col-md-10">
 						{/* <img src="http://devgb.enerbank.com/wp-content/themes/enerbank/img/loanPrograms_video.jpg" className="img-fluid box-shadow"> */}
-						<Video videoSrcURL="https://player.vimeo.com/video/371895200" videoTitle="Official Music Video on YouTube" videoWidth="100%" videoHeight="500" />
+						<Video videoSrcURL="https://player.vimeo.com/video/405983747" videoTitle="Official Music Video on YouTube" videoWidth="100%" videoHeight="500" />
 						<p className="text-center font-weight-bold mt-2 mb-4">WATCH: Discover the key to unlocking business growth</p>
 					</div>      
 					</div>
@@ -142,7 +142,7 @@ const LoanProgramPage = ({ data }) => {
 												</div>
 												<div className="card-body">
 													<div dangerouslySetInnerHTML={{ __html: item.programMethodBrif }} />
-													<a href="#" class="btn mt-3">Learn More</a>
+													<Link to={item.programMethodLink.url} class="btn mt-3">{item.programMethodLink.title}</Link>
 												</div>
 											</div>
 										</div>
@@ -426,7 +426,12 @@ export const query = graphql`
               }
               programMethodsBgImage {
                 sourceUrl
-              }
+			  }
+			  programMethodLink {
+				target
+				title
+				url
+			  }
             }
           }
           onlineAppIntegration {

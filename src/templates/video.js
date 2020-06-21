@@ -3,17 +3,13 @@ import { any } from "prop-types";
 
 const Video = ({ videoSrcURL, videoTitle, videoWidth, videoHeight, ...props }) => (
   <div className="video">
-    <iframe
-      src={videoSrcURL}
-      title={videoTitle}
-      width={videoWidth}
-      height={videoHeight}
-      allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-      frameBorder="0"
-      webkitallowfullscreen="true"
-      mozallowfullscreen="true"
-      allowFullScreen
-    />
+    
+    <video autoplay playinline loop muted title={videoTitle} width={videoWidth} height={videoHeight}>
+      <source src={videoSrcURL} type="video/mp4"/>
+      {/* <source src="https://www.wavecitycenter.in/wp-content/themes/citycenter/images/video/amore-video.ogv" type="video/ogv"/>
+      <source src="https://www.wavecitycenter.in/wp-content/themes/citycenter/images/video/amore-video.webm" type="video/webm"/> */}
+    </video>
+
   </div>
 )
 export default Video
