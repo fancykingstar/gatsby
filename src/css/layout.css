@@ -645,9 +645,9 @@ body.mobile-nav-active #mobile-nav-toggle { color: #fff }
 .modal_banner p { position: absolute; width: 100%; left: 0; bottom: 30px; z-index: 2; text-align: center; color:#fff; z-index: 99; font-size:24px; }
 
 .appMethod { height: 100%; border-top: 30px solid #dee2e6!important; position: relative; padding: 20px 20px 10px; text-align: center; }
-.appMethod img { position: absolute; left: 50%; max-width: 60px; transform: translate(-50%, -100%); top: 15px; }
-.appMethod div { font-size: 13px; font-weight: bold; line-height: normal; height: 30px; margin: 15px 0; }
-.appMethod p { font-size: 12px; line-height: 18px; text-align: center; }
+.appMethod img { position: absolute; left: 50%; max-width: 120px; transform: translate(-50%, -100%); top: 25px; }
+.appMethod div { font-size: 16px; font-weight: bold; line-height: normal; height: 30px; margin: 15px 0; }
+.appMethod p { font-size: 14px; line-height: 22px; text-align: center; }
 .portal_list { margin: 0 0 30px 20px; padding: 0; list-style: disc; list-style-position: outside; }
 .portal_list li { margin: 0; padding: 0; text-align: left; font-size: 16px; line-height: 26px; float: left; width: 33.33%; }
 
