@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="84.148" height="84.147" viewBox="0 0 84.148 84.147">
+  <g id="Group_4" data-name="Group 4" transform="translate(-475.613 -633.403)">
+    <g id="Group_33_Copy_2" data-name="Group 33 Copy 2" transform="translate(477 635)">
+      <path id="Fill_30" data-name="Fill 30" d="M80.841,40.42A40.42,40.42,0,1,1,40.42,0,40.419,40.419,0,0,1,80.841,40.42" transform="translate(0.267 0.057)" fill="#0087cd"/>
+      <path id="Stroke_32" data-name="Stroke 32" d="M80.841,40.42A40.42,40.42,0,1,1,40.42,0,40.419,40.419,0,0,1,80.841,40.42" transform="translate(0.267 0.057)" fill="none" stroke="#fefefe" stroke-miterlimit="10" stroke-width="3.307"/>
+    </g>
+    <g id="Group_3" data-name="Group 3">
+      <path id="Fill_34_Copy_2" data-name="Fill 34 Copy 2" d="M28.567,32H9.434a.886.886,0,0,1,0-1.772h8.1V28.457H1.463A1.476,1.476,0,0,1,0,26.973V1.478A1.472,1.472,0,0,1,1.463,0H36.527A1.477,1.477,0,0,1,38,1.478v25.5a1.48,1.48,0,0,1-1.472,1.484H20.462v1.771h8.1a.886.886,0,0,1,0,1.772ZM2.926,2.956V25.5H35.077V2.956ZM32.444,24.318A1.477,1.477,0,1,1,33.9,22.84,1.467,1.467,0,0,1,32.444,24.318Z" transform="translate(498 660)" fill="#fefefe"/>
+    </g>
+  </g>
+</svg>

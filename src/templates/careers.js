@@ -80,6 +80,7 @@ export const query = graphql`
             node {
               id
               title
+              slug
               careers {
                 availablePositions {
                   fieldGroupName

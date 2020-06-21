@@ -9,6 +9,7 @@ import "react-tabbordion/demo/accordion.css";
 
 import Layout from "../components/layout"
 import SEO from "../components/seo"
+import Video from "../components/video";
 
 // accordian
 const blockElements = {
@@ -22,6 +23,10 @@ const HomeOwnerPage = ({data}) => {
   return (  
     <Layout>
         <SEO title={data.wpgraphql.page.title} description={data.wpgraphql.page.excerpt}/>
+        
+        <div style={{ backgroundImage: "url(" + data.wpgraphql.page.top_banner.banner.backgroundImage.sourceUrl + ")" }}>
+            <Video videoSrcURL="https://player.vimeo.com/video/405982992" allow="autoplay" videoTitle="Official Music Video on YouTube" videoWidth="100%" videoHeight="500" />
+        </div>
 
         {data.wpgraphql.page.top_banner.banner.backgroundImage && (
             <section className="banner-area" id="home" style={{ backgroundImage: "url(" + data.wpgraphql.page.top_banner.banner.backgroundImage.sourceUrl + ")" }}>
