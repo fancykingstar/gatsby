@@ -45,7 +45,7 @@ const PartnerPortal = ({data}) => {
           
           </div>
           <div className="row">
-            <div className="mx-auto text-center my-5 border py-1 px-3">
+            <div className="mx-auto text-center my-5">
               <Link to={data.wpgraphql.page.partnerportal.portalservice.accessportallink.url}>{data.wpgraphql.page.partnerportal.portalservice.accessportallink.title}</Link>
             </div>
         </div>
