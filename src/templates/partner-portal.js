@@ -27,7 +27,7 @@ const PartnerPortal = ({data}) => {
 
     <div className="container">
       <div className="row">
-        <p className="my-5 w-100" dangerouslySetInnerHTML={{__html:data.wpgraphql.page.content}}></p>
+        <p className="my-5 w-100" dangerouslySetInnerHTML={{__html:data.wpgraphql.page.content}} />
       </div>
     </div>
     
