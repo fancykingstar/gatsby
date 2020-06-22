@@ -22,7 +22,7 @@ const CareerPage = ({data, props}) => {
   //     console.log('played the video!');
   //   });
   // })
-  console.log(data)
+  // console.log(data)
 
   return (  
     <Layout>
