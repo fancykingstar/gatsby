@@ -31,7 +31,7 @@ const AppMethod = ({data}) => {
 
       <div className="row mb-5">
           {data.wpgraphql.page.appmethod.paperlessmethod.map((item, i) => (
-              <div className="col-md-6 col-lg-3 d-flex flex-column mb-md-5 mb-lg-0">
+              <div className="col-md-6 col-lg-3 d-flex flex-column mb-md-5 mb-lg-0" key={item.fieldGroupName + i}>
                   <div className="border appMethod rounded">                
                       <img src={item.sectionicon.sourceUrl} alt={item.sectionicon.slug} />
                       <div className="text-blue text-center">{item.sectiontitle}</div>
@@ -80,6 +80,7 @@ export const query = graphql`
         
         appmethod {
           paperlessmethod {
+            fieldGroupName
             sectionContent
             sectiontitle
             sectionicon {

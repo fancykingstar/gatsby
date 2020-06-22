@@ -8,7 +8,6 @@ import SEO from "../components/seo"
 
 const PartnerPortal = ({data}) => {
   var servL = data.wpgraphql.page.partnerportal.portalservice.servicegroup.length;
-  console.log(servL)
   return (  
   <Layout>
     <SEO title={data.wpgraphql.page.title} description={data.wpgraphql.page.excerpt}/>
@@ -38,7 +37,7 @@ const PartnerPortal = ({data}) => {
           <div className="col-md-12">
             <ul className="portal_list p-5">
               {data.wpgraphql.page.partnerportal.portalservice.servicegroup.map((item, i) => (
-                  <li>{item.servicetitle}</li>                
+                  <li key={item.fieldGroupName + i}>{item.servicetitle}</li>                
               ))}              
             </ul>
           </div>
