@@ -1,0 +1,54 @@
+{
+  "name": "wp-graphql-gatsby-starter",
+  "private": true,
+  "description": "A simple starter to get up and developing quickly with Gatsby and WP GraphQL.",
+  "version": "0.1.0",
+  "author": "Nate Finch <finchproservices@gmail.com>",
+  "dependencies": {
+    "@vimeo/player": "^2.12.0",
+    "bootstrap": "^4.5.0",
+    "gatsby": "^2.19.7",
+    "gatsby-cli": "^2.12.12",
+    "gatsby-image": "^2.2.39",
+    "gatsby-plugin-manifest": "^2.2.39",
+    "gatsby-plugin-offline": "^3.0.32",
+    "gatsby-plugin-react-helmet": "^3.1.21",
+    "gatsby-plugin-s3": "^0.3.3",
+    "gatsby-plugin-sharp": "^2.4.3",
+    "gatsby-source-filesystem": "^2.1.46",
+    "gatsby-source-graphql": "^2.1.33",
+    "gatsby-transformer-sharp": "^2.3.13",
+    "prop-types": "^15.7.2",
+    "react": "^16.12.0",
+    "react-bootstrap": "^1.0.1",
+    "react-dom": "^16.12.0",
+    "react-helmet": "^5.2.1",
+    "react-pure-lifecycle": "^3.0.0",
+    "react-responsive-carousel": "^3.2.7",
+    "react-tabbordion": "^1.0.5"
+  },
+  "devDependencies": {
+    "prettier": "^1.19.1"
+  },
+  "keywords": [
+    "gatsby"
+  ],
+  "license": "MIT",
+  "scripts": {
+    "build": "gatsby build",
+    "develop": "gatsby develop",
+    "format": "prettier --write \"**/*.{js,jsx,json,md}\"",
+    "start": "npm run develop",
+    "serve": "gatsby serve",
+    "clean": "gatsby clean",
+    "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1",
+    "deploy": "gatsby-plugin-s3 deploy"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/gatsbyjs/gatsby-starter-default"
+  },
+  "bugs": {
+    "url": "https://github.com/gatsbyjs/gatsby/issues"
+  }
+}
