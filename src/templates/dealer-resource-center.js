@@ -31,7 +31,7 @@ const DealerResource = ({data}) => {
 
       <div className="row mb-5">
           {data.wpgraphql.page.dealerresourcecenter.powerfulltool.map((item, i) => (
-              <div className="col-lg-4 d-flex flex-column mb-md-5 mb-lg-0">
+              <div className="col-lg-4 d-flex flex-column mb-md-5 mb-lg-0" key={item.fieldGroupName + i} >
                   <div className="border dealerResource rounded">                
                       <img src={item.sectionicon.sourceUrl} alt={item.sectionicon.slug} />
                       <div className="text-blue text-center">{item.sectiontitle}</div>
