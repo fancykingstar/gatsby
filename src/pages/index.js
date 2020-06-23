@@ -4,6 +4,7 @@ import { graphql } from 'gatsby'
 
 import Layout from "../components/layout"
 import SEO from "../components/seo"
+import Video from "../components/video";
 
 const IndexPage = ({data}) => {
   const node = data.wpgraphql.pageBy;
@@ -11,9 +12,12 @@ const IndexPage = ({data}) => {
     <Layout>    
       <SEO title="Home" description="" />
       <div key={node.id}>
-          <section className="banner-area" id="home" style={{ backgroundImage: "url(" + node.top_banner.banner.backgroundImage.sourceUrl + ")" }}>
+          <section className="banner-area pos_relative" id="home" style={{ backgroundImage: "url(" + node.top_banner.banner.backgroundImage.sourceUrl + ")" }}>
+            <div className="background-holder">
+              <Video videoSrcURL={node.video_section.video.videoUrl} allow="autoplay" videoTitle="loan program page video" videoWidth="100%" videoHeight="500" />
+            </div>
             <div className="container">
-              <div className="row fullscreen d-flex align-items-end pb-5">
+              <div className="row h-half d-flex align-items-end pb-5">
                 { node.top_banner.banner.bannerLinks.map((item, i) => 
                   (
                     <div className="col-md-4" key={item.links.title + i}>
@@ -151,6 +155,15 @@ export const pageQuery = graphql`
                 title
                 url
               }
+            }
+          }
+        }
+
+        video_section {
+          video {
+            videoUrl
+            videoBanner {
+              sourceUrl
             }
           }
         }
