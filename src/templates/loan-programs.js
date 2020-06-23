@@ -43,7 +43,10 @@ const LoanProgramPage = ({ data }) => {
 			<SEO title={content.title} description={content.excerpt} />
 
 			{content.top_banner.banner.backgroundImage && (
-				<section className="banner-area" id="home" style={{ backgroundImage: "url(" + content.top_banner.banner.backgroundImage.sourceUrl + ")" }}>
+				<section className="banner-area pos_relative" id="home" style={{ backgroundImage: "url(" + content.top_banner.banner.backgroundImage.sourceUrl + ")" }}>
+					<div className="background-holder">
+						<Video videoSrcURL={data.wpgraphql.page.video_section.video.videoUrl} allow="autoplay" videoTitle="loan program page video" videoWidth="100%" videoHeight="500" />
+					</div>
 					<div className="container">
 						<div className="row fullscreen d-flex align-items-end pb-5">
 							{content.top_banner.banner.bannerLinks.map((item, i) =>
@@ -61,9 +64,9 @@ const LoanProgramPage = ({ data }) => {
 			<section className="video-section">
 				<div className="container">
 					<div className="row">
-					<div className="m-auto col-md-10">
+					<div className="m-auto col-md-10 video">
 						{/* <img src="http://devgb.enerbank.com/wp-content/themes/enerbank/img/loanPrograms_video.jpg" className="img-fluid box-shadow"> */}
-						<Video videoSrcURL="https://player.vimeo.com/video/405983747" videoTitle="Official Music Video on YouTube" videoWidth="100%" videoHeight="500" />
+						<Video videoSrcURL="https://www.youtube.com/embed/PKnMxIz4FWw" videoTitle="EnerBank Atmospheric Video" videoWidth="100%" videoHeight="500" />
 						<p className="text-center font-weight-bold mt-2 mb-4">WATCH: Discover the key to unlocking business growth</p>
 					</div>      
 					</div>
@@ -501,6 +504,16 @@ export const query = graphql`
               tablabel
           }
         }
+
+		video_section {
+		  video {
+			videoUrl
+			videoBanner {
+			  sourceUrl
+			}
+		  }
+		}
+
       }
     }
   }

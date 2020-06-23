@@ -1,5 +1,4 @@
 import React from "react";
-import "react-responsive-carousel/lib/styles/carousel.min.css";
 
 import { Link } from "gatsby";
 import { graphql } from "gatsby";
@@ -23,15 +22,14 @@ const HomeOwnerPage = ({data}) => {
   return (  
     <Layout>
         <SEO title={data.wpgraphql.page.title} description={data.wpgraphql.page.excerpt}/>
-        
-        <div style={{ backgroundImage: "url(" + data.wpgraphql.page.top_banner.banner.backgroundImage.sourceUrl + ")" }}>
-            <Video videoSrcURL="https://player.vimeo.com/video/405982992" allow="autoplay" videoTitle="Official Music Video on YouTube" videoWidth="100%" videoHeight="500" />
-        </div>
 
         {data.wpgraphql.page.top_banner.banner.backgroundImage && (
-            <section className="banner-area" id="home" style={{ backgroundImage: "url(" + data.wpgraphql.page.top_banner.banner.backgroundImage.sourceUrl + ")" }}>
+            <section className="banner-area pos_relative" id="home" style={{ backgroundImage: "url(" + data.wpgraphql.page.top_banner.banner.backgroundImage.sourceUrl + ")" }}>
+                <div className="background-holder">
+                    <Video videoSrcURL={data.wpgraphql.page.video_section.video.videoUrl} allow="autoplay" videoTitle="homeowner page video" videoWidth="100%" videoHeight="500" />
+                </div>
                 <div className="container">
-                    <div className="row fullscreen d-flex align-items-end pb-5">
+                    <div className="row h-half d-flex align-items-end pb-5">
                         { data.wpgraphql.page.top_banner.banner.bannerLinks.map((item, i) => 
                             (
                                 <div className="col-md-4" key={item.fieldGroupName+i}>
@@ -112,6 +110,7 @@ export const query = graphql`
                         }
                     }
                 }
+
                 home_owner {
                     makePaymentWay
                     paymentBanner {
@@ -126,6 +125,16 @@ export const query = graphql`
                         tablabel
                     }
                 }
+
+                video_section {
+                  video {
+                    videoUrl
+                    videoBanner {
+                      sourceUrl
+                    }
+                  }
+                }
+                
             }
         }
     }

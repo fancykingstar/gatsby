@@ -1,4 +1,4 @@
-import React, {useRef, useEffect} from "react";
+import React, {useRef} from "react";
 // import lifecycle from 'react-pure-lifecycle';
 import { Link } from "gatsby";
 import { graphql } from "gatsby";
@@ -82,6 +82,16 @@ export const query = graphql`
           mediaItemUrl
           slug
         }
+
+        video_section {
+          video {
+            videoUrl
+            videoBanner {
+              sourceUrl
+            }
+          }
+        }
+
       }
       category(id: $databaseId, idType: DATABASE_ID) {
         id
