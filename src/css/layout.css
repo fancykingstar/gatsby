@@ -670,3 +670,4 @@ body.mobile-nav-active #mobile-nav-toggle { color: #fff }
     left: 50%; transform: translate(-50%, -50%); }
 .h-half {  min-height: 60vh;}
 .pos_relative{ position: relative; }
+.color-blue { color: #0079c2; }

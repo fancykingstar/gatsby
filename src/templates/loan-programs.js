@@ -48,7 +48,7 @@ const LoanProgramPage = ({ data }) => {
 						<Video videoSrcURL={data.wpgraphql.page.video_section.video.videoUrl} allow="autoplay" videoTitle="loan program page video" videoWidth="100%" videoHeight="500" />
 					</div>
 					<div className="container">
-						<div className="row fullscreen d-flex align-items-end pb-5">
+						<div className="row h-half d-flex align-items-end pb-5">
 							{content.top_banner.banner.bannerLinks.map((item, i) =>
 								(
 									<div className="col-md-4" key={item.fieldGroupName + i}>
@@ -64,9 +64,9 @@ const LoanProgramPage = ({ data }) => {
 			<section className="video-section">
 				<div className="container">
 					<div className="row">
-					<div className="m-auto col-md-10 video">
+					<div className="m-auto col-md-10">
 						{/* <img src="http://devgb.enerbank.com/wp-content/themes/enerbank/img/loanPrograms_video.jpg" className="img-fluid box-shadow"> */}
-						<Video videoSrcURL="https://www.youtube.com/embed/PKnMxIz4FWw" videoTitle="EnerBank Atmospheric Video" videoWidth="100%" videoHeight="500" />
+						<Video videoSrcURL="https://www.youtube.com/embed/PKnMxIz4FWw?byline=0&title=0" videoTitle="EnerBank Atmospheric Video" videoWidth="100%" videoHeight="500" />
 						<p className="text-center font-weight-bold mt-2 mb-4">WATCH: Discover the key to unlocking business growth</p>
 					</div>      
 					</div>
@@ -131,9 +131,9 @@ const LoanProgramPage = ({ data }) => {
 						</div>
 					)}
 					<div className="container">
-						{content.loan_program.joinLoanProgram.loanProgramIntro && (
-							<div className="brif" dangerouslySetInnerHTML={{ __html: content.loan_program.joinLoanProgram.loanProgramIntro }} />
-						)}
+						
+						<div className="brif" dangerouslySetInnerHTML={{ __html: content.loan_program.joinLoanProgram.loanProgramIntro }} />						
+						<h2 class="text-center color-blue"><span>{content.loan_program.joinLoanProgram.sectionTitle}</span></h2>
 						{content.loan_program.joinLoanProgram.loanProgramMethods && (
 							<div className="row my-5">
 								{content.loan_program.joinLoanProgram.loanProgramMethods.map((item, i) =>
@@ -420,7 +420,8 @@ export const query = graphql`
           }
           joinLoanProgram {
             loanProgramMethodHeading
-            loanProgramIntro
+			loanProgramIntro
+			sectionTitle
             loanProgramMethods {
               fieldGroupName
               programMethodBrif
