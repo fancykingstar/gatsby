@@ -79,28 +79,30 @@ render(){
 }
 export default Career
 
+// careers_post {
+//   edges {
+//     node {
+//       id
+//       title
+//       careers {
+//         availablePositions {
+//           fieldGroupName
+//           location
+//           overview
+//           positionTitle
+//         }
+//       }
+//     }
+//   }
+// }
+
 export const query = graphql`
   query($databaseId: ID!) {
     wpgraphql {
       category(id: $databaseId, idType: DATABASE_ID) {
         id
         name
-        careers_post {
-          edges {
-            node {
-              id
-              title
-              careers {
-                availablePositions {
-                  fieldGroupName
-                  location
-                  overview
-                  positionTitle
-                }
-              }
-            }
-          }
-        }
+        
 
       }
     }

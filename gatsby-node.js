@@ -153,16 +153,26 @@ exports.createPages = async ({ graphql, actions }) => {
                     },
                   })
             break;
-            case "training":
-                    createPage({
-                      path: "training",
-                      component: path.resolve(`./src/templates/training.js`),
-                      context: {
-                        slug: node.slug,
-                        databaseId: node.databaseId,
-                      },
-                    })
-              break;
+          case "training":
+                  createPage({
+                    path: "training",
+                    component: path.resolve(`./src/templates/training.js`),
+                    context: {
+                      slug: node.slug,
+                      databaseId: node.databaseId,
+                    },
+                  })
+            break;
+          // case "careers":
+          //           createPage({
+          //             path: "careers",
+          //             component: path.resolve(`./src/templates/careers.js`),
+          //             context: {
+          //               slug: node.slug,
+          //               databaseId: node.databaseId,
+          //             },
+          //           })
+          //     break;
           default:
                 createPage({
                   path: node.slug,
@@ -209,10 +219,10 @@ exports.createPages = async ({ graphql, actions }) => {
   });
 
 
-  const categoryList = await graphql(`
+  const careersPages = await graphql(`
     query GET_CATEGORIES {
       wpgraphql {
-        categories {
+        careerplural {
           edges {
             node {
               id
@@ -227,8 +237,8 @@ exports.createPages = async ({ graphql, actions }) => {
   `);
 
   
-  categoryList.data.wpgraphql.categories.edges.forEach(({ node }) => {
-      if(node.slug == 'career_position'){
+  careersPages.data.wpgraphql.careerplural.edges.forEach(({ node }) => {
+      if(node.slug == 'careers-blog'){
           createPage({
             path: `/careers`,
             component: path.resolve(`./src/templates/careers.js`),

@@ -2,10 +2,8 @@ import React, {useRef} from "react";
 // import lifecycle from 'react-pure-lifecycle';
 import { Link } from "gatsby";
 import { graphql } from "gatsby";
-// import Player from '@vimeo/player';
 import Layout from "../components/layout"
 import SEO from "../components/seo"
-// import { any } from "prop-types";
 import Video from "../components/video";
 
 const CareerPage = ({data, props}) => {
@@ -26,13 +24,12 @@ const CareerPage = ({data, props}) => {
 
   return (  
     <Layout>
-      <SEO title={data.wpgraphql.category.name} description={data.wpgraphql.category.name}/>      
+      <SEO title={data.wpgraphql.page.title} description={data.wpgraphql.page.excerpt}/>
       <section className="video-section">
         <div className="container">
           <div className="row d-flex align-items-end">
             <div className="col-md-10 m-auto" ref={handstick}>  {/*  onClick={this.handleClick} */}
                 <Video videoSrcURL="https://player.vimeo.com/video/371895200" videoTitle="Official Music Video on YouTube" videoWidth="100%" videoHeight="500" />
-                {/* <img src="http://devgb.enerbank.com/wp-content/themes/enerbank/img/careers_video.png" alt="career video" /> */}
             </div>
           </div>
         </div>
@@ -51,14 +48,11 @@ const CareerPage = ({data, props}) => {
             </div>
             {/* Jobs List */}
             <ul className="jobs_list">              
-              {data.wpgraphql.category.careers_post.edges.map(({node}, i) => (
-                <li key={node.careers.availablePositions.fieldGroupName + i}>
-                    <h3 dangerouslySetInnerHTML={{ __html: node.careers.availablePositions.positionTitle }} />
-                    <div className="job_location" dangerouslySetInnerHTML={{ __html: node.careers.availablePositions.location }} />
-                    <p dangerouslySetInnerHTML={{ __html: node.careers.availablePositions.overview}} />
-                    <Link to={`/${node.slug}`} className="btn btn-primary f-bold equal-wd mb-4">View Job Details &amp; Apply</Link>
-                </li>
-              ))}
+              {data.wpgraphql.careerplural.edges[0].node.careerPost.edges.map(( { node }, i ) => {
+                  console.log(node)
+                  
+                }
+              )}
             </ul>
             {/* Pagination Nav start here */}
           </div>
@@ -68,6 +62,25 @@ const CareerPage = ({data, props}) => {
   )
  }
 export default CareerPage
+
+// careerPost {
+//   edges {
+//     node {
+//       id
+//       title
+//       slug
+//       careers {
+//         availablePositions {
+//           fieldGroupName
+//           location
+//           overview
+//           positionTitle
+//         }
+//       }
+//     }
+//   }
+// }
+
 
 export const query = graphql`
   query($databaseId: ID!) {
@@ -92,29 +105,33 @@ export const query = graphql`
           }
         }
 
-      }
-      category(id: $databaseId, idType: DATABASE_ID) {
-        id
-        name
-        careers_post {
-          edges {
-            node {
-              id
-              title
-              slug
-              careers {
-                availablePositions {
-                  fieldGroupName
-                  location
-                  overview
-                  positionTitle
+      }      
+
+      
+            careerPost {
+              edges {
+                node {
+                  id
+                  title
+                  careers {
+                    availablePositions {
+                      fieldGroupName
+                      location
+                      positionTitle
+                      viewJobDetail {
+                        target
+                        title
+                        url
+                      }
+                    }
+                  }
+                  excerpt
+                  slug
                 }
               }
             }
-          }
-        }
+      
 
-      }
     }
   }
 `

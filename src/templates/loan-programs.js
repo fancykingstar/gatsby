@@ -145,7 +145,7 @@ const LoanProgramPage = ({ data }) => {
 												</div>
 												<div className="card-body">
 													<div dangerouslySetInnerHTML={{ __html: item.programMethodBrif }} />
-													<Link to={item.programMethodLink.url} class="btn mt-3">{item.programMethodLink.title}</Link>
+													<Link to={'#'} class="btn mt-3" onClick={showbenefitpopup(item, 'loan_options')}>{item.programMethodLink.title}</Link>
 												</div>
 											</div>
 										</div>

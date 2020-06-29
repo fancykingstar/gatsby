@@ -35,6 +35,16 @@ const SecondPage = ({data}) => (
 
 export default SecondPage
 
+// careers_post {
+//   edges {
+//     node {
+//       id
+//       title
+//       slug
+//     }
+//   }
+// }
+
 export const query = graphql`
   query($databaseId: ID!) {
     wpgraphql {
@@ -51,15 +61,7 @@ export const query = graphql`
           }
         } 
 
-        careers_post {
-          edges {
-            node {
-              id
-              title
-              slug
-            }
-          }
-        }
+        
 
       }
     }
