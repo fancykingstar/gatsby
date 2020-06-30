@@ -50,7 +50,14 @@ const CareerPage = ({data, props}) => {
             <ul className="jobs_list">              
               {data.wpgraphql.careerplural.edges[0].node.careerPost.edges.map(( { node }, i ) => {
                   console.log(node)
-                  
+                  return(
+                    <li key={node.careers.availablePositions.fieldGroupName + i}>
+                      <h3 dangerouslySetInnerHTML={{ __html: node.careers.availablePositions.positionTitle }} />
+                      <div className="job_location" dangerouslySetInnerHTML={{ __html: node.careers.availablePositions.location }} />
+                      <p dangerouslySetInnerHTML={{ __html: node.excerpt}} />
+                      <Link to={`/${node.slug}`} className="btn btn-primary f-bold equal-wd mb-4">View Job Details &amp; Apply</Link>
+                  </li>
+                  )
                 }
               )}
             </ul>
@@ -107,7 +114,9 @@ export const query = graphql`
 
       }      
 
-      
+      careerplural {
+        edges {
+          node {
             careerPost {
               edges {
                 node {
@@ -130,7 +139,9 @@ export const query = graphql`
                 }
               }
             }
-      
+          }
+        }
+      }
 
     }
   }

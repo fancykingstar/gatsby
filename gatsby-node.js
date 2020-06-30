@@ -163,16 +163,16 @@ exports.createPages = async ({ graphql, actions }) => {
                     },
                   })
             break;
-          // case "careers":
-          //           createPage({
-          //             path: "careers",
-          //             component: path.resolve(`./src/templates/careers.js`),
-          //             context: {
-          //               slug: node.slug,
-          //               databaseId: node.databaseId,
-          //             },
-          //           })
-          //     break;
+          case "careers":
+                    createPage({
+                      path: "careers",
+                      component: path.resolve(`./src/templates/careers.js`),
+                      context: {
+                        slug: node.slug,
+                        databaseId: node.databaseId,
+                      },
+                    })
+              break;
           default:
                 createPage({
                   path: node.slug,
@@ -237,20 +237,20 @@ exports.createPages = async ({ graphql, actions }) => {
   `);
 
   
-  careersPages.data.wpgraphql.careerplural.edges.forEach(({ node }) => {
-      if(node.slug == 'careers-blog'){
-          createPage({
-            path: `/careers`,
-            component: path.resolve(`./src/templates/careers.js`),
-            context: {
-              slug: node.slug,
-              databaseId: node.databaseId,
-              name: node.name,
-              id: node.id
-            },
-          })
-      }
-  });
+  // careersPages.data.wpgraphql.careerplural.edges.forEach(({ node }) => {
+  //     if(node.slug == 'careers-blog'){
+  //         createPage({
+  //           path: `/careers`,
+  //           component: path.resolve(`./src/templates/careers.js`),
+  //           context: {
+  //             slug: node.slug,
+  //             databaseId: node.databaseId,
+  //             name: node.name,
+  //             id: node.id
+  //           },
+  //         })
+  //     }
+  // });
   
 
   /**

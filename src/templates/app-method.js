@@ -12,9 +12,7 @@ import { graphql } from "gatsby";
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import Paymentbenefitoption from "../components/paymentBenefitsPopup"
-import AppMethod from "../components/appMethod"
-import PartnerPortal from "../components/partnerPortal"
-import DealerResource from "../components/dealerResource"
+import AppMethod from "../components/loanProgramPopup"
 
 // accordian
 const blockElements = {
@@ -403,6 +401,7 @@ const LoanProgramPage = ({ data }) => {
 				</>
 			)}
 
+			<LoanProgramPopup visiblity={visible} handleClose={hidebenefitpopup} popData={popData} />
 			{(
 				() => {
 					switch(popType){
@@ -411,12 +410,6 @@ const LoanProgramPage = ({ data }) => {
 							break;
 						case "app_method":
 							return <AppMethod visiblity={visible} handleClose={hidebenefitpopup} popData={popData} />;
-							break;
-						case "partner_portal":
-							return <PartnerPortal visiblity={visible} handleClose={hidebenefitpopup} popData={popData} />;
-							break;
-						case "dealer_resource":
-							return <DealerResource visiblity={visible} handleClose={hidebenefitpopup} popData={popData} />;
 							break;
 						default:
 							return "";
