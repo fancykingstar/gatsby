@@ -20,14 +20,14 @@ const SecondPage = ({data}) => (
       </div>
     ))}
 
-    {data.wpgraphql.category.careers_post.edges.map(({ node }) => (
+    {/* {data.wpgraphql.category.careers_post.edges.map(({ node }) => (
       <div key={node.slug}>
         <Link to={`/${node.slug}`}>
         <div dangerouslySetInnerHTML={{ __html: node.title }} />
         </Link>
         <div dangerouslySetInnerHTML={{ __html: node.excerpt }} />
       </div>
-    ))}
+    ))} */}
 
     <Link to="/">Go back to the homepage</Link>
   </Layout>
