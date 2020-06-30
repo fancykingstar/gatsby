@@ -649,7 +649,7 @@ body.mobile-nav-active #mobile-nav-toggle { color: #fff }
 .appMethod div { font-size: 16px; font-weight: bold; line-height: normal; height: 30px; margin: 15px 0; }
 .appMethod p { font-size: 14px; line-height: 22px; text-align: center; }
 .portal_list { margin: 0 0 30px 20px; padding: 0; list-style: disc; list-style-position: outside; }
-.portal_list li { margin: 0; padding: 0; text-align: left; font-size: 16px; line-height: 26px; float: left; width: 33.33%; }
+.portal_list li { margin: 0; padding: 0; text-align: left; font-size: 16px; line-height: 26px;  }
 
 #dealerPage h4 { font-weight: 500; font-size: 24px; margin: 0 auto; margin-bottom: 25px !important; }
 .dealerResource { margin: 0 15px; padding: 20px 20px 70px; height: 100%; position: relative; box-shadow: 0 0 6px #aaa; }
@@ -699,8 +699,7 @@ body.mobile-nav-active #mobile-nav-toggle { color: #fff }
   .dealerResource div{ font-size: 15px; font-weight: bold; line-height: normal; height: 30px; margin: 15px 0; }
   .dealerResource p{ font-size: 12px; line-height: 18px; text-align: center; }
   .dealerResource a{ background: #007ac2; color:#fff; font-size:13px; display: inline-block; margin: 0 auto; padding: 0px 20px; border-radius: 5px; position: absolute; bottom:30px; left:50%; transform: translateX(-50%); }
-  .start_drc{ color:#fff; text-align: center; padding:30px 25px 50px; }
-  .start_drc div{ font-size: 24px; font-weight:500; }
+  
   .start_drc p{ font-size:13px; line-height: normal; margin: 15px 0 35px; }
   .start_drc a{ font-size:13px; border: 1px solid #fff; padding: 10px 20px; color: #fff; border-radius: 3px; }
   .start_drc2 a{ font-size:16px; border: 1px solid #fff; padding: 10px 20px; color: #fff; border-radius: 3px; }
@@ -720,5 +719,6 @@ body.mobile-nav-active #mobile-nav-toggle { color: #fff }
   
   #loantypeExample .card-body{padding-left: 0 !important;padding-right: 0 !important;}
   #loantypeExample .card-body h4{margin-bottom: 20px;}
+
   .portal_list{margin:0 0 30px 20px; padding:0; list-style: disc; list-style-position: outside;}
   .portal_list li{margin:0; padding: 0; text-align: left; font-size: 16px; line-height: 26px;}
