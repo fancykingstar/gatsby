@@ -671,3 +671,54 @@ body.mobile-nav-active #mobile-nav-toggle { color: #fff }
 .h-half {  min-height: 60vh;}
 .pos_relative{ position: relative; }
 .color-blue { color: #0079c2; }
+
+/* Full width modal */
+.modal { padding: 0 !important; }
+.modal .modal-full { width: 80%; max-width: none; margin: 0 auto; }
+.modal .modal-content { height: 100%; border: 0; border-radius: 0; }
+.heading_bg{ background: #0079C2; padding: 30px 30px; text-align: center;}
+.heading_bg h3{ color: #fff !important; text-align: center; margin: 0px; padding: 0px; line-height: normal;}
+.modal_content{ background: #fff;}
+.modal_content p{line-height: 24px; text-align: left;}
+  
+  /* appPopup modal css */
+  #appPopup .modal_banner{ background: url(../images/appMethod-MockUp.jpg) center -100px; background-size: cover; position:relative; height:300px; }
+  #appPopup .modal_banner:before{ content: ""; position: absolute; left: 0; top: 0; width: 100%; height: 100%; z-index: 99; background: rgba(0,0,0,0.4) url(../images/app-method-icon.svg) no-repeat center; }
+  .appMethod{ height:100%; border-top: 30px solid #dee2e6!important; position: relative; padding: 20px 20px 10px; text-align: center; }
+  .appMethod img{ position: absolute; left:50%; max-width:60px; transform: translate(-50%, -100%); top:15px; }
+  .appMethod div{ font-size: 13px; font-weight: bold; line-height: normal; height: 30px; margin: 15px 0; }
+  .appMethod p{ font-size: 12px; line-height: 18px; text-align: center; }
+  
+  /* dealerPopup modal css */
+  #dealerPopup .modal_banner{ background: url(../images/dealer-hero-banner.jpg) center top; background-size: cover; position:relative; height:300px; padding:15px 25px; font-weight:400; font-size: 24px; color:#fff; }
+  #dealerPopup .modal_banner p{ position: absolute; width:100%; left:0; bottom:30px; z-index:2; text-align: center; }
+  #dealerPopup .modal_banner:before{ content: ""; position: absolute; left: 0; top: 0; width: 100%; height: 100%; z-index: 1; background: rgba(0,0,0,0.4) url(../images/dealer-resource-center.svg) no-repeat center calc(50% - 30px); background-size: 150px; }
+  #dealerPopup h4{ font-weight:500; font-size:24px; margin-bottom: 25px !important; }
+  .dealerResource{ margin:0 15px; padding:20px 20px 70px; height:100%; position: relative; box-shadow: 0 0 6px #aaa; }
+  .dealerResource img{ margin:0 auto; max-width: 70px; display:block; }
+  .dealerResource div{ font-size: 15px; font-weight: bold; line-height: normal; height: 30px; margin: 15px 0; }
+  .dealerResource p{ font-size: 12px; line-height: 18px; text-align: center; }
+  .dealerResource a{ background: #007ac2; color:#fff; font-size:13px; display: inline-block; margin: 0 auto; padding: 0px 20px; border-radius: 5px; position: absolute; bottom:30px; left:50%; transform: translateX(-50%); }
+  .start_drc{ color:#fff; text-align: center; padding:30px 25px 50px; }
+  .start_drc div{ font-size: 24px; font-weight:500; }
+  .start_drc p{ font-size:13px; line-height: normal; margin: 15px 0 35px; }
+  .start_drc a{ font-size:13px; border: 1px solid #fff; padding: 10px 20px; color: #fff; border-radius: 3px; }
+  .start_drc2 a{ font-size:16px; border: 1px solid #fff; padding: 10px 20px; color: #fff; border-radius: 3px; }
+  
+  /* Benefits to Creating a Loan Program */
+  .modal_banner{ background-repeat:no-repeat; background-size: cover; position:relative; height:300px; padding:15px 25px; }
+  .banner_bg{position: relative; z-index: 9;}
+  .banner_bg:after{content:'';position: absolute; z-index: 1; width:100%; top: 0; left:0; height: 100%; background:rgba(0,0,0,0.6);}
+  .modal_banner span{position:relative; z-index: 5; width: 160px; height: 100%; margin: 0 auto; 
+  display: flex; align-items: center; justify-content: center; }
+  .p-8{padding: 3.5rem 7.5rem 0rem 7.5rem;}
+  .text-md{ font-size: 18px; font-weight: 500; line-height: 24px;}
+  .left-icon-list{position: relative; list-style: none; margin: 0; padding: 0;}
+  .left-icon-list li{ list-style: none; display: block; margin: 0px 0 40px 0; padding: 0px 0 0 130px;position: relative}
+  .left-icon-list li span{position:absolute; top: 0px; left: 0; width: 90px;}
+  .left-icon-list li h4{font-size: 21px; color: #007ac2; margin:0 0 10px 0; padding:0; line-height: normal;}
+  
+  #loantypeExample .card-body{padding-left: 0 !important;padding-right: 0 !important;}
+  #loantypeExample .card-body h4{margin-bottom: 20px;}
+  .portal_list{margin:0 0 30px 20px; padding:0; list-style: disc; list-style-position: outside;}
+  .portal_list li{margin:0; padding: 0; text-align: left; font-size: 16px; line-height: 26px;}
