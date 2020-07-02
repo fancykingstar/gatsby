@@ -331,7 +331,7 @@ const LoanProgramPage = ({ data }) => {
 
 					<div className="d-flex flex-wrap my-4 my-lg-5">
 						{content.loan_program.createLoanOption.sectionOption.map((item, i) => {
-							if(i == 0){
+							if(i === 0){
 								return (
 									<div key={item.fieldGroupName + i}  className="box-shadow bg-white rounded text-center payment-option-box col-xs-12 col-md mb-3 mb-lg-0 p-0 mr-md-3 mr-lg-5">
 										<style dangerouslySetInnerHTML={{
