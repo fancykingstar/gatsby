@@ -89,11 +89,11 @@ const HomeOwnerPage = ({data}) => {
             </Tabbordion>
 
             <div className="text-center mt-4">
-                <Link to="/" className="btn btn-primary f-bold equal-wd mb-4">Account Log In</Link>
-                <Link to="/" className="btn btn-primary f-bold equal-wd mb-4 ml-3">Automatic Debit Form (PDF)</Link>
+                <Link to="/" className="btn btn-primary f-bold equal-wd mb-4">Account Log In</Link><br/>
+                <Link to="/" className="btn btn-primary f-bold equal-wd mb-4">Automatic Debit Form (PDF)</Link>
                 <p>Question about a loan? Have a comment? We want to hear from you.</p>
                 {/* feedback form */}
-                <Link to="/" onClick={toggle} className="btn btn-primary f-bold equal-wd mb-4 ml-3">Leave Feedback</Link>                
+                <Link to="/" onClick={toggle} className="btn btn-primary f-bold equal-wd mb-4">Leave Feedback</Link>                
             </div>
             <Collapse
                 isOpen={collapse}
