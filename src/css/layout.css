@@ -12,6 +12,7 @@
   opacity: 1; /* Firefox */
 }
 body { color: #4D4D4D; font-family: 'Roboto', sans-serif; font-size: 18px; letter-spacing:1px; font-weight:300; line-height: 1.9em; position: relative }
+b, strong{ font-weight: 600; }
 ol, ul { margin: 0; padding: 0; list-style: none }
 select { display: block }
 figure { margin: 0 }
