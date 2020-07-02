@@ -726,3 +726,4 @@ body.mobile-nav-active #mobile-nav-toggle { color: #fff }
 
   .accordion-content { color: #4d4d4d; }
   .accordion-animator{ margin-bottom: 10px !important; }
+  .accordion-content ul{ list-style: disc !important; }
