@@ -74,7 +74,7 @@ const HomeOwnerPage = ({data}) => {
         
         <section className="section-gap container">
             {/* <div dangerouslySetInnerHTML={{ __html: data.wpgraphql.page.home_owner.makePaymentWay}} /> */}
-
+            <h2 class="mb-30 text-center"><span>Six Ways to Make a Payment</span></h2>
             <Tabbordion blockElements={blockElements} animateContent={'height'} mode={'toggle'} className="accordion loan_offer mx-4 mx-lg-5" name="accordion">
                 {data.wpgraphql.page.accordion.tabpanel.map((item, i) =>
                     (
