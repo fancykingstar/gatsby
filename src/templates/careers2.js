@@ -1,9 +1,6 @@
 import React, {useRef} from "react";
 // import lifecycle from 'react-pure-lifecycle';
-import Helmet from "react-helmet"
-import { withPrefix, Link } from "gatsby"
-
-
+import { Link } from "gatsby";
 import { graphql } from "gatsby";
 import Layout from "../components/layout"
 import SEO from "../components/seo"
@@ -49,11 +46,22 @@ const CareerPage = ({data, props}) => {
             <div className="col-md-12 header-text">
               <h2 className="mb-20 text-center"><span>Available Positions</span></h2>
             </div>
-            
-            <Helmet>
-        <script src={withPrefix('script.js')} type="text/javascript" name="hirebridge-script" />
-    </Helmet>
-    <div id="hrbr-widget">&nbsp;</div>
+            {/* Jobs List */}
+            <ul className="jobs_list">              
+              {data.wpgraphql.careerplural.edges[0].node.careerPost.edges.map(( { node }, i ) => {
+                  console.log(node)
+                  return(
+                    <li key={node.careers.availablePositions.fieldGroupName + i}>
+                      <h3 dangerouslySetInnerHTML={{ __html: node.careers.availablePositions.positionTitle }} />
+                      <div className="job_location" dangerouslySetInnerHTML={{ __html: node.careers.availablePositions.location }} />
+                      <p dangerouslySetInnerHTML={{ __html: node.excerpt}} />
+                      <Link to={`/${node.slug}`} className="btn btn-primary f-bold equal-wd mb-4">View Job Details &amp; Apply</Link>
+                  </li>
+                  )
+                }
+              )}
+            </ul>
+            {/* Pagination Nav start here */}
           </div>
         </div>
       </section>
