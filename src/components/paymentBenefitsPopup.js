@@ -5,8 +5,7 @@ const Paymentbenefitoption = (props) => {
 	const [show, setShow] = useState(true);
 	if (props.popData.length === 0) {
 		return (
-			<div className="modal fade show" style={{ display: props.visiblity }}>s
-			</div>
+			<div className="modal fade show" style={{ display: props.visiblity }}></div>
 		)
 	} else {
 		return (
