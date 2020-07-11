@@ -20,20 +20,30 @@ const SecondPage = ({data}) => (
       </div>
     ))}
 
-    {data.wpgraphql.category.careers_post.edges.map(({ node }) => (
+    {/* {data.wpgraphql.category.careers_post.edges.map(({ node }) => (
       <div key={node.slug}>
         <Link to={`/${node.slug}`}>
         <div dangerouslySetInnerHTML={{ __html: node.title }} />
         </Link>
         <div dangerouslySetInnerHTML={{ __html: node.excerpt }} />
       </div>
-    ))}
+    ))} */}
 
     <Link to="/">Go back to the homepage</Link>
   </Layout>
 )
 
 export default SecondPage
+
+// careers_post {
+//   edges {
+//     node {
+//       id
+//       title
+//       slug
+//     }
+//   }
+// }
 
 export const query = graphql`
   query($databaseId: ID!) {
@@ -51,15 +61,7 @@ export const query = graphql`
           }
         } 
 
-        careers_post {
-          edges {
-            node {
-              id
-              title
-              slug
-            }
-          }
-        }
+        
 
       }
     }

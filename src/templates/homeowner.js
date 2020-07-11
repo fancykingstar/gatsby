@@ -1,10 +1,12 @@
-import React from "react";
+import React, { useState } from "react";
 
 import { Link } from "gatsby";
 import { graphql } from "gatsby";
 
 import { Tabbordion, TabPanel, TabLabel, TabContent } from 'react-tabbordion';
 import "react-tabbordion/demo/accordion.css";
+
+import { Collapse, Button, CardBody, Card } from 'reactstrap';
 
 import Layout from "../components/layout"
 import SEO from "../components/seo"
@@ -19,6 +21,22 @@ const blockElements = {
 }
 
 const HomeOwnerPage = ({data}) => {
+    const [collapse, setCollapse] = useState(false);
+    const [status, setStatus] = useState('Closed');
+    const onEntering = () => setStatus('Opening...');
+    const onEntered = () => setStatus('Opened');
+    const onExiting = () => setStatus('Closing...');
+    const onExited = () => setStatus('Closed');
+    const toggle = (e) => {
+        e.preventDefault();
+        setCollapse(!collapse)
+    }
+
+    const [value, setValue] = useState("");
+    const handleChange = (event) => {
+        setValue(event.target.value);
+    };
+
   return (  
     <Layout>
         <SEO title={data.wpgraphql.page.title} description={data.wpgraphql.page.excerpt}/>
@@ -56,7 +74,7 @@ const HomeOwnerPage = ({data}) => {
         
         <section className="section-gap container">
             {/* <div dangerouslySetInnerHTML={{ __html: data.wpgraphql.page.home_owner.makePaymentWay}} /> */}
-
+            <h2 class="mb-30 text-center"><span>Six Ways to Make a Payment</span></h2>
             <Tabbordion blockElements={blockElements} animateContent={'height'} mode={'toggle'} className="accordion loan_offer mx-4 mx-lg-5" name="accordion">
                 {data.wpgraphql.page.accordion.tabpanel.map((item, i) =>
                     (
@@ -71,9 +89,27 @@ const HomeOwnerPage = ({data}) => {
             </Tabbordion>
 
             <div className="text-center mt-4">
-                <Link to="/" className="btn btn-primary f-bold equal-wd mb-4">Account Log In</Link>
-                <Link to="/" className="btn btn-primary f-bold equal-wd mb-4 ml-3">Automatic Debit Form (PDF)</Link>
+                <Link to="/" className="btn btn-primary f-bold equal-wd mb-4">Account Log In</Link><br/>
+                <Link to="/" className="btn btn-primary f-bold equal-wd mb-4">Automatic Debit Form (PDF)</Link>
+                <p>Question about a loan? Have a comment? We want to hear from you.</p>
+                {/* feedback form */}
+                <Link to="/" onClick={toggle} className="btn btn-primary f-bold equal-wd mb-4">Leave Feedback</Link>                
             </div>
+            <Collapse
+                isOpen={collapse}
+                onEntering={onEntering}
+                onEntered={onEntered}
+                onExiting={onExiting}
+                onExited={onExited}
+            >
+                
+                <form>
+                    <textarea value={value} className="form-control mb-3" name="leave_feedback" onChange={handleChange} style={{height: '100px' }} placeholder="Leave feedback here ..." />
+                    <button className="btn btn-primary">Submit</button>
+                    <button className="btn btn-primary ml-3" onClick={toggle}>Cancel</button>
+                </form>
+
+            </Collapse>
         </section>
 
   </Layout>

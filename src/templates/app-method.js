@@ -12,9 +12,7 @@ import { graphql } from "gatsby";
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import Paymentbenefitoption from "../components/paymentBenefitsPopup"
-import AppMethod from "../components/appMethod"
-import PartnerPortal from "../components/partnerPortal"
-import DealerResource from "../components/dealerResource"
+import AppMethod from "../components/loanProgramPopup"
 
 // accordian
 const blockElements = {
@@ -331,7 +329,7 @@ const LoanProgramPage = ({ data }) => {
 
 					<div className="d-flex flex-wrap my-4 my-lg-5">
 						{content.loan_program.createLoanOption.sectionOption.map((item, i) => {
-							if(i === 0){
+							if(i == 0){
 								return (
 									<div key={item.fieldGroupName + i}  className="box-shadow bg-white rounded text-center payment-option-box col-xs-12 col-md mb-3 mb-lg-0 p-0 mr-md-3 mr-lg-5">
 										<style dangerouslySetInnerHTML={{
@@ -403,6 +401,7 @@ const LoanProgramPage = ({ data }) => {
 				</>
 			)}
 
+			<LoanProgramPopup visiblity={visible} handleClose={hidebenefitpopup} popData={popData} />
 			{(
 				() => {
 					switch(popType){
@@ -411,12 +410,6 @@ const LoanProgramPage = ({ data }) => {
 							break;
 						case "app_method":
 							return <AppMethod visiblity={visible} handleClose={hidebenefitpopup} popData={popData} />;
-							break;
-						case "partner_portal":
-							return <PartnerPortal visiblity={visible} handleClose={hidebenefitpopup} popData={popData} />;
-							break;
-						case "dealer_resource":
-							return <DealerResource visiblity={visible} handleClose={hidebenefitpopup} popData={popData} />;
 							break;
 						default:
 							return "";
