@@ -346,7 +346,7 @@ body.mobile-nav-active #mobile-nav-toggle { color: #fff }
 .overlay { position: absolute; left: 0; right: 0; top: 0; bottom: 0 }
 .banner-area { background: url(../images/hero-img.jpg); background-position: center; background-size: cover }
 .banner-area .fullscreen{ min-height:420px;}
-.service-area .header-text h2{ text-align: center; font-weight: 600; }
+.service-area .header-text h2{ text-align: center; font-weight: 600; margin-bottom: 15px; }
 .video-section{position:relative; margin: 0px; padding: 50px 0 0;}
 @media (max-width: 767px) {
     .banner-area .fullscreen { height: 100% !important }
@@ -568,7 +568,7 @@ body.mobile-nav-active #mobile-nav-toggle { color: #fff }
 
 /* payment-options */
 .payment-option ul{ list-style: none; margin:0; padding: 0; display: flex; }
-.payment-option ul li{ text-align: center; flex: 1 1 auto!important; transition: all 0.25s ease-out; }
+.payment-option ul li{ text-align: center; flex: 1 1 auto!important; transition: all 0.25s ease-out; list-style:none; }
 .payment-option ul li .icon{ margin: auto; width: 87px; height: 87px; }
 .payment-option ul li div img{ max-width: 100%; }
 .payment-option ul li a, .payment-option ul li p{ line-height: normal; margin: 10px 0; font-weight: 500; color:#000; }
@@ -677,6 +677,9 @@ body.mobile-nav-active #mobile-nav-toggle { color: #fff }
 .background-holder iframe { width: 100vw; height: 56.25vw; min-height: 100vh; min-width: 177.77vh; position: absolute; top: 50%;
     left: 50%; transform: translate(-50%, -50%); }
 .h-half {  min-height: 60vh;}
+@media screen and (min-width:1440px){
+    .h-half {  min-height: 52vh;}
+}
 .pos_relative{ position: relative; }
 .color-blue { color: #0077C8; }
 
@@ -752,3 +755,6 @@ body.mobile-nav-active #mobile-nav-toggle { color: #fff }
   /* #hrbr-page-message p:first-child{ font-size:20px; } */
   .leadership{ border-radius:15px; box-shadow: 0 0 3px 3px #ccc;  }
   .directorName{ font-weight:600; color: #d4d4d4; }
+  .hrbr-pagination-sm > li > a{ border: none !important; color: #29A9E0 !important; background: transparent !important; font-size:24px !important; font-weight: 500 !important; }
+  .hrbr-pagination-sm > li.active > a{ background: none !important; }
+  .hrbr-wrapper-pagination > li > a{ color: #29A9E0 !important; }

@@ -49,11 +49,10 @@ const CareerPage = ({data, props}) => {
             <div className="col-md-12 header-text">
               <h2 className="mb-20 text-center"><span>Available Positions</span></h2>
             </div>
-            
             <Helmet>
-        <script src={withPrefix('script.js')} type="text/javascript" name="hirebridge-script" />
-    </Helmet>
-    <div id="hrbr-widget">&nbsp;</div>
+                <script src={withPrefix('script.js')} type="text/javascript" name="hirebridge-script" />
+            </Helmet>
+            <div id="hrbr-widget">&nbsp;</div>
           </div>
         </div>
       </section>
