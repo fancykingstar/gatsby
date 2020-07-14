@@ -27,7 +27,7 @@ const CareerPage = ({data, props}) => {
 
   return (  
     <Layout>
-      <SEO title={data.wpgraphql.page.title} description={data.wpgraphql.page.excerpt}/>
+      {/* <SEO title={data.wpgraphql.page.title} description={data.wpgraphql.page.excerpt}/> */}
       <section className="video-section">
         <div className="container">
           <div className="row d-flex align-items-end">
