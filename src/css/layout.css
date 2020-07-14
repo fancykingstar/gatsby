@@ -758,3 +758,4 @@ body.mobile-nav-active #mobile-nav-toggle { color: #fff }
   .hrbr-pagination-sm > li > a{ border: none !important; color: #29A9E0 !important; background: transparent !important; font-size:24px !important; font-weight: 500 !important; }
   .hrbr-pagination-sm > li.active > a{ background: none !important; }
   .hrbr-wrapper-pagination > li > a{ color: #29A9E0 !important; }
+  .carousel .slider-wrapper.axis-horizontal .slider .slide{ list-style: none; }
