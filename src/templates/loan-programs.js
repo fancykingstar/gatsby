@@ -15,6 +15,7 @@ import Paymentbenefitoption from "../components/paymentBenefitsPopup"
 import AppMethod from "../components/appMethod"
 import PartnerPortal from "../components/partnerPortal"
 import DealerResource from "../components/dealerResource"
+import Training from "../components/training"
 
 // accordian
 const blockElements = {
@@ -255,10 +256,12 @@ const LoanProgramPage = ({ data }) => {
 														'}'
 													].join('\n')
 												}}></style>
+												
 												<div className="wygthumb training">
 													<img src={item.integrationOptionBgImage.sourceUrl} className="card-img-top" alt="Training" />
-												</div>
+												</div>												
 												<div className="p-4" dangerouslySetInnerHTML={{ __html: item.integrationOptionBrif }} />
+												<Link to={'#'} onClick={showbenefitpopup(item, 'training')}>Learn More</Link>
 											</div>
 										)
 									}
@@ -417,6 +420,10 @@ const LoanProgramPage = ({ data }) => {
 							break;
 						case "dealer_resource":
 							return <DealerResource visiblity={visible} handleClose={hidebenefitpopup} popData={popData} />;
+							break;
+						case "training":
+							return <Training visiblity={visible} handleClose={hidebenefitpopup} popData={popData} />;
+							// return <DealerResource visiblity={visible} handleClose={hidebenefitpopup} popData={popData} />;
 							break;
 						default:
 							return "";
