@@ -755,7 +755,7 @@ body.mobile-nav-active #mobile-nav-toggle { color: #fff }
   /* #hrbr-page-message p:first-child{ font-size:20px; } */
   .leadership{ border-radius:15px; box-shadow: 0 0 3px 3px #ccc;  }
   .directorName{ font-weight:600; color: #d4d4d4; }
-  .hrbr-pagination-sm > li > a{ border: none !important; color: #29A9E0 !important; background: transparent !important; font-size:24px !important; font-weight: 500 !important; }
-  .hrbr-pagination-sm > li.active > a{ background: none !important; }
-  .hrbr-wrapper-pagination > li > a{ color: #29A9E0 !important; }
+  
+  .hrbr-pagination-sm > li > a{ border: none !important; background: #29A9E0 !important; font-size:24px !important; font-weight: 500 !important; }
+  .hrbr-pagination-sm > li.active > a{ background: #0077C8 !important; font-weight: 600 !important; }
   .carousel .slider-wrapper.axis-horizontal .slider .slide{ list-style: none; }
