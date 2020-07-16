@@ -42,7 +42,7 @@ const Header = ({ siteTitle }) => {
                     <li><Link to="/">View / Sign Loan Docs</Link>|</li>
                     <li><Link to="/">PartnerPortal</Link>|</li>
                     <li><Link to="/">Dealer Resource Center</Link></li>
-                    <li><Link to="/" className="mr-0"><i className="fa"><img src={calc_icon} alt="Calculator"/></i></Link></li>
+                    <li><Link to="/" className="mr-0 pr-0"><i className="fa"><img src={calc_icon} alt="Calculator"/></i></Link></li>
                   </ul>
                 </div>
             </div>
