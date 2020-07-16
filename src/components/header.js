@@ -36,7 +36,6 @@ const Header = ({ siteTitle }) => {
         <header className="menu">
           <div className="header-top">
             <div className="container">
-              <div className="row">
                 <div className="ml-auto header-top-right no-padding">
                   <ul>
                     <li onClick={loginForm}><span>Account Log In</span>|</li>
@@ -46,7 +45,6 @@ const Header = ({ siteTitle }) => {
                     <li><Link to="/" className="mr-0"><i className="fa"><img src={calc_icon} alt="Calculator"/></i></Link></li>
                   </ul>
                 </div>
-              </div>
             </div>
           </div>
           {/* main menun start */}

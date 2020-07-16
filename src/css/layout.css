@@ -362,7 +362,7 @@ body.mobile-nav-active #mobile-nav-toggle { color: #fff }
     .banner-content h6 { margin-top: 80px; font-size: 10px }
 }
 .banner-content p { max-width: 450px }
-.header-btn a { background-color:rgba(0,121,194,0.9); border-radius: 6px; padding:15px 30px; border: 0px solid transparent; color: #fff; font-size:26px; font-weight:500; text-align:center; display:block; line-height:30px; }
+.header-btn a { background-color:rgba(0,121,194,0.9); border-radius: 6px; padding:15px 30px; border: 0px solid transparent; color: #fff; font-size:26px; font-weight:500; text-align:center; display:block; line-height:30px; max-width:320px; }
 .header-btn a:hover  { border: 0px solid #fff; background-color:rgba(42,169,224,0.9); color: #fff }
 .banner-img { text-align: right }
 @media (max-width: 767px) {
@@ -567,11 +567,15 @@ body.mobile-nav-active #mobile-nav-toggle { color: #fff }
 .box-circle { border-radius: 50%; }
 
 /* payment-options */
-.payment-option ul{ list-style: none; margin:0; padding: 0; display: flex; }
-.payment-option ul li{ text-align: center; flex: 1 1 auto!important; transition: all 0.25s ease-out; list-style:none; }
-.payment-option ul li .icon{ margin: auto; width: 87px; height: 87px; }
-.payment-option ul li div img{ max-width: 100%; }
+.payment-option ul, .benefit-option ul{ list-style: none; margin:0; padding: 0; display: flex; }
+.payment-option ul li, .benefit-option ul li{ text-align: center; flex: 1 1 auto!important; transition: all 0.25s ease-out; list-style:none; }
+.payment-option ul li .icon, .benefit-option ul li .icon{ margin: auto; width: 87px; height: 87px; }
+.payment-option ul li div img, .benefit-option ul li div img{ max-width: 100%; }
 .payment-option ul li a, .payment-option ul li p{ line-height: normal; margin: 10px 0; font-weight: 500; color:#000; }
+
+.benefit-option ul li{ padding: 0 15px; width: 16.66%; }
+.benefit-option ul li .icon{ margin-bottom: 10px; }
+.benefit-option ul li p{ line-height: 22px; font-size: 16px; font-weight: 600; }
 
 /* hover effect */
 .payment-option ul li:hover{ transform: scale(1.2); }

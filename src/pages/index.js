@@ -18,13 +18,27 @@ const IndexPage = ({data}) => {
             </div>
             <div className="container">
               <div className="row h-half d-flex align-items-end pb-5">
-                { node.top_banner.banner.bannerLinks.map((item, i) => 
-                  (
-                    <div className="col-md-4" key={item.links.title + i}>
-                      <div className="header-btn mr-3 ml-3"><Link to={item.links.url} dangerouslySetInnerHTML={{ __html: item.links.title }} /></div>
-                    </div>
-                  ) 
-                )}
+                { node.top_banner.banner.bannerLinks.map((item, i) => {
+                    if(i === 0){
+                      return (
+                        <div className="col-md-4" key={item.links.title + i}>
+                          <div className="header-btn"><Link className="mr-auto" to={item.links.url} dangerouslySetInnerHTML={{ __html: item.links.title }} /></div>
+                        </div>
+                      )
+                    }else if(i === 2){
+                      return (
+                        <div className="col-md-4" key={item.links.title + i}>
+                          <div className="header-btn"><Link className="ml-auto" to={item.links.url} dangerouslySetInnerHTML={{ __html: item.links.title }} /></div>
+                        </div>
+                      )
+                    }else{
+                      return (
+                        <div className="col-md-4" key={item.links.title + i}>
+                          <div className="header-btn"><Link className="mx-auto" to={item.links.url} dangerouslySetInnerHTML={{ __html: item.links.title }} /></div>
+                        </div>
+                      )
+                    }
+                })}
               </div>
             </div>
           </section>
