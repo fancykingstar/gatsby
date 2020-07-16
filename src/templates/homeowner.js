@@ -48,13 +48,27 @@ const HomeOwnerPage = ({data}) => {
                 </div>
                 <div className="container">
                     <div className="row h-half d-flex align-items-end pb-5">
-                        { data.wpgraphql.page.top_banner.banner.bannerLinks.map((item, i) => 
-                            (
-                                <div className="col-md-4" key={item.fieldGroupName+i}>
-                                    <div className="header-btn mr-3 ml-3"><Link to="#" dangerouslySetInnerHTML={{ __html: item.links.title}} /></div>
-                                </div>
-                            ) 
-                        )}
+                        { data.wpgraphql.page.top_banner.banner.bannerLinks.map((item, i) => {
+                            if(i === 0){
+                                return (
+                                    <div className="col-md-4" key={item.fieldGroupName+i}>
+                                        <div className="header-btn"><Link className="mr-auto" to="#" dangerouslySetInnerHTML={{ __html: item.links.title}} /></div>
+                                    </div>
+                                ) 
+                            }else if(i === 1){
+                                return (
+                                    <div className="col-md-4" key={item.fieldGroupName+i}>
+                                        <div className="header-btn"><Link className="mx-auto" to="#" dangerouslySetInnerHTML={{ __html: item.links.title}} /></div>
+                                    </div>
+                                )
+                            }else{
+                                return (
+                                    <div className="col-md-4" key={item.fieldGroupName+i}>
+                                        <div className="header-btn"><Link className="ml-auto" to="#" dangerouslySetInnerHTML={{ __html: item.links.title}} /></div>
+                                    </div>
+                                )
+                            }
+                        })}
                     </div>
                 </div>
             </section>
@@ -67,9 +81,23 @@ const HomeOwnerPage = ({data}) => {
                         <div className="col-md-12 header-text mb-4" dangerouslySetInnerHTML={{ __html: data.wpgraphql.page.content}} />
                     )}
                 </div>
+
+                <div className="benefit-option">
+                    <ul>
+                        {data.wpgraphql.page.home_owner.benefitOption.map((item, i) =>
+                            (
+                                <li key={item.fieldGroupName + i}>
+                                    <div className="box-circle icon bg-blue content-center">
+                                        <img src={item.optionIcon.sourceUrl} alt={item.fieldGroupName} />
+                                    </div>
+                                    <p dangerouslySetInnerHTML={{ __html: item.optionTitle }} />
+                                </li>
+                            )
+                        )}
+                    </ul>
+                </div>
             </div>
         </section>
-
         <section className="pt-30 pb-30 relative" style={{background: 'url('+ data.wpgraphql.page.home_owner.paymentBanner.sourceUrl +') center', backgroundRepeat: 'no-repeat', backgroundSize: 'cover', minHeight: '515px'}}></section>
         
         <section className="section-gap container">
@@ -152,6 +180,14 @@ export const query = graphql`
                     paymentBanner {
                         sourceUrl
                     }
+                    benefitOption {
+                        fieldGroupName
+                        optionTitle
+                        optionIcon {
+                            id
+                            sourceUrl
+                        }
+                    }
                 }
 
                 accordion {
@@ -169,7 +205,7 @@ export const query = graphql`
                       sourceUrl
                     }
                   }
-                }
+                }                
                 
             }
         }
