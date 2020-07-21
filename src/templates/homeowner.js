@@ -6,8 +6,8 @@ import { graphql } from "gatsby";
 import { Tabbordion, TabPanel, TabLabel, TabContent } from 'react-tabbordion';
 import "react-tabbordion/demo/accordion.css";
 
-import { Collapse, Button, CardBody, Card } from 'reactstrap';
-
+import { Collapse } from 'reactstrap';
+// , Button, CardBody, Card
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import Video from "../components/video";
@@ -22,11 +22,11 @@ const blockElements = {
 
 const HomeOwnerPage = ({data}) => {
     const [collapse, setCollapse] = useState(false);
-    const [status, setStatus] = useState('Closed');
-    const onEntering = () => setStatus('Opening...');
-    const onEntered = () => setStatus('Opened');
-    const onExiting = () => setStatus('Closing...');
-    const onExited = () => setStatus('Closed');
+    // const [status, setStatus] = useState('Closed');
+    // const onEntering = () => setStatus('Opening...');
+    // const onEntered = () => setStatus('Opened');
+    // const onExiting = () => setStatus('Closing...');
+    // const onExited = () => setStatus('Closed');
     const toggle = (e) => {
         e.preventDefault();
         setCollapse(!collapse)
@@ -102,11 +102,11 @@ const HomeOwnerPage = ({data}) => {
         
         <section className="section-gap container">
             {/* <div dangerouslySetInnerHTML={{ __html: data.wpgraphql.page.home_owner.makePaymentWay}} /> */}
-            <h2 class="mb-30 text-center"><span>Six Ways to Make a Payment</span></h2>
+            <h2 className="mb-30 text-center"><span>Six Ways to Make a Payment</span></h2>
             <Tabbordion blockElements={blockElements} animateContent={'height'} mode={'toggle'} className="accordion loan_offer mx-4 mx-lg-5" name="accordion">
                 {data.wpgraphql.page.accordion.tabpanel.map((item, i) =>
                     (
-                        <TabPanel>
+                        <TabPanel key={item.fieldGroupName + i}>
                             <TabLabel className="w-100 text-left btn btn-link">{item.tablabel}</TabLabel>
                             <TabContent>
                                 <div dangerouslySetInnerHTML={{ __html: item.tabcontent}} />
@@ -125,10 +125,10 @@ const HomeOwnerPage = ({data}) => {
             </div>
             <Collapse
                 isOpen={collapse}
-                onEntering={onEntering}
-                onEntered={onEntered}
-                onExiting={onExiting}
-                onExited={onExited}
+                // onEntering={onEntering}
+                // onEntered={onEntered}
+                // onExiting={onExiting}
+                // onExited={onExited}
             >
                 
                 <form>

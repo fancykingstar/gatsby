@@ -7,7 +7,6 @@ import Layout from "../components/layout"
 import SEO from "../components/seo"
 
 const PartnerPortal = ({data}) => {
-  var servL = data.wpgraphql.page.partnerportal.portalservice.servicegroup.length;
   return (  
   <Layout>
     <SEO title={data.wpgraphql.page.title} description={data.wpgraphql.page.excerpt}/>

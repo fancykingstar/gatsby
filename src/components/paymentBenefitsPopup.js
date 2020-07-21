@@ -1,8 +1,7 @@
-import React, {useState} from 'react';
+import React from 'react';
 import { Modal } from 'react-bootstrap';
 
 const Paymentbenefitoption = (props) => {
-	const [show, setShow] = useState(true);
 	if (props.popData.length === 0) {
 		return (
 			<div className="modal fade show" style={{ display: props.visiblity }}></div>

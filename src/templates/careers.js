@@ -1,8 +1,7 @@
 import React, {useRef} from "react";
 // import lifecycle from 'react-pure-lifecycle';
 import Helmet from "react-helmet"
-import { withPrefix, Link } from "gatsby"
-
+import { withPrefix } from "gatsby"
 
 import { graphql } from "gatsby";
 import Layout from "../components/layout"
