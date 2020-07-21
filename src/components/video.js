@@ -1,5 +1,5 @@
 import React from "react"
-import { any } from "prop-types";
+// import { any } from "prop-types";
 
 const Video = ({ videoSrcURL, videoTitle, videoWidth, videoHeight, ...props }) => (
   // <div className="video">

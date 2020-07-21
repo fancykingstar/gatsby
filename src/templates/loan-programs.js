@@ -42,6 +42,31 @@ const LoanProgramPage = ({ data }) => {
 		console.log('hidebenefitpopup');
 		setVisible(false);
 	}
+	
+	const popup = () => {
+		switch(popType){
+			case "payment_options":
+				return <Paymentbenefitoption visiblity={visible} handleClose={hidebenefitpopup} popData={popData} />;
+				break;
+			case "app_method":
+				return <AppMethod visiblity={visible} handleClose={hidebenefitpopup} popData={popData} />;
+				break;
+			case "partner_portal":
+				return <PartnerPortal visiblity={visible} handleClose={hidebenefitpopup} popData={popData} />;
+				break;
+			case "dealer_resource":
+				return <DealerResource visiblity={visible} handleClose={hidebenefitpopup} popData={popData} />;
+				break;
+			case "training":
+				return <Training visiblity={visible} handleClose={hidebenefitpopup} popData={popData} />;
+				// return <DealerResource visiblity={visible} handleClose={hidebenefitpopup} popData={popData} />;
+				break;
+			default:
+				return "";
+				break;
+		}
+	}
+	
 	return (
 		<Layout>
 			<SEO title={content.title} description={content.excerpt} />
@@ -96,12 +121,12 @@ const LoanProgramPage = ({ data }) => {
 							{content.loan_program.paymentOptionsBenefits.paymentOptions.map((item, i) =>
 								(
 									<li key={item.fieldGroupName + i}>
-										<a onClick={showbenefitpopup(item, 'payment_options')} href="#" data-target="#paymentModal" data-title={item.paymentOptionTitle} data-content="Advertising payment options is a great way to set you apart from your competitors and produce more leads for your business.">
+										<Link onClick={showbenefitpopup(item, 'payment_options')} to={'#'} data-target="#paymentModal" data-title={item.paymentOptionTitle} data-content="Advertising payment options is a great way to set you apart from your competitors and produce more leads for your business.">
 											<div className="box-circle icon bg-blue content-center">
 												<img src={item.paymentOptionIcon.sourceUrl} alt={item.fieldGroupName} />
 											</div>
 											<p dangerouslySetInnerHTML={{ __html: item.paymentOptionTitle }} />
-										</a>
+										</Link>
 									</li>
 								)
 							)}
@@ -315,9 +340,9 @@ const LoanProgramPage = ({ data }) => {
 						<h2 className="text-center">{content.loan_program.loanProvider.sectionHeading}</h2>
 						<p className="text-center py-2">{content.loan_program.loanProvider.sectionBrif}</p>
 						<div className="d-flex justify-content-center howselectloan">
-							<a href="#">View / Read</a>
+							<Link to={'#'}>View / Read</Link>
 							<div className="display-inline-block box-20" dangerouslySetInnerHTML={{__html: content.loan_program.loanProvider.yearBlock}} />    
-							<a href="#">Download</a>
+							<Link to={'#'}>Download</Link>
 						</div>
 					</div>
 
@@ -377,9 +402,9 @@ const LoanProgramPage = ({ data }) => {
 					<h2 className="text-center">{content.loan_program.selectPartner.sectionHeading}</h2>
 					<p className="text-center py-2">{content.loan_program.selectPartner.sectionBrif}</p>
 					<div className="d-flex justify-content-center howselectloan">
-						<a href="#">View / Read</a>
+						<Link to={'#'}>View / Read</Link>
 						<div className="display-inline-block box-20" dangerouslySetInnerHTML={{__html: content.loan_program.selectPartner.yearBlock}} />    
-						<a href="#">Download</a>
+						<Link to={'#'}>Download</Link>
 					</div>
 				</div>
 			</div>
@@ -405,32 +430,10 @@ const LoanProgramPage = ({ data }) => {
 					</Carousel>
 				</>
 			)}
-
-			{(
-				() => {
-					switch(popType){
-						case "payment_options":
-							return <Paymentbenefitoption visiblity={visible} handleClose={hidebenefitpopup} popData={popData} />;
-							break;
-						case "app_method":
-							return <AppMethod visiblity={visible} handleClose={hidebenefitpopup} popData={popData} />;
-							break;
-						case "partner_portal":
-							return <PartnerPortal visiblity={visible} handleClose={hidebenefitpopup} popData={popData} />;
-							break;
-						case "dealer_resource":
-							return <DealerResource visiblity={visible} handleClose={hidebenefitpopup} popData={popData} />;
-							break;
-						case "training":
-							return <Training visiblity={visible} handleClose={hidebenefitpopup} popData={popData} />;
-							// return <DealerResource visiblity={visible} handleClose={hidebenefitpopup} popData={popData} />;
-							break;
-						default:
-							return "";
-							break;
-					}
-				}
-			)()}
+			
+			{
+				popup()
+			}
 		</Layout>
 
 	)

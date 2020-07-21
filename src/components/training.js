@@ -1,21 +1,20 @@
-import React, { useState } from 'react';
-import { Modal, Button } from 'react-bootstrap';
+import React from 'react';
+import { Modal } from 'react-bootstrap';
 
 const Training = (props) => {
-	const [show, setShow] = useState(true);
 	if (props.popData.length !== 0) {
 		return (
 			<Modal show={props.visiblity} animation={true} centered={true} size="full" id="appPopup">
 				<div class="d-flex flex-column align-item-center justify-content-center">
 					<div class="heading_bg">
 						<button type="button" class="close text-white" data-dismiss="modal" aria-label="Close" onClick={props.handleClose}>
-							<img src="http://devgb.enerbank.com/wp-content/themes/enerbank/img/closed_icon.svg" width="25"></img>
+							<img src="http://devgb.enerbank.com/wp-content/themes/enerbank/img/closed_icon.svg" width="25" alt="close icon" />
 						</button>
 						<h3>Training</h3>
 					</div>
 					<div class="modal_content">
 						<div class="modal_banner" style={{ background: "url('http://devgb.enerbank.com/wp-content/themes/enerbank/img/training_hero.jpg') no-repeat" }}>
-							<span><img src="http://devgb.enerbank.com/wp-content/themes/enerbank/img/svg/Training-Wht.svg"/></span>
+							<span><img src="http://devgb.enerbank.com/wp-content/themes/enerbank/img/svg/Training-Wht.svg" alt="training wht" /></span>
 						</div>
 
 						<div class="p-8 py-sm-5">

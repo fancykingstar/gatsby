@@ -1,15 +1,15 @@
-import React, { useState } from 'react';
-import { Modal, Button } from 'react-bootstrap';
+import React from 'react';
+import { Modal } from 'react-bootstrap';
+import { Link } from "gatsby";
 
 const DealerResource = (props) => {
-	const [show, setShow] = useState(true);
 	if (props.popData.length !== 0) {
 		return (
 			<Modal show={props.visiblity} animation={true} centered={true} size="full" id="dealerPopup">
 				<div className="d-flex flex-column align-item-center justify-content-center">
 					<div className="heading_bg">
 						<button type="button" className="close text-white" data-dismiss="modal" aria-label="Close" onClick={props.handleClose}>
-							<img src="http://devgb.enerbank.com/wp-content/themes/enerbank/img/closed_icon.svg" width="25" />
+							<img src="http://devgb.enerbank.com/wp-content/themes/enerbank/img/closed_icon.svg" width="25" alt="close icon" />
 						</button>
 						<h3>Dealer Resource Center</h3>
 					</div>
@@ -23,26 +23,26 @@ const DealerResource = (props) => {
 							<div className="row">
 								<div className="col-lg-4 d-flex flex-column mb-md-5 mb-lg-0">
 									<div className="border dealerResource rounded">
-										<img src="http://devgb.enerbank.com/wp-content/themes/enerbank/img/mobile-app.svg" />
+										<img src="http://devgb.enerbank.com/wp-content/themes/enerbank/img/mobile-app.svg" alt="mobile application" />
 										<div className="text-blue text-center">Education</div>
 										<p>Grab on-demand courses, tips ‘n’ tricks, and role-specific training to nail those best practices and strategies that’ll do wonders for your bottom line.</p>
-										<a href="#">Learn More</a>
+										<Link to={'#'}>Learn More</Link>
 									</div>
 								</div>
 								<div className="col-lg-4 d-flex flex-column mb-md-5 mb-lg-0">
 									<div className="border dealerResource rounded">
-										<img src="http://devgb.enerbank.com/wp-content/themes/enerbank/img/tools-icon.svg"/>
+										<img src="http://devgb.enerbank.com/wp-content/themes/enerbank/img/tools-icon.svg" alt="tools icon" />
 										<div className="text-blue text-center">Tools</div>
 										<p>Find helpful reference guides, eligible improvement lists, business growth calculators, and other stuff you may need as you offer payment options that boost your business.</p>
-										<a href="#">Learn More</a>  
+										<Link to={'#'}>Learn More</Link>
 									</div>
 								</div>
 								<div className="col-lg-4 d-flex flex-column">
 									<div className="border dealerResource rounded">
-										<img src="http://devgb.enerbank.com/wp-content/themes/enerbank/img/education-icon.svg"/>
+										<img src="http://devgb.enerbank.com/wp-content/themes/enerbank/img/education-icon.svg" alt="education icon" />
 										<div className="text-blue text-center">Marketing</div>
 										<p>Free, professionally-designed marketing templates for creating your own custom-branded customerfacing messaging with just a few clicks — including flyers, emails, showroom ads, and more!</p>
-										<a href="#">Learn More</a>
+										<Link to={'#'}>Learn More</Link>
 									</div>
 								</div>
 							</div>

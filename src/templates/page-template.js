@@ -51,12 +51,12 @@ const SecondPage = ({data}) => {
                       { data.wpgraphql.page.loan_program.paymentOptionsBenefits.paymentOptions.map((item, i) => 
                           (
                             <li key={item.fieldGroupName+i}>
-                              <a href="#" data-toggle="modal" data-target="#paymentModal" data-title="Improve Cash Flow" data-content="Advertising payment options is a great way to set you apart from your competitors and produce more leads for your business.">
+                              <Link to={'#'} data-toggle="modal" data-target="#paymentModal" data-title="Improve Cash Flow" data-content="Advertising payment options is a great way to set you apart from your competitors and produce more leads for your business.">
                                 <div className="box-circle icon bg-blue content-center">
                                   <img src={ item.paymentOptionIcon.sourceUrl } alt={item.fieldGroupName} />
                                 </div>
                                 <p dangerouslySetInnerHTML={{ __html: item.paymentOptionTitle}} />
-                              </a>
+                              </Link>
                             </li>
                           )
                       )}                  
@@ -145,7 +145,7 @@ const SecondPage = ({data}) => {
 
         {data.wpgraphql.page.loan_program.length && (
           <>
-            <div className="m-4 m-lg-5">We offer loans for a ton of different home improvement project types. Don’t see your type here? <a href="#">Give us a call</a>.</div>
+            <div className="m-4 m-lg-5">We offer loans for a ton of different home improvement project types. Don’t see your type here? <Link tp={'#'}>Give us a call</Link>.</div>
             <div className="accordion loan_offer mx-4 mx-lg-5" id="accordionExample">      
                 <button className="d-block w-100 text-left btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">Interior Remodeling</button>                    
                 <div id="collapseOne" className="collapse" aria-labelledby="headingOne" data-parent="#accordionExample">

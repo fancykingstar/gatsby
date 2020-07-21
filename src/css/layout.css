@@ -231,6 +231,7 @@ h1, h2, h3, h4, h5, h6 { line-height: 1.5em }
 .genric-btn.disable { color: #222, 0.3; background: #f9f9ff; border: 1px solid transparent; cursor: not-allowed }
 .generic-blockquote { padding: 30px 50px 30px 30px; background: #f9f9ff; border-left: 2px solid #29A9E0 }
 .btn-primary { color: #fff;  background-color: #0077C8; border-color: #0077C8;}
+.btn-primary:hover{ background: #2aa9e0; border-color: #2aa9e0; }
 
 /* custom css */
 .header-top { font-size: 12px; padding: 8px; background-color: #fff }
@@ -693,7 +694,8 @@ body.mobile-nav-active #mobile-nav-toggle { color: #fff }
 .modal .modal-content { height: 100%; border: 0; border-radius: 0; }
 .heading_bg{ background: #0077C8; padding: 30px 30px; text-align: center;}
 .heading_bg h3{ color: #fff !important; text-align: center; margin: 0px; padding: 0px; line-height: normal;}
-.modal_content{ background: #fff;}
+.modal-dialog{ height: 100%; }
+.modal_content{ background: #fff; position: relative; height: 550px; overflow-y: auto; }
 .modal_content p{line-height: 24px; text-align: left;}
   
   /* appPopup modal css */
@@ -764,3 +766,5 @@ body.mobile-nav-active #mobile-nav-toggle { color: #fff }
   .hrbr-pagination-sm > li.active > a{ background: #0077C8 !important; font-weight: 600 !important; }
   .hrbr-wrapper-pagination > li > a{ color: #29A9E0 !important; }
   .carousel .slider-wrapper.axis-horizontal .slider .slide{ list-style: none; }
+  /* calculator icon */
+  .calculator{ width:26px; height:26px; display: inline-block; }

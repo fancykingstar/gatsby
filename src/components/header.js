@@ -3,6 +3,7 @@ import PropTypes from "prop-types"
 import React, { useState } from "react"
 import Menu from './menu'
 import calc_icon from '../images/calculator_icon.svg'
+import calc_icon_hover from '../images/calculator_icon_light.svg'
 import close_icon from '../images/close_icon.svg'
 
 const Header = ({ siteTitle }) => {
@@ -42,7 +43,15 @@ const Header = ({ siteTitle }) => {
                     <li><Link to="/">View / Sign Loan Docs</Link>|</li>
                     <li><Link to="/">PartnerPortal</Link>|</li>
                     <li><Link to="/">Dealer Resource Center</Link></li>
-                    <li><Link to="/" className="mr-0 pr-0"><i className="fa"><img src={calc_icon} alt="Calculator"/></i></Link></li>
+                    <li><Link to="/" className="mx-0 px-0 calculator" style={{background: "url(" + calc_icon + ")" }} /></li>
+                    <style dangerouslySetInnerHTML={{
+                        __html: [
+                          '.calculator:hover {',
+                            'background:', "url(" + calc_icon_hover + ") !important",
+                          '}'
+                        ].join('\n')
+                      }}>                        
+                    </style>
                   </ul>
                 </div>
             </div>
