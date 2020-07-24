@@ -691,7 +691,8 @@ body.mobile-nav-active #mobile-nav-toggle { color: #fff }
 /* Full width modal */
 .modal { padding: 0 !important; }
 .modal .modal-full { width: 80%; max-width: none; margin: 0 auto; }
-.modal .modal-content { height: 100%; border: 0; border-radius: 0; }
+.modal .modal-content { border: 0; border-radius: 0; }
+.modal-full .modal-content{ height: 100%; }
 .heading_bg{ background: #0077C8; padding: 30px 30px; text-align: center;}
 .heading_bg h3{ color: #fff !important; text-align: center; margin: 0px; padding: 0px; line-height: normal;}
 .modal-dialog{ height: 100%; }
