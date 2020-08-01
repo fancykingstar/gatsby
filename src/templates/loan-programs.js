@@ -16,6 +16,10 @@ import AppMethod from "../components/appMethod"
 import PartnerPortal from "../components/partnerPortal"
 import DealerResource from "../components/dealerResource"
 import Training from "../components/training"
+import Support from "../components/support"
+import States from "../components/states"
+import BenefitsLoanProgram from "../components/benefitsLoanProgram"
+import GrowthCalc from "../components/growthCalc"
 
 // accordian
 const blockElements = {
@@ -39,7 +43,7 @@ const LoanProgramPage = ({ data }) => {
 		
 	}
 	const hidebenefitpopup = () => {
-		console.log('hidebenefitpopup');
+		// console.log('hidebenefitpopup');
 		setVisible(false);
 	}
 	
@@ -59,7 +63,18 @@ const LoanProgramPage = ({ data }) => {
 				break;
 			case "training":
 				return <Training visiblity={visible} handleClose={hidebenefitpopup} popData={popData} />;
-				// return <DealerResource visiblity={visible} handleClose={hidebenefitpopup} popData={popData} />;
+				break;
+			case "states":
+				return <States visiblity={visible} handleClose={hidebenefitpopup} popData={popData} />;
+				break;
+			case "support":
+				return <Support visiblity={visible} handleClose={hidebenefitpopup} popData={popData} />;
+				break;
+			case "benefitsLoanProgram":
+				return <BenefitsLoanProgram visiblity={visible} handleClose={hidebenefitpopup} popData={popData} />;
+				break;
+			case "growthCalc":
+				return <GrowthCalc visiblity={visible} handleClose={hidebenefitpopup} popData={popData} />;
 				break;
 			default:
 				return "";
@@ -81,7 +96,7 @@ const LoanProgramPage = ({ data }) => {
 							{content.top_banner.banner.bannerLinks.map((item, i) =>
 								(
 									<div className="col-md-4" key={item.fieldGroupName + i}>
-										<div className="header-btn mr-3 ml-3"><Link to="#" dangerouslySetInnerHTML={{ __html: item.links.title }} /></div>
+										<div className="header-btn mr-3 ml-3"><Link to="/" dangerouslySetInnerHTML={{ __html: item.links.title }} /></div>
 									</div>
 								)
 							)}
@@ -121,7 +136,7 @@ const LoanProgramPage = ({ data }) => {
 							{content.loan_program.paymentOptionsBenefits.paymentOptions.map((item, i) =>
 								(
 									<li key={item.fieldGroupName + i}>
-										<Link onClick={showbenefitpopup(item, 'payment_options')} to={'#'} data-target="#paymentModal" data-title={item.paymentOptionTitle} data-content="Advertising payment options is a great way to set you apart from your competitors and produce more leads for your business.">
+										<Link onClick={showbenefitpopup(item, 'payment_options')} to={'/'} data-title={item.paymentOptionTitle} data-content="Advertising payment options is a great way to set you apart from your competitors and produce more leads for your business.">
 											<div className="box-circle icon bg-blue content-center">
 												<img src={item.paymentOptionIcon.sourceUrl} alt={item.fieldGroupName} />
 											</div>
@@ -139,10 +154,12 @@ const LoanProgramPage = ({ data }) => {
 						{content.loan_program.offeringPaymentOption.map((item, i) =>
 							(
 								<div key={item.fieldGroupName + i} className="box-shadow bg-white rounded text-center payment-option-box col-xs-12 col-md p-0 mb-3 mx-sm-3 mx-lg-5">
-									<div className="bg-blue p-5 rounded-top">
-										<img className="img-fluid" src={item.offeringPaymentIcon.sourceUrl} alt="News" />
-									</div>
-									<div className="p-4" dangerouslySetInnerHTML={{ __html: item.offeringPaymentBrif }} />
+									<Link to={'/'} onClick={showbenefitpopup(item, 'growthCalc')}>
+										<div className="bg-blue p-5 rounded-top">
+											<img className="img-fluid" src={item.offeringPaymentIcon.sourceUrl} alt="News" />
+										</div>
+										<div className="p-4" dangerouslySetInnerHTML={{ __html: item.offeringPaymentBrif }} />
+									</Link>
 								</div>
 							)
 						)}
@@ -182,7 +199,7 @@ const LoanProgramPage = ({ data }) => {
 														</div>
 														<div className="card-body">
 															<div dangerouslySetInnerHTML={{ __html: item.programMethodBrif }} />
-															<Link to={'#'} className="btn mt-3" onClick={showbenefitpopup(item, 'app_method')}>{item.programMethodLink.title}</Link>
+															<Link to={'/'} className="btn mt-3" onClick={showbenefitpopup(item, 'app_method')}>{item.programMethodLink.title}</Link>
 														</div>
 													</div>
 												</div>
@@ -203,7 +220,7 @@ const LoanProgramPage = ({ data }) => {
 														</div>
 														<div className="card-body">
 															<div dangerouslySetInnerHTML={{ __html: item.programMethodBrif }} />
-															<Link to={'#'} className="btn mt-3" onClick={showbenefitpopup(item, 'partner_portal')}>{item.programMethodLink.title}</Link>
+															<Link to={'/'} className="btn mt-3" onClick={showbenefitpopup(item, 'partner_portal')}>{item.programMethodLink.title}</Link>
 														</div>
 													</div>
 												</div>
@@ -224,7 +241,7 @@ const LoanProgramPage = ({ data }) => {
 														</div>
 														<div className="card-body">
 															<div dangerouslySetInnerHTML={{ __html: item.programMethodBrif }} />
-															<Link to={'#'} className="btn mt-3" onClick={showbenefitpopup(item, 'dealer_resource')}>{item.programMethodLink.title}</Link>
+															<Link to={'/'} className="btn mt-3" onClick={showbenefitpopup(item, 'dealer_resource')}>{item.programMethodLink.title}</Link>
 														</div>
 													</div>
 												</div>
@@ -286,7 +303,7 @@ const LoanProgramPage = ({ data }) => {
 													<img src={item.integrationOptionBgImage.sourceUrl} className="card-img-top" alt="Training" />
 												</div>												
 												<div className="p-4" dangerouslySetInnerHTML={{ __html: item.integrationOptionBrif }} />
-												<Link to={'#'} onClick={showbenefitpopup(item, 'training')}>Learn More</Link>
+												<Link to={'/'} onClick={showbenefitpopup(item, 'training')}>Learn More</Link>
 											</div>
 										)
 									}
@@ -297,7 +314,7 @@ const LoanProgramPage = ({ data }) => {
 				</>
 			)}
 
-{content.loan_program && (
+			{content.loan_program && (
 				<div className="container">
 					<div className="m-4 m-lg-5">We offer loans for a ton of different home improvement project types. Don’t see your type here? <Link to="#">Give us a call</Link>.</div>
 
@@ -314,7 +331,6 @@ const LoanProgramPage = ({ data }) => {
                         )}
                     </Tabbordion>
 
-
 					<div className="row m-4 m-lg-5">
 						<div className="col-md-12 text-justify">
 							<p>We are working to become the most sought after lender in the home improvement industry. We choose to specialize in home improvement payment options so we can offer unparalleled service and support, comprehensive payment options designed with consumers in mind, and tools that will help your business succeed. </p>
@@ -330,7 +346,8 @@ const LoanProgramPage = ({ data }) => {
 									</i>
 									<h4>{item.serviceHeading}</h4>
 									<p>{item.serviceText}</p>
-									<Link to="" data-toggle="modal" data-target="#50-state" className="btn btn-primary f-bold">Learn More</Link>
+									<Link to={'/'} onClick={showbenefitpopup(item, item.popSlug)} className="btn btn-primary f-bold">Learn More</Link>
+									{/*  onClick={showbenefitpopup(item, 'app_method')} */}
 								</div>
 							</div>
 						))}
@@ -340,9 +357,9 @@ const LoanProgramPage = ({ data }) => {
 						<h2 className="text-center">{content.loan_program.loanProvider.sectionHeading}</h2>
 						<p className="text-center py-2">{content.loan_program.loanProvider.sectionBrif}</p>
 						<div className="d-flex justify-content-center howselectloan">
-							<Link to={'#'}>View / Read</Link>
+							<Link to={'/'}>View / Read</Link>
 							<div className="display-inline-block box-20" dangerouslySetInnerHTML={{__html: content.loan_program.loanProvider.yearBlock}} />    
-							<Link to={'#'}>Download</Link>
+							<Link to={'/'}>Download</Link>
 						</div>
 					</div>
 
@@ -402,9 +419,9 @@ const LoanProgramPage = ({ data }) => {
 					<h2 className="text-center">{content.loan_program.selectPartner.sectionHeading}</h2>
 					<p className="text-center py-2">{content.loan_program.selectPartner.sectionBrif}</p>
 					<div className="d-flex justify-content-center howselectloan">
-						<Link to={'#'}>View / Read</Link>
+						<Link to={'/'}>View / Read</Link>
 						<div className="display-inline-block box-20" dangerouslySetInnerHTML={{__html: content.loan_program.selectPartner.yearBlock}} />    
-						<Link to={'#'}>Download</Link>
+						<Link to={'/'}>Download</Link>
 					</div>
 				</div>
 			</div>
@@ -539,7 +556,8 @@ export const query = graphql`
           loanServices {
             fieldGroupName
             serviceHeading
-            serviceText
+			serviceText
+			popSlug
             serviceLink {
                 target
                 title
