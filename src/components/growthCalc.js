@@ -36,81 +36,48 @@ const GrowthCalc = (props) => {
 	}
 
 	var calcValue = (element) => {
-		const inputValue = document.getElementsByName(element)[0].value;
-		console.log(element)
+		const inputValue = document.getElementsByName(element)[0].value !== '' ? document.getElementsByName(element)[0].value : '0'
+		console.log(element, inputValue)
 		switch(element){
 			case "monthlyLeadsInput":
-				if(inputValue === '' || isNaN(inputValue)){
-					setState({
-						...state,
-						monthlyLeadsInput: '0',
-						monthlyLeadsResult: '0',
-						// annualRevenueOld: '0',
-						// annualRevenueGrow: '0',
-					})
-				}else{
-					setState({
-						...state,
-						monthlyLeadsInput: inputValue,
-						monthlyLeadsResult: parseFloat(inputValue) + Math.round(inputValue * parseFloat(state.monthlyLeadsIncrement) / 100 ),
-						annualRevenueOld: '$ ' + (parseFloat(inputValue) + parseFloat(state.closeRateInput) + parseFloat(state.projectSizeInput)),
-						annualRevenueGrow: '$ ' + (parseFloat(inputValue) + Math.round(inputValue * parseFloat(state.monthlyLeadsIncrement) / 100 ) + parseFloat(state.closeRateResult) + parseFloat(state.projectSizeResult)),
-					})
-				}
+				setState({
+					...state,
+					monthlyLeadsInput: inputValue,
+					monthlyLeadsResult: parseFloat(inputValue) + Math.round(inputValue * parseFloat(state.monthlyLeadsIncrement) / 100 ),
+					annualRevenueOld: '$ ' + (parseFloat(inputValue) + parseFloat(state.closeRateInput) + parseFloat(state.projectSizeInput)),
+					annualRevenueGrow: '$ ' + (parseFloat(inputValue) + Math.round(inputValue * parseFloat(state.monthlyLeadsIncrement) / 100 ) + parseFloat(state.closeRateResult) + parseFloat(state.projectSizeResult)),
+				})
 				break;
 			case "closeRateInput":
-				if(inputValue === '' || isNaN(inputValue)){
-					setState({
-						...state,
-						closeRateInput: '0',
-						closeRateResult: '0',
-						// annualRevenueOld: '0',
-						// annualRevenueGrow: '0',
-					})
-				}else{
-					setState({
-						...state,
-						closeRateInput: inputValue + '%',
-						closeRateResult: parseFloat(inputValue) + Math.round(inputValue * parseFloat(state.closeRateIncrement) / 100 ),
-						annualRevenueOld: '$ ' + (parseFloat(state.monthlyLeadsInput) + parseFloat(inputValue) + parseFloat(state.projectSizeInput)),
-						annualRevenueGrow: '$ ' + (parseFloat(state.monthlyLeadsResult) + parseFloat(inputValue) + Math.round(inputValue * parseFloat(state.closeRateIncrement) / 100 ) + parseFloat(state.projectSizeResult)),
-					})
-				}
+				setState({
+					...state,
+					closeRateInput: inputValue + '%',
+					closeRateResult: parseFloat(inputValue) + Math.round(inputValue * parseFloat(state.closeRateIncrement) / 100 ),
+					annualRevenueOld: '$ ' + (parseFloat(state.monthlyLeadsInput) + parseFloat(inputValue) + parseFloat(state.projectSizeInput)),
+					annualRevenueGrow: '$ ' + (parseFloat(state.monthlyLeadsResult) + parseFloat(inputValue) + Math.round(inputValue * parseFloat(state.closeRateIncrement) / 100 ) + parseFloat(state.projectSizeResult)),
+				})
 				break;
 			
 			case "projectSizeInput":
-				if(inputValue === '' || isNaN(inputValue)){
-					setState({
-						...state,
-						projectSizeInput: '0',
-						projectSizeResult: '0',
-						// annualRevenueOld: '0',
-						// annualRevenueGrow: '0',
-					})
-				}else{
-					setState({
-						...state,
-						projectSizeInput: '$' + inputValue,
-						projectSizeResult: parseFloat(inputValue) + Math.round(inputValue * parseFloat(state.projectSizeIncrement) / 100 ),
-						annualRevenueOld: '$' + (parseFloat(state.monthlyLeadsInput) + parseFloat(state.closeRateInput) + parseFloat(inputValue)),
-						annualRevenueGrow: '$' + (parseFloat(state.monthlyLeadsResult) + parseFloat(state.closeRateResult) + parseFloat(inputValue) + Math.round(inputValue * parseFloat(state.projectSizeIncrement) / 100 )),
-					})
-				}
+				setState({
+					...state,
+					projectSizeInput: '$' + inputValue,
+					projectSizeResult: parseFloat(inputValue) + Math.round(inputValue * parseFloat(state.projectSizeIncrement) / 100 ),
+					annualRevenueOld: '$' + (parseFloat(state.monthlyLeadsInput) + parseFloat(state.closeRateInput) + parseFloat(inputValue)),
+					annualRevenueGrow: '$' + (parseFloat(state.monthlyLeadsResult) + parseFloat(state.closeRateResult) + parseFloat(inputValue) + Math.round(inputValue * parseFloat(state.projectSizeIncrement) / 100 )),
+				})
 				break;
 			default:
 				break;
-		}
-		
-
-		
+		}		
 
 		// calcResult();
 	}
 
 	const handleChangeInput = (evt) =>{
+		validDigit(evt)
 		const eleName = evt.target.name;
 		calcValue(eleName);
-		console.log(evt.target.id)
 
 		// switch(evt.target.id) {
 		// 	case "close-rate":
@@ -137,7 +104,6 @@ const GrowthCalc = (props) => {
 	}
 
 	const handleValidValue = (evt) => {
-		console.log(evt.target.id)
 		switch(evt.target.id) {
 			case "close-rate":
 				setState({
@@ -162,14 +128,12 @@ const GrowthCalc = (props) => {
 		}
 	}
 
-	var getPercentage = (evt) => {
-		
+	var getPercentage = (evt) => {		
 		const eleName = evt.target.name;
 		const eleId = eleName.split("Increment")[0];
 		const eleInput = eleId + 'Input';
 
 		calcValue(eleInput);
-		console.log(eleInput)
 		// let percentage
 		var percentage = 1;
 		// get increament value 
@@ -182,12 +146,12 @@ const GrowthCalc = (props) => {
 
 		
 
-		// add class selected in checkbox
-		evt.target.classList.add('selected');
-		// get total percentage value
-		percentage = percentage + percentage * parseFloat(percentValue)/100;
+		// // add class selected in checkbox
+		// evt.target.classList.add('selected');
+		// // get total percentage value
+		// percentage = percentage + percentage * parseFloat(percentValue)/100;
 		
-		return percentage
+		// return percentage
 	}
 
 	const calcResult = (evt) => {
@@ -228,7 +192,7 @@ const GrowthCalc = (props) => {
 									<div className="col-lg-4 ">
 										<div className=""><label>Monthly Leads</label></div>
 										<div className="d-flex align-items-center">
-											<div className=""><input type="text" name="monthlyLeadsInput" className="border-radius5 calc-input" id="monthly-leads" placeholder="0" onKeyUp={ handleChangeInput } /></div>
+											<div className=""><input type="text" name="monthlyLeadsInput" className="border-radius5 calc-input" id="monthly-leads" placeholder="0" onChange={ handleChangeInput } /></div>
 											<div className="pl-5"><span className="font-b">x</span></div>
 										</div>							
 									</div>
@@ -265,7 +229,7 @@ const GrowthCalc = (props) => {
 									<div className="col-lg-4 ptb-2">
 										<div><label>Close Rate</label></div>
 										<div className="d-flex align-items-center">                        	
-											<div className=""><input type="text" name="closeRateInput" className="border-radius5 calc-input" id="close-rate" placeholder="0%" onKeyUp={ handleChangeInput } onBlur={handleValidValue} /></div>
+											<div className=""><input type="text" name="closeRateInput" className="border-radius5 calc-input" id="close-rate" placeholder="0%" onChange={ handleChangeInput } onBlur={handleValidValue} /></div>
 											<div className="pl-5"><span className="font-b">x</span></div>
 										</div>							
 									</div>
@@ -303,7 +267,7 @@ const GrowthCalc = (props) => {
 									<div className="col-lg-4 ptb-2">
 										<div className=""><label>Average Project Size</label></div>
 										<div className="d-flex align-items-center">                        	
-											<div className=""><input type="text" name="projectSizeInput" className="border-radius5 calc-input" id="project-size" placeholder="$0" onKeyUp={ handleChangeInput } onBlur={handleValidValue} /></div>
+											<div className=""><input type="text" name="projectSizeInput" className="border-radius5 calc-input" id="project-size" placeholder="$0" onChange={ handleChangeInput } onBlur={handleValidValue} /></div>
 											<div className="pl-5"><span className="font-b">x</span></div>
 										</div>							
 									</div>
