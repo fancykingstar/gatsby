@@ -21,7 +21,7 @@ const Header = ({ siteTitle }) => {
         {accLogin && (
           <div className="info-panel">
               <div id="loginBox"> 
-                  <div id="closeButton" onClick={closeLoginForm}><img src="https://enerbank.bwpcommunications.com/wp-content/themes/enerbank/img/close_icon.svg" alt="close icon" /></div>
+                  <div id="closeButton" onClick={closeLoginForm}><img src={close_icon} alt="close icon" /></div>
                     <form id="loginForm">
                         <h3>Account Log In</h3>
                         <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonumy nibh euismod tinci ut laoreet dolore. Sed et pharetra dolor, et nibh euismod vehicula sem. </p>
