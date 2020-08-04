@@ -13,7 +13,9 @@ const AppMethod = (props) => {
 						<h3>Application Methods</h3>
 					</div>
 					<div className="modal_content">
-						<div className="modal_banner"></div>
+						<div className="modal_banner">
+							<span><img src="http://devgb.enerbank.com/wp-content/themes/enerbank/img/svg/app-method-icon.svg" alt="application method" /></span>
+						</div>
 						<div className="p-5 py-sm-5">
 							<div className="small line-height-normal" >
 								<h4 className="mb-5 text-center">Applying for loans is fast and convenient using our paperless methods:</h4>

@@ -34,8 +34,7 @@ const Training = (props) => {
 		)
 	} else {
 		return (
-			<div className="modal fade show" style={{ display: props.visiblity }}>&nbsp;
-			</div>
+			<div className="modal fade show" style={{ display: props.visiblity }}>&nbsp;</div>
 		)
 	} 
 }
