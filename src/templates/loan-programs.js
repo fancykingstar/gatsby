@@ -1,16 +1,14 @@
 import React, { useState } from "react";
+import { graphql, Link } from "gatsby";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import { Carousel } from 'react-responsive-carousel';
 import { Tabbordion, TabPanel, TabLabel, TabContent } from 'react-tabbordion';
 import "react-tabbordion/demo/accordion.css";
 
-import Video from "../components/video";
-
-import { Link } from "gatsby";
-import { graphql } from "gatsby";
-
 import Layout from "../components/layout"
 import SEO from "../components/seo"
+import Video from "../components/video";
+// popup components
 import Paymentbenefitoption from "../components/paymentBenefitsPopup"
 import AppMethod from "../components/appMethod"
 import PartnerPortal from "../components/partnerPortal"

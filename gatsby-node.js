@@ -1,69 +1,9 @@
 const path = require(`path`);
 
 exports.createPages = async ({ graphql, actions }) => {
-  const { createPage } = actions;
+  const { createPage } = actions;  
 
-  /**
-   * Create Blog Posts
-   */
-  const postResults = await graphql(`
-    query GET_POSTS {
-        wpgraphql {
-            posts(first: 1000, after: null) {
-                edges {
-                    node {
-                        databaseId
-                        slug
-                        title
-                        date
-                        content(format: RENDERED)
-                        featuredImage {
-                            altText
-                            link
-                            mediaItemUrl
-                            uri
-                        }
-                    }
-                }
-            }
-        }
-    }
-  `);
-  
-  postResults.data.wpgraphql.posts.edges.forEach(({ node }) => {
-    createPage({
-      path: node.slug,
-      component: path.resolve(`./src/templates/blog-template.js`),
-      context: {
-        // This is the $slug variable
-        // passed to blog-post.js
-        slug: node.slug,
-        databaseId: node.databaseId,
-      },
-    })
-  });
-
-
-  // const careerresult = await graphql(`
-  //   query {
-  //     wpgraphql {
-  //       categories {
-  //         edges{
-  //           node{
-  //             id
-  //             name
-  //           }
-  //         }
-  //       }
-  //     }
-  //   }
-  // `)
-
-  // console.log(careerresult);
-
-  /**
-   * Create Pages
-   */
+  /**  Create Pages  */
   const pageResults = await graphql(`
     query GET_PAGES {
       wpgraphql {
@@ -87,9 +27,6 @@ exports.createPages = async ({ graphql, actions }) => {
       }
     }
   `);
-  
-  // This is the $slug variable
-  // passed to blog-post.js
 
   pageResults.data.wpgraphql.pages.edges.forEach(({ node }) => {
       { switch (node.slug) {
@@ -123,46 +60,6 @@ exports.createPages = async ({ graphql, actions }) => {
                   },
                 })
             break;
-          // case "application-methods":
-          //       createPage({
-          //         path: "application-methods",
-          //         component: path.resolve(`./src/templates/application-methods.js`),
-          //         context: {
-          //           slug: node.slug,
-          //           databaseId: node.databaseId,
-          //         },
-          //       })
-          //   break;
-          // case "partner-portal":
-          //       createPage({
-          //         path: "partner-portal",
-          //         component: path.resolve(`./src/templates/partner-portal.js`),
-          //         context: {
-          //           slug: node.slug,
-          //           databaseId: node.databaseId,
-          //         },
-          //       })
-          //   break;
-          // case "dealer-resource-center":
-          //         createPage({
-          //           path: "dealer-resource-center",
-          //           component: path.resolve(`./src/templates/dealer-resource-center.js`),
-          //           context: {
-          //             slug: node.slug,
-          //             databaseId: node.databaseId,
-          //           },
-          //         })
-          //   break;
-          // case "training":
-          //         createPage({
-          //           path: "training",
-          //           component: path.resolve(`./src/templates/training.js`),
-          //           context: {
-          //             slug: node.slug,
-          //             databaseId: node.databaseId,
-          //           },
-          //         })
-          //   break;
           case "about":
                   createPage({
                     path: "about",
@@ -197,9 +94,7 @@ exports.createPages = async ({ graphql, actions }) => {
   });
   
   
-  /**
-   * Create Category Pages
-   */
+  /**  Create Category Pages  */
   const categoryPageResults = await graphql(`
     query GET_CATEGORY_PAGES {
       wpgraphql {
@@ -226,74 +121,6 @@ exports.createPages = async ({ graphql, actions }) => {
         name: node.name
       },
     })
-  });
-
-
-  const careersPages = await graphql(`
-    query GET_CATEGORIES {
-      wpgraphql {
-        careerplural {
-          edges {
-            node {
-              id
-              databaseId
-              name
-              slug
-            }
-          }
-        }
-      }
-    }
-  `);
-
-  
-  // careersPages.data.wpgraphql.careerplural.edges.forEach(({ node }) => {
-  //     if(node.slug == 'careers-blog'){
-  //         createPage({
-  //           path: `/careers`,
-  //           component: path.resolve(`./src/templates/careers.js`),
-  //           context: {
-  //             slug: node.slug,
-  //             databaseId: node.databaseId,
-  //             name: node.name,
-  //             id: node.id
-  //           },
-  //         })
-  //     }
-  // });
-  
-
-  /**
-   * Create Tags Pages
-   */
-  const tagPageResults = await graphql(`
-    query GET_CATEGORY_PAGES {
-      wpgraphql {
-        tags(first: 1000) {
-          edges {
-            node {
-              databaseId
-              name
-              slug
-            }
-          }
-        }
-      }
-    }
-  `);
-  
-  tagPageResults.data.wpgraphql.tags.edges.forEach(({ node }) => {
-    createPage({
-      path: `/tag/${node.slug}`,
-      component: path.resolve(`./src/templates/tag-page-template.js`),
-      context: {
-        // This is the $slug variable
-        // passed to blog-post.js
-        slug: node.slug,
-        databaseId: node.databaseId,
-        name: node.name
-      },
-    })
-  });
+  });  
 
 }

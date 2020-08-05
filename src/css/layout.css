@@ -968,6 +968,10 @@ body.mobile-nav-active #mobile-nav-toggle { color: #fff }
     }
     
   }
-  /*===== // Responsive Vertical Timeline =====*/
-  .directorName{ font-weight:600; color: #4d4d4d; font-size: 24px; }
-  .community-logo{ max-width: 60%; width: auto; }
+/*===== Responsive Vertical Timeline =====*/
+.directorName{ font-weight:600; color: #4d4d4d; font-size: 24px; }
+.community-logo{ max-width: 60%; width: auto; }
+
+.news_media, .blog { height: 220px; overflow: hidden; text-align: center; }
+.news_media:after { background: rgba(77, 77, 77, 0.6) url(../images/about_eb_news-media-wht.svg) no-repeat center; }
+.blog:after { background: rgba(77, 77, 77, 0.6) url(../images/about_eb_blog-wht.svg) no-repeat center; }
