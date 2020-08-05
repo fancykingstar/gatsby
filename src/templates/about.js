@@ -20,7 +20,23 @@ import Layout from "../components/layout"
 //     label: 'accordion-title',
 // }
 
+// import images
 import fdic_logo from '../images/fdic-logo.svg';
+import CareersVideo from '../images/careers_video.png';
+import VisionUnsplash from '../images/absolutvision-unsplash.jpg';
+import BakerUnsplash from '../images/kaitlyn-baker-unsplash.jpg';
+import JAofUtah from '../images/JA-of-Utah.png';
+import UWSL from '../images/UWSL.png';
+import VITA from '../images/VITA.png';
+import PHP from '../images/PHP.png';
+import SinglesInside054 from '../images/enerbank_db/singles_inside_054.jpg';
+import SinglesInside037 from '../images/enerbank_db/singles_inside_037.jpg';
+import SinglesInside006 from '../images/enerbank_db/singles_inside_006.jpg';
+import SinglesInside018 from '../images/enerbank_db/singles_inside_018.jpg';
+import SinglesInside046 from '../images/enerbank_db/singles_inside_046.jpg';
+import SinglesInside029 from '../images/enerbank_db/singles_inside_029.jpg';
+import SinglesInside012 from '../images/enerbank_db/singles_inside_012.jpg';
+import SinglesInside066 from '../images/enerbank_db/singles_inside_066.jpg';
 
 const About = ({data}) => {
     // const [collapse, setCollapse] = useState(false);
@@ -42,7 +58,7 @@ const About = ({data}) => {
                 <div className="container">
                     <div className="row d-flex align-items-end">
                     <div className="col-md-10 m-auto">
-                        <img src="http://localhost/ennerbank/wp-content/themes/enerbank/img/careers_video.png" alt="careers video" />
+                        <img src={CareersVideo} alt="careers video" />
                         <p className="text-center font-weight-bold mt-2 mb-4">A message from our President and CEO Charles E. Knadler</p>
                     </div>
                     </div>
@@ -56,7 +72,7 @@ const About = ({data}) => {
                     <div className="d-flex flex-wrap">
                         <div className="box-shadow bg-white rounded text-center payment-option-box col-xs-12 col-md mb-3 mb-lg-0 p-0 mr-md-3 mr-lg-5">
                             <div className="wygthumb news_media">
-                                <img src="http://localhost/ennerbank/wp-content/themes/enerbank/img/absolutvision-unsplash.jpg" className="card-img-top" alt="Dealer Resource Center" />
+                                <img src={VisionUnsplash} className="card-img-top" alt="absolutvision unsplash" />
                             </div>
                             <div className="p-4">
                                 <h3 className="mb-10">News / Media</h3>
@@ -65,7 +81,7 @@ const About = ({data}) => {
                         </div>
                         <div className="box-shadow bg-white rounded text-center payment-option-box col-xs-12 col-md mb-3 mb-lg-0 p-0 ml-md-3 ml-lg-5">
                             <div className="wygthumb blog">
-                                <img src="http://localhost/ennerbank/wp-content/themes/enerbank/img/kaitlyn-baker-unsplash.jpg" className="card-img-top" alt="Training" />
+                                <img src={BakerUnsplash} className="card-img-top" alt="kaitlyn baker unsplash" />
                             </div>
                             <div className="p-4">
                                 <h3 className="mb-10">EnerBank Blog</h3>
@@ -215,16 +231,16 @@ const About = ({data}) => {
                     <p>EnerBank USA is not just an office building full of workers, we’re a meaningful part of the community in more ways than one. Our leaders and team members dedicate their time to enrich the lives of people in our community through volunteer hours spent in a variety of good causes, such as:</p>
                     <div className="row my-5">
                         <div className="col-md-6 mb-5">
-                            <img className="community-logo" alt="Junior Achievement of Utah" style={{display: 'block'}} src="http://localhost/ennerbank/wp-content/themes/enerbank/img/JA-of-Utah.png" data-holder-rendered="true" />
+                            <img className="community-logo" alt="Junior Achievement of Utah" style={{display: 'block'}} src={JAofUtah} data-holder-rendered="true" />
                         </div>
                         <div className="col-md-6 mb-5">
-                            <img className="community-logo" alt="United Way of Salt Lake" style={{display: 'block'}} src="http://localhost/ennerbank/wp-content/themes/enerbank/img/UWSL.png" data-holder-rendered="true" />
+                            <img className="community-logo" alt="United Way of Salt Lake" style={{display: 'block'}} src={UWSL} data-holder-rendered="true" />
                         </div>
                         <div className="col-md-6 mb-5">
-                            <img className="community-logo" alt="VITA/TCE Central" style={{display: 'block'}} src="http://localhost/ennerbank/wp-content/themes/enerbank/img/VITA.PNG" data-holder-rendered="true" />
+                            <img className="community-logo" alt="VITA/TCE Central" style={{display: 'block'}} src={VITA} data-holder-rendered="true" />
                         </div>
                         <div className="col-md-6 mb-5">
-                            <img className="community-logo" alt="Thumbnail [100%x225]" style={{display: 'block'}} src="http://localhost/ennerbank/wp-content/themes/enerbank/img/PHP.PNG" data-holder-rendered="true" />
+                            <img className="community-logo" alt="PHP" style={{display: 'block'}} src={PHP} data-holder-rendered="true" />
                         </div>
                     </div>
 
@@ -233,85 +249,85 @@ const About = ({data}) => {
                     <h2 className="h2 text-center mb-3">EnerBank Board of Directors</h2>
                     <p className="text-center">Our Board of Directors . . .</p>
                     <div className="row">
-                    <div className="col-md-3">
-                        <div className="mb-4 text-center">
-                        <img data-src="holder.js/100px225?theme=thumb&amp;bg=55595c&amp;fg=eceeef&amp;text=Thumbnail" alt="Thumbnail [100%x225]" style={{height: '300px'}} src="http://localhost/ennerbank/wp-content/themes/enerbank/img/enerbank_db/singles_inside_054.jpg" data-holder-rendered="true" />
-                        <p className="directorName">Rejji P. Hayes</p>
+                        <div className="col-md-3">
+                            <div className="mb-4 text-center">
+                                <img data-src="holder.js/100px225?theme=thumb&amp;bg=55595c&amp;fg=eceeef&amp;text=Thumbnail" alt="Rejji P. Hayes" style={{height: '300px'}} src={SinglesInside054} data-holder-rendered="true" />
+                                <p className="directorName">Rejji P. Hayes</p>
+                            </div>
                         </div>
-                    </div>
-                    <div className="col-md-3">
-                        <div className="mb-4 text-center">
-                        <img data-src="holder.js/100px225?theme=thumb&amp;bg=55595c&amp;fg=eceeef&amp;text=Thumbnail" alt="Thumbnail [100%x225]" style={{height: '300px'}} src="http://localhost/ennerbank/wp-content/themes/enerbank/img/enerbank_db/singles_inside_037.jpg" data-holder-rendered="true" />
-                        <p className="directorName">Louise P. Kelly</p>
+                        <div className="col-md-3">
+                            <div className="mb-4 text-center">
+                                <img data-src="holder.js/100px225?theme=thumb&amp;bg=55595c&amp;fg=eceeef&amp;text=Thumbnail" alt="Louise P. Kelly" style={{height: '300px'}} src={SinglesInside037} data-holder-rendered="true" />
+                                <p className="directorName">Louise P. Kelly</p>
+                            </div>
                         </div>
-                    </div>
-                    <div className="col-md-3">
-                        <div className="mb-4 text-center">
-                        <img data-src="holder.js/100px225?theme=thumb&amp;bg=55595c&amp;fg=eceeef&amp;text=Thumbnail" alt="Thumbnail [100%x225]" style={{height: '300px'}} src="http://localhost/ennerbank/wp-content/themes/enerbank/img/enerbank_db/singles_inside_006.jpg" data-holder-rendered="true" />
-                        <p className="directorName">Patrick M. McQueen</p>
+                        <div className="col-md-3">
+                            <div className="mb-4 text-center">
+                                <img data-src="holder.js/100px225?theme=thumb&amp;bg=55595c&amp;fg=eceeef&amp;text=Thumbnail" alt="Patrick M. McQueen" style={{height: '300px'}} src={SinglesInside006} data-holder-rendered="true" />
+                                <p className="directorName">Patrick M. McQueen</p>
+                            </div>
                         </div>
-                    </div>
-                    <div className="col-md-3">
-                        <div className="mb-4 text-center">
-                        <img data-src="holder.js/100px225?theme=thumb&amp;bg=55595c&amp;fg=eceeef&amp;text=Thumbnail" alt="Thumbnail [100%x225]" style={{height: '300px'}} src="http://localhost/ennerbank/wp-content/themes/enerbank/img/enerbank_db/singles_inside_018.jpg" data-holder-rendered="true" />
-                        <p className="directorName">Leonard E. Wiatr</p>
+                        <div className="col-md-3">
+                            <div className="mb-4 text-center">
+                                <img data-src="holder.js/100px225?theme=thumb&amp;bg=55595c&amp;fg=eceeef&amp;text=Thumbnail" alt="Leonard E. Wiatr" style={{height: '300px'}} src={SinglesInside018} data-holder-rendered="true" />
+                                <p className="directorName">Leonard E. Wiatr</p>
+                            </div>
                         </div>
-                    </div>
-                    <div className="col-md-3">
-                        <div className="mb-4 text-center">
-                        <img data-src="holder.js/100px225?theme=thumb&amp;bg=55595c&amp;fg=eceeef&amp;text=Thumbnail" alt="Thumbnail [100%x225]" style={{height: '300px'}} src="http://localhost/ennerbank/wp-content/themes/enerbank/img/enerbank_db/singles_inside_046.jpg" data-holder-rendered="true" />
-                        <p className="directorName">Laura Mountcastle</p>
+                        <div className="col-md-3">
+                            <div className="mb-4 text-center">
+                                <img data-src="holder.js/100px225?theme=thumb&amp;bg=55595c&amp;fg=eceeef&amp;text=Thumbnail" alt="Laura Mountcastle" style={{height: '300px'}} src={SinglesInside046} data-holder-rendered="true" />
+                                <p className="directorName">Laura Mountcastle</p>
+                            </div>
                         </div>
-                    </div>
-                    <div className="col-md-3">
-                        <div className="mb-4 text-center">
-                        <img data-src="holder.js/100px225?theme=thumb&amp;bg=55595c&amp;fg=eceeef&amp;text=Thumbnail" alt="Thumbnail [100%x225]" style={{height: '300px'}} src="http://localhost/ennerbank/wp-content/themes/enerbank/img/enerbank_db/singles_inside_029.jpg" data-holder-rendered="true" />
-                        <p className="directorName">Joseph M. Walsh</p>
+                        <div className="col-md-3">
+                            <div className="mb-4 text-center">
+                                <img data-src="holder.js/100px225?theme=thumb&amp;bg=55595c&amp;fg=eceeef&amp;text=Thumbnail" alt="Joseph M. Walsh" style={{height: '300px'}} src={SinglesInside029} data-holder-rendered="true" />
+                                <p className="directorName">Joseph M. Walsh</p>
+                            </div>
                         </div>
-                    </div>
-                    <div className="col-md-3">
-                        <div className="mb-4 text-center">
-                        <img data-src="holder.js/100px225?theme=thumb&amp;bg=55595c&amp;fg=eceeef&amp;text=Thumbnail" alt="Thumbnail [100%x225]" style={{height: '300px'}} src="http://localhost/ennerbank/wp-content/themes/enerbank/img/enerbank_db/singles_inside_012.jpg" data-holder-rendered="true" />
-                        <p className="directorName">Dan Lis</p>
+                        <div className="col-md-3">
+                            <div className="mb-4 text-center">
+                                <img data-src="holder.js/100px225?theme=thumb&amp;bg=55595c&amp;fg=eceeef&amp;text=Thumbnail" alt="Dan Lis" style={{height: '300px'}} src={SinglesInside012} data-holder-rendered="true" />
+                                <p className="directorName">Dan Lis</p>
+                            </div>
                         </div>
-                    </div>
-                    <div className="col-md-3">
-                        <div className="mb-4">
-                        <img data-src="holder.js/100px225?theme=thumb&amp;bg=55595c&amp;fg=eceeef&amp;text=Thumbnail" alt="Thumbnail [100%x225]" style={{height: '300px'}} src="http://localhost/ennerbank/wp-content/themes/enerbank/img/enerbank_db/singles_inside_066.jpg" data-holder-rendered="true" />
-                        <p className="directorName">Charles E. Knadler</p>
+                        <div className="col-md-3">
+                            <div className="mb-4">
+                                <img data-src="holder.js/100px225?theme=thumb&amp;bg=55595c&amp;fg=eceeef&amp;text=Thumbnail" alt="Charles E. Knadler" style={{height: '300px'}} src={SinglesInside066} data-holder-rendered="true" />
+                                <p className="directorName">Charles E. Knadler</p>
+                            </div>
                         </div>
-                    </div>
                     </div>
                     <h2 className="h2 text-center mb-3">Feedback Form</h2>
                     <p>EnerBank is dedicated to exceptional customer service. We want to hear from you so that we can address any questions, comments or concerns.</p>
                     <form>
                         <div className="row">
-                        <div className="col-md-6">
-                            <div className="row form-group">
-                                <div className="col-md-6">
-                                    <label for="firstName">First name<span>*</span></label>
-                                    <input type="text" className="form-control" id="firstName" placeholder="" value="" required="" />
+                            <div className="col-md-6">
+                                <div className="row form-group">
+                                    <div className="col-md-6">
+                                        <label for="firstName">First name<span>*</span></label>
+                                        <input type="text" className="form-control" id="firstName" placeholder="" value="" required="" />
+                                    </div>
+                                    <div className="col-md-6">
+                                        <label for="lastName">Last name<span>*</span></label>
+                                        <input type="text" className="form-control" id="lastName" placeholder="" value="" required="" />
+                                    </div>
                                 </div>
-                                <div className="col-md-6">
-                                    <label for="lastName">Last name<span>*</span></label>
-                                    <input type="text" className="form-control" id="lastName" placeholder="" value="" required="" />
+                                <div className="form-group">
+                                    <label for="email">Email<span>*</span></label>
+                                    <input type="text" className="form-control" id="email" placeholder="" value="" required="" />
+                                </div>
+                                <div className="row form-group">
+                                    <div className="col-md-6">
+                                        <label for="phone">Phone<span>*</span></label>
+                                        <input type="text" className="form-control" id="phone" placeholder="" value="" required="" />
+                                    </div>
+                                    <div className="col-md-6">
+                                        <label for="company">Company</label>
+                                        <input type="text" className="form-control" id="company" placeholder="" value="" required="" />
+                                    </div>
                                 </div>
                             </div>
-                            <div className="form-group">
-                                <label for="email">Email<span>*</span></label>
-                                <input type="text" className="form-control" id="email" placeholder="" value="" required="" />
-                            </div>
-                            <div className="row form-group">
-                                <div className="col-md-6">
-                                    <label for="phone">Phone<span>*</span></label>
-                                    <input type="text" className="form-control" id="phone" placeholder="" value="" required="" />
-                                </div>
-                                <div className="col-md-6">
-                                    <label for="company">Company</label>
-                                    <input type="text" className="form-control" id="company" placeholder="" value="" required="" />
-                                </div>
-                            </div>
-                        </div>
                         </div>
                         <div className="form-group">
                             <label for="company">Company</label>
