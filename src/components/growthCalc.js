@@ -24,119 +24,116 @@ const GrowthCalc = (props) => {
 	})
 
     const validDigit = (evt) => {
-        if (!digitOnly.test(evt.target.value)) {
-            evt.target.value = '';
+		var val = getNumber(evt.target.value)
+		var result;
+        if (!digitOnly.test(val)) {
+            result = '0';
         } else {
-            evt.target.value = parseFloat(evt.target.value);
+            result = parseFloat(val);
 		}
+		return result;
 	}
 	
 	var getNumber = (number) => {
 		return parseInt(number.replace("$","").replace("%","").replace(",",""));
 	}
 
-	var calcValue = (element) => {
-		const inputValue = document.getElementsByName(element)[0].value !== '' ? document.getElementsByName(element)[0].value : '0'
-		switch(element){
+	var calcValue = (ele, val, inc) => {
+		const input = [ele] + 'Input';
+		const result = [ele] + 'Result';
+		const increament = [ele] + 'Increment'
+		console.log(input, val, inc)
+		switch(input) {
 			case "monthlyLeadsInput":
 				setState({
 					...state,
-					[element]: inputValue,
-					monthlyLeadsResult: parseFloat(inputValue) + Math.round(inputValue * parseFloat(state.monthlyLeadsIncrement) / 100 ),
-					annualRevenueOld: '$ ' + (parseFloat(inputValue) + parseFloat(state.closeRateInput) + parseFloat(state.projectSizeInput)),
-					annualRevenueGrow: '$ ' + (parseFloat(inputValue) + Math.round(inputValue * parseFloat(state.monthlyLeadsIncrement) / 100 ) + parseFloat(state.closeRateResult) + parseFloat(state.projectSizeResult)),
+					[input]: val,
+					[increament]: inc,
+					[result]: parseFloat(val) + Math.round(parseFloat(val) * parseFloat(inc) / 100 ),
+					annualRevenueOld: '$' + (parseFloat(val) + parseFloat(state.closeRateInput) + getNumber(state.projectSizeInput)),
+					annualRevenueGrow: '$' + (parseFloat(val) + Math.round(parseFloat(val) * parseFloat(inc) / 100 ) + parseFloat(state.closeRateResult) + getNumber(state.projectSizeResult)),
 				})
 				break;
 			case "closeRateInput":
 				setState({
 					...state,
-					[element]: inputValue,
-					closeRateResult: (parseFloat(inputValue) + Math.round(inputValue * parseFloat(state.closeRateIncrement) / 100 )) + '%',
-					annualRevenueOld: '$ ' + (parseFloat(state.monthlyLeadsInput) + parseFloat(inputValue) + parseFloat(state.projectSizeInput)),
-					annualRevenueGrow: '$ ' + (parseFloat(state.monthlyLeadsResult) + parseFloat(inputValue) + Math.round(inputValue * parseFloat(state.closeRateIncrement) / 100 ) + parseFloat(state.projectSizeResult)),
+					[input]: val,
+					[increament]: inc,
+					[result]: (parseFloat(val) + Math.round(parseFloat(val) * parseFloat(inc) / 100 )) + '%',
+					annualRevenueOld: '$' + (parseFloat(val) + parseFloat(state.monthlyLeadsInput) + getNumber(state.projectSizeInput)),
+					annualRevenueGrow: '$' + (parseFloat(val) + Math.round(parseFloat(val) * parseFloat(inc) / 100 ) + parseFloat(state.monthlyLeadsResult) + getNumber(state.projectSizeResult)),
 				})
 				break;
-			
 			case "projectSizeInput":
 				setState({
 					...state,
-					[element]: inputValue,
-					projectSizeResult: '$' + (parseFloat(inputValue) + Math.round(inputValue * parseFloat(state.projectSizeIncrement) / 100 )),
-					annualRevenueOld: '$' + (parseFloat(state.monthlyLeadsInput) + parseFloat(state.closeRateInput) + parseFloat(inputValue)),
-					annualRevenueGrow: '$' + (parseFloat(state.monthlyLeadsResult) + parseFloat(state.closeRateResult) + parseFloat(inputValue) + Math.round(inputValue * parseFloat(state.projectSizeIncrement) / 100 )),
+					[input]: val,
+					[increament]: inc,
+					[result]: parseFloat(val) + Math.round(parseFloat(val) * parseFloat(inc) / 100 ),
+					annualRevenueOld: '$' + (parseFloat(val) + parseFloat(state.monthlyLeadsInput) + parseFloat(state.closeRateInput)),
+					annualRevenueGrow: '$' + (parseFloat(val) + Math.round(parseFloat(val) * parseFloat(inc) / 100 ) + parseFloat(state.monthlyLeadsResult) + parseFloat(state.closeRateResult)),
 				})
-				break;
-			default:
-				break;
-		}		
-
-		// calcResult();
-	}
-
-	const handleValidValue = (evt) => {
-		const eleId  = evt.target.id;
-		const eleval  = evt.target.value;
-		
-		switch(eleId) {
-			case "close-rate":
-				document.getElementById('close-rate').value = eleval + '%'
-				break;
-			case "project-size":
-				document.getElementById('project-size').value = '$' + eleval
 				break;
 			default:
 				break;
 		}
 	}
 
-	const handleChangeInput = (evt) =>{
-		validDigit(evt)
-		const eleName = evt.target.name;
-		calcValue(eleName);
+	const handleValidValue = (evt) => {
+		const eleId  = evt.target.id;
+		const eleval  = evt.target.value;
+
+		if(eleval > 0){
+			switch(eleId) {
+				case "close-rate":
+					setState({
+						...state,
+						closeRateInput: eleval + '%',
+						// closeRateResult: state.closeRateResult + '%'
+					})
+					break;
+				case "project-size":
+					setState({
+						...state,
+						projectSizeInput: '$' + eleval,
+						projectSizeResult: '$' + state.projectSizeResult
+					})
+					break;
+				default:
+					break;
+			}
+		}
+	}
+
+	const handleChangeInput = (evt) =>{		
+		const inputValue = validDigit(evt);
+		const inputEle = evt.target.name;
+		const inputId = inputEle.split("Input")[0];
+		calcValue(inputId, inputValue, state[inputId + 'Increment']);
 	}
 
 	const handleCheckInput = (evt) =>{
 		const eleName = evt.target.name;
-		const eleId = eleName.split("Increment")[0];
-		const eleInput = eleId + 'Input';
+		const inputId = eleName.split("Increment")[0];
+		const inputEle = inputId + 'Input';
+		const inputValue = state[inputEle];
 		
 		// get increament value 
 		const eleValue = evt.target.value;
 		// set input checkbox true
-		setState({
-			...state,
-			[eleName]: eleValue
-		});
-	}
-
-	var getPercentage = (evt) => {		
-		const eleName = evt.target.name;
-		const eleId = eleName.split("Increment")[0];
-		const eleInput = eleId + 'Input';
-		
-		// let percentage
-		var percentage = 1;
-		// get increament value 
-		const percentValue = evt.target.value;
-		// set input checkbox true
-		setState({
-			...state,
-			[evt.target.name]: percentValue
-		});
-		calcValue(eleInput);
-
-		
-
-		// // add class selected in checkbox
-		// evt.target.classList.add('selected');
-		// // get total percentage value
-		// percentage = percentage + percentage * parseFloat(percentValue)/100;
-		
-		// return percentage
-	}
-
-	const calcResult = (evt) => {
-		validDigit(evt);
+		if(inputId === 'projectSize'){
+			calcValue(inputId, getNumber(inputValue), eleValue);
+			setState({
+				...state,
+				projectSizeInput: inputValue,
+				projectSizeIncrement: eleValue,
+				projectSizeResult: '$' + (getNumber(inputValue) + Math.round(getNumber(inputValue) * getNumber(eleValue) / 100 )),
+				annualRevenueOld: '$' + (getNumber(inputValue) + parseFloat(state.monthlyLeadsInput) + parseFloat(state.closeRateInput)),
+				annualRevenueGrow: '$' + (getNumber(inputValue) + Math.round(getNumber(inputValue) * getNumber(eleValue) / 100 ) + parseFloat(state.monthlyLeadsResult) + parseFloat(state.closeRateResult)),
+			});
+		}else{
+			calcValue(inputId, inputValue, eleValue);
+		}
 	}
 
 	if (props.popData.length !== 0) {
@@ -150,7 +147,7 @@ const GrowthCalc = (props) => {
 						<h3>Business Growth Calculator</h3>
 					</div>
 					<div className="modal_content">
-						<div className="p-6 py-sm-5">
+						<div className="p-6 pb-0 pt-sm-5">
 							<form action="" className="calc_form">
 								<div className="row border-bottom">
 									<div className="col-lg-4 ">
@@ -193,7 +190,7 @@ const GrowthCalc = (props) => {
 									<div className="col-lg-4 ptb-2">
 										<div><label>Close Rate</label></div>
 										<div className="d-flex align-items-center">                        	
-											<div className=""><input type="text" name="closeRateInput" className="border-radius5 calc-input" id="close-rate" placeholder="0%" onChange={ handleChangeInput } onBlur={handleValidValue} /></div>
+											<div className=""><input type="text" name="closeRateInput" className="border-radius5 calc-input" id="close-rate" value={state.closeRateInput} placeholder="0%" onChange={ handleChangeInput } onBlur={handleValidValue} /></div>
 											<div className="pl-5"><span className="font-b">x</span></div>
 										</div>							
 									</div>
@@ -202,19 +199,19 @@ const GrowthCalc = (props) => {
 										<div className="d-flex align-items-center">                        	
 											<div className="">
 												<label className="check_count">25%
-												<input type="radio" name="closeRateIncrement" className="close-rate circle one" value="25%" checked={state.closeRateIncrement === '25%'} onChange={getPercentage} />
-												<span className="checkmark"></span>
+													<input type="radio" name="closeRateIncrement" className="close-rate circle one" value="25%" checked={state.closeRateIncrement === '25%'} onChange={handleCheckInput} />
+													<span className="checkmark"></span>
 												</label>
 											</div>
 											<div className="pl-4">
 												<label className="check_count">50%
-												<input type="radio" name="closeRateIncrement" className="close-rate circle two" value="50%" checked={state.closeRateIncrement === '50%'} onChange={getPercentage} />
-												<span className="checkmark"></span>
+													<input type="radio" name="closeRateIncrement" className="close-rate circle two" value="50%" checked={state.closeRateIncrement === '50%'} onChange={handleCheckInput} />
+													<span className="checkmark"></span>
 												</label>
 											</div>
 											<div className="pl-4">
 												<label className="check_count">100%
-													<input type="radio" name="closeRateIncrement" className="close-rate circle three" value="100%" checked={state.closeRateIncrement === '100%'} onChange={getPercentage} />
+													<input type="radio" name="closeRateIncrement" className="close-rate circle three" value="100%" checked={state.closeRateIncrement === '100%'} onChange={handleCheckInput} />
 													<span className="checkmark"></span>
 												</label>
 											</div>
@@ -231,7 +228,7 @@ const GrowthCalc = (props) => {
 									<div className="col-lg-4 ptb-2">
 										<div className=""><label>Average Project Size</label></div>
 										<div className="d-flex align-items-center">                        	
-											<div className=""><input type="text" name="projectSizeInput" className="border-radius5 calc-input" id="project-size" placeholder="$0" onChange={ handleChangeInput } onBlur={handleValidValue} /></div>
+											<div className=""><input type="text" name="projectSizeInput" className="border-radius5 calc-input" id="project-size" value={state.projectSizeInput} placeholder="$0" onChange={ handleChangeInput } onBlur={handleValidValue} /></div>
 											<div className="pl-5"><span className="font-b">x</span></div>
 										</div>							
 									</div>
@@ -240,19 +237,19 @@ const GrowthCalc = (props) => {
 										<div className="d-flex align-items-center">                        	
 											<div className="">
 												<label className="check_count">30%
-													<input type="radio" name="projectSizeIncrement" className="project-size circle one" value="30%" checked={state.projectSizeIncrement === '30%'} onChange={getPercentage} />
+													<input type="radio" name="projectSizeIncrement" className="project-size circle one" value="30%" checked={state.projectSizeIncrement === '30%'} onChange={handleCheckInput} />
 													<span className="checkmark"></span>
 												</label>
 											</div>
 											<div className="pl-4">
 												<label className="check_count">40%
-													<input type="radio" name="projectSizeIncrement" className="project-size circle two" value="40%" checked={state.projectSizeIncrement === '40%'} onChange={getPercentage} />
+													<input type="radio" name="projectSizeIncrement" className="project-size circle two" value="40%" checked={state.projectSizeIncrement === '40%'} onChange={handleCheckInput} />
 													<span className="checkmark"></span>
 												</label>
 											</div>
 											<div className="pl-4">
 												<label className="check_count">50%
-													<input type="radio" name="projectSizeIncrement" className="project-size circle three" value="50%" checked={state.projectSizeIncrement === '50%'} onChange={getPercentage} />
+													<input type="radio" name="projectSizeIncrement" className="project-size circle three" value="50%" checked={state.projectSizeIncrement === '50%'} onChange={handleCheckInput} />
 													<span className="checkmark"></span>
 												</label>
 											</div>
