@@ -6,7 +6,7 @@ const PartnerPortal = (props) => {
 	if (props.popData.length !== 0) {
 		return (
 			<Modal show={props.visiblity} animation={true} centered={true} size="full" id="partnerPopup">
-				<div className="d-flex flex-column align-item-center justify-content-center">
+				{/* <div className="d-flex flex-column align-item-center justify-content-center"> */}
 					<div className="heading_bg">
 						<button type="button" className="close text-white" data-dismiss="modal" aria-label="Close" onClick={props.handleClose}>
 							<img src="http://devgb.enerbank.com/wp-content/themes/enerbank/img/closed_icon.svg" width="25" alt="close icon" />
@@ -19,7 +19,7 @@ const PartnerPortal = (props) => {
 						</div>
 						<div className="p-5 py-sm-5">
 							<div className="small line-height-normal">                      
-								<p className="mb-5">Our online dashboard, PartnerPortal, lets you track performance results through customizable reports, access loan codes and dealer fees, check application statuses, and work with electronic loan documents. Our secure PartnerPortal provides you with 24/7 access to track your results and performance quickly and easily! And, it also gives you the ability to:</p>
+								<p>Our online dashboard, PartnerPortal, lets you track performance results through customizable reports, access loan codes and dealer fees, check application statuses, and work with electronic loan documents. Our secure PartnerPortal provides you with 24/7 access to track your results and performance quickly and easily! And, it also gives you the ability to:</p>
 							</div>						
 						</div>
 						<div className="bg-blue start_drc start_drc2">
@@ -54,7 +54,7 @@ const PartnerPortal = (props) => {
 							</div>
 						</div>
 					</div>
-              	</div>
+              	{/* </div> */}
 			</Modal>
 		)
 	} else {

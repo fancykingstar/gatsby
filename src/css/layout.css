@@ -697,7 +697,7 @@ body.mobile-nav-active #mobile-nav-toggle { color: #fff }
 .heading_bg{ background: #0077C8; padding: 30px 30px; text-align: center;}
 .heading_bg h3{ color: #fff !important; text-align: center; margin: 0px; padding: 0px; line-height: normal;}
 .modal-dialog{ height: 100%; }
-.modal_content{ background: #fff; position: relative; height: 550px; overflow-y: auto; }
+.modal_content{ background: #fff; position: relative; max-height: 100%; overflow-y: auto; }
 .modal_content p{line-height: 24px; text-align: left;}
   
   /* appPopup modal css */
@@ -813,7 +813,7 @@ body.mobile-nav-active #mobile-nav-toggle { color: #fff }
 
 .calc_form .row{ position: relative; }
 .calc_form .row:last-child:before{ content: ''; background: #ececec; height: 100%; width:100%; position: absolute; }
-.calc_bottom{ background: #4d4d4d; color:#fff; line-height: normal; font-size: 16px; padding: 1.5rem 15px; font-weight: 500; }
+.calc_bottom{ background: #4d4d4d; color:#fff; line-height: normal; font-size: 16px; padding: 1.5rem 15px; font-weight: 500; width: 100%; }
 .current_growth, .growth_result{ font-size: 30px; text-transform: uppercase; font-weight: 600; color: #0079C2; }
 .growth_result{ background: #0079C2; color: #fff; border-radius: 5px 5px 0 0; padding-left: 25px !important; padding-right: 25px !important; }
 .result-col{  padding-left: 25px !important; padding-right: 25px !important; }
