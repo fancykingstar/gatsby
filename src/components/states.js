@@ -5,7 +5,7 @@ const States = (props) => {
 	if (props.popData.length !== 0) {
 		return (
 			<Modal show={props.visiblity} animation={true} centered={true} size="full" id="appPopup">
-				<div className="d-flex flex-column align-item-center justify-content-center">
+				{/* <div className="d-flex flex-column align-item-center justify-content-center"> */}
 					<div className="heading_bg">
 						<button type="button" className="close text-white" data-dismiss="modal" aria-label="Close" onClick={props.handleClose}>
 							<img src="http://devgb.enerbank.com/wp-content/themes/enerbank/img/closed_icon.svg" width="25" alt="close icon" />
@@ -19,7 +19,7 @@ const States = (props) => {
                       	</div>
 						<img className="img-fluid p-5 pb-0" src="http://devgb.enerbank.com/wp-content/themes/enerbank/img/svg/EB-50-States.svg" alt="All 50 States" />
 					</div>
-				</div>
+				{/* </div> */}
 			</Modal>
 		)
 	} else {
