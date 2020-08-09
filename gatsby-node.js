@@ -123,4 +123,68 @@ exports.createPages = async ({ graphql, actions }) => {
     })
   });  
 
+  /**  query for WordPress posts  */
+  const postsResult = await graphql(`
+    query GET_POSTS {
+      wpgraphql {
+        posts {
+          edges {
+            node {
+              id
+              title
+              date
+              slug
+            }
+          }
+        }
+      }
+    }
+  `)
+  postsResult.data.wpgraphql.posts.edges.forEach(({ node }) => {
+      { switch (node.id) {
+            // case "cG9zdDoxMjE3":
+            //       createPage({
+            //         path: "loan-programs",
+            //         component: path.resolve(`./src/templates/appMethod.js`),
+            //         context: {
+            //           slug: node.slug,
+            //           id: node.id,
+            //         },
+            //       })
+            //   break;
+            // case "cG9zdDoxMjIy":
+            //       createPage({
+            //         path: "loan-programs",
+            //         component: path.resolve(`./src/templates/dealerResource.js`),
+            //         context: {
+            //           slug: node.slug,
+            //           databaseId: node.databaseId,
+            //         },
+            //       })
+            //   break;
+            case "cG9zdDoxMjIw":
+                  createPage({
+                    path: "loan-programs/cG9zdDoxMjIw",
+                    component: path.resolve(`./src/templates/partner-portal.js`),
+                    context: {
+                      slug: node.slug,
+                      databaseId: node.databaseId,
+                    },
+                  })
+              break;
+            // case "cG9zdDoxMjI0":
+            //       createPage({
+            //         path: "loan-programs",
+            //         component: path.resolve(`./src/templates/training.js`),
+            //         context: {
+            //           slug: node.slug,
+            //           databaseId: node.databaseId,
+            //         },
+            //       })
+            //   break;
+            default:
+              break;
+      }}
+  });
+
 }

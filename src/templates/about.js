@@ -107,7 +107,7 @@ const About = ({data}) => {
                 <div className="container">
                     <h2 className="text-center mb-5">EnerBank Timeline of Events</h2>
                     <div id="enerbank-timeline">
-                        <div className="timeline-start">Start</div>
+                        <div className="timeline-start"><img src={'../images/top_arrow.svg'} /></div>
                         <div className="enerbank-center-line"></div>
                         <div className="enerbank-timeline-content">
                         {/* Article */}
