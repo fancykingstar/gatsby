@@ -144,137 +144,135 @@ const GrowthCalc = (props) => {
 						<button type="button" className="close text-white" data-dismiss="modal" aria-label="Close" onClick={props.handleClose}>
 							<img src="http://devgb.enerbank.com/wp-content/themes/enerbank/img/closed_icon.svg" width="25" alt="close icon" />
 						</button>
-						<h3>Business Growth Calculator</h3>
+						<h2 className="text-white font-weight-bold">Business Growth Calculator</h2>
 					</div>
 					<div className="modal_content">
 						<div className="p-6 pb-0 pt-sm-5">
 							<form action="" className="calc_form">
+								<div className="row">
+									<div className="mr-auto p-3 current_growth">Current</div>
+									<div className="ml-auto p-3 growth_result col-sm-3">Result</div>
+								</div>
 								<div className="row border-bottom">
-									<div className="col-lg-4 ">
-										<div className=""><label>Monthly Leads</label></div>
+									<div className="col-lg-4 ptb-2">
+										<div className="text-sm theme-text">Monthly Leads</div>
 										<div className="d-flex align-items-center">
-											<div className=""><input type="text" name="monthlyLeadsInput" className="border-radius5 calc-input" id="monthly-leads" placeholder="0" onChange={ handleChangeInput } /></div>
+											<input type="text" name="monthlyLeadsInput" className="border-radius5 calc-input" id="monthly-leads" placeholder="0" onChange={ handleChangeInput } />
 											<div className="pl-5"><span className="font-b">x</span></div>
 										</div>							
 									</div>
-									<div className="col-lg-5">
-										<div className="text-sm theme-text">Projected Increase with Payment Options</div>
-										<div className="d-flex align-items-center">                        	
-											<div className="">
-												<label className="check_count">25%
-													<input type="radio" name="monthlyLeadsIncrement" className="monthly-leads circle one" value="25%" checked={state.monthlyLeadsIncrement === '25%'} onChange={handleCheckInput} />
-													<span className="checkmark"></span>
-												</label>
-											</div>
-											<div className="pl-4">
+									<div className="col-lg-5 ptb-2">
+										<div className="text-sm theme-text text-blue">Projected Increase with Payment Options</div>
+										<div className="d-flex align-items-center">
+											<label className="check_count">25%
+												<input type="radio" name="monthlyLeadsIncrement" className="monthly-leads circle one" value="25%" checked={state.monthlyLeadsIncrement === '25%'} onChange={handleCheckInput} />
+												<span className="checkmark"></span>
+											</label>
+											<div className="pl-5">
 												<label className="check_count">50%
 													<input type="radio" name="monthlyLeadsIncrement" className="monthly-leads circle two" value="50%" checked={state.monthlyLeadsIncrement === '50%'} onChange={handleCheckInput} />
 													<span className="checkmark"></span>
 												</label>
 											</div>
-											<div className="pl-4">
+											<div className="pl-5">
 												<label className="check_count">100%
 													<input type="radio" name="monthlyLeadsIncrement" className="monthly-leads circle three" value="100%" checked={state.monthlyLeadsIncrement === '100%'} onChange={handleCheckInput} />
 													<span className="checkmark"></span>
 												</label>
 											</div>
-											<div className="pl-4"><span className="font-b">=</span></div>
+											<div className="m-auto equal"><span className="font-b">=</span></div>
 										</div>
 									</div>
-									<div className="col-lg-3 bg_blue ptb-2">
-										<label>Monthly Leads</label>
-										<input type="text" className="border-radius5" name="monthlyLeadsResult" id="monthly-leads-result" value={state.monthlyLeadsResult} placeholder="0" readOnly={state.readonly} />
+									<div className="col-lg-3 bg_blue ptb-2 result-col">
+										<div className="text-sm theme-text text-white">Monthly Leads</div>
+										<input type="text" className="border-radius5 calc-output" name="monthlyLeadsResult" id="monthly-leads-result" value={state.monthlyLeadsResult} placeholder="0" readOnly={state.readonly} />
 									</div>											
 								</div>
 								<div className="row border-bottom">
 									<div className="col-lg-4 ptb-2">
-										<div><label>Close Rate</label></div>
+										<div className="text-sm theme-text">Close Rate</div>
 										<div className="d-flex align-items-center">                        	
-											<div className=""><input type="text" name="closeRateInput" className="border-radius5 calc-input" id="close-rate" value={state.closeRateInput} placeholder="0%" onChange={ handleChangeInput } onBlur={handleValidValue} /></div>
+											<input type="text" name="closeRateInput" className="border-radius5 calc-input" id="close-rate" value={state.closeRateInput} placeholder="0%" onChange={ handleChangeInput } onBlur={handleValidValue} />
 											<div className="pl-5"><span className="font-b">x</span></div>
 										</div>							
 									</div>
 									<div className="col-lg-5 ptb-2">
-										<div className="text-sm theme-text">Projected Increase with Payment Options</div>
-										<div className="d-flex align-items-center">                        	
-											<div className="">
-												<label className="check_count">25%
-													<input type="radio" name="closeRateIncrement" className="close-rate circle one" value="25%" checked={state.closeRateIncrement === '25%'} onChange={handleCheckInput} />
-													<span className="checkmark"></span>
-												</label>
-											</div>
-											<div className="pl-4">
+										<div className="text-sm theme-text text-blue">Projected Increase with Payment Options</div>
+										<div className="d-flex align-items-center">
+											<label className="check_count">25%
+												<input type="radio" name="closeRateIncrement" className="close-rate circle one" value="25%" checked={state.closeRateIncrement === '25%'} onChange={handleCheckInput} />
+												<span className="checkmark"></span>
+											</label>
+											<div className="pl-5">
 												<label className="check_count">50%
 													<input type="radio" name="closeRateIncrement" className="close-rate circle two" value="50%" checked={state.closeRateIncrement === '50%'} onChange={handleCheckInput} />
 													<span className="checkmark"></span>
 												</label>
 											</div>
-											<div className="pl-4">
+											<div className="pl-5">
 												<label className="check_count">100%
 													<input type="radio" name="closeRateIncrement" className="close-rate circle three" value="100%" checked={state.closeRateIncrement === '100%'} onChange={handleCheckInput} />
 													<span className="checkmark"></span>
 												</label>
 											</div>
-											<div className="pl-4"><span className="font-b">=</span></div>
+											<div className="m-auto equal"><span className="font-b">=</span></div>
 										</div>
 									</div>
-									<div className="col-lg-3 bg_blue ptb-2">
-										<label>Close Rate</label>
+									<div className="col-lg-3 bg_blue ptb-2 result-col">
+										<div className="text-sm theme-text text-white">Close Rate</div>
 										<input type="text" name="closeRateResult" className="border-radius5 calc-output" id="close-rate-result" value={state.closeRateResult} placeholder="0%" readOnly={state.readonly} />
 									</div>
 														
 								</div>
 								<div className="row border-bottom">
 									<div className="col-lg-4 ptb-2">
-										<div className=""><label>Average Project Size</label></div>
+										<div className="text-sm theme-text">Average Project Size</div>
 										<div className="d-flex align-items-center">                        	
-											<div className=""><input type="text" name="projectSizeInput" className="border-radius5 calc-input" id="project-size" value={state.projectSizeInput} placeholder="$0" onChange={ handleChangeInput } onBlur={handleValidValue} /></div>
+											<input type="text" name="projectSizeInput" className="border-radius5 calc-input" id="project-size" value={state.projectSizeInput} placeholder="$0" onChange={ handleChangeInput } onBlur={handleValidValue} />
 											<div className="pl-5"><span className="font-b">x</span></div>
 										</div>							
 									</div>
 									<div className="col-lg-5 ptb-2">
-										<div className="text-sm theme-text">Projected Increase with Payment Options</div>
-										<div className="d-flex align-items-center">                        	
-											<div className="">
-												<label className="check_count">30%
-													<input type="radio" name="projectSizeIncrement" className="project-size circle one" value="30%" checked={state.projectSizeIncrement === '30%'} onChange={handleCheckInput} />
-													<span className="checkmark"></span>
-												</label>
-											</div>
-											<div className="pl-4">
+										<div className="text-sm theme-text text-blue">Projected Increase with Payment Options</div>
+										<div className="d-flex align-items-center">
+											<label className="check_count">30%
+												<input type="radio" name="projectSizeIncrement" className="project-size circle one" value="30%" checked={state.projectSizeIncrement === '30%'} onChange={handleCheckInput} />
+												<span className="checkmark"></span>
+											</label>
+											<div className="pl-5">
 												<label className="check_count">40%
 													<input type="radio" name="projectSizeIncrement" className="project-size circle two" value="40%" checked={state.projectSizeIncrement === '40%'} onChange={handleCheckInput} />
 													<span className="checkmark"></span>
 												</label>
 											</div>
-											<div className="pl-4">
+											<div className="pl-5">
 												<label className="check_count">50%
 													<input type="radio" name="projectSizeIncrement" className="project-size circle three" value="50%" checked={state.projectSizeIncrement === '50%'} onChange={handleCheckInput} />
 													<span className="checkmark"></span>
 												</label>
 											</div>
-											<div className="pl-4"><span className="font-b">=</span></div>
+											<div className="m-auto equal"><span className="font-b">=</span></div>
 									</div>
 									</div>
-									<div className="col-lg-3 bg_blue ptb-2">
-										<label>Average Project Size</label>
+									<div className="col-lg-3 bg_blue ptb-2 result-col">
+										<div className="text-sm theme-text text-white">Average Project Size</div>
 										<input type="text" name="projectSizeResult" className="border-radius5 calc-output" id="project-size-result" value={state.projectSizeResult} placeholder="$0" readOnly={state.readonly} />
 									</div>		
 								</div>
 								
 								<div className="row border-bottom">
 									<div className="col-lg-4 ptb-2">
-										<div className=""><label>Annual Revenue</label></div>
+										<div className="text-sm theme-text">Annual Revenue</div>
 										<div className="d-flex align-items-center">                        	
-											<div className=""><input type="text" name="annualRevenueOld" className="border-radius5 calc-input" id="annual-revenue" value={state.annualRevenueOld} placeholder="$0" readOnly="readonly" /></div>
+											<input type="text" name="annualRevenueOld" className="border-radius5 calc-output" id="annual-revenue" value={state.annualRevenueOld} placeholder="$0" readOnly="readonly" />
 											<div className="pl-5"><span className="font-b">&gt;</span></div>
 										</div> 							
 									</div>
 									<div className="col-lg-5">
-										<div className="text-sm theme-text ptb-2 mt-4">By increasing your incoming leads,<br/>close rate and average job size,<br/>watch your annual revenue grow.</div>                    	
+										<div className="text-sm theme-text text-blue ptb-2 mt-4">By increasing your incoming leads,<br/>close rate and average job size,<br/>watch your annual revenue grow.</div>                    	
 									</div>
-									<div className="col-lg-3 bg_blue ptb-2">
-										<label>Annual Revenue</label>
+									<div className="col-lg-3 bg_blue ptb-2 result-col">
+										<div className="text-sm theme-text text-white">Annual Revenue</div>
 										<input type="text" name="annualRevenueGrow" className="border-radius5 calc-output" id="annual-revenue-result" value={state.annualRevenueGrow} placeholder="$0" readOnly={state.readonly} />
 									</div>
 								</div>

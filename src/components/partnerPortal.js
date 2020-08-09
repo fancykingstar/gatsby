@@ -26,29 +26,29 @@ const PartnerPortal = (props) => {
 							<div className="container">
 							<div className="row">
 								<div className="col-md-4">
-								<ul className="portal_list">
-								<li>View approvals</li>
-								<li>Review dashboard</li>
-								<li>Run custom reports</li>
-								</ul>
+									<ul className="portal_list">
+										<li>View approvals</li>
+										<li>Review dashboard</li>
+										<li>Run custom reports</li>
+									</ul>
 							</div>
 							<div className="col-md-4">
-								<ul className="portal_list">
-								<li>Check application status</li>
-								<li>Access loan codes</li>
-								<li>Access dealer fees</li>
-								</ul>
+									<ul className="portal_list">
+										<li>Check application status</li>
+										<li>Access loan codes</li>
+										<li>Access dealer fees</li>
+									</ul>
 							</div>
 							<div className="col-md-4">
-								<ul className="portal_list">
-								<li>Request loan documents</li>
-								<li>Sign loan documents</li>
-								</ul>
+									<ul className="portal_list">
+										<li>Request loan documents</li>
+										<li>Sign loan documents</li>
+									</ul>
 							</div>
 							</div>
 							<div className="row">
 								<div className="col-md-10 m-auto">
-								<Link to={'#'}>Current Contractors Click Here to Access Partner Portal</Link>
+									<Link to={'#'}>Current Contractors Click Here to Access Partner Portal</Link>
 								</div>
 							</div>
 							</div>

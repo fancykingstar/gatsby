@@ -28,6 +28,7 @@ const blockElements = {
 }
 
 const LoanProgramPage = ({ data }) => {
+	console.log(data)
 	const content = data.wpgraphql.page;
 
 	const [visible, setVisible] = useState(false);
@@ -457,161 +458,161 @@ const LoanProgramPage = ({ data }) => {
 export default LoanProgramPage
 
 export const query = graphql`
-  query($databaseId: ID!) {
+query($databaseId: ID!) {
     wpgraphql {
-      page(id: $databaseId, idType: DATABASE_ID) {
-        title
-        date
-        content(format: RENDERED)
-        featuredImage {
-          altText
-          title(format: RENDERED)
-          mediaItemUrl
-          slug
-        }
+      	page(id: $databaseId, idType: DATABASE_ID) {
+			title
+			date
+			content(format: RENDERED)
+			featuredImage {
+				altText
+				title(format: RENDERED)
+				mediaItemUrl
+				slug
+			}
 
-        top_banner {
-          banner {
-            backgroundImage {
-              sourceUrl
-            }
-            bannerLinks {
-              fieldGroupName
-              links {
-                title
-                url
-              }
-            }
-          }
-        }
-
-        loan_program {
-          partnerSays {
-            fieldGroupName
-            partnerComment
-            partnerLogo {
-              sourceUrl
-            }
-          }
-          paymentOptionsBenefits {
-            paymentOptionHeading
-            paymentOptionBrif
-            paymentOptions {
-              fieldGroupName
-			  paymentOptionTitle
-			  paymentOptionPopupTitle
-			  paymentOptionPopupContent
-              paymentOptionIcon {
-                sourceUrl
-              }
-            }
-          }
-          offeringPaymentOption {
-            fieldGroupName
-            offeringPaymentBrif
-            offeringPaymentIcon {
-              sourceUrl
-            }
-          }
-          joinLoanProgram {
-            loanProgramMethodHeading
-			loanProgramIntro
-			sectionTitle
-            loanProgramMethods {
-              fieldGroupName
-              programMethodBrif
-              programMethodIcon {
-                sourceUrl
-              }
-              programMethodsBgImage {
-                sourceUrl
-			  }
-			  programMethodLink {
-				target
-				title
-				url
-			  }
-            }
-          }
-          onlineAppIntegration {
-            appIntegrationBrif
-            appIntegrationHeading
-            appIntegrationOption {
-              fieldGroupName
-              integrationOptionBrif
-              integrationOptionBgImage {
-                sourceUrl
-              }
-              integrationOptionIcon {
-                sourceUrl
-              }
-            }
-            appIntegrationStep {
-              sourceUrl
-            }
-          }
-
-          loanServices {
-            fieldGroupName
-            serviceHeading
-			serviceText
-			popSlug
-            serviceLink {
-                target
-                title
-                url
-            }
-            serviceIcon {
-                sourceUrl
-            }    
-		  }
-		  
-		  loanProvider {
-			sectionHeading
-			sectionBrif
-			yearBlock
-		  }
-
-		  selectPartner {
-			sectionBrif
-			sectionHeading
-			yearBlock
-		  }
-
-		  createLoanOption {
-			sectionHeading
-			sectionBrif
-			sectionOption {
-				fieldGroupName
-				integrationOptionBrif
-				integrationOptionBgImage {
-					sourceUrl
-				}
-				integrationOptionIcon {
-					sourceUrl
+			top_banner {
+				banner {
+					backgroundImage {
+						sourceUrl
+					}
+					bannerLinks {
+						fieldGroupName
+						links {
+							title
+							url
+						}
+					}
 				}
 			}
-		  }
 
-        }
-        accordion {
-          tabpanel {
-              fieldGroupName
-              tabcontent
-              tablabel
-          }
-        }
+			loan_program {
+				partnerSays {
+					fieldGroupName
+					partnerComment
+					partnerLogo {
+						sourceUrl
+					}
+				}
+				paymentOptionsBenefits {
+					paymentOptionHeading
+					paymentOptionBrif
+					paymentOptions {
+						fieldGroupName
+						paymentOptionTitle
+						paymentOptionPopupTitle
+						paymentOptionPopupContent
+						paymentOptionIcon {
+							sourceUrl
+						}
+					}
+				}
+				offeringPaymentOption {
+					fieldGroupName
+					offeringPaymentBrif
+					offeringPaymentIcon {
+						sourceUrl
+					}
+				}
+				joinLoanProgram {
+					loanProgramMethodHeading
+					loanProgramIntro
+					sectionTitle
+					loanProgramMethods {
+						fieldGroupName
+						programMethodBrif
+						programMethodIcon {
+							sourceUrl
+						}
+						programMethodsBgImage {
+							sourceUrl
+						}
+						programMethodLink {
+							target
+							title
+							url
+						}
+					}
+				}
+				onlineAppIntegration {
+					appIntegrationBrif
+					appIntegrationHeading
+					appIntegrationOption {
+						fieldGroupName
+						integrationOptionBrif
+						integrationOptionBgImage {
+							sourceUrl
+						}
+						integrationOptionIcon {
+							sourceUrl
+						}
+					}
+					appIntegrationStep {
+						sourceUrl
+					}
+				}
 
-		video_section {
-		  video {
-			videoUrl
-			videoBanner {
-			  sourceUrl
+				loanServices {
+					fieldGroupName
+					serviceHeading
+					serviceText
+					popSlug
+					serviceLink {
+						target
+						title
+						url
+					}
+					serviceIcon {
+						sourceUrl
+					}    
+				}
+			
+				loanProvider {
+					sectionHeading
+					sectionBrif
+					yearBlock
+				}
+
+				selectPartner {
+					sectionBrif
+					sectionHeading
+					yearBlock
+				}
+
+				createLoanOption {
+					sectionHeading
+					sectionBrif
+					sectionOption {
+						fieldGroupName
+						integrationOptionBrif
+						integrationOptionBgImage {
+							sourceUrl
+						}
+						integrationOptionIcon {
+							sourceUrl
+						}
+					}
+				}
+
 			}
-		  }
+			accordion {
+				tabpanel {
+					fieldGroupName
+					tabcontent
+					tablabel
+				}
+			}
+
+			video_section {
+				video {
+					videoUrl
+					videoBanner {
+						sourceUrl
+					}
+				}
+			}
 		}
-
-      }
+		
+	  	
     }
-  }
-`
+}`
