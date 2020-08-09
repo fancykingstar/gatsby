@@ -28,7 +28,7 @@ const blockElements = {
 }
 
 const LoanProgramPage = ({ data }) => {
-	console.log(data)
+	// console.log(data)
 	const content = data.wpgraphql.page;
 
 	const [visible, setVisible] = useState(false);
