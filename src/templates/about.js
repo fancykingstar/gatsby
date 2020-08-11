@@ -37,6 +37,7 @@ import SinglesInside046 from '../images/enerbank_db/singles_inside_046.jpg';
 import SinglesInside029 from '../images/enerbank_db/singles_inside_029.jpg';
 import SinglesInside012 from '../images/enerbank_db/singles_inside_012.jpg';
 import SinglesInside066 from '../images/enerbank_db/singles_inside_066.jpg';
+import tmtopimg from '../images/top_arrow.svg';
 
 const About = ({data}) => {
     // const [collapse, setCollapse] = useState(false);
@@ -107,7 +108,7 @@ const About = ({data}) => {
                 <div className="container">
                     <h2 className="text-center mb-5">EnerBank Timeline of Events</h2>
                     <div id="enerbank-timeline">
-                        <div className="timeline-start"><img src={'../images/top_arrow.svg'} /></div>
+                        <div className="timeline-start"><img src={tmtopimg} /></div>
                         <div className="enerbank-center-line"></div>
                         <div className="enerbank-timeline-content">
                         {/* Article */}
