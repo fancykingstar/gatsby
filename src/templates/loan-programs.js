@@ -156,16 +156,31 @@ const LoanProgramPage = ({ data }) => {
 				{content.loan_program.offeringPaymentOption && (
 					<div className="my-3 my-md-5 row">
 						{content.loan_program.offeringPaymentOption.map((item, i) =>
-							(
-								<div key={item.fieldGroupName + i} className="box-shadow bg-white rounded text-center payment-option-box col-xs-12 col-md p-0 mb-3 mx-sm-3 mx-lg-5">
-									<Link to={'/'} onClick={showbenefitpopup(item, 'growthCalc')}>
-										<div className="bg-blue p-5 rounded-top">
-											<img className="img-fluid" src={item.offeringPaymentIcon.sourceUrl} alt="News" />
+							{
+								if(i === 0){
+									return (
+										<div key={item.fieldGroupName + i} className="box-shadow bg-white rounded text-center payment-option-box col-xs-12 col-md p-0 mb-3 mx-sm-3 mx-lg-5">
+											<Link to={'/'} onClick={showbenefitpopup(item, 'growthCalc')}>
+												<div className="bg-blue p-5 rounded-top">
+													<img className="img-fluid" src={item.offeringPaymentIcon.sourceUrl} alt="News" />
+												</div>
+												<div className="p-4" dangerouslySetInnerHTML={{ __html: item.offeringPaymentBrif }} />
+											</Link>
 										</div>
-										<div className="p-4" dangerouslySetInnerHTML={{ __html: item.offeringPaymentBrif }} />
-									</Link>
-								</div>
-							)
+									)
+								}else{
+									return (
+										<div key={item.fieldGroupName + i} className="box-shadow bg-white rounded text-center payment-option-box col-xs-12 col-md p-0 mb-3 mx-sm-3 mx-lg-5">
+											
+												<div className="bg-blue p-5 rounded-top">
+													<img className="img-fluid" src={item.offeringPaymentIcon.sourceUrl} alt="News" />
+												</div>
+												<div className="p-4" dangerouslySetInnerHTML={{ __html: item.offeringPaymentBrif }} />
+											
+										</div>
+									)
+								}
+							}
 						)}
 					</div>
 				)}
