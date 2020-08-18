@@ -147,11 +147,11 @@ const GrowthCalc = (props) => {
 						<h2 className="text-white font-weight-bold">Business Growth Calculator</h2>
 					</div>
 					<div className="modal_content">
-						<div className="p-6 pb-0 pt-sm-5">
+						<div className="p-5 pb-0 pt-sm-4">
 							<form action="" className="calc_form">
 								<div className="row">
-									<div className="mr-auto p-3 current_growth">Current</div>
-									<div className="ml-auto p-3 growth_result col-sm-3">Result</div>
+									<div className="mr-auto px-3 pt-3 current_growth">Current</div>
+									<div className="ml-auto pt-3 growth_result col-sm-3">Result</div>
 								</div>
 								<div className="row border-bottom">
 									<div className="col-lg-4 ptb-2">
@@ -164,23 +164,27 @@ const GrowthCalc = (props) => {
 									<div className="col-lg-5 ptb-2">
 										<div className="text-sm theme-text text-blue">Projected Increase with Payment Options</div>
 										<div className="d-flex align-items-center">
-											<label className="check_count">25%
+											<label className="check_count">
 												<input type="radio" name="monthlyLeadsIncrement" className="monthly-leads circle one" value="25%" checked={state.monthlyLeadsIncrement === '25%'} onChange={handleCheckInput} />
 												<span className="checkmark"></span>
+												25%
 											</label>
-											<div className="pl-5">
-												<label className="check_count">50%
-													<input type="radio" name="monthlyLeadsIncrement" className="monthly-leads circle two" value="50%" checked={state.monthlyLeadsIncrement === '50%'} onChange={handleCheckInput} />
-													<span className="checkmark"></span>
-												</label>
-											</div>
-											<div className="pl-5">
-												<label className="check_count">100%
-													<input type="radio" name="monthlyLeadsIncrement" className="monthly-leads circle three" value="100%" checked={state.monthlyLeadsIncrement === '100%'} onChange={handleCheckInput} />
-													<span className="checkmark"></span>
-												</label>
-											</div>
-											<div className="m-auto equal"><span className="font-b">=</span></div>
+										<div className="pl-5">
+											<label className="check_count">
+												<input type="radio" name="monthlyLeadsIncrement" className="monthly-leads circle two" value="50%" checked={state.monthlyLeadsIncrement === '50%'} onChange={handleCheckInput} />
+												<span className="checkmark"></span>
+												50%
+											</label>
+										</div>
+										<div className="pl-5">
+											<label className="check_count">
+												<input type="radio" name="monthlyLeadsIncrement" className="monthly-leads circle three" value="100%" checked={state.monthlyLeadsIncrement === '100%'} onChange={handleCheckInput} />
+												<span className="checkmark"></span>
+												100%
+											</label>
+										</div>
+										<div className="m-auto equal">
+											<span className="font-b">=</span></div>
 										</div>
 									</div>
 									<div className="col-lg-3 bg_blue ptb-2 result-col">
@@ -199,23 +203,26 @@ const GrowthCalc = (props) => {
 									<div className="col-lg-5 ptb-2">
 										<div className="text-sm theme-text text-blue">Projected Increase with Payment Options</div>
 										<div className="d-flex align-items-center">
-											<label className="check_count">25%
+											<label className="check_count">
 												<input type="radio" name="closeRateIncrement" className="close-rate circle one" value="25%" checked={state.closeRateIncrement === '25%'} onChange={handleCheckInput} />
 												<span className="checkmark"></span>
+												25%
 											</label>
-											<div className="pl-5">
-												<label className="check_count">50%
-													<input type="radio" name="closeRateIncrement" className="close-rate circle two" value="50%" checked={state.closeRateIncrement === '50%'} onChange={handleCheckInput} />
-													<span className="checkmark"></span>
-												</label>
-											</div>
-											<div className="pl-5">
-												<label className="check_count">100%
-													<input type="radio" name="closeRateIncrement" className="close-rate circle three" value="100%" checked={state.closeRateIncrement === '100%'} onChange={handleCheckInput} />
-													<span className="checkmark"></span>
-												</label>
-											</div>
-											<div className="m-auto equal"><span className="font-b">=</span></div>
+										<div className="pl-5">
+											<label className="check_count">
+												<input type="radio" name="closeRateIncrement" className="close-rate circle two" value="50%" checked={state.closeRateIncrement === '50%'} onChange={handleCheckInput} />
+												<span className="checkmark"></span>
+												50%
+											</label>
+										</div>
+										<div className="pl-5">
+											<label className="check_count">
+												<input type="radio" name="closeRateIncrement" className="close-rate circle three" value="100%" checked={state.closeRateIncrement === '100%'} onChange={handleCheckInput} />
+												<span className="checkmark"></span>
+												100%
+											</label>
+										</div>
+										<div className="m-auto equal"><span className="font-b">=</span></div>
 										</div>
 									</div>
 									<div className="col-lg-3 bg_blue ptb-2 result-col">
@@ -235,20 +242,23 @@ const GrowthCalc = (props) => {
 									<div className="col-lg-5 ptb-2">
 										<div className="text-sm theme-text text-blue">Projected Increase with Payment Options</div>
 										<div className="d-flex align-items-center">
-											<label className="check_count">30%
+											<label className="check_count">
 												<input type="radio" name="projectSizeIncrement" className="project-size circle one" value="30%" checked={state.projectSizeIncrement === '30%'} onChange={handleCheckInput} />
 												<span className="checkmark"></span>
+												30%
 											</label>
 											<div className="pl-5">
-												<label className="check_count">40%
+												<label className="check_count">
 													<input type="radio" name="projectSizeIncrement" className="project-size circle two" value="40%" checked={state.projectSizeIncrement === '40%'} onChange={handleCheckInput} />
 													<span className="checkmark"></span>
+													40%
 												</label>
 											</div>
 											<div className="pl-5">
-												<label className="check_count">50%
+												<label className="check_count">
 													<input type="radio" name="projectSizeIncrement" className="project-size circle three" value="50%" checked={state.projectSizeIncrement === '50%'} onChange={handleCheckInput} />
 													<span className="checkmark"></span>
+													50%
 												</label>
 											</div>
 											<div className="m-auto equal"><span className="font-b">=</span></div>
@@ -269,7 +279,7 @@ const GrowthCalc = (props) => {
 										</div> 							
 									</div>
 									<div className="col-lg-5">
-										<div className="text-sm theme-text text-blue ptb-2 mt-4">By increasing your incoming leads,<br/>close rate and average job size,<br/>watch your annual revenue grow.</div>                    	
+										<div className="text-sm theme-text text-blue pt-3 pb-3">By increasing your incoming leads,<br/>close rate and average job size,<br/>watch your annual revenue grow.</div>                    	
 									</div>
 									<div className="col-lg-3 bg_blue ptb-2 result-col">
 										<div className="text-sm theme-text text-white">Annual Revenue</div>

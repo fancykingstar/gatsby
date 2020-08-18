@@ -18,6 +18,7 @@ import Support from "../components/support"
 import States from "../components/states"
 import BenefitsLoanProgram from "../components/benefitsLoanProgram"
 import GrowthCalc from "../components/growthCalc"
+import partnerPortalData from "../templates/partner-portal"
 
 // accordian
 const blockElements = {
@@ -28,7 +29,6 @@ const blockElements = {
 }
 
 const LoanProgramPage = ({ data }) => {
-	// console.log(data)
 	const content = data.wpgraphql.page;
 
 	const [visible, setVisible] = useState(false);
@@ -44,6 +44,10 @@ const LoanProgramPage = ({ data }) => {
 	const hidebenefitpopup = () => {
 		// console.log('hidebenefitpopup');
 		setVisible(false);
+	}
+
+	const getPopupData = (data) => {
+		console.log(data);
 	}
 	
 	const popup = () => {
@@ -84,6 +88,7 @@ const LoanProgramPage = ({ data }) => {
 	return (
 		<Layout>
 			<SEO title={content.title} description={content.excerpt} />
+			{/* <partnerPortal popupData={getPopupData.bind(this)} /> */}
 
 			{content.top_banner.banner.backgroundImage && (
 				<section className="banner-area pos_relative" id="home" style={{ backgroundImage: "url(" + content.top_banner.banner.backgroundImage.sourceUrl + ")" }}>
@@ -611,8 +616,6 @@ query($databaseId: ID!) {
 					}
 				}
 			}
-		}
-		
-	  	
+		}	  	
     }
 }`

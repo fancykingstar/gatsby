@@ -3,11 +3,11 @@ import React from "react";
 import { Link } from "gatsby";
 import { graphql } from "gatsby";
 
-import Layout from "../components/layout"
-import SEO from "../components/seo"
+import Layout from "../components/layout";
+import SEO from "../components/seo";
 
-const PartnerPortal = ({data}) => {
-  return (  
+const partnerPortalData = (data) => {
+  return (
   <Layout>
     <SEO title={data.wpgraphql.post.title} description={data.wpgraphql.post.excerpt}/>
 
@@ -49,15 +49,13 @@ const PartnerPortal = ({data}) => {
         </div>
       </div>
     </div>
-
-
   </Layout>  
 )}
 
-export default PartnerPortal
+export default partnerPortalData
 
 export const query = graphql`
-  query {
+query {
     wpgraphql {
       post(id: "cG9zdDoxMjIw", idType: ID) {
         title
@@ -93,5 +91,5 @@ export const query = graphql`
         }
       }
     }
-  }
+}
 `
