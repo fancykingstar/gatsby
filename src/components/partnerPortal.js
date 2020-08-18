@@ -65,3 +65,42 @@ const PartnerPortal = (props) => {
 	} 
 }
 export default PartnerPortal
+
+export const query = graphql`
+query($Id: ID!) {
+    wpgraphql {
+      	post(id: $Id, idType: ID) {
+			title
+			date
+			content(format: RENDERED)        
+			innerpagebanner {
+			fieldGroupName
+			pagebanner {
+				bannertext
+				bannner {
+				title
+				sourceUrl
+				}
+				bannericon {
+				uri
+				title
+				sourceUrl
+				}
+			}
+			}
+			
+			partnerportal {
+			portalservice {
+				servicegroup {
+				fieldGroupName
+				servicetitle
+				}
+				accessportallink {
+				title
+				url
+				}
+			}
+			}
+      	}
+    }
+}`

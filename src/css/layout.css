@@ -777,22 +777,22 @@ body.mobile-nav-active #mobile-nav-toggle { color: #fff }
 
   /* Add Estimated Calculator */
   .p-6{padding: 3rem 4rem; }
-  .ptb-2{ padding-top:1.5rem !important; padding-bottom:1.5rem !important}
+  .ptb-2{ padding-top: .5rem !important; padding-bottom: .5rem !important}
   .font-b{ font-size:42px; font-weight:600;}
   .calc_form{ position:relative;}
   .calc_form p, .calc_form label, .text-sm{ font-size:14px; font-weight:600;}
   .bg_blue{background-color: #0079C2;}
   .bg_blue label{ color:#fff;}
-  .theme-text{ line-height:21px; margin-bottom: 10px;}
+  .theme-text{ line-height:21px; margin-bottom: 3px;}
   .border-radius5{ border-radius: 5px !important; border: solid 1px #0079C2; }
-  .check_count { display: block; position: relative; padding-top: 40px; margin-bottom:0px; cursor: pointer; -webkit-user-select: none;
+  .check_count { display: block; position: relative; margin-bottom:0px; cursor: pointer; -webkit-user-select: none; text-align: center;
    -moz-user-select: none; -ms-user-select: none; user-select: none; }
  
  /* Hide the browser's default checkbox */
  .check_count input { position: absolute; opacity: 0; cursor: pointer; height: 0; width: 0; }
  
  /* Create a custom checkbox */
- .checkmark { position: absolute; top:2px; left: 0; height:36px; width: 36px; background-color:transparent; border:solid 1px #0079C2; border-radius:5px; }
+ .checkmark { position: relative; display: block; top:2px; left: 0; height:36px; width: 36px; background-color:transparent; border:solid 1px #0079C2; border-radius:5px; }
  
  /* On mouse-over, add a grey background color */
  .check_count:hover input ~ .checkmark { background-color: #fff; }
@@ -871,43 +871,18 @@ body.mobile-nav-active #mobile-nav-toggle { color: #fff }
   }
   .timeline-article .content-left:before,
   .timeline-article .content-right:before{
-        content: '';
-        display: block;
-        width: 1.1rem;
-        height: 1.1rem;
-        
-        position: absolute;
-        transform: rotate(45deg);
-        top: calc(50% - 0.6rem);
-        background: #fff;
-    
-}
-
-
+      content: ''; display: block; width: 20px; height: 20px; position: absolute; transform: rotate(45deg); top: calc(50% - 0.6rem); background: #fff;
+  }
   .timeline-article .content-left:before {
-    right: -0.6rem;
-    border-left: 0;
-    border-bottom: 0;
-    border-top: 2px solid #0079c2;
-    border-right: solid 2px #0079c2;
-}
-
+    right: -12px; border-left: 0; border-bottom: 0; 
+    border-top: 2px solid #0079c2; border-right: solid 2px #0079c2;
+  }
   .timeline-article .content-right:before {
-    left: -0.6rem;
-    border-right: 0;
-    border-top: 0;
-    border-bottom: 2px solid #0079c2;
-    border-left: solid 2px #0079c2;
-}
-
-    
+    left: -12px; border-right: 0; border-top: 0;
+    border-bottom: 2px solid #0079c2; border-left: solid 2px #0079c2;
+  }      
   .timeline-article .meta-date {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    width: 62px;
-    height: 62px;
-    /* margin-left: -31px; */
+    position: absolute; top: 50%; left: 50%; width: 62px; height: 62px;
     color: #4d4d4d;
     border-radius: 100%;
     background: #ffffff;
@@ -956,14 +931,20 @@ body.mobile-nav-active #mobile-nav-toggle { color: #fff }
       padding: 10px 25px;
       min-height: 65px;
     }
-    .timeline-article .content-left:before {
-      content: "\f0d9";
-      right: auto;
-      left: -8px;
-    }
     .timeline-article .content-right:before {
-      display: none;
+      left: -10px;
+      border-right: 2px solid transparent;
+      border-top: 2px solid transparent;
     }
+    .timeline-article .content-left:before {
+      content: "";
+      right: auto;
+      left: -10px;
+      border-color: transparent;
+      border-bottom: 2px solid #0079c2;
+      border-left: 2px solid #0079c2;
+    }
+
   }
   @media only screen and (max-width: 400px) {
     .timeline-article p {
@@ -971,8 +952,7 @@ body.mobile-nav-active #mobile-nav-toggle { color: #fff }
     }
     .timeline-article p span.article-number {
       display: none;
-    }
-    
+    }    
   }
 /*===== Responsive Vertical Timeline =====*/
 .directorName{ font-weight:600; color: #4d4d4d; font-size: 24px; }
