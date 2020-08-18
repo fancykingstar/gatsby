@@ -124,24 +124,35 @@ exports.createPages = async ({ graphql, actions }) => {
   });  
 
   /**  query for WordPress posts  */
-  const postsResult = await graphql(`
+  const postResults = await graphql(`
     query GET_POSTS {
       wpgraphql {
         posts {
           edges {
             node {
+              databaseId
               id
+              slug
               title
               date
-              slug
+              content(format: RENDERED)
             }
           }
         }
       }
     }
-  `)
-  postsResult.data.wpgraphql.posts.edges.forEach(({ node }) => {
-      { switch (node.id) {
+  `);
+
+  // postResults.data.wpgraphql.posts.edges.forEach(({ node }) => {
+  //     createPage({
+  //       path: node.id,
+  //       component: path.resolve(`./src/components/partnerPortal.js`),
+  //       context: {
+  //         slug: node.slug,
+  //         Id: node.id,
+  //       },
+  //     })
+  //     { switch (node.id) {
             // case "cG9zdDoxMjE3":
             //       createPage({
             //         path: "loan-programs",
@@ -162,29 +173,19 @@ exports.createPages = async ({ graphql, actions }) => {
             //         },
             //       })
             //   break;
-            case "cG9zdDoxMjIw":
-                  createPage({
-                    path: "loan-programs/cG9zdDoxMjIw",
-                    component: path.resolve(`./src/templates/partner-portal.js`),
-                    context: {
-                      slug: node.slug,
-                      databaseId: node.databaseId,
-                    },
-                  })
-              break;
-            // case "cG9zdDoxMjI0":
+            // case "cG9zdDoxMjIw":
             //       createPage({
-            //         path: "loan-programs",
-            //         component: path.resolve(`./src/templates/training.js`),
+            //         path: node.id,
+            //         component: path.resolve(`./src/components/partnerPortal.js`),
             //         context: {
             //           slug: node.slug,
-            //           databaseId: node.databaseId,
+            //           Id: node.id,
             //         },
             //       })
             //   break;
-            default:
-              break;
-      }}
-  });
+            // default:
+              // break;
+//       }}
+//   });
 
-}
+// }
