@@ -13,7 +13,8 @@ import Paymentbenefitoption from "../components/paymentBenefitsPopup"
 import AppMethod from "../components/appMethod"
 import PartnerPortal from "../components/partnerPortal"
 import DealerResource from "../components/dealerResource"
-import Training from "../components/training"
+import Training from "../components/training";
+import LoanType from "../components/loanType"
 import Support from "../components/support"
 import States from "../components/states"
 import BenefitsLoanProgram from "../components/benefitsLoanProgram"
@@ -66,6 +67,9 @@ const LoanProgramPage = ({ data }) => {
 				break;
 			case "training":
 				return <Training visiblity={visible} handleClose={hidebenefitpopup} popData={popData} />;
+				break;
+			case "loantype":
+				return <LoanType visiblity={visible} handleClose={hidebenefitpopup} popData={popData} />;
 				break;
 			case "states":
 				return <States visiblity={visible} handleClose={hidebenefitpopup} popData={popData} />;
@@ -305,6 +309,7 @@ const LoanProgramPage = ({ data }) => {
 													<img src={item.integrationOptionBgImage.sourceUrl} className="card-img-top" alt="Training" />
 												</div>
 												<div className="p-4" dangerouslySetInnerHTML={{ __html: item.integrationOptionBrif }} />
+												<Link to={'/'} onClick={showbenefitpopup(item, 'loantype')}>Learn More</Link>
 											</div>
 										)
 									}else{
