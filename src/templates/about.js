@@ -94,7 +94,7 @@ const About = ({data}) => {
             </section>
             {/* End News & Media Area */}
             {/* Company Overview */}
-            <div className="bg-blue mt-5">
+            <div className="bg-blue mt-5" id="companyoverview">
                 <div className="container py-5 text-white">
                     <div className="container py-5 text-white">
                     <h2 className="h2 text-white text-center mb-5">Company Overview</h2>
@@ -215,7 +215,7 @@ const About = ({data}) => {
                     </div>
                 </div> */}
                 
-                <div className="bg-blue">
+                <div className="bg-blue" id="memberfdic">
                     <div className="container py-5 text-white">
                     <h2 className="h2 text-white text-center mb-5">Member FDIC Bank</h2>
                     <div className="d-flex flex-md-row mb-4 h-md-250 align-items-start">
@@ -227,7 +227,7 @@ const About = ({data}) => {
                     </div>
                 </div>
                 {/* Community Involvement */}
-                <div className="container py-5">
+                <div className="container py-5" id="communityinvolvement">
                     <h2 className="h2 text-center mb-3">Community Involvement</h2>
                     <p>EnerBank USA is not just an office building full of workers, we’re a meaningful part of the community in more ways than one. Our leaders and team members dedicate their time to enrich the lives of people in our community through volunteer hours spent in a variety of good causes, such as:</p>
                     <div className="row my-5">
@@ -245,9 +245,9 @@ const About = ({data}) => {
                         </div>
                     </div>
 
-                    <h2 className="h2 text-center mb-3">CMS Profile / Board of Directors</h2>
+                    <h2 className="h2 text-center mb-3" id="leadership">CMS Profile / Board of Directors</h2>
                     <p>EnerBank USA is a wholly-owned subsidiary of CMS Energy, and we’re proud to be a part of the CMS family. Under the leadership of CMS, we benefit greatly from the combined experience of our Board of Directors as we continue to become the most sought-after home improvement lender in the nation.</p>
-                    <h2 className="h2 text-center mb-3">EnerBank Board of Directors</h2>
+                    <h2 className="h2 text-center mb-3" id="boardofdirectors">EnerBank Board of Directors</h2>
                     <p className="text-center">Our Board of Directors . . .</p>
                     <div className="row">
                         <div className="col-md-3">
@@ -299,7 +299,7 @@ const About = ({data}) => {
                             </div>
                         </div>
                     </div>
-                    <h2 className="h2 text-center mb-3">Feedback Form</h2>
+                    <h2 className="h2 text-center mb-3" id="feedback">Feedback Form</h2>
                     <p>EnerBank is dedicated to exceptional customer service. We want to hear from you so that we can address any questions, comments or concerns.</p>
                     <form>
                         <div className="row">

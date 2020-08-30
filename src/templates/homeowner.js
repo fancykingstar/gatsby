@@ -74,7 +74,7 @@ const HomeOwnerPage = ({data}) => {
             </section>
         )}
 
-        <section className="service-area section-gap">
+        <section className="service-area section-gap" id="whychoosebank">
             <div className="container">
                 <div className="row justify-content-center">
                     {data.wpgraphql.page.content && (
@@ -100,7 +100,7 @@ const HomeOwnerPage = ({data}) => {
         </section>
         <section className="pt-30 pb-30 relative" style={{background: 'url('+ data.wpgraphql.page.home_owner.paymentBanner.sourceUrl +') center', backgroundRepeat: 'no-repeat', backgroundSize: 'cover', minHeight: '515px'}}></section>
         
-        <section className="section-gap container">
+        <section className="section-gap container" id="howtopay">
             {/* <div dangerouslySetInnerHTML={{ __html: data.wpgraphql.page.home_owner.makePaymentWay}} /> */}
             <h2 className="mb-30 text-center"><span>Six Ways to Make a Payment</span></h2>
             <Tabbordion blockElements={blockElements} animateContent={'height'} mode={'toggle'} className="accordion loan_offer mx-4 mx-lg-5" name="accordion">

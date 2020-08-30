@@ -37,7 +37,7 @@ const CareerPage = ({data, props}) => {
         </div>
       </section>
 
-      <section className="service-area section-gap">
+      <section className="service-area section-gap" id="whyenerbank">
         <div className="container">
           <div className="row justify-content-center">
             <div className="col-md-12 header-text mb-4">
@@ -45,7 +45,7 @@ const CareerPage = ({data, props}) => {
               <p> Jobs come and go, but a career at EnerBank is just that: a career. We truly value our people — hiring the best and brightest, then continuing to nurture that talent as team members develop their skills and move up through the organization over time. If you love to help people, thrive in a challenging environment, 
       and are ready for the time of your life, consider joining us.</p>
             </div>
-            <div className="col-md-12 header-text">
+            <div className="col-md-12 header-text" id="availableposition">
               <h2 className="mb-20 text-center"><span>Available Positions</span></h2>
             </div>
             <Helmet>
