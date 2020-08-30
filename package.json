@@ -5,6 +5,11 @@
   "version": "0.1.0",
   "author": "Nate Finch <finchproservices@gmail.com>",
   "dependencies": {
+    "@fortawesome/fontawesome-svg-core": "^1.2.30",
+    "@fortawesome/free-brands-svg-icons": "^5.14.0",
+    "@fortawesome/free-regular-svg-icons": "^5.14.0",
+    "@fortawesome/free-solid-svg-icons": "^5.14.0",
+    "@fortawesome/react-fontawesome": "^0.1.11",
     "@vimeo/player": "^2.12.0",
     "bootstrap": "^4.5.0",
     "gatsby": "^2.19.7",

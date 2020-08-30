@@ -125,7 +125,7 @@ const LoanProgramPage = ({ data }) => {
 				</div>
 				</section>
 			{content.loan_program.paymentOptionsBenefits.paymentOptionHeading && (
-				<div className="bg-blue">
+				<div className="bg-blue" id="paymentoptbenefits">
 					<h1 className="container text-center py-4 h2 text-white">
 						{content.loan_program.paymentOptionsBenefits.paymentOptionHeading}
 					</h1>
@@ -191,7 +191,7 @@ const LoanProgramPage = ({ data }) => {
 			</div>
 
 			{content.loan_program.joinLoanProgram && (
-				<section className="joinLoanProgram">
+				<section className="joinLoanProgram" id="joinloanprogram">
 					{content.loan_program.joinLoanProgram.loanProgramMethodHeading && (
 						<div className="bg-blue">
 							<h1 className="container text-center py-4 h2 text-white">
@@ -390,7 +390,7 @@ const LoanProgramPage = ({ data }) => {
 				</div>
 			)}
 
-			<div className="bg-blue mt-5">
+			<div className="bg-blue mt-5" id="createloanprogram">
 				<div className="container text-center py-4 h2 text-white">{content.loan_program.createLoanOption.sectionHeading}</div>
 			</div>
 
