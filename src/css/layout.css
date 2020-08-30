@@ -369,6 +369,9 @@ body.mobile-nav-active #mobile-nav-toggle { color: #fff }
 @media (max-width: 767px) {
     .banner-img { width: 60%; text-align: center; margin-left: auto; margin-right: auto }
 }
+@media screen and (max-width:480px){
+  .header-btn a{ max-width:none; }
+}
 .single-service h3 { padding: 20px 0; -webkit-transition: all 0.3s ease 0s; -moz-transition: all 0.3s ease 0s; -o-transition: all 0.3s ease 0s; transition: all 0.3s ease 0s; font-size: 18px }
 .single-service:hover { cursor: pointer }
 .single-service:hover h4 { color: #29A9E0 }
@@ -554,10 +557,21 @@ body.mobile-nav-active #mobile-nav-toggle { color: #fff }
 @media (max-width: 768px) {
 	.header-btn{ margin-top:20px; }
 	.main-menu{ padding-top:10px; padding-bottom:10px;}
-    .footer-area .container-fluid .row .custom-col-01, .footer-area .container-fluid .row .custom-col-02, .footer-area .container-fluid .row .custom-col-03, .footer-area .container-fluid .row .custom-col-04, .footer-area .container-fluid .row .custom-col-05, .footer-area .container-fluid .row .custom-col-06, .footer-area .container-fluid .row .custom-col-07 { flex:none; max-width:50%;}
+    .footer-area .container-fluid .row .custom-col-01, 
+    .footer-area .container-fluid .row .custom-col-02, 
+    .footer-area .container-fluid .row .custom-col-03, 
+    .footer-area .container-fluid .row .custom-col-04, 
+    .footer-area .container-fluid .row .custom-col-05, 
+    .footer-area .container-fluid .row .custom-col-06, 
+    .footer-area .container-fluid .row .custom-col-07 { flex:none; max-width:50%;}
     .footer-area .container-fluid .pl-30{ padding-left:0px;}
     .bordred-title{ font-size:32px !important;}
     .bordred-title:before{ border-top:0 !important;}
+}
+@media screen and (max-width:576px){
+  .footer-area .container-fluid .row .custom-col-07{ max-width:100%; display: flex; }
+  .footer-area .container-fluid .row .custom-col-07 .footer-rightpad{ margin:20px 0 0; flex: 1 0 30%; }
+  .mediaIcon{ flex: 0 1 50%; }
 }
 .content-center {
     display: flex;
@@ -579,6 +593,14 @@ body.mobile-nav-active #mobile-nav-toggle { color: #fff }
 .benefit-option ul li{ padding: 0 15px; width: 16.66%; }
 .benefit-option ul li .icon{ margin-bottom: 10px; }
 .benefit-option ul li p{ line-height: 22px; font-size: 16px; font-weight: 600; }
+
+@media screen and (max-width:991px){
+  .benefit-option ul{ flex-wrap: wrap; }
+  .benefit-option ul li{ width: 30%; }
+}
+@media screen and (max-width:576px){
+  .benefit-option ul li{ width: 50%; }
+}
 
 /* hover effect */
 .payment-option ul li:hover{ transform: scale(1.2); }
