@@ -417,6 +417,7 @@ body.mobile-nav-active #mobile-nav-toggle { color: #fff }
     font-weight: 300 !important;
     line-height: 1.9em !important; 
 }
+#hrbr-page-message ul{ margin-left: 16px; }
 
 .card-body {display: flex; flex-direction: column;}
 .single-offer a.btn { margin-top: auto;}
