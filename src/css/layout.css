@@ -348,7 +348,7 @@ body.mobile-nav-active #mobile-nav-toggle { color: #fff }
 .banner-area { background: url(../images/hero-img.jpg); background-position: center; background-size: cover }
 .banner-area .fullscreen{ min-height:420px;}
 .service-area .header-text h2{ text-align: center; font-weight: 600; margin-bottom: 15px; }
-.video-section{position:relative; margin: 0px; padding: 50px 0 0;}
+.video-section{position:relative; margin: 0px; padding: 30px 0;}
 @media (max-width: 767px) {
     .banner-area .fullscreen { height: 100% !important }
 }
@@ -405,8 +405,8 @@ body.mobile-nav-active #mobile-nav-toggle { color: #fff }
     .home-about-area .single-services p { font-size: 12px; width: 88% }
 }
 
-.jobs_list, .hrbr-job-list{margin: 0 !important; padding: 0 !important; list-style: none !important;}
-.jobs_list li, .hrbr-job-list li{margin: 0 0 40px 0 !important; padding: 30px 0 30px 0 !important; border-top: none; border-bottom: solid 1px #0077C8 !important;}
+.jobs_list, .hrbr-job-list{margin: 0 !important; padding: 0 !important;}
+.jobs_list li, .hrbr-job-list li{margin: 0 0 40px 0 !important; padding: 30px 0 30px 0 !important; border-top: none; border-bottom: solid 1px #0077C8 !important; }
 .jobs_list li h3, .hrbr-job-list li .hrbr-title{ font-size: 24px !important; font-weight: 600 !important; color:#0077C8 !important; margin:0 0 0 0 !important; padding: 0 !important; }
 .jobs_list li .job_location, .hrbr-job-list li .hrbr-location, .hrbr-job-list li .hrbr-location small{ font-size: 20px !important; font-weight: 600 !important; color: #4D4D4D !important; margin: 5px 0 5px 0 !important; }
 .hrbr-job-list li p{ 
@@ -417,6 +417,9 @@ body.mobile-nav-active #mobile-nav-toggle { color: #fff }
     font-weight: 300 !important;
     line-height: 1.9em !important; 
 }
+.hrbr-home .hrbr-bottom-content .hrbr-job-list-cont .hrbr-jobs .hrbr-job-list li .hrbr-job-details a.hrbr-title{ display: inline-block; }
+.hrbr-home .hrbr-bottom-content .hrbr-job-list-cont .hrbr-jobs .hrbr-job-list li .hrbr-job-details a.hrbr-title:after{ content:""; width: 7px; height:7px; border-radius: 50%; background: #0077C8; display: block;
+  position: absolute; left: -3px; top: 12px; }
 
 .card-body {display: flex; flex-direction: column;}
 .single-offer a.btn { margin-top: auto;}
