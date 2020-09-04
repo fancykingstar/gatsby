@@ -347,8 +347,8 @@ body.mobile-nav-active #mobile-nav-toggle { color: #fff }
 .overlay { position: absolute; left: 0; right: 0; top: 0; bottom: 0 }
 .banner-area { background: url(../images/hero-img.jpg); background-position: center; background-size: cover }
 .banner-area .fullscreen{ min-height:420px;}
-.service-area .header-text h2{ text-align: center; font-weight: 600; margin-bottom: 15px; }
-.video-section{position:relative; margin: 0px; padding: 30px 0;}
+.service-area .header-text h2{ text-align: center; font-weight: 600; margin-bottom: 25px; }
+.video-section{position:relative; margin: 0px; padding: 30px 0 40px;}
 @media (max-width: 767px) {
     .banner-area .fullscreen { height: 100% !important }
 }
