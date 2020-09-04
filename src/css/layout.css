@@ -417,9 +417,6 @@ body.mobile-nav-active #mobile-nav-toggle { color: #fff }
     font-weight: 300 !important;
     line-height: 1.9em !important; 
 }
-.hrbr-home .hrbr-bottom-content .hrbr-job-list-cont .hrbr-jobs .hrbr-job-list li .hrbr-job-details a.hrbr-title{ display: inline-block; }
-.hrbr-home .hrbr-bottom-content .hrbr-job-list-cont .hrbr-jobs .hrbr-job-list li .hrbr-job-details a.hrbr-title:after{ content:""; width: 7px; height:7px; border-radius: 50%; background: #0077C8; display: block;
-  position: absolute; left: -3px; top: 12px; }
 
 .card-body {display: flex; flex-direction: column;}
 .single-offer a.btn { margin-top: auto;}
