@@ -1,7 +1,7 @@
 import React from 'react';
 import { Modal } from 'react-bootstrap';
 
-const Paymentbenefitoption = (props) => {
+const PaymentBenefitsPopup = (props) => {
 	if (props.popData.length === 0) {
 		return (
 			<div className="modal fade show" style={{ display: props.visiblity }}></div>
@@ -23,4 +23,4 @@ const Paymentbenefitoption = (props) => {
 		)
 	} 
 }
-export default Paymentbenefitoption
+export default PaymentBenefitsPopup

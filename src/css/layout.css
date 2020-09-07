@@ -418,6 +418,8 @@ body.mobile-nav-active #mobile-nav-toggle { color: #fff }
     line-height: 1.9em !important; 
 }
 #hrbr-page-message ul{ margin-left: 16px; }
+.hrbr-wr-fl .hrbr-row-filters{ width: 440px !important; }
+.hrbr-wr-fl .hrbr-row-search{ width: auto !important; }
 
 .card-body {display: flex; flex-direction: column;}
 .single-offer a.btn { margin-top: auto;}
