@@ -9,7 +9,7 @@ import Layout from "../components/layout"
 import SEO from "../components/seo"
 import Video from "../components/video";
 // popup components
-import Paymentbenefitoption from "../components/paymentBenefitsPopup"
+import PaymentBenefitsPopup from "../components/paymentBenefitsPopup"
 import AppMethod from "../components/appMethod"
 import PartnerPortal from "../components/partnerPortal"
 import DealerResource from "../components/dealerResource"
@@ -54,7 +54,7 @@ const LoanProgramPage = ({ data }) => {
 	const popup = () => {
 		switch(popType){
 			case "payment_options":
-				return <Paymentbenefitoption visiblity={visible} handleClose={hidebenefitpopup} popData={popData} />;
+				return <paymentBenefitsPopup Pisiblity={visible} handleClose={hidebenefitpopup} popData={popData} />;
 				break;
 			case "app_method":
 				return <AppMethod visiblity={visible} handleClose={hidebenefitpopup} popData={popData} />;
