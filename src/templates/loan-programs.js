@@ -35,6 +35,7 @@ const LoanProgramPage = ({ data }) => {
 	const [visible, setVisible] = useState(false);
 	const [popType, setPopType] = useState('payment_options');
 	const [popData, setPopData] = useState('');
+	
 	const showbenefitpopup = (param, type) => event => {
 		event.preventDefault();
 		setPopData(param);
@@ -54,7 +55,7 @@ const LoanProgramPage = ({ data }) => {
 	const popup = () => {
 		switch(popType){
 			case "payment_options":
-				return <paymentBenefitsPopup Pisiblity={visible} handleClose={hidebenefitpopup} popData={popData} />;
+				return <PaymentBenefitsPopup visiblity={visible} handleClose={hidebenefitpopup} popData={popData} />;
 				break;
 			case "app_method":
 				return <AppMethod visiblity={visible} handleClose={hidebenefitpopup} popData={popData} />;
@@ -104,7 +105,7 @@ const LoanProgramPage = ({ data }) => {
 							{content.top_banner.banner.bannerLinks.map((item, i) =>
 								(
 									<div className="col-md-4" key={item.fieldGroupName + i}>
-										<div className="header-btn mr-3 ml-3"><Link to="/" dangerouslySetInnerHTML={{ __html: item.links.title }} /></div>
+										<div className="header-btn mr-3 ml-3"><Link to={'/'} dangerouslySetInnerHTML={{ __html: item.links.title }} /></div>
 									</div>
 								)
 							)}
@@ -144,7 +145,7 @@ const LoanProgramPage = ({ data }) => {
 							{content.loan_program.paymentOptionsBenefits.paymentOptions.map((item, i) =>
 								(
 									<li key={item.fieldGroupName + i}>
-										<Link onClick={showbenefitpopup(item, 'payment_options')} to={'/'} data-title={item.paymentOptionTitle} data-content="Advertising payment options is a great way to set you apart from your competitors and produce more leads for your business.">
+										<Link to={'#'} onClick={showbenefitpopup(item, 'payment_options')} data-title={item.paymentOptionTitle} data-content="Advertising payment options is a great way to set you apart from your competitors and produce more leads for your business.">
 											<div className="box-circle icon bg-blue content-center">
 												<img src={item.paymentOptionIcon.sourceUrl} alt={item.fieldGroupName} />
 											</div>
@@ -164,7 +165,7 @@ const LoanProgramPage = ({ data }) => {
 								if(i === 0){
 									return (
 										<div key={item.fieldGroupName + i} className="box-shadow bg-white rounded text-center payment-option-box col-xs-12 col-md p-0 mb-3 mx-sm-3 mx-lg-5">
-											<Link to={'/'} onClick={showbenefitpopup(item, 'growthCalc')}>
+											<Link to={'#'} onClick={showbenefitpopup(item, 'growthCalc')}>
 												<div className="bg-blue p-5 rounded-top">
 													<img className="img-fluid" src={item.offeringPaymentIcon.sourceUrl} alt="News" />
 												</div>
@@ -222,7 +223,7 @@ const LoanProgramPage = ({ data }) => {
 														</div>
 														<div className="card-body">
 															<div dangerouslySetInnerHTML={{ __html: item.programMethodBrif }} />
-															<Link to={'/'} className="btn mt-3" onClick={showbenefitpopup(item, 'app_method')}>{item.programMethodLink.title}</Link>
+															<Link to={'#'} className="btn mt-3" onClick={showbenefitpopup(item, 'app_method')}>{item.programMethodLink.title}</Link>
 														</div>
 													</div>
 												</div>
@@ -243,7 +244,7 @@ const LoanProgramPage = ({ data }) => {
 														</div>
 														<div className="card-body">
 															<div dangerouslySetInnerHTML={{ __html: item.programMethodBrif }} />
-															<Link to={'/'} className="btn mt-3" onClick={showbenefitpopup(item, 'partner_portal')}>{item.programMethodLink.title}</Link>
+															<Link to={'#'} className="btn mt-3" onClick={showbenefitpopup(item, 'partner_portal')}>{item.programMethodLink.title}</Link>
 														</div>
 													</div>
 												</div>
@@ -264,7 +265,7 @@ const LoanProgramPage = ({ data }) => {
 														</div>
 														<div className="card-body">
 															<div dangerouslySetInnerHTML={{ __html: item.programMethodBrif }} />
-															<Link to={'/'} className="btn mt-3" onClick={showbenefitpopup(item, 'dealer_resource')}>{item.programMethodLink.title}</Link>
+															<Link to={'#'} className="btn mt-3" onClick={showbenefitpopup(item, 'dealer_resource')}>{item.programMethodLink.title}</Link>
 														</div>
 													</div>
 												</div>
@@ -309,7 +310,7 @@ const LoanProgramPage = ({ data }) => {
 													<img src={item.integrationOptionBgImage.sourceUrl} className="card-img-top" alt="Training" />
 												</div>
 												<div className="p-4" dangerouslySetInnerHTML={{ __html: item.integrationOptionBrif }} />
-												<Link to={'/'} onClick={showbenefitpopup(item, 'loantype')}>Learn More</Link>
+												<Link to={'#'} onClick={showbenefitpopup(item, 'loantype')}>Learn More</Link>
 											</div>
 										)
 									}else{
@@ -327,7 +328,7 @@ const LoanProgramPage = ({ data }) => {
 													<img src={item.integrationOptionBgImage.sourceUrl} className="card-img-top" alt="Training" />
 												</div>												
 												<div className="p-4" dangerouslySetInnerHTML={{ __html: item.integrationOptionBrif }} />
-												<Link to={'/'} onClick={showbenefitpopup(item, 'training')}>Learn More</Link>
+												<Link to={'#'} onClick={showbenefitpopup(item, 'training')}>Learn More</Link>
 											</div>
 										)
 									}
@@ -340,7 +341,7 @@ const LoanProgramPage = ({ data }) => {
 
 			{content.loan_program && (
 				<div className="container">
-					<div className="m-4 m-lg-5">We offer loans for a ton of different home improvement project types. Don’t see your type here? <Link to="#">Give us a call</Link>.</div>
+					<div className="m-4 m-lg-5">We offer loans for a ton of different home improvement project types. Don’t see your type here? <Link to={'/'}>Give us a call</Link>.</div>
 
                     <Tabbordion blockElements={blockElements} animateContent={'height'} mode={'toggle'} className="accordion loan_offer mx-4 mx-lg-5" name="accordion">
                         {content.accordion.tabpanel.map((item, i) =>

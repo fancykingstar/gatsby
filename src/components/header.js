@@ -1,32 +1,28 @@
+import React, { useState } from "react"
 import { Link } from "gatsby"
 import PropTypes from "prop-types"
-import React, { useState } from "react"
 import Menu from './menu'
-
-import PaymentBenefitsoption from './paymentBenefitsPopup'
-
 import calc_icon from '../images/calculator_icon.svg'
 import calc_icon_hover from '../images/calculator_icon_light.svg'
 import close_icon from '../images/close_icon.svg'
 
+import PaymentEstimator from './paymentEstimator'
+
 const Header = ({ siteTitle }) => {
     const [visible, setVisible] = useState(false);
-    const [popType, setPopType] = useState('payment_options');
-    const [popData, setPopData] = useState('');
-    const showbenefitpopup = (type) => event => {
+
+    const showbenefitpopup = () => event => {
       event.preventDefault();
-      // setPopData(param);
       setVisible(true);
-      setPopType(type);
-      
     }
+
     const hidebenefitpopup = () => {
-      // console.log('hidebenefitpopup');
       setVisible(false);
     }
+
     const popup = () => {
         return (
-          <PaymentBenefitsoption />
+          <PaymentEstimator visiblity={visible} handleClose={hidebenefitpopup} />
         )
     }
 
@@ -40,7 +36,7 @@ const Header = ({ siteTitle }) => {
     }
 
     return(
-        <>
+        <>        
           {accLogin && (
             <div className="info-panel">
                 <div id="loginBox"> 
@@ -63,10 +59,10 @@ const Header = ({ siteTitle }) => {
                   <div className="ml-auto header-top-right no-padding">
                     <ul>
                       <li onClick={loginForm}><span>Account Log In</span>|</li>
-                      <li><Link to="/">View / Sign Loan Docs</Link>|</li>
-                      <li><Link to="/">PartnerPortal</Link>|</li>
-                      <li><Link to="/">Dealer Resource Center</Link></li>
-                      <li><Link to="/" className="mx-0 px-0 calculator" style={{background: "url(" + calc_icon + ")" }} /></li>
+                      <li><Link to={'/'}>View / Sign Loan Docs</Link>|</li>
+                      <li><Link to={'/'}>PartnerPortal</Link>|</li>
+                      <li><Link to={'/'}>Dealer Resource Center</Link></li>
+                      <li><Link to={'/'} className="mx-0 px-0 calculator" style={{background: "url(" + calc_icon + ")" }} onClick={showbenefitpopup()} /></li>
                       <style dangerouslySetInnerHTML={{
                           __html: [
                             '.calculator:hover {',
@@ -103,12 +99,12 @@ const Header = ({ siteTitle }) => {
                 <div className="row">
                   <div className="ml-auto header-top-right no-padding">
                     <ul>
-                      <li><Link to="/" id="loginButton">Account Log In</Link>|</li>
-                      <li><Link to="/">View / Sign Loan Docs</Link>|</li>
-                      <li><Link to="/">PartnerPortal</Link>|</li>
-                      <li><Link to="/">Dealer Resource Center</Link></li>
+                      <li><Link to={'/'} id="loginButton">Account Log In</Link>|</li>
+                      <li><Link to={'/'}>View / Sign Loan Docs</Link>|</li>
+                      <li><Link to={'/'}>PartnerPortal</Link>|</li>
+                      <li><Link to={'/'}>Dealer Resource Center</Link></li>
                       <li>
-                        <Link to="/" onClick={showbenefitpopup('paymentEstimate')}>
+                        <Link to={'/'} onClick={showbenefitpopup()}>
                           <i className="fa mr-15">
                             <img src={calc_icon} alt="calculator icon" title="" />
                           </i>
@@ -119,7 +115,7 @@ const Header = ({ siteTitle }) => {
                 </div>
               </div>
             </div>
-            <Menu/>
+            <Menu/>            
           </header>
           {
             popup()

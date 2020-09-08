@@ -1,7 +1,5 @@
 import React, { useState } from "react";
-
-// import { Link } from "gatsby";
-import { graphql } from "gatsby";
+import { graphql, Link } from "gatsby";
 
 // import { Tabbordion, TabPanel, TabLabel, TabContent } from 'react-tabbordion';
 import "react-tabbordion/demo/accordion.css";
@@ -39,6 +37,8 @@ import SinglesInside012 from '../images/enerbank_db/singles_inside_012.jpg';
 import SinglesInside066 from '../images/enerbank_db/singles_inside_066.jpg';
 import tmtopimg from '../images/top_arrow.svg';
 
+import PaymentEstimator from '../components/paymentEstimator'
+
 const About = ({data}) => {
     // const [collapse, setCollapse] = useState(false);
     // const toggle = (e) => {
@@ -50,6 +50,27 @@ const About = ({data}) => {
     // const handleChange = (event) => {
     //     setValue(event.target.value);
     // };
+
+    const [visible, setVisible] = useState(false);
+    const [popType, setPopType] = useState('paymentEstimate');
+    const [popData, setPopData] = useState('');
+
+    const showbenefitpopup = (param, type) => event => {
+      event.preventDefault();
+      setPopData(param);
+      setVisible(true);
+      setPopType(type);
+    }
+
+    const hidebenefitpopup = () => {
+      setVisible(false);
+    }
+
+    const popup = () => {
+        return (
+          <PaymentEstimator visiblity={visible} handleClose={hidebenefitpopup} popData={popData} />
+        )
+    }
 
   return (  
     <Layout>
@@ -77,7 +98,7 @@ const About = ({data}) => {
                             </div>
                             <div className="p-4">
                                 <h3 className="mb-10">News / Media</h3>
-                                <p>See the latest corporate news about EnerBank USA and related topics  <a href="#">Right Here</a></p>
+                                <p>See the latest corporate news about EnerBank USA and related topics  <Link to={'/'} onClick={showbenefitpopup('item', 'paymentEstimate')}>Right Here</Link></p>
                             </div>
                         </div>
                         <div className="box-shadow bg-white rounded text-center payment-option-box col-xs-12 col-md mb-3 mb-lg-0 p-0 ml-md-3 ml-lg-5">
@@ -86,7 +107,7 @@ const About = ({data}) => {
                             </div>
                             <div className="p-4">
                                 <h3 className="mb-10">EnerBank Blog</h3>
-                                <p>Get best practices, tips, and other useful information and perspectives on home improvement and payment options from the <a href="#" data-toggle="modal" data-target="#">EnerBank USA blog</a></p>
+                                <p>Get best practices, tips, and other useful information and perspectives on home improvement and payment options from the <Link to={'/'} data-toggle="modal" data-target="#">EnerBank USA blog</Link></p>
                             </div>
                         </div>
                     </div>
@@ -108,7 +129,7 @@ const About = ({data}) => {
                 <div className="container">
                     <h2 className="text-center mb-5">EnerBank Timeline of Events</h2>
                     <div id="enerbank-timeline">
-                        <div className="timeline-start"><img src={tmtopimg} /></div>
+                        <div className="timeline-start"><img src={tmtopimg} alt="timeline start icon" /></div>
                         <div className="enerbank-center-line"></div>
                         <div className="enerbank-timeline-content">
                         {/* Article */}
@@ -306,32 +327,32 @@ const About = ({data}) => {
                             <div className="col-md-6">
                                 <div className="row form-group">
                                     <div className="col-md-6">
-                                        <label for="firstName">First name<span>*</span></label>
+                                        <label htmlFor="firstName">First name<span>*</span></label>
                                         <input type="text" className="form-control" id="firstName" placeholder="" value="" required="" />
                                     </div>
                                     <div className="col-md-6">
-                                        <label for="lastName">Last name<span>*</span></label>
+                                        <label htmlFor="lastName">Last name<span>*</span></label>
                                         <input type="text" className="form-control" id="lastName" placeholder="" value="" required="" />
                                     </div>
                                 </div>
                                 <div className="form-group">
-                                    <label for="email">Email<span>*</span></label>
+                                    <label htmlFor="email">Email<span>*</span></label>
                                     <input type="text" className="form-control" id="email" placeholder="" value="" required="" />
                                 </div>
                                 <div className="row form-group">
                                     <div className="col-md-6">
-                                        <label for="phone">Phone<span>*</span></label>
+                                        <label htmlFor="phone">Phone<span>*</span></label>
                                         <input type="text" className="form-control" id="phone" placeholder="" value="" required="" />
                                     </div>
                                     <div className="col-md-6">
-                                        <label for="company">Company</label>
+                                        <label htmlFor="company">Company</label>
                                         <input type="text" className="form-control" id="company" placeholder="" value="" required="" />
                                     </div>
                                 </div>
                             </div>
                         </div>
                         <div className="form-group">
-                            <label for="company">Company</label>
+                            <label htmlFor="company">Company</label>
                             <textarea className="form-control" rows="6"></textarea>
                         </div>
                         <div className="form-group">
@@ -341,6 +362,9 @@ const About = ({data}) => {
                 </div>
             </section>
             {/* End EnerBank TIMELINE */}
+            {
+                popup()
+            }
     </Layout>
   
 )}

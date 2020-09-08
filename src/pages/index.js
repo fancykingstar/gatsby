@@ -9,7 +9,7 @@ import Video from "../components/video";
 const IndexPage = ({data}) => {
   const node = data.wpgraphql.pageBy;
   return (
-    <Layout>    
+    <Layout>
       <SEO title="Home" description="" />
       <div key={node.id}>
           <section className="banner-area pos_relative" id="home" style={{ backgroundImage: "url(" + node.top_banner.banner.backgroundImage.sourceUrl + ")" }}>

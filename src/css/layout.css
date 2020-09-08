@@ -232,6 +232,8 @@ h1, h2, h3, h4, h5, h6 { line-height: 1.5em }
 .generic-blockquote { padding: 30px 50px 30px 30px; background: #f9f9ff; border-left: 2px solid #29A9E0 }
 .btn-primary { color: #fff;  background-color: #0077C8; border-color: #0077C8;}
 .btn-primary:hover{ background: #2aa9e0; border-color: #2aa9e0; }
+.btn-black { background: #333; color: #fff; }
+.btn-black:hover{ color:#fff; }
 
 /* custom css */
 .header-top { font-size: 12px; padding: 8px; background-color: #fff }
@@ -719,7 +721,8 @@ body.mobile-nav-active #mobile-nav-toggle { color: #fff }
 .modal { padding: 0 !important; }
 .modal .modal-full { width: 80%; max-width: none; margin: 0 auto; }
 .modal .modal-content { border: 0; border-radius: 0; }
-.modal-full .modal-content{ height: 100%; }
+.modal .modal-lg{ margin: 0 auto; }
+.modal-full .modal-content, .modal-lg .modal-content{ height: 100%; }
 .heading_bg{ background: #0077C8; padding: 30px 30px; text-align: center;}
 .heading_bg h3{ color: #fff !important; text-align: center; margin: 0px; padding: 0px; line-height: normal;}
 .modal-dialog{ height: 100%; }
@@ -990,3 +993,14 @@ body.mobile-nav-active #mobile-nav-toggle { color: #fff }
 .mediaIcon{ display:flex; justify-content: space-between; margin-top: 20px; }
 .mediaIcon a{ font-size: 1.3rem; color:#4d4d4d; background: #fff; border-radius: 50%; width:40px; height:40px; display: flex; align-items: center; justify-content: center; border: 1px solid #fff;}
 .mediaIcon a:hover{ color:#999; background: #4d4d4d; border: 1px solid #999; }
+.est-btn{ text-transform: uppercase; }
+/* paymentEstimator */
+#paymentEstimator .modal_content h2{ margin: 30px 0 20px; }
+.estimatorForm{ width: 500px; margin: 50px auto 0; }
+.paymentEstimator{ border: 1px solid #4298cd; border-radius: 5px; overflow: hidden; }
+.paymentEstimator .formHeading, .paymentEstimator .formFooter{ background: #4298cd; border-radius: 5px 5px 0 0; padding: 10px; color:#fff; font-size: 28px; font-weight: 500; margin-bottom: 40px; }
+.paymentEstimator label{ font-weight:500; font-size:14px; text-align: right; }
+.paymentEstimator input{border: 2px solid #4298cd; }
+.paymentEstimator .formMiddle{ padding: 0 40px; }
+.paymentEstimator .formFooter{ border-radius: 0; font-size:20px; text-align: left; margin: 0; padding: 10px 35px; }
+.estimatorForm p{ margin: 20px 0 15px; font-size: 9px; line-height: 10px; letter-spacing: 0px; }
