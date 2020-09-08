@@ -52,19 +52,19 @@ const HomeOwnerPage = ({data}) => {
                             if(i === 0){
                                 return (
                                     <div className="col-md-4" key={item.fieldGroupName+i}>
-                                        <div className="header-btn"><Link className="mr-auto" to="#" dangerouslySetInnerHTML={{ __html: item.links.title}} /></div>
+                                        <div className="header-btn"><Link className="mr-auto" to={"/"} dangerouslySetInnerHTML={{ __html: item.links.title}} /></div>
                                     </div>
                                 ) 
                             }else if(i === 1){
                                 return (
                                     <div className="col-md-4" key={item.fieldGroupName+i}>
-                                        <div className="header-btn"><Link className="mx-auto" to="#" dangerouslySetInnerHTML={{ __html: item.links.title}} /></div>
+                                        <div className="header-btn"><Link className="mx-auto" to={"/"} dangerouslySetInnerHTML={{ __html: item.links.title}} /></div>
                                     </div>
                                 )
                             }else{
                                 return (
                                     <div className="col-md-4" key={item.fieldGroupName+i}>
-                                        <div className="header-btn"><Link className="ml-auto" to="#" dangerouslySetInnerHTML={{ __html: item.links.title}} /></div>
+                                        <div className="header-btn"><Link className="ml-auto" to={"/"} dangerouslySetInnerHTML={{ __html: item.links.title}} /></div>
                                     </div>
                                 )
                             }
@@ -117,11 +117,11 @@ const HomeOwnerPage = ({data}) => {
             </Tabbordion>
 
             <div className="text-center mt-4">
-                <Link to="/" className="btn btn-primary f-bold equal-wd mb-4">Account Log In</Link><br/>
-                <Link to="/" className="btn btn-primary f-bold equal-wd mb-4">Automatic Debit Form (PDF)</Link>
+                <Link to={"/"} className="btn btn-primary f-bold equal-wd mb-4">Account Log In</Link><br/>
+                <Link to={"/"} className="btn btn-primary f-bold equal-wd mb-4">Automatic Debit Form (PDF)</Link>
                 <p>Question about a loan? Have a comment? We want to hear from you.</p>
                 {/* feedback form */}
-                <Link to="/" onClick={toggle} className="btn btn-primary f-bold equal-wd mb-4">Leave Feedback</Link>                
+                <Link to={"/"} onClick={toggle} className="btn btn-primary f-bold equal-wd mb-4">Leave Feedback</Link>                
             </div>
             <Collapse
                 isOpen={collapse}

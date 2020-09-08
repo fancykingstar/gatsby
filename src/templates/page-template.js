@@ -19,7 +19,7 @@ const SecondPage = ({data}) => {
             { data.wpgraphql.page.top_banner.banner.bannerLinks.map((item, i) => 
               (
                 <div className="col-md-4" key={item.fieldGroupName+i}>
-                  <div className="header-btn mr-3 ml-3"><Link to="#" dangerouslySetInnerHTML={{ __html: item.links.title}} /></div>
+                  <div className="header-btn mr-3 ml-3"><Link to={'/'} dangerouslySetInnerHTML={{ __html: item.links.title}} /></div>
                 </div>
               ) 
             )}
