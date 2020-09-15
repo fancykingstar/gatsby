@@ -7,16 +7,6 @@ import "react-tabbordion/demo/accordion.css";
 // import { Collapse } from 'reactstrap';
 // , Button, CardBody, Card
 import Layout from "../components/layout"
-// import SEO from "../components/seo"
-// import Video from "../components/video";
-
-// accordian
-// const blockElements = {
-//     animator: 'accordion-animator',
-//     content: 'accordion-content',
-//     panel: 'accordion-panel',
-//     label: 'accordion-title',
-// }
 
 // import images
 import fdic_logo from '../images/fdic-logo.svg';
@@ -40,26 +30,14 @@ import tmtopimg from '../images/top_arrow.svg';
 import PaymentEstimator from '../components/paymentEstimator'
 
 const About = ({data}) => {
-    // const [collapse, setCollapse] = useState(false);
-    // const toggle = (e) => {
-    //     e.preventDefault();
-    //     setCollapse(!collapse)
-    // }
-
-    // const [value, setValue] = useState("");
-    // const handleChange = (event) => {
-    //     setValue(event.target.value);
-    // };
 
     const [visible, setVisible] = useState(false);
-    const [popType, setPopType] = useState('paymentEstimate');
     const [popData, setPopData] = useState('');
 
     const showbenefitpopup = (param, type) => event => {
       event.preventDefault();
       setPopData(param);
       setVisible(true);
-      setPopType(type);
     }
 
     const hidebenefitpopup = () => {

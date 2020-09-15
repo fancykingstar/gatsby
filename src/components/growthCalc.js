@@ -155,7 +155,7 @@ const GrowthCalc = (props) => {
 								</div>
 								<div className="row border-bottom">
 									<div className="col-lg-4 ptb-2">
-										<div className="text-sm theme-text">Monthly Leads</div>
+										<label htmlFor="monthly-leads" className="text-sm theme-text d-block">Monthly Leads</label>
 										<div className="d-flex align-items-center">
 											<input type="text" name="monthlyLeadsInput" className="border-radius5 calc-input" id="monthly-leads" placeholder="0" onChange={ handleChangeInput } />
 											<div className="pl-5"><span className="font-b">x</span></div>
@@ -188,13 +188,13 @@ const GrowthCalc = (props) => {
 										</div>
 									</div>
 									<div className="col-lg-3 bg_blue ptb-2 result-col">
-										<div className="text-sm theme-text text-white">Monthly Leads</div>
+										<label htmlFor="monthly-leads-result" className="text-sm theme-text text-white d-block">Monthly Leads</label>
 										<input type="text" className="border-radius5 calc-output" name="monthlyLeadsResult" id="monthly-leads-result" value={state.monthlyLeadsResult} placeholder="0" readOnly={state.readonly} />
 									</div>											
 								</div>
 								<div className="row border-bottom">
 									<div className="col-lg-4 ptb-2">
-										<div className="text-sm theme-text">Close Rate</div>
+										<label htmlFor="close-rate" className="text-sm theme-text d-block">Close Rate</label>
 										<div className="d-flex align-items-center">                        	
 											<input type="text" name="closeRateInput" className="border-radius5 calc-input" id="close-rate" value={state.closeRateInput} placeholder="0%" onChange={ handleChangeInput } onBlur={handleValidValue} />
 											<div className="pl-5"><span className="font-b">x</span></div>
@@ -226,14 +226,14 @@ const GrowthCalc = (props) => {
 										</div>
 									</div>
 									<div className="col-lg-3 bg_blue ptb-2 result-col">
-										<div className="text-sm theme-text text-white">Close Rate</div>
+										<label htmlFor="close-rate-result" className="text-sm theme-text text-white d-block">Close Rate</label>
 										<input type="text" name="closeRateResult" className="border-radius5 calc-output" id="close-rate-result" value={state.closeRateResult} placeholder="0%" readOnly={state.readonly} />
 									</div>
 														
 								</div>
 								<div className="row border-bottom">
 									<div className="col-lg-4 ptb-2">
-										<div className="text-sm theme-text">Average Project Size</div>
+										<label htmlFor="project-size" className="text-sm theme-text d-block">Average Project Size</label>
 										<div className="d-flex align-items-center">                        	
 											<input type="text" name="projectSizeInput" className="border-radius5 calc-input" id="project-size" value={state.projectSizeInput} placeholder="$0" onChange={ handleChangeInput } onBlur={handleValidValue} />
 											<div className="pl-5"><span className="font-b">x</span></div>
@@ -265,14 +265,14 @@ const GrowthCalc = (props) => {
 									</div>
 									</div>
 									<div className="col-lg-3 bg_blue ptb-2 result-col">
-										<div className="text-sm theme-text text-white">Average Project Size</div>
+										<label htmlFor="project-size-result" className="text-sm theme-text text-white d-block">Average Project Size</label>
 										<input type="text" name="projectSizeResult" className="border-radius5 calc-output" id="project-size-result" value={state.projectSizeResult} placeholder="$0" readOnly={state.readonly} />
 									</div>		
 								</div>
 								
 								<div className="row border-bottom">
 									<div className="col-lg-4 ptb-2">
-										<div className="text-sm theme-text">Annual Revenue</div>
+										<label htmlFor="annual-revenue" className="text-sm theme-text d-block">Annual Revenue</label>
 										<div className="d-flex align-items-center">                        	
 											<input type="text" name="annualRevenueOld" className="border-radius5 calc-output" id="annual-revenue" value={state.annualRevenueOld} placeholder="$0" readOnly="readonly" />
 											<div className="pl-5"><span className="font-b">&gt;</span></div>
@@ -282,7 +282,7 @@ const GrowthCalc = (props) => {
 										<div className="text-sm theme-text text-blue pt-3 pb-3">By increasing your incoming leads,<br/>close rate and average job size,<br/>watch your annual revenue grow.</div>                    	
 									</div>
 									<div className="col-lg-3 bg_blue ptb-2 result-col">
-										<div className="text-sm theme-text text-white">Annual Revenue</div>
+										<label htmlFor="annual-revenue-result" className="text-sm theme-text text-white d-block">Annual Revenue</label>
 										<input type="text" name="annualRevenueGrow" className="border-radius5 calc-output" id="annual-revenue-result" value={state.annualRevenueGrow} placeholder="$0" readOnly={state.readonly} />
 									</div>
 								</div>

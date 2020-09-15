@@ -73,7 +73,7 @@ export default () => (
         <nav className="navbar navbar-expand-lg main-menu">
             <div className="container">            
                 {/* navbar brand logo */}
-                <Link to="/" id="logo" className="navbar-brand"><img src={logo} alt="" title="" /></Link>
+                <Link to="/" id="logo" className="navbar-brand"><img src={logo} alt="EnerBank Logo" title="" /></Link>
                 {/* navbar toggler */}
                 <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" 
                 aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">

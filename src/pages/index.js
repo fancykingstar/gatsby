@@ -22,19 +22,19 @@ const IndexPage = ({data}) => {
                     if(i === 0){
                       return (
                         <div className="col-md-4" key={item.links.title + i}>
-                          <div className="header-btn"><Link className="mr-auto" to={item.links.url} dangerouslySetInnerHTML={{ __html: item.links.title }} /></div>
+                          <div className="header-btn"><a className="mr-auto" href="https://enerbank.com/partnerportalapp/" target="_blank" rel="noopener noreferrer" dangerouslySetInnerHTML={{ __html: item.links.title }} /></div>
                         </div>
                       )
                     }else if(i === 2){
                       return (
                         <div className="col-md-4" key={item.links.title + i}>
-                          <div className="header-btn"><Link className="ml-auto" to={item.links.url} dangerouslySetInnerHTML={{ __html: item.links.title }} /></div>
+                          <div className="header-btn"><Link className="ml-auto" to={'loan-programs/#joinloanprogram'} dangerouslySetInnerHTML={{ __html: item.links.title }} /></div>
                         </div>
                       )
                     }else{
                       return (
                         <div className="col-md-4" key={item.links.title + i}>
-                          <div className="header-btn"><Link className="mx-auto" to={item.links.url} dangerouslySetInnerHTML={{ __html: item.links.title }} /></div>
+                          <div className="header-btn"><Link className="mx-auto" to={'loan-programs/#createloanprogram'} dangerouslySetInnerHTML={{ __html: item.links.title }} /></div>
                         </div>
                       )
                     }
@@ -55,14 +55,17 @@ const IndexPage = ({data}) => {
             <div className="container">
               <div className="row align-items-center justify-content-end">
                 <div className="col-lg-3 gift_card text-center">
-                    <img src={node.home_section.aboutArea[0].addLogo.sourceUrl} alt="logo" width="150" />
+                    <img src={node.home_section.aboutArea[0].addLogo.sourceUrl} alt="A gift card from amazon.com" width="150" />
                 </div>
                 <div className="col-lg-6 no-padding home-about-right">
                   <div className="row">
                       <div className="single-services col" dangerouslySetInnerHTML={{ __html: node.home_section.aboutArea[0].addText }} />
                       <div className="single-services col align-item-center">
-                        <Link to="#" className="btn d-block genric-btn primary my-4 f-bold" dangerouslySetInnerHTML={{ __html: node.home_section.aboutArea[0].anchorBtn[0].addLink.title }} />
-                        <Link to="#" className="btn d-block genric-btn primary my-4 mt-20 f-bold" dangerouslySetInnerHTML={{ __html: node.home_section.aboutArea[0].anchorBtn[1].addLink.title }} />
+                        {node.home_section.aboutArea[0].anchorBtn.map((item) => {
+                          return(
+                            <Link to={item.addLink.url} className="btn d-block genric-btn primary my-4 f-bold" dangerouslySetInnerHTML={{ __html: item.addLink.title }} />
+                          )
+                        })}
                       </div>
                   </div>
                 </div>
@@ -82,7 +85,7 @@ const IndexPage = ({data}) => {
                     <div className="col-lg-4" key={item.fieldGroupName+i}>
                       <div className="single-offer card-body">
                         <i className="icon_circil">
-                          <img className="img-fluid" src={item.businessIcon.sourceUrl} alt="News" />
+                          <img className="img-fluid" src={item.businessIcon.sourceUrl} alt={item.businessIcon.altText} />
                         </i>
                         <div dangerouslySetInnerHTML={{ __html: item.businessContent }}></div>
                         <Link to={item.businessButton.url} className="btn btn-primary f-bold">{item.businessButton.title}</Link>
@@ -154,6 +157,8 @@ export const pageQuery = graphql`
               }
               businessIcon {
                 sourceUrl
+                title
+                altText
               }
               businessContent
             }

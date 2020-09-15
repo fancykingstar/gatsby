@@ -89,8 +89,8 @@ const Footer = () => (
               </div>
             <div className="custom-col-07 col">
               <div className="single-footer-widget footer-rightpad">
-                  <img className="mb-10" src={fdicLogo} alt="Logo" />
-                  <img src={bbbLogo} alt="Logo" />
+                  <img className="mb-10" src={fdicLogo} alt="Member FDIC Logo" />
+                  <img src={bbbLogo} alt="BBB Ratings Logo" />
               </div>
 
               <div className="mediaIcon">
