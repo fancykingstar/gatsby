@@ -40,7 +40,7 @@ const Header = ({ siteTitle }) => {
           {accLogin && (
             <div className="info-panel">
                 <div id="loginBox"> 
-                    <div id="closeButton" onClick={closeLoginForm}><img src={close_icon} alt="close icon" /></div>
+                    <button id="closeButton" onClick={closeLoginForm}><img src={close_icon} alt="close icon" /></button>
                       <form id="loginForm">
                           <h3>Account Log In</h3>
                           <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonumy nibh euismod tinci ut laoreet dolore. Sed et pharetra dolor, et nibh euismod vehicula sem. </p>
@@ -58,11 +58,11 @@ const Header = ({ siteTitle }) => {
               <div className="container">
                   <div className="ml-auto header-top-right no-padding">
                     <ul>
-                      <li onClick={loginForm}><span>Account Log In</span>|</li>
+                      <li><button onClick={loginForm} className="btn-link">Account Log In</button>|</li>
                       <li><Link to={'/'}>View / Sign Loan Docs</Link>|</li>
                       <li><Link to={'/'}>PartnerPortal</Link>|</li>
                       <li><Link to={'/'}>Dealer Resource Center</Link></li>
-                      <li><Link to={'/'} className="mx-0 px-0 calculator" style={{background: "url(" + calc_icon + ")" }} onClick={showbenefitpopup()} /></li>
+                      <li><button className="mx-0 px-0 calculator btn-link" style={{background: "url(" + calc_icon + ")" }} onClick={showbenefitpopup()} /></li>
                       <style dangerouslySetInnerHTML={{
                           __html: [
                             '.calculator:hover {',

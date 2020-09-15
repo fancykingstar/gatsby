@@ -60,7 +60,7 @@ const PaymentEstimator = (props) => {
 								</div>
 								<div className="formFooter">
 									<div className="form-group row m-0">
-										<label className="col-sm-6 col-form-label">Monthly Payment</label>
+										<div className="col-sm-6 col-form-label">Monthly Payment</div>
 										<div className="col-sm-6 text-left">
 											{monthlyPayment}
 										</div>

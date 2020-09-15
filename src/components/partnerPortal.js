@@ -6,55 +6,52 @@ const PartnerPortal = (props) => {
 	if (props.popData.length !== 0) {
 		return (
 			<Modal show={props.visiblity} animation={true} centered={true} size="full" id="partnerPopup">
-				{/* <div className="d-flex flex-column align-item-center justify-content-center"> */}
-					<div className="heading_bg">
-						<button type="button" className="close text-white" data-dismiss="modal" aria-label="Close" onClick={props.handleClose}>
-							<img src="http://devgb.enerbank.com/wp-content/themes/enerbank/img/closed_icon.svg" width="25" alt="close icon" />
-						</button>
-						<h3>PartnerPortal</h3>
+				<div className="heading_bg">
+					<button type="button" className="close text-white" data-dismiss="modal" aria-label="Close" onClick={props.handleClose}>
+						<img src="http://devgb.enerbank.com/wp-content/themes/enerbank/img/closed_icon.svg" width="25" alt="close icon" />
+					</button>
+					<h3>PartnerPortal</h3>
+				</div>
+				<div className="modal_content">
+					{props.popData.innerpagebanner.pagebanner.bannner && (
+						<>
+							<style dangerouslySetInnerHTML={{
+								__html: [
+									'.modal_banner:before {',
+										'background: url(' + props.popData.innerpagebanner.pagebanner.bannericon.sourceUrl + ') no-repeat center',
+									'}'
+								].join('\n')
+							}}></style>
+							<div className="modal_banner banner_bg" style={{ backgroundImage: "url(" + props.popData.innerpagebanner.pagebanner.bannner.sourceUrl + ")" }}></div>
+						</>
+					)}
+										
+					<div className="p-5 py-sm-5">
+						<div className="small line-height-normal">
+							<p dangerouslySetInnerHTML={{__html:props.popData.content}} />
+						</div>
 					</div>
-					<div className="modal_content">
-						<div className="modal_banner banner_bg" style={{background:"url(http://devgb.enerbank.com/wp-content/themes/enerbank/img/partner-portal.jpg) no-repeat"}}>
-							<span><img src="http://devgb.enerbank.com/wp-content/themes/enerbank/img/svg/PartnerPortal_Icon-Wht.svg" alt="partner portal" /></span>
-						</div>
-						<div className="p-5 py-sm-5">
-							<div className="small line-height-normal">                      
-								<p>Our online dashboard, PartnerPortal, lets you track performance results through customizable reports, access loan codes and dealer fees, check application statuses, and work with electronic loan documents. Our secure PartnerPortal provides you with 24/7 access to track your results and performance quickly and easily! And, it also gives you the ability to:</p>
-							</div>						
-						</div>
-						<div className="bg-blue start_drc start_drc2">
-							<div className="container">
+					<div className="bg-blue start_drc start_drc2">
+						<div className="container">
 							<div className="row">
-								<div className="col-md-4">
-									<ul className="portal_list">
-										<li>View approvals</li>
-										<li>Review dashboard</li>
-										<li>Run custom reports</li>
+								<div className="col-md-12">
+									<ul className="portal_list py-5">
+										{props.popData.partnerportal.portalservice.servicegroup.map((item, i) => (
+											<li key={item.fieldGroupName + i}>{item.servicetitle}</li>                
+										))}
 									</ul>
+								</div>							
 							</div>
-							<div className="col-md-4">
-									<ul className="portal_list">
-										<li>Check application status</li>
-										<li>Access loan codes</li>
-										<li>Access dealer fees</li>
-									</ul>
-							</div>
-							<div className="col-md-4">
-									<ul className="portal_list">
-										<li>Request loan documents</li>
-										<li>Sign loan documents</li>
-									</ul>
-							</div>
-							</div>
+							
 							<div className="row">
-								<div className="col-md-10 m-auto">
-									<Link to={'#'}>Current Contractors Click Here to Access Partner Portal</Link>
+								<div className="mx-auto text-center my-5">
+									<Link to={props.popData.partnerportal.portalservice.accessportallink.url}>{props.popData.partnerportal.portalservice.accessportallink.title}</Link>
 								</div>
 							</div>
-							</div>
 						</div>
 					</div>
-              	{/* </div> */}
+
+				</div>
 			</Modal>
 		)
 	} else {
@@ -65,42 +62,3 @@ const PartnerPortal = (props) => {
 	} 
 }
 export default PartnerPortal
-
-export const query = graphql`
-query($Id: ID!) {
-    wpgraphql {
-      	post(id: $Id, idType: ID) {
-			title
-			date
-			content(format: RENDERED)        
-			innerpagebanner {
-			fieldGroupName
-			pagebanner {
-				bannertext
-				bannner {
-				title
-				sourceUrl
-				}
-				bannericon {
-				uri
-				title
-				sourceUrl
-				}
-			}
-			}
-			
-			partnerportal {
-			portalservice {
-				servicegroup {
-				fieldGroupName
-				servicetitle
-				}
-				accessportallink {
-				title
-				url
-				}
-			}
-			}
-      	}
-    }
-}`

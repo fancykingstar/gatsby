@@ -6,7 +6,6 @@ const DealerResource = (props) => {
 	if (props.popData.length !== 0) {
 		return (
 			<Modal show={props.visiblity} animation={true} centered={true} size="full" id="dealerPopup">
-				{/* <div className="d-flex flex-column align-item-center justify-content-center"> */}
 					<div className="heading_bg">
 						<button type="button" className="close text-white" data-dismiss="modal" aria-label="Close" onClick={props.handleClose}>
 							<img src="http://devgb.enerbank.com/wp-content/themes/enerbank/img/closed_icon.svg" width="25" alt="close icon" />
@@ -14,41 +13,46 @@ const DealerResource = (props) => {
 						<h3>Dealer Resource Center</h3>
 					</div>
 					<div className="modal_content">
-						<div className="modal_banner"><p>A powerful tool for successfully growing your business.</p></div>
+						{props.popData.innerpagebanner.pagebanner.bannner && (
+							<>
+								<style dangerouslySetInnerHTML={{
+									__html: [
+										'.modal_banner:before {',
+											'background-image: url(' + props.popData.innerpagebanner.pagebanner.bannericon.sourceUrl + ');',
+											'background-repeat: no-repeat;',
+											'background-position: 50% calc(50% - 30px);',
+										'}'
+									].join('\n')
+								}}></style>
+								<div className="modal_banner banner_bg" style={{ backgroundImage: "url(" + props.popData.innerpagebanner.pagebanner.bannner.sourceUrl + ")" }}>
+									<p dangerouslySetInnerHTML={{__html:props.popData.innerpagebanner.pagebanner.bannertext}}></p>
+								</div>
+							</>
+						)}
+											
 						<div className="p-5 py-sm-5">
-							<div className="small line-height-normal" style={{lineHeight: '22px'}}>
-								<h4 className="mb-3 text-center text-blue">Quick, Easy, and Always Available</h4>
-								<p className="mb-5">The convenient Dealer Resource Center provides you 24/7 access to high-quality, best-in-class, self-service marketing assets and other resources, including top-notch training designed to make offering payment options easier and more effective.</p>
+							<div className="small line-height-normal">
+								<p dangerouslySetInnerHTML={{__html:props.popData.content}} />
 							</div>
 							<div className="row">
-								<div className="col-lg-4 d-flex flex-column mb-md-5 mb-lg-0">
-									<div className="border dealerResource rounded">
-										<img src="http://devgb.enerbank.com/wp-content/themes/enerbank/img/mobile-app.svg" alt="mobile application" />
-										<div className="text-blue text-center">Education</div>
-										<p>Grab on-demand courses, tips ‘n’ tricks, and role-specific training to nail those best practices and strategies that’ll do wonders for your bottom line.</p>
-										<Link to={'#'}>Learn More</Link>
+								{props.popData.dealerresourcecenter.powerfulltool.map((item, i) => (
+									<div className="col-lg-4 d-flex flex-column mb-md-5 mb-lg-0" key={item.fieldGroupName + i} >
+										<div className="border dealerResource rounded">                
+											<img src={item.sectionicon.sourceUrl} alt={item.sectionicon.slug} />
+											<div className="text-blue text-center">{item.sectiontitle}</div>
+											<p>{item.sectioncontent}</p>
+											<Link to={item.sectionlink.url}>{item.sectionlink.title}</Link>
+										</div>
 									</div>
-								</div>
-								<div className="col-lg-4 d-flex flex-column mb-md-5 mb-lg-0">
-									<div className="border dealerResource rounded">
-										<img src="http://devgb.enerbank.com/wp-content/themes/enerbank/img/tools-icon.svg" alt="tools icon" />
-										<div className="text-blue text-center">Tools</div>
-										<p>Find helpful reference guides, eligible improvement lists, business growth calculators, and other stuff you may need as you offer payment options that boost your business.</p>
-										<Link to={'#'}>Learn More</Link>
-									</div>
-								</div>
-								<div className="col-lg-4 d-flex flex-column">
-									<div className="border dealerResource rounded">
-										<img src="http://devgb.enerbank.com/wp-content/themes/enerbank/img/education-icon.svg" alt="education icon" />
-										<div className="text-blue text-center">Marketing</div>
-										<p>Free, professionally-designed marketing templates for creating your own custom-branded customerfacing messaging with just a few clicks — including flyers, emails, showroom ads, and more!</p>
-										<Link to={'#'}>Learn More</Link>
-									</div>
-								</div>
+								))}
 							</div>
-							</div>
+						</div>
+						{/* <div className="bg-blue start_drc p-4">
+							<div>{props.popData.dealerresourcecenter.drcnow.sectionheading}</div>
+							<p className="text-center">{props.popData.dealerresourcecenter.drcnow.sectiondesc}</p>
+							<Link to={props.popData.dealerresourcecenter.drcnow.sectionlink.url}>{props.popData.dealerresourcecenter.drcnow.sectionlink.title}</Link>
+						</div> */}
 					</div>
-				{/* </div> */}
 			</Modal>
 		)
 	} else {

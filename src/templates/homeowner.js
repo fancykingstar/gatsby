@@ -49,25 +49,11 @@ const HomeOwnerPage = ({data}) => {
                 <div className="container">
                     <div className="row h-half d-flex align-items-end pb-5">
                         { data.wpgraphql.page.top_banner.banner.bannerLinks.map((item, i) => {
-                            if(i === 0){
-                                return (
-                                    <div className="col-md-4" key={item.fieldGroupName+i}>
-                                        <div className="header-btn"><Link className="mr-auto" to={"/"} dangerouslySetInnerHTML={{ __html: item.links.title}} /></div>
-                                    </div>
-                                ) 
-                            }else if(i === 1){
-                                return (
-                                    <div className="col-md-4" key={item.fieldGroupName+i}>
-                                        <div className="header-btn"><Link className="mx-auto" to={"/"} dangerouslySetInnerHTML={{ __html: item.links.title}} /></div>
-                                    </div>
-                                )
-                            }else{
-                                return (
-                                    <div className="col-md-4" key={item.fieldGroupName+i}>
-                                        <div className="header-btn"><Link className="ml-auto" to={"/"} dangerouslySetInnerHTML={{ __html: item.links.title}} /></div>
-                                    </div>
-                                )
-                            }
+                            return (
+                                <div className="col-md-4" key={item.fieldGroupName+i}>
+                                    <div className="header-btn"><Link className="mr-auto" to={"/"} dangerouslySetInnerHTML={{ __html: item.links.title}} /></div>
+                                </div>
+                            )
                         })}
                     </div>
                 </div>
@@ -88,7 +74,7 @@ const HomeOwnerPage = ({data}) => {
                             (
                                 <li key={item.fieldGroupName + i}>
                                     <div className="box-circle icon bg-blue content-center">
-                                        <img src={item.optionIcon.sourceUrl} alt={item.fieldGroupName} />
+                                        <img src={item.optionIcon.sourceUrl} alt={item.optionIcon.altText} />
                                     </div>
                                     <p dangerouslySetInnerHTML={{ __html: item.optionTitle }} />
                                 </li>
@@ -101,7 +87,6 @@ const HomeOwnerPage = ({data}) => {
         <section className="pt-30 pb-30 relative" style={{background: 'url('+ data.wpgraphql.page.home_owner.paymentBanner.sourceUrl +') center', backgroundRepeat: 'no-repeat', backgroundSize: 'cover', minHeight: '515px'}}></section>
         
         <section className="section-gap container" id="howtopay">
-            {/* <div dangerouslySetInnerHTML={{ __html: data.wpgraphql.page.home_owner.makePaymentWay}} /> */}
             <h2 className="mb-30 text-center"><span>Six Ways to Make a Payment</span></h2>
             <Tabbordion blockElements={blockElements} animateContent={'height'} mode={'toggle'} className="accordion loan_offer mx-4 mx-lg-5" name="accordion">
                 {data.wpgraphql.page.accordion.tabpanel.map((item, i) =>
@@ -117,11 +102,11 @@ const HomeOwnerPage = ({data}) => {
             </Tabbordion>
 
             <div className="text-center mt-4">
-                <Link to={"/"} className="btn btn-primary f-bold equal-wd mb-4">Account Log In</Link><br/>
-                <Link to={"/"} className="btn btn-primary f-bold equal-wd mb-4">Automatic Debit Form (PDF)</Link>
+                <button className="btn btn-primary f-bold equal-wd mb-4">Account Log In</button><br/>
+                <button className="btn btn-primary f-bold equal-wd mb-4">Automatic Debit Form (PDF)</button>
                 <p>Question about a loan? Have a comment? We want to hear from you.</p>
                 {/* feedback form */}
-                <Link to={"/"} onClick={toggle} className="btn btn-primary f-bold equal-wd mb-4">Leave Feedback</Link>                
+                <button onClick={toggle} className="btn btn-primary f-bold equal-wd mb-4">Leave Feedback</button>
             </div>
             <Collapse
                 isOpen={collapse}
@@ -186,6 +171,8 @@ export const query = graphql`
                         optionIcon {
                             id
                             sourceUrl
+                            altText
+                            title
                         }
                     }
                 }

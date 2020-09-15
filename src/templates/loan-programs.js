@@ -19,7 +19,6 @@ import Support from "../components/support"
 import States from "../components/states"
 import BenefitsLoanProgram from "../components/benefitsLoanProgram"
 import GrowthCalc from "../components/growthCalc"
-import partnerPortalData from "../templates/partner-portal"
 
 // accordian
 const blockElements = {
@@ -40,16 +39,12 @@ const LoanProgramPage = ({ data }) => {
 		event.preventDefault();
 		setPopData(param);
 		setVisible(true);
-		setPopType(type);
-		
+		setPopType(type);		
 	}
+
 	const hidebenefitpopup = () => {
 		// console.log('hidebenefitpopup');
 		setVisible(false);
-	}
-
-	const getPopupData = (data) => {
-		console.log(data);
 	}
 	
 	const popup = () => {
@@ -57,13 +52,13 @@ const LoanProgramPage = ({ data }) => {
 			case "payment_options":
 				return <PaymentBenefitsPopup visiblity={visible} handleClose={hidebenefitpopup} popData={popData} />;
 				break;
-			case "app_method":
+			case "apps":
 				return <AppMethod visiblity={visible} handleClose={hidebenefitpopup} popData={popData} />;
 				break;
-			case "partner_portal":
+			case "partner":
 				return <PartnerPortal visiblity={visible} handleClose={hidebenefitpopup} popData={popData} />;
 				break;
-			case "dealer_resource":
+			case "dealer":
 				return <DealerResource visiblity={visible} handleClose={hidebenefitpopup} popData={popData} />;
 				break;
 			case "training":
@@ -93,7 +88,6 @@ const LoanProgramPage = ({ data }) => {
 	return (
 		<Layout>
 			<SEO title={content.title} description={content.excerpt} />
-			{/* <partnerPortal popupData={getPopupData.bind(this)} /> */}
 
 			{content.top_banner.banner.backgroundImage && (
 				<section className="banner-area pos_relative" id="home" style={{ backgroundImage: "url(" + content.top_banner.banner.backgroundImage.sourceUrl + ")" }}>
@@ -105,7 +99,7 @@ const LoanProgramPage = ({ data }) => {
 							{content.top_banner.banner.bannerLinks.map((item, i) =>
 								(
 									<div className="col-md-4" key={item.fieldGroupName + i}>
-										<div className="header-btn mr-3 ml-3"><Link to={'/'} dangerouslySetInnerHTML={{ __html: item.links.title }} /></div>
+										<div className="header-btn mr-3 ml-3"><Link to={item.links.url} dangerouslySetInnerHTML={{ __html: item.links.title }} /></div>
 									</div>
 								)
 							)}
@@ -118,7 +112,6 @@ const LoanProgramPage = ({ data }) => {
 				<div className="container">
 					<div className="row">
 					<div className="m-auto col-md-10">
-						{/* <img src="http://devgb.enerbank.com/wp-content/themes/enerbank/img/loanPrograms_video.jpg" className="img-fluid box-shadow"> */}
 						<Video videoSrcURL="https://www.youtube.com/embed/PKnMxIz4FWw?byline=0&title=0" videoTitle="EnerBank Atmospheric Video" videoWidth="100%" videoHeight="500" />
 						<p className="text-center font-weight-bold mt-2 mb-4">WATCH: Discover the key to unlocking business growth</p>
 					</div>      
@@ -145,9 +138,9 @@ const LoanProgramPage = ({ data }) => {
 							{content.loan_program.paymentOptionsBenefits.paymentOptions.map((item, i) =>
 								(
 									<li key={item.fieldGroupName + i}>
-										<Link to={'#'} onClick={showbenefitpopup(item, 'payment_options')} data-title={item.paymentOptionTitle} data-content="Advertising payment options is a great way to set you apart from your competitors and produce more leads for your business.">
+										<Link to={'/'} onClick={showbenefitpopup(item, 'payment_options')} data-title={item.paymentOptionTitle} data-content="Advertising payment options is a great way to set you apart from your competitors and produce more leads for your business.">
 											<div className="box-circle icon bg-blue content-center">
-												<img src={item.paymentOptionIcon.sourceUrl} alt={item.fieldGroupName} />
+												<img src={item.paymentOptionIcon.sourceUrl} alt={item.paymentOptionIcon.altText} />
 											</div>
 											<p dangerouslySetInnerHTML={{ __html: item.paymentOptionTitle }} />
 										</Link>
@@ -165,9 +158,9 @@ const LoanProgramPage = ({ data }) => {
 								if(i === 0){
 									return (
 										<div key={item.fieldGroupName + i} className="box-shadow bg-white rounded text-center payment-option-box col-xs-12 col-md p-0 mb-3 mx-sm-3 mx-lg-5">
-											<Link to={'#'} onClick={showbenefitpopup(item, 'growthCalc')}>
+											<Link to={'/'} onClick={showbenefitpopup(item, 'growthCalc')}>
 												<div className="bg-blue p-5 rounded-top">
-													<img className="img-fluid" src={item.offeringPaymentIcon.sourceUrl} alt="News" />
+													<img className="img-fluid" src={item.offeringPaymentIcon.sourceUrl} alt="Growth Calculator icon" />
 												</div>
 												<div className="p-4" dangerouslySetInnerHTML={{ __html: item.offeringPaymentBrif }} />
 											</Link>
@@ -178,7 +171,7 @@ const LoanProgramPage = ({ data }) => {
 										<div key={item.fieldGroupName + i} className="box-shadow bg-white rounded text-center payment-option-box col-xs-12 col-md p-0 mb-3 mx-sm-3 mx-lg-5">
 											
 												<div className="bg-blue p-5 rounded-top">
-													<img className="img-fluid" src={item.offeringPaymentIcon.sourceUrl} alt="News" />
+													<img className="img-fluid" src={item.offeringPaymentIcon.sourceUrl} alt="View our loan types icon" />
 												</div>
 												<div className="p-4" dangerouslySetInnerHTML={{ __html: item.offeringPaymentBrif }} />
 											
@@ -207,72 +200,35 @@ const LoanProgramPage = ({ data }) => {
 						{content.loan_program.joinLoanProgram.loanProgramMethods && (
 							<div className="row my-5">
 								{content.loan_program.joinLoanProgram.loanProgramMethods.map((item, i) => {
-										if(i === 0){
-											return (
-												<div className="col-lg-4 mb-4 mb-lg-0" key={item.fieldGroupName + i}>
-													<div className="card wygbox box-shadow">
-														<style dangerouslySetInnerHTML={{
-															__html: [
-																'.apps:after {',
-																	'background: rgba(77, 77, 77, 0.6) url(' + item.programMethodIcon.sourceUrl + ') no-repeat center',
-																'}'
-															].join('\n')
-														}}></style>
-														<div className="wygthumb apps">
-															<img src={item.programMethodsBgImage.sourceUrl} className="card-img-top" alt="Dealer Resource Center" />
-														</div>
-														<div className="card-body">
-															<div dangerouslySetInnerHTML={{ __html: item.programMethodBrif }} />
-															<Link to={'#'} className="btn mt-3" onClick={showbenefitpopup(item, 'app_method')}>{item.programMethodLink.title}</Link>
-														</div>
-													</div>
-												</div>
-											)
-										}else if(i === 1){
-											return (
-												<div className="col-lg-4 mb-4 mb-lg-0" key={item.fieldGroupName + i}>
-													<style dangerouslySetInnerHTML={{
-														__html: [
-															'.partner:after {',
-																'background: rgba(77, 77, 77, 0.6) url(' + item.programMethodIcon.sourceUrl + ') no-repeat center',
-															'}'
-														].join('\n')
-													}}></style>
-													<div className="card wygbox box-shadow">
-														<div className="wygthumb partner">
-															<img src={item.programMethodsBgImage.sourceUrl} className="card-img-top" alt="Dealer Resource Center" />
-														</div>
-														<div className="card-body">
-															<div dangerouslySetInnerHTML={{ __html: item.programMethodBrif }} />
-															<Link to={'#'} className="btn mt-3" onClick={showbenefitpopup(item, 'partner_portal')}>{item.programMethodLink.title}</Link>
+									const methodNames = ['apps', 'partner', 'dealer']
+									
+									const nodes = data.wpgraphql.posts.edges.map((nodes) => {
+											if(item.programMethodTitle === nodes.node.title){
+												return (
+													<div className="col-lg-4 mb-4 mb-lg-0" key={item.fieldGroupName + i}>
+														<div className="card wygbox box-shadow">
+															<style dangerouslySetInnerHTML={{
+																__html: [
+																	'.'+methodNames[i]+':after {',
+																		'background: rgba(77, 77, 77, 0.6) url(' + item.programMethodIcon.sourceUrl + ') no-repeat center',
+																	'}'
+																].join('\n')
+															}}></style>
+															<div className={'wygthumb ' + methodNames[i]}>
+																<img src={item.programMethodsBgImage.sourceUrl} className="card-img-top" alt="Dealer Resource Center" />
+															</div>
+															<div className="card-body">
+																<h3 className="card-title" dangerouslySetInnerHTML={{ __html: item.programMethodTitle }} />
+																<div dangerouslySetInnerHTML={{ __html: item.programMethodBrif }} />
+																<Link to={'/'} className="btn mt-3" onClick={showbenefitpopup(nodes.node, methodNames[i])}>{item.programMethodLink.title}</Link>
+															</div>
 														</div>
 													</div>
-												</div>
-											)
-										}else{
-											return (
-												<div className="col-lg-4 mb-4 mb-lg-0" key={item.fieldGroupName + i}>
-													<style dangerouslySetInnerHTML={{
-														__html: [
-															'.dealer:after {',
-																'background: rgba(77, 77, 77, 0.6) url(' + item.programMethodIcon.sourceUrl + ') no-repeat center',
-															'}'
-														].join('\n')
-													}}></style>
-													<div className="card wygbox box-shadow">
-														<div className="wygthumb dealer">
-															<img src={item.programMethodsBgImage.sourceUrl} className="card-img-top" alt="Dealer Resource Center" />
-														</div>
-														<div className="card-body">
-															<div dangerouslySetInnerHTML={{ __html: item.programMethodBrif }} />
-															<Link to={'#'} className="btn mt-3" onClick={showbenefitpopup(item, 'dealer_resource')}>{item.programMethodLink.title}</Link>
-														</div>
-													</div>
-												</div>
-											)
-										}
-									}
-								)}
+												)
+											}
+									})
+									return nodes
+								})}
 							</div>
 						)}
 					</div>
@@ -310,7 +266,7 @@ const LoanProgramPage = ({ data }) => {
 													<img src={item.integrationOptionBgImage.sourceUrl} className="card-img-top" alt="Training" />
 												</div>
 												<div className="p-4" dangerouslySetInnerHTML={{ __html: item.integrationOptionBrif }} />
-												<Link to={'#'} onClick={showbenefitpopup(item, 'loantype')}>Learn More</Link>
+												<Link to={'/'} onClick={showbenefitpopup(item, 'loantype')}>Learn More</Link>
 											</div>
 										)
 									}else{
@@ -328,7 +284,7 @@ const LoanProgramPage = ({ data }) => {
 													<img src={item.integrationOptionBgImage.sourceUrl} className="card-img-top" alt="Training" />
 												</div>												
 												<div className="p-4" dangerouslySetInnerHTML={{ __html: item.integrationOptionBrif }} />
-												<Link to={'#'} onClick={showbenefitpopup(item, 'training')}>Learn More</Link>
+												<Link to={'/'} onClick={showbenefitpopup(item, 'training')}>Learn More</Link>
 											</div>
 										)
 									}
@@ -485,7 +441,74 @@ export default LoanProgramPage
 
 export const query = graphql`
 query($databaseId: ID!) {
-    wpgraphql {
+    wpgraphql {		
+		posts{
+			edges{
+				node {
+				  id
+				  title
+				  content
+				  appmethod {
+					paperlessmethod {
+						fieldGroupName
+						sectionicon {
+						  sourceUrl
+						}
+						sectiontitle
+						sectionContent
+					}
+				  }
+				  dealerresourcecenter {
+					drcnow {
+						sectiondesc
+						sectionheading
+						sectionlink {
+						  target
+						  title
+						  url
+						}
+					}
+					powerfulltool {
+						fieldGroupName
+						sectioncontent
+						sectiontitle
+						sectionicon {
+						  	sourceUrl
+						}
+						sectionlink {
+						  target
+						  title
+						  url
+						}
+					}
+				  }
+				  innerpagebanner {
+					pagebanner {
+					  bannericon {
+						sourceUrl
+					  }
+					  bannner {
+						sourceUrl
+					  }
+					  bannertext
+					}
+				  }
+				  partnerportal {
+					portalservice {
+					  accessportallink {
+						target
+						title
+						url
+					  }
+					  servicegroup {
+						fieldGroupName
+						servicetitle
+					  }
+					}
+				  }
+				}
+			}
+		}
       	page(id: $databaseId, idType: DATABASE_ID) {
 			title
 			date
@@ -530,6 +553,8 @@ query($databaseId: ID!) {
 						paymentOptionPopupContent
 						paymentOptionIcon {
 							sourceUrl
+							altText
+							title
 						}
 					}
 				}
@@ -553,6 +578,7 @@ query($databaseId: ID!) {
 						programMethodsBgImage {
 							sourceUrl
 						}
+						programMethodTitle
 						programMethodLink {
 							target
 							title
