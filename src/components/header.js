@@ -115,7 +115,7 @@ const Header = ({ siteTitle }) => {
                 </div>
               </div>
             </div>
-            <Menu/>            
+            <Menu/>
           </header>
           {
             popup()

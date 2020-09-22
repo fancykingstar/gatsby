@@ -54,16 +54,16 @@ const IndexPage = ({data}) => {
           <section className="home-about-area position-relative">
             <div className="container">
               <div className="row align-items-center justify-content-end">
-                <div className="col-lg-3 gift_card text-center">
+                <div className="col-sm-3 gift_card text-center">
                     <img src={node.home_section.aboutArea[0].addLogo.sourceUrl} alt="A gift card from amazon.com" width="150" />
                 </div>
-                <div className="col-lg-6 no-padding home-about-right">
-                  <div className="row">
+                <div className="col-sm-9 col-lg-6 px-lg-0 home-about-right">
+                  <div className="row flex-column flex-sm-row">
                       <div className="single-services col" dangerouslySetInnerHTML={{ __html: node.home_section.aboutArea[0].addText }} />
                       <div className="single-services col align-item-center">
-                        {node.home_section.aboutArea[0].anchorBtn.map((item) => {
+                        {node.home_section.aboutArea[0].anchorBtn.map((item, i) => {
                           return(
-                            <Link to={item.addLink.url} className="btn d-block genric-btn primary my-4 f-bold" dangerouslySetInnerHTML={{ __html: item.addLink.title }} />
+                            <Link to={item.addLink.url} key={i+ '1000'} className="btn d-block genric-btn primary my-4 f-bold" dangerouslySetInnerHTML={{ __html: item.addLink.title }} />
                           )
                         })}
                       </div>
@@ -100,7 +100,7 @@ const IndexPage = ({data}) => {
           <section className="home-about-area2 py-4 position-relative">
             <div className="container">
               <div className="row align-items-center justify-content-end">
-                <div className="col-lg-6 no-padding home-about-right">
+                <div className="col-sm-6 px-lg-0 home-about-right">
                   <div className="row">                
                     <div className="single-services col pt-4 pb-2">
                       <Link to={node.home_section.aboutArea[1].anchorBtn[0].addLink.url} className="btn genric-btn primary f-bold mb-4">{node.home_section.aboutArea[1].anchorBtn[0].addLink.title}</Link>
