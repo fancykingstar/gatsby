@@ -15,9 +15,7 @@ const Support = (props) => {
 					<div className="modal_content">
 						<div className="p-8 py-sm-5">
 							<div className="small line-height-normal">
-								<p className="mb-5 text-md">As an exclusive home improvement lender, EnerBank provides you unique
-			products and personalized service you won't find anywhere else.</p>
-								
+								<p className="mb-5 text-md">As an exclusive home improvement lender, EnerBank provides you unique products and personalized service you won't find anywhere else.</p>								
 							</div>
 							<div className="row">
 								<div className="col-lg-12">

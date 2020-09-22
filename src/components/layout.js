@@ -2,6 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { StaticQuery, graphql } from 'gatsby'
 import 'bootstrap/dist/css/bootstrap.min.css';
+import 'react-bootstrap/dist/react-bootstrap';
 
 import Header from './header'
 import Footer from './footer'

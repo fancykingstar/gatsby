@@ -249,49 +249,49 @@ const About = ({data}) => {
                     <h2 className="h2 text-center mb-3" id="boardofdirectors">EnerBank Board of Directors</h2>
                     <p className="text-center">Our Board of Directors . . .</p>
                     <div className="row">
-                        <div className="col-md-3">
+                        <div className="col-sm-2 col-md-4 col-lg-3">
                             <div className="mb-4 text-center">
                                 <img data-src="holder.js/100px225?theme=thumb&amp;bg=55595c&amp;fg=eceeef&amp;text=Thumbnail" alt="Rejji P. Hayes" style={{height: '300px'}} src={SinglesInside054} data-holder-rendered="true" />
                                 <p className="directorName">Rejji P. Hayes</p>
                             </div>
                         </div>
-                        <div className="col-md-3">
+                        <div className="col-sm-2 col-md-4 col-lg-3">
                             <div className="mb-4 text-center">
                                 <img data-src="holder.js/100px225?theme=thumb&amp;bg=55595c&amp;fg=eceeef&amp;text=Thumbnail" alt="Louise P. Kelly" style={{height: '300px'}} src={SinglesInside037} data-holder-rendered="true" />
                                 <p className="directorName">Louise P. Kelly</p>
                             </div>
                         </div>
-                        <div className="col-md-3">
+                        <div className="col-sm-2 col-md-4 col-lg-3">
                             <div className="mb-4 text-center">
                                 <img data-src="holder.js/100px225?theme=thumb&amp;bg=55595c&amp;fg=eceeef&amp;text=Thumbnail" alt="Patrick M. McQueen" style={{height: '300px'}} src={SinglesInside006} data-holder-rendered="true" />
                                 <p className="directorName">Patrick M. McQueen</p>
                             </div>
                         </div>
-                        <div className="col-md-3">
+                        <div className="col-sm-2 col-md-4 col-lg-3">
                             <div className="mb-4 text-center">
                                 <img data-src="holder.js/100px225?theme=thumb&amp;bg=55595c&amp;fg=eceeef&amp;text=Thumbnail" alt="Leonard E. Wiatr" style={{height: '300px'}} src={SinglesInside018} data-holder-rendered="true" />
                                 <p className="directorName">Leonard E. Wiatr</p>
                             </div>
                         </div>
-                        <div className="col-md-3">
+                        <div className="col-sm-2 col-md-4 col-lg-3">
                             <div className="mb-4 text-center">
                                 <img data-src="holder.js/100px225?theme=thumb&amp;bg=55595c&amp;fg=eceeef&amp;text=Thumbnail" alt="Laura Mountcastle" style={{height: '300px'}} src={SinglesInside046} data-holder-rendered="true" />
                                 <p className="directorName">Laura Mountcastle</p>
                             </div>
                         </div>
-                        <div className="col-md-3">
+                        <div className="col-sm-2 col-md-4 col-lg-3">
                             <div className="mb-4 text-center">
                                 <img data-src="holder.js/100px225?theme=thumb&amp;bg=55595c&amp;fg=eceeef&amp;text=Thumbnail" alt="Joseph M. Walsh" style={{height: '300px'}} src={SinglesInside029} data-holder-rendered="true" />
                                 <p className="directorName">Joseph M. Walsh</p>
                             </div>
                         </div>
-                        <div className="col-md-3">
+                        <div className="col-sm-2 col-md-4 col-lg-3">
                             <div className="mb-4 text-center">
                                 <img data-src="holder.js/100px225?theme=thumb&amp;bg=55595c&amp;fg=eceeef&amp;text=Thumbnail" alt="Dan Lis" style={{height: '300px'}} src={SinglesInside012} data-holder-rendered="true" />
                                 <p className="directorName">Dan Lis</p>
                             </div>
                         </div>
-                        <div className="col-md-3">
+                        <div className="col-sm-2 col-md-4 col-lg-3">
                             <div className="mb-4">
                                 <img data-src="holder.js/100px225?theme=thumb&amp;bg=55595c&amp;fg=eceeef&amp;text=Thumbnail" alt="Charles E. Knadler" style={{height: '300px'}} src={SinglesInside066} data-holder-rendered="true" />
                                 <p className="directorName">Charles E. Knadler</p>
@@ -306,25 +306,25 @@ const About = ({data}) => {
                                 <div className="row form-group">
                                     <div className="col-md-6">
                                         <label htmlFor="firstName">First name<span>*</span></label>
-                                        <input type="text" className="form-control" id="firstName" placeholder="" value="" required="" />
+                                        <input type="text" className="form-control" id="firstName" required="required" />
                                     </div>
                                     <div className="col-md-6">
                                         <label htmlFor="lastName">Last name<span>*</span></label>
-                                        <input type="text" className="form-control" id="lastName" placeholder="" value="" required="" />
+                                        <input type="text" className="form-control" id="lastName" required="required" />
                                     </div>
                                 </div>
                                 <div className="form-group">
                                     <label htmlFor="email">Email<span>*</span></label>
-                                    <input type="text" className="form-control" id="email" placeholder="" value="" required="" />
+                                    <input type="text" className="form-control" id="email" required="required" />
                                 </div>
                                 <div className="row form-group">
                                     <div className="col-md-6">
                                         <label htmlFor="phone">Phone<span>*</span></label>
-                                        <input type="text" className="form-control" id="phone" placeholder="" value="" required="" />
+                                        <input type="text" className="form-control" id="phone" required="required" />
                                     </div>
                                     <div className="col-md-6">
                                         <label htmlFor="company">Company</label>
-                                        <input type="text" className="form-control" id="company" placeholder="" value="" required="" />
+                                        <input type="text" className="form-control" id="company" required="required" />
                                     </div>
                                 </div>
                             </div>
