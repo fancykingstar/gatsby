@@ -200,10 +200,10 @@ const LoanProgramPage = ({ data }) => {
 					)}
 					<div className="container">						
 						<div className="brif" dangerouslySetInnerHTML={{ __html: content.loan_program.joinLoanProgram.loanProgramIntro }} />
-						<div className="text-center mb-5 pb-4">
+						<div className="text-center pb-4">
 							<Link to={'/'} className="m-auto px-5 btn btn-primary">Join Now</Link>
 						</div>
-						<h2 className="text-center color-blue border-heading"><span>{content.loan_program.joinLoanProgram.sectionTitle}</span></h2>
+						<h2 className="text-center color-blue border-heading mt-5"><span>{content.loan_program.joinLoanProgram.sectionTitle}</span></h2>
 						{content.loan_program.joinLoanProgram.loanProgramMethods && (
 							<div className="row mt-4 mb-5">
 								{content.loan_program.joinLoanProgram.loanProgramMethods.map((item, i) => {
@@ -295,11 +295,11 @@ const LoanProgramPage = ({ data }) => {
 
 			{content.loan_program && (
 				<div className="container">					
-					<div className="p-5 pb-0 payment-program">
-						<h2>What’s Your Specialty? We’ve Got Loans for Whatever You Do!</h2>
+					<div className="p-5 pb-0 mt-4 payment-program">
+						<h2 className="mb-2 text-center">What’s Your Specialty? We’ve Got Loans for Whatever You Do!</h2>
 						<p>We offer loans for a ton of different home improvement project types. From the foundation all the way up to the roof — inside, outside, large or small — our loans are tailored to meet virtually any home improvement need. Contact us to discover which loans will best suit your business model.</p>
 					</div>
-
+					<div className="text-center mt-5 pb-5"><a className="m-auto px-5 btn btn-primary" href="/">Contact Us</a></div>
                     {/* <Tabbordion blockElements={blockElements} animateContent={'height'} mode={'toggle'} className="accordion loan_offer mx-4 mx-lg-5" name="accordion">
                         {content.accordion.tabpanel.map((item, i) =>
                             (
@@ -313,8 +313,8 @@ const LoanProgramPage = ({ data }) => {
                         )}
                     </Tabbordion> */}
 
-					<div className="p-5 pb-0 payment-program">					
-						<h2 className="text-center">Our Contractor Support is Second to None</h2>
+					<div className="p-5 pb-0 mb-5 payment-program">					
+						<h2 className="text-center mb-2">Our Contractor Support is Second to None</h2>
 						<p>We built our whole business around working with home improvement contractors across the nation. Because we only do home improvement loans, we can provide specialized and unparalleled service, starting with your dedicated relationship manager.</p>
 					</div>
 
@@ -369,7 +369,7 @@ const LoanProgramPage = ({ data }) => {
 						
 					})*/}
 
-					<div className="m-4 m-lg-5">
+					<div className="p-4 m-lg-5">
 						<h2 className="text-center">{content.loan_program.loanProvider.sectionHeading}</h2>
 						<p className="text-center py-2">{content.loan_program.loanProvider.sectionBrif}</p>
 						<div className="d-flex justify-content-center howselectloan">
@@ -378,7 +378,6 @@ const LoanProgramPage = ({ data }) => {
 							<Link to={'/'}><i className="fa fa-pdf"></i>PDF</Link>
 						</div>
 					</div>
-
 				</div>
 			)}
 
@@ -386,48 +385,103 @@ const LoanProgramPage = ({ data }) => {
 				<h2 className="container text-center py-4 h2 text-white">{content.loan_program.createLoanOption.sectionHeading}</h2>
 			</div>
 
-			<div className="bg-grey createLoanProgram">
+			{/* <div className="createLoanProgram"> */}
 				<div className="container">
-					<div dangerouslySetInnerHTML={{__html: content.loan_program.createLoanOption.sectionBrif}}></div>
+					<div className="p-5 pb-0 mb-5 payment-program">					
+						<h2 className="text-center mb-2">What’s a Loan Program?</h2>
+						<p>At its core, a payment options program is a way for you and your authorized dealers to achieve sales goals and overcome sales-related challenges. Your customized, private-label loan program is designed to achieve your organization’s goals while building brand recognition.</p>
+					</div>
 
+					<div className="p-5 pb-0 mb-5 payment-program">					
+						<h2 className="text-center mb-2">Who Should Create a Loan Program?</h2>
+						<p>If your organization works with a network of contractors, installers, dealers, or other authorized clients who work in the home improvement business, you should create a loan program. It’s a smart and easy way to boost your growth and gain brand loyalty.</p>
+					</div>
+					
+					
+					{/* <div dangerouslySetInnerHTML={{__html: content.loan_program.createLoanOption.sectionBrif}}></div> */}
+					<h2 className="mb-2 text-center">Why Should You Create a Loan Program?</h2>
 					<div className="d-flex flex-wrap my-4 my-lg-5">
 						{content.loan_program.createLoanOption.sectionOption.map((item, i) => {
-							if(i === 0){
+							// if(i === 0){
 								return (
 									<div key={item.fieldGroupName + i}  className="box-shadow bg-white rounded text-center payment-option-box col-xs-12 col-md mb-3 mb-lg-0 p-0 mr-md-3 mr-lg-5">
-										<style dangerouslySetInnerHTML={{
+										{/* <style dangerouslySetInnerHTML={{
 											__html: [
 												'.benefitloan:after {',
 													'background: rgba(77, 77, 77, 0.6) url(' + item.integrationOptionIcon.sourceUrl + ') no-repeat center',
 												'}'
 											].join('\n')
-										}}></style>
+										}}></style> */}
 										<div className="wygthumb benefitloan">
 											<img src={item.integrationOptionBgImage.sourceUrl} className="card-img-top" alt={item.integrationOptionBgImage.altText} />
 										</div>
 										<div className="p-4" dangerouslySetInnerHTML={{__html: item.integrationOptionBrif}}></div>
 									</div>
 								)
-							}else {
-								return (
-									<div key={item.fieldGroupName + i} className="box-shadow bg-white rounded text-center payment-option-box col-xs-12 col-md mb-3 mb-lg-0 p-0 mr-md-3 mr-lg-5">
-										<style dangerouslySetInnerHTML={{
-											__html: [
-												'.programfeature:after {',
-													'background: rgba(77, 77, 77, 0.6) url(' + item.integrationOptionIcon.sourceUrl + ') no-repeat center',
-												'}'
-											].join('\n')
-										}}></style>
-										<div className="wygthumb programfeature">
-											<img src={item.integrationOptionBgImage.sourceUrl} className="card-img-top" alt={item.integrationOptionBgImage.altText} />
-										</div>
-										<div className="p-4" dangerouslySetInnerHTML={{__html: item.integrationOptionBrif}}></div>
-									</div>
-								)
-							}
-							
+							// }else {
+							// 	return (
+							// 		<div key={item.fieldGroupName + i} className="box-shadow bg-white rounded text-center payment-option-box col-xs-12 col-md mb-3 mb-lg-0 p-0 mr-md-3 mr-lg-5">
+							// 			<style dangerouslySetInnerHTML={{
+							// 				__html: [
+							// 					'.programfeature:after {',
+							// 						'background: rgba(77, 77, 77, 0.6) url(' + item.integrationOptionIcon.sourceUrl + ') no-repeat center',
+							// 					'}'
+							// 				].join('\n')
+							// 			}}></style>
+							// 			<div className="wygthumb programfeature">
+							// 				<img src={item.integrationOptionBgImage.sourceUrl} className="card-img-top" alt={item.integrationOptionBgImage.altText} />
+							// 			</div>
+							// 			<div className="p-4" dangerouslySetInnerHTML={{__html: item.integrationOptionBrif}}></div>
+							// 		</div>
+							// 	)
+							// }							
 						})}
+					</div>
+				</div>
 
+				<h2 className="text-center p-5 mt-4 mb-2">Why EnerBank is the Right Choice as Your Loan Program Partner</h2>
+
+				<div className="container">
+					<div className="row">
+						{content.loan_program.rightChoice.map((item, i) => {
+							return (
+								<div className="col-sm-4 mb-4 mb-lg-0" key={item.fieldGroupName+i}>
+									<div className="single-offer card-body">
+										<i className="icon_circil">
+											{/* <img className="img-fluid" src={item.rightChoiceIcon.sourceUrl} alt="item.serviceIcon.altText" /> */}
+										</i>
+										<div className="py-5" dangerouslySetInnerHTML={{__html: item.rightChoiceDesc}} />
+										<button onClick={showbenefitpopup(item, item.popSlug)} className="btn btn-primary f-bold">Learn More</button>
+									</div>
+								</div>
+							)
+						})}
+					</div>
+				</div>
+
+				<div className="easyApp bg-blue my-5 py-5">
+					<style dangerouslySetInnerHTML={{
+						__html: [
+							'.easyApp:after {',
+								'background: #0077C8 url(' + content.loan_program.easyApplication.easyApplicationBanner.sourceUrl + ') no-repeat left/cover',
+							'}'
+						].join('\n')
+					}}></style>
+					<div className="container">
+						<div className="row">
+							<div className="col-5">
+							</div>
+							<div className="col-7">
+								<h2 className="text-white mb-4">{content.loan_program.easyApplication.easyApplicationHeading}</h2>
+								<ul>
+									{content.loan_program.easyApplication.easyApplicationProcess.map((item, i) => {
+										return(										
+											<li key={item.fieldGroupName + i}>{item.easyApplicationSteps}</li>
+										)
+									})}
+								</ul>
+							</div>
+						</div>
 					</div>
 				</div>
 			
@@ -435,12 +489,12 @@ const LoanProgramPage = ({ data }) => {
 					<h2 className="text-center">{content.loan_program.selectPartner.sectionHeading}</h2>
 					<p className="text-center py-2">{content.loan_program.selectPartner.sectionBrif}</p>
 					<div className="d-flex justify-content-center howselectloan">
-						<button className="btn-link">View / Read</button>
+						<button className="btn-link">View</button>
 						<div className="display-inline-block box-20" dangerouslySetInnerHTML={{__html: content.loan_program.selectPartner.yearBlock}} />    
-						<Link to={'/'}>Download</Link>
+						<Link to={'/'}>PDF</Link>
 					</div>
 				</div>
-			</div>
+			{/* </div> */}
 
 			{content.loan_program.partnerSays && (
 				<>
@@ -777,7 +831,29 @@ query($databaseId: ID!) {
 						}
 					}
 				}
-
+				rightChoice {
+					fieldGroupName
+					rightChoiceDesc
+					rightChoiceIcon {
+					  sourceUrl
+					}
+					rightChoiceLink {
+					  target
+					  title
+					  url
+					}
+				}
+				easyApplication {
+					easyApplicationHeading
+					fieldGroupName
+					easyApplicationBanner {
+					  sourceUrl
+					}
+					easyApplicationProcess {
+					  easyApplicationSteps
+					  fieldGroupName
+					}
+				}
 			}
 			accordion {
 				tabpanel {
