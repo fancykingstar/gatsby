@@ -708,7 +708,7 @@ body.mobile-nav-active #mobile-nav-toggle { color: #fff }
 .howselectloan { display: flex; align-items: center; font-size: 22px; font-weight: 500; }
 .howselectloan .btn-link{ font-weight: inherit; }
 .box-20 { background: #0077C8; border: 10px solid #0077C8; border-bottom-right-radius: 15px; border-top-left-radius: 10px; padding: 0 0 0 10px;
-    color: #fff; font-size: 62px; line-height: 62px; font-weight: 600; margin: 0 30px; }
+    color: #fff; font-size: 62px; line-height: 62px; font-weight: 600; margin: 0 40px; }
 .box-20 span { display: inline-block; background: #fff; color: #0077C8; border-bottom-right-radius: 10px; padding: 5px 7px; margin-left: 10px; }
 
 @media (max-width:576px){
@@ -1071,3 +1071,16 @@ body.mobile-nav-active #mobile-nav-toggle { color: #fff }
 .border-heading:before{ left: 0; }
 .border-heading:after{ right: 0; }
 .border-heading span{ background: #fff; display: inline-block; position: relative; z-index: 1; padding: 0 20px; }
+.easyApp{ position: relative; }
+.easyApp:after{
+    position: absolute;
+    content: "";
+    top: 0;
+    left: 0;
+    width: 38%;
+    height: 100%;
+    z-index: 1;
+}
+.easyApp ul{ counter-reset: funding-method; }
+.easyApp ul li{ position: relative; padding:10px 0 10px 60px; }
+.easyApp ul li:before{ counter-increment: funding-method; content: counter(funding-method); position: absolute; left:0; border: 2px solid #fff; width:40px; height:40px; border-radius: 50%; text-align: center; }
