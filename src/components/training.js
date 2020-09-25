@@ -15,13 +15,13 @@ const Training = (props) => {
 				<div className="modal_content">
 					{props.popData.innerpagebanner.pagebanner.bannner && (
 						<>
-							<style dangerouslySetInnerHTML={{
+							{/* <style dangerouslySetInnerHTML={{
 								__html: [
 									'.modal_banner:before {',
 										'background: url(' + props.popData.innerpagebanner.pagebanner.bannericon.sourceUrl + ') no-repeat center',
 									'}'
 								].join('\n')
-							}}></style>
+							}}></style> */}
 							<div className="modal_banner banner_bg" style={{ backgroundImage: "url(" + props.popData.innerpagebanner.pagebanner.bannner.sourceUrl + ")" }}></div>
 						</>
 					)}
