@@ -820,6 +820,7 @@ body.mobile-nav-active #mobile-nav-toggle { color: #fff }
   .text-md{ font-size: 18px; font-weight: 500; line-height: 24px;}
   .left-icon-list{position: relative; list-style: none; margin: 0; padding: 0;}
   .left-icon-list li{ list-style: none; display: block; margin: 0px 0 40px 0; padding: 0px 0 0 130px;position: relative}
+  .left-icon-list li:last-child{ margin: 0; }
   .left-icon-list li span{position:absolute; top: 0px; left: 0; width: 90px;}
   .left-icon-list li h4{font-size: 21px; color: #007ac2; margin:0 0 10px 0; padding:0; line-height: normal;}
   
@@ -1084,3 +1085,4 @@ body.mobile-nav-active #mobile-nav-toggle { color: #fff }
 .easyApp ul{ counter-reset: funding-method; }
 .easyApp ul li{ position: relative; padding:10px 0 10px 60px; }
 .easyApp ul li:before{ counter-increment: funding-method; content: counter(funding-method); position: absolute; left:0; border: 2px solid #fff; width:40px; height:40px; border-radius: 50%; text-align: center; }
+.pdffile img{ width:30px; vertical-align: top; }

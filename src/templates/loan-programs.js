@@ -2,8 +2,8 @@ import React, { useState } from "react";
 import { graphql, Link } from "gatsby";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import { Carousel } from 'react-responsive-carousel';
-import { Tabbordion, TabPanel, TabLabel, TabContent } from 'react-tabbordion';
-import "react-tabbordion/demo/accordion.css";
+// import { Tabbordion, TabPanel, TabLabel, TabContent } from 'react-tabbordion';
+// import "react-tabbordion/demo/accordion.css";
 
 import Layout from "../components/layout"
 import SEO from "../components/seo"
@@ -20,13 +20,18 @@ import States from "../components/states"
 import BenefitsLoanProgram from "../components/benefitsLoanProgram"
 import GrowthCalc from "../components/growthCalc"
 
+// Download PDF File
+import axios from 'axios'
+import fileDownload from 'js-file-download'
+import pdffile from "../images/pdf.svg"
+
 // accordian
-const blockElements = {
-    animator: 'accordion-animator',
-    content: 'accordion-content',
-    panel: 'accordion-panel',
-    label: 'accordion-title',
-}
+// const blockElements = {
+//     animator: 'accordion-animator',
+//     content: 'accordion-content',
+//     panel: 'accordion-panel',
+//     label: 'accordion-title',
+// }
 
 const LoanProgramPage = ({ data }) => {
 	const content = data.wpgraphql.page;
@@ -84,6 +89,16 @@ const LoanProgramPage = ({ data }) => {
 				break;
 		}
 	}
+
+	const handleDownload = (url, filename) => {
+		axios.get(url, {
+		  responseType: 'blob',
+		})
+		.then((res) => {
+		  fileDownload(res.data, filename)
+		})
+	}
+	const services = []
 	
 	return (
 		<Layout>
@@ -319,55 +334,34 @@ const LoanProgramPage = ({ data }) => {
 					</div>
 
 					<div className="row">
+					
+						{data.wpgraphql.categories.edges.map((cate) => (
+							(cate.node.slug === "loanservices") && (
+								cate.node.posts.edges.map((post) => {
+									content.loan_program.loanServices.map((item, i) => {
+										if(item.serviceHeading === post.node.title){
+											// console.log(i, post.node.title)
+											services[i] = post.node
+										}
+									})
+								}
+							))						
+						))}
 						{content.loan_program.loanServices.map((item, i) => {
-							// const nodes = data.wpgraphql.posts.edges.map((nodes) => {
-								// console.log(item, nodes)
-								// if(item.serviceHeading === nodes.node.title){
-									return (
-										<div className="col-sm-4 mb-4 mb-lg-0" key={item.fieldGroupName+i}>
-											<div className="single-offer card-body">
-												<i className="icon_circil">
-													<img className="img-fluid" src={item.serviceIcon.sourceUrl} alt="item.serviceIcon.altText" />
-												</i>
-												<h4>{item.serviceHeading}</h4>
-												<p>{item.serviceText}</p>
-												<button onClick={showbenefitpopup(item, item.popSlug)} className="btn btn-primary f-bold">Learn More</button>
-											</div>
-										</div>
-									)
-							// 	}
-							// })
-							// return nodes
+							return (
+								<div className="col-lg-4 mb-4 mb-lg-0" key={item.fieldGroupName+i}>
+									<div className="single-offer card-body">
+										<i className="icon_circil">
+											<img className="img-fluid" src={item.serviceIcon.sourceUrl} alt="News" />
+										</i>
+										<h4>{item.serviceHeading}</h4>
+										<p>{item.serviceText}</p>
+										<Link to={'/'} onClick={showbenefitpopup(services[i], item.popSlug)} className="btn btn-primary f-bold">Learn More</Link>
+									</div>
+								</div>
+							)
 						})}
 					</div>
-					
-					{/*content.loan_program.loanServices.map((item, i) => {
-						let services = [];
-						data.wpgraphql.categories.edges.map((cate, j) => {
-							(cate.node.slug === "loanservices") && (
-								cate.node.posts.edges.map((post) => {//console.log(item.indexOf(post.node.title))									
-									if(item.serviceHeading === post.node.title){
-										console.log(item.serviceHeading, i)
-										// return (services.indexOf(post.node.title) === -1) ? services.push(post.node) : ''
-									}
-								}
-							))
-						})
-						// console.log(services)
-						return (
-							<div className="col-lg-4 mb-4 mb-lg-0" key={item.fieldGroupName+i}>
-								<div className="single-offer card-body">
-									<i className="icon_circil">
-										<img className="img-fluid" src={item.serviceIcon.sourceUrl} alt="News" />
-									</i>
-									<h4>{item.serviceHeading}</h4>
-									<p>{item.serviceText}</p>
-									<Link to={'/'} onClick={showbenefitpopup(item, item.popSlug)} className="btn btn-primary f-bold">Learn More</Link>
-								</div>
-							</div>
-						)
-						
-					})*/}
 
 					<div className="p-4 m-lg-5">
 						<h2 className="text-center">{content.loan_program.loanProvider.sectionHeading}</h2>
@@ -448,7 +442,7 @@ const LoanProgramPage = ({ data }) => {
 								<div className="col-sm-4 mb-4 mb-lg-0" key={item.fieldGroupName+i}>
 									<div className="single-offer card-body">
 										<i className="icon_circil">
-											{/* <img className="img-fluid" src={item.rightChoiceIcon.sourceUrl} alt="item.serviceIcon.altText" /> */}
+											<img className="img-fluid" src={item.rightChoiceIcon.sourceUrl} alt="item.serviceIcon.altText" />
 										</i>
 										<div className="py-5" dangerouslySetInnerHTML={{__html: item.rightChoiceDesc}} />
 										<button onClick={showbenefitpopup(item, item.popSlug)} className="btn btn-primary f-bold">Learn More</button>
@@ -491,7 +485,7 @@ const LoanProgramPage = ({ data }) => {
 					<div className="d-flex justify-content-center howselectloan">
 						<button className="btn-link">View</button>
 						<div className="display-inline-block box-20" dangerouslySetInnerHTML={{__html: content.loan_program.selectPartner.yearBlock}} />    
-						<Link to={'/'}>PDF</Link>
+						<Link to={'/'} className="pdffile" onClick={handleDownload}><img src={pdffile} alt="download PDF file icon" /> PDF</Link>
 					</div>
 				</div>
 			{/* </div> */}
@@ -547,6 +541,7 @@ query($databaseId: ID!) {
 								fieldGroupName
 								sectionicon {
 								  sourceUrl
+								  altText
 								}
 								sectiontitle
 								sectionContent
@@ -583,6 +578,7 @@ query($databaseId: ID!) {
 							  }
 							  bannner {
 								sourceUrl
+								altText
 							  }
 							  bannertext
 							}
@@ -828,6 +824,7 @@ query($databaseId: ID!) {
 						}
 						integrationOptionIcon {
 							sourceUrl
+							altText
 						}
 					}
 				}
@@ -836,6 +833,7 @@ query($databaseId: ID!) {
 					rightChoiceDesc
 					rightChoiceIcon {
 					  sourceUrl
+					  altText
 					}
 					rightChoiceLink {
 					  target
@@ -848,6 +846,7 @@ query($databaseId: ID!) {
 					fieldGroupName
 					easyApplicationBanner {
 					  sourceUrl
+					  altText
 					}
 					easyApplicationProcess {
 					  easyApplicationSteps

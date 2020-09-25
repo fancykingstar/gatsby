@@ -9,7 +9,8 @@ const blockElements = {
     label: 'accordion-title',
 }
 
-const LoanType = (props) => {	
+const LoanType = (props) => {
+	console.log(props)
 	if (props.popData.length !== 0) {
 		return (
 			<Modal show={props.visiblity} animation={true} centered={true} size="full" id="appPopup">
@@ -22,14 +23,14 @@ const LoanType = (props) => {
 				<div className="modal_content">
 					{props.popData.innerpagebanner.pagebanner.bannner && (
 						<>
-							<style dangerouslySetInnerHTML={{
+							{/* <style dangerouslySetInnerHTML={{
 								__html: [
 									'.modal_banner:before {',
 										'background: url(' + props.popData.innerpagebanner.pagebanner.bannericon.sourceUrl + ') no-repeat center',
 									'}'
 								].join('\n')
-							}}></style>
-							<div className="modal_banner banner_bg" style={{ backgroundImage: "url(" + props.popData.innerpagebanner.pagebanner.bannner.sourceUrl + ")" }}></div>
+							}}></style> */}
+							{/* <div className="modal_banner banner_bg" style={{ backgroundImage: "url(" + props.popData.innerpagebanner.pagebanner.bannner.sourceUrl + ")" }}></div> */}
 						</>
 					)}
 
@@ -56,6 +57,7 @@ const LoanType = (props) => {
 									</Tabbordion>
 									{/* End Collapsed List Area */}
 								</div>
+								<div className="mt-5 text-center mb-4"><img src={props.popData.innerpagebanner.pagebanner.bannner.sourceUrl} alt={props.popData.innerpagebanner.pagebanner.bannner.altText} /></div>
 							</div>
 						</section>
 					</div>
