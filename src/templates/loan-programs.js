@@ -524,7 +524,6 @@ const LoanProgramPage = ({ data }) => {
 						{data.wpgraphql.categories.edges.map((cate) => {
 							return((cate.node.slug === "selectlaonprogram") && (
 								cate.node.posts.edges.map((post) => {
-									console.log(post)
 									return((post.node.slug === "selecting-a-loan-program-partner") && (
 										<button className="btn-link" key={post.node.id} onClick={showbenefitpopup(post.node, 'viewFile')}>VIEW</button>
 									))
