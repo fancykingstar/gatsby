@@ -19,10 +19,11 @@ import Support from "../components/support"
 import States from "../components/states"
 import BenefitsLoanProgram from "../components/benefitsLoanProgram"
 import GrowthCalc from "../components/growthCalc"
+import ViewFile from "../components/viewFile"
 
 // Download PDF File
-import axios from 'axios'
-import fileDownload from 'js-file-download'
+// import axios from 'axios'
+// import fileDownload from 'js-file-download'
 import pdffile from "../images/pdf.svg"
 
 // accordian
@@ -72,7 +73,7 @@ const LoanProgramPage = ({ data }) => {
 			case "loantype":
 				return <LoanType visiblity={visible} handleClose={hidebenefitpopup} popData={popData} />;
 				break;
-			case "all50states":
+			case "all-50-states":
 				return <States visiblity={visible} handleClose={hidebenefitpopup} popData={popData} />;
 				break;
 			case "support":
@@ -84,19 +85,48 @@ const LoanProgramPage = ({ data }) => {
 			case "growthCalc":
 				return <GrowthCalc visiblity={visible} handleClose={hidebenefitpopup} popData={popData} />;
 				break;
+			case "viewFile":
+				return <ViewFile visiblity={visible} handleClose={hidebenefitpopup} popData={popData} />;
+				break;
 			default:
 				return "";
 				break;
 		}
 	}
 
-	const handleDownload = (url, filename) => {
-		axios.get(url, {
-		  responseType: 'blob',
-		})
-		.then((res) => {
-		  fileDownload(res.data, filename)
-		})
+	// const handleDownload = (url, filename) => {
+	// 	axios.get({
+	// 		baseURL: url,
+	// 		withCredentials: false,
+	// 		headers: {
+	// 			'Access-Control-Allow-Origin' : '*',
+	// 			// 'Access-Control-Allow-Methods':'GET,PUT,POST,DELETE,PATCH,OPTIONS',
+	// 			'Access-Control-Allow-Headers': 'Accept',
+	// 			'Content-Type': 'application/pdf',
+	// 		},
+	// 	  	responseType: 'blob',
+	// 	}).then((res) => {
+	// 		console.log(res)
+	// 	  fileDownload(res.data, filename)
+	// 	})
+	// }
+	// const handleDownload = (url, filename) => {
+	// 	fetch(url, {
+	// 		method: 'GET',
+	// 		headers: {
+	// 			'Access-Control-Allow-Origin' : '*',
+	// 			'Access-Control-Allow-Headers': 'Accept',
+	// 			'Content-Type': 'application/pdf',
+	// 		},
+	// 	})
+	// 	.then((response) => response.blob())
+	// 	.then((blob) => {
+	// 		// Create blob link to download
+	// 		fileDownload(blob.data, filename)
+	// 	});
+	// }
+	const DownloadFile = (url) => {
+		window.open(url, '_blank');
 	}
 	const services = []
 	
@@ -185,7 +215,7 @@ const LoanProgramPage = ({ data }) => {
 											</Link>
 										</div>
 									)
-							}
+								}
 								// else{
 								// 	return (
 								// 		<div key={item.fieldGroupName + i} className="box-shadow bg-white rounded text-center payment-option-box col-xs-12 col-md p-0 mb-3 mx-sm-3 mx-lg-5">
@@ -339,7 +369,7 @@ const LoanProgramPage = ({ data }) => {
 							(cate.node.slug === "loanservices") && (
 								cate.node.posts.edges.map((post) => {
 									content.loan_program.loanServices.map((item, i) => {
-										if(item.serviceHeading === post.node.title){
+										if(item.popSlug === post.node.slug){
 											// console.log(i, post.node.title)
 											services[i] = post.node
 										}
@@ -367,9 +397,17 @@ const LoanProgramPage = ({ data }) => {
 						<h2 className="text-center">{content.loan_program.loanProvider.sectionHeading}</h2>
 						<p className="text-center py-2">{content.loan_program.loanProvider.sectionBrif}</p>
 						<div className="d-flex justify-content-center howselectloan">
-							<button className="btn-link">VIEW</button>
+							{data.wpgraphql.categories.edges.map((cate) => {
+								return((cate.node.slug === "selectlaonprogram") && (
+									cate.node.posts.edges.map((post) => {
+										return((post.node.slug === "select-loan-provider-question") && (
+											<button className="btn-link" key={post.node.id} onClick={showbenefitpopup(post.node, 'viewFile')}>VIEW</button>
+										))
+									})
+								))
+							})}
 							<div className="display-inline-block box-20" dangerouslySetInnerHTML={{__html: content.loan_program.loanProvider.yearBlock}} />    
-							<Link to={'/'}><i className="fa fa-pdf"></i>PDF</Link>
+							<button className="pdffile" onClick={() => DownloadFile(content.loan_program.loanProvider.downloadDoc.mediaItemUrl)}><img src={pdffile} alt="download PDF file icon" /> PDF</button>
 						</div>
 					</div>
 				</div>
@@ -483,9 +521,18 @@ const LoanProgramPage = ({ data }) => {
 					<h2 className="text-center">{content.loan_program.selectPartner.sectionHeading}</h2>
 					<p className="text-center py-2">{content.loan_program.selectPartner.sectionBrif}</p>
 					<div className="d-flex justify-content-center howselectloan">
-						<button className="btn-link">View</button>
+						{data.wpgraphql.categories.edges.map((cate) => {
+							return((cate.node.slug === "selectlaonprogram") && (
+								cate.node.posts.edges.map((post) => {
+									console.log(post)
+									return((post.node.slug === "selecting-a-loan-program-partner") && (
+										<button className="btn-link" key={post.node.id} onClick={showbenefitpopup(post.node, 'viewFile')}>VIEW</button>
+									))
+								})
+							))
+						})}
 						<div className="display-inline-block box-20" dangerouslySetInnerHTML={{__html: content.loan_program.selectPartner.yearBlock}} />    
-						<Link to={'/'} className="pdffile" onClick={handleDownload}><img src={pdffile} alt="download PDF file icon" /> PDF</Link>
+						<button className="pdffile" onClick={() => DownloadFile(content.loan_program.selectPartner.downloadDoc.mediaItemUrl)}><img src={pdffile} alt="download PDF file icon" /> PDF</button>
 					</div>
 				</div>
 			{/* </div> */}
@@ -534,6 +581,7 @@ query($databaseId: ID!) {
 					edges{
 						node {
 						  id
+						  slug
 						  title
 						  content
 						  appmethod {
@@ -801,15 +849,27 @@ query($databaseId: ID!) {
 				}
 			
 				loanProvider {
+					fieldGroupName
 					sectionHeading
 					sectionBrif
 					yearBlock
+					downloadDoc {
+					  altText
+					  mediaItemUrl
+					  mediaType
+					}
 				}
 
 				selectPartner {
+					fieldGroupName
 					sectionBrif
 					sectionHeading
 					yearBlock
+					downloadDoc {
+					  altText
+					  mediaItemUrl
+					  mediaType
+					}
 				}
 
 				createLoanOption {

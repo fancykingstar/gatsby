@@ -13,7 +13,7 @@ const States = (props) => {
 				</div>
 				<div className="modal_content p-5 py-sm-5">
 					<div className="small line-height-normal" style={{'lineHeight': '22px'}} dangerouslySetInnerHTML={{__html:props.popData.content}} />
-					<img className="img-fluid p-5 pb-0" src={props.popData.innerpagebanner.pagebanner.bannner.sourceUrl} alt={props.popData.innerpagebanner.pagebanner.bannner.altText} />
+					<img className="img-fluid p-5 pb-0 mx-auto d-block" src={props.popData.innerpagebanner.pagebanner.bannner.sourceUrl} alt={props.popData.innerpagebanner.pagebanner.bannner.altText} />
 				</div>
 			</Modal>
 		)
