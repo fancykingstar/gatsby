@@ -41,7 +41,7 @@ const LoanType = (props) => {
 								<div className="row justify-content-center">
 									<div className="col-md-12 header-text mb-4" dangerouslySetInnerHTML={{__html:props.popData.content}} />
 								</div>
-								<div className="p-4 py-sm-3">									
+								<div className="p-4 py-sm-3">
 									{/* Collapsed List */}
 									<Tabbordion blockElements={blockElements} animateContent={'height'} mode={'toggle'} className="accordion loan_offer mx-4 mx-lg-5" name="accordion">
 										{props.popData.accordion.tabpanel.map((item, i) => {

@@ -725,10 +725,6 @@ body.mobile-nav-active #mobile-nav-toggle { color: #fff }
 .modal_banner:before { content: ""; position: absolute; left: 0; top: 0; width: 100%; height: 100%; z-index: 99; background-size:15% !important; }
 .modal_banner p { position: absolute; width: 100%; left: 0; bottom: 30px; z-index: 2; text-align: center; color:#fff; z-index: 99; font-size:24px; }
 
-.appMethod { height: 100%; border-top: 30px solid #dee2e6!important; position: relative; padding: 20px 20px 10px; text-align: center; }
-.appMethod img { position: absolute; left: 50%; max-width: 120px; transform: translate(-50%, -100%); top: 25px; }
-.appMethod div { font-size: 16px; font-weight: bold; line-height: normal; height: 30px; margin: 15px 0; }
-.appMethod p { font-size: 14px; line-height: 22px; text-align: center; }
 .portal_list { margin: 0 0 30px 20px; padding: 0; list-style: disc; list-style-position: inside; }
 .portal_list li { margin: 0; padding: 0 15px; text-align: left; font-size: 16px; line-height: 26px; width: 33.33%; float: left; }
 
@@ -769,91 +765,91 @@ body.mobile-nav-active #mobile-nav-toggle { color: #fff }
 .modal_content{ background: #fff; position: relative; max-height: 100%; overflow-y: auto; }
 .modal_content p{line-height: 24px; text-align: left;}
   
-  /* appPopup modal css */
-  #appPopup .modal_banner{ background: url(../images/appMethod-MockUp.jpg) center -100px; background-size: cover; position:relative; height:300px; }
-  /*url(../images/app-method-icon.svg) no-repeat center*/
-  /* #appPopup .modal_banner:before{ content: ""; position: absolute; left: 0; top: 0; width: 100%; height: 100%; z-index: 0; background: rgba(0,0,0,0.4); } */
-  .appMethod{ height:100%; border-top: 30px solid #dee2e6 !important; position: relative; padding: 20px 20px 10px; text-align: center; }
-  .appMethod img{ position: absolute; left:50%; max-width:60px; transform: translate(-50%, -100%); top:15px; }
-  .appMethod div{ font-size: 13px; font-weight: bold; line-height: normal; height: 30px; margin: 15px 0; }
-  .appMethod p{ font-size: 12px; line-height: 18px; text-align: center; }
+/* appPopup modal css */
+#appPopup .modal_banner{ background: url(../images/appMethod-MockUp.jpg) center -100px; background-size: cover; position:relative; height:300px; }
+/*url(../images/app-method-icon.svg) no-repeat center*/
+/* #appPopup .modal_banner:before{ content: ""; position: absolute; left: 0; top: 0; width: 100%; height: 100%; z-index: 0; background: rgba(0,0,0,0.4); } */
+.appMethod { height: 100%; border-top: 30px solid #dee2e6!important; position: relative; padding: 20px 20px 10px; text-align: center; }
+.appMethod img { position: absolute; left:50%; max-width:60px; transform: translate(-50%, -100%); top:15px; }
+.appMethod div { font-size: 13px; font-weight: bold; line-height: normal; height: 30px; margin: 15px 0; }
+.appMethod p { font-size: 12px; line-height: 18px; text-align: center; }
   
-  /* dealerPopup modal css */
-  #dealerPopup .modal_banner{ background: url(../images/dealer-hero-banner.jpg) center top; background-size: cover; position:relative; height:300px; padding:15px 25px; font-weight:400; font-size: 24px; color:#fff; }
-  #dealerPopup .modal_banner p{ position: absolute; width:100%; left:0; bottom:30px; z-index:2; text-align: center; }
-  /* #dealerPopup .modal_banner:before{ content: ""; position: absolute; left: 0; top: 0; width: 100%; height: 100%; z-index: 1; background: rgba(0,0,0,0.4) url(../images/dealer-resource-center.svg) no-repeat center calc(50% - 30px); background-size: 150px; } */
-  #dealerPopup h4{ font-weight:500; font-size:24px; margin-bottom: 25px !important; }
-  .dealerResource{ margin:0 15px; padding:20px 20px 70px; height:100%; position: relative; box-shadow: 0 0 6px #aaa; }
-  .dealerResource img{ margin:0 auto; max-width: 70px; display:block; }
-  .dealerResource div{ font-size: 15px; font-weight: bold; line-height: normal; height: 30px; margin: 15px 0; }
-  .dealerResource p{ font-size: 12px; line-height: 18px; text-align: center; }
-  .dealerResource a{ background: #007ac2; color:#fff; font-size:13px; display: inline-block; margin: 0 auto; padding: 0px 20px; border-radius: 5px; position: absolute; bottom:30px; left:50%; transform: translateX(-50%); }
+/* dealerPopup modal css */
+#dealerPopup .modal_banner{ background: url(../images/dealer-hero-banner.jpg) center top; background-size: cover; position:relative; height:300px; padding:15px 25px; font-weight:400; font-size: 24px; color:#fff; }
+#dealerPopup .modal_banner p{ position: absolute; width:100%; left:0; bottom:30px; z-index:2; text-align: center; }
+/* #dealerPopup .modal_banner:before{ content: ""; position: absolute; left: 0; top: 0; width: 100%; height: 100%; z-index: 1; background: rgba(0,0,0,0.4) url(../images/dealer-resource-center.svg) no-repeat center calc(50% - 30px); background-size: 150px; } */
+#dealerPopup h4{ font-weight:500; font-size:24px; margin-bottom: 25px !important; }
+.dealerResource{ margin:0 15px; padding:20px 20px 70px; height:100%; position: relative; box-shadow: 0 0 6px #aaa; }
+.dealerResource img{ margin:0 auto; max-width: 70px; display:block; }
+.dealerResource div{ font-size: 15px; font-weight: bold; line-height: normal; height: 30px; margin: 15px 0; }
+.dealerResource p{ font-size: 12px; line-height: 18px; text-align: center; }
+.dealerResource a{ background: #007ac2; color:#fff; font-size:13px; display: inline-block; margin: 0 auto; padding: 0px 20px; border-radius: 5px; position: absolute; bottom:30px; left:50%; transform: translateX(-50%); }
   
-  .start_drc p{ font-size:13px; line-height: normal; margin: 15px 0 35px; }
-  .start_drc a{ font-size:13px; border: 1px solid #fff; padding: 10px 20px; color: #fff; border-radius: 3px; }
-  .start_drc2 a{ font-size:16px; border: 1px solid #fff; padding: 10px 20px; color: #fff; border-radius: 3px; }
+.start_drc p{ font-size:13px; line-height: normal; margin: 15px 0 35px; }
+.start_drc a{ font-size:13px; border: 1px solid #fff; padding: 10px 20px; color: #fff; border-radius: 3px; }
+.start_drc2 a{ font-size:16px; border: 1px solid #fff; padding: 10px 20px; color: #fff; border-radius: 3px; }
   
-  /* Benefits to Creating a Loan Program */
-  .modal_banner{ background-repeat:no-repeat; background-size: cover; position:relative; height:300px; padding:15px 25px; }
-  .banner_bg{position: relative; z-index: 9;}
-  .banner_bg:after{content:'';position: absolute; z-index: 1; width:100%; top: 0; left:0; height: 100%; background:rgba(0,0,0,0.6);}
-  .modal_banner span{position:relative; z-index: 5; width: 160px; height: 100%; margin: 0 auto; 
-  display: flex; align-items: center; justify-content: center; }
-  .p-8{padding: 3.5rem 7.5rem 0rem 7.5rem;}
-  .text-md{ font-size: 18px; font-weight: 500; line-height: 24px;}
-  .left-icon-list{position: relative; list-style: none; margin: 0; padding: 0;}
-  .left-icon-list li{ list-style: none; display: block; margin: 0px 0 40px 0; padding: 0px 0 0 130px;position: relative}
-  .left-icon-list li:last-child{ margin: 0; }
-  .left-icon-list li span{position:absolute; top: 0px; left: 0; width: 90px;}
-  .left-icon-list li h4{font-size: 21px; color: #007ac2; margin:0 0 10px 0; padding:0; line-height: normal;}
-  
-  #loantypeExample .card-body{padding-left: 0 !important;padding-right: 0 !important;}
-  #loantypeExample .card-body h4{margin-bottom: 20px;}
+/* Benefits to Creating a Loan Program */
+.modal_banner{ background-repeat:no-repeat; background-size: cover; position:relative; height:300px; padding:15px 25px; }
+.banner_bg{position: relative; z-index: 9;}
+.banner_bg:after{content:'';position: absolute; z-index: 1; width:100%; top: 0; left:0; height: 100%; background:rgba(0,0,0,0.6);}
+.modal_banner span{position:relative; z-index: 5; width: 160px; height: 100%; margin: 0 auto; 
+display: flex; align-items: center; justify-content: center; }
+.p-8{padding: 3.5rem 7.5rem 0rem 7.5rem;}
+.text-md{ font-size: 18px; font-weight: 500; line-height: 24px;}
+.left-icon-list{position: relative; list-style: none; margin: 0; padding: 0;}
+.left-icon-list li{ list-style: none; display: block; margin: 0px 0 40px 0; padding: 0px 0 0 130px;position: relative}
+.left-icon-list li:last-child{ margin: 0; }
+.left-icon-list li span{position:absolute; top: 0px; left: 0; width: 90px;}
+.left-icon-list li h4{font-size: 21px; color: #007ac2; margin:0 0 10px 0; padding:0; line-height: normal;}
 
-  .accordion-content { color: #4d4d4d; }
-  .accordion-animator{ margin-bottom: 10px !important; }
-  .accordion-content ul{ list-style: disc !important; }
-  .hrbr-home .hrbr-bottom-content .hrbr-job-list-cont .hrbr-jobs .hrbr-job-list li:hover{ background: none !important; }
-  .hrbr-row{ display: block !important; margin: 0 !important }
-  .hrbr-row div{ width: 100%; }
-  #hrbr-widget a{ width: auto !important; font-weight:600; }
-  .hrbr-btn-primary, .hrbr-btn{ background: #0077C8 !important; border: #0077C8 !important;  padding: .375rem .75rem !important; color:#fff !important;}
-  .hrbr-btn-primary:hover, .hrbr-btn:hover{ color:#fff !important; }
-  .hrbr-home .hrbr-bottom-content .hrbr-job-list-cont .hrbr-jobs .hrbr-job-list li .hrbr-job-details .hrbr-label{ vertical-align: top; background: #4d4d4d !important; }
-  .hrbr-home .hrbr-bottom-content .hrbr-job-list-cont .hrbr-jobs .hrbr-job-list li{ border-top: none !important; margin-bottom: 0 !important; }
-  .hrbr-btn-primary:active, .hrbr-btn-primary:focus, .hrbr-btn-primary:hover,
-  .hrbr-home .hrbr-bottom-content .hrbr-job-list-cont .hrbr-jobs .hrbr-job-list li .hrbr-view-button a,
-  .hrbr-btn-primary-invert:hover, .hrbr-btn-primary-invert, #hrbr-widget #hrbr-swap-page a{ color:#fff !important; }
-  #hrbr-widget h3, #hrbr-widget .h3{ color:#0077C8 !important; font-weight: 600; }
-  #hrbr-widget #hrbr-page-info { font-size: 20px; color: #4d4d4d; }
-  #hrbr-widget #hrbr-page-info #hrbr-page-location{ font-size: 20px; color: #4d4d4d; font-weight: 600; }
-  #hrbr-widget #hrbr-page-info #hrbr-page-department{ font-size: 18px; }
-  /* #hrbr-page-message p:first-child{ font-size:20px; } */
-  .leadership{ border-radius:15px; background: #fff; box-shadow: 0 0 3px 3px #ccc;  }
-  
-  .leadership h3{ position: relative; padding-bottom: 15px; margin-bottom: 10px; }
-  .leadership h3:after{ content: ""; position: absolute; height: 4px; width: 80%; bottom:0; left:0; background: #29A9E0; }
-  .directorName{ font-weight:600; color: #d4d4d4; }
-  
-  .hrbr-pagination-sm > li > a{ border: none !important; background: #29A9E0 !important; font-size:24px !important; font-weight: 500 !important; }
-  .hrbr-pagination-sm > li.active > a{ background: #0077C8 !important; font-weight: 600 !important; }
-  .hrbr-wrapper-pagination > li > a{ color: #29A9E0 !important; }
-  .carousel .slider-wrapper.axis-horizontal .slider .slide{ list-style: none; }
-  /* calculator icon */
-   .calculator{ width:26px; height:26px; display: inline-block; vertical-align: middle; }
+#loantypeExample .card-body{padding-left: 0 !important;padding-right: 0 !important;}
+#loantypeExample .card-body h4{margin-bottom: 20px;}
 
-  /* Add Estimated Calculator */
-  .p-6{padding: 3rem 4rem; }
-  .ptb-2{ padding-top: .6rem !important; padding-bottom: .6rem !important}
-  .font-b{ font-size:42px; font-weight:600;}
-  .calc_form{ position:relative;}
-  .calc_form p, .calc_form label, .text-sm{ font-size:14px; font-weight:600;}
-  .bg_blue{background-color: #0079C2;}
-  .bg_blue label{ color:#fff;}
-  .theme-text{ line-height:21px; margin-bottom: 6px;}
-  .border-radius5{ border-radius: 5px !important; border: solid 1px #0079C2; }
-  .check_count { display: block; position: relative; margin-bottom:0px; cursor: pointer; -webkit-user-select: none; text-align: center;
-   -moz-user-select: none; -ms-user-select: none; user-select: none; }
+.accordion-content { color: #4d4d4d; }
+.accordion-animator{ margin-bottom: 10px !important; }
+.accordion-content ul{ list-style: disc !important; }
+.hrbr-home .hrbr-bottom-content .hrbr-job-list-cont .hrbr-jobs .hrbr-job-list li:hover{ background: none !important; }
+.hrbr-row{ display: block !important; margin: 0 !important }
+.hrbr-row div{ width: 100%; }
+#hrbr-widget a{ width: auto !important; font-weight:600; }
+.hrbr-btn-primary, .hrbr-btn{ background: #0077C8 !important; border: #0077C8 !important;  padding: .375rem .75rem !important; color:#fff !important;}
+.hrbr-btn-primary:hover, .hrbr-btn:hover{ color:#fff !important; }
+.hrbr-home .hrbr-bottom-content .hrbr-job-list-cont .hrbr-jobs .hrbr-job-list li .hrbr-job-details .hrbr-label{ vertical-align: top; background: #4d4d4d !important; }
+.hrbr-home .hrbr-bottom-content .hrbr-job-list-cont .hrbr-jobs .hrbr-job-list li{ border-top: none !important; margin-bottom: 0 !important; }
+.hrbr-btn-primary:active, .hrbr-btn-primary:focus, .hrbr-btn-primary:hover,
+.hrbr-home .hrbr-bottom-content .hrbr-job-list-cont .hrbr-jobs .hrbr-job-list li .hrbr-view-button a,
+.hrbr-btn-primary-invert:hover, .hrbr-btn-primary-invert, #hrbr-widget #hrbr-swap-page a{ color:#fff !important; }
+#hrbr-widget h3, #hrbr-widget .h3{ color:#0077C8 !important; font-weight: 600; }
+#hrbr-widget #hrbr-page-info { font-size: 20px; color: #4d4d4d; }
+#hrbr-widget #hrbr-page-info #hrbr-page-location{ font-size: 20px; color: #4d4d4d; font-weight: 600; }
+#hrbr-widget #hrbr-page-info #hrbr-page-department{ font-size: 18px; }
+/* #hrbr-page-message p:first-child{ font-size:20px; } */
+.leadership{ border-radius:15px; background: #fff; box-shadow: 0 0 3px 3px #ccc;  }
+
+.leadership h3{ position: relative; padding-bottom: 15px; margin-bottom: 10px; }
+.leadership h3:after{ content: ""; position: absolute; height: 4px; width: 80%; bottom:0; left:0; background: #29A9E0; }
+.directorName{ font-weight:600; color: #d4d4d4; }
+
+.hrbr-pagination-sm > li > a{ border: none !important; background: #29A9E0 !important; font-size:24px !important; font-weight: 500 !important; }
+.hrbr-pagination-sm > li.active > a{ background: #0077C8 !important; font-weight: 600 !important; }
+.hrbr-wrapper-pagination > li > a{ color: #29A9E0 !important; }
+.carousel .slider-wrapper.axis-horizontal .slider .slide{ list-style: none; }
+/* calculator icon */
+  .calculator{ width:26px; height:26px; display: inline-block; vertical-align: middle; }
+
+/* Add Estimated Calculator */
+.p-6{padding: 3rem 4rem; }
+.ptb-2{ padding-top: .6rem !important; padding-bottom: .6rem !important}
+.font-b{ font-size:42px; font-weight:600;}
+.calc_form{ position:relative;}
+.calc_form p, .calc_form label, .text-sm{ font-size:14px; font-weight:600;}
+.bg_blue{background-color: #0079C2;}
+.bg_blue label{ color:#fff;}
+.theme-text{ line-height:21px; margin-bottom: 6px;}
+.border-radius5{ border-radius: 5px !important; border: solid 1px #0079C2; }
+.check_count { display: block; position: relative; margin-bottom:0px; cursor: pointer; -webkit-user-select: none; text-align: center;
+  -moz-user-select: none; -ms-user-select: none; user-select: none; }
  
  /* Hide the browser's default checkbox */
  .check_count input { position: absolute; opacity: 0; cursor: pointer; height: 0; width: 0; }
@@ -1070,3 +1066,10 @@ body.mobile-nav-active #mobile-nav-toggle { color: #fff }
 .easyApp ul li:before{ counter-increment: funding-method; content: counter(funding-method); position: absolute; left:0; border: 2px solid #fff; width:40px; height:40px; border-radius: 50%; text-align: center; }
 .pdffile{ border: none; background: none; color: #007bff; font-weight: 500; }
 .pdffile img{ width:30px; vertical-align: top; }
+.popupchecklist li, .programtools ul li{background: url(../images/check-icon.jpg) no-repeat left center; padding:5px 0 5px 40px; font-weight: 500; }
+/* tools help program */
+.programtools h3{ margin-bottom: 10px; }
+.programtools ul{ margin: 50px 0;}
+.toolsimage{ max-width: 350px; margin-left: auto; }
+.programtools .payment-option ul li{ background: none; padding: 0; }
+.programtools .payment-option ul li p{ text-align: center; }
