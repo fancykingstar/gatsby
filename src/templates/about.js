@@ -7,6 +7,7 @@ import "react-tabbordion/demo/accordion.css";
 // import { Collapse } from 'reactstrap';
 // , Button, CardBody, Card
 import Layout from "../components/layout"
+import SEO from "../components/seo"
 
 // import images
 import fdic_logo from '../images/fdic-logo.svg';
@@ -30,7 +31,7 @@ import tmtopimg from '../images/top_arrow.svg';
 import PaymentEstimator from '../components/paymentEstimator'
 
 const About = ({data}) => {
-
+    const content = data.wpgraphql.page;
     const [visible, setVisible] = useState(false);
     const [popData, setPopData] = useState('');
 
@@ -52,6 +53,7 @@ const About = ({data}) => {
 
   return (  
     <Layout>
+        <SEO title={content.title} description={content.excerpt} />
         {/* <SEO title={data.wpgraphql.page.title} description={data.wpgraphql.page.excerpt}/> */}
             {/* start banner Area */}
             <section className="video-section">
