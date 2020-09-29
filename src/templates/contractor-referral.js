@@ -9,23 +9,7 @@ import SEO from "../components/seo"
 const HomeOwnerPage = ({data}) => {
   return (  
     <Layout>
-        <SEO title={data.wpgraphql.page.title} description={data.wpgraphql.page.excerpt}/>
-
-        {data.wpgraphql.page.top_banner.banner.backgroundImage && (
-            <section className="banner-area pos_relative" id="home" style={{ backgroundImage: "url(" + data.wpgraphql.page.top_banner.banner.backgroundImage.sourceUrl + ")" }}>
-                <div className="container">
-                    <div className="row h-half d-flex align-items-end pb-5">
-                        { data.wpgraphql.page.top_banner.banner.bannerLinks.map((item, i) => {
-                            return (
-                                <div className="col-md-4" key={item.fieldGroupName+i}>
-                                    <div className="header-btn"><Link className="mr-auto" to={"/"} dangerouslySetInnerHTML={{ __html: item.links.title}} /></div>
-                                </div>
-                            )
-                        })}
-                    </div>
-                </div>
-            </section>
-        )}
+        <SEO title={data.wpgraphql.page.title} description={data.wpgraphql.page.excerpt}/>        
 
         <section className="service-area section-gap" id="whychoosebank">
             <div className="container">
@@ -33,21 +17,6 @@ const HomeOwnerPage = ({data}) => {
                     {data.wpgraphql.page.content && (
                         <div className="col-md-12 header-text mb-4" dangerouslySetInnerHTML={{ __html: data.wpgraphql.page.content}} />
                     )}
-                </div>
-
-                <div className="benefit-option">
-                    <ul>
-                        {data.wpgraphql.page.home_owner.benefitOption.map((item, i) =>
-                            (
-                                <li key={item.fieldGroupName + i}>
-                                    <div className="box-circle icon bg-blue content-center">
-                                        <img src={item.optionIcon.sourceUrl} alt={item.optionIcon.altText} />
-                                    </div>
-                                    <p dangerouslySetInnerHTML={{ __html: item.optionTitle }} />
-                                </li>
-                            )
-                        )}
-                    </ul>
                 </div>
             </div>
         </section>
