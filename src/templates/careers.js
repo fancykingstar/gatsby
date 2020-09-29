@@ -26,8 +26,7 @@ const CareerPage = ({data, props}) => {
 
   return (  
     <Layout>
-      <SEO title={data.wpgraphql.page.title} description={data.wpgraphql.page.excerpt}/>
-      <h2 className="mt-50 mb-10 text-center"><span>Why Work at EnerBank?</span></h2>
+      <SEO title={data.wpgraphql.page.title} description={data.wpgraphql.page.excerpt}/>      
       <section className="video-section">
         <div className="container">
           <div className="row d-flex align-items-end">
@@ -42,7 +41,7 @@ const CareerPage = ({data, props}) => {
         <div className="container">
           <div className="row justify-content-center">
             <div className="col-md-12 header-text mb-4">
-              
+              <h2 className="mt-50 mb-10 text-center"><span>Why Work at EnerBank?</span></h2>
               <p> Jobs come and go, but a career at EnerBank is just that: a career. We truly value our people — hiring the best and brightest, then continuing to nurture that talent as team members develop their skills and move up through the organization over time. If you love to help people, thrive in a challenging environment, 
       and are ready for the time of your life, consider joining us.</p>
             </div>
