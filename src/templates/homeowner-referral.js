@@ -42,7 +42,7 @@ const HomeOwnerReferral = ({data}) => {
                                             <input type={item.fieldType} name={item.fieldName} id={item.fieldName} className="form-control" />
                                         </div>
                                     :                                       
-                                        <div className="form-group col-6 col-sm-6">
+                                        <div className="form-group col-6 col-sm-6" key={item.fieldGroupName + i}>
                                             <label htmlFor={item.fieldName} dangerouslySetInnerHTML={{__html: item.fieldTitle}} />
                                             <input type={item.fieldType} name={item.fieldName} id={item.fieldName} className="form-control" />
                                         </div>
@@ -51,20 +51,27 @@ const HomeOwnerReferral = ({data}) => {
                             })}
                             <h3 className="h3 text-center text-blue col-12" dangerouslySetInnerHTML={{__html: data.wpgraphql.page.referralform.userInfoForm.topHeading}} />
                             {data.wpgraphql.page.referralform.userInfoForm.formField.map((item, i) => {
-                                return(
-                                    (i === 0 || i === 5 || i === 6 )
-                                        ?   
-                                            <div className="form-group col-12" key={item.fieldGroupName + i}>
-                                                <label htmlFor={item.fieldName} dangerouslySetInnerHTML={{__html: item.fieldTitle}} />
-                                                <input type={item.fieldType} name={item.fieldName} id={item.fieldName} className="form-control" />
-                                            </div>
-                                        :   
-                                            <div className="form-group col-6 col-sm-6">
-                                                <label htmlFor={item.fieldName} dangerouslySetInnerHTML={{__html: item.fieldTitle}} />
-                                                <input type={item.fieldType} name={item.fieldName} id={item.fieldName} className="form-control" />
-                                            </div>
+                                console.log(item.fieldType === 'submit')
+                                // return(
+                                    if(i === 0 || i === 5 || i === 6 ){
+                                        if(item.fieldType === 'submit'){
+                                            return  <div className="form-group col-12" key={item.fieldGroupName + i}>
+                                                        <input type={item.fieldType} name={item.fieldName} id={item.fieldName} value={item.fieldTitle} className="form-control" />
+                                                    </div>
+                                        }else{
+                                            return  <div className="form-group col-12" key={item.fieldGroupName + i}>
+                                                        <label htmlFor={item.fieldName} dangerouslySetInnerHTML={{__html: item.fieldTitle}} />
+                                                        <input type={item.fieldType} name={item.fieldName} id={item.fieldName} className="form-control" />
+                                                    </div>
+                                        }
+                                    }else {
+                                        return  <div className="form-group col-6 col-sm-6" key={item.fieldGroupName + i}>
+                                                    <label htmlFor={item.fieldName} dangerouslySetInnerHTML={{__html: item.fieldTitle}} />
+                                                    <input type={item.fieldType} name={item.fieldName} id={item.fieldName} className="form-control" />
+                                                </div>
+                                    }
                                         
-                                    )
+                                    // )
                             })}
                             <div className="footer col-12" dangerouslySetInnerHTML={{__html: data.wpgraphql.page.referralform.userInfoForm.footer}} />
                     </form>
