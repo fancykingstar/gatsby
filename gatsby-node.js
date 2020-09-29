@@ -80,6 +80,26 @@ exports.createPages = async ({ graphql, actions }) => {
                       },
                     })
               break;
+          case "homeowner-referral":
+                    createPage({
+                      path: "homeowner-referral",
+                      component: path.resolve(`./src/templates/homeowner-referral.js`),
+                      context: {
+                        slug: node.slug,
+                        databaseId: node.databaseId,
+                      },
+                    })
+              break;
+          case "contractor-referral":
+                    createPage({
+                      path: "contractor-referral",
+                      component: path.resolve(`./src/templates/contractor-referral.js`),
+                      context: {
+                        slug: node.slug,
+                        databaseId: node.databaseId,
+                      },
+                    })
+              break;
           default:
                 createPage({
                   path: node.slug,
