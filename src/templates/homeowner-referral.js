@@ -51,7 +51,6 @@ const HomeOwnerReferral = ({data}) => {
                             })}
                             <h3 className="h3 text-center text-blue col-12" dangerouslySetInnerHTML={{__html: data.wpgraphql.page.referralform.userInfoForm.topHeading}} />
                             {data.wpgraphql.page.referralform.userInfoForm.formField.map((item, i) => {
-                                console.log(item.fieldType === 'submit')
                                 // return(
                                     if(i === 0 || i === 5 || i === 6 ){
                                         if(item.fieldType === 'submit'){
