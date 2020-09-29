@@ -1084,6 +1084,27 @@ display: flex; align-items: center; justify-content: center; }
 .howitworks li p{ margin: 5px 0; }
 .howitworks li:before{ 
   position: absolute; top: 50%; left: 0; transform: translateY(-50%); 
-  width:80px; background: #007bff; border-radius: 5px; color: #fff; 
+  width:80px; background: #0077C8; border-radius: 5px; color: #fff; 
   counter-increment: howitworks; content: counter(howitworks); text-align: center; font-size: 2rem; font-weight: 500; padding: 5px;
 }
+/* referral form css */
+.homeowner-form, .contractor-form label{ font-weight: 500; }
+.homeowner-form .footer{ text-align: center; font-weight: 500; letter-spacing: -0.5px; }
+.homeowner-form .footer h3{ color: #0077C8; margin: 25px 0; }
+.homeowner-form .footer p{ margin: 0 0 5px; }
+.homeowner-form .footer span{ font-size: 2.6rem; color: #0077C8; }
+.contractor-form .footer a{ font-weight: 500; letter-spacing: -0.5px; }
+
+/* h3 spaces */
+.homeowner-form h3, .contractor-form h3{ margin: 2.5rem; }
+/* checkb0x css */
+.homeowner-form .form-group:nth-child(6){ position: relative; }
+.homeowner-form .form-group:nth-child(6) input{ position: absolute; left: 15px; top: 50%; width: auto; transform: translateY(-50%); }
+.homeowner-form .form-group:nth-child(6) label{ margin: 0; padding-left: 20px; }
+/* submit button css */
+.homeowner-form .form-group:nth-last-child(2) label, .contractor-form .form-group:nth-last-child(2) label{ display: none; }
+.homeowner-form .form-group:nth-last-child(2) input,
+.contractor-form .form-group:nth-last-child(2) input{ width: auto; margin: 30px auto; background: #0077C8; color: #fff; font-weight: 500; height: auto; padding: 8px 40px; border-radius: 5px; }
+.contractor-form .form-group:nth-last-child(2) input{ margin: 20px 0 0; }
+/* textarea css */
+.contractor-form .form-group:nth-last-child(3) textarea{ height: 100px; }
