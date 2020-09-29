@@ -43,20 +43,27 @@ const HomeOwnerPage = ({data}) => {
                         })}
                         <h3 className="h3 text-blue text-center col-12" dangerouslySetInnerHTML={{__html: data.wpgraphql.page.referralform.userInfoForm.topHeading}} />
                         {data.wpgraphql.page.referralform.userInfoForm.formField.map((item, i) => {
-                            return(
-                                (i === 0 || i === 1 || i === 6 || i === 7 || i === 8)
-                                    ?   
-                                        <div className="form-group col-12" key={item.fieldGroupName + i}>
-                                            <label htmlFor={item.fieldName} dangerouslySetInnerHTML={{__html: item.fieldTitle}} />
-                                            <input type={item.fieldType} name={item.fieldName} id={item.fieldName} className="form-control" />
-                                        </div>
-                                    :   
-                                        <div className="form-group col-6">
-                                            <label htmlFor={item.fieldName} dangerouslySetInnerHTML={{__html: item.fieldTitle}} />
-                                            <input type={item.fieldType} name={item.fieldName} id={item.fieldName} className="form-control" />
-                                        </div>
+                            // return(
+                                if(i === 0 || i === 1 || i === 6 || i === 7 || i === 8){
+                                    if(item.fieldType === 'textarea'){
+                                        return  <div className="form-group col-12" key={item.fieldGroupName + i}>
+                                                    <label htmlFor={item.fieldName} dangerouslySetInnerHTML={{__html: item.fieldTitle}} />
+                                                    <textarea name={item.fieldName} id={item.fieldName} className="form-control" />
+                                                </div>
+                                    }else{
+                                        return  <div className="form-group col-12" key={item.fieldGroupName + i}>
+                                                    <label htmlFor={item.fieldName} dangerouslySetInnerHTML={{__html: item.fieldTitle}} />
+                                                    <input type={item.fieldType} name={item.fieldName} id={item.fieldName} className="form-control" />
+                                                </div>
+                                    }
+                                }else{
+                                    return  <div className="form-group col-6" key={item.fieldGroupName + i}>
+                                                <label htmlFor={item.fieldName} dangerouslySetInnerHTML={{__html: item.fieldTitle}} />
+                                                <input type={item.fieldType} name={item.fieldName} id={item.fieldName} className="form-control" />
+                                            </div>
+                                }
                                     
-                                )
+                                // )
                         })}
                         <div className="footer col-12" dangerouslySetInnerHTML={{__html: data.wpgraphql.page.referralform.userInfoForm.footer}} />
                     </form>
