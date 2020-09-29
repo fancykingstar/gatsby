@@ -1064,7 +1064,7 @@ display: flex; align-items: center; justify-content: center; }
 .easyApp ul{ counter-reset: funding-method; }
 .easyApp ul li{ position: relative; padding:10px 0 10px 60px; }
 .easyApp ul li:before{ counter-increment: funding-method; content: counter(funding-method); position: absolute; left:0; border: 2px solid #fff; width:40px; height:40px; border-radius: 50%; text-align: center; }
-.pdffile{ border: none; background: none; color: #007bff; font-weight: 500; }
+.pdffile{ border: none; background: none; color: #0077C8; font-weight: 500; }
 .pdffile img{ width:30px; vertical-align: top; }
 .popupchecklist li, .programtools ul li{background: url(../images/check-icon.jpg) no-repeat left center; padding:5px 0 5px 40px; font-weight: 500; }
 /* tools help program */
@@ -1084,7 +1084,7 @@ display: flex; align-items: center; justify-content: center; }
 .howitworks li p{ margin: 5px 0; }
 .howitworks li:before{ 
   position: absolute; top: 50%; left: 0; transform: translateY(-50%); 
-  width:80px; background: #0077C8; border-radius: 5px; color: #fff; 
+  width:80px; background: #7c7f81; border-radius: 5px; color: #fff; 
   counter-increment: howitworks; content: counter(howitworks); text-align: center; font-size: 2rem; font-weight: 500; padding: 5px;
 }
 /* referral form css */
