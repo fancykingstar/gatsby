@@ -11,12 +11,40 @@ const HomeOwnerPage = ({data}) => {
     <Layout>
         <SEO title={data.wpgraphql.page.title} description={data.wpgraphql.page.excerpt}/>        
 
-        <section className="service-area section-gap" id="whychoosebank">
+        {/* service-area  */}
+        <section className="section-gap" id="whychoosebank">
             <div className="container">
                 <div className="row justify-content-center">
                     {data.wpgraphql.page.content && (
                         <div className="col-md-12 header-text mb-4" dangerouslySetInnerHTML={{ __html: data.wpgraphql.page.content}} />
                     )}
+                </div>
+                <div className="row justify-content-center mb-3">
+                    <div className="text-center" dangerouslySetInnerHTML={{__html: data.wpgraphql.page.referralform.contractorsInfoForm.formHeading}} />
+                    <div className="container">
+                        {data.wpgraphql.page.referralform.contractorsInfoForm.formField.map((item, i) => {
+                            return(
+                                (i === 0 )
+                                    ?   
+                                        <div className="form-group row" key={item.fieldGroupName + i}>
+                                            <div className="col-12">
+                                                <label htmlFor={item.fieldName} dangerouslySetInnerHTML={{__html: item.fieldTitle}} />
+                                                <input type={item.fieldType} name={item.fieldName} id={item.fieldName} className="form-control" />
+                                                </div>
+                                        </div>
+                                    :   
+                                        (i%2 === 0) 
+                                            ?   <div className="form-group row" key={item.fieldGroupName + i} />
+                                            :   "",
+                                    
+                                        <div className="col-6">
+                                            <label htmlFor={item.fieldName} dangerouslySetInnerHTML={{__html: item.fieldTitle}} />
+                                            <input type={item.fieldType} name={item.fieldName} id={item.fieldName} className="form-control" />
+                                        </div>
+                                    
+                                )
+                            })}
+                    </div>
                 </div>
             </div>
         </section>
@@ -39,57 +67,21 @@ export const query = graphql`
                     title(format: RENDERED)
                     mediaItemUrl
                     slug
-                }
-
-                top_banner {
-                    banner {
-                        backgroundImage {
-                           sourceUrl
-                        }
-                        bannerLinks {
-                            fieldGroupName
-                            links {
-                                title
-                                url
-                            }
-                        }
-                    }
-                }
-
-                home_owner {
-                    makePaymentWay
-                    paymentBanner {
-                        sourceUrl
-                    }
-                    benefitOption {
-                        fieldGroupName
-                        optionTitle
-                        optionIcon {
-                            id
-                            sourceUrl
-                            altText
-                            title
-                        }
-                    }
-                }
-
-                accordion {
-                    tabpanel {
-                        fieldGroupName
-                        tabcontent
-                        tablabel
-                    }
-                }
-
-                video_section {
-                  video {
-                    videoUrl
-                    videoBanner {
-                      sourceUrl
-                    }
-                  }
                 }                
                 
+                referralform {
+                    fieldGroupName
+                    contractorsInfoForm {
+                      fieldGroupName
+                      formHeading
+                      formField {
+                        fieldGroupName
+                        fieldName
+                        fieldTitle
+                        fieldType
+                      }
+                    }
+                }
             }
         }
     }

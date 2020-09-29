@@ -1077,3 +1077,13 @@ display: flex; align-items: center; justify-content: center; }
 /* homewoner-referral */
 .unsecuredhomeloan ul{ width: 80%; margin: 0 auto; }
 .unsecuredhomeloan ul li{ line-height: normal; margin-bottom: 20px; }
+
+/* contractor-referral */
+.howitworks{ counter-reset: howitworks; width: calc(80%); margin: 0 auto; }
+.howitworks li{  margin-bottom: 20px; line-height: normal; position: relative; padding-left: 120px; }
+.howitworks li p{ margin: 5px 0; }
+.howitworks li:before{ 
+  position: absolute; top: 50%; left: 0; transform: translateY(-50%); 
+  width:80px; background: #007bff; border-radius: 5px; color: #fff; 
+  counter-increment: howitworks; content: counter(howitworks); text-align: center; font-size: 2rem; font-weight: 500; padding: 5px;
+}

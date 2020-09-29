@@ -110,7 +110,7 @@ export const query = graphql`
                       fieldType
                     }
                   }
-                }                
+                }
             }
         }
     }
