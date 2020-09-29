@@ -20,7 +20,6 @@ const HomeOwnerPage = ({data}) => {
                 </div>
             </div>
         </section>
-        <section className="pt-30 pb-30 relative" style={{background: 'url('+ data.wpgraphql.page.home_owner.paymentBanner.sourceUrl +') center', backgroundRepeat: 'no-repeat', backgroundSize: 'cover', minHeight: '515px'}}></section>
         
   </Layout>
   
