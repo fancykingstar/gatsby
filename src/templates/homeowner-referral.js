@@ -30,32 +30,44 @@ const HomeOwnerReferral = ({data}) => {
                     <div dangerouslySetInnerHTML={{__html: data.wpgraphql.page.homewonerreferral.unsecuredHomeLoans.sectionContent}} className="unsecuredhomeloan" />
                 </div>
                 <hr className="my-5" />
-                <div className="row justify-content-center mb-3">
+                <div className="justify-content-center mb-3">
                     <div className="text-center" dangerouslySetInnerHTML={{__html: data.wpgraphql.page.referralform.contractorsInfoForm.formHeading}} />
-                    <div className="container">
+                    <form className="homeowner-form d-flex flex-wrap">
                         {data.wpgraphql.page.referralform.contractorsInfoForm.formField.map((item, i) => {
                             return(
-                                (i === 0 )
+                                (i === 0 || i === 5)
                                     ?   
-                                        <div className="form-group row" key={item.fieldGroupName + i}>
-                                            <div className="col-12">
-                                                <label htmlFor={item.fieldName} dangerouslySetInnerHTML={{__html: item.fieldTitle}} />
-                                                <input type={item.fieldType} name={item.fieldName} id={item.fieldName} className="form-control" />
-                                                </div>
+                                        <div className="form-group col-12" key={item.fieldGroupName + i}>
+                                            <label htmlFor={item.fieldName} dangerouslySetInnerHTML={{__html: item.fieldTitle}} />
+                                            <input type={item.fieldType} name={item.fieldName} id={item.fieldName} className="form-control" />
                                         </div>
-                                    :   
-                                        (i%2 === 0) 
-                                            ?   <div className="form-group row" key={item.fieldGroupName + i} />
-                                            :   "",
-                                    
-                                        <div className="col-6">
+                                    :                                       
+                                        <div className="form-group col-6 col-sm-6">
                                             <label htmlFor={item.fieldName} dangerouslySetInnerHTML={{__html: item.fieldTitle}} />
                                             <input type={item.fieldType} name={item.fieldName} id={item.fieldName} className="form-control" />
                                         </div>
                                     
                                 )
                             })}
-                    </div>
+                            <h3 className="h3 text-center text-blue col-12" dangerouslySetInnerHTML={{__html: data.wpgraphql.page.referralform.userInfoForm.topHeading}} />
+                            {data.wpgraphql.page.referralform.userInfoForm.formField.map((item, i) => {
+                                return(
+                                    (i === 0 || i === 5 || i === 6 )
+                                        ?   
+                                            <div className="form-group col-12" key={item.fieldGroupName + i}>
+                                                <label htmlFor={item.fieldName} dangerouslySetInnerHTML={{__html: item.fieldTitle}} />
+                                                <input type={item.fieldType} name={item.fieldName} id={item.fieldName} className="form-control" />
+                                            </div>
+                                        :   
+                                            <div className="form-group col-6 col-sm-6">
+                                                <label htmlFor={item.fieldName} dangerouslySetInnerHTML={{__html: item.fieldTitle}} />
+                                                <input type={item.fieldType} name={item.fieldName} id={item.fieldName} className="form-control" />
+                                            </div>
+                                        
+                                    )
+                            })}
+                            <div className="footer col-12" dangerouslySetInnerHTML={{__html: data.wpgraphql.page.referralform.userInfoForm.footer}} />
+                    </form>
                 </div>
             </div>
         </section>
@@ -109,6 +121,17 @@ export const query = graphql`
                       fieldTitle
                       fieldType
                     }
+                  }
+                  userInfoForm {
+                    fieldGroupName
+                    topHeading
+                    formField {
+                      fieldGroupName
+                      fieldName
+                      fieldTitle
+                      fieldType
+                    }
+                    footer
                   }
                 }
             }
