@@ -18,7 +18,7 @@ const HomeOwnerReferral = ({data}) => {
                 </div>
                 <div className="row justify-content-center mb-3">
                     <h2 className="h1 my-4" dangerouslySetInnerHTML={{__html: data.wpgraphql.page.homewonerreferral.howItWorks.sectionTitle}} />
-                    <img src={data.wpgraphql.page.homewonerreferral.howItWorks.sectionImage.sourceUrl} className="d-block mx-auto" />
+                    <img src={data.wpgraphql.page.homewonerreferral.howItWorks.sectionImage.sourceUrl} className="d-block mx-auto" alt={data.wpgraphql.page.homewonerreferral.howItWorks.sectionImage.altText} />
                 </div>
                 <div className="row justify-content-center mb-3">
                     <h3 className="h1 mt-5 mb-4" dangerouslySetInnerHTML={{__html: data.wpgraphql.page.homewonerreferral.getProjectStarted.sectionTitle}} />
@@ -38,12 +38,12 @@ const HomeOwnerReferral = ({data}) => {
                                 (i === 0 || i === 5)
                                     ?   
                                         <div className="form-group col-12" key={item.fieldGroupName + i}>
-                                            <label htmlFor={item.fieldName} dangerouslySetInnerHTML={{__html: item.fieldTitle}} />
+                                            <label htmlFor={item.fieldName}>{item.fieldTitle}</label>
                                             <input type={item.fieldType} name={item.fieldName} id={item.fieldName} className="form-control" />
                                         </div>
                                     :                                       
                                         <div className="form-group col-6 col-sm-6" key={item.fieldGroupName + i}>
-                                            <label htmlFor={item.fieldName} dangerouslySetInnerHTML={{__html: item.fieldTitle}} />
+                                            <label htmlFor={item.fieldName}>{item.fieldTitle}</label>
                                             <input type={item.fieldType} name={item.fieldName} id={item.fieldName} className="form-control" />
                                         </div>
                                     
@@ -59,13 +59,13 @@ const HomeOwnerReferral = ({data}) => {
                                                     </div>
                                         }else{
                                             return  <div className="form-group col-12" key={item.fieldGroupName + i}>
-                                                        <label htmlFor={item.fieldName} dangerouslySetInnerHTML={{__html: item.fieldTitle}} />
+                                                        <label htmlFor={item.fieldName}>{item.fieldTitle}</label>
                                                         <input type={item.fieldType} name={item.fieldName} id={item.fieldName} className="form-control" />
                                                     </div>
                                         }
                                     }else {
                                         return  <div className="form-group col-6 col-sm-6" key={item.fieldGroupName + i}>
-                                                    <label htmlFor={item.fieldName} dangerouslySetInnerHTML={{__html: item.fieldTitle}} />
+                                                    <label htmlFor={item.fieldName}>{item.fieldTitle}</label>
                                                     <input type={item.fieldType} name={item.fieldName} id={item.fieldName} className="form-control" />
                                                 </div>
                                     }
@@ -107,7 +107,8 @@ export const query = graphql`
                     fieldGroupName
                     sectionTitle
                     sectionImage {
-                      sourceUrl
+                        altText
+                        sourceUrl
                     }
                   }
                   unsecuredHomeLoans {

@@ -62,9 +62,11 @@ const IndexPage = ({data}) => {
                       <div className="single-services col" dangerouslySetInnerHTML={{ __html: node.home_section.aboutArea[0].addText }} />
                       <div className="single-services col align-item-center">
                         {node.home_section.aboutArea[0].anchorBtn.map((item, i) => {
-                          return(
-                            <Link to={item.addLink.url} key={i+ '1000'} className="btn d-block genric-btn primary my-4 f-bold" dangerouslySetInnerHTML={{ __html: item.addLink.title }} />
-                          )
+                          if(i === 0){
+                              return <Link to={'/homeowner-referral'} key={item.fieldGroupName + i} className="btn d-block genric-btn primary my-4 f-bold" dangerouslySetInnerHTML={{ __html: item.addLink.title }} />
+                          }else{
+                              return <Link to={'/contractor-referral'} key={item.fieldGroupName + i} className="btn d-block genric-btn primary my-4 f-bold" dangerouslySetInnerHTML={{ __html: item.addLink.title }} />
+                          }
                         })}
                       </div>
                   </div>
@@ -136,6 +138,7 @@ export const pageQuery = graphql`
               srcSet
             }
             anchorBtn {
+              fieldGroupName
               addLink {
                 url
                 title

@@ -1,6 +1,6 @@
 import React from "react";
 
-import { Link } from "gatsby";
+// import { Link } from "gatsby";
 import { graphql } from "gatsby";
 
 import Layout from "../components/layout"
@@ -28,14 +28,14 @@ const HomeOwnerPage = ({data}) => {
                                     ?
                                         <div className="form-group col-12" key={item.fieldGroupName + i}>
                                             <div className="col-12">
-                                                <label htmlFor={item.fieldName} dangerouslySetInnerHTML={{__html: item.fieldTitle}} />
+                                                <label htmlFor={item.fieldName}>{item.fieldTitle}</label>
                                                 <input type={item.fieldType} name={item.fieldName} id={item.fieldName} className="form-control" />
                                             </div>
                                         </div>
                                     :
                                         <div className="form-group col-6" key={item.fieldGroupName + i}>
                                             <div className="col-12">
-                                                <label htmlFor={item.fieldName} dangerouslySetInnerHTML={{__html: item.fieldTitle}} />
+                                                <label htmlFor={item.fieldName}>{item.fieldTitle}</label>
                                                 <input type={item.fieldType} name={item.fieldName} id={item.fieldName} className="form-control" />
                                             </div>
                                         </div>
@@ -47,18 +47,18 @@ const HomeOwnerPage = ({data}) => {
                                 if(i === 0 || i === 1 || i === 6 || i === 7 || i === 8){
                                     if(item.fieldType === 'textarea'){
                                         return  <div className="form-group col-12" key={item.fieldGroupName + i}>
-                                                    <label htmlFor={item.fieldName} dangerouslySetInnerHTML={{__html: item.fieldTitle}} />
+                                                    <label htmlFor={item.fieldName}>{item.fieldTitle}</label>
                                                     <textarea name={item.fieldName} id={item.fieldName} className="form-control" />
                                                 </div>
                                     }else{
                                         return  <div className="form-group col-12" key={item.fieldGroupName + i}>
-                                                    <label htmlFor={item.fieldName} dangerouslySetInnerHTML={{__html: item.fieldTitle}} />
+                                                    <label htmlFor={item.fieldName}>{item.fieldTitle}</label>
                                                     <input type={item.fieldType} name={item.fieldName} id={item.fieldName} className="form-control" />
                                                 </div>
                                     }
                                 }else{
                                     return  <div className="form-group col-6" key={item.fieldGroupName + i}>
-                                                <label htmlFor={item.fieldName} dangerouslySetInnerHTML={{__html: item.fieldTitle}} />
+                                                <label htmlFor={item.fieldName}>{item.fieldTitle}</label>
                                                 <input type={item.fieldType} name={item.fieldName} id={item.fieldName} className="form-control" />
                                             </div>
                                 }
