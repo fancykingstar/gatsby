@@ -180,34 +180,31 @@ const LoanProgramPage = ({ data }) => {
 
 				{content.loan_program.offeringPaymentOption && (
 					<div className="my-3 my-md-5 row">
-						{content.loan_program.offeringPaymentOption.map((item, i) =>
-							{
-								if(i === 0){
-									return (
-										<div key={item.fieldGroupName + i} className="box-shadow bg-white rounded text-center payment-option-box col-xs-12 col-md p-0 mb-3 mx-sm-3 mx-lg-5">
-											<Link to={'/'} onClick={showbenefitpopup(item, 'growthCalc')}>
-												<div className="bg-blue p-5 rounded-top">
-													<img className="img-fluid" src={item.offeringPaymentIcon.sourceUrl} alt="Growth Calculator icon" />
-												</div>
-												<div className="p-4" dangerouslySetInnerHTML={{ __html: item.offeringPaymentBrif }} />
-											</Link>
-										</div>
-									)
-								}
-								// else{
-								// 	return (
-								// 		<div key={item.fieldGroupName + i} className="box-shadow bg-white rounded text-center payment-option-box col-xs-12 col-md p-0 mb-3 mx-sm-3 mx-lg-5">
-											
-								// 				<div className="bg-blue p-5 rounded-top">
-								// 					<img className="img-fluid" src={item.offeringPaymentIcon.sourceUrl} alt="View our loan types icon" />
-								// 				</div>
-								// 				<div className="p-4" dangerouslySetInnerHTML={{ __html: item.offeringPaymentBrif }} />
-											
-								// 		</div>
-								// 	)
-								// }
-							}
-						)}
+						{content.loan_program.offeringPaymentOption.map((item, i) => (
+							(i === 0) 
+								?
+									<div key={item.fieldGroupName + i} className="box-shadow bg-white rounded text-center payment-option-box col-xs-12 col-md p-0 mb-3 mx-sm-3 mx-lg-5">
+										<Link to={'/'} onClick={showbenefitpopup(item, 'growthCalc')}>
+											<div className="bg-blue p-5 rounded-top">
+												<img className="img-fluid" src={item.offeringPaymentIcon.sourceUrl} alt="Growth Calculator icon" />
+											</div>
+											<div className="p-4" dangerouslySetInnerHTML={{ __html: item.offeringPaymentBrif }} />
+										</Link>
+									</div>
+								: ""
+							// else{
+							// 	return (
+							// 		<div key={item.fieldGroupName + i} className="box-shadow bg-white rounded text-center payment-option-box col-xs-12 col-md p-0 mb-3 mx-sm-3 mx-lg-5">
+										
+							// 				<div className="bg-blue p-5 rounded-top">
+							// 					<img className="img-fluid" src={item.offeringPaymentIcon.sourceUrl} alt="View our loan types icon" />
+							// 				</div>
+							// 				<div className="p-4" dangerouslySetInnerHTML={{ __html: item.offeringPaymentBrif }} />
+										
+							// 		</div>
+							// 	)
+							// }
+						))}
 					</div>
 				)}
 			</div>
@@ -231,7 +228,7 @@ const LoanProgramPage = ({ data }) => {
 							<div className="row mt-4 mb-5">
 								{data.wpgraphql.categories.edges.map(cate => (
 									(cate.node.slug === "loanprogramemethods") && (
-										cate.node.posts.edges.map((post) => {
+										cate.node.posts.edges.map(post => {
 											content.loan_program.joinLoanProgram.loanProgramMethods.map((item, i) => 
 												(item.popSlug === post.node.slug) && (programMethod[i] = post.node)
 											)
