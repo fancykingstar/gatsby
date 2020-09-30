@@ -42,7 +42,7 @@ const CareerPage = ({data, props}) => {
           <div className="row">
             <div className="col-md-12 mb-4 career-service" dangerouslySetInnerHTML={{__html: data.wpgraphql.page.content}} />
             <div className="col-md-12 header-text" id="availableposition">
-              <h2 className="mb-20 text-center h2"><span>Available Positions</span></h2>
+              <h2 className="mb-20 text-center"><span>Available Positions</span></h2>
             </div>
             <Helmet>
                 <script src={withPrefix('script.js')} type="text/javascript" name="hirebridge-script" />
