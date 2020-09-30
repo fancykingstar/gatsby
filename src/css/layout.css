@@ -417,22 +417,6 @@ body.mobile-nav-active #mobile-nav-toggle { color: #fff }
     .single-services a{ line-height: normal; padding: 12px; }
 }
 
-.jobs_list, .hrbr-job-list{margin: 0 !important; padding: 0 !important;}
-.jobs_list li, .hrbr-job-list li{margin: 0 0 40px 0 !important; padding: 30px 0 30px 0 !important; border-top: none; border-bottom: solid 1px #0077C8 !important; }
-.jobs_list li h3, .hrbr-job-list li .hrbr-title{ font-size: 24px !important; font-weight: 600 !important; color:#0077C8 !important; margin:0 0 0 0 !important; padding: 0 !important; }
-.jobs_list li .job_location, .hrbr-job-list li .hrbr-location, .hrbr-job-list li .hrbr-location small{ font-size: 20px !important; font-weight: 600 !important; color: #4D4D4D !important; margin: 5px 0 5px 0 !important; }
-.hrbr-job-list li p{ 
-    color: #4d4d4d !important;
-    font-family: Roboto,sans-serif !important;
-    font-size: 18px !important;
-    letter-spacing: 1px !important;
-    font-weight: 300 !important;
-    line-height: 1.9em !important; 
-}
-#hrbr-page-message ul{ margin-left: 16px; }
-.hrbr-wr-fl .hrbr-row-filters{ width: 440px !important; }
-.hrbr-wr-fl .hrbr-row-search{ width: auto !important; }
-
 .card-body {display: flex; flex-direction: column;}
 .single-offer a.btn { margin-top: auto;}
 .single-offer { padding: 40px 30px 30px; margin:0 30px; border-radius: 0px; background-color: #fff; box-shadow: 0px 2px 8px 0px rgba(0,121,94,.2);
@@ -809,31 +793,65 @@ display: flex; align-items: center; justify-content: center; }
 .accordion-content { color: #4d4d4d; }
 .accordion-animator{ margin-bottom: 10px !important; }
 .accordion-content ul{ list-style: disc !important; }
+
+/* hrbr-widget css */
+#hrbr-widget *{ box-sizing: border-box !important; }
+#hrbr-job-lists .hrbr-row{ flex-wrap: wrap; }
+#hrbr-job-lists .hrbr-row [class^="hrbr-col-"]{ width: 100% !important; }
+.hrbr-home .hrbr-bottom-content .hrbr-job-list-cont .hrbr-jobs .hrbr-job-list li{ border-top: none !important; margin-bottom: 0 !important; }
 .hrbr-home .hrbr-bottom-content .hrbr-job-list-cont .hrbr-jobs .hrbr-job-list li:hover{ background: none !important; }
-.hrbr-row{ display: block !important; margin: 0 !important }
-.hrbr-row div{ width: 100%; }
-#hrbr-widget a{ width: auto !important; font-weight:600; }
+.hrbr-home .hrbr-bottom-content .hrbr-job-list-cont .hrbr-jobs .hrbr-job-list li .hrbr-view-button a{ width: auto !important; }
+.hrbr-home .hrbr-bottom-content .hrbr-job-list-cont .hrbr-jobs .hrbr-job-list li .hrbr-job-details .hrbr-label{ vertical-align: top; background: #4d4d4d !important; }
+
+.hrbr-home .hrbr-bottom-content .hrbr-job-list-cont .hrbr-jobs .hrbr-job-list li .hrbr-view-button a,
+.hrbr-btn-primary-invert, .hrbr-btn-primary-invert:hover, #hrbr-widget #hrbr-swap-page a{ color:#fff !important; }
 .hrbr-btn-primary, .hrbr-btn{ background: #0077C8 !important; border: #0077C8 !important;  padding: .375rem .75rem !important; color:#fff !important;}
 .hrbr-btn-primary:hover, .hrbr-btn:hover{ color:#fff !important; }
-.hrbr-home .hrbr-bottom-content .hrbr-job-list-cont .hrbr-jobs .hrbr-job-list li .hrbr-job-details .hrbr-label{ vertical-align: top; background: #4d4d4d !important; }
-.hrbr-home .hrbr-bottom-content .hrbr-job-list-cont .hrbr-jobs .hrbr-job-list li{ border-top: none !important; margin-bottom: 0 !important; }
 .hrbr-btn-primary:active, .hrbr-btn-primary:focus, .hrbr-btn-primary:hover,
-.hrbr-home .hrbr-bottom-content .hrbr-job-list-cont .hrbr-jobs .hrbr-job-list li .hrbr-view-button a,
-.hrbr-btn-primary-invert:hover, .hrbr-btn-primary-invert, #hrbr-widget #hrbr-swap-page a{ color:#fff !important; }
+#hrbr-widget a{ width: auto !important; font-weight:600; }
 #hrbr-widget h3, #hrbr-widget .h3{ color:#0077C8 !important; font-weight: 600; }
-#hrbr-widget #hrbr-page-info { font-size: 20px; color: #4d4d4d; }
+.hrbr-row .hrbr-btn{ margin: 15px !important; }
+
+.jobs_list, .hrbr-job-list{margin: 0 !important; padding: 0 !important;}
+.jobs_list li, .hrbr-job-list li{margin: 0 0 40px 0 !important; padding: 30px 0 30px 0 !important; border-top: none; border-bottom: solid 1px #0077C8 !important; }
+.jobs_list li h3, .hrbr-job-list li .hrbr-title{ font-size: 24px !important; font-weight: 600 !important; color:#0077C8 !important; margin:0 0 0 0 !important; padding: 0 !important; }
+.jobs_list li .job_location, .hrbr-job-list li .hrbr-location, .hrbr-job-list li .hrbr-location small{ font-size: 20px !important; font-weight: 600 !important; color: #4D4D4D !important; margin: 5px 0 5px 0 !important; }
+.hrbr-job-list li p{ 
+    color: #4d4d4d !important;
+    font-family: Roboto,sans-serif !important;
+    font-size: 18px !important;
+    letter-spacing: 1px !important;
+    font-weight: 300 !important;
+    line-height: 1.9em !important; 
+}
+#hrbr-page-message ul{ margin-left: 16px; }
+/* .hrbr-wr-fl .hrbr-row-filters{ width: 440px !important; } */
+.hrbr-wr-fl .hrbr-row-search{ width: auto !important; }
+
+/* #hrbr-widget #hrbr-page-info { font-size: 20px; color: #4d4d4d; }
 #hrbr-widget #hrbr-page-info #hrbr-page-location{ font-size: 20px; color: #4d4d4d; font-weight: 600; }
 #hrbr-widget #hrbr-page-info #hrbr-page-department{ font-size: 18px; }
-/* #hrbr-page-message p:first-child{ font-size:20px; } */
-.leadership{ border-radius:15px; background: #fff; box-shadow: 0 0 3px 3px #ccc;  }
-
-.leadership h3{ position: relative; padding-bottom: 15px; margin-bottom: 10px; }
-.leadership h3:after{ content: ""; position: absolute; height: 4px; width: 80%; bottom:0; left:0; background: #29A9E0; }
-.directorName{ font-weight:600; color: #d4d4d4; }
+#hrbr-page-message p:first-child{ font-size:20px; } */
 
 .hrbr-pagination-sm > li > a{ border: none !important; background: #29A9E0 !important; font-size:24px !important; font-weight: 500 !important; }
 .hrbr-pagination-sm > li.active > a{ background: #0077C8 !important; font-weight: 600 !important; }
 .hrbr-wrapper-pagination > li > a{ color: #29A9E0 !important; }
+
+/* career service */
+.career-service ul{ display: flex; flex-wrap: wrap; margin: 50px 25px; }
+.career-service ul li{ flex-basis: 50%; font-weight: 500; font-size: 16px; color: #4d4d4d; }
+
+@media only screen and (max-width:767px){
+  .hrbr-email-button{ display: inline-block !important; float: none !important; }
+  .career-service ul li{ flex-basis: 100%; }
+}
+
+.leadership{ border-radius:15px; background: #fff; box-shadow: 0 0 3px 3px #ccc;  }
+.leadership h3{ position: relative; padding-bottom: 15px; margin-bottom: 10px; }
+.leadership h3:after{ content: ""; position: absolute; height: 4px; width: 80%; bottom:0; left:0; background: #29A9E0; }
+.directorName{ font-weight:600; color: #d4d4d4; }
+
+
 .carousel .slider-wrapper.axis-horizontal .slider .slide{ list-style: none; }
 /* calculator icon */
   .calculator{ width:26px; height:26px; display: inline-block; vertical-align: middle; }
