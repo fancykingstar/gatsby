@@ -87,7 +87,7 @@ export default () => {
                             <span className="navbar-toggler-icon"></span>
                         </button>
                         {/* navbar menu */}
-                        <div className={menuStatus ? 'collapse navbar-collapse show' : 'collapse navbar-collapse'} id="navbarText">
+                        <div className={menuStatus ? 'navbar-collapse show' : 'navbar-collapse'} id="navbarText">
                             <ul className="navbar-nav ml-auto nav-menu">
                                 {data.wpgraphql.menuItems.edges.map(({ node }) => (
                                     <li key={node.id} className="nav-item">

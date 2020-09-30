@@ -27,32 +27,19 @@ select { display: block }
 .card-panel { margin: 0; padding: 60px }
 .btn i, .btn-large i, .btn-floating i, .btn-large i, .btn-flat i { font-size: 1em; line-height: inherit }
 .gray-bg { background: #f9f9ff }
+b, sup, sub, u, del { color: #29A9E0 }
 h1, h2, h3, h4, h5, h6 { font-family: 'Roboto', sans-serif; color: #4D4D4D; line-height: 1.2em !important; margin-bottom: 0; margin-top: 0; font-weight: 600 }
-.h1, .h2, .h3, .h4, .h5, .h6 { margin-bottom: 0; margin-top: 0; font-family: 'Roboto', sans-serif; font-weight: 600; color: #4D4D4D }
-h1, .h1 { font-size: 36px }
-h2, .h2 { font-size: 40px; }
+.h1, .h2, .h3, .h4, .h5, .h6 { margin-bottom: 0; margin-top: 0; font-family: 'Roboto', sans-serif; font-weight: 500; color: #4D4D4D }
+h1, .h1 { font-size: 40px }
+h2, .h2 { font-size: 36px; }
 h3, .h3 { font-size: 24px; }
 h4, .h4 { font-size: 18px }
 h5, .h5 { font-size: 16px }
 h6, .h6 { font-size: 14px; color: #4D4D4D; }
+h1, h2, h3, h4, h5, h6 { line-height: 1.5em }
 td, th { border-radius: 0px }
 .clear::before, .clear::after { content: " "; display: table }
 .clear::after { clear: both }
-.fz-11 { font-size: 11px }
-.fz-12 { font-size: 12px }
-.fz-13 { font-size: 13px }
-.fz-14 { font-size: 14px }
-.fz-15 { font-size: 15px }
-.fz-16 { font-size: 16px }
-.fz-18 { font-size: 18px }
-.fz-30 { font-size: 30px }
-.fz-48 { font-size: 48px !important }
-.fw100 { font-weight: 100 }
-.fw300 { font-weight: 300 }
-.fw400 { font-weight: 400 !important }
-.fw500 { font-weight: 500 }
-.f700 { font-weight: 700 }
-.fsi { font-style: italic }
 .mt-10 { margin-top: 10px }
 .mt-15 { margin-top: 15px }
 .mt-20 { margin-top: 20px }
@@ -161,14 +148,6 @@ td, th { border-radius: 0px }
 @media (max-width: 767px) {
     .element-wrap { margin-top: 30px }
 }
-b, sup, sub, u, del { color: #29A9E0 }
-/* h1 { font-size: 48px } */
-h1, h2 { font-size: 32px }
-h3 { font-size: 28px }
-h4 { font-size: 18px }
-h5 { font-size: 16px }
-h6 { font-size: 14px }
-h1, h2, h3, h4, h5, h6 { line-height: 1.5em }
 .typography h1, .typography h2, .typography h3, .typography h4, .typography h5, .typography h6 { color: #4D4D4D }
 .button-area { background: #fff }
 .button-area .border-top-generic { padding: 70px 15px; border-top: 1px dotted #eee }
@@ -306,11 +285,10 @@ h1, h2, h3, h4, h5, h6 { line-height: 1.5em }
 body.mobile-nav-active { overflow: hidden }
 body.mobile-nav-active #mobile-nav { left: 0 }
 body.mobile-nav-active #mobile-nav-toggle { color: #fff }
-.collapse:not(.show){ display: block; }
 
 @media (max-width:991px){
-  .collapse.navbar-collapse{ position: absolute; background: #4d4d4d; left: -300px; top:80px; width: 270px; height: 100vh; z-index: 9; transition: left 0.5s ease-in-out; padding-top:30px; }
-  .collapse.navbar-collapse.show{ left: 0; }
+  .navbar-collapse{ position: absolute; background: #4d4d4d; left: -300px; top:80px; width: 270px; height: 100vh; z-index: 9; transition: left 0.5s ease-in-out; padding-top:30px; }
+  .navbar-collapse.show{ left: 0; }
   .nav-menu .nav-link{ padding: 5px 2em !important; }
 }
 
@@ -357,7 +335,7 @@ body.mobile-nav-active #mobile-nav-toggle { color: #fff }
 .overlay { position: absolute; left: 0; right: 0; top: 0; bottom: 0 }
 .banner-area { background: url(../images/hero-img.jpg); background-position: center; background-size: cover }
 .banner-area .fullscreen{ min-height:420px;}
-.service-area .header-text h1{ text-align: center; font-weight: 600; margin-bottom: 25px; font-size: 32px; }
+.service-area .header-text h1{ text-align: center; font-weight: 600; margin-bottom: 25px; }
 .header-text.text-center p{ text-align: center !important; }
 .video-section{position:relative; margin: 0px; padding: 30px 0 40px;}
 @media (max-width: 767px) {
@@ -379,6 +357,7 @@ body.mobile-nav-active #mobile-nav-toggle { color: #fff }
 .banner-img { text-align: right }
 @media (max-width: 767px) {
     .banner-img { width: 60%; text-align: center; margin-left: auto; margin-right: auto }
+    .header-btn a { max-width: 100%; }
 }
 @media screen and (max-width:480px){
   .header-btn a{ max-width:none; }
@@ -644,7 +623,13 @@ body.mobile-nav-active #mobile-nav-toggle { color: #fff }
 .carousel .control-next.control-arrow{ right:15% !important; }
 .carousel .control-next.control-arrow:before{ transform: rotate(45deg); border-left: none !important; border-bottom: none !important; right: 50%; }
 .joinLoanProgram .brif{ padding: 3rem 5rem 1.5rem; font-weight: 500; font-size: 22px; }
+
 @media (max-width: 767px){
+  .carousel .slider-wrapper.axis-horizontal .slider{ max-width:100%; margin: 0 auto; }
+  .carousel .slider-wrapper.axis-horizontal .slider .slide{ padding: 0 10px; }
+  .carousel.carousel-slider .control-arrow:before{ width:30px; height:30px; }
+  .carousel .control-prev.control-arrow{ right:100%; left:0 !important }
+  .carousel .control-next.control-arrow{ left:calc(100% - 45px); }
   .joinLoanProgram .brif{ padding: 3rem 2rem; }
 }
 .wygbox .card-title{font-size: 24px;
@@ -1062,7 +1047,7 @@ display: flex; align-items: center; justify-content: center; }
 .paymentEstimator .formFooter{ border-radius: 0; font-size:20px; text-align: left; margin: 0; padding: 10px 35px; }
 .estimatorForm p{ margin: 20px 0 15px; font-size: 9px; line-height: 10px; letter-spacing: 0px; }
 /* .payment-program{ line-height: 24px;  } */
-.payment-program h1{ margin-bottom: 10px; }
+.payment-program h1{ margin-bottom: 10px; text-align: center;  }
 .payment-option-box{ max-width: 450px; margin: 0 auto !important; }
 .border-heading{ position: relative; }
 .border-heading:before, .border-heading:after{ height: 1px; background: #ccc; position: absolute; content: ""; width: 100%; top:50%; }
@@ -1082,6 +1067,11 @@ display: flex; align-items: center; justify-content: center; }
 .easyApp ul{ counter-reset: funding-method; }
 .easyApp ul li{ position: relative; padding:10px 0 10px 60px; }
 .easyApp ul li:before{ counter-increment: funding-method; content: counter(funding-method); position: absolute; left:0; border: 2px solid #fff; width:40px; height:40px; border-radius: 50%; text-align: center; }
+
+@media only screen and (max-width:576px){
+  .easyApp{ padding-top:250px !important; }
+  .easyApp:after{ width: 100%; height: 220px; }
+}
 .pdffile{ border: none; background: none; color: #0077C8; font-weight: 500; }
 .pdffile img{ width:30px; vertical-align: top; }
 .popupchecklist li, .programtools ul li{background: url(../images/check-icon.jpg) no-repeat left center; padding:5px 0 5px 40px; font-weight: 500; }
@@ -1127,3 +1117,16 @@ display: flex; align-items: center; justify-content: center; }
 .contractor-form .form-group:nth-last-child(2) input{ margin: 20px 0 0; }
 /* textarea css */
 .contractor-form .form-group:nth-last-child(3) textarea{ height: 100px; }
+
+@media only screen and (max-width: 576px){
+  .howitworks, .unsecuredhomeloan ul{ width: 90%; }
+  .howitworks li{ padding-left:0px; }
+  .howitworks li:before{ width:60px; position: relative; display: block; transform: translateY(0); margin: 40px 0 15px; }
+  
+}
+.loantype, .training, .whatsinit, .whatsinitdealers{ max-width: 45%; }
+.loantype{ margin-left: 15px !important; }
+.training{ margin-right: 15px !important; }
+@media (max-width:576px){
+  .loantype, .training, .whatsinit, .whatsinitdealers{ max-width: 100%; margin: 15px !important; }
+}

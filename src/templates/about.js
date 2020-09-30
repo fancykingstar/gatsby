@@ -96,9 +96,9 @@ const About = ({data}) => {
             {/* End News & Media Area */}
             {/* Company Overview */}
             <div className="bg-blue mt-5" id="companyoverview">
-                <div className="container py-5 text-white">
+                <div className="container py-2 text-white">
                     <div className="container py-5 text-white">
-                    <h2 className="h2 text-white text-center mb-5">Company Overview</h2>
+                    <h1 className="h2 text-white text-center mb-5">Company Overview</h1>
                     <p>FDIC insured EnerBank USA® is a highly specialized, national consumer lender that helps strategic business partners and independent home improvement contractors increase sales. Strategic business partners include manufacturers, distributors, franchisors, member or trade associations, and major retailers of home improvement, remodeling, and energy-saving products and services. They all rely on the bank to be here today and tomorrow to fund customer loans and help them achieve their business goals and objectives. We are America's home improvement lender of choice. We are reliable, professional, and we produce results.</p>
                     </div>
                 </div>
@@ -200,7 +200,7 @@ const About = ({data}) => {
                     {/* // Vertical Timeline */}
                 </div>
                 {/* leadership */}
-                {/* <h2 className="text-center">EnerBank Leadership</h2>
+                {/* <h3 className="text-center h2">EnerBank Leadership</h3>
                 <p className="text-center py-2">Our leadership team is made up of experienced and innovative people.</p>
 
                 <div className="leadership p-5">
@@ -218,7 +218,7 @@ const About = ({data}) => {
                 
                 <div className="bg-blue" id="memberfdic">
                     <div className="container py-5 text-white">
-                    <h2 className="h2 text-white text-center mb-5">Member FDIC Bank</h2>
+                    <h3 className="h2 text-white text-center mb-5">Member FDIC Bank</h3>
                     <div className="d-flex flex-md-row mb-4 h-md-250 align-items-start">
                         <img className="card-img-right flex-auto d-none d-md-block pr-5 py-3 border-right" alt="Fdic logo" src={fdic_logo} data-holder-rendered="true"></img>
                         <div className="d-flex flex-column align-items-start pl-4">
@@ -229,7 +229,7 @@ const About = ({data}) => {
                 </div>
                 {/* Community Involvement */}
                 <div className="container py-5" id="communityinvolvement">
-                    <h2 className="h2 text-center mb-3">Community Involvement</h2>
+                    <h3 className="h2 text-center mb-3">Community Involvement</h3>
                     <p>EnerBank USA is not just an office building full of workers, we’re a meaningful part of the community in more ways than one. Our leaders and team members dedicate their time to enrich the lives of people in our community through volunteer hours spent in a variety of good causes, such as:</p>
                     <div className="row my-5">
                         <div className="col-md-6 mb-5">
@@ -246,9 +246,9 @@ const About = ({data}) => {
                         </div>
                     </div>
 
-                    <h2 className="h2 text-center mb-3" id="leadership">CMS Profile / Board of Directors</h2>
+                    <h3 className="h2 text-center mb-3" id="leadership">CMS Profile / Board of Directors</h3>
                     <p>EnerBank USA is a wholly-owned subsidiary of CMS Energy, and we’re proud to be a part of the CMS family. Under the leadership of CMS, we benefit greatly from the combined experience of our Board of Directors as we continue to become the most sought-after home improvement lender in the nation.</p>
-                    <h2 className="h2 text-center mb-3" id="boardofdirectors">EnerBank Board of Directors</h2>
+                    <h3 className="h2 text-center mb-3" id="boardofdirectors">EnerBank Board of Directors</h3>
                     <p className="text-center">Our Board of Directors . . .</p>
                     <div className="row">
                         <div className="col-sm-2 col-md-4 col-lg-3">
@@ -294,13 +294,13 @@ const About = ({data}) => {
                             </div>
                         </div>
                         <div className="col-sm-2 col-md-4 col-lg-3">
-                            <div className="mb-4">
+                            <div className="mb-4 text-center">
                                 <img data-src="holder.js/100px225?theme=thumb&amp;bg=55595c&amp;fg=eceeef&amp;text=Thumbnail" alt="Charles E. Knadler" style={{height: '300px'}} src={SinglesInside066} data-holder-rendered="true" />
                                 <p className="directorName">Charles E. Knadler</p>
                             </div>
                         </div>
                     </div>
-                    <h2 className="h2 text-center mb-3" id="feedback">Feedback Form</h2>
+                    <h3 className="h2 text-center mb-3" id="feedback">Feedback Form</h3>
                     <p>EnerBank is dedicated to exceptional customer service. We want to hear from you so that we can address any questions, comments or concerns.</p>
                     <form>
                         <div className="row">
