@@ -51,7 +51,7 @@ const HomeOwnerPage = ({data}) => {
                         { data.wpgraphql.page.top_banner.banner.bannerLinks.map((item, i) => {
                             return (
                                 <div className="col-md-4" key={item.fieldGroupName+i}>
-                                    <div className="header-btn"><Link className="mr-auto" to={"/"} dangerouslySetInnerHTML={{ __html: item.links.title}} /></div>
+                                    <div className="header-btn"><Link className="mr-auto" to={item.links.url} dangerouslySetInnerHTML={{ __html: item.links.title}} /></div>
                                 </div>
                             )
                         })}
@@ -62,11 +62,9 @@ const HomeOwnerPage = ({data}) => {
 
         <section className="service-area section-gap" id="whychoosebank">
             <div className="container">
-                <div className="row justify-content-center">
-                    {data.wpgraphql.page.content && (
-                        <div className="col-md-12 header-text mb-4" dangerouslySetInnerHTML={{ __html: data.wpgraphql.page.content}} />
-                    )}
-                </div>
+                {data.wpgraphql.page.content && (
+                    <div className="row justify-content-center" dangerouslySetInnerHTML={{ __html: data.wpgraphql.page.content}} />
+                )}
 
                 <div className="benefit-option">
                     <ul>
@@ -108,8 +106,8 @@ const HomeOwnerPage = ({data}) => {
                 {/* feedback form */}
                 <button onClick={toggle} className="btn btn-primary f-bold equal-wd mb-4">Leave Feedback</button>
             </div>
-            <Collapse
-                isOpen={collapse}
+            {console.log(collapse)}
+            <Collapse isOpen={collapse}
                 // onEntering={onEntering}
                 // onEntered={onEntered}
                 // onExiting={onExiting}

@@ -131,8 +131,8 @@ const LoanProgramPage = ({ data }) => {
 				</section>
 			)}
 
-			<section className="container px-5">
-				<div className="p-5 pb-0 payment-program" dangerouslySetInnerHTML={{__html:content.content}} />
+			<section className="container px-md-5">
+				<div className="p-md-5 pb-0 payment-program" dangerouslySetInnerHTML={{__html:content.content}} />
 			</section>
 
 			<section className="video-section">
@@ -147,9 +147,9 @@ const LoanProgramPage = ({ data }) => {
 			</section>
 			{content.loan_program.paymentOptionsBenefits.paymentOptionHeading && (
 				<div className="bg-blue" id="paymentoptbenefits">
-					<h1 className="container text-center py-4 h2 text-white">
+					<h2 className="container text-center py-4 h2 text-white">
 						{content.loan_program.paymentOptionsBenefits.paymentOptionHeading}
-					</h1>
+					</h2>
 				</div>
 			)}
 
@@ -213,9 +213,9 @@ const LoanProgramPage = ({ data }) => {
 				<section className="joinLoanProgram" id="joinloanprogram">
 					{content.loan_program.joinLoanProgram.loanProgramMethodHeading && (
 						<div className="bg-blue">
-							<h1 className="container text-center py-4 h2 text-white">
+							<h3 className="container text-center py-4 h2 text-white">
 								{content.loan_program.joinLoanProgram.loanProgramMethodHeading}
-							</h1>
+							</h3>
 						</div>
 					)}
 					<div className="container">						
@@ -223,9 +223,9 @@ const LoanProgramPage = ({ data }) => {
 						<div className="text-center pb-4">
 							<Link to={'/'} className="m-auto px-5 btn btn-primary">Join Now</Link>
 						</div>
-						<h2 className="text-center color-blue border-heading mt-5"><span>{content.loan_program.joinLoanProgram.sectionTitle}</span></h2>
+						<h3 className="text-center color-blue border-heading mt-5 h2"><span>{content.loan_program.joinLoanProgram.sectionTitle}</span></h3>
 						{content.loan_program.joinLoanProgram.loanProgramMethods && (
-							<div className="row mt-4 mb-5">
+							<div className="row mt-4 mb-5 justify-content-center">
 								{data.wpgraphql.categories.edges.map(cate => (
 									(cate.node.slug === "loanprogramemethods") && (
 										cate.node.posts.edges.map(post => {
@@ -237,7 +237,7 @@ const LoanProgramPage = ({ data }) => {
 								))}
 								
 								{content.loan_program.joinLoanProgram.loanProgramMethods.map((item, i) => (
-									<div className="col-sm-4 mb-4 mb-lg-0" key={item.fieldGroupName + i}>
+									<div className="col-md-6 col-lg-4 mb-4 mb-lg-0 justify-content-center" key={item.fieldGroupName + i}>
 										<div className="card wygbox box-shadow">
 											<style dangerouslySetInnerHTML={{
 												__html: [
@@ -268,7 +268,7 @@ const LoanProgramPage = ({ data }) => {
 					<div className="container pt-1">
 						{content.loan_program.onlineAppIntegration.appIntegrationBrif && (
 							<div className="mt-5 py-3 px-4 px-lg-5 box-shadow">
-								<h2 className="h1 text-blue text-center mb-4 font-weight-normal">{content.loan_program.onlineAppIntegration.appIntegrationHeading}</h2>
+								<h3 className="h1 text-blue text-center mb-4 font-weight-normal">{content.loan_program.onlineAppIntegration.appIntegrationHeading}</h3>
 								<p dangerouslySetInnerHTML={{__html: content.loan_program.onlineAppIntegration.appIntegrationBrif}} />
 							</div>
 						)}
@@ -280,7 +280,7 @@ const LoanProgramPage = ({ data }) => {
 						)}
 
 						{content.loan_program.onlineAppIntegration.appIntegrationOption && (
-							<div className="d-flex flex-wrap pt-5">
+							<div className="row flex-wrap pt-5">
 								{data.wpgraphql.categories.edges.map(cate => (
 									(cate.node.slug === "appintegrationoptions") && (
 										cate.node.posts.edges.map((post) => {
@@ -294,7 +294,7 @@ const LoanProgramPage = ({ data }) => {
 								{content.loan_program.onlineAppIntegration.appIntegrationOption.map((item, i) => {
 									const appIntOpt = ['loantype', 'training']
 									return(
-										<div key={item.fieldGroupName + i} className="box-shadow bg-white rounded text-center payment-option-box col-xs-12 col-md mb-3 mb-lg-0 p-0 ml-md-3 ml-lg-5">
+										<div key={item.fieldGroupName + i} className={'box-shadow bg-white rounded text-center payment-option-box col-12 col-md-6 mb-3 mb-lg-0 p-0 ml-md-3 ml-lg-5 ' + appIntOpt[i]}>
 											{/* <style dangerouslySetInnerHTML={{
 												__html: [
 													'.'+appIntOpt[i]+':after {',
@@ -302,7 +302,7 @@ const LoanProgramPage = ({ data }) => {
 													'}'
 												].join('\n')
 											}}></style> */}
-											<div className={'wygthumb ' + appIntOpt[i]}>
+											<div className="wygthumb">
 												<img src={item.integrationOptionBgImage.sourceUrl} className="card-img-top" alt={item.integrationOptionBgImage.altText} />
 											</div>
 											<div className="p-4 d-flex flex-column">
@@ -321,17 +321,17 @@ const LoanProgramPage = ({ data }) => {
 
 			{content.loan_program && (
 				<div className="container">					
-					<div className="p-5 pb-0 mt-4 payment-program">
-						<h2 className="mb-2 text-center">What’s Your Specialty? We’ve Got Loans for Whatever You Do!</h2>
+					<div className="p-md-5 pb-0 mt-4 payment-program">
+						<h3 className="mb-2 text-center">What’s Your Specialty? We’ve Got Loans for Whatever You Do!</h3>
 						<p>We offer loans for a ton of different home improvement project types. From the foundation all the way up to the roof — inside, outside, large or small — our loans are tailored to meet virtually any home improvement need. Contact us to discover which loans will best suit your business model.</p>
 					</div>
 					<div className="text-center mt-5 pb-5"><a className="m-auto px-5 btn btn-primary" href="/">Contact Us</a></div>
-					<div className="p-5 pb-0 mb-5 payment-program">					
-						<h2 className="text-center mb-2">Our Contractor Support is Second to None</h2>
+					<div className="p-md-5 pb-0 mb-5 payment-program">					
+						<h3 className="text-center mb-2">Our Contractor Support is Second to None</h3>
 						<p>We built our whole business around working with home improvement contractors across the nation. Because we only do home improvement loans, we can provide specialized and unparalleled service, starting with your dedicated relationship manager.</p>
 					</div>
 
-					<div className="row">
+					<div className="row justify-content-center">
 					
 						{data.wpgraphql.categories.edges.map((cate) => (
 							(cate.node.slug === "loanservices") && (
@@ -345,7 +345,7 @@ const LoanProgramPage = ({ data }) => {
 							))
 						))}
 						{content.loan_program.loanServices.map((item, i) => (
-							<div className="col-lg-4 mb-4 mb-lg-0" key={item.fieldGroupName+i}>
+							<div className="col-md-6 col-lg-4 mb-4 mb-lg-0" key={item.fieldGroupName+i}>
 								<div className="single-offer card-body">
 									<i className="icon_circil">
 										<img className="img-fluid" src={item.serviceIcon.sourceUrl} alt="News" />
@@ -359,7 +359,7 @@ const LoanProgramPage = ({ data }) => {
 					</div>
 
 					<div className="p-4 m-lg-5">
-						<h2 className="text-center">{content.loan_program.loanProvider.sectionHeading}</h2>
+						<h3 className="text-center">{content.loan_program.loanProvider.sectionHeading}</h3>
 						<p className="text-center py-2">{content.loan_program.loanProvider.sectionBrif}</p>
 						<div className="d-flex justify-content-center howselectloan">							
 							{data.wpgraphql.categories.edges.map((cate) => {
@@ -379,25 +379,25 @@ const LoanProgramPage = ({ data }) => {
 			)}
 
 			<div className="bg-blue mt-5" id="createloanprogram">
-				<h2 className="container text-center py-4 h2 text-white">{content.loan_program.createLoanOption.sectionHeading}</h2>
+				<h3 className="container text-center py-4 h2 text-white">{content.loan_program.createLoanOption.sectionHeading}</h3>
 			</div>
 
 			{/* <div className="createLoanProgram"> */}
 				<div className="container">
-					<div className="p-5 pb-0 mb-5 payment-program">					
-						<h2 className="text-center mb-2">What’s a Loan Program?</h2>
+					<div className="py-5 px-md-5 pb-0 mb-5 payment-program">					
+						<h3 className="text-center mb-2">What’s a Loan Program?</h3>
 						<p>At its core, a payment options program is a way for you and your authorized dealers to achieve sales goals and overcome sales-related challenges. Your customized, private-label loan program is designed to achieve your organization’s goals while building brand recognition.</p>
 					</div>
 
-					<div className="p-5 pb-0 mb-5 payment-program">					
-						<h2 className="text-center mb-2">Who Should Create a Loan Program?</h2>
+					<div className="p-md-5 pb-0 mb-5 payment-program">					
+						<h3 className="text-center mb-2">Who Should Create a Loan Program?</h3>
 						<p>If your organization works with a network of contractors, installers, dealers, or other authorized clients who work in the home improvement business, you should create a loan program. It’s a smart and easy way to boost your growth and gain brand loyalty.</p>
 					</div>
 					
 					
 					{/* <div dangerouslySetInnerHTML={{__html: content.loan_program.createLoanOption.sectionBrif}}></div> */}
-					<h2 className="mb-2 text-center">Why Should You Create a Loan Program?</h2>
-					<div className="d-flex flex-wrap my-4 my-lg-5">						
+					<h3 className="mb-2 text-center">Why Should You Create a Loan Program?</h3>
+					<div className="row flex-wrap my-4 my-lg-5">						
 						{data.wpgraphql.categories.edges.map((cate) => {
 							(cate.node.slug === "createloanprogram") && (
 								cate.node.posts.edges.map((post) => {
@@ -408,8 +408,9 @@ const LoanProgramPage = ({ data }) => {
 							)
 						})}
 						{content.loan_program.createLoanOption.sectionOption.map((item, i) => {
+							const appIntOpt = ['whatsinit', 'whatsinitdealers']
 							return (
-								<div key={item.fieldGroupName + i}  className="box-shadow bg-white rounded text-center payment-option-box col-xs-12 col-md mb-3 mb-lg-0 p-0 mr-md-3 mr-lg-5">
+								<div key={item.fieldGroupName + i}  className={'box-shadow bg-white rounded text-center payment-option-box col-12 col-md-12 col-md mb-3 mb-lg-0 p-0 mr-md-3 mr-lg-5 '+ appIntOpt[i]}>
 									<div className="wygthumb benefitloan">
 										<img src={item.integrationOptionBgImage.sourceUrl} className="card-img-top" alt={item.integrationOptionBgImage.altText} />
 									</div>
@@ -423,10 +424,10 @@ const LoanProgramPage = ({ data }) => {
 					</div>
 				</div>
 
-				<h2 className="text-center p-5 mt-4 mb-2">Why EnerBank is the Right Choice as Your Loan Program Partner</h2>
+				<h3 className="text-center p-md-5 mt-4 mb-2">Why EnerBank is the Right Choice as Your Loan Program Partner</h3>
 
 				<div className="container">
-					<div className="row">
+					<div className="row justify-content-center">
 						{data.wpgraphql.categories.edges.map((cate) => {
 							(cate.node.slug === "rightchoiceloanprogram") && (
 								cate.node.posts.edges.map((post) => {
@@ -438,7 +439,7 @@ const LoanProgramPage = ({ data }) => {
 						})}
 						{content.loan_program.rightChoice.map((item, i) => {
 							return(
-								<div className="col-sm-4 mb-4 mb-lg-0" key={item.fieldGroupName+i}>
+								<div className="col-md-6 col-lg-4 mb-4 mb-lg-0" key={item.fieldGroupName+i}>
 									<div className="single-offer card-body">
 										<i className="icon_circil">
 											<img className="img-fluid" src={item.rightChoiceIcon.sourceUrl} alt="item.serviceIcon.altText" />
@@ -462,9 +463,9 @@ const LoanProgramPage = ({ data }) => {
 					}}></style>
 					<div className="container">
 						<div className="row">
-							<div className="col-5"></div>
-							<div className="col-7">
-								<h2 className="text-white mb-4">{content.loan_program.easyApplication.easyApplicationHeading}</h2>
+							<div className="col-12 col-sm-5"></div>
+							<div className="col-12 col-sm-7">
+								<h3 className="text-white mb-4">{content.loan_program.easyApplication.easyApplicationHeading}</h3>
 								<ul>
 									{content.loan_program.easyApplication.easyApplicationProcess.map((item, i) => {
 										return(										
@@ -477,8 +478,8 @@ const LoanProgramPage = ({ data }) => {
 					</div>
 				</div>
 			
-				<div className="m-4 m-lg-5">
-					<h2 className="text-center">{content.loan_program.selectPartner.sectionHeading}</h2>
+				<div className="m-md-4 m-lg-5">
+					<h3 className="text-center">{content.loan_program.selectPartner.sectionHeading}</h3>
 					<p className="text-center py-2">{content.loan_program.selectPartner.sectionBrif}</p>
 					<div className="d-flex justify-content-center howselectloan">
 						{data.wpgraphql.categories.edges.map((cate) => {
@@ -499,7 +500,7 @@ const LoanProgramPage = ({ data }) => {
 			{content.loan_program.partnerSays && (
 				<>
 					<div className="container">
-						<h3 className="text-center mx-5 mb-3 my-2 p-5">
+						<h3 className="text-center mx-md-5 mb-3 my-5 my-md-2 p-md-5">
 							<span>What Our Partners Say</span>
 							<hr style={{ height: '2px', background: '#444', marginTop: '1.5rem' }}></hr>
 						</h3>
