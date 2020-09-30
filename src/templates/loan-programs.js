@@ -500,7 +500,7 @@ const LoanProgramPage = ({ data }) => {
 			{content.loan_program.partnerSays && (
 				<>
 					<div className="container">
-						<h3 className="text-center mx-md-5 mb-3 my-5 my-md-2 p-md-5">
+						<h3 className="h2 text-center mx-md-5 mb-3 my-5 my-md-2 p-md-5">
 							<span>What Our Partners Say</span>
 							<hr style={{ height: '2px', background: '#444', marginTop: '1.5rem' }}></hr>
 						</h3>
