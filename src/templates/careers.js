@@ -26,8 +26,9 @@ const CareerPage = ({data, props}) => {
 
   return (  
     <Layout>
-      <SEO title={data.wpgraphql.page.title} description={data.wpgraphql.page.excerpt}/>      
+      <SEO title={data.wpgraphql.page.title} description={data.wpgraphql.page.excerpt}/>
       <section className="video-section">
+        <h1 class="mt-4 mb-10 text-center mb-3"><span>Why Work at EnerBank? </span></h1>
         <div className="container">
           <div className="row d-flex align-items-end">
             <div className="col-md-10 m-auto" ref={handstick}>  {/*  onClick={this.handleClick} */}
