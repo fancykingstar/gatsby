@@ -13,9 +13,9 @@ import { faFacebookF, faTwitter, faLinkedinIn } from '@fortawesome/free-brands-s
 const Footer = () => (
   <footer className="footer-area">
     <div className="container-fluid">
-        <div className="row">
+        <div className="row px-3">
               <div className="custom-col-01 col">
-                  <div className="single-footer-widget pl-30">
+                  <div className="single-footer-widget">
                       <h6>HOMEOWNER</h6>
                       <ul>
                           <li><a href="homeowner/#whychoosebank">Why Choose EnerBank</a></li>
@@ -47,7 +47,7 @@ const Footer = () => (
                       </ul>											
                   </div>
               </div>
-              <div className="custom-col-05 col">
+              <div className="custom-col-04 col">
                   <div className="single-footer-widget">
                       <h6>CAREERS</h6>
                       <ul>
