@@ -37,23 +37,17 @@ const CareerPage = ({data, props}) => {
         </div>
       </section>
     {/* section-gap */}
-      <section className="service-area" id="whyenerbank">
-        <div className="container">
-          <div className="row justify-content-center">
-            <div className="col-md-12 header-text mb-4">
-              <h2 className="mt-50 mb-10 text-center mb-3"><span>Why Work at EnerBank? </span></h2>
-              <p> Jobs come and go, but a career at EnerBank is just that: a career. We truly value our people — hiring the best and brightest, then continuing to nurture that talent as team members develop their skills and move up through the organization over time. If you love to help people, thrive in a challenging environment, 
-      and are ready for the time of your life, consider joining us.</p>
-            </div>
+      <section  className="container">
+          <div className="row">
+            <div className="col-md-12 mb-4 career-service" dangerouslySetInnerHTML={{__html: data.wpgraphql.page.content}} />
             <div className="col-md-12 header-text" id="availableposition">
-              <h2 className="mb-20 text-center"><span>Available Positions</span></h2>
+              <h2 className="mb-20 text-center h1"><span>Available Positions</span></h2>
             </div>
             <Helmet>
                 <script src={withPrefix('script.js')} type="text/javascript" name="hirebridge-script" />
             </Helmet>
             <div id="hrbr-widget">&nbsp;</div>
           </div>
-        </div>
       </section>
     </Layout>
   )
