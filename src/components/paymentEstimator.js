@@ -41,7 +41,7 @@ const PaymentEstimator = (props) => {
 										</div>
 									</div>
 									<div className="form-group row">
-										<label htmlFor="inputPassword" className="col-sm-6 col-form-label">Total number of Years</label>
+										<label htmlFor="inputPassword" className="col-sm-6 col-form-label">Total Number of Years</label>
 										<div className="col-sm-6">
 											<input type="text" className="form-control" name="totalYears" id="noOfYears" value={totalYears} onChange={(e)=> setTotalYears(e.target.value)} />
 										</div>
