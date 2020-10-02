@@ -1,7 +1,8 @@
 import React from 'react'
 import Link from 'gatsby-link'
 import fdicLogo from '../images/fdic-logo.svg'
-import bbbLogo from '../images/bbb-logo.svg'
+// import bbbLogo from '../images/bbb-logo.svg'
+import bbbLogo from '../images/darkgray-seal-bbb.png'
 // import { library } from '@fortawesome/fontawesome-svg-core'
 // import { fab } from '@fortawesome/free-brands-svg-icons'
 // import { faFacebook, faTwitter, faLinkedin } from '@fortawesome/free-brands-svg-icons'
@@ -10,7 +11,11 @@ import bbbLogo from '../images/bbb-logo.svg'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faFacebookF, faTwitter, faLinkedinIn } from '@fortawesome/free-brands-svg-icons'
 
-const Footer = () => (
+const Footer = () => {
+    const externalUrl = (url) => {
+		window.open(url, '_blank');
+	}
+return (
   <footer className="footer-area">
     <div className="container-fluid">
         <div className="row px-3">
@@ -87,8 +92,9 @@ const Footer = () => (
               </div>
             <div className="custom-col-07 col">
               <div className="single-footer-widget footer-rightpad">
-                  <img className="mb-10" src={fdicLogo} alt="Member FDIC Logo" />
-                  <Link to="https://www.bbb.org/utah/business-reviews/loans/enerbank-usa-in-salt-lake-city-ut-22001531/#sealclick"><img src={bbbLogo} alt="BBB Ratings Logo" /></Link>
+                  <img className="mb-10" src={fdicLogo} alt="Member FDIC Logo" class="img-fluid mb-3" />
+                  {/* <a href="https://www.bbb.org/utah/business-reviews/loans/enerbank-usa-in-salt-lake-city-ut-22001531/#sealclick" target="_blank"><img src={bbbLogo} alt="BBB Ratings Logo" /></a> */}
+                  <button className="border-0 bg-transparent p-0 w-100" onClick={()=> externalUrl('https://www.bbb.org/utah/business-reviews/loans/enerbank-usa-in-salt-lake-city-ut-22001531/#sealclick')}><img src={bbbLogo} alt="BBB Ratings Logo" class="img-block" /></button>
               </div>
 
               <div className="mediaIcon">
@@ -100,6 +106,6 @@ const Footer = () => (
           </div>
       </div>
   </footer>
-)
+)}
 
 export default Footer
