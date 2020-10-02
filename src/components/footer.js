@@ -79,18 +79,16 @@ const Footer = () => (
                       </ul>
                       
                     <p>                       
-                        © Copyright 2019. <br/>All rights reserved.
+                        © Copyright 2020. <br/>All rights reserved.
                     </p>
-                    <p className="text-muted">This site is directed at, and<br/>
-                        made available to, persons in the<br/>
-                        continental U.S., Alaska and Hawaii only.
+                    <p className="text-muted">This site is directed at, and made available to, persons in the U.S. only.
                     </p>
                 </div>
               </div>
             <div className="custom-col-07 col">
               <div className="single-footer-widget footer-rightpad">
                   <img className="mb-10" src={fdicLogo} alt="Member FDIC Logo" />
-                  <img src={bbbLogo} alt="BBB Ratings Logo" />
+                  <Link to="https://www.bbb.org/utah/business-reviews/loans/enerbank-usa-in-salt-lake-city-ut-22001531/#sealclick"><img src={bbbLogo} alt="BBB Ratings Logo" /></Link>
               </div>
 
               <div className="mediaIcon">

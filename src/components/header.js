@@ -61,8 +61,9 @@ const Header = ({ siteTitle }) => {
                       <li><button onClick={loginForm} className="btn-link">Account Log In</button>|</li>
                       <li><Link to={'/'}>View / Sign Loan Docs</Link>|</li>
                       <li><Link to={'/'}>PartnerPortal</Link>|</li>
-                      <li><Link to={'/'}>Dealer Resource Center</Link></li>
-                      <li><button className="mx-0 px-0 calculator btn-link" style={{background: "url(" + calc_icon + ")" }} onClick={showbenefitpopup()} /></li>
+                      {/* <li><Link to={'/'}>Dealer Resource Center</Link></li> */}
+                      <li><button className="btn-link" onClick={showbenefitpopup()} >Payment Estimator</button></li>
+                      {/* <li><button className="mx-0 px-0 calculator btn-link" style={{background: "url(" + calc_icon + ")" }} onClick={showbenefitpopup()} /></li> */}
                       <style dangerouslySetInnerHTML={{
                           __html: [
                             '.calculator:hover {',
