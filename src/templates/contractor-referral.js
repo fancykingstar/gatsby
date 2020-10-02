@@ -46,6 +46,10 @@ const HomeOwnerPage = ({data}) => {
                                                     <label htmlFor={item.fieldName}>{item.fieldTitle}</label>
                                                     <textarea name={item.fieldName} id={item.fieldName} className="form-control" />
                                                 </div>
+                                    }else if(item.fieldType === 'submit'){
+                                        return  <div className="form-group col-12" key={item.fieldGroupName + i}>
+                                                    <input type={item.fieldType} name={item.fieldName} id={item.fieldName} value={item.fieldTitle} className="btn btn-lg btn-primary px-5 d-block my-4 mx-auto" />
+                                                </div>
                                     }else{
                                         return  <div className="form-group col-12" key={item.fieldGroupName + i}>
                                                     <label htmlFor={item.fieldName}>{item.fieldTitle}</label>

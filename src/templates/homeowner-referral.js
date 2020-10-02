@@ -58,7 +58,7 @@ const HomeOwnerReferral = ({data}) => {
                                             if(i === 0 || i === 5 || i === 6 ){
                                                 if(item.fieldType === 'submit'){
                                                     return  <div className="form-group col-12" key={item.fieldGroupName + i}>
-                                                                <input type={item.fieldType} name={item.fieldName} id={item.fieldName} value={item.fieldTitle} className="form-control" />
+                                                                <input type={item.fieldType} name={item.fieldName} id={item.fieldName} value={item.fieldTitle} className="btn btn-lg btn-primary px-5 d-block my-4 mx-auto" />
                                                             </div>
                                                 }else{
                                                     return  <div className="form-group col-12" key={item.fieldGroupName + i}>
