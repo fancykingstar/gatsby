@@ -726,7 +726,7 @@ body.mobile-nav-active #mobile-nav-toggle { color: #fff }
 .modal .modal-content { border: 0; border-radius: 0; }
 .modal .modal-lg{ margin: 0 auto; }
 .modal-full .modal-content, .modal-lg .modal-content{ height: 100%; }
-#paymentoption .modal-full .modal-content, .modal-lg .modal-content{ height: auto; }
+#paymentoption .modal-full .modal-content, .modal-lg .modal-content{ height: 100%; }
 #paymentoption img{ max-width: inherit; }
 .heading_bg{ background: #0077C8; padding: 30px 30px; text-align: center;}
 .heading_bg h3{ color: #fff !important; text-align: center; margin: 0px; padding: 0px; line-height: normal;}
