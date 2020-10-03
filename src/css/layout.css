@@ -825,7 +825,7 @@ display: flex; align-items: center; justify-content: center; }
 
 /* career service */
 .career-service ul{ display: flex; flex-wrap: wrap; margin: 20px 25px; }
-.career-service ul li{ flex-basis: 50%; font-weight: 400; font-size: 16px; color: #4d4d4d; }
+.career-service ul li{ flex-basis: 50%; font-weight: 500; font-size: 16px; color: #4d4d4d; }
 
 @media only screen and (max-width:767px){
   .hrbr-email-button{ display: inline-block !important; float: none !important; }
