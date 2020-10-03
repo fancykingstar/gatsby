@@ -472,8 +472,8 @@ body.mobile-nav-active #mobile-nav-toggle { color: #fff }
 .single-footer-widget p.text-muted{ font-size: 11px; line-height:normal !important; color:#fff !important; letter-spacing:0;}
 .single-footer-widget ul{ margin-bottom: 1rem; }
 .single-footer-widget ul li { margin:0px; padding:0; line-height:14px; }
-.single-footer-widget ul li a { color: #fff; -webkit-transition: all 0.3s ease 0s; -moz-transition: all 0.3s ease 0s; -o-transition: all 0.3s ease 0s; transition: all 0.3s ease 0s; font-size: 11px; letter-spacing:0.2px; line-height: 14px; padding: 5px 0; display: block; font-weight:500; }
-.single-footer-widget ul li a:hover { color: #999; }
+.single-footer-widget ul li a, .single-footer-widget ul li button { color: #fff; -webkit-transition: all 0.3s ease 0s; -moz-transition: all 0.3s ease 0s; -o-transition: all 0.3s ease 0s; transition: all 0.3s ease 0s; font-size: 11px; letter-spacing:0.2px; line-height: 14px; padding: 5px 0; display: block; font-weight:500; }
+.single-footer-widget ul li a:hover, .single-footer-widget ul li button:hover { color: #999; }
 .footer-bottom { padding-top: 40px; margin-top: 20px }
 .footer-text a, .footer-text i { color: #eee }
 .whole-wrap { background-color: #fff }
@@ -824,8 +824,8 @@ display: flex; align-items: center; justify-content: center; }
 .hrbr-wrapper-pagination > li > a{ color: #29A9E0 !important; }
 
 /* career service */
-.career-service ul{ display: flex; flex-wrap: wrap; margin: 50px 25px; }
-.career-service ul li{ flex-basis: 50%; font-weight: 500; font-size: 16px; color: #4d4d4d; }
+.career-service ul{ display: flex; flex-wrap: wrap; margin: 20px 25px; }
+.career-service ul li{ flex-basis: 50%; font-weight: 400; font-size: 16px; color: #4d4d4d; }
 
 @media only screen and (max-width:767px){
   .hrbr-email-button{ display: inline-block !important; float: none !important; }
