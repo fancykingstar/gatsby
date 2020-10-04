@@ -1,7 +1,7 @@
 import React from 'react'
 import Link from 'gatsby-link'
+
 import fdicLogo from '../images/fdic-logo.svg'
-// import bbbLogo from '../images/bbb-logo.svg'
 import bbbLogo from '../images/darkgray-seal-bbb.png'
 // import { library } from '@fortawesome/fontawesome-svg-core'
 // import { fab } from '@fortawesome/free-brands-svg-icons'
@@ -14,7 +14,10 @@ import { faFacebookF, faTwitter, faLinkedinIn } from '@fortawesome/free-brands-s
 const Footer = () => {
     const externalUrl = (url) => {
 		window.open(url, '_blank');
-	}
+    }
+    // const customUrl = (url, e) => {
+        // browserHistory.push('/'+url);
+	// }
 return (
   <footer className="footer-area">
     <div className="container-fluid">
@@ -23,8 +26,8 @@ return (
                   <div className="single-footer-widget">
                       <h6>HOMEOWNER</h6>
                       <ul>
-                          <li><a href="homeowner/#whychoosebank">Why Choose EnerBank</a></li>
-                          <li><a href="homeowner/#howtopay">How to Pay</a></li>
+                          <li><a href="/homeowner/#whychoosebank">Why Choose EnerBank</a></li>
+                          <li><a href="/homeowner/#howtopay">How to Pay</a></li>
                       </ul>											
                   </div>
               </div>
@@ -32,9 +35,9 @@ return (
                   <div className="single-footer-widget">
                       <h6>LOAN PROGRAMS</h6>
                       <ul>
-                          <li><a href="loan-programs#paymentoptbenefits">Payment Options Benefits</a></li>
-                          <li><a href="loan-programs#joinloanprogram">Join a Loan Program</a></li>
-                          <li><a href="loan-programs#createloanprogram">Create a Loan Program</a></li>
+                          <li><a href="/loan-programs#paymentoptbenefits">Payment Options Benefits</a></li>
+                          <li><a href="/loan-programs#joinloanprogram">Join a Loan Program</a></li>
+                          <li><a href="/loan-programs#createloanprogram">Create a Loan Program</a></li>
                       </ul>											
                   </div>
               </div>
@@ -42,13 +45,13 @@ return (
                   <div className="single-footer-widget">
                       <h6>ABOUT</h6>
                       <ul>
-                          <li><a href="about#companyoverview">Company Overview</a></li>
-                          <li><a href="about#leadership">Leadership</a></li>
-                          <li><a href="about#codeofconduct">Code of Conduct</a></li>
-                          <li><a href="about#memberfdic">Member FDIC</a></li>
-                          <li><a href="about#communityinvolvement">Community Involvement</a></li>
-                          <li><a href="about#boardofdirectors">Board of Directors</a></li>
-                          <li><a href="about#feedback">Feedback</a></li>
+                          <li><a href="/about#companyoverview">Company Overview</a></li>
+                          <li><a href="/about#leadership">Leadership</a></li>
+                          <li><a href="/about#codeofconduct">Code of Conduct</a></li>
+                          <li><a href="/about#memberfdic">Member FDIC</a></li>
+                          <li><a href="/about#communityinvolvement">Community Involvement</a></li>
+                          <li><a href="/about#boardofdirectors">Board of Directors</a></li>
+                          <li><a href="/about#feedback">Feedback</a></li>
                       </ul>											
                   </div>
               </div>
@@ -56,8 +59,8 @@ return (
                   <div className="single-footer-widget">
                       <h6>CAREERS</h6>
                       <ul>
-                          <li><a href="careers#whyenerbank">Why EnerBank</a></li>
-                          <li><a href="careers#availableposition">Available Positions</a></li>
+                          <li><a href="/careers#whyenerbank">Why EnerBank</a></li>
+                          <li><a href="/careers#availableposition">Available Positions</a></li>
                       </ul>											
                   </div>
               </div>
@@ -92,9 +95,9 @@ return (
               </div>
             <div className="custom-col-07 col">
               <div className="single-footer-widget footer-rightpad">
-                  <img className="mb-10" src={fdicLogo} alt="Member FDIC Logo" class="img-fluid mb-3" />
+                  <img src={fdicLogo} alt="Member FDIC Logo" className="img-fluid mb-3" />
                   {/* <a href="https://www.bbb.org/utah/business-reviews/loans/enerbank-usa-in-salt-lake-city-ut-22001531/#sealclick" target="_blank"><img src={bbbLogo} alt="BBB Ratings Logo" /></a> */}
-                  <button className="border-0 bg-transparent p-0 w-100" onClick={()=> externalUrl('https://www.bbb.org/utah/business-reviews/loans/enerbank-usa-in-salt-lake-city-ut-22001531/#sealclick')}><img src={bbbLogo} alt="BBB Ratings Logo" class="img-block" /></button>
+                  <button className="border-0 bg-transparent p-0 w-100" onClick={()=> externalUrl('https://www.bbb.org/utah/business-reviews/loans/enerbank-usa-in-salt-lake-city-ut-22001531/#sealclick')}><img src={bbbLogo} alt="BBB Ratings Logo" className="img-block" /></button>
               </div>
 
               <div className="mediaIcon">

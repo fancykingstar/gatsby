@@ -28,7 +28,7 @@ const PaymentEstimator = (props) => {
 				<div className="modal_content">
 					<div className="p-5 pb-0 pt-sm-4 text-center">
 						<h2>Enerbank Payment Estimator</h2>
-						<p className="text-center">For use in determining a borrower's estimated monthly payment  with all monthly payment loan options - not intentded for use  with Same-As-Cash loans.</p>
+						<p className="text-center">See a monthly payment estimate — <br/>just plug in the relevant numbers and hit <strong className="text-blue">Calculate!</strong></p>
 						
 						<form className="estimatorForm">
 							<div className="paymentEstimator">
@@ -54,7 +54,7 @@ const PaymentEstimator = (props) => {
 									</div>
 									<div className="form-group row">
 										<div className="col-sm-6 ml-auto text-left">
-											<button className="btn btn-black est-btn" onClick={estimateCalc}>Calculate</button>
+											<button className="btn btn-primary px-4 py-1" onClick={estimateCalc}>Calculate</button>
 										</div>
 									</div>
 								</div>
@@ -66,7 +66,7 @@ const PaymentEstimator = (props) => {
 										</div>
 									</div>
 								</div>
-								<div className="formMiddle mt-4" style={{ display: 'none'}}>
+								<div className="formMiddle mt-4" style={{display: 'none'}}>
 									<div className="form-group row">
 										<label htmlFor="staticEmail" className="col-sm-6 col-form-label">Email Address</label>
 										<div className="col-sm-6">
@@ -75,7 +75,7 @@ const PaymentEstimator = (props) => {
 									</div>
 									<div className="form-group row">
 										<div className="col-sm-6 ml-auto text-left">
-											<button className="btn btn-black est-btn" onClick={''}>Send Email</button>
+											<button className="btn btn-primary px-4 py-1" onClick={''}>Send Email</button>
 										</div>
 									</div>
 								</div>

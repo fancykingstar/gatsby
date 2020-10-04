@@ -26,9 +26,9 @@ const HomeOwnerReferral = ({data}) => {
                         <div className="mb-3 text-center">
                             <h3 className="h2 mt-5 mb-4" dangerouslySetInnerHTML={{__html: data.wpgraphql.page.homewonerreferral.getProjectStarted.sectionTitle}} />
                             <div dangerouslySetInnerHTML={{__html: data.wpgraphql.page.homewonerreferral.getProjectStarted.sectionContent}} />
-                            <button className="btn btn-lg btn-primary f-bold mt-5">Refer a Contractor</button>
+                            <a href="/contractor-referral" className="btn btn-lg btn-primary mt-5">Refer a Contractor</a>
                         </div>
-                        <div className="mb-3">
+                        <div className="mb-3 pt-3">
                             <h3 className="h2 mt-5 mb-4 text-center" dangerouslySetInnerHTML={{__html: data.wpgraphql.page.homewonerreferral.unsecuredHomeLoans.sectionTitle}} />
                             <div dangerouslySetInnerHTML={{__html: data.wpgraphql.page.homewonerreferral.unsecuredHomeLoans.sectionContent}} className="unsecuredhomeloan" />
                         </div>
