@@ -1,12 +1,13 @@
-import React, { useState } from "react"
+import React, { useState,  } from "react"
 import { StaticQuery, graphql, Link } from "gatsby"
 import logo from '../images/enerbank-logo.svg'
 
-export default () => {
+export default (props) => {
     const [menuStatus, mobileMenu] = useState(false);
+    const [menuClass, collapse] = useState(false)
     const showMenu = (e) => {
         mobileMenu(isShow => !isShow);
-        console.log(e.currentTarget)
+        collapse(isShow => !isShow);
     }
     return (
         <StaticQuery
@@ -78,12 +79,13 @@ export default () => {
         render={ data => {
             return (
                 <nav className="navbar navbar-expand-lg main-menu">
-                    <div className="container">            
+                    <div className="container">
                         {/* navbar brand logo */}
                         <Link to="/" id="logo" className="navbar-brand"><img src={logo} alt="EnerBank Logo" title="" /></Link>
                         {/* navbar toggler */}
-                        <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" 
+                        <button className={menuClass ? 'navbar-toggler' : 'navbar-toggler collapsed'} type="button" data-toggle="collapse" data-target="#navbarText" 
                         aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation" onClick={showMenu}>
+                            <span className="close">X</span>
                             <span className="navbar-toggler-icon"></span>
                         </button>
                         {/* navbar menu */}
@@ -108,6 +110,25 @@ export default () => {
                                     </li>
                                 ))}
                             </ul>
+                            {/* header top */}
+                            <div className="header-top d-md-none">
+                                <div className="header-top-right">
+                                    <ul>
+                                        <li><button onClick={props.loginForm} className="btn-link">Account Log In</button>|</li>
+                                        <li><Link to={'/'}>View / Sign Loan Docs</Link>|</li>
+                                        <li><Link to={'/'}>PartnerPortal</Link>|</li>
+                                        <li><button className="btn-link" onClick={props.headerTop()} >Payment Estimator</button></li>
+                                        {/* <li><Link to={'/'}>Dealer Resource Center</Link></li> */}
+                                        {/* <li>
+                                            <Link to={'/'} onClick={showbenefitpopup()}>
+                                            <i className="fa mr-15">
+                                                <img src={calc_icon} alt="calculator icon" title="" />
+                                            </i>
+                                            </Link>
+                                        </li> */}
+                                    </ul>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </nav>

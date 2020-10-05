@@ -28,7 +28,7 @@ const CareerPage = ({data, props}) => {
     <Layout>
       <SEO title={data.wpgraphql.page.title} description={data.wpgraphql.page.excerpt}/>
       <section className="video-section">
-        <h1 class="mt-4 mb-10 text-center mb-3"><span>Why Work at EnerBank? </span></h1>
+        <h1 className="mt-4 mb-10 text-center mb-3"><span>Why Work at EnerBank? </span></h1>
         <div className="container">
           <div className="row d-flex align-items-end">
             <div className="col-md-10 m-auto" ref={handstick}>  {/*  onClick={this.handleClick} */}
@@ -40,7 +40,7 @@ const CareerPage = ({data, props}) => {
     {/* section-gap */}
       <section  className="container">
           <div className="row">
-            <div className="col-md-12 mb-4 career-service" dangerouslySetInnerHTML={{__html: data.wpgraphql.page.content}} />
+            <div className="col-md-12 career-service" dangerouslySetInnerHTML={{__html: data.wpgraphql.page.content}} />
             <div className="col-md-12 header-text" id="availableposition">
               <h2 className="mb-20 text-center"><span>Available Positions</span></h2>
             </div>

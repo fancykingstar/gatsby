@@ -106,7 +106,6 @@ const HomeOwnerPage = ({data}) => {
                 {/* feedback form */}
                 <button onClick={toggle} className="btn btn-primary f-bold equal-wd mb-4">Leave Feedback</button>
             </div>
-            {console.log(collapse)}
             <Collapse isOpen={collapse}
                 // onEntering={onEntering}
                 // onEntered={onEntered}
