@@ -77,7 +77,7 @@ const Header = ({ siteTitle }) => {
               </div>
             </div>
             {/* main menun start */}
-            <Menu/>
+            <Menu headerTop={showbenefitpopup} loginForm={loginForm} />
           </header>
           <div id="loginBox" style={{display: 'none'}}> 
               <div id="closeButton"><img src={close_icon} alt="close icon" title="" /></div>
@@ -95,28 +95,7 @@ const Header = ({ siteTitle }) => {
               </form>
           </div>
           <header id="header" className="sticky-menu menu">
-            <div className="header-top">
-              <div className="container">
-                <div className="row">
-                  <div className="ml-auto header-top-right no-padding">
-                    <ul>
-                      <li><Link to={'/'} id="loginButton">Account Log In</Link>|</li>
-                      <li><Link to={'/'}>View / Sign Loan Docs</Link>|</li>
-                      <li><Link to={'/'}>PartnerPortal</Link>|</li>
-                      <li><Link to={'/'}>Dealer Resource Center</Link></li>
-                      <li>
-                        <Link to={'/'} onClick={showbenefitpopup()}>
-                          <i className="fa mr-15">
-                            <img src={calc_icon} alt="calculator icon" title="" />
-                          </i>
-                        </Link>
-                      </li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <Menu/>
+            <Menu headerTop={showbenefitpopup} />
           </header>
           {
             popup()

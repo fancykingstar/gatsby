@@ -294,7 +294,7 @@ const LoanProgramPage = ({ data }) => {
 								{content.loan_program.onlineAppIntegration.appIntegrationOption.map((item, i) => {
 									const appIntOpt = ['loantype', 'training']
 									return(
-										<div key={item.fieldGroupName + i} className={'box-shadow bg-white rounded text-center payment-option-box col-12 col-md-6 mb-3 mb-lg-0 p-0 ml-md-3 ml-lg-5 ' + appIntOpt[i]}>
+										<div key={item.fieldGroupName + i} className={'card box-shadow bg-white rounded text-center payment-option-box col-12 col-md-6 mb-3 mb-lg-0 p-0 ml-md-3 ml-lg-5 ' + appIntOpt[i]}>
 											{/* <style dangerouslySetInnerHTML={{
 												__html: [
 													'.'+appIntOpt[i]+':after {',
@@ -305,10 +305,10 @@ const LoanProgramPage = ({ data }) => {
 											<div className="wygthumb">
 												<img src={item.integrationOptionBgImage.sourceUrl} className="card-img-top" alt={item.integrationOptionBgImage.altText} />
 											</div>
-											<div className="p-4 d-flex flex-column">
+											<div className="p-4 card-body">
 												<h3 className="mb-10" dangerouslySetInnerHTML={{__html: item.integrationOptionHeading}} />
-												<p dangerouslySetInnerHTML={{ __html: item.integrationOptionBrif }} />
-												<button className="btn-link" onClick={showbenefitpopup(onlineApp[i], item.popSlug)}>Learn More</button>
+												<p className="card-text" dangerouslySetInnerHTML={{ __html: item.integrationOptionBrif }} />
+												<button className="btn-link align-items-end" onClick={showbenefitpopup(onlineApp[i], item.popSlug)}>Learn More</button>
 											</div>
 										</div>
 									)
@@ -510,7 +510,7 @@ const LoanProgramPage = ({ data }) => {
 						{content.loan_program.partnerSays.map((item, i) =>
 							(
 								<div key={item.fieldGroupName + i}>
-									<img src={item.partnerLogo.sourceUrl} alt={item.partnerLogo.altText} className="img-fluid" />
+									<img src={item.partnerLogo.sourceUrl} alt={item.partnerLogo.altText} className="img-fluid mb-4" />
 									<div dangerouslySetInnerHTML={{ __html: item.partnerComment }} />
 								</div>
 							)
