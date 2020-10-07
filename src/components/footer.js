@@ -3,11 +3,7 @@ import Link from 'gatsby-link'
 
 import fdicLogo from '../images/fdic-logo.svg'
 import bbbLogo from '../images/darkgray-seal-bbb.png'
-// import { library } from '@fortawesome/fontawesome-svg-core'
-// import { fab } from '@fortawesome/free-brands-svg-icons'
-// import { faFacebook, faTwitter, faLinkedin } from '@fortawesome/free-brands-svg-icons'
-// library.add(fab, faFacebook, faTwitter, faLinkedin)
-
+// font awesome library icons
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faFacebookF, faTwitter, faLinkedinIn } from '@fortawesome/free-brands-svg-icons'
 
@@ -52,6 +48,7 @@ return (
                           <li><a href="/about#communityinvolvement">Community Involvement</a></li>
                           <li><a href="/about#boardofdirectors">Board of Directors</a></li>
                           <li><a href="/about#feedback">Feedback</a></li>
+                          <li><a href="/">Blog</a></li>
                       </ul>											
                   </div>
               </div>

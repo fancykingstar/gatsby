@@ -2,8 +2,6 @@ import React, { useState } from "react"
 import { Link } from "gatsby"
 import PropTypes from "prop-types"
 import Menu from './menu'
-import calc_icon from '../images/calculator_icon.svg'
-import calc_icon_hover from '../images/calculator_icon_light.svg'
 import close_icon from '../images/close_icon.svg'
 
 import PaymentEstimator from './paymentEstimator'
@@ -64,14 +62,6 @@ const Header = ({ siteTitle }) => {
                       {/* <li><Link to={'/'}>Dealer Resource Center</Link></li> */}
                       <li><button className="btn-link" onClick={showbenefitpopup()} >Payment Estimator</button></li>
                       {/* <li><button className="mx-0 px-0 calculator btn-link" style={{background: "url(" + calc_icon + ")" }} onClick={showbenefitpopup()} /></li> */}
-                      <style dangerouslySetInnerHTML={{
-                          __html: [
-                            '.calculator:hover {',
-                              'background:', "url(" + calc_icon_hover + ") !important",
-                            '}'
-                          ].join('\n')
-                        }}>                        
-                      </style>
                     </ul>
                   </div>
               </div>
