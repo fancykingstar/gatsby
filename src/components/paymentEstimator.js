@@ -11,9 +11,9 @@ const PaymentEstimator = (props) => {
 	const estimateCalc = (e) => {
 		e.preventDefault();
 		const totalMonth = totalYears * 12;
-		const totalPayment =  (parseInt(loanAmount) + ((loanAmount * interestRate) / 100)) / totalMonth
-		setMonthlyPayment(totalPayment.toFixed(2))
-		console.log('hi', loanAmount, totalYears, interestRate, totalPayment.toFixed(2))
+		const totalPayment = (loanAmount + (loanAmount * interestRate) / 100) / totalMonth
+		setMonthlyPayment(totalPayment ? totalPayment.toFixed(2) : 0)
+		// console.log('hi', loanAmount, loanAmount, interestRate, totalPayment.toFixed(2) ? totalPayment.toFixed(2) : 0)
 	}
 
 	if (props.length !== 0) {
@@ -61,23 +61,21 @@ const PaymentEstimator = (props) => {
 								<div className="formFooter">
 									<div className="form-group row m-0">
 										<div className="col-sm-6 col-form-label">Monthly Payment</div>
-										<div className="col-sm-6 text-left">
-											{monthlyPayment}
-										</div>
+										<div className="col-sm-6 text-left">{monthlyPayment}</div>
 									</div>
 								</div>
 								<div className="formMiddle mt-4" style={{display: 'none'}}>
-									<div className="form-group row">
+									{/* <div className="form-group row">
 										<label htmlFor="staticEmail" className="col-sm-6 col-form-label">Email Address</label>
 										<div className="col-sm-6">
-											<input type="text" className="form-control" name="sendMail" id="sendMail" value={''}  />
+											<input type="text" className="form-control" name="sendMail" id="sendMail" value={''} readOnly="readOnly" />
 										</div>
 									</div>
 									<div className="form-group row">
 										<div className="col-sm-6 ml-auto text-left">
 											<button className="btn btn-primary px-4 py-1" onClick={''}>Send Email</button>
 										</div>
-									</div>
+									</div> */}
 								</div>
 							</div>
 							<p>*The monthly payment calculations provided here estimates only. Your customer's exact loan payment amount will be determined by EnerBank USA at time of application. The accuracy of these calculations is not guaranteed nor is its applicability to your individual circumstances. Your customers should always obtain personal advice from qualified professionals.</p>

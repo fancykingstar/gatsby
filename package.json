@@ -34,6 +34,7 @@
     "react-responsive-carousel": "^3.2.7",
     "react-tabbordion": "^1.0.5",
     "reactstrap": "^8.5.1",
+    "recharts": "^2.0.0-beta.1",
     "sendemail": "^4.0.1"
   },
   "devDependencies": {
