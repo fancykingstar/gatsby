@@ -7,11 +7,22 @@ const PaymentEstimator = (props) => {
 	const [totalYears, setTotalYears] = useState(0);
 	const [interestRate, setInterestRate] = useState(0);
 	const [monthlyPayment, setMonthlyPayment] = useState(0);
+	const isEnabled = loanAmount > 0 && totalYears > 0 && interestRate > 0
+
+	const handleInput = (evt) => {
+		if(evt.target.name === 'loanAmount'){
+			setLoanAmount(evt.target.value)
+		}else if(evt.target.name === 'totalYears'){
+			setTotalYears(evt.target.value)
+		}else{
+			setInterestRate(evt.target.value)
+		}
+	}
 
 	const estimateCalc = (e) => {
 		e.preventDefault();
 		const totalMonth = totalYears * 12;
-		const totalPayment = (loanAmount + (loanAmount * interestRate) / 100) / totalMonth
+		const totalPayment = (Number(loanAmount) + (Number(loanAmount) * interestRate) / 100) / totalMonth
 		setMonthlyPayment(totalPayment ? totalPayment.toFixed(2) : 0)
 		// console.log('hi', loanAmount, loanAmount, interestRate, totalPayment.toFixed(2) ? totalPayment.toFixed(2) : 0)
 	}
@@ -36,25 +47,25 @@ const PaymentEstimator = (props) => {
 								<div className="formMiddle">
 									<div className="form-group row">
 										<label htmlFor="staticEmail" className="col-sm-6 col-form-label">Total Loan Amount</label>
-										<div className="col-sm-6">
-											<input type="text" className="form-control" name="loanAmount" id="loanAmount" value={loanAmount} onChange={(e)=> setLoanAmount(e.target.value)} />
+										<div className="col-sm-6"> {/* (e)=> setLoanAmount(e.target.value) */}
+											<input type="text" className="form-control" name="loanAmount" id="loanAmount" value={loanAmount} onChange={handleInput} />
 										</div>
 									</div>
 									<div className="form-group row">
 										<label htmlFor="inputPassword" className="col-sm-6 col-form-label">Total Number of Years</label>
-										<div className="col-sm-6">
-											<input type="text" className="form-control" name="totalYears" id="noOfYears" value={totalYears} onChange={(e)=> setTotalYears(e.target.value)} />
+										<div className="col-sm-6"> {/* (e)=> setTotalYears(e.target.value) */}
+											<input type="text" className="form-control" name="totalYears" id="noOfYears" value={totalYears} onChange={handleInput} />
 										</div>
 									</div>
 									<div className="form-group row">
 										<label htmlFor="inputPassword" className="col-sm-6 col-form-label">Interest Rate %(APR)</label>
-										<div className="col-sm-6">
-											<input type="text" className="form-control" name="interestRate" id="interestRate" value={interestRate} onChange={(e)=> setInterestRate(e.target.value)} />
+										<div className="col-sm-6"> {/* (e)=> setInterestRate(e.target.value) */}
+											<input type="text" className="form-control" name="interestRate" id="interestRate" value={interestRate} onChange={handleInput} />
 										</div>
 									</div>
 									<div className="form-group row">
 										<div className="col-sm-6 ml-auto text-left">
-											<button className="btn btn-primary px-4 py-1" onClick={estimateCalc}>Calculate</button>
+											<button className="btn btn-primary px-4 py-1" disabled={!isEnabled} onClick={estimateCalc}>Calculate</button>
 										</div>
 									</div>
 								</div>
