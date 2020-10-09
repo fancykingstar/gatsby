@@ -6,6 +6,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import Header from './header'
 import Footer from './footer'
 import '../css/layout.css'
+import '/https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap'
 
 const Layout = ({ children }) => {	
 	return (
