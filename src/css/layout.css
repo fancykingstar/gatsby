@@ -497,7 +497,7 @@ body.mobile-nav-active #mobile-nav-toggle { color: #fff }
 .whole-wrap { background-color: #fff }
 .comments-area { background: #fafaff; border: 1px solid #eee; padding: 50px 20px; margin-top: 50px }
 .footer-rightpad{ text-align: center; }
-/* .footer-rightpad .img-block{ max-width:none !important;} */
+.footer-rightpad .img-block{ max-width:163px !important;}
 @media (max-width: 414px) {
     .comments-area { padding: 50px 8px }
 }
