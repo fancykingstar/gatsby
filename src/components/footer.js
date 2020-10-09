@@ -16,7 +16,7 @@ const Footer = () => {
 	// }
 return (
   <footer className="footer-area">
-    <div className="container-fluid">
+    <div className="container">
         <div className="row">
               <div className="custom-col-01 col">
                   <div className="single-footer-widget">
