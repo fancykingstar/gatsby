@@ -94,7 +94,7 @@ return (
               <div className="single-footer-widget footer-rightpad">
                   <img src={fdicLogo} alt="Member FDIC Logo" className="img-fluid mb-3" />
                   {/* <a href="https://www.bbb.org/utah/business-reviews/loans/enerbank-usa-in-salt-lake-city-ut-22001531/#sealclick" target="_blank"><img src={bbbLogo} alt="BBB Ratings Logo" /></a> */}
-                  <button className="border-0 bg-transparent p-0 w-100" onClick={()=> externalUrl('https://www.bbb.org/utah/business-reviews/loans/enerbank-usa-in-salt-lake-city-ut-22001531/#sealclick')}><img src={bbbLogo} alt="BBB Ratings Logo" className="img-block" /></button>
+                  <button className="border-0 bg-transparent p-0" onClick={()=> externalUrl('https://www.bbb.org/utah/business-reviews/loans/enerbank-usa-in-salt-lake-city-ut-22001531/#sealclick')}><img src={bbbLogo} alt="BBB Ratings Logo" className="img-block" /></button>
               </div>
 
               <div className="mediaIcon">
