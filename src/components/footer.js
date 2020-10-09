@@ -17,7 +17,7 @@ const Footer = () => {
 return (
   <footer className="footer-area">
     <div className="container-fluid">
-        <div className="row px-3">
+        <div className="row">
               <div className="custom-col-01 col">
                   <div className="single-footer-widget">
                       <h6>HOMEOWNER</h6>
