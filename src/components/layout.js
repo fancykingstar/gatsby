@@ -5,6 +5,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 
 import Header from './header'
 import Footer from './footer'
+import '../css/fonts.css'
 import '../css/layout.css'
 
 const Layout = ({ children }) => {	
