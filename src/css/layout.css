@@ -1,4 +1,4 @@
-/* @import 'https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap'; */
+@import url('/https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap');
 
 ::-moz-selection { background-color:#29A9E0; color:#fff; }
 ::selection { background-color: #29A9E0; color: #fff; }
