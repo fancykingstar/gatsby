@@ -21,6 +21,7 @@ a:focus,button:focus,input:focus,textarea:focus { outline: none !important; text
 b, strong{ font-weight: 600; }
 ol, ul { margin: 0; padding: 0; list-style: none }
 select { display: block }
+.btn.disabled, .btn:disabled{ opacity: 1; cursor: not-allowed; }
 .btn.active.focus, .btn.active:focus, .btn.focus, 
 .btn.focus:active, .btn:active:focus, .btn:focus { 
   text-decoration: none; outline: 0; border-color: #0077C8 !important; background-color: #0077C8 !important; 
@@ -1063,6 +1064,11 @@ display: flex; align-items: center; justify-content: center; }
 .paymentEstimator .formHeading, .paymentEstimator .formFooter{ background: #0077C8; border-radius: 5px 5px 0 0; padding: 10px; color:#fff; font-size: 28px; font-weight: 500; margin-bottom: 40px; }
 .paymentEstimator label{ font-weight:500; font-size:14px; text-align: right; }
 .paymentEstimator input{border: 2px solid #0077C8; }
+.paymentEstimator input::-webkit-outer-spin-button,
+.paymentEstimator input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
 .paymentEstimator .formMiddle{ padding: 0 40px; }
 .paymentEstimator .formFooter{ border-radius: 0; font-size:20px; text-align: left; margin: 0; padding: 10px 35px; }
 .estimatorForm p{ margin: 20px 0 15px; font-size: 9px; line-height: 10px; letter-spacing: 0px; }

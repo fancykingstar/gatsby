@@ -112,6 +112,44 @@ exports.createPages = async ({ graphql, actions }) => {
             break;
       }}
   });
+
+  /** Create Blog Posts **/
+  const blogPostResults = await graphql(`
+    query GET_POSTS {
+        wpgraphql {
+            posts(first: 1000, after: null) {
+                edges {
+                    node {
+                        databaseId
+                        slug
+                        title
+                        date
+                        content(format: RENDERED)
+                        featuredImage {
+                            altText
+                            link
+                            mediaItemUrl
+                            uri
+                        }
+                    }
+                }
+            }
+        }
+    }
+  `);
+
+  // console.log(blogPostResults.data.wpgraphql.posts)
+
+  blogPostResults.data.wpgraphql.posts.edges.forEach(({ node }) => {
+    createPage({
+      path: node.slug,
+      component: path.resolve(`./src/templates/blog-template.js`),
+      context: {
+        slug: node.slug,
+        databaseId: node.databaseId,
+      },
+    })
+  });
   
   
   /**  Create Category Pages  */

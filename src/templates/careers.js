@@ -1,9 +1,8 @@
 import React, {useRef} from "react";
 // import lifecycle from 'react-pure-lifecycle';
 import Helmet from "react-helmet"
-import { withPrefix } from "gatsby"
 
-import { graphql } from "gatsby";
+import { graphql, withPrefix, Link } from "gatsby";
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import Video from "../components/video";
@@ -47,9 +46,19 @@ const CareerPage = ({data, props}) => {
             <Helmet>
                 <script src={withPrefix('script.js')} type="text/javascript" name="hirebridge-script" />
             </Helmet>
-            <div id="hrbr-widget">&nbsp;</div>
+            <div id="hrbr-widget">&nbsp;</div>            
           </div>
       </section>
+
+      {/*data.wpgraphql.posts.edges.map(item => {
+        console.log(item)
+        return(
+          <div key={item.node.id}>
+            <Link to={item.node.slug}>{item.node.title}</Link>
+          </div>
+        )
+      })*/}
+
     </Layout>
   )
  }
@@ -124,6 +133,16 @@ export const query = graphql`
                 }
               }
             }
+          }
+        }
+      }
+
+      posts {
+        edges {
+          node {
+            id
+            title
+            slug
           }
         }
       }

@@ -3,10 +3,10 @@ import { Modal } from 'react-bootstrap';
 
 const PaymentEstimator = (props) => {
 
-	const [loanAmount, setLoanAmount] = useState(0);
-	const [totalYears, setTotalYears] = useState(0);
-	const [interestRate, setInterestRate] = useState(0);
-	const [monthlyPayment, setMonthlyPayment] = useState(0);
+	const [loanAmount, setLoanAmount] = useState();
+	const [totalYears, setTotalYears] = useState();
+	const [interestRate, setInterestRate] = useState();
+	const [monthlyPayment, setMonthlyPayment] = useState();
 	const isEnabled = loanAmount > 0 && totalYears > 0 && interestRate > 0
 
 	const handleInput = (evt) => {
@@ -48,19 +48,19 @@ const PaymentEstimator = (props) => {
 									<div className="form-group row">
 										<label htmlFor="staticEmail" className="col-sm-6 col-form-label">Total Loan Amount</label>
 										<div className="col-sm-6"> {/* (e)=> setLoanAmount(e.target.value) */}
-											<input type="text" className="form-control" name="loanAmount" id="loanAmount" value={loanAmount} onChange={handleInput} />
+											<input type="number" className="form-control" name="loanAmount" id="loanAmount" placeholder="0" value={loanAmount} onChange={handleInput} />
 										</div>
 									</div>
 									<div className="form-group row">
 										<label htmlFor="inputPassword" className="col-sm-6 col-form-label">Total Number of Years</label>
 										<div className="col-sm-6"> {/* (e)=> setTotalYears(e.target.value) */}
-											<input type="text" className="form-control" name="totalYears" id="noOfYears" value={totalYears} onChange={handleInput} />
+											<input type="number" className="form-control" name="totalYears" id="noOfYears" placeholder="0" value={totalYears} onChange={handleInput} />
 										</div>
 									</div>
 									<div className="form-group row">
 										<label htmlFor="inputPassword" className="col-sm-6 col-form-label">Interest Rate %(APR)</label>
 										<div className="col-sm-6"> {/* (e)=> setInterestRate(e.target.value) */}
-											<input type="text" className="form-control" name="interestRate" id="interestRate" value={interestRate} onChange={handleInput} />
+											<input type="number" className="form-control" name="interestRate" id="interestRate" placeholder="0" value={interestRate} onChange={handleInput} />
 										</div>
 									</div>
 									<div className="form-group row">
