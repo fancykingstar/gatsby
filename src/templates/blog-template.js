@@ -1,5 +1,5 @@
 import React from "react"
-import { graphql } from "gatsby"
+import { graphql, Link } from "gatsby"
 import moment from 'moment';
 
 import Layout from "../components/layout"
@@ -81,33 +81,27 @@ const BlogPage = ({data}) => {
                     <button type="submit" className="btn btn-outline-light px-5">Submit</button>
                   </form>
                   <h3 className="mt-5 mb-4">Recent Posts</h3>
-                  <div className="row mb-3">
-                    <div className="col-4">
-                      <img src={post1} alt="post image 1" />
-                    </div>
-                    <div className="col-8">
-                      <h4 className="text-blue">Online Reviews: <br />What You Need to Know</h4>
-                    </div>
-                  </div>
-                  <hr className="my-4" />
-                  <div className="row mb-3">
-                    <div className="col-4">
-                      <img src={post2} alt="post image 2" />
-                    </div>
-                    <div className="col-8">
-                      <h4 className="text-blue">7 Tips for Improving the Customer Experience</h4>
-                    </div>
-                  </div>
-                  <hr className="my-4" />
-                  <div className="row mb-3">
-                    <div className="col-4">
-                      <img src={post3} alt="post image 3" />
-                    </div>
-                    <div className="col-8">
-                      <h4 className="text-blue">EnerBank USA Opens 2nd Call Center in Utah to Facilitate Growth of $1 Billion Bank</h4>
-                    </div>
-                  </div>
-                  <hr className="my-4" />
+                  {
+                    data.wpgraphql.posts.edges.sort( (a, b) => b.node.date - a.node.date ).map((item, i) => 
+                      {
+                        // console.log()
+                        if(i < 3){
+                          return(
+                            <div key={item.node.id}>
+                              <div className="row mb-3">
+                                <div className="col-4">
+                                  {item.node.featuredImage ? <img src={item.node.featuredImage.sourceUrl} alt="post image 1" /> : ''}
+                                </div>
+                                <div className="col-8">
+                                  <h4 className="text-blue"><Link to={item.node.slug}>{item.node.title}</Link></h4>
+                                </div>                              
+                              </div>
+                              <hr className="my-4" />
+                            </div>
+                          )
+                        }
+                      })
+                  }
                 </div>              
               </div>
           </div>
@@ -133,6 +127,21 @@ export const query = graphql`
           slug
         }
       }
+
+      posts(first: 1000) {
+        edges {
+          node {
+            id
+            title
+            slug
+            date
+            featuredImage {
+              sourceUrl
+            }
+          }
+        }
+      }
+
     }
   }
 `
