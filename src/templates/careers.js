@@ -49,16 +49,18 @@ const CareerPage = ({data, props}) => {
             <div id="hrbr-widget">&nbsp;</div>            
           </div>
       </section>
+      
+      
       {
-        console.log(data.wpgraphql.posts)
+        data.wpgraphql.posts.edges.sort( (a, b) => b.node.date - a.node.date ).map(item => 
+          {
+            return(
+                <div key={item.node.id}>
+                  <Link to={item.node.slug}>{item.node.title}</Link>
+                </div>
+              )
+          })
       }
-      {data.wpgraphql.posts.edges.map(item => {
-        return(
-          <div key={item.node.id}>
-            <Link to={item.node.slug}>{item.node.title}</Link>
-          </div>
-        )
-      })}
 
     </Layout>
   )
@@ -144,6 +146,7 @@ export const query = graphql`
             id
             title
             slug
+            date
           }
         }
       }
