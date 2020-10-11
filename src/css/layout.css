@@ -1155,3 +1155,10 @@ display: flex; align-items: center; justify-content: center; }
 @media (max-width:576px){
   .loantype, .training, .whatsinit, .whatsinitdealers{ max-width: 100%; margin: 15px !important; }
 }
+.blogpost{ line-height: 28px; }
+.blogpost p img{ margin-top: 30px; margin-bottom: 30px; }
+.blogpost form label{ margin-bottom: 5px; line-height: normal; font-size: 16px; }
+.blogpost form p{ line-height: normal; }
+.blogpost .formtop input, .blogpost .formtop button{ border-color: #0077C8 !important; }
+.blogpost .formtop button{ color: #444444; font-size: 20px; padding: 0px 7px; }
+.blogpost .formtop button:focus{ background-color: transparent !important; }
