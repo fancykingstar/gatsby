@@ -49,15 +49,16 @@ const CareerPage = ({data, props}) => {
             <div id="hrbr-widget">&nbsp;</div>            
           </div>
       </section>
-
-      {/*data.wpgraphql.posts.edges.map(item => {
-        console.log(item)
+      {
+        console.log(data.wpgraphql.posts)
+      }
+      {data.wpgraphql.posts.edges.map(item => {
         return(
           <div key={item.node.id}>
             <Link to={item.node.slug}>{item.node.title}</Link>
           </div>
         )
-      })*/}
+      })}
 
     </Layout>
   )
@@ -137,7 +138,7 @@ export const query = graphql`
         }
       }
 
-      posts {
+      posts(first: 1000) {
         edges {
           node {
             id
