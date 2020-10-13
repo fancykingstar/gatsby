@@ -18,8 +18,8 @@ const CareerPage = ({data}) => {
             (() => {
               const sortPost = data.wpgraphql.posts.edges.sort( (a, b) => b.node.date - a.node.date )
               return sortPost.map((item, i) => {
-                if(i < 1000){
-                  i = i + 10
+                // if(i < 1000){
+                //   i = i + 10
                   return(
                     <div key={item.node.id}>
                       <div className="row">
@@ -35,7 +35,7 @@ const CareerPage = ({data}) => {
                       <hr className="my-5" />
                     </div>
                   )
-                }
+                // }
               })
             })()            
           }
