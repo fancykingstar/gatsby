@@ -1,6 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { StaticQuery, graphql } from 'gatsby'
+// import Helmet from "react-helmet"
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 import Header from './header'
@@ -9,6 +10,7 @@ import '../css/fonts.css'
 import '../css/layout.css'
 
 const Layout = ({ children }) => {	
+	const font = '<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet" >';
 	return (
 		<StaticQuery 
 			query={
@@ -25,7 +27,11 @@ const Layout = ({ children }) => {
 			render={data => (
 				<>
 					<Header siteTitle={data.site.siteMetadata.title} />
-					{children}
+						{/* <Helmet>
+							<script src={withPrefix('script.js')} type="text/javascript" name="hirebridge-script" />
+						</Helmet> */}
+						<div dangerouslySetInnerHTML={{__html: font}} />
+						{children}
 					<Footer />
 				</>
 			)}

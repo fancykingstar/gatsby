@@ -84,13 +84,12 @@ const BlogPage = ({data}) => {
                   {
                     data.wpgraphql.posts.edges.sort( (a, b) => b.node.date - a.node.date ).map((item, i) => 
                       {
-                        // console.log()
                         if(i < 3){
                           return(
                             <div key={item.node.id}>
                               <div className="row mb-3">
                                 <div className="col-4">
-                                  {item.node.featuredImage ? <img src={item.node.featuredImage.sourceUrl} alt="post image 1" /> : ''}
+                                  {item.node.featuredImage ? <img src={item.node.featuredImage.sourceUrl} alt="item.node.featuredImage.altText" /> : ''}
                                 </div>
                                 <div className="col-8">
                                   <h4 className="text-blue"><Link to={item.node.slug}>{item.node.title}</Link></h4>
@@ -136,6 +135,7 @@ export const query = graphql`
             slug
             date
             featuredImage {
+              altText
               sourceUrl
             }
           }

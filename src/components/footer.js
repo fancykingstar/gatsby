@@ -48,7 +48,7 @@ return (
                           <li><a href="/about#communityinvolvement">Community Involvement</a></li>
                           <li><a href="/about#boardofdirectors">Board of Directors</a></li>
                           <li><a href="/about#feedback">Feedback</a></li>
-                          <li><a href="/">Blog</a></li>
+                          <li><a href="/blog">Blog</a></li>
                       </ul>											
                   </div>
               </div>
