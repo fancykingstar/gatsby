@@ -26,7 +26,7 @@ const CareerPage = ({data}) => {
                       </div>
                       <div className="col-9">
                         <h3 className="text-blue mb-2"><Link to={item.node.slug}>{item.node.title}</Link></h3>
-                        <p>{item.node.excerpt}</p>
+                        <div  dangerouslySetInnerHTML={{__html: item.node.excerpt}} />
                         <Link to={item.node.slug} className="btn-link p-0">Read More</Link>
                       </div>                              
                     </div>
