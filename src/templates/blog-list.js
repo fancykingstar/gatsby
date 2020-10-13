@@ -15,29 +15,26 @@ const CareerPage = ({data}) => {
         <h1 className="mt-4 mb-10 text-center mb-5"><span>Blog </span></h1>
         <div className="container">
           {
-            (() => {
-              const sortPost = data.wpgraphql.posts.edges.sort( (a, b) => b.node.date - a.node.date )
-              return sortPost.map((item, i) => {
-                // if(i < 1000){
-                //   i = i + 10
-                  return(
-                    <div key={item.node.id}>
-                      <div className="row">
-                        <div className="col-3">
-                          {item.node.featuredImage ? <img src={item.node.featuredImage.sourceUrl} alt="item.node.featuredImage.altText" /> : ''}
-                        </div>
-                        <div className="col-9">
-                          <h3 className="text-blue mb-2"><Link to={item.node.slug}>{item.node.title}</Link></h3>
-                          <p  dangerouslySetInnerHTML={{__html: item.node.excerpt}} />
-                          <Link to={item.node.slug} className="btn-link p-0">Read More</Link>
-                        </div>                              
+            data.wpgraphql.posts.edges.sort( (a, b) => b.node.date - a.node.date ).map((item, i) => {
+              // if(i < 1000){
+              //   i = i + 10
+                return(
+                  <div key={item.node.id}>
+                    <div className="row">
+                      <div className="col-3">
+                        {item.node.featuredImage ? <img src={item.node.featuredImage.sourceUrl} alt="item.node.featuredImage.altText" /> : ''}
                       </div>
-                      <hr className="my-5" />
+                      <div className="col-9">
+                        <h3 className="text-blue mb-2"><Link to={item.node.slug}>{item.node.title}</Link></h3>
+                        <p  dangerouslySetInnerHTML={{__html: item.node.excerpt}} />
+                        <Link to={item.node.slug} className="btn-link p-0">Read More</Link>
+                      </div>                              
                     </div>
-                  )
-                // }
-              })
-            })()            
+                    <hr className="my-5" />
+                  </div>
+                )
+              // }
+            })
           }
           
           {/* <Pagination records_per_page={10} objLength={data.wpgraphql.posts.edges.length} currentPage={1} /> */}
