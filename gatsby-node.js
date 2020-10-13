@@ -29,7 +29,8 @@ exports.createPages = async ({ graphql, actions }) => {
   `);
 
   pageResults.data.wpgraphql.pages.edges.forEach(({ node }) => {
-      { switch (node.slug) {
+      { 
+        switch (node.slug) {
           case "homeowner":
                 createPage({
                   path: "homeowner",
@@ -110,14 +111,24 @@ exports.createPages = async ({ graphql, actions }) => {
                   },
                 })
             break;
-      }}
+        }
+        
+        createPage({
+          path: "blog",
+          component: path.resolve(`./src/templates/blog-list.js`),
+          context: {
+            slug: node.slug,
+            databaseId: node.databaseId,
+          },
+        })
+      }
   });
 
   /** Create Blog Posts **/
   const blogPostResults = await graphql(`
     query GET_POSTS {
         wpgraphql {
-            posts(first: 1000, after: null) {
+            posts {
                 edges {
                     node {
                         databaseId
