@@ -9,7 +9,7 @@ const AppMethod = (props) => {
 					<button type="button" className="close text-white" data-dismiss="modal" aria-label="Close" onClick={props.handleClose}>
 						<img src="http://devgb.enerbank.com/wp-content/themes/enerbank/img/closed_icon.svg" width="25" alt="close icon" />
 					</button>
-					<h3>Application Methods</h3>
+					<h3 className="h2 font-weight-bold">Application Methods</h3>
 				</div>
 				<div className="modal_content">
 					{props.popData.innerpagebanner.pagebanner.bannner && (

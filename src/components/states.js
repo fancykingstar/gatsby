@@ -9,7 +9,7 @@ const States = (props) => {
 					<button type="button" className="close text-white" data-dismiss="modal" aria-label="Close" onClick={props.handleClose}>
 						<img src="http://devgb.enerbank.com/wp-content/themes/enerbank/img/closed_icon.svg" width="25" alt="close icon" />
 					</button>
-					<h3>All 50 States</h3>
+					<h3 className="h2 font-weight-bold">All 50 States</h3>
 				</div>
 				<div className="modal_content p-5 py-sm-5">
 					<div className="small line-height-normal" style={{'lineHeight': '22px'}} dangerouslySetInnerHTML={{__html:props.popData.content}} />
