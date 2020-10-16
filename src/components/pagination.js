@@ -1,7 +1,8 @@
 import React from "react"
-import { useStaticQuery, graphql } from "gatsby"
+import { Link } from "gatsby"
 
 const Pagination = (props) => {
+  console.log(props)
   let current_page = props.current_page;
   const records_per_page = props.records_per_page;
 
@@ -31,9 +32,9 @@ const Pagination = (props) => {
         changePage(current_page);
     }
   }
-    
+  
   const changePage = (page) => {
-    // console.log(page)
+    console.log(page)
     // var btn_next = document.getElementById("btn_next");
     // var btn_prev = document.getElementById("btn_prev");
     // var listing_table = document.getElementById("listingTable");
@@ -65,20 +66,23 @@ const Pagination = (props) => {
   const numPages = () => {
     return Math.ceil( props.objLength / records_per_page );
   }
-  let pageArray = new Array(numPages())
+  
   return (
     <div>
       <button onClick={prevPage}>Prev</button>
-      <span>
-          {
-            pageArray.forEach((item, i) => {
-              return <li>{'hi'}</li>
-            })
+      { 
+        (() => {
+          let no = ''
+          for(let i = 1; i <= numPages(); i++){
+              no += "<li onClick={changePage(" + i + ")}>" + i + "</li>"
           }
-      </span>
+        return <ul dangerouslySetInnerHTML={{__html: no}} />
+        })()
+      }
       <button onClick={nextPage}>Next</button>
     </div>
   )
+  
 }
 
 export default Pagination

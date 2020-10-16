@@ -24,6 +24,7 @@ import CustomizedLaunchPlan from "../components/customizedLaunchPlan"
 import WhatsInItForYou from "../components/whatsinitforyou"
 import WhatsInItForYourDealers from "../components/whatsinitforyourdealers"
 import pdffile from "../images/pdf.svg"
+import { any } from "prop-types";
 
 const LoanProgramPage = ({ data }) => {
 	const content = data.wpgraphql.page;
@@ -41,7 +42,7 @@ const LoanProgramPage = ({ data }) => {
 
 	const hidebenefitpopup = () => {
 		setVisible(false);
-	}
+	}	
 	
 	const popup = () => {
 		switch(popType){
@@ -63,10 +64,10 @@ const LoanProgramPage = ({ data }) => {
 			case "loan-types":
 				return <LoanType visiblity={visible} handleClose={hidebenefitpopup} popData={popData} />;
 				break;
-			case "all-50-states":
+			case "nationwide-presence":
 				return <States visiblity={visible} handleClose={hidebenefitpopup} popData={popData} />;
 				break;
-			case "support":
+			case "unparalleled-support":
 				return <Support visiblity={visible} handleClose={hidebenefitpopup} popData={popData} />;
 				break;
 			case "benefitsLoanProgram":
@@ -81,7 +82,7 @@ const LoanProgramPage = ({ data }) => {
 			case "customized-payment-options-program":
 				return <CustomizedPaymentOptionsProgram visiblity={visible} handleClose={hidebenefitpopup} popData={popData} />;
 				break
-			case "customized-launch-plan":
+			case "customized-launch-plan-and-support":
 				return <CustomizedLaunchPlan visiblity={visible} handleClose={hidebenefitpopup} popData={popData} />;
 				break
 			case "tools-help-your-program":
@@ -107,6 +108,8 @@ const LoanProgramPage = ({ data }) => {
 	const onlineApp = []
 	const rightChoice = []
 	const createProgram = []
+	let viewLoanProviderPDF = any
+	let viewLoanPartnerPDF = ''
 
 	return (
 		<Layout>
@@ -131,23 +134,24 @@ const LoanProgramPage = ({ data }) => {
 				</section>
 			)}
 
-			<section className="container px-md-5">
-				<div className="p-md-5 pb-0 payment-program" dangerouslySetInnerHTML={{__html:content.content}} />
-			</section>
+			<section className="container">
+				<div className="row">
+					<div className="mx-auto col-12 col-md-11 py-md-5 mt-md-4 mb-md-3">
+						<div className="payment-program" dangerouslySetInnerHTML={{__html:content.content}} />
+					</div>
+				</div>
 
-			<section className="video-section">
-				<div className="container">
-					<div className="row">
-					<div className="m-auto col-md-10">
+				<div className="row video-section">
+					<div className="m-auto col-12 col-md-11">
 						<Video videoSrcURL="https://www.youtube.com/embed/PKnMxIz4FWw?byline=0&title=0" videoTitle="EnerBank Atmospheric Video" videoWidth="100%" videoHeight="500" />
 						<p className="text-center font-weight-bold mt-2 mb-4">WATCH: Discover the key to unlocking business growth</p>
 					</div>      
-					</div>
 				</div>
 			</section>
+			
 			{content.loan_program.paymentOptionsBenefits.paymentOptionHeading && (
-				<div className="bg-blue" id="paymentoptbenefits">
-					<h2 className="container text-center py-4 h2 text-white">
+				<div className="bg-blue mt-5" id="paymentoptbenefits">
+					<h2 className="text-center py-4 h1 f-bold text-white">
 						{content.loan_program.paymentOptionsBenefits.paymentOptionHeading}
 					</h2>
 				</div>
@@ -155,13 +159,15 @@ const LoanProgramPage = ({ data }) => {
 
 			<div className="container">
 				{content.loan_program.paymentOptionsBenefits.paymentOptionBrif && (
-					<div className="row justify-content-center">
-						<div className="m-3 m-lg-5 pb-3" dangerouslySetInnerHTML={{ __html: content.loan_program.paymentOptionsBenefits.paymentOptionBrif }} />
+					<div className="row">
+						<div className="mx-auto col-12 col-md-11 my-3 my-lg-5 py-3">
+							<div dangerouslySetInnerHTML={{ __html: content.loan_program.paymentOptionsBenefits.paymentOptionBrif }} />
+						</div>
 					</div>
 				)}
 				{content.loan_program.paymentOptionsBenefits.paymentOptions && (
-					<div className="payment-option">
-						<ul>
+					<div className="payment-option row">
+						<ul className="col-12 px-3">
 							{content.loan_program.paymentOptionsBenefits.paymentOptions.map((item, i) =>
 								(
 									<li key={item.fieldGroupName + i}>
@@ -179,11 +185,11 @@ const LoanProgramPage = ({ data }) => {
 				)}
 
 				{content.loan_program.offeringPaymentOption && (
-					<div className="my-3 my-md-5 row">
+					<div className="my-3 my-md-5 py-4 row">
 						{content.loan_program.offeringPaymentOption.map((item, i) => (
 							(i === 0) 
 								?
-									<div key={item.fieldGroupName + i} className="box-shadow bg-white rounded text-center payment-option-box col-xs-12 col-md p-0 mb-3 mx-sm-3 mx-lg-5">
+									<div key={item.fieldGroupName + i} className="box-shadow bg-white rounded text-center col-12 col-md-6 p-0 mb-3 mx-auto">
 										<Link to={'/'} onClick={showbenefitpopup(item, 'growthCalc')}>
 											<div className="bg-blue p-5 rounded-top">
 												<img className="img-fluid" src={item.offeringPaymentIcon.sourceUrl} alt="Growth Calculator icon" />
@@ -213,36 +219,36 @@ const LoanProgramPage = ({ data }) => {
 				<section className="joinLoanProgram" id="joinloanprogram">
 					{content.loan_program.joinLoanProgram.loanProgramMethodHeading && (
 						<div className="bg-blue">
-							<h3 className="container text-center py-4 h2 text-white">
+							<h3 className="text-center py-4 h1 f-bold text-white">
 								{content.loan_program.joinLoanProgram.loanProgramMethodHeading}
 							</h3>
 						</div>
 					)}
 					<div className="container">						
-						<div className="brif" dangerouslySetInnerHTML={{ __html: content.loan_program.joinLoanProgram.loanProgramIntro }} />
-						<div className="text-center pb-4">
+						<div className="row pb-4">
+							<h3 className="mx-auto col-12 col-md-11 my-5 pt-md-3" dangerouslySetInnerHTML={{ __html: content.loan_program.joinLoanProgram.loanProgramIntro }} />
 							<Link to={'/'} className="m-auto px-5 btn btn-primary">Join Now</Link>
 						</div>
-						<h3 className="text-center color-blue border-heading mt-5 h2"><span>{content.loan_program.joinLoanProgram.sectionTitle}</span></h3>
+						<h3 className="h2 text-center f-bold color-blue border-heading mt-5 mb-3"><span>{content.loan_program.joinLoanProgram.sectionTitle}</span></h3>
 						{content.loan_program.joinLoanProgram.loanProgramMethods && (
 							<div className="row mt-4 mb-5 justify-content-center">
-								{data.wpgraphql.categories.edges.map(cate => (
-									(cate.node.slug === "loanprogramemethods") && (
-										cate.node.posts.edges.map(post => {
+								{data.wpgraphql.popupplural.edges.map(cate => {
+									(cate.node.slug === "loanprogrammethods") && (
+										cate.node.popupPost.edges.map(post => {
 											content.loan_program.joinLoanProgram.loanProgramMethods.map((item, i) => 
 												(item.popSlug === post.node.slug) && (programMethod[i] = post.node)
 											)
 										})
 									)
-								))}
+								})}
 								
 								{content.loan_program.joinLoanProgram.loanProgramMethods.map((item, i) => (
 									<div className="col-md-6 col-lg-4 mb-4 mb-lg-0 justify-content-center" key={item.fieldGroupName + i}>
-										<div className="card wygbox box-shadow">
+										<div className="card wygbox box-shadow loan-program-method">
 											<style dangerouslySetInnerHTML={{
 												__html: [
 													'.'+item.popSlug+':after {',
-														'background: rgba(77, 77, 77, 0.6) url(' + item.programMethodIcon.sourceUrl + ') no-repeat center',
+														'background: rgba(77, 77, 77, 0.3) url(' + item.programMethodIcon.sourceUrl + ') no-repeat center',
 													'}'
 												].join('\n')
 											}}></style>
@@ -251,8 +257,8 @@ const LoanProgramPage = ({ data }) => {
 											</div>
 											<div className="card-body">
 												<h3 className="card-title" dangerouslySetInnerHTML={{ __html: item.programMethodTitle }} />
-												<p className="card-text" dangerouslySetInnerHTML={{ __html: item.programMethodBrif }} />
-												<button className="btn mt-3" onClick={showbenefitpopup(programMethod[i], item.popSlug)}>Learn More</button>
+												<p className="card-text mb-3" dangerouslySetInnerHTML={{ __html: item.programMethodBrif }} />
+												<button className="btn-link text-lg mt-auto" onClick={showbenefitpopup(programMethod[i], item.popSlug)}>Learn More</button>
 											</div>
 										</div>
 									</div>
@@ -267,8 +273,8 @@ const LoanProgramPage = ({ data }) => {
 				<>
 					<div className="container pt-1">
 						{content.loan_program.onlineAppIntegration.appIntegrationBrif && (
-							<div className="mt-5 py-3 px-4 px-lg-5 box-shadow">
-								<h3 className="h1 text-blue text-center mb-4 font-weight-normal">{content.loan_program.onlineAppIntegration.appIntegrationHeading}</h3>
+							<div className="mt-5 pt-4 pb-3 px-4 px-lg-5 box-shadow">
+								<h3 className="h2 text-blue f-bold text-center mb-4 ">{content.loan_program.onlineAppIntegration.appIntegrationHeading}</h3>
 								<p dangerouslySetInnerHTML={{__html: content.loan_program.onlineAppIntegration.appIntegrationBrif}} />
 							</div>
 						)}
@@ -281,34 +287,27 @@ const LoanProgramPage = ({ data }) => {
 
 						{content.loan_program.onlineAppIntegration.appIntegrationOption && (
 							<div className="row flex-wrap pt-5">
-								{data.wpgraphql.categories.edges.map(cate => (
+								{data.wpgraphql.popupplural.edges.map(cate => {
 									(cate.node.slug === "appintegrationoptions") && (
-										cate.node.posts.edges.map((post) => {
+										cate.node.popupPost.edges.map((post) => {
 											content.loan_program.onlineAppIntegration.appIntegrationOption.map((item, i) => 
 												(item.popSlug === post.node.slug) && (onlineApp[i] = post.node)
 											)
 										})
 									)
-								))}
+								})}
 
 								{content.loan_program.onlineAppIntegration.appIntegrationOption.map((item, i) => {
 									const appIntOpt = ['loantype', 'training']
 									return(
 										<div key={item.fieldGroupName + i} className={'card box-shadow bg-white rounded text-center payment-option-box col-12 col-md-6 mb-3 mb-lg-0 p-0 ml-md-3 ml-lg-5 ' + appIntOpt[i]}>
-											{/* <style dangerouslySetInnerHTML={{
-												__html: [
-													'.'+appIntOpt[i]+':after {',
-														'background: rgba(77, 77, 77, 0.6) url(' + item.integrationOptionIcon.sourceUrl + ') no-repeat center',
-													'}'
-												].join('\n')
-											}}></style> */}
 											<div className="wygthumb">
 												<img src={item.integrationOptionBgImage.sourceUrl} className="card-img-top" alt={item.integrationOptionBgImage.altText} />
 											</div>
 											<div className="p-4 card-body">
 												<h3 className="mb-10" dangerouslySetInnerHTML={{__html: item.integrationOptionHeading}} />
-												<p className="card-text" dangerouslySetInnerHTML={{ __html: item.integrationOptionBrif }} />
-												<button className="btn-link align-items-end" onClick={showbenefitpopup(onlineApp[i], item.popSlug)}>Learn More</button>
+												<p className="card-text mb-3" dangerouslySetInnerHTML={{ __html: item.integrationOptionBrif }} />
+												<button className="btn-link text-lg mt-auto" onClick={showbenefitpopup(onlineApp[i], item.popSlug)}>Learn More</button>
 											</div>
 										</div>
 									)
@@ -321,56 +320,64 @@ const LoanProgramPage = ({ data }) => {
 
 			{content.loan_program && (
 				<div className="container">					
-					<div className="p-md-5 pb-0 mt-4 payment-program">
-						<h3 className="mb-2 text-center">What’s Your Specialty? We’ve Got Loans for Whatever You Do!</h3>
-						<p>We offer loans for a ton of different home improvement project types. From the foundation all the way up to the roof — inside, outside, large or small — our loans are tailored to meet virtually any home improvement need. Contact us to discover which loans will best suit your business model.</p>
-					</div>
-					<div className="text-center mt-5 pb-5"><a className="m-auto px-5 btn btn-primary" href="/">Contact Us</a></div>
-					<div className="p-md-5 pb-0 mb-5 payment-program">					
-						<h3 className="text-center mb-2">Our Contractor Support is Second to None</h3>
-						<p>We built our whole business around working with home improvement contractors across the nation. Because we only do home improvement loans, we can provide specialized and unparalleled service, starting with your dedicated relationship manager.</p>
+					<div className="row">
+						<div className="mx-auto col-12 col-md-11">
+							<div className="mt-5 py-md-4 pb-0 payment-program">
+								<h3 className="h2 text-center f-bold mb-3">What’s Your Specialty? We’ve Got Loans for Whatever You Do!</h3>
+								<p>We offer loans for a ton of different home improvement project types. From the foundation all the way up to the roof — inside, outside, large or small — our loans are tailored to meet virtually any home improvement need. Contact us to discover which loans will best suit your business model.</p>
+							</div>
+							<div className="text-center mt-5 pb-5"><a className="m-auto px-5 btn btn-primary" href="/">Contact Us</a></div>
+							<div className="py-md-5 pb-0 mb-5 payment-program">
+								<h3 className="h2 text-center f-bold mb-3">Our Contractor Support is Second to None</h3>
+								<p>We built our whole business around working with home improvement contractors across the nation. Because we only do home improvement loans, we can provide specialized and unparalleled service, starting with your dedicated relationship manager.</p>
+							</div>
+						</div>
 					</div>
 
-					<div className="row justify-content-center">
-					
-						{data.wpgraphql.categories.edges.map((cate) => (
-							(cate.node.slug === "loanservices") && (
-								cate.node.posts.edges.map((post) => {
-									content.loan_program.loanServices.map((item, i) =>
-										(item.popSlug === post.node.slug) && (
-											services[i] = post.node
+					<div className="row justify-content-center pt-4">
+						{data.wpgraphql.popupplural.edges.map((cate) => {
+							return(
+								(cate.node.slug === "loanservices") && (
+									cate.node.popupPost.edges.map((post) => {
+										content.loan_program.loanServices.map((item, i) => 
+											(item.popSlug === post.node.slug) && (
+												services[i] = post.node
+											)
 										)
-									)
-								}
-							))
-						))}
-						{content.loan_program.loanServices.map((item, i) => (
-							<div className="col-md-6 col-lg-4 mb-4 mb-lg-0" key={item.fieldGroupName+i}>
-								<div className="single-offer card-body">
-									<i className="icon_circil">
-										<img className="img-fluid" src={item.serviceIcon.sourceUrl} alt="News" />
-									</i>
-									<h4>{item.serviceHeading}</h4>
-									<p>{item.serviceText}</p>
-									<Link to={'/'} onClick={showbenefitpopup(services[i], item.popSlug)} className="btn btn-primary f-bold">Learn More</Link>
+									}
+								))
+							)
+						})}
+						{content.loan_program.loanServices.map((item, i) => {
+							return(
+								<div className="col-md-6 col-lg-4 mb-4 mb-lg-0" key={item.fieldGroupName+i}>
+									<div className="single-offer card-body rounded">
+										<i className="icon_circil">
+											<img className="img-fluid" src={item.serviceIcon.sourceUrl} alt="News" />
+										</i>
+										<h4>{item.serviceHeading}</h4>
+										<p>{item.serviceText}</p>
+										<Link to={'/'} onClick={showbenefitpopup(services[i], item.popSlug)} className="btn btn-primary f-bold">Learn More</Link>
+									</div>
 								</div>
-							</div>
-						))}
+							)
+						})}
 					</div>
 
 					<div className="p-4 m-lg-5">
-						<h3 className="text-center">{content.loan_program.loanProvider.sectionHeading}</h3>
+						<h3 className="h2 text-center">{content.loan_program.loanProvider.sectionHeading}</h3>
 						<p className="text-center py-2">{content.loan_program.loanProvider.sectionBrif}</p>
-						<div className="d-flex justify-content-center howselectloan">							
-							{data.wpgraphql.categories.edges.map((cate) => {
-								return((cate.node.slug === "selectlaonprogram") && (
-									cate.node.posts.edges.map((post) => {
-										return((post.node.slug === "select-loan-provider-question") && (
-											<button className="btn-link" key={post.node.id} onClick={showbenefitpopup(post.node, 'viewFile')}>VIEW</button>
-										))
+						<div className="d-flex justify-content-center howselectloan">
+							{data.wpgraphql.popupplural.edges.map((cate) => {
+								(cate.node.slug === "selectloanprogram") && (
+									cate.node.popupPost.edges.map((post) => {
+										(post.node.slug === "select-loan-provider-question") && (
+											viewLoanProviderPDF = post.node
+										)
 									})
-								))
+								)
 							})}
+							<button className="btn-link" onClick={showbenefitpopup(viewLoanProviderPDF, 'viewFile')}>VIEW</button>
 							<div className="display-inline-block box-20" dangerouslySetInnerHTML={{__html: content.loan_program.loanProvider.yearBlock}} />    
 							<button className="pdffile" onClick={() => DownloadFile(content.loan_program.loanProvider.downloadDoc.mediaItemUrl)}><img src={pdffile} alt="download PDF file icon" /> PDF</button>
 						</div>
@@ -379,123 +386,121 @@ const LoanProgramPage = ({ data }) => {
 			)}
 
 			<div className="bg-blue mt-5" id="createloanprogram">
-				<h3 className="container text-center py-4 h2 text-white">{content.loan_program.createLoanOption.sectionHeading}</h3>
+				<h3 className="text-center py-4 h1 f-bold text-white">{content.loan_program.createLoanOption.sectionHeading}</h3>
 			</div>
 
-			{/* <div className="createLoanProgram"> */}
-				<div className="container">
-					<div className="py-5 px-md-5 pb-0 mb-5 payment-program">					
-						<h3 className="text-center mb-2">What’s a Loan Program?</h3>
-						<p>At its core, a payment options program is a way for you and your authorized dealers to achieve sales goals and overcome sales-related challenges. Your customized, private-label loan program is designed to achieve your organization’s goals while building brand recognition.</p>
-					</div>
-
-					<div className="p-md-5 pb-0 mb-5 payment-program">					
-						<h3 className="text-center mb-2">Who Should Create a Loan Program?</h3>
-						<p>If your organization works with a network of contractors, installers, dealers, or other authorized clients who work in the home improvement business, you should create a loan program. It’s a smart and easy way to boost your growth and gain brand loyalty.</p>
-					</div>
-					
-					
-					{/* <div dangerouslySetInnerHTML={{__html: content.loan_program.createLoanOption.sectionBrif}}></div> */}
-					<h3 className="mb-2 text-center">Why Should You Create a Loan Program?</h3>
-					<div className="row flex-wrap my-4 my-lg-5">						
-						{data.wpgraphql.categories.edges.map((cate) => {
-							(cate.node.slug === "createloanprogram") && (
-								cate.node.posts.edges.map((post) => {
-									content.loan_program.createLoanOption.sectionOption.map((item, i) => {
-										(item.popSlug === post.node.slug) && (createProgram[i] = post.node)
-									})
-								})
-							)
-						})}
-						{content.loan_program.createLoanOption.sectionOption.map((item, i) => {
-							const appIntOpt = ['whatsinit', 'whatsinitdealers']
-							return (
-								<div key={item.fieldGroupName + i}  className={'box-shadow bg-white rounded text-center payment-option-box col-12 col-md-12 col-md mb-3 mb-lg-0 p-0 mr-md-3 mr-lg-5 '+ appIntOpt[i]}>
-									<div className="wygthumb benefitloan">
-										<img src={item.integrationOptionBgImage.sourceUrl} className="card-img-top" alt={item.integrationOptionBgImage.altText} />
-									</div>
-									<div className="p-4">
-										<div dangerouslySetInnerHTML={{__html: item.integrationOptionBrif}}></div>
-										<button onClick={showbenefitpopup(createProgram[i], item.popSlug)} className="btn-link">Learn More</button>
-									</div>
-								</div>
-							)
-						})}
-					</div>
+			<div className="container">
+				<div className="py-5 px-md-5 pb-0 mb-5 payment-program">					
+					<h3 className="h2 text-center mb-3">What’s a Loan Program?</h3>
+					<p>At its core, a payment options program is a way for you and your authorized dealers to achieve sales goals and overcome sales-related challenges. Your customized, private-label loan program is designed to achieve your organization’s goals while building brand recognition.</p>
 				</div>
 
-				<h3 className="text-center p-md-5 mt-4 mb-2">Why EnerBank is the Right Choice as Your Loan Program Partner</h3>
-
-				<div className="container">
-					<div className="row justify-content-center">
-						{data.wpgraphql.categories.edges.map((cate) => {
-							(cate.node.slug === "rightchoiceloanprogram") && (
-								cate.node.posts.edges.map((post) => {
-									content.loan_program.rightChoice.map((item, i) => {
-										(item.popSlug === post.node.slug) && (rightChoice[i] = post.node)
-									})
-								})
-							)
-						})}
-						{content.loan_program.rightChoice.map((item, i) => {
-							return(
-								<div className="col-md-6 col-lg-4 mb-4 mb-lg-0" key={item.fieldGroupName+i}>
-									<div className="single-offer card-body">
-										<i className="icon_circil">
-											<img className="img-fluid" src={item.rightChoiceIcon.sourceUrl} alt="item.serviceIcon.altText" />
-										</i>
-										<div className="py-5" dangerouslySetInnerHTML={{__html: item.rightChoiceDesc}} />
-										<button onClick={showbenefitpopup(rightChoice[i], item.popSlug)} className="btn btn-primary f-bold">Learn More</button>
-									</div>
-								</div>
-							)
-						})}
-					</div>
+				<div className="p-md-5 pb-0 mb-5 payment-program">					
+					<h3 className="h2 text-center mb-3">Who Should Create a Loan Program?</h3>
+					<p>If your organization works with a network of contractors, installers, dealers, or other authorized clients who work in the home improvement business, you should create a loan program. It’s a smart and easy way to boost your growth and gain brand loyalty.</p>
 				</div>
-
-				<div className="easyApp bg-blue my-5 py-5">
-					<style dangerouslySetInnerHTML={{
-						__html: [
-							'.easyApp:after {',
-								'background: #0077C8 url(' + content.loan_program.easyApplication.easyApplicationBanner.sourceUrl + ') no-repeat left/cover',
-							'}'
-						].join('\n')
-					}}></style>
-					<div className="container">
-						<div className="row">
-							<div className="col-12 col-sm-5"></div>
-							<div className="col-12 col-sm-7">
-								<h3 className="text-white mb-4">{content.loan_program.easyApplication.easyApplicationHeading}</h3>
-								<ul>
-									{content.loan_program.easyApplication.easyApplicationProcess.map((item, i) => {
-										return(										
-											<li key={item.fieldGroupName + i}>{item.easyApplicationSteps}</li>
-										)
-									})}
-								</ul>
+				
+				<h3 className="h2 text-center mb-3">Why Should You Create a Loan Program?</h3>
+				<div className="row flex-wrap my-4 my-lg-5">						
+					{data.wpgraphql.popupplural.edges.map((cate) => {
+						(cate.node.slug === "createloanprogram") && (
+							cate.node.popupPost.edges.map((post) => {
+								content.loan_program.createLoanOption.sectionOption.map((item, i) => {
+									(item.popSlug === post.node.slug) && (createProgram[i] = post.node)
+								})
+							})
+						)
+					})}
+					{content.loan_program.createLoanOption.sectionOption.map((item, i) => {
+						const appIntOpt = ['whatsinit', 'whatsinitdealers']
+						return (
+							<div key={item.fieldGroupName + i}  className={'box-shadow bg-white rounded text-center payment-option-box col-12 col-md-12 col-md mb-3 mb-lg-0 p-0 mr-md-3 mr-lg-5 '+ appIntOpt[i]}>
+								<div className="wygthumb benefitloan">
+									<img src={item.integrationOptionBgImage.sourceUrl} className="card-img-top" alt={item.integrationOptionBgImage.altText} />
+								</div>
+								<div className="p-4">
+									<div dangerouslySetInnerHTML={{__html: item.integrationOptionBrif}}></div>
+									<button onClick={showbenefitpopup(createProgram[i], item.popSlug)} className="btn-link text-lg">Learn More</button>
+								</div>
 							</div>
+						)
+					})}
+				</div>
+			</div>
+
+			<h3 className="h2 text-center p-md-5 mt-4 mb-2">Why EnerBank is the Right Choice as Your Loan Program Partner</h3>
+
+			<div className="container">
+				<div className="row justify-content-center">
+					{data.wpgraphql.popupplural.edges.map((cate) => {
+						(cate.node.slug === "rightchoiceloanprogram") && (
+							cate.node.popupPost.edges.map((post) => {
+								content.loan_program.rightChoice.map((item, i) => {
+									(item.popSlug === post.node.slug) && (rightChoice[i] = post.node)
+								})
+							})
+						)
+					})}
+					
+					{content.loan_program.rightChoice.map((item, i) => {
+						return(
+							<div className="col-md-6 col-lg-4 mb-4 mb-lg-0" key={item.fieldGroupName+i}>
+								<div className="single-offer card-body">
+									<i className="icon_circil">
+										<img className="img-fluid" src={item.rightChoiceIcon.sourceUrl} alt="item.serviceIcon.altText" />
+									</i>
+									<div className="py-5" dangerouslySetInnerHTML={{__html: item.rightChoiceDesc}} />
+									<button onClick={showbenefitpopup(rightChoice[i], item.popSlug)} className="btn btn-primary f-bold">Learn More</button>
+								</div>
+							</div>
+						)
+					})}
+				</div>
+			</div>
+
+			<div className="easyApp bg-blue my-5 py-5">
+				<style dangerouslySetInnerHTML={{
+					__html: [
+						'.easyApp:after {',
+							'background: #0077C8 url(' + content.loan_program.easyApplication.easyApplicationBanner.sourceUrl + ') no-repeat left/cover',
+						'}'
+					].join('\n')
+				}}></style>
+				<div className="container">
+					<div className="row">
+						<div className="col-12 col-sm-5"></div>
+						<div className="col-12 col-sm-7">
+							<h3 className="text-white mb-4">{content.loan_program.easyApplication.easyApplicationHeading}</h3>
+							<ul>
+								{content.loan_program.easyApplication.easyApplicationProcess.map((item, i) => {
+									return(										
+										<li key={item.fieldGroupName + i}>{item.easyApplicationSteps}</li>
+									)
+								})}
+							</ul>
 						</div>
 					</div>
 				</div>
-			
-				<div className="m-md-4 m-lg-5">
-					<h3 className="text-center">{content.loan_program.selectPartner.sectionHeading}</h3>
-					<p className="text-center py-2">{content.loan_program.selectPartner.sectionBrif}</p>
-					<div className="d-flex justify-content-center howselectloan">
-						{data.wpgraphql.categories.edges.map((cate) => {
-							return((cate.node.slug === "selectlaonprogram") && (
-								cate.node.posts.edges.map((post) => {
-									return((post.node.slug === "selecting-a-loan-program-partner") && (
-										<button className="btn-link" key={post.node.id} onClick={showbenefitpopup(post.node, 'viewFile')}>VIEW</button>
-									))
-								})
-							))
-						})}
-						<div className="display-inline-block box-20" dangerouslySetInnerHTML={{__html: content.loan_program.selectPartner.yearBlock}} />    
-						<button className="pdffile" onClick={() => DownloadFile(content.loan_program.selectPartner.downloadDoc.mediaItemUrl)}><img src={pdffile} alt="download PDF file icon" /> PDF</button>
-					</div>
+			</div>
+		
+			<div className="m-md-4 m-lg-5">
+				<h3 className="h2 f-bold text-center">{content.loan_program.selectPartner.sectionHeading}</h3>
+				<p className="text-center py-2">{content.loan_program.selectPartner.sectionBrif}</p>
+				<div className="d-flex justify-content-center howselectloan">
+					{data.wpgraphql.popupplural.edges.map((cate) => {
+						(cate.node.slug === "selectloanprogram") && (
+							cate.node.popupPost.edges.map((post) => {
+								(post.node.slug === "selecting-a-loan-program-partner") && (
+									viewLoanPartnerPDF = post.node
+								)
+							})
+						)
+					})}
+					<button className="btn-link" onClick={showbenefitpopup(viewLoanPartnerPDF, 'viewFile')}>VIEW</button>
+					<div className="display-inline-block box-20" dangerouslySetInnerHTML={{__html: content.loan_program.selectPartner.yearBlock}} />    
+					<button className="pdffile" onClick={() => DownloadFile(content.loan_program.selectPartner.downloadDoc.mediaItemUrl)}><img src={pdffile} alt="download PDF file icon" /> PDF</button>
 				</div>
-			{/* </div> */}
+			</div>
 
 			{content.loan_program.partnerSays && (
 				<>
@@ -531,172 +536,97 @@ export default LoanProgramPage
 
 export const query = graphql`
 query($databaseId: ID!) {
-    wpgraphql {
-		categories {
+    wpgraphql {		
+		popupplural {
 			edges {
-			  node {
-				id
-				slug
-				posts{
-					edges{
-						node {
-						  id
-						  slug
-						  title
-						  content
-						  appmethod {
-							paperlessmethod {
-								fieldGroupName
-								sectionicon {
-								  sourceUrl
-								  altText
-								}
-								sectiontitle
-								sectionContent
-							}
-						  }
-						  dealerresourcecenter {
-							drcnow {
-								sectiondesc
-								sectionheading
-								sectionlink {
-								  target
-								  title
-								  url
-								}
-							}
-							powerfulltool {
-								fieldGroupName
-								sectioncontent
-								sectiontitle
-								sectionicon {
-									  sourceUrl
-								}
-								sectionlink {
-								  target
-								  title
-								  url
-								}
-							}
-						  }
-						  innerpagebanner {
-							pagebanner {
-							  bannericon {
-								sourceUrl
-							  }
-							  bannner {
-								sourceUrl
-								altText
-							  }
-							  bannertext
-							}
-						  }
-						  partnerportal {
-							portalservice {
-							  accessportallink {
-								target
-								title
-								url
-							  }
-							  servicegroup {
-								fieldGroupName
-								servicetitle
-							  }
-							}
-						  }
-						  popupchecklist {
-							fieldGroupName
-							checklistGroup {
-							  checklistName
-							  fieldGroupName
-							}
-						  }
-						  accordion {
-							fieldGroupName
-							tabpanel {
-							  fieldGroupName
-							  tabcontent
-							  tablabel
-							}
-						  }
-						}
-					}
-				}
-			  }
-			}
-		}		
-		posts{
-			edges{
 				node {
-				  id
-				  title
-				  content
-				  appmethod {
-					paperlessmethod {
-						fieldGroupName
-						sectionicon {
-						  sourceUrl
+					id
+					slug
+					popupPost {
+						edges {
+							node {
+								id
+								slug
+								title
+								content
+								appmethod {
+									paperlessmethod {
+										fieldGroupName
+										sectionicon {
+											sourceUrl
+											altText
+										}
+										sectiontitle
+										sectionContent
+									}
+								}
+								dealerresourcecenter {
+									drcnow {
+										sectiondesc
+										sectionheading
+										sectionlink {
+											target
+											title
+											url
+										}
+									}
+									powerfulltool {
+										fieldGroupName
+										sectioncontent
+										sectiontitle
+										sectionicon {
+											sourceUrl
+										}
+										sectionlink {
+											target
+											title
+											url
+										}
+									}
+								}
+								innerpagebanner {
+									pagebanner {
+										bannericon {
+											sourceUrl
+										}
+										bannner {
+											sourceUrl
+											altText
+										}
+										bannertext
+									}
+								}
+								partnerportal {
+									portalservice {
+										accessportallink {
+											target
+											title
+											url
+										}
+										servicegroup {
+											fieldGroupName
+											servicetitle
+										}
+									}
+								}
+								popupchecklist {
+									fieldGroupName
+									checklistGroup {
+										checklistName
+										fieldGroupName
+									}
+								}
+								accordion {
+									fieldGroupName
+									tabpanel {
+										fieldGroupName
+										tabcontent
+										tablabel
+									}
+								}
+							}
 						}
-						sectiontitle
-						sectionContent
 					}
-				  }
-				  dealerresourcecenter {
-					drcnow {
-						sectiondesc
-						sectionheading
-						sectionlink {
-						  target
-						  title
-						  url
-						}
-					}
-					powerfulltool {
-						fieldGroupName
-						sectioncontent
-						sectiontitle
-						sectionicon {
-						  	sourceUrl
-						}
-						sectionlink {
-						  target
-						  title
-						  url
-						}
-					}
-				  }
-				  innerpagebanner {
-					pagebanner {
-					  bannericon {
-						sourceUrl
-					  }
-					  bannner {
-						sourceUrl
-					  }
-					  bannertext
-					}
-				  }
-				  partnerportal {
-					portalservice {
-					  accessportallink {
-						target
-						title
-						url
-					  }
-					  servicegroup {
-						fieldGroupName
-						servicetitle
-					  }
-					}
-				  }
-				  accordion {
-					fieldGroupName
-					tabpanel {
-					  fieldGroupName
-					  tabcontent
-					  tablabel
-					}
-				  }
 				}
 			}
 		}

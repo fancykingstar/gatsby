@@ -41,8 +41,7 @@ const PartnerPortal = (props) => {
 										))}
 									</ul>
 								</div>							
-							</div>
-							
+							</div>							
 							<div className="row">
 								<div className="mx-auto text-center my-5">
 									<Link to={'/'}>{props.popData.partnerportal.portalservice.accessportallink.title}</Link>

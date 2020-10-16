@@ -21,29 +21,13 @@ import SinglesInside046 from '../images/enerbank_db/singles_inside_046.jpg';
 import SinglesInside029 from '../images/enerbank_db/singles_inside_029.jpg';
 import SinglesInside012 from '../images/enerbank_db/singles_inside_012.jpg';
 import SinglesInside066 from '../images/enerbank_db/singles_inside_066.jpg';
-import leadershipBanner from '../images/leadership-banner.jpg';
-import PaymentEstimator from '../components/paymentEstimator'
+import leadershipBanner from '../images/leadership-banner.jpg'
 
 const About = ({data}) => {
     const content = data.wpgraphql.page;
     const [visible, setVisible] = useState(false);
     const [popData, setPopData] = useState('');
 
-    const showbenefitpopup = (param, type) => event => {
-      event.preventDefault();
-      setPopData(param);
-      setVisible(true);
-    }
-
-    const hidebenefitpopup = () => {
-      setVisible(false);
-    }
-
-    const popup = () => {
-        return (
-          <PaymentEstimator visiblity={visible} handleClose={hidebenefitpopup} popData={popData} />
-        )
-    }
 
   return (  
     <Layout>
@@ -180,7 +164,7 @@ const About = ({data}) => {
                                 </div>
                                 <div className="p-4">
                                     <h3 className="mb-10">News / Media</h3>
-                                    <p>See the latest corporate news about EnerBank USA and related topics  <Link to={'/'} onClick={showbenefitpopup('item', 'paymentEstimate')}>Right Here</Link></p>
+                                    <p>See the latest corporate news about EnerBank USA and related topics  <Link to={'/'}>Right Here</Link></p>
                                 </div>
                             </div>
                             <div className="box-shadow bg-white rounded text-center col-xs-12 col-md mb-3 mb-lg-0 p-0 ml-md-3 ml-lg-5">
@@ -244,9 +228,6 @@ const About = ({data}) => {
                 </div>
             </div>
             {/* End EnerBank TIMELINE */}
-            {
-                popup()
-            }
     </Layout>
   
 )}

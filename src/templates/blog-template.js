@@ -8,10 +8,6 @@ import SEO from "../components/seo"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faSearch } from '@fortawesome/free-solid-svg-icons'
 
-import post1 from "../images/post-img-01.jpg"
-import post2 from "../images/post-img-02.jpg"
-import post3 from "../images/post-img-03.jpg"
-
 const BlogPage = ({data}) => {
   return (
     <Layout>
