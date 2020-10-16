@@ -26,7 +26,7 @@ module.exports = {
         fieldName: `wpgraphql`,
         // fieldName: `WordPress`,
         // Url to query from
-        url: `http://devgb.enerbank.com/graphql`,
+        url: `localhost/ennerbank/graphql`,
         refetchInterval: 60,
         headers: {
           Authorization: `Bearer ${process.env.GITHUB_TOKEN}`,
