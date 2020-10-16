@@ -151,7 +151,7 @@ const LoanProgramPage = ({ data }) => {
 			
 			{content.loan_program.paymentOptionsBenefits.paymentOptionHeading && (
 				<div className="bg-blue mt-5" id="paymentoptbenefits">
-					<h2 className="text-center py-4 h1 f-bold text-white">
+					<h2 className="text-center py-4 h1 font-weight-bold text-white">
 						{content.loan_program.paymentOptionsBenefits.paymentOptionHeading}
 					</h2>
 				</div>
@@ -274,7 +274,7 @@ const LoanProgramPage = ({ data }) => {
 					<div className="container pt-1">
 						{content.loan_program.onlineAppIntegration.appIntegrationBrif && (
 							<div className="mt-5 pt-4 pb-3 px-4 px-lg-5 box-shadow">
-								<h3 className="h2 text-blue f-bold text-center mb-4 ">{content.loan_program.onlineAppIntegration.appIntegrationHeading}</h3>
+								<h3 className="h1 text-blue text-center mb-4 ">{content.loan_program.onlineAppIntegration.appIntegrationHeading}</h3>
 								<p dangerouslySetInnerHTML={{__html: content.loan_program.onlineAppIntegration.appIntegrationBrif}} />
 							</div>
 						)}
@@ -323,12 +323,12 @@ const LoanProgramPage = ({ data }) => {
 					<div className="row">
 						<div className="mx-auto col-12 col-md-11">
 							<div className="mt-5 py-md-4 pb-0 payment-program">
-								<h3 className="h2 text-center f-bold mb-3">What’s Your Specialty? We’ve Got Loans for Whatever You Do!</h3>
+								<h3 className="h2 text-center font-weight-bold mb-3">What’s Your Specialty? We’ve Got Loans for Whatever You Do!</h3>
 								<p>We offer loans for a ton of different home improvement project types. From the foundation all the way up to the roof — inside, outside, large or small — our loans are tailored to meet virtually any home improvement need. Contact us to discover which loans will best suit your business model.</p>
 							</div>
 							<div className="text-center mt-5 pb-5"><a className="m-auto px-5 btn btn-primary" href="/">Contact Us</a></div>
 							<div className="py-md-5 pb-0 mb-5 payment-program">
-								<h3 className="h2 text-center f-bold mb-3">Our Contractor Support is Second to None</h3>
+								<h3 className="h2 text-center font-weight-bold mb-3">Our Contractor Support is Second to None</h3>
 								<p>We built our whole business around working with home improvement contractors across the nation. Because we only do home improvement loans, we can provide specialized and unparalleled service, starting with your dedicated relationship manager.</p>
 							</div>
 						</div>
@@ -365,7 +365,7 @@ const LoanProgramPage = ({ data }) => {
 					</div>
 
 					<div className="p-4 m-lg-5">
-						<h3 className="h2 text-center">{content.loan_program.loanProvider.sectionHeading}</h3>
+						<h3 className="h2 text-center font-weight-bold">{content.loan_program.loanProvider.sectionHeading}</h3>
 						<p className="text-center py-2">{content.loan_program.loanProvider.sectionBrif}</p>
 						<div className="d-flex justify-content-center howselectloan">
 							{data.wpgraphql.popupplural.edges.map((cate) => {
@@ -391,16 +391,16 @@ const LoanProgramPage = ({ data }) => {
 
 			<div className="container">
 				<div className="py-5 px-md-5 pb-0 mb-5 payment-program">					
-					<h3 className="h2 text-center mb-3">What’s a Loan Program?</h3>
+					<h3 className="h2 text-center mb-3 font-weight-bold">What’s a Loan Program?</h3>
 					<p>At its core, a payment options program is a way for you and your authorized dealers to achieve sales goals and overcome sales-related challenges. Your customized, private-label loan program is designed to achieve your organization’s goals while building brand recognition.</p>
 				</div>
 
 				<div className="p-md-5 pb-0 mb-5 payment-program">					
-					<h3 className="h2 text-center mb-3">Who Should Create a Loan Program?</h3>
+					<h3 className="h2 text-center mb-3 font-weight-bold">Who Should Create a Loan Program?</h3>
 					<p>If your organization works with a network of contractors, installers, dealers, or other authorized clients who work in the home improvement business, you should create a loan program. It’s a smart and easy way to boost your growth and gain brand loyalty.</p>
 				</div>
 				
-				<h3 className="h2 text-center mb-3">Why Should You Create a Loan Program?</h3>
+				<h3 className="h2 text-center mb-3 font-weight-bold">Why Should You Create a Loan Program?</h3>
 				<div className="row flex-wrap my-4 my-lg-5">						
 					{data.wpgraphql.popupplural.edges.map((cate) => {
 						(cate.node.slug === "createloanprogram") && (
@@ -428,7 +428,7 @@ const LoanProgramPage = ({ data }) => {
 				</div>
 			</div>
 
-			<h3 className="h2 text-center p-md-5 mt-4 mb-2">Why EnerBank is the Right Choice as Your Loan Program Partner</h3>
+			<h3 className="h2 text-center p-md-5 mt-4 mb-2 font-weight-bold">Why EnerBank is the Right Choice as Your Loan Program Partner</h3>
 
 			<div className="container">
 				<div className="row justify-content-center">
@@ -484,7 +484,7 @@ const LoanProgramPage = ({ data }) => {
 			</div>
 		
 			<div className="m-md-4 m-lg-5">
-				<h3 className="h2 f-bold text-center">{content.loan_program.selectPartner.sectionHeading}</h3>
+				<h3 className="h2 f-bold text-center font-weight-bold">{content.loan_program.selectPartner.sectionHeading}</h3>
 				<p className="text-center py-2">{content.loan_program.selectPartner.sectionBrif}</p>
 				<div className="d-flex justify-content-center howselectloan">
 					{data.wpgraphql.popupplural.edges.map((cate) => {
@@ -505,7 +505,7 @@ const LoanProgramPage = ({ data }) => {
 			{content.loan_program.partnerSays && (
 				<>
 					<div className="container">
-						<h3 className="h2 text-center mx-md-5 mb-3 my-5 my-md-2 p-md-5">
+						<h3 className="h2 text-center mx-md-5 mb-3 my-5 my-md-2 p-md-5 font-weight-bold">
 							<span>What Our Partners Say</span>
 							<hr style={{ height: '2px', background: '#444', marginTop: '1.5rem' }}></hr>
 						</h3>

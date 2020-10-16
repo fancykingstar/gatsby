@@ -34,11 +34,10 @@ const PaymentEstimator = (props) => {
 					<button type="button" className="close text-white" data-dismiss="modal" aria-label="Close" onClick={props.handleClose}>
 						<img src="http://devgb.enerbank.com/wp-content/themes/enerbank/img/closed_icon.svg" width="25" alt="close icon" />
 					</button>
-					<h2 className="text-white font-weight-bold">Payment Estimator</h2>
+					<h2 className="h2 text-white font-weight-bold">Enerbank Payment Estimator</h2>
 				</div>
 				<div className="modal_content">
 					<div className="p-5 pb-0 pt-sm-4 text-center">
-						<h2>Enerbank Payment Estimator</h2>
 						<p className="text-center">See a monthly payment estimate — <br/>just plug in the relevant numbers and hit <strong className="text-blue">Calculate!</strong></p>
 						
 						<form className="estimatorForm">

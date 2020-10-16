@@ -9,7 +9,7 @@ const Support = (props) => {
 						<button type="button" className="close text-white" data-dismiss="modal" aria-label="Close" onClick={props.handleClose}>
 							<img src="http://devgb.enerbank.com/wp-content/themes/enerbank/img/closed_icon.svg" width="25" alt="close icon" />
 						</button>
-						<h3>Support</h3>
+						<h3 className="h2 font-weight-bold">Support</h3>
 					</div>
 					<div className="modal_content">
 						<div className="p-8 py-sm-5">

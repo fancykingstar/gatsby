@@ -17,7 +17,7 @@ const ViewFile = (props) => {
 					<button type="button" className="close text-white" data-dismiss="modal" aria-label="Close" onClick={props.handleClose}>
 						<img src="http://devgb.enerbank.com/wp-content/themes/enerbank/img/closed_icon.svg" width="25" alt="close icon" />
 					</button>
-					<h2 className="text-white font-weight-bold">{props.popData.accordion.tabpanel.length} Questions</h2>
+					<h2 className="h2 text-white font-weight-bold">{props.popData.accordion.tabpanel.length} Questions</h2>
 				</div>
 				<div className="modal_content">		
 

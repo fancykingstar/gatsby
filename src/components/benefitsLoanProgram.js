@@ -10,7 +10,7 @@ const BenefitsLoanProgram = (props) => {
 						<button type="button" class="close text-white" data-dismiss="modal" aria-label="Close" onClick={props.handleClose}>
 							<img src="http://devgb.enerbank.com/wp-content/themes/enerbank/img/closed_icon.svg" width="25" alt="close icon" />
 						</button>
-						<h3>Benefits of Creating a Loan Program</h3>
+						<h3 className="h2 font-weight-bold">Benefits of Creating a Loan Program</h3>
 					</div>
 					<div className="modal_content">
 						<div class="p-8 py-sm-5">

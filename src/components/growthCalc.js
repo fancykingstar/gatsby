@@ -144,7 +144,7 @@ const GrowthCalc = (props) => {
 						<button className="close text-white" data-dismiss="modal" aria-label="Close" onClick={props.handleClose}>
 							<img src="http://devgb.enerbank.com/wp-content/themes/enerbank/img/closed_icon.svg" width="25" alt="close icon" />
 						</button>
-						<h2 className="text-white font-weight-bold">Business Growth Calculator</h2>
+						<h2 className="h2 text-white font-weight-bold">Business Growth Calculator</h2>
 					</div>
 					<div className="modal_content">
 						<div className="p-5 pb-0 pt-sm-4">
