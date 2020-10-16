@@ -8,8 +8,8 @@ const PaymentBenefitsPopup = (props) => {
 		)
 	} else {
 		return (
-			<Modal show={props.visiblity} animation={true} centered={true} size="lg">
-				<div className="d-sm-flex" id="paymentoption">
+			<Modal show={props.visiblity} animation={true} centered={true} size="lg" id="paymentoption">
+				<div className="d-sm-flex">
 					<div className="bg-blue p-5 d-flex align-items-center justify-content-center">
 						<img src={props.popData.paymentOptionIcon.sourceUrl} id="modalIcon" width="150" alt={props.popData.fieldGroupName} />
 					</div>
