@@ -19,7 +19,7 @@ const CareerPage = ({data}) => {
         <div className="container">
           {
             data.wpgraphql.posts.edges.sort( (a, b) => b.node.date - a.node.date ).map((item, i) => {
-              if(i < 10){
+              // if(i < 10){
                 return(
                   <div key={item.node.id}>
                     <div className="row">
@@ -34,12 +34,12 @@ const CareerPage = ({data}) => {
                     </div>
                     <hr className="my-5" />
                   </div>
-                )
+                // )
               }
             })
           }
           
-          <Pagination records_per_page={10} objLength={data.wpgraphql.posts.edges.length} currentPage={1} />
+          // <Pagination records_per_page={10} objLength={data.wpgraphql.posts.edges.length} currentPage={1} />
         </div>
         
       </section>
