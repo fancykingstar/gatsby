@@ -19,14 +19,14 @@ const CareerPage = ({data}) => {
         <div className="container">
           {
             data.wpgraphql.posts.edges.sort( (a, b) => b.node.date - a.node.date ).map((item, i) => {
-              // if(i < 10){
+              if(i < 10){
                 return(
                   <div key={item.node.id}>
                     <div className="row">
-                      <div className="col-3">
+                      <div className="col-md-3 mb-4 mb-md-0">
                         {item.node.featuredImage ? <img src={item.node.featuredImage.sourceUrl} alt="item.node.featuredImage.altText" /> : ''}
                       </div>
-                      <div className="col-9">
+                      <div className="col-md-9">
                         <h3 className="text-blue mb-2"><Link to={item.node.slug}>{item.node.title}</Link></h3>
                         <div  dangerouslySetInnerHTML={{__html: item.node.excerpt}} />
                         <Link to={item.node.slug} className="btn-link p-0">Read More</Link>
@@ -35,11 +35,11 @@ const CareerPage = ({data}) => {
                     <hr className="my-5" />
                   </div>
                 )
-              // }
+              }
             })
           }
           
-          // <Pagination records_per_page={10} objLength={data.wpgraphql.posts.edges.length} currentPage={1} />
+          {/* <Pagination records_per_page={10} objLength={data.wpgraphql.posts.edges.length} currentPage={1} /> */}
         </div>
         
       </section>
