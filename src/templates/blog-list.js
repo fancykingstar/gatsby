@@ -34,8 +34,8 @@ const CareerPage = ({data}) => {
                     </div>
                     <hr className="my-5" />
                   </div>
-                // )
-              }
+                )
+              // }
             })
           }
           
