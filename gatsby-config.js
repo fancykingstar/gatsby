@@ -51,6 +51,14 @@ module.exports = {
       options: {
         bucketName: "my-website-bucket",
       },
-    }
+    },
+    {
+      resolve: "gatsby-plugin-nginx-redirect",
+      options: {
+        inputConfigFile: `${__dirname}/nginx.conf`,
+        outputConfigFile: `${__dirname}/nginx.out.conf`,
+        whereToIncludeRedirects: "server.http" // defaults to: "server"
+      },
+    },
   ],
 }
