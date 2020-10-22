@@ -58,7 +58,7 @@
   },
   "repository": {
     "type": "gitlab",
-    "url": "https://gitlab.com/team-lambent/ebgatsby"
+    "url": "https://gitlab.com/team-lambent/ebgatsby.git"
   },
   "bugs": {
     "url": "https://github.com/gatsbyjs/gatsby/issues"
