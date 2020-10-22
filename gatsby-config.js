@@ -19,13 +19,10 @@ module.exports = {
     {
       resolve: "gatsby-source-graphql",
       options: {
-        // This type will contain remote schema Query type
         typeName: `WPGraphQL`,
         // typeName: `WordPress`,
-        // This is field under which it's accessible
         fieldName: `wpgraphql`,
         // fieldName: `WordPress`,
-        // Url to query from
         url: `https://devgbpress.enerbank.com/graphql`,
         refetchInterval: 60,
         headers: {

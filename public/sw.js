@@ -47,6 +47,10 @@ self.__precacheManifest = [
     "revision": "c355c8040c47a63bfb3360e4b7cb6553"
   },
   {
+    "url": "manifest.json",
+    "revision": "66ae0558e318465ecd2fe39adf1b8d30"
+  },
+  {
     "url": "manifest.webmanifest",
     "revision": "cad9027d927e6030efa9211294900421"
   }
