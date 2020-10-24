@@ -11,7 +11,6 @@ const blockElements = {
 }
 
 const LoanType = (props) => {
-	console.log(props)
 	if (props.popData.length !== 0) {
 		return (
 			<Modal show={props.visiblity} animation={true} centered={true} size="full" id="appPopup">
