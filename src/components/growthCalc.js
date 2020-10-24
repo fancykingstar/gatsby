@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Modal } from 'react-bootstrap';
+import close_icon from '../images/closed_icon.svg'
 
 const GrowthCalc = (props) => {
 
@@ -142,7 +143,7 @@ const GrowthCalc = (props) => {
 				{/* <div className="d-flex flex-column align-item-center justify-content-center"> */}
 					<div className="heading_bg">
 						<button className="close text-white" data-dismiss="modal" aria-label="Close" onClick={props.handleClose}>
-							<img src="http://devgb.enerbank.com/wp-content/themes/enerbank/img/closed_icon.svg" width="25" alt="close icon" />
+							<img src={close_icon} width="25" alt="close icon" />
 						</button>
 						<h2 className="h2 text-white font-weight-bold">Business Growth Calculator</h2>
 					</div>
