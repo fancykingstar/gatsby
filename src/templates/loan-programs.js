@@ -353,7 +353,6 @@ const LoanProgramPage = ({ data }) => {
 							)
 						})}
 						{content.loan_program.loanServices.map((item, i) => {
-							console.log(item.popSlug, services)
 							return(
 								<div className="col-md-6 col-lg-4 mb-4 mb-lg-0" key={item.fieldGroupName+i}>
 									<div className="single-offer card-body rounded">
