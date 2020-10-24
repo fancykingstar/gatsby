@@ -3,7 +3,6 @@ import { Modal } from 'react-bootstrap';
 import close_icon from '../images/closed_icon.svg'
 
 const WhatsInItForYourDealers = (props) => {
-	console.log(props.popData)
 	if (props.popData.length !== 0) {
 		return (
 			<Modal show={props.visiblity} animation={true} centered={true} size="full" id="appPopup">

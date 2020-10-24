@@ -43,7 +43,6 @@ const GrowthCalc = (props) => {
 		const input = [ele] + 'Input';
 		const result = [ele] + 'Result';
 		const increament = [ele] + 'Increment'
-		console.log(input, val, inc)
 		switch(input) {
 			case "monthlyLeadsInput":
 				setState({
