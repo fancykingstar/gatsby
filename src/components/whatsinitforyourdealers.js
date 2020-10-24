@@ -1,5 +1,6 @@
 import React from 'react';
 import { Modal } from 'react-bootstrap';
+import close_icon from '../images/closed_icon.svg'
 
 const WhatsInItForYourDealers = (props) => {
 	console.log(props.popData)
@@ -8,7 +9,7 @@ const WhatsInItForYourDealers = (props) => {
 			<Modal show={props.visiblity} animation={true} centered={true} size="full" id="appPopup">
 				<div className="heading_bg">
 					<button type="button" className="close text-white" data-dismiss="modal" aria-label="Close" onClick={props.handleClose}>
-						<img src="http://devgb.enerbank.com/wp-content/themes/enerbank/img/closed_icon.svg" width="25" alt="close icon" />
+						<img src={close_icon} width="25" alt="close icon" />
 					</button>
 					<h2 className="h2 text-white font-weight-bold" dangerouslySetInnerHTML={{__html: props.popData.title}} />
 				</div>
