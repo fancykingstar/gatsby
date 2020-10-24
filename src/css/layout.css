@@ -1166,3 +1166,11 @@ display: flex; align-items: center; justify-content: center; }
 
 /* loan-program-method */
 .loan-program-method p{ font-size: 16px; }
+/* dedicated relationship manager */
+.testimonial-list li{ position: relative; width: 100%; display: table; padding: 0 0 100px; }
+.testimonial-list li .user-icon{ width: 146px; height: 146px; border-radius: 100%; overflow: hidden; box-shadow: 0 0 8px #333; position: absolute; bottom: -50px; }
+.testimonial-list li .ballon{ background: #0079c2; padding: 12px 16px; border-radius: 10px; color: #fff; width: 60%; position: relative; margin-left: 80px; }
+.testimonial-list li .ballon:before{ content: ""; position: absolute; top: 100%; left: 30px; border: 40px solid transparent; border-top: 45px solid #0079c2; border-left:0; }
+.testimonial-list li:nth-child(2n+0) .user-icon{ left: auto; right: 0; }
+.testimonial-list li:nth-child(2n+0) .ballon{ float: right; margin-right: 80px; }
+.testimonial-list li:nth-child(2n+0) .ballon:before{ right: 30px; left: auto; border-left: 0px solid #0079c2; border-right: 40px solid #0079c2; border-top: 0px; }

@@ -14,6 +14,7 @@ import DealerResource from "../components/dealerResource"
 import Training from "../components/training";
 import LoanType from "../components/loanType"
 import Support from "../components/support"
+import GetPersonalizedService from '../components/getPersonalizedService'
 import States from "../components/states"
 import BenefitsLoanProgram from "../components/benefitsLoanProgram"
 import GrowthCalc from "../components/growthCalc"
@@ -69,6 +70,9 @@ const LoanProgramPage = ({ data }) => {
 				break;
 			case "unparalleled-support":
 				return <Support visiblity={visible} handleClose={hidebenefitpopup} popData={popData} />;
+				break;
+			case "get-personalized-service":
+				return <GetPersonalizedService visiblity={visible} handleClose={hidebenefitpopup} popData={popData} />;
 				break;
 			case "benefitsLoanProgram":
 				return <BenefitsLoanProgram visiblity={visible} handleClose={hidebenefitpopup} popData={popData} />;
@@ -349,6 +353,7 @@ const LoanProgramPage = ({ data }) => {
 							)
 						})}
 						{content.loan_program.loanServices.map((item, i) => {
+							console.log(item.popSlug, services)
 							return(
 								<div className="col-md-6 col-lg-4 mb-4 mb-lg-0" key={item.fieldGroupName+i}>
 									<div className="single-offer card-body rounded">
@@ -622,6 +627,15 @@ query($databaseId: ID!) {
 										fieldGroupName
 										tabcontent
 										tablabel
+									}
+								}								
+								bannerrepeater {
+									bannerGroup {
+										fieldGroupName
+										banner {
+											altText
+											sourceUrl
+										}
 									}
 								}
 							}

@@ -27,7 +27,7 @@ const Support = (props) => {
 									</ul>
 								</div>                    
 							</div>
-							</div>
+						</div>
 					</div>
 			</Modal>
 		)
