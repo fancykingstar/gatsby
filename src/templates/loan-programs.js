@@ -118,6 +118,13 @@ const LoanProgramPage = ({ data }) => {
 	return (
 		<Layout>
 			<SEO title={content.title} description={content.excerpt} />
+			<style dangerouslySetInnerHTML={{
+				__html: [
+					'body{',
+						'font-weight:400',
+					'}'
+				].join('\n')
+			}}></style>
 
 			{content.top_banner.banner.backgroundImage && (
 				<section className="banner-area pos_relative" id="home" style={{ backgroundImage: "url(" + content.top_banner.banner.backgroundImage.sourceUrl + ")" }}>
@@ -148,7 +155,7 @@ const LoanProgramPage = ({ data }) => {
 				<div className="row video-section">
 					<div className="m-auto col-12 col-md-11">
 						<Video videoSrcURL="https://www.youtube.com/embed/PKnMxIz4FWw?byline=0&title=0" videoTitle="EnerBank Atmospheric Video" videoWidth="100%" videoHeight="500" />
-						<p className="text-center font-weight-bold mt-2 mb-4">WATCH: Discover the key to unlocking business growth</p>
+						<p className="text-center font-weight-bold mt-2 mb-4">Watch:Discover the key to unlocking business growth</p>
 					</div>      
 				</div>
 			</section>
@@ -165,7 +172,7 @@ const LoanProgramPage = ({ data }) => {
 				{content.loan_program.paymentOptionsBenefits.paymentOptionBrif && (
 					<div className="row">
 						<div className="mx-auto col-12 col-md-11 my-3 my-lg-5 py-3">
-							<div dangerouslySetInnerHTML={{ __html: content.loan_program.paymentOptionsBenefits.paymentOptionBrif }} />
+							<div className="font-weight-bold" dangerouslySetInnerHTML={{ __html: content.loan_program.paymentOptionsBenefits.paymentOptionBrif }} />
 						</div>
 					</div>
 				)}
@@ -198,7 +205,7 @@ const LoanProgramPage = ({ data }) => {
 											<div className="bg-blue p-5 rounded-top">
 												<img className="img-fluid" src={item.offeringPaymentIcon.sourceUrl} alt="Growth Calculator icon" />
 											</div>
-											<div className="p-4" dangerouslySetInnerHTML={{ __html: item.offeringPaymentBrif }} />
+											<div className="p-4 text-black" dangerouslySetInnerHTML={{ __html: item.offeringPaymentBrif }} />
 										</Link>
 									</div>
 								: ""
@@ -255,15 +262,20 @@ const LoanProgramPage = ({ data }) => {
 														'background: rgba(77, 77, 77, 0.3) url(' + item.programMethodIcon.sourceUrl + ') no-repeat center',
 													'}'
 												].join('\n')
-											}}></style>
+											}}></style>											
 											<div className={'wygthumb ' + item.popSlug}>
 												<img src={item.programMethodsBgImage.sourceUrl} className="card-img-top" alt="Dealer Resource Center" />
 											</div>
-											<div className="card-body">
+											<div className="card-body pb-0">
 												<h3 className="card-title" dangerouslySetInnerHTML={{ __html: item.programMethodTitle }} />
 												<p className="card-text mb-3" dangerouslySetInnerHTML={{ __html: item.programMethodBrif }} />
-												<button className="btn-link text-lg mt-auto" onClick={showbenefitpopup(programMethod[i], item.popSlug)}>Learn More</button>
 											</div>
+											{(() => (
+												!item.popSlug ? 
+													<button className="border-0 rounded-bottom bg-blue text-white text-lg py-3" onClick={showbenefitpopup(programMethod[i], item.popSlug)}>Comming Soon</button>
+												:
+													<button className="btn-link text-lg py-3" onClick={showbenefitpopup(programMethod[i], item.popSlug)}>Learn More</button>
+											))()}
 										</div>
 									</div>
 								))}
@@ -330,7 +342,7 @@ const LoanProgramPage = ({ data }) => {
 								<h3 className="h2 text-center font-weight-bold mb-3">What’s Your Specialty? We’ve Got Loans for Whatever You Do!</h3>
 								<p>We offer loans for a ton of different home improvement project types. From the foundation all the way up to the roof — inside, outside, large or small — our loans are tailored to meet virtually any home improvement need. Contact us to discover which loans will best suit your business model.</p>
 							</div>
-							<div className="text-center mt-5 pb-5"><a className="m-auto px-5 btn btn-primary" href="/">Contact Us</a></div>
+							<div className="text-center mt-5 pb-5"><a className="m-auto px-5 btn btn-primary font-weight-bold" href="/">Contact Us</a></div>
 							<div className="py-md-5 pb-0 mb-5 payment-program">
 								<h3 className="h2 text-center font-weight-bold mb-3">Our Contractor Support is Second to None</h3>
 								<p>We built our whole business around working with home improvement contractors across the nation. Because we only do home improvement loans, we can provide specialized and unparalleled service, starting with your dedicated relationship manager.</p>

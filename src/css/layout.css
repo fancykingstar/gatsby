@@ -10,7 +10,7 @@
   color: #4D4D4D !important;
   opacity: 1; /* Firefox */
 }
-body { color: #4D4D4D; font-family: 'Roboto', sans-serif; font-size: 18px; font-weight:400; line-height: 1.6em; position: relative }
+body { color: #4D4D4D; font-family: 'Roboto', sans-serif; font-size: 18px; font-weight:300; line-height: 1.6em; position: relative }
 figure { margin: 0 }
 iframe { border: 0 }
 img{ max-width: 100%; }
@@ -126,7 +126,7 @@ td, th { border-radius: 0px }
 .pl-90 { padding-left: 90px }
 .p-40 { padding: 40px }
 .text-white { color: #fff }
-.text-black { color: #000 }
+.text-black { color: #4d4d4d; }
 .transition { -webkit-transition: all 0.3s ease 0s; -moz-transition: all 0.3s ease 0s; -o-transition: all 0.3s ease 0s; transition: all 0.3s ease 0s }
 .section-full { padding: 100px 0 }
 .section-half { padding: 75px 0 }
@@ -368,8 +368,8 @@ body.mobile-nav-active #mobile-nav-toggle { color: #fff }
     .banner-content h6 { margin-top: 80px; font-size: 10px }
 }
 .banner-content p { max-width: 450px }
-.header-btn a { background-color:rgba(0,121,194,0.9); border-radius: 6px; padding:15px 30px; border: 0px solid transparent; color: #fff; font-size:26px; font-weight:500; text-align:center; display:block; line-height:30px; max-width:320px; }
-.header-btn a:hover  { border: 0px solid #fff; background-color:rgba(42,169,224,0.9); color: #fff }
+.header-btn a { background-color:rgba(0,119,200,0.9); border-radius: 6px; padding:15px 30px; border: 0px solid transparent; color: #fff; font-size:26px; font-weight:500; text-align:center; display:block; line-height:30px; max-width:320px; }
+.header-btn a:hover  { border: 0px solid #fff; background-color:rgba(41,169,224,0.9); color: #fff }
 .banner-img { text-align: right }
 @media (max-width: 767px) {
     .banner-img { width: 60%; text-align: center; margin-left: auto; margin-right: auto }
@@ -589,6 +589,7 @@ body.mobile-nav-active #mobile-nav-toggle { color: #fff }
 /* payment-options */
 .payment-option ul, .benefit-option ul{ list-style: none; margin:0; padding: 0; display: flex; }
 .payment-option ul li, .benefit-option ul li{ text-align: center; flex: 1 1 auto; transition: all 0.25s ease-out; list-style:none; }
+/* .payment-option ul li .bg-blue:hover{ background: #29a9e0; } */
 .payment-option ul li .icon, .benefit-option ul li .icon{ margin: auto; width: 87px; height: 87px; }
 .payment-option ul li div img, .benefit-option ul li div img{ max-width: 100%; }
 .payment-option ul li a, .payment-option ul li p{ line-height: normal; margin: 10px 0; font-weight: 500; color:#000; }
@@ -649,9 +650,8 @@ body.mobile-nav-active #mobile-nav-toggle { color: #fff }
   .carousel .control-next.control-arrow{ left:calc(100% - 45px); }
   .joinLoanProgram .brif{ padding: 3rem 2rem; }
 }
-.wygbox .card-title{font-size: 24px;
-    margin-bottom: 1.25rem;}
-.wygbox { text-align: center; line-height: normal; height: 100%; border-radius: 0.6rem; border: none; }
+.wygbox .card-title{  font-size: 24px; margin-bottom: 1.25rem; }
+.wygbox { text-align: center; line-height: normal; height: 100%; /*border-radius: 0.6rem;*/ border: none; }
 .wygbox .btn { font-size: 22px; font-weight: 500; color: #0077C8; }
 .loan_offer .btn { margin-bottom: 12px; border-bottom: 2px solid #4d4d4d; border-left: 0; border-right: 0; border-radius: 0;
     padding: 5px 25px 5px 0; font-size: 18px; position: relative; text-decoration: none; 
@@ -1090,8 +1090,8 @@ display: flex; align-items: center; justify-content: center; }
     z-index: 1;
 }
 .easyApp ul{ counter-reset: funding-method; }
-.easyApp ul li{ position: relative; padding:10px 0 10px 60px; margin: 10px 0; }
-.easyApp ul li:before{ counter-increment: funding-method; content: counter(funding-method); position: absolute; left:0; border: 2px solid #fff; width:40px; height:40px; border-radius: 50%; display: flex; align-items: center; justify-content: center; }
+.easyApp ul li{ position: relative; padding:10px 0 10px 60px; margin: 10px 0; font-weight: 500; }
+.easyApp ul li:before{ counter-increment: funding-method; content: counter(funding-method); position: absolute; left:0; margin-top: -5px; border: 2px solid #fff; width:40px; height:40px; border-radius: 50%; display: flex; align-items: center; justify-content: center; }
 
 @media only screen and (max-width:576px){
   .easyApp{ padding-top:250px !important; }
