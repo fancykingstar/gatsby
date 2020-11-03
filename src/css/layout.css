@@ -907,144 +907,15 @@ display: flex; align-items: center; justify-content: center; }
 .calc-output{ cursor: initial; }
 .equal{ padding-bottom: 25px; }
 /* about page css */
-/*===== Vertical Timeline =====*/
-#enerbank-timeline {
-    position: relative;
-    max-width: 920px;
-    width: 100%;
-    margin: 0 auto 60px;
-  }
-  #enerbank-timeline .timeline-start,
-  #enerbank-timeline .timeline-end {
-    display: table; font-size: 18px; font-weight: 900; text-transform: uppercase; background: transparent; padding: 5px 20px;
-    color: #fff; text-align: center; margin: 0 auto; 
-  }
-  #enerbank-timeline .timeline-end{ width: 99px;}
-  #enerbank-timeline .timeline-start{ transform: translateX(-3px); }
-  #enerbank-timeline .timeline-end{ background: none; padding: 0; line-height: 0; }
-  #enerbank-timeline .enerbank-center-line { position: absolute; width: 5px; height: calc(100% - 100px); top: 90px; left: calc(50% - 3px); background: #0079c2; z-index: -1; }
-  #enerbank-timeline .enerbank-timeline-content { padding-top: 30px; padding-bottom: 30px; }
-  .timeline-article { width: 100%; height: 100%; position: relative; overflow: hidden; margin: 20px 0; }
-  .timeline-article .content-left-container,
-  .timeline-article .content-right-container {
-    max-width: 44%;
-    width: 100%;
-  }
-  .timeline-article .timeline-author { display: block; font-weight: 400; font-size: 14px; line-height: 24px; color: #242424; text-align: right; }
-  .timeline-article .content-left,
-  .timeline-article .content-right {
-    position: relative;
-    width: auto;
-    border: 2px solid #0079c2;
-    background-color: #fff;
-    box-shadow: 0 1px 3px rgba(0,0,0,.03);
-    padding: 27px 25px;
-    z-index: 9;
-  }
-  .timeline-article p {
-        padding: 0;
-    font-weight: 400;
-    color: #4d4d4d;
-    font-size: 16px;
-    line-height: 24px;
-    position: relative;
-  }
-  
-  .timeline-article .content-left-container {
-    float: left;
-  }
-  .timeline-article .content-right-container {
-    float: right;
-  }
-  .timeline-article .content-left:before,
-  .timeline-article .content-right:before{
-      content: ''; display: block; width: 20px; height: 20px; position: absolute; transform: rotate(45deg); top: calc(50% - 0.6rem); background: #fff;
-  }
-  .timeline-article .content-left:before {
-    right: -12px; border-left: 0; border-bottom: 0; 
-    border-top: 2px solid #0079c2; border-right: solid 2px #0079c2;
-  }
-  .timeline-article .content-right:before {
-    left: -12px; border-right: 0; border-top: 0;
-    border-bottom: 2px solid #0079c2; border-left: solid 2px #0079c2;
-  }      
-  .timeline-article .meta-date {
-    position: absolute; top: 50%; left: 50%; width: 62px; height: 62px;
-    color: #4d4d4d;
-    border-radius: 100%;
-    background: #ffffff;
-    border:solid 2px #0079C2;
-    transform: translate(-50%, -50%);
-  }
-  .timeline-article .meta-date .date {
-    display: block;
-    text-align: center;
-    font-weight: 700;
-  }
-  .timeline-article .meta-date .date {
-    font-size: 18px;
-    line-height: 60px;
-  }
-  
-  /*===== // Vertical Timeline =====*/
-  
-  /*===== Resonsive Vertical Timeline =====*/
-  @media only screen and (max-width: 830px) {
-    #enerbank-timeline .timeline-start{
-      margin: 0;
-    }
-    #enerbank-timeline .timeline-end{ margin: 0 19px; }
-    #enerbank-timeline .enerbank-center-line {
-      margin-left: 0;
-      left: 66px;
-    }
-    .timeline-article .meta-date {
-      margin-left: 0;
-      left: 67px;
-    }
-    .timeline-article .content-left-container,
-    .timeline-article .content-right-container {
-      max-width: 100%;
-      width: auto;
-      float: none;
-      margin-left: 125px;
-      min-height: 53px;
-    }
-    .timeline-article .content-left-container {
-      margin-bottom: 20px;
-    }
-    .timeline-article .content-left,
-    .timeline-article .content-right {
-      padding: 10px 25px;
-      min-height: 65px;
-    }
-    .timeline-article .content-right:before {
-      left: -10px;
-      border-right: 2px solid transparent;
-      border-top: 2px solid transparent;
-    }
-    .timeline-article .content-left:before {
-      content: "";
-      right: auto;
-      left: -10px;
-      border-color: transparent;
-      border-bottom: 2px solid #0079c2;
-      border-left: 2px solid #0079c2;
-    }
-
-  }
-  @media only screen and (max-width: 400px) {
-    .timeline-article p {
-      margin: 0;
-    }
-    .timeline-article p span.article-number {
-      display: none;
-    }    
-  }
-/*===== Responsive Vertical Timeline =====*/
+.leadership-heading{ background: linear-gradient(180deg, white, transparent); }
 .directorName{ font-weight:600; color: #4d4d4d; font-size: 24px; }
 .community-logo{ max-height: 120px; height: 120px !important; width: auto; }
-
+.director-col{ position: relative; overflow: hidden; }
+.director-profile{ position: absolute; top: 0; left: -100%; width: 100%; height: calc(100% - 44px); background-color: rgba(0, 119, 200, 0.6); z-index: 1; transition: left 0.25s ease-in; overflow: hidden; color: #fff; display: flex; }
+.director-profile > div{ position: absolute; bottom: 20px; padding: 0 15px; left: 0; width: 100%; font-size: 0; transition: font-size 0.25s ease-in; transition-delay: 0.25s; }
+.director-profile > div p{ margin-bottom: 0px; }
+.director-col:hover .director-profile{ left: 0; }
+.director-col:hover .director-profile > div{ font-size: inherit; }
 .news_media, .blog { height: 220px; overflow: hidden; text-align: center; }
 .news_media:after { background: rgba(77, 77, 77, 0.6) url(../images/about_eb_news-media-wht.svg) no-repeat center; }
 .blog:after { background: rgba(77, 77, 77, 0.6) url(../images/about_eb_blog-wht.svg) no-repeat center; }
