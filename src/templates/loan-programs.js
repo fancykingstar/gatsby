@@ -268,11 +268,11 @@ const LoanProgramPage = ({ data }) => {
 											</div>
 											<div className="card-body pb-0">
 												<h3 className="card-title" dangerouslySetInnerHTML={{ __html: item.programMethodTitle }} />
-												<p className="card-text mb-3" dangerouslySetInnerHTML={{ __html: item.programMethodBrif }} />
+												<p className="card-text mb-3 mt-auto" dangerouslySetInnerHTML={{ __html: item.programMethodBrif }} />
 											</div>
 											{(() => (
 												!item.popSlug ? 
-													<button className="border-0 rounded-bottom bg-blue text-white text-lg py-3" onClick={showbenefitpopup(programMethod[i], item.popSlug)}>Comming Soon</button>
+													<button className="border-0 rounded-bottom bg-blue text-white text-lg py-3" onClick={showbenefitpopup(programMethod[i], item.popSlug)}>Coming Soon</button>
 												:
 													<button className="btn-link text-lg py-3" onClick={showbenefitpopup(programMethod[i], item.popSlug)}>Learn More</button>
 											))()}
