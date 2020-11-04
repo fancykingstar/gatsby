@@ -44,7 +44,7 @@ var hirebridge_lang = {
 (function() {
     var hirebridge_css = document.createElement('link');
     hirebridge_css.type = 'text/css';
-    hirebridge_css.href = '/global-styles/hirebridge.css';
+    hirebridge_css.href = 'https://hirebridge.com/assets/portal10/css/hirebridge.css';
     hirebridge_css.rel = 'stylesheet';document.head.appendChild(hirebridge_css);
 })();
 
