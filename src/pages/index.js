@@ -14,7 +14,7 @@ const IndexPage = ({data}) => {
       <div key={node.id}>
           <section className="banner-area pos_relative" id="home" style={{ backgroundImage: "url(" + node.top_banner.banner.backgroundImage.sourceUrl + ")" }}>
             <div className="background-holder">
-              <Video videoSrcURL={node.video_section.video.videoUrl} allow="autoplay" videoTitle="loan program page video" videoWidth="100%" videoHeight="500" />
+              <Video videoSrcURL={node.video_section.video.videoUrl} allow="autoplay" videoTitle="EnnerBankUSA. America's home improvement lender of choice" videoWidth="100%" videoHeight="500" />
             </div>
             <div className="container">
               <div className="row h-half d-flex align-items-end pb-5">
