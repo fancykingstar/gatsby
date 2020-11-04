@@ -17,6 +17,11 @@ import JAofUtah from '../images/JA-of-Utah.png';
 import UWSL from '../images/UWSL.png';
 import VITA from '../images/VITA.png';
 import PHP from '../images/PHP.png';
+import SUAZO from '../images/suazo.jpg';
+import OppoScholars from '../images/opportunity_scholars.jpg';
+import NeightborWorks from '../images/neightborworks.jpg';
+import GuadalupeSchool from '../images/guadalupe_school.jpg';
+
 import SinglesInside054 from '../images/enerbank_db/singles_inside_054.jpg';
 import SinglesInside037 from '../images/enerbank_db/singles_inside_037.jpg';
 import SinglesInside006 from '../images/enerbank_db/singles_inside_006.jpg';
@@ -35,7 +40,6 @@ const About = ({data}) => {
     const handstick = useRef(null)
 
     const showbenefitpopup = (param) => event => {
-        console.log(param)
 		event.preventDefault();
 		setPopData(param);
 		setVisible(true);
@@ -59,7 +63,7 @@ const About = ({data}) => {
                 <div className="container">
                 <div className="row d-flex align-items-end">
                     <div className="col-md-10 m-auto" ref={handstick}>  {/*  onClick={this.handleClick} */}
-                        <Video videoSrcURL="https://player.vimeo.com/video/371895200" videoTitle="Official Music Video on YouTube" videoWidth="100%" videoHeight="500" />
+                        <Video videoSrcURL="https://player.vimeo.com/video/469839164" videoTitle="CEO Intro For About Us Page" videoWidth="100%" videoHeight="500" />
                     </div>
                 </div>
                 </div>
@@ -105,23 +109,15 @@ const About = ({data}) => {
                 <h3 className="h2 text-center mb-3">Community Involvement</h3>
                 <p>EnerBank USA is not just an office building full of workers, we’re a meaningful part of the community in more ways than one. Our leaders and team members dedicate their time to enrich the lives of people in our community through volunteer hours spent in a variety of good causes, such as:</p>
                 <div className="row my-5">
-                    <div className="col-md-4 mb-5">
-                        <img alt="Junior Achievement of Utah" className="d-block mx-auto community-logo" src={JAofUtah} data-holder-rendered="true" />
-                    </div>
-                    <div className="col-md-4 mb-5">
-                        <img alt="United Way of Salt Lake" className="d-block mx-auto community-logo" src={UWSL} data-holder-rendered="true" />
-                    </div>
-                    <div className="col-md-4 mb-5">
-                        <img alt="VITA/TCE Central" className="d-block mx-auto community-logo" src={VITA} data-holder-rendered="true" />
-                    </div>
-                    <div className="col-md-4 mb-5">
-                        <img alt="PHP" className="d-block mx-auto community-logo" src={PHP} data-holder-rendered="true" />
-                    </div>
-                    <div className="col-md-4 mb-5">
-                        <img alt="PHP" className="d-block mx-auto community-logo" src={PHP} data-holder-rendered="true" />
-                    </div>
-                    <div className="col-md-4 mb-5">
-                        <img alt="PHP" className="d-block mx-auto community-logo" src={PHP} data-holder-rendered="true" />
+                    <div className="gridgallery col-lg-12">
+                        <div className="horizontal"><img alt="PHP" className="d-block mx-auto community-logo" src={PHP} data-holder-rendered="true" /></div>
+                        <div className="vertical"><img alt="Junior Achievement of Utah" className="d-block mx-auto community-logo" src={JAofUtah} data-holder-rendered="true" /></div>
+                        <div className="vertical"><img alt="United Way of Salt Lake" className="d-block mx-auto community-logo" src={UWSL} data-holder-rendered="true" /></div>
+                        <div className="vertical"><img alt="PHP" className="d-block mx-auto community-logo" src={SUAZO} data-holder-rendered="true" /></div>
+                        <div className="vertical"><img alt="PHP" className="d-block mx-auto community-logo" src={NeightborWorks} data-holder-rendered="true" /></div>
+                        <div className="vertical"><img alt="PHP" className="d-block mx-auto community-logo" src={GuadalupeSchool} data-holder-rendered="true" /></div>
+                        <div className="vertical"><img alt="VITA/TCE Central" className="d-block mx-auto community-logo" src={VITA} data-holder-rendered="true" /></div>
+                        <div className="vertical"><img alt="PHP" className="d-block mx-auto community-logo" src={OppoScholars} data-holder-rendered="true" /></div>
                     </div>
                 </div>
 
@@ -158,7 +154,7 @@ const About = ({data}) => {
                             <div className="director-profile">
                                 <div>
                                     <p>Charles E. Knadler serves as EnerBank USA® President and CEO, responsible for the overall </p>
-                                    <Link onClick={showbenefitpopup({title:'Charles E. Knadler', image:SinglesInside066})} className="text-white font-weight-bold">Read more ...</Link>
+                                    <button onClick={showbenefitpopup({title:'Charles E. Knadler', image:SinglesInside066})} className="text-white font-weight-bold btn-link">Read more ...</button>
                                 </div>
                             </div>
                             <p className="directorName">Charles E. Knadler</p>
@@ -170,7 +166,7 @@ const About = ({data}) => {
                             <div className="director-profile">
                                 <div>
                                     <p>Charles E. Knadler serves as EnerBank USA® President and CEO, responsible for the overall </p>
-                                    <Link onClick={showbenefitpopup({title:'Louise P. Kelly', image:SinglesInside037})} className="text-white font-weight-bold">Read more ...</Link>
+                                    <button onClick={showbenefitpopup({title:'Louise P. Kelly', image:SinglesInside037})} className="text-white font-weight-bold btn-link">Read more ...</button>
                                 </div>
                             </div>
                             <p className="directorName">Louise P. Kelly</p>
@@ -182,7 +178,7 @@ const About = ({data}) => {
                             <div className="director-profile">
                                 <div>
                                     <p>Charles E. Knadler serves as EnerBank USA® President and CEO, responsible for the overall </p>
-                                    <Link onClick={showbenefitpopup({title:'Dan Lis', image:SinglesInside012})} className="text-white font-weight-bold">Read more ...</Link>
+                                    <button onClick={showbenefitpopup({title:'Dan Lis', image:SinglesInside012})} className="text-white font-weight-bold btn-link">Read more ...</button>
                                 </div>
                             </div>
                             <p className="directorName">Dan Lis</p>
@@ -194,7 +190,7 @@ const About = ({data}) => {
                             <div className="director-profile">
                                 <div>
                                     <p>Charles E. Knadler serves as EnerBank USA® President and CEO, responsible for the overall </p>
-                                    <Link onClick={showbenefitpopup({title:'Srikant (Sri) Maddipati', image:SinglesInside016})} className="text-white font-weight-bold">Read more ...</Link>
+                                    <button onClick={showbenefitpopup({title:'Srikant (Sri) Maddipati', image:SinglesInside016})} className="text-white font-weight-bold btn-link">Read more ...</button>
                                 </div>
                             </div>
                             <p className="directorName">Srikant (Sri) Maddipati</p>
@@ -206,7 +202,7 @@ const About = ({data}) => {
                             <div className="director-profile">
                                 <div>
                                     <p>Charles E. Knadler serves as EnerBank USA® President and CEO, responsible for the overall </p>
-                                    <Link onClick={showbenefitpopup({title:'Patrick M. McQueen', image:SinglesInside006})} className="text-white font-weight-bold">Read more ...</Link>
+                                    <button onClick={showbenefitpopup({title:'Patrick M. McQueen', image:SinglesInside006})} className="text-white font-weight-bold btn-link">Read more ...</button>
                                 </div>
                             </div>
                             <p className="directorName">Patrick M. McQueen</p>
@@ -218,7 +214,7 @@ const About = ({data}) => {
                             <div className="director-profile">
                                 <div>
                                     <p>Charles E. Knadler serves as EnerBank USA® President and CEO, responsible for the overall </p>
-                                    <Link onClick={showbenefitpopup({title:'Laura Mountcastle', image:SinglesInside046})} className="text-white font-weight-bold">Read more ...</Link>
+                                    <button onClick={showbenefitpopup({title:'Laura Mountcastle', image:SinglesInside046})} className="text-white font-weight-bold btn-link">Read more ...</button>
                                 </div>
                             </div>
                             <p className="directorName">Laura Mountcastle</p>
@@ -230,7 +226,7 @@ const About = ({data}) => {
                             <div className="director-profile">
                                 <div>
                                     <p>Charles E. Knadler serves as EnerBank USA® President and CEO, responsible for the overall </p>
-                                    <Link onClick={showbenefitpopup({title:'Joseph M. Walsh', image:SinglesInside029})} className="text-white font-weight-bold">Read more ...</Link>
+                                    <button onClick={showbenefitpopup({title:'Joseph M. Walsh', image:SinglesInside029})} className="text-white font-weight-bold btn-link">Read more ...</button>
                                 </div>
                             </div>
                             <p className="directorName">Joseph M. Walsh</p>
@@ -242,7 +238,7 @@ const About = ({data}) => {
                             <div className="director-profile">
                                 <div>
                                     <p>Charles E. Knadler serves as EnerBank USA® President and CEO, responsible for the overall </p>
-                                    <Link onClick={showbenefitpopup({title:'Leonard E. Wiatr', image:SinglesInside018})} className="text-white font-weight-bold">Read more ...</Link>
+                                    <button onClick={showbenefitpopup({title:'Leonard E. Wiatr', image:SinglesInside018})} className="text-white font-weight-bold btn-link">Read more ...</button>
                                 </div>
                             </div>
                             <p className="directorName">Leonard E. Wiatr</p>

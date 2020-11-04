@@ -14,8 +14,6 @@ import close_icon from '../../images/closed_icon-blue.svg'
 
 const DirectorOne = (props) => {
 		const {title, image} = props.popData
-		console.log(title, image, props.popData)
-
 		return (
 			<Modal show={props.visiblity} animation={true} centered={true} size="full" id="dealerPopup">
 				<div className="modal_content p-4">

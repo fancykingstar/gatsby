@@ -3,6 +3,7 @@ module.exports = {
       title: `EnerBankUSA`,
       description: `America's home improvement lender of choice`,
       author: `@enerbank`,
+      siteURL: 'https://enerbank.com',
     },
     plugins: [
         `gatsby-plugin-react-helmet`,

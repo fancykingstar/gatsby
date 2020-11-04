@@ -44,7 +44,7 @@ const HomeOwnerPage = ({data}) => {
         {data.wpgraphql.page.top_banner.banner.backgroundImage && (
             <section className="banner-area pos_relative" id="home" style={{ backgroundImage: "url(" + data.wpgraphql.page.top_banner.banner.backgroundImage.sourceUrl + ")" }}>
                 <div className="background-holder">
-                    <Video videoSrcURL={data.wpgraphql.page.video_section.video.videoUrl} allow="autoplay" videoTitle="homeowner page video" videoWidth="100%" videoHeight="500" />
+                    <Video videoSrcURL={data.wpgraphql.page.video_section.video.videoUrl} allow="autoplay" videoTitle="EnnerBankUSA. America's home improvement lender of choice" videoWidth="100%" videoHeight="500" />
                 </div>
                 <div className="container">
                     <div className="row h-half d-flex align-items-end pb-5">
@@ -104,7 +104,8 @@ const HomeOwnerPage = ({data}) => {
                 <button className="btn btn-primary f-bold equal-wd mb-4">Automatic Debit Form (PDF)</button>
                 <p>Question about a loan? Have a comment? We want to hear from you.</p>
                 {/* feedback form */}
-                <button onClick={toggle} className="btn btn-primary f-bold equal-wd mb-4">Leave Feedback</button>
+                {/* <button onClick={toggle} className="btn btn-primary f-bold equal-wd mb-4">Leave Feedback</button> */}
+                <a href="/feedback" className="btn btn-primary text-white f-bold equal-wd mb-4">Leave Feedback</a>
             </div>
             <Collapse isOpen={collapse}
                 // onEntering={onEntering}

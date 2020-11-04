@@ -129,7 +129,7 @@ const LoanProgramPage = ({ data }) => {
 			{content.top_banner.banner.backgroundImage && (
 				<section className="banner-area pos_relative" id="home" style={{ backgroundImage: "url(" + content.top_banner.banner.backgroundImage.sourceUrl + ")" }}>
 					<div className="background-holder">
-						<Video videoSrcURL={data.wpgraphql.page.video_section.video.videoUrl} allow="autoplay" videoTitle="loan program page video" videoWidth="100%" videoHeight="500" />
+						<Video videoSrcURL={data.wpgraphql.page.video_section.video.videoUrl} allow="autoplay" videoTitle="EnnerBankUSA. America's home improvement lender of choice" videoWidth="100%" videoHeight="500" />
 					</div>
 					<div className="container">
 						<div className="row h-half d-flex align-items-end pb-5">

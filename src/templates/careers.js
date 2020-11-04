@@ -30,7 +30,7 @@ const CareerPage = ({data, props}) => {
         <div className="container">
           <div className="row d-flex align-items-end">
             <div className="col-md-10 m-auto" ref={handstick}>  {/*  onClick={this.handleClick} */}
-                <Video videoSrcURL="https://player.vimeo.com/video/371895200" videoTitle="Official Music Video on YouTube" videoWidth="100%" videoHeight="500" />
+                <Video videoSrcURL="https://player.vimeo.com/video/371895200" videoTitle="EnnerBankUSA. America's home improvement lender of choice" videoWidth="100%" videoHeight="500" />
             </div>
           </div>
         </div>

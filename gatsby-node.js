@@ -1,9 +1,7 @@
 const path = require(`path`);
-const { createFilePath } = require(`gatsby-source-filesystem`);
 
 exports.createPages = async ({ graphql, actions }) => {
   const { createPage } = actions;  
-
   /**  Create Pages  */
   const pageResults = await graphql(`
     query GET_PAGES {
@@ -30,7 +28,6 @@ exports.createPages = async ({ graphql, actions }) => {
   `);
 
   pageResults.data.wpgraphql.pages.edges.forEach(({ node }) => {
-      { 
         switch (node.slug) {
           case "homeowner":
                 createPage({
@@ -113,29 +110,25 @@ exports.createPages = async ({ graphql, actions }) => {
                 })
             break;
         }
-        
-        createPage({
-          path: "blog",
-          component: path.resolve(`./src/templates/blog-list.js`),
-          context: {
-            slug: node.slug,
-            databaseId: node.databaseId,
-          },
-        })
-      }
   });
+        
+  createPage({
+    path: "blog",
+    component: path.resolve(`./src/templates/blog-list.js`),
+    context: {
+      slug: 'blog',
+      databaseId: 'blog',
+    },
+  })
 
-  // const markdownPage = {
-  //   allMarkdownRemark {
-  //     edges {
-  //       node {
-  //         fields {
-  //           slug
-  //         }
-  //       }
-  //     }
-  //   }
-  // }
+  createPage({
+    path: "feedback",
+    component: path.resolve(`./src/templates/feedback.js`),
+    context: {
+      slug: 'feedback',
+      databaseId: 'feedback',
+    },
+  })
 
   /** Create Blog Posts **/
   const blogPostResults = await graphql(`
@@ -270,16 +263,4 @@ exports.createPages = async ({ graphql, actions }) => {
       // }}
   // });
 
-}
-
-exports.onCreateNode = ({ node, getNode, actions }) => {
-  const { createNodeField } = actions
-  if (node.internal.type === `MarkdownRemark`) {
-    const slug = createFilePath({ node, getNode, basePath: `pages` })
-    createNodeField({
-      node,
-      name: `slug`,
-      value: slug,
-    })
-  }
 }
