@@ -1,1 +1,0 @@
-{"componentChunkName":"component---src-pages-feedback-js","path":"/feedback---/","result":{"errors":[{"message":"Variable \"$databaseId\" of required type \"ID!\" was not provided.","locations":[{"line":1,"column":60}]}],"pageContext":{}}}

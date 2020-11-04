@@ -276,49 +276,8 @@ const About = ({data}) => {
 
                 <div className="pt-4">
                     <p className="text-center">Want to Learn More?</p>
-                    <button className="btn bg-blue d-block mx-auto px-5">Contact Us</button>
-                </div>
-                <div style={{display: 'none'}}>
-                    <h3 className="h2 text-center mb-3" id="feedback">Feedback Form</h3>
-                    <p>EnerBank is dedicated to exceptional customer service. We want to hear from you so that we can address any questions, comments or concerns.</p>
-                    <form>
-                        <div className="row">
-                            <div className="col-md-6">
-                                <div className="row form-group">
-                                    <div className="col-md-6">
-                                        <label htmlFor="firstName">First name<span>*</span></label>
-                                        <input type="text" className="form-control" id="firstName" required="required" />
-                                    </div>
-                                    <div className="col-md-6">
-                                        <label htmlFor="lastName">Last name<span>*</span></label>
-                                        <input type="text" className="form-control" id="lastName" required="required" />
-                                    </div>
-                                </div>
-                                <div className="form-group">
-                                    <label htmlFor="email">Email<span>*</span></label>
-                                    <input type="text" className="form-control" id="email" required="required" />
-                                </div>
-                                <div className="row form-group">
-                                    <div className="col-md-6">
-                                        <label htmlFor="phone">Phone<span>*</span></label>
-                                        <input type="text" className="form-control" id="phone" required="required" />
-                                    </div>
-                                    <div className="col-md-6">
-                                        <label htmlFor="company">Company</label>
-                                        <input type="text" className="form-control" id="company" required="required" />
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div className="form-group">
-                            <label htmlFor="company">Company</label>
-                            <textarea className="form-control" rows="6"></textarea>
-                        </div>
-                        <div className="form-group">
-                            <input type="submit" value="Submit" id="submit" className="btn btn-primary box-shadow px-4 mt-3" />
-                        </div>
-                    </form>
-                </div>
+                    <button className="btn bg-blue d-block text-white mx-auto px-5">Contact Us</button>
+                </div>                
             </div>
             <DirectorOne visiblity={visible} handleClose={hidebenefitpopup} popData={popData} />
     </Layout>
