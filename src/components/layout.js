@@ -27,9 +27,9 @@ const Layout = ({ children }) => {
 			render={data => (
 				<>
 					<Header siteTitle={data.site.siteMetadata.title} />
-					<Helmet>
+					{/* <Helmet>
 						<script src={withPrefix('script.js')} type="text/javascript" name="hirebridge-script" />
-					</Helmet>
+					</Helmet> */}
 					<div dangerouslySetInnerHTML={{__html: font}} />
 					{children}
 					<Footer />
