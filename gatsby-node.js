@@ -110,25 +110,25 @@ exports.createPages = async ({ graphql, actions }) => {
                 })
             break;
         }
-  });
         
-  createPage({
-    path: "blog",
-    component: path.resolve(`./src/templates/blog-list.js`),
-    context: {
-      slug: 'blog',
-      databaseId: 'blog',
-    },
-  })
-
-  createPage({
-    path: "feedback",
-    component: path.resolve(`./src/templates/feedback.js`),
-    context: {
-      slug: 'feedback',
-      databaseId: 'feedback',
-    },
-  })
+        createPage({
+          path: "blog",
+          component: path.resolve(`./src/templates/blog-list.js`),
+          context: {
+            slug: node.slug,
+            databaseId: node.databaseId,
+          },
+        })
+      
+        createPage({
+          path: "feedback",
+          component: path.resolve(`./src/templates/feedback.js`),
+          // context: {
+          //   slug: node.slug,
+          //   databaseId: node.databaseId,
+          // },
+        })
+  });
 
   /** Create Blog Posts **/
   const blogPostResults = await graphql(`

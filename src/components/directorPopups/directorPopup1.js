@@ -1,6 +1,5 @@
 import React from 'react';
 import { Modal } from 'react-bootstrap';
-import { Link } from "gatsby";
 import close_icon from '../../images/closed_icon-blue.svg'
 // import SinglesInside054 from '../../images/enerbank_db/singles_inside_054.jpg';
 // import SinglesInside037 from '../../images/enerbank_db/singles_inside_037.jpg';
