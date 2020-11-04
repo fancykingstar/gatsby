@@ -10,7 +10,6 @@ import DirectorOne from '../components/directorPopups/directorPopup1'
 
 // import images
 import fdic_logo from '../images/fdic-logo.svg';
-import CareersVideo from '../images/careers_video.png';
 import VisionUnsplash from '../images/absolutvision-unsplash.jpg';
 import BakerUnsplash from '../images/kaitlyn-baker-unsplash.jpg';
 import JAofUtah from '../images/JA-of-Utah.png';

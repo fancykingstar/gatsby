@@ -1,12 +1,10 @@
-import React, { useState } from "react";
-
-import { graphql, Link } from "gatsby";
+import React from "react";
 import { useForm } from "react-hook-form";
 
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 
-const Feedback = ({data}) => {
+const Feedback = () => {
     const { register, handleSubmit, errors } = useForm();
     const onSubmit = (data) => {
         console.log(data)
@@ -14,7 +12,7 @@ const Feedback = ({data}) => {
 
   return (  
     <Layout>
-        {/* <SEO title={data.wpgraphql.page.title} description={data.wpgraphql.page.excerpt}/> */}
+        <SEO title={'Feedback'} description={'America\'s home improvement lender of choice'}/>
         <section className="container my-5 p-4">
             <div className="col-lg-10 mx-auto">
                 <h1 className="text-center mb-5">Comments and Questions</h1>
@@ -32,9 +30,6 @@ const Feedback = ({data}) => {
                                 aria-invalid={errors.firstName ? "true" : "false"}
                                 ref={register({ required: true })}
                             />
-                            {
-                                console.log(errors)
-                            }
                             {errors.firstName && errors.firstName.type === "required" && (
                                 <span role="alert" className="small invalid-feedback">First Name is required</span>
                             )}
