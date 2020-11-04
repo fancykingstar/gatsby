@@ -912,7 +912,7 @@ display: flex; align-items: center; justify-content: center; }
 .directorName{ font-weight:600; color: #4d4d4d; font-size: 24px; }
 .community-logo{ max-height: 120px; height: 120px !important; width: auto; }
 .director-col{ position: relative; overflow: hidden; }
-.director-profile{ position: absolute; top: 0; left: 100%; width: 100%; height: calc(100% - 44px); background-color: rgba(0, 119, 200, 0.6); opacity: 0; z-index: 1; transition: opacity 0.25s ease-in; overflow: hidden; color: #fff; display: flex; }
+.director-profile{ position: absolute; top: 0; left: -100%; width: 100%; height: calc(100% - 44px); background-color: rgba(0, 119, 200, 0.6); opacity: 0; z-index: 1; transition: opacity 0.25s ease-in; overflow: hidden; color: #fff; display: flex; }
 .director-profile > div{ position: absolute; bottom: 20px; padding: 0 15px; left: 0; width: 100%; }
 .director-profile > div p{ margin-bottom: 0px; }
 .director-col:hover .director-profile{ opacity: 1; left: 0; }
