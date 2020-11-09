@@ -129,7 +129,7 @@ const LoanProgramPage = ({ data }) => {
 			{content.top_banner.banner.backgroundImage && (
 				<section className="banner-area pos_relative" id="home" style={{ backgroundImage: "url(" + content.top_banner.banner.backgroundImage.sourceUrl + ")" }}>
 					<div className="background-holder">
-						<Video videoSrcURL={data.wpgraphql.page.video_section.video.videoUrl} allow="autoplay" videoTitle="EnnerBankUSA. America's home improvement lender of choice" videoWidth="100%" videoHeight="500" />
+						<Video videoSrcURL={data.wpgraphql.page.video_section.video.videoUrl} allow="autoplay" videoTitle="EnnerBankUSA. America's home improvement lender of choice" videoWidth="100%" />
 					</div>
 					<div className="container">
 						<div className="row h-half d-flex align-items-end pb-5">
@@ -155,7 +155,7 @@ const LoanProgramPage = ({ data }) => {
 				<div className="row video-section">
 					<div className="m-auto col-12 col-md-11">
 						<Video videoSrcURL="https://www.youtube.com/embed/PKnMxIz4FWw?byline=0&title=0" videoTitle="EnerBank Atmospheric Video" videoWidth="100%" videoHeight="500" />
-						<p className="text-center font-weight-bold mt-2 mb-4">Watch:Discover the key to unlocking business growth</p>
+						<p className="text-center font-weight-bold mt-2 mb-4">Watch: Discover the key to unlocking business growth</p>
 					</div>      
 				</div>
 			</section>
@@ -321,8 +321,8 @@ const LoanProgramPage = ({ data }) => {
 												<img src={item.integrationOptionBgImage.sourceUrl} className="card-img-top" alt={item.integrationOptionBgImage.altText} />
 											</div>
 											<div className="p-4 card-body">
-												<h3 className="mb-10" dangerouslySetInnerHTML={{__html: item.integrationOptionHeading}} />
-												<p className="card-text mb-3" dangerouslySetInnerHTML={{ __html: item.integrationOptionBrif }} />
+												<h3 className="mb-10 flex-fill" dangerouslySetInnerHTML={{__html: item.integrationOptionHeading}} />
+												<p className="card-text mb-3 flex-fill" dangerouslySetInnerHTML={{ __html: item.integrationOptionBrif }} />
 												<button className="btn-link text-lg mt-auto" onClick={showbenefitpopup(onlineApp[i], item.popSlug)}>Learn More</button>
 											</div>
 										</div>
@@ -372,7 +372,7 @@ const LoanProgramPage = ({ data }) => {
 											<img className="img-fluid" src={item.serviceIcon.sourceUrl} alt="News" />
 										</i>
 										<h4>{item.serviceHeading}</h4>
-										<p>{item.serviceText}</p>
+										<p className="flex-fill">{item.serviceText}</p>
 										<Link to={'/'} onClick={showbenefitpopup(services[i], item.popSlug)} className="btn btn-primary f-bold">Learn More</Link>
 									</div>
 								</div>
@@ -465,7 +465,7 @@ const LoanProgramPage = ({ data }) => {
 									<i className="icon_circil">
 										<img className="img-fluid" src={item.rightChoiceIcon.sourceUrl} alt="item.serviceIcon.altText" />
 									</i>
-									<div className="py-5" dangerouslySetInnerHTML={{__html: item.rightChoiceDesc}} />
+									<div className="py-4 flex-fill" dangerouslySetInnerHTML={{__html: item.rightChoiceDesc}} />
 									<button onClick={showbenefitpopup(rightChoice[i], item.popSlug)} className="btn btn-primary f-bold">Learn More</button>
 								</div>
 							</div>

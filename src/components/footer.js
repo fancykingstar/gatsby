@@ -1,6 +1,5 @@
 import React from 'react'
-import Link from 'gatsby-link'
-
+import { Link, navigate } from "gatsby"
 import fdicLogo from '../images/fdic-logo.svg'
 import bbbLogo from '../images/darkgray-seal-bbb.png'
 // font awesome library icons
@@ -11,9 +10,10 @@ const Footer = () => {
     const externalUrl = (url) => {
 		window.open(url, '_blank');
     }
-    // const customUrl = (url, e) => {
+    const customUrl = (url, e) => {
         // browserHistory.push('/'+url);
-	// }
+        navigate(url);
+	}
 return (
   <footer className="footer-area">
     <div className="container-fluid">
@@ -23,6 +23,7 @@ return (
                       <h6>HOMEOWNER</h6>
                       <ul>
                           <li><a href="/homeowner/#whychoosebank">Why Choose EnerBank</a></li>
+                          {/* <li><Link onClick={() => customUrl('/homeowner/#whychoosebank')}>Why Choose EnerBank</Link></li> */}
                           <li><a href="/homeowner/#howtopay">How to Pay</a></li>
                       </ul>											
                   </div>
@@ -41,13 +42,13 @@ return (
                   <div className="single-footer-widget">
                       <h6>ABOUT</h6>
                       <ul>
-                          <li><a href="/about#companyoverview">Company Overview</a></li>
+                          <li><a href="/about#companyoverview" >Company Overview</a></li>
                           <li><a href="/about#leadership">Leadership</a></li>
                           <li><a href="/about#codeofconduct">Code of Conduct</a></li>
                           <li><a href="/about#memberfdic">Member FDIC</a></li>
                           <li><a href="/about#communityinvolvement">Community Involvement</a></li>
                           <li><a href="/about#boardofdirectors">Board of Directors</a></li>
-                          <li><a href="/about#feedback">Feedback</a></li>
+                          <li><a href="/feedback">Feedback</a></li>
                           <li><a href="/blog">Blog</a></li>
                       </ul>											
                   </div>
