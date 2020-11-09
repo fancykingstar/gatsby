@@ -29,7 +29,7 @@ const CareerPage = ({data, props}) => {
         <h1 className="mt-4 mb-10 text-center mb-3"><span>Why Work at EnerBank? </span></h1>
         <div className="container">
           <div className="row d-flex align-items-end">
-            <div className="col-md-10 m-auto" ref={handstick}>  {/*  onClick={this.handleClick} */}
+            <div className="col-md-10 m-auto embed-container" ref={handstick}>  {/*  onClick={this.handleClick} */}
                 <Video videoSrcURL="https://player.vimeo.com/video/371895200" videoTitle="EnnerBankUSA. America's home improvement lender of choice" videoWidth="100%" videoHeight="500" />
             </div>
           </div>

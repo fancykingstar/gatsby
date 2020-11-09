@@ -42,11 +42,12 @@ module.exports = {
                 icon: `src/images/favicon-icon.png`, // This path is relative to the root of the site.
             },
         },
-        `gatsby-plugin-offline`,
         {
-            resolve: `gatsby-plugin-s3`,
+            resolve: "gatsby-plugin-hubspot",
             options: {
-                bucketName: "my-website-bucket",
+                trackingCode: "381510",
+                respectDNT: true,
+                productionOnly: true,
             },
         },
     ],

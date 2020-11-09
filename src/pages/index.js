@@ -1,6 +1,7 @@
 import React from "react"
-import { Link } from "gatsby"
-import { graphql } from 'gatsby'
+import { Link, graphql } from "gatsby"
+import { Helmet } from 'react-helmet'
+
 
 import Layout from "../components/layout"
 import SEO from "../components/seo"
@@ -10,11 +11,11 @@ const IndexPage = ({data}) => {
   const node = data.wpgraphql.pageBy;
   return (
     <Layout>
-      <SEO title="Home" description="" />
+      <SEO title="Home" description={'America\'s home improvement lender of choice'} />
       <div key={node.id}>
           <section className="banner-area pos_relative" id="home" style={{ backgroundImage: "url(" + node.top_banner.banner.backgroundImage.sourceUrl + ")" }}>
             <div className="background-holder">
-              <Video videoSrcURL={node.video_section.video.videoUrl} allow="autoplay" videoTitle="EnnerBankUSA. America's home improvement lender of choice" videoWidth="100%" videoHeight="500" />
+              <Video videoSrcURL={node.video_section.video.videoUrl} allow="autoplay" videoTitle="EnnerBank improvement lender of choice" videoWidth="100%" videoHeight="500" />
             </div>
             <div className="container">
               <div className="row h-half d-flex align-items-end pb-5">

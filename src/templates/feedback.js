@@ -8,6 +8,59 @@ const Feedback = () => {
     const { register, handleSubmit, errors } = useForm();
     const onSubmit = (data) => {
         console.log(data)
+        var xhr = new XMLHttpRequest();
+        var url = 'https://api.hsforms.com/submissions/v3/integration/submit/381510/fe8cd589-e097-42d5-a9aa-4c65409539f3'
+        var sendData =  {
+            "fields": [
+                {
+                    'name': 'firstName',
+                    'value': data.firstName
+                },
+                {
+                    'name'   : 'lastName',
+                    'value': data.lastName,
+                },
+                {
+                    'name': 'email',
+                    'value': data.email,
+                },
+                {
+                    'name': 'phone',
+                    'value': data.phone,
+                },
+                {
+                    'name': 'accountNumber',
+                    'value': data.accountNumber,
+                },
+                {
+                    'name': 'perfectContact',
+                    'value': data.perfectContact,
+                },
+                {
+                    'name': 'message',
+                    'value': data.message,
+                }
+            ],
+            // 'context': {
+            //     'pageUri': 'http://localhost:8000/feedback',
+            //     'pageName': 'feedback'
+            // },
+        }
+        var finel_data = JSON.stringify(sendData);
+        xhr.open('POST', url);
+        xhr.setRequestHeader('Content-Type', 'application/json');
+        xhr.setRequestHeader('Access-Control-Allow-Origin', '*');
+        xhr.setRequestHeader('Access-Control-Allow-Methods', 'POST');
+        xhr.onreadystatechange = function(){
+            if(xhr.readyState === 4 && xhr.status === 200){
+                alert(xhr.responseText);
+            }else if(xhr.readyState === 4 && xhr.status === 403){
+                alert(xhr.responseText);
+            }else if(xhr.readyState === 4 && xhr.status === 404){
+                alert(xhr.responseText);
+            }
+        }
+        xhr.send(finel_data);
     }
 
   return (  
@@ -18,6 +71,7 @@ const Feedback = () => {
                 <h1 className="text-center mb-5">Comments and Questions</h1>
                 <p className="mb-0 text-blue font-weight-bold">Question about a loan? Have a comment? We want to hear from you.</p>
                 <p className="small text-warning mb-5">*indicates required fields</p>
+        
                 <form onSubmit={handleSubmit(onSubmit)}>
                     <div className="form-group row">
                         <div className="col-lg-6">
@@ -86,9 +140,10 @@ const Feedback = () => {
                         <label className="font-weight-bold small" htmlFor="lastDigitAcNo">Last 4 Digit of Account Number</label>
                         <input
                             className="form-control"
-                            name="Account Number"
+                            name="accountNumber"
                             type="text"
-                            id="lastDigitAcNo"
+                            id="accountNumber"
+                            ref={register()}
                         />
                     </div>
                     <div className="form-group row">
@@ -96,10 +151,13 @@ const Feedback = () => {
                             <label className="font-weight-bold small" htmlFor="perContact">Perfect Contact</label>
                             <select
                                 className="form-control"
-                                name="Perfect Contact"
-                                id="perContact"
+                                name="perfectContact"
+                                id="perfectContact"
+                                ref={register()}                                
                             >
-                                
+                                <option value="">Select Perfect Contact</option>
+                                <option value="abc">abc</option>
+                                <option value="xyz">xyz</option>
                             </select>
                         </div>
                     </div>
@@ -108,8 +166,9 @@ const Feedback = () => {
                         <textarea
                             className="form-control"
                             rows="5"
-                            name="Message"
+                            name="message"
                             id="message"
+                            ref={register()}
                         />
                     </div>
                     <div className="form-group small text-muted">Please do not provide confidential information via this form. We'll contact you to discuss the detail of your inquiry.</div>

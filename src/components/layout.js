@@ -3,6 +3,7 @@ import PropTypes from 'prop-types'
 import { StaticQuery, graphql, withPrefix  } from 'gatsby'
 import Helmet from "react-helmet"
 import 'bootstrap/dist/css/bootstrap.min.css';
+import ThemeContext from '../context/ThemeContext'
 
 import Header from './header'
 import Footer from './footer'
@@ -27,15 +28,16 @@ const Layout = ({ children }) => {
 			render={data => (
 				<>
 					<Header siteTitle={data.site.siteMetadata.title} />
-					{/* <Helmet>
-						<script src={withPrefix('script.js')} type="text/javascript" name="hirebridge-script" />
-					</Helmet> */}
-					<div dangerouslySetInnerHTML={{__html: font}} />
-					{children}
+						{/* <Helmet>
+							<script src={withPrefix('script.js')} type="text/javascript" name="hirebridge-script" />
+						</Helmet> */}
+						<div dangerouslySetInnerHTML={{__html: font}} />
+						{children}
 					<Footer />
 				</>
 			)}
 		/>
+
 	)
 }
 

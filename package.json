@@ -14,7 +14,6 @@
     "axios-react": "^2.0.2",
     "bootstrap": "^4.5.0",
     "gatsby": "^2.19.7",
-    "gatsby-cli": "^2.12.12",
     "gatsby-image": "^2.2.39",
     "gatsby-plugin-manifest": "^2.2.39",
     "gatsby-plugin-offline": "^3.0.32",
@@ -24,7 +23,6 @@
     "gatsby-source-filesystem": "^2.1.46",
     "gatsby-source-graphql": "^2.1.33",
     "gatsby-transformer-sharp": "^2.3.13",
-    "js-file-download": "^0.4.12",
     "prop-types": "^15.7.2",
     "react": "^16.12.0",
     "react-bootstrap": "^1.0.1",
@@ -39,6 +37,7 @@
     "sendemail": "^4.0.1"
   },
   "devDependencies": {
+    "gatsby-cli": "^2.12.12",
     "prettier": "^1.19.1"
   },
   "keywords": [

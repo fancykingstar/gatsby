@@ -1,15 +1,6 @@
 import React from 'react';
 import { Modal } from 'react-bootstrap';
 import close_icon from '../../images/closed_icon-blue.svg'
-// import SinglesInside054 from '../../images/enerbank_db/singles_inside_054.jpg';
-// import SinglesInside037 from '../../images/enerbank_db/singles_inside_037.jpg';
-// import SinglesInside006 from '../../images/enerbank_db/singles_inside_006.jpg';
-// import SinglesInside018 from '../../images/enerbank_db/singles_inside_018.jpg';
-// import SinglesInside046 from '../../images/enerbank_db/singles_inside_046.jpg';
-// import SinglesInside029 from '../../images/enerbank_db/singles_inside_029.jpg';
-// import SinglesInside012 from '../../images/enerbank_db/singles_inside_012.jpg';
-// import SinglesInside066 from '../../images/enerbank_db/singles_inside_066.jpg';
-// import SinglesInside016 from '../../images/enerbank_db/singles_inside_016.jpg';
 
 const DirectorOne = (props) => {
 		const {title, image} = props.popData
@@ -18,15 +9,14 @@ const DirectorOne = (props) => {
 				<div className="modal_content p-4">
 					<div className="card">
 						<div className="row no-gutters">
-							<div className="col-md-6">
-								<img src={image} className="card-img" alt="..." />
+							<div className="col-lg-6">
+								<img src={image} className="card-img w-100 h-100 position-relative" style={{objectFit: 'cover'}} alt="..." />
 							</div>
-							<div className="col-md-6">
+							<div className="col-lg-6">
 									<div className="card-body px-4">
 										<button type="button" className="close text-white" data-dismiss="modal" aria-label="Close" onClick={props.handleClose}>
 											<img src={close_icon} width="20" alt="close icon" />
 										</button>
-									{/* <h3 className="h2 font-weight-bold">Dealer Resource Center</h3> */}
 									<h5 className="card-title border-bottom text-blue pb-1 mb-0">{title}</h5>
 									<p className="small mb-10 font-italic">President & CEO</p>
 									<p className="small">Charles E. Knadler is responsible for the overall management of
