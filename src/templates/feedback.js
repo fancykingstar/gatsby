@@ -1,23 +1,27 @@
-import React from "react";
+import React, { useState } from "react";
 import { useForm } from "react-hook-form";
+import { Modal, Button } from 'react-bootstrap'
 
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 
 const Feedback = () => {
+    const [show, setShow] = useState(false);
+    const [message, setMessage] = useState(false);
     const { register, handleSubmit, errors } = useForm();
-    const onSubmit = (data) => {
+    const handleClose = () => setShow(false);
+    const onSubmit = (data, e) => {
         console.log(data)
         var xhr = new XMLHttpRequest();
         var url = 'https://api.hsforms.com/submissions/v3/integration/submit/381510/fe8cd589-e097-42d5-a9aa-4c65409539f3'
         var sendData =  {
             "fields": [
                 {
-                    'name': 'firstName',
+                    'name': 'firstname',
                     'value': data.firstName
                 },
                 {
-                    'name'   : 'lastName',
+                    'name'   : 'lastname',
                     'value': data.lastName,
                 },
                 {
@@ -29,11 +33,11 @@ const Feedback = () => {
                     'value': data.phone,
                 },
                 {
-                    'name': 'accountNumber',
+                    'name': 'last_4_digits_of_loan_account_number',
                     'value': data.accountNumber,
                 },
                 {
-                    'name': 'perfectContact',
+                    'name': 'preferred_contact',
                     'value': data.perfectContact,
                 },
                 {
@@ -53,11 +57,20 @@ const Feedback = () => {
         xhr.setRequestHeader('Access-Control-Allow-Methods', 'POST');
         xhr.onreadystatechange = function(){
             if(xhr.readyState === 4 && xhr.status === 200){
-                alert(xhr.responseText);
+                // alert(xhr.responseText.split('"', 4)[3]);
+                setMessage(xhr.responseText.split('"', 4)[3])
+                setShow(true);
+                e.target.reset();
+            }else if(xhr.readyState === 4 && xhr.status === 400){
+                console.log(JSON.parse(xhr.responseText).errors[0].message)
+                setMessage(JSON.parse(xhr.responseText).errors[0].message);
+                setShow(true);
             }else if(xhr.readyState === 4 && xhr.status === 403){
-                alert(xhr.responseText);
+                setMessage(xhr.responseText);
+                setShow(true);
             }else if(xhr.readyState === 4 && xhr.status === 404){
-                alert(xhr.responseText);
+                setMessage(xhr.responseText);
+                setShow(true);
             }
         }
         xhr.send(finel_data);
@@ -143,7 +156,7 @@ const Feedback = () => {
                             name="accountNumber"
                             type="text"
                             id="accountNumber"
-                            ref={register()}
+                            ref={register}
                         />
                     </div>
                     <div className="form-group row">
@@ -153,23 +166,31 @@ const Feedback = () => {
                                 className="form-control"
                                 name="perfectContact"
                                 id="perfectContact"
-                                ref={register()}                                
+                                ref={register}                                
                             >
                                 <option value="">Select Perfect Contact</option>
-                                <option value="abc">abc</option>
-                                <option value="xyz">xyz</option>
+                                <option value="phone">Phone</option>
+                                <option value="email">Email</option>
                             </select>
                         </div>
                     </div>
                     <div className="form-group mb-0">
-                        <label className="font-weight-bold small" htmlFor="message">Message</label>
+                        <label className="font-weight-bold small" htmlFor="message">Message<span className="text-danger">*</span></label>
                         <textarea
                             className="form-control"
                             rows="5"
                             name="message"
                             id="message"
-                            ref={register()}
+                            className={errors.message && errors.message.type === "required" ? 'form-control is-invalid' : 'form-control'}
+                            aria-invalid={errors.message ? "true" : "false"}
+                            ref={register({ required: true })}
                         />
+                        {errors.message && errors.message.type === "required" && (
+                            <span role="alert" className="small invalid-feedback">Message is required</span>
+                        )}
+                        {errors.message && errors.message.type === "maxLength" && (
+                            <span role="alert">Max length exceeded</span>
+                        )}
                     </div>
                     <div className="form-group small text-muted">Please do not provide confidential information via this form. We'll contact you to discuss the detail of your inquiry.</div>
                     <div className="form-group">
@@ -178,6 +199,12 @@ const Feedback = () => {
                 </form>
             </div>
         </section>
+        <Modal show={show} onHide={handleClose}>
+            <Modal.Body className="p-4 mt-5 text-center" dangerouslySetInnerHTML={{__html: message}} />
+            <Modal.Footer className="border-0">
+                <Button variant="primary mb-3 mx-auto" onClick={handleClose}>Ok</Button>
+            </Modal.Footer>
+        </Modal>
     </Layout>
   
 )}
