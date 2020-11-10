@@ -60,7 +60,6 @@ const About = ({data}) => {
             <section className="bg-blue" id="memberfdic">
                 <div className="container py-5 text-white">
                     <div className="col-12 col-md-11 mx-auto">
-                        <h3 className="h2 text-white text-center mb-3">Member FDIC Bank</h3>
                         <div className="d-flex flex-column" dangerouslySetInnerHTML={{__html: content.about.memberFdic.fdicDescription}} />
                         <hr className="border-white" />
                         <img className="d-block mt-5 mx-auto" alt="Fdic logo" src={content.about.memberFdic.fdicLogo.sourceUrl} data-holder-rendered="true" />
