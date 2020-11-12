@@ -49,11 +49,20 @@ const HomeOwnerPage = ({data}) => {
                 <div className="container">
                     <div className="row h-half d-flex align-items-end pb-5">
                         { data.wpgraphql.page.top_banner.banner.bannerLinks.map((item, i) => {
-                            return (
-                                <div className="col-md-4" key={item.fieldGroupName+i}>
-                                    <div className="header-btn"><Link className="mr-auto" to={item.links.url} dangerouslySetInnerHTML={{ __html: item.links.title}} /></div>
-                                </div>
-                            )
+                            if(i === 1){
+                                const links = item.links.url
+                                return (
+                                    <div className="col-md-4" key={item.fieldGroupName+i}>
+                                        <div className="header-btn"><a className="mr-auto" href={links} target="_blank" dangerouslySetInnerHTML={{ __html: item.links.title}} /></div>
+                                    </div>
+                                )
+                            }else{
+                                return (
+                                    <div className="col-md-4" key={item.fieldGroupName+i}>
+                                        <div className="header-btn"><Link className="mr-auto" to={item.links.url} dangerouslySetInnerHTML={{ __html: item.links.title}} /></div>
+                                    </div>
+                                )
+                            }
                         })}
                     </div>
                 </div>

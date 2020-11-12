@@ -13,7 +13,7 @@ const Support = (props) => {
 						<h3 className="h2 font-weight-bold">Support</h3>
 					</div>
 					<div className="modal_content">
-						<div className="p-8 py-sm-5">
+						<div className="p-4 px-sm-8 py-sm-5">
 							<div className="small line-height-normal" dangerouslySetInnerHTML={{__html: props.popData.content}} />
 							<div className="row">
 								<div className="col-lg-12">

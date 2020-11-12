@@ -42,7 +42,7 @@ const About = ({data}) => {
                 <section className="video-section mb-5">
                     <div className="container">
                     <div className="row d-flex align-items-end">
-                        <div className="col-md-10 m-auto" ref={handstick}>  {/*  onClick={this.handleClick} */}
+                        <div className="col-md-10 m-auto embed-container" ref={handstick}>  {/*  onClick={this.handleClick} */}
                             <Video videoSrcURL={content.video_section.video.videoUrl} videoTitle="CEO Intro For About Us Page" videoWidth="100%" videoHeight="500" />
                         </div>
                     </div>
@@ -99,7 +99,7 @@ const About = ({data}) => {
                     {content.about.boardOfDirectors.directors && (
                         content.about.boardOfDirectors.directors.map((item, i) => {
                             return(
-                                <div className="col-sm-2 col-md-4 col-lg-4" key={item.directorThumb.id}>
+                                <div className="col-sm-6 col-md-6 col-lg-4" key={item.directorThumb.id}>
                                     <div className="mb-4 text-center director-col" onClick={showbenefitpopup({title: item.directorName, image: item.directorThumb.sourceUrl})}>
                                         <img src={item.directorThumb.sourceUrl} alt={item.directorThumb.altText} />
                                         <div className="director-profile" dangerouslySetInnerHTML={{__html: item.directorOverlay}} />
@@ -113,7 +113,7 @@ const About = ({data}) => {
 
                 {/* Start News & Media Area */}
                 <section className="my-5">
-                    <div className="container">
+                    {/* <div className="container"> */}
                         <div className="d-flex flex-wrap">
                             <div className="card box-shadow bg-white rounded text-center col-xs-12 col-md mb-3 mb-lg-0 p-0 mr-md-3 mr-lg-5">
                                 <div className="wygthumb news_media">
@@ -136,13 +136,13 @@ const About = ({data}) => {
                                 <Link to={'/blog'} className="pb-4 px-4 font-weight-bold mt-auto">EnerBank USA blog</Link>
                             </div>
                         </div>
-                    </div>
+                    {/* </div> */}
                 </section>
                 {/* End News & Media Area */}
 
-                <div className="pt-4">
-                    <p className="text-center">Want to Learn More?</p>
-                    <button className="btn bg-blue d-block text-white mx-auto px-5">Contact Us</button>
+                <div className="pt-4 text-center">
+                    <p>Want to Learn More?</p>
+                    <Link to={'/contact-us'} className="btn bg-blue d-inline-block text-white mx-auto px-5">Contact Us</Link>
                 </div>                
             </div>
             <DirectorOne visiblity={visible} handleClose={hidebenefitpopup} popData={popData} />

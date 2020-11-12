@@ -27,6 +27,7 @@ select { display: block }
 }
 .btn-primary:not(:disabled):not(.disabled).active,
 .btn-primary:not(:disabled):not(.disabled):active,
+.btn-primary.disabled, .btn-primary:disabled,
 .show>.btn-primary.dropdown-toggle{ border-color: #0077C8 !important; background-color: #0077C8 !important; }
 
 .btn-link{ background: none; border: none; padding: 0 10px; color: #0077C8 !important; }
@@ -45,6 +46,16 @@ h4, .h4 { font-size: 18px }
 h5, .h5 { font-size: 16px }
 h6, .h6 { font-size: 14px; color: #4D4D4D; }
 h1, h2, h3, h4, h5, h6 { line-height: 1.5em }
+
+@media (max-width: 767px){
+  h1, .h1 { font-size: 24px }
+  h2, .h2 { font-size: 20px; }
+  h3, .h3 { font-size: 18px; }
+  h4, .h4 { font-size: 16px }
+  h5, .h5 { font-size: 14px }
+  h6, .h6 { font-size: 14px; }
+}
+
 td, th { border-radius: 0px }
 .clear::before, .clear::after { content: " "; display: table }
 .clear::after { clear: both }
@@ -126,6 +137,7 @@ td, th { border-radius: 0px }
 .pl-30 { padding-left: 30px }
 .pl-90 { padding-left: 90px }
 .p-40 { padding: 40px }
+.object-fit-cover{ object-fit: cover; -o-object-fit: cover; width: 100%; }
 .text-white { color: #fff }
 .text-black { color: #4d4d4d; }
 .transition { -webkit-transition: all 0.3s ease 0s; -moz-transition: all 0.3s ease 0s; -o-transition: all 0.3s ease 0s; transition: all 0.3s ease 0s }
@@ -601,16 +613,15 @@ body.mobile-nav-active #mobile-nav-toggle { color: #fff }
 
 @media screen and (max-width:991px){
   .payment-option ul, .benefit-option ul{ flex-wrap: wrap; }
-  .benefit-option ul li{ width: 30%; }
-  .payment-option ul li{ flex-basis: 50%; margin: 10px 0; }
+  .payment-option ul li{ width: 30%; flex-basis: 30%; margin: 10px 0; }
 }
 @media screen and (max-width:576px){
-  .benefit-option ul li{ width: 50%; }
+  .payment-option ul li, .benefit-option ul li{ width: 50%; flex-basis: 50%; }
 }
 
 /* hover effect */
-.payment-option ul li:hover{ transform: scale(1.2); }
-.payment-option ul li:hover p{ color: #29a9e0; }
+.payment-option ul li:hover, .benefit-option ul li:hover{ transform: scale(1.2); }
+.payment-option ul li:hover p, .benefit-option ul li:hover p{ color: #29a9e0; }
 
 .genric-btn { display: inline-block; outline: none; line-height: 40px; padding: 2px 30px; font-size: .8em; text-align: center; text-decoration: none;
     font-weight: 500; cursor: pointer; -webkit-transition: all 0.3s ease 0s; -moz-transition: all 0.3s ease 0s; -o-transition: all 0.3s ease 0s;
@@ -662,6 +673,9 @@ body.mobile-nav-active #mobile-nav-toggle { color: #fff }
 .loan_offer .btn:before { width: 3px; height: 17px; right: 9px; top: 12px; }
 .loan_offer .btn.collapsed:after { width: 17px; height: 3px; right: 2px; top: 19px; }
 .modal .close{ position: absolute; right: 13px; top: 10px; }
+@media (max-width: 576px){
+  .modal .close{color: #fff; opacity: 1 !important;}
+}
 .text-blue { color: #0077C8; }
 .gift_card img{ width: 100%; }
 
@@ -709,7 +723,7 @@ body.mobile-nav-active #mobile-nav-toggle { color: #fff }
 }
 .text-md { font-size: 18px; font-weight: 500; line-height: 24px; }
 .text-lg { font-size: 22px; font-weight: 500; line-height: 28px; }
-.modal_banner { background-size: cover; position: relative; height: 300px; }
+.modal_banner { background-size: cover; position: relative; }
 .modal_banner:before { content: ""; position: absolute; left: 0; top: 0; width: 100%; height: 100%; z-index: 99; background-size:15% !important; }
 .modal_banner p { position: absolute; width: 100%; left: 0; bottom: 30px; z-index: 2; text-align: center; color:#fff; z-index: 99; font-size:24px; }
 
@@ -755,7 +769,7 @@ body.mobile-nav-active #mobile-nav-toggle { color: #fff }
 .modal_content p{line-height: 24px; text-align: left;}
   
 /* appPopup modal css */
-#appPopup .modal_banner{ background: url(../images/appMethod-MockUp.jpg) center -100px; background-size: cover; position:relative; height:300px; }
+#appPopup .modal_banner{  background-size: cover; position:relative; }
 /*url(../images/app-method-icon.svg) no-repeat center*/
 /* #appPopup .modal_banner:before{ content: ""; position: absolute; left: 0; top: 0; width: 100%; height: 100%; z-index: 0; background: rgba(0,0,0,0.4); } */
 .appMethod { height: 100%; border-top: 30px solid #dee2e6!important; position: relative; padding: 20px 20px 10px; text-align: center; }
@@ -779,7 +793,7 @@ body.mobile-nav-active #mobile-nav-toggle { color: #fff }
 .start_drc2 a{ font-size:16px; border: 1px solid #fff; padding: 10px 20px; color: #fff; border-radius: 3px; }
   
 /* Benefits to Creating a Loan Program */
-.modal_banner{ background-repeat:no-repeat; background-size: cover; position:relative; height:300px; padding:15px 25px; }
+.modal_banner{ background-repeat:no-repeat; background-size: cover; position:relative; }
 .banner_bg{position: relative; z-index: 9;}
 .banner_bg:after{content:'';position: absolute; z-index: 1; width:100%; top: 0; left:0; height: 100%; background:rgba(0,0,0,0.6);}
 .modal_banner span{position:relative; z-index: 5; width: 160px; height: 100%; margin: 0 auto; 
@@ -791,6 +805,10 @@ display: flex; align-items: center; justify-content: center; }
 .left-icon-list li:last-child{ margin: 0; }
 .left-icon-list li span{position:absolute; top: 0px; left: 0; width: 90px;}
 .left-icon-list li h4{font-size: 21px; color: #007ac2; margin:0 0 10px 0; padding:0; line-height: normal;}
+@media (max-width: 576px){
+  .left-icon-list li{ padding:120px 0 0; }
+  .left-icon-list li span{ left: 50%; transform: translateX(-50%); }
+}
 
 #loantypeExample .card-body{padding-left: 0 !important;padding-right: 0 !important;}
 #loantypeExample .card-body h4{margin-bottom: 20px;}
@@ -894,7 +912,7 @@ display: flex; align-items: center; justify-content: center; }
  .check_count input:checked ~ .checkmark:after { display: block; }
  
  /* Style the checkmark/indicator */
- .check_count .checkmark:after { left: 11px; top: 1px; width: 12px; height: 22px; border: solid white; border-width: 0 4px 4px 0; -webkit-transform: rotate(45deg);
+ .check_count .checkmark:after { left: 11px; top: 3px; width: 12px; height: 22px; border: solid white; border-width: 0 4px 4px 0; -webkit-transform: rotate(45deg);
     -ms-transform: rotate(45deg); transform: rotate(45deg); 
 }
 
@@ -934,6 +952,9 @@ display: flex; align-items: center; justify-content: center; }
 .paymentEstimator{ border: 1px solid #0077C8; border-radius: 5px; overflow: hidden; }
 .paymentEstimator .formHeading, .paymentEstimator .formFooter{ background: #0077C8; border-radius: 5px 5px 0 0; padding: 10px; color:#fff; font-size: 28px; font-weight: 500; margin-bottom: 40px; }
 .paymentEstimator label{ font-weight:500; font-size:14px; text-align: right; }
+@media (max-width:576px){
+  .paymentEstimator label{ text-align: left; }
+}
 .paymentEstimator input{border: 2px solid #0077C8; }
 .paymentEstimator input::-webkit-outer-spin-button,
 .paymentEstimator input::-webkit-inner-spin-button {
@@ -944,8 +965,10 @@ display: flex; align-items: center; justify-content: center; }
 .paymentEstimator .formFooter{ border-radius: 0; font-size:20px; text-align: left; margin: 0; padding: 10px 35px; }
 .estimatorForm p{ margin: 20px 0 15px; font-size: 11px; line-height: 14px; letter-spacing: 0px; }
 /* .payment-program{ line-height: 24px;  } */
-.payment-program h1{ margin-bottom: 10px; font-size: 36px; letter-spacing: 0; }
-.payment-option-box{ max-width: 450px; margin: 0 auto !important; }
+@media (min-width:768px){
+  .payment-program h1{ margin-bottom: 10px; font-size: 36px; letter-spacing: 0; }
+}
+.payment-option-box{ max-width: 450px; margin-left: auto !important; margin-right: auto !important; }
 .border-heading{ position: relative; }
 .border-heading:before, .border-heading:after{ height: 1px; background: #ccc; position: absolute; content: ""; width: 100%; top:50%; }
 .border-heading:before{ left: 0; }
@@ -961,7 +984,7 @@ display: flex; align-items: center; justify-content: center; }
     height: 100%;
     z-index: 1;
 }
-.easyApp ul{ counter-reset: funding-method; }
+.easyApp ul{ counter-reset: funding-method; list-style: none !important; }
 .easyApp ul li{ position: relative; padding:10px 0 10px 60px; margin: 10px 0; font-weight: 500; }
 .easyApp ul li:before{ counter-increment: funding-method; content: counter(funding-method); position: absolute; left:0; margin-top: -5px; border: 2px solid #fff; width:40px; height:40px; border-radius: 50%; display: flex; align-items: center; justify-content: center; }
 
@@ -1026,7 +1049,7 @@ display: flex; align-items: center; justify-content: center; }
 .training{ margin-right: 15px !important; }
 .training .card-body .card-text{ height: 100%; }
 @media (max-width:576px){
-  .loantype, .training, .whatsinit, .whatsinitdealers{ max-width: 100%; margin: 15px !important; }
+  .loantype, .training, .whatsinit, .whatsinitdealers{ max-width: calc(100% - 30px); }
 }
 .blogpost{ line-height: 28px; }
 .blogpost p img{ margin-top: 30px; margin-bottom: 30px; }
@@ -1046,6 +1069,13 @@ display: flex; align-items: center; justify-content: center; }
 .testimonial-list li:nth-child(2n+0) .user-icon{ left: auto; right: 0; }
 .testimonial-list li:nth-child(2n+0) .ballon{ float: right; margin-right: 80px; }
 .testimonial-list li:nth-child(2n+0) .ballon:before{ right: 30px; left: auto; border-left: 0px solid #0079c2; border-right: 40px solid #0079c2; border-top: 0px; }
+
+@media (max-width:576px){
+  .testimonial-list li{ display: flex; flex-direction: column; }
+  .testimonial-list li .ballon, .testimonial-list li:nth-child(2n+0) .ballon{ margin: auto; width: auto;  }
+  .testimonial-list li .user-icon{ position: relative; order: 2; }
+  .testimonial-list li:nth-child(2n+0) .user-icon{ margin-left: auto; margin-right: 0; }
+}
 
 /* grid gallery */
 .gridgallery { display: grid; grid-gap: 50px; grid-template-columns: repeat(auto-fit, minmax(30%, 1fr)); grid-auto-rows: 120px; grid-auto-flow: dense; }
@@ -1086,4 +1116,13 @@ display: flex; align-items: center; justify-content: center; }
   top: 0; left: 0; 
   width: 100%; 
   height: 100%; 
+}
+
+/* supportHeading */
+.supportHeading{ font-size: 22px; }
+.innerSectionDetails ul{ padding-left: 20px; display: flex; flex-wrap: wrap; }
+.innerSectionDetails ul li{ font-weight: bold; list-style: disc !important; width: 50%; }
+
+@media (max-width:576px){
+  .innerSectionDetails ul li{ width: 100%; }
 }

@@ -13,7 +13,7 @@ const WhatsInItForYou = (props) => {
 					<h2 className="h2 text-white font-weight-bold" dangerouslySetInnerHTML={{__html: props.popData.title}} />
 				</div>
 				<div className="modal_content">
-					<div className="p-5 mx-5 my-3">
+					<div className="p-4 px-md-5 mx-md-5 my-3">
 						<div className="programtools" dangerouslySetInnerHTML={{__html: props.popData.content}} />
 						<div className="d-flex mt-5">
 							<ul className="popupchecklist">

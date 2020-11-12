@@ -24,8 +24,8 @@ const ViewFile = (props) => {
 				<div className="modal_content">		
 
 					<div className="p-4 pb-0 pt-sm-4">
-						<div className="col-md-12 header-text mb-4 px-5 text-center" dangerouslySetInnerHTML={{__html:props.popData.content}} />
-						<div className="p-4 py-sm-3">									
+						<div className="col-md-12 header-text mb-4 px-md-5 text-center" dangerouslySetInnerHTML={{__html:props.popData.content}} />
+						<div className="py-sm-3">									
 							{/* Collapsed List */}
 							<Tabbordion blockElements={blockElements} animateContent={'height'} mode={'toggle'} className="accordion loan_offer mx-4 mx-lg-5" name="accordion">
 								{props.popData.accordion.tabpanel.map((item, i) => {

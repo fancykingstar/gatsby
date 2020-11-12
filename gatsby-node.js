@@ -69,6 +69,16 @@ exports.createPages = async ({ graphql, actions }) => {
                     },
                   })
               break;
+          case "contact":
+                  createPage({
+                    path: "contact",
+                    component: path.resolve(`./src/templates/contact.js`),
+                    context: {
+                      slug: node.slug,
+                      databaseId: node.databaseId,
+                    },
+                  })
+              break;
           case "careers":
                     createPage({
                       path: "careers",
@@ -99,6 +109,46 @@ exports.createPages = async ({ graphql, actions }) => {
                       },
                     })
               break;
+          case "terms-of-use":
+                  createPage({
+                    path: "terms-of-use",
+                    component: path.resolve(`./src/templates/terms-of-use.js`),
+                    context: {
+                      slug: node.slug,
+                      databaseId: node.databaseId,
+                    },
+                  })
+              break;
+          case "referral-terms":
+                  createPage({
+                    path: "referral-terms",
+                    component: path.resolve(`./src/templates/referral-terms.js`),
+                    context: {
+                      slug: node.slug,
+                      databaseId: node.databaseId,
+                    },
+                  })
+              break;
+          case "referral-program-details":
+                  createPage({
+                    path: "referral-program-details",
+                    component: path.resolve(`./src/templates/referral-program-details.js`),
+                    context: {
+                      slug: node.slug,
+                      databaseId: node.databaseId,
+                    },
+                  })
+              break;
+          case "events":
+                  createPage({
+                    path: "events",
+                    component: path.resolve(`./src/templates/events.js`),
+                    context: {
+                      slug: node.slug,
+                      databaseId: node.databaseId,
+                    },
+                  })
+              break;
           default:
                 createPage({
                   path: node.slug,
@@ -123,6 +173,15 @@ exports.createPages = async ({ graphql, actions }) => {
         createPage({
           path: "feedback",
           component: path.resolve(`./src/templates/feedback.js`),
+          // context: {
+          //   slug: node.slug,
+          //   databaseId: node.databaseId,
+          // },
+        })
+
+        createPage({
+          path: "contact-us",
+          component: path.resolve(`./src/templates/lead.js`),
           // context: {
           //   slug: node.slug,
           //   databaseId: node.databaseId,

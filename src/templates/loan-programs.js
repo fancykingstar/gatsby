@@ -147,13 +147,13 @@ const LoanProgramPage = ({ data }) => {
 
 			<section className="container">
 				<div className="row">
-					<div className="mx-auto col-12 col-md-11 py-md-5 mt-md-4 mb-md-3">
+					<div className="mx-auto col-12 col-md-11 py-md-5 mt-4 mb-md-3">
 						<div className="payment-program" dangerouslySetInnerHTML={{__html:content.content}} />
 					</div>
 				</div>
 
 				<div className="row video-section">
-					<div className="m-auto col-12 col-md-11">
+					<div className="m-auto col-12 col-md-11 embed-container">
 						<Video videoSrcURL="https://www.youtube.com/embed/PKnMxIz4FWw?byline=0&title=0" videoTitle="EnerBank Atmospheric Video" videoWidth="100%" videoHeight="500" />
 						<p className="text-center font-weight-bold mt-2 mb-4">Watch: Discover the key to unlocking business growth</p>
 					</div>      
@@ -302,7 +302,7 @@ const LoanProgramPage = ({ data }) => {
 						)}
 
 						{content.loan_program.onlineAppIntegration.appIntegrationOption && (
-							<div className="row flex-wrap pt-5">
+							<div className="row pt-5">
 								{data.wpgraphql.popupplural.edges.map(cate => {
 									(cate.node.slug === "appintegrationoptions") && (
 										cate.node.popupPost.edges.map((post) => {
@@ -342,7 +342,7 @@ const LoanProgramPage = ({ data }) => {
 								<h3 className="h2 text-center font-weight-bold mb-3">What’s Your Specialty? We’ve Got Loans for Whatever You Do!</h3>
 								<p>We offer loans for a ton of different home improvement project types. From the foundation all the way up to the roof — inside, outside, large or small — our loans are tailored to meet virtually any home improvement need. Contact us to discover which loans will best suit your business model.</p>
 							</div>
-							<div className="text-center mt-5 pb-5"><a className="m-auto px-5 btn btn-primary font-weight-bold" href="/">Contact Us</a></div>
+							<div className="text-center mt-5 pb-5"><a className="m-auto px-5 btn btn-primary font-weight-bold" href="/contact">Contact Us</a></div>
 							<div className="py-md-5 pb-0 mb-5 payment-program">
 								<h3 className="h2 text-center font-weight-bold mb-3">Our Contractor Support is Second to None</h3>
 								<p>We built our whole business around working with home improvement contractors across the nation. Because we only do home improvement loans, we can provide specialized and unparalleled service, starting with your dedicated relationship manager.</p>

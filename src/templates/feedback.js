@@ -11,7 +11,6 @@ const Feedback = () => {
     const { register, handleSubmit, errors } = useForm();
     const handleClose = () => setShow(false);
     const onSubmit = (data, e) => {
-        console.log(data)
         var xhr = new XMLHttpRequest();
         var url = 'https://api.hsforms.com/submissions/v3/integration/submit/381510/fe8cd589-e097-42d5-a9aa-4c65409539f3'
         var sendData =  {
