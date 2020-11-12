@@ -1,0 +1,751 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <title>EnerBank  Online Loan Application Integration</title>
+    <meta content="" name="descriptison">
+    <meta content="" name="keywords">
+    <!-- Favicons -->
+    <!-- <link href="assets/img/favicon.png" rel="icon">
+    <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon"> -->
+    <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+    <!-- Vendor CSS Files -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/font-awesome.min.css" rel="stylesheet">
+    <!-- Template Main CSS File -->
+    <link href="css/style.css" rel="stylesheet">
+    <link href="style.css" rel="stylesheet" type="text/css">
+    <link href="https://code.jquery.com/ui/1.11.3/themes/smoothness/jquery-ui.min.css" rel=
+      "stylesheet">
+      <script src="https://code.jquery.com/jquery-1.10.2.min.js">
+      </script>
+      <script src="https://code.jquery.com/ui/1.11.3/jquery-ui.min.js">
+      </script>
+      <!-- =======================================================
+      * Template Name: Enerbank - v1.0.1
+      * Template URL:
+      * Author: EnerBank
+      * License: https://enerbank.com/
+      ======================================================== -->
+    </head>
+    <body id="prepop__content">
+      <style>
+      .flex_container {
+      display: flex;
+      flex-direction: column;
+      }
+      .main_title {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      }
+      .main_title h2 {
+      font-size:44px;
+      line-height: 52px;
+      text-align: center;
+      }
+      .main_title p {
+      color:#808080;
+      font-size:18px;
+      /*line-height:20px;*/
+      margin-bottom: 50px;
+      }
+      .flex-steps {
+      display: flex;
+      flex-direction: column;
+      padding:15px;
+      align-items: center;
+      }
+      .step__container {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-between;
+      }
+      .step__container_count {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding-right:15px;
+      }
+      .flex-steps .step__count {
+      width:40px;
+      height:40px;
+      border-radius:40px;
+      background-color:#0079c8;
+      text-align:center;
+      color:#FFFFFF;
+      font-size:24px;
+      line-height:40px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin:0 auto;
+      }
+      .step__container_info {
+      display: flex;
+      align-items: center;
+      }
+      .step__container_info p{ margin-bottom: 0; }
+      .final_step {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      }
+      .final_step p {
+      font-size: 1.4em;
+      font-weight: 500;
+      color: #0079c8;
+      }
+      .param__form {
+      width:100%;
+      display:flex;
+      background:#f1f1f1;
+      margin:0px 0 50px;
+      flex-direction:column;
+      }
+      .param__form_content {
+      display:flex;
+      flex-direction: column;
+      padding:50px;
+      }
+      .param__form_inputs {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      }
+      .param__form_input {
+      display: flex;
+      flex-direction: column;
+      width:24%;
+      margin:0;
+      }
+      .param__form_input .form__warning {
+      color: red;
+      }
+      .param__form_input label > small{
+      display:none;
+      }
+      .param__form_title {
+      font-size: 26px;
+      color: #0079c8;
+      font-weight: 300;
+      text-align: center;
+      margin:0 0 50px 0;
+      }
+      .param__form_actions {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      }
+      .param__form_actions button{
+      background: #0079c8;
+      color: #FFF;
+      text-align: center;
+      padding: 6px 25px;
+      border: 0px;
+      border-radius: 5px;
+      margin-top: 25px;
+      }
+      .loan_buttons {
+      display:flex;
+      flex-direction: column;
+      margin:25px 0 50px;
+      }
+      .top_row {
+      border-bottom: 1px solid #CCC;
+      display: flex;
+      flex-direction: row;
+      padding:0 0 25px;
+      }
+      .top_row .loan_options {
+      width:50%;
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: space-around;
+      }
+      .loan_options:nth-child(1){
+      /*border-right: 1px solid #CCC;*/
+      }
+      .loan_buttons h2 {
+      width:100%;
+      text-align: center;
+      font-size:26px;
+      font-weight:300;
+      padding-top: 5px;
+      }
+      .top_row .loan_button {
+      display:flex;
+      justify-content: center;
+      align-items: center;
+      width:50%;
+      }
+      .main_row .loan_options {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: center;
+      }
+      .main_row .loan_options img {
+      width:95%;
+      }
+      .main_row .loan_button {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      }
+      .blue {
+      color:#0079c8 !important;
+      }
+      .green {
+      color:#61bd48 !important;
+      }
+      .orange {
+      color:#f89c39 !important;
+      }
+      .prepop__output {
+      display:none;
+      padding: 25px;
+      }
+      .prepop__selection {
+      display:block;
+      font-size:16px;
+      padding:25px;
+      }
+      select.loan_selection {
+      width:100%;
+      height:50px;
+      font-size:16px;
+      border:solid 1px #333;
+      }
+      @media only screen and (max-width: 970px) {
+      .param__form_inputs,.top_row,.loan_options {
+      flex-direction: column;
+      }
+      .param__form_input {
+      width:100%;
+      }
+      .top_row .loan_options {
+      width:100%;
+      flex-direction: column;
+      }
+      .loan_options:nth-child(1) {
+      border:0px;
+      }
+      .top_row .loan_button {
+      width:100%;
+      }
+      }
+      </style>
+      <!-- ======= Header ======= -->
+      <header class="menu">
+        <div class="header-top">
+          <div class="container">
+            <div class="row">
+              <!-- <div class="col-lg-4"></div> -->
+              <div class="ml-auto header-top-right no-padding">
+                <ul>
+                  <li><a href="#" id="loginButton">Account Log In</a>|</li>
+                  <li><a href="#">View / Sign Loan Docs</a>|</li>
+                  <li><a href="#">PartnerPortal</a>|</li>
+                  <li> <a href="#">Payment Estimator</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- main menun start -->
+        <div class="container main-menu">
+          <button type="button" id="mobile-nav-toggle"><i class="lnr lnr-menu"></i></button>
+          <div class="row align-items-center justify-content-between d-flex">
+            <div id="logo"> <a href="http://devgb.enerbank.com"><img src="http://devgb.enerbank.com/wp-content/themes/enerbank/img/enerbank-logo.svg" alt="" title=""></a> </div>
+            
+            
+            <ul id="nav-menu-container" class="nav-menu sf-js-enabled sf-arrows">
+              <li><a href="http://devgb.enerbank.com/homeowner/">Homeowner</a></li>
+              <li><a href="http://devgb.enerbank.com/loan-programs/">Loan Programs</a></li>
+              <li><a href="http://devgb.enerbank.com/about/">About</a></li>
+              <li><a href="http://devgb.enerbank.com/careers/">Careers</a></li>
+              <li><a href="#">Contact</a></li>
+            </ul>
+            
+            <!-- #nav-menu-container -->
+          </div>
+          
+        </header>
+        <!-- End Header -->
+        <!-- =======Main Content Section ======= -->
+        <section class="section-half online-app">
+          <div class="container">
+            <div class="row">
+              <div class="col-md-12">
+                <h2 class="mb-5 text-center"><span>Online Loan Application Integration</span></h2>
+                <h3>Add a button to your website to seamlessly provide your customers with a quick
+                and easy way to apply for a loan.</h3>
+                <p>Check out the loan option buttons below and follow the simple instructions to get your own personalized
+                  button complete with your loan by phone number, contractor ID, and loan code. If you'd like to request a button
+                  for another loan product or a custom design, send us an email with your request and we will respond within a
+                couple of days with your custom button.</p>
+                <h3 class="mt-lg-5">Follow these steps to add the button to your website today!</h3>
+                <div class="step__container">
+                  <div class="step__container_count">
+                    <p class="step__count">
+                      1
+                    </p>
+                  </div>
+                  <div class="step__container_info">
+                    
+                    <p>
+                      Use the form below to enter your Program Phone Number, Contractor ID, the loan code of the product you would like to offer (this can be found on your Reference Guide or in your PartnerPortal account).
+                    </p>
+                  </div>
+                </div>
+                <div class="step__container">
+                  <div class="step__container_count">
+                    <p class="step__count">
+                      2
+                    </p>
+                  </div>
+                  <div class="step__container_info">
+                    
+                    <p>
+                      Select the corresponding loan button below the form, then choose from our most popular
+                      loan products including Same-As-Cash, and Reduced Interest loans.
+                    </p>
+                  </div>
+                </div>
+                <div class="step__container">
+                  <div class="step__container_count">
+                    <p class="step__count">
+                      3
+                    </p>
+                  </div>
+                  <div class="step__container_info">
+                    
+                    <p>
+                      Copy and paste the embedded code onto your website, or if you choose to design your own button,
+                      select the text link and paste it onto your website.
+                    </p>
+                  </div>
+                </div>
+                
+                <h3>You're all set. Your customers can now begin their application directly from your website!</h3>
+              </div>
+            </div>
+          </div>
+        </section>
+        <!-- End coontent Section -->
+       
+        <div class="param__form">
+          <div class="param__form_content container">
+            <div class="param__form_title">
+              Complete the following fields to generate your own custom banner.
+            </div>
+            <form id="param__gen">
+              <div class="param__form_inputs">
+                <div class="param__form_input required">
+                  <label>
+                    Program Number*
+                    <small>
+                    <br/>
+                    (This field is required)
+                    </small>
+                  </label>
+                  <input name="spnum" id="program_number" type="text" required="true" placeholder="Number to call in an Application" />
+                  <p style="font-size:9px;">Please do not use any special characters</p>
+                </div>
+                <div class="param__form_input required">
+                  <label>
+                    Contractor ID*
+                    <small>
+                    <br/>
+                    (This field is required)
+                  </small></label>
+                  <input name="cid" id="contractor_id" type="text" required="true" placeholder="Enter your contractor ID" />
+                </div>
+                <div class="param__form_input required">
+                  <label>
+                    Loan ID*
+                    <small>
+                    <br/>
+                    (This field is required)
+                    </small>
+                  </label>
+                  <input name="promo" id="loan_code" type="text" required="true" placeholder="Enter the loan code" />
+                </div>
+                <div class="param__form_input required">
+                  <label>Loan Amount</label>
+                  <input name="loamt" id="loan_amount" type="text" placeholder="Enter the loan amount" />
+                </div>
+              </div>
+            </form>
+            <div class="param__form_actions">
+              <button type="submit" form="param__gen" value="Submit">Submit</button>
+            </div>
+          </div>
+          <div class="form__submit_thankyou">
+            <p>Please select the banner matching your loan code product below.</p>
+          </div>
+        </div>
+        <!-- /end selection -->
+
+         <div class="container">
+        <!-- Start buttons -->
+        <div class="loan_buttons">
+          <div class="main_row">
+            <div class="loan_options">
+              <h2 class="green">Same-As-Cash Loans</h2>
+              <div class="loan_button" data-loan="1"> <img src="images/banner1.png" alt="12 Month Same-As-Cash"/> </div>
+              <div class="loan_button" data-loan="2"> <img src="images/banner2.png" alt="18 Month Same-As-Cash*"/> </div>
+              <div class="loan_button" data-loan="11"> <img src="images/24M_SAC.png" alt="24 Month Same-As-Cash*"/> </div>
+            </div>
+            <hr style="margin-top:20px; margin-bottom:0;">
+          </div>
+          <div class="main_row">
+            <h2 class="orange">Reduced Interest Loans</h2>
+            <div class="loan_options">
+              <div class="loan_button" data-loan="5"> <img src="images/banner10.png" alt="4.99% 5 Year Loan*"/> </div>
+              <div class="loan_button" data-loan="6"> <img src="images/banner5.png" alt="4.99% 10 Year Loan*"/> </div>
+              <div class="loan_button" data-loan="7"> <img src="images/banner6.png" alt="6.99% 5 Year Loan*"/> </div>
+              <div class="loan_button" data-loan="8"> <img src="images/banner7.png" alt="6.99% 7 Year Loan*"/> </div>
+              <div class="loan_button" data-loan="9"> <img src="images/banner8.png" alt="6.99% 10 Year Loan*"/> </div>
+              <div class="loan_button" data-loan="10"> <img src="images/banner9.png" alt="6.99% 12 Year Loan*"/> </div>
+            </div>
+            <hr style="margin-top:20px; margin-bottom:0;">
+          </div>
+          <div class="main_row">
+            <div class="loan_options">
+              <h2 class="blue">Combo Loans</h2>
+              <div class="loan_button" data-loan="3"> <img src="images/banner4.png" alt="Combo 1.99% 12 Year"/> </div>
+              <div class="loan_button" data-loan="4"> <img src="images/banner3.png" alt="Combo 2.99% 12 Year"/> </div>
+            </div>
+          </div>
+        </div>
+        <p class="text-center" style="font-weight: 400;">Contact Contractor Support with any questions: <strong>888-390-1220 Option 2</strong>. </p>
+      </div>
+      
+      
+      <div id="loan_button_pop" class="prepop__popup">
+        <div class="prepop__popup_container">
+          <div class="prepop__title_container">
+            <h3 id="prepop__title"></h3>
+            <div class="close__popup">x</div>
+          </div>
+          <div class="prepop__preview"> </div>
+          <div class="p-3">
+          <b class="prepop__label">Embed Code <small>- Copy & paste the code below to the place this program button into your existing website.</small></b>
+          <textarea class="embed"></textarea>
+          <hr/>
+          <b class="prepop__label">Text Link <small>- Copy & paste the code below to place a text link into your existing website.</small></b>
+          <textarea class="link"></textarea>
+        </div>
+        </div>
+      </div>
+      <div id="submit_button_pop" class="prepop__popup">
+        <div class="prepop__popup_container">
+          <div class="prepop__title_container">
+            <h3 id="prepop__title">Select your Loan</h3>
+            <div class="close__popup">x</div>
+          </div>
+          <div class="prepop__selection">
+            <select class="loan_selection">
+              <option>Select a Loan Button</option>
+              <option value="1">12 Month Same-As-Cash</option>
+              <option value="2">18 Month Same-As-Cash</option>
+              <option value="11">24 Month Same-As-Cash</option>
+              <option value="3">Combo 1.99% 12 Year Loan*</option>
+              <option value="4">Combo 2.99% 12 Year Loan*</option>
+              <option value="5">4.99% 5 Year Loan*</option>
+              <option value="14">9.99% 5 Year Loan*</option>
+              <option value="6">4.99% 10 Year Loan*</option>
+              <option value="7">6.99% 5 Year Loan*</option>
+              <option value="8">6.99% 7 Year Loan*</option>
+              <option value="9">6.99% 10 Year Loan*</option>
+              <option value="10">6.99% 12 Year Loan*</option>
+              
+            </select>
+          </div>
+          <div class="prepop__preview">
+          </div>
+          <div class="prepop__output">
+            <b class="prepop__label">Embed Code <small>- Copy & paste the code below to the place this program button into your existing website.</small></b>
+            <textarea class="embed"></textarea>
+            <hr/>
+            <b class="prepop__label">Text Link <small>- Copy & paste the code below to place a text link into your existing website.</small></b>
+            <textarea class="link"></textarea>
+          </div>
+        </div>
+      </div>
+      <script>
+      $(document).ready(function(){
+      var param_set = '';
+      var loan_info = {
+      "": {
+      title: '',
+      img: '',
+      terms: '',
+      newUrl: 'https://application.enerbank.com/#/link',
+      code: ''
+      },
+      12: {
+      title: '9 Month Same-As-Cash*',
+      img: 'images/banner0.png',
+      terms: '*Loans provided by EnerBank USA, Member FDIC, (1245 Brickyard Rd., Suite 600, Salt Lake City, UT 84106) on approved credit, for a limited time. Repayment terms vary from 21 to 129 months. Interest waived if repaid in 365 days. 17.99% fixed APR, effective as of '+thisMonth()+', subject to change. Interest starts accruing when the loan closes.',
+      newUrl: 'https://application.enerbank.com/#/link',
+      code: ''
+      },
+      13: {
+      title: '9 Month Same-As-Cash*',
+      img: 'images/banner0.png',
+      terms: '*Loans provided by EnerBank USA, Member FDIC, (1245 Brickyard Rd., Suite 600, Salt Lake City, UT 84106) on approved credit, for a limited time. Repayment terms vary from 21 to 129 months. Interest waived if repaid in 365 days. 17.99% fixed APR, effective as of '+thisMonth()+', subject to change. Interest starts accruing when the loan closes.',
+      newUrl: 'https://application.enerbank.com/#/link',
+      code: ''
+      },
+      1: {
+      title: '12 Month Same-As-Cash*',
+      img: 'images/banner1.png',
+      terms: '*Loans provided by EnerBank USA, Member FDIC, (1245 Brickyard Rd., Suite 600, Salt Lake City, UT 84106) on approved credit, for a limited time. Repayment terms vary from 24 to 132 months. Interest waived if repaid in 365 days. 17.99% fixed APR, effective as of '+thisMonth()+', subject to change. Interest starts accruing when the loan closes.',
+      newUrl: 'https://application.enerbank.com/#/link',
+      code: ''
+      },
+      2: {
+      title: '18 Month Same-As-Cash*',
+      img: 'images/banner2.png',
+      terms: '*Loans provided by EnerBank USA, Member FDIC, (1245 Brickyard Rd., Suite 600, Salt Lake City, UT 84106) on approved credit, for a limited time. Repayment terms vary from 30 to 138 months. Interest waived if repaid in 18 months. 17.99% fixed APR, effective as of '+thisMonth()+', subject to change. Interest starts accruing when the loan closes.',
+      newUrl: 'https://application.enerbank.com/#/link',
+      code: ''
+      },
+      3: {
+      title: 'Combo 1.99% 12 Year Loan*',
+      img: 'images/banner4.png',
+      terms: '*Loans provided by EnerBank USA, Member FDIC, (1245 Brickyard Rd., Suite 600, Salt Lake City, UT 84106) on approved credit, for a limited time. Repayment term is 144 months. 1.99% fixed APR. Minimum loan amounts apply. The first monthly payment will be due 30 days after the loan closes. Same-As-Cash Loan – repayment terms vary from 24 to 132 months. Interest waived if repaid in 12 months. 17.99% fixed APR, effective as of '+thisMonth()+', subject to change. Interest starts accruing when the loan closes.',
+      newUrl: 'https://application.enerbank.com/#/link',
+      code: ''
+      },
+      4: {
+      title: 'Combo 2.99% 12 Year Loan*',
+      img: 'images/banner3.png',
+      terms: '*Loans provided by EnerBank USA, Member FDIC, (1245 Brickyard Rd., Suite 600, Salt Lake City, UT 84106) on approved credit, for a limited time. Repayment term is 144 months. 2.99% fixed APR. Minimum loan amounts apply. The first monthly payment will be due 30 days after the loan closes. Same-As-Cash Loan – repayment terms vary from 24 to 132 months. Interest waived if repaid in 12 months. 17.99% fixed APR, effective as of '+thisMonth()+', subject to change. Interest starts accruing when the loan closes.',
+      newUrl: 'https://application.enerbank.com/#/link',
+      code: ''
+      },
+      5: {
+      title: '4.99% 5 Year Loan*',
+      img: 'images/banner10.png',
+      terms: '*Loans provided by EnerBank USA, Member FDIC, (1245 Brickyard Rd., Suite 600, Salt Lake City, UT 84106) on approved credit, for a limited time. Repayment term is 60 months. 4.99% fixed APR. Minimum loan amounts apply. The first monthly payment will be due 30 days after the loan closes.',
+      newUrl: 'https://application.enerbank.com/#/link',
+      code: ''
+      },
+      6: {
+      title: '4.99% 10 Year Loan*',
+      img: 'images/banner5.png',
+      terms: '*Loans provided by EnerBank USA, Member FDIC, (1245 Brickyard Rd., Suite 600, Salt Lake City, UT 84106) on approved credit, for a limited time. Repayment term is 120 months. 4.99% fixed APR. Minimum loan amounts apply. The first monthly payment will be due 30 days after the loan closes.',
+      newUrl: 'https://application.enerbank.com/#/link',
+      code: ''
+      },
+      7: {
+      title: '6.99% 5 Year Loan*',
+      img: 'images/banner6.png',
+      terms: '*Loans provided by EnerBank USA, Member FDIC, (1245 Brickyard Rd., Suite 600, Salt Lake City, UT 84106) on approved credit, for a limited time. Repayment term is 60 months. 6.99% fixed APR.  Minimum loan amounts apply. The first monthly payment will be due 30 days after the loan closes.',
+      newUrl: 'https://application.enerbank.com/#/link',
+      code: ''
+      },
+      14: {
+      title: '9.99% 5 Year Loan*',
+      img: 'images/banner14.png',
+      terms: '*Loans provided by EnerBank USA, Member FDIC, (1245 Brickyard Rd., Suite 600, Salt Lake City, UT 84106) on approved credit, for a limited time. Repayment term is 60 months. 9.99% fixed APR.  Minimum loan amounts apply. The first monthly payment will be due 30 days after the loan closes.',
+      newUrl: 'https://application.enerbank.com/#/link',
+      code: ''
+      },
+      8: {
+      title: '6.99% 7 Year Loan*',
+      img: 'images/banner7.png',
+      terms: '*Loans provided by EnerBank USA, Member FDIC, (1245 Brickyard Rd., Suite 600, Salt Lake City, UT 84106) on approved credit, for a limited time. Repayment term is 84 months. 6.99% fixed APR. Minimum loan amounts apply. The first monthly payment will be due 30 days after the loan closes.',
+      newUrl: 'https://application.enerbank.com/#/link',
+      code: ''
+      },
+      9: {
+      title: '6.99% 10 Year Loan*',
+      img: 'images/banner8.png',
+      terms: '*Loans provided by EnerBank USA, Member FDIC, (1245 Brickyard Rd., Suite 600, Salt Lake City, UT 84106) on approved credit, for a limited time. Repayment term is 120 months. 6.99% fixed APR. Minimum loan amounts apply. The first monthly payment will be due 30 days after the loan closes.',
+      newUrl: 'https://application.enerbank.com/#/link',
+      code: ''
+      },
+      10: {
+      title: '6.99% 12 Year Loan*',
+      img: 'images/banner9.png',
+      terms: '*Loans provided by EnerBank USA, Member FDIC, (1245 Brickyard Rd., Suite 600, Salt Lake City, UT 84106) on approved credit, for a limited time. Repayment term is 144 months. 6.99% fixed APR. Minimum loan amounts apply. The firstmonthly payment will be due 30 days after the loan closes.',
+      newUrl: 'https://application.enerbank.com/#/link',
+      code: ''
+      },
+      11: {
+      title: '24 Month Same-As-Cash*',
+      img: 'images/24M_SAC.png',
+      terms: '*Loans provided by EnerBank USA, Member FDIC, (1245 Brickyard Rd., Suite 600, Salt Lake City, UT 84106) on approved credit, for a limited time. Repayment terms vary from 30 to 138 months. Interest waived if repaid in 24 months. 17.99% fixed APR, effective as of '+thisMonth()+', subject to change. Interest starts accruing when the loan closes.',
+      newUrl: 'https://application.enerbank.com/#/link',
+      code: ''
+      },
+      }
+      function thisMonth() {
+      var m = ['January','February','March','April','May','June','July','August','September','October','November','December'];
+      var date = new Date(),
+      month = date.getMonth(),
+      year = date.getFullYear();
+      return m[month]+' 1, '+year
+      }
+      $(".loan_button img").click(function(){
+      var target = $(this).parent().data("loan");
+      var code = "<a href=\""+loan_info[target].newUrl+param_set+"\"><img src=\""+loan_info[target].img+"\"/></a><p>"+loan_info[target].terms+"</p>";
+      $("#prepop__title").text(loan_info[target].title);
+      $(".prepop__preview").html(code);
+      $(".embed").val(code);
+      $(".link").val("<a href=\""+loan_info[target].newUrl+param_set+"\">"+loan_info[target].title+"</a><p>"+loan_info[target].terms+"</p>");
+      $('html, body').animate({
+      scrollTop: $("#prepop__content").offset().top
+      }, 500);
+      $("#loan_button_pop, .prepop__background_fade, .close__popup").show();
+      });
+      $(".prepop__background_fade, .close__popup").click(function(){
+      $("#loan_button_pop, .close__popup,.prepop__background_fade,#submit_button_pop").hide();
+      });
+      $(".required input").blur(function(){
+      if( !$(this).val() )
+      {
+      $(this).parent().find("label").addClass("form__warning");
+      $(this).parent().find("label small").show();
+      } else {
+      $(this).parent().find("label").removeClass("form__warning");
+      $(this).parent().find("label small").hide();
+      }
+      });
+      $("input#program_number").blur(function(){
+      $(this).val(function(i,v){
+      return v.replace('-','');
+      });
+      });
+      $("#param__gen").submit(function(e){
+      e.preventDefault();
+      console.log('here');
+      param_set = "?"+$(this).serialize();
+      $(".prepop__button").data("params","?"+$(this).serialize());
+      $(".form__submit_thankyou").show();
+      //---
+      $("#submit_button_pop, .prepop__background_fade, .close__popup").show();
+      $('html, body').animate({
+      scrollTop: $("#prepop__content").offset().top
+      }, 500);
+      });
+      $("select.loan_selection").on('change', function() {
+      $(".prepop__output").show();
+      var code = "<a href=\""+loan_info[$(this).val()].newUrl+param_set+"\"><img src=\""+loan_info[$(this).val()].img+"\"/></a><p>"+loan_info[$(this).val()].terms+"</p>";
+      $("#prepop__title").text(loan_info[$(this).val()].title);
+      $(".prepop__preview").html(code);
+      $(".embed").val(code);
+      $(".link").val("<a href=\""+loan_info[$(this).val()].newUrl+param_set+"\">"+loan_info[$(this).val()].title+"</a><p>"+loan_info[$(this).val()].terms+"</p>");
+      })
+      });
+      </script>
+      <!-- / end buttons -->
+      
+      
+      <!-- custom button -->
+      <div class="custom__button_container text-center">
+        <h3>Need a different loan product?</h3>
+        <a class="btn btn-primary f-bold" href="mailto:banners@enerbankusa.com?subject=Online Loan Application Custom Banner Request&body=Please include your Program Phone Number, Contractor ID, Loan Product, Loan Code, Amount (optional), and any other relevant information. We will reply with your custom banner within two business days.">Request a Custom Button</a>
+      </div>
+      
+      <!-- / end custom button -->
+    </div>
+  </div>
+  <!-- ======= Footer ======= -->
+  <footer class="footer-area">
+    <div class="container-fluid">
+      <div class="row px-3">
+        <div class="custom-col-01 col">
+          <div class="single-footer-widget">
+            <h6>HOMEOWNER</h6>
+            <ul>
+              <li><a href="homeowner/#whychoosebank">Why Choose EnerBank</a></li>
+              <li><a href="homeowner/#howtopay">How to Pay</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="custom-col-02 col">
+          <div class="single-footer-widget">
+            <h6>LOAN PROGRAMS</h6>
+            <ul>
+              <li><a href="loan-programs#paymentoptbenefits">Payment Options Benefits</a></li>
+              <li><a href="loan-programs#joinloanprogram">Join a Loan Program</a></li>
+              <li><a href="loan-programs#createloanprogram">Create a Loan Program</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="custom-col-03 col">
+          <div class="single-footer-widget">
+            <h6>ABOUT</h6>
+            <ul>
+              <li><a href="about#companyoverview">Company Overview</a></li>
+              <li><a href="about#leadership">Leadership</a></li>
+              <li><a href="about#codeofconduct">Code of Conduct</a></li>
+              <li><a href="about#memberfdic">Member FDIC</a></li>
+              <li><a href="about#communityinvolvement">Community Involvement</a></li>
+              <li><a href="about#boardofdirectors">Board of Directors</a></li>
+              <li><a href="about#feedback">Feedback</a></li>
+              <li><a href="/">Blog</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="custom-col-04 col">
+          <div class="single-footer-widget">
+            <h6>CAREERS</h6>
+            <ul>
+              <li><a href="careers#whyenerbank">Why EnerBank</a></li>
+              <li><a href="careers#availableposition">Available Positions</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="custom-col-05 col">
+          <div class="single-footer-widget">
+            <h6>CONTACT</h6>
+            <ul>
+              <li><a href="/">Corporate Offices</a></li>
+              <li><a href="/">Hours of Operation</a></li>
+              <li><a href="/">Do Not Sell My Info</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="custom-col-06 col border-left">
+          <div class="single-footer-widget">
+            <p>EnerBank USA is a wholly owned <br>subsidiary of CMS Energy Corp. (NYSE: CMS)</p>
+            <ul>
+              <li><a href="#">Terms of Use</a></li>
+              <li><a href="#">Privacy Notice</a></li>
+              <li><a href="#">Online Privacy Statement</a></li>
+            </ul>
+            <p>© Copyright 2020. <br>All rights reserved.</p>
+            <p class="text-muted">This site is directed at, and made available to, persons in the U.S. only.</p>
+          </div>
+        </div>
+        <div class="custom-col-07 col">
+          <div class="single-footer-widget">
+            <img class="mb-10" src="http://devgb.enerbank.com/wp-content/themes/enerbank/img/fdic-logo.svg" alt="Logo">
+            <img src="http://devgb.enerbank.com/wp-content/themes/enerbank/img/bbb-logo.svg" alt="Logo">
+          </div>
+          <div class="mediaIcon">
+            <a href="#"><i class="fa fa-facebook"></i></a>
+            <a href="#"><i class="fa fa-twitter"></i></a>
+            <a href="#"><i class="fa fa-linkedin"></i></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <div class="prepop__background_fade"></div>
+</body>
+</html>

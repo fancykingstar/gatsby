@@ -19,8 +19,9 @@ const HomeOwnerReferral = ({data}) => {
                 <div className="row justify-content-center">
                     <div className="col-12">
                         <div className="mb-3 text-center">
-                                <h2 className="my-4" dangerouslySetInnerHTML={{__html: data.wpgraphql.page.homewonerreferral.howItWorks.sectionTitle}} />
-                                <img src={data.wpgraphql.page.homewonerreferral.howItWorks.sectionImage.sourceUrl} className="d-block mx-auto" alt={data.wpgraphql.page.homewonerreferral.howItWorks.sectionImage.altText} />
+                            <h2 className="my-4" dangerouslySetInnerHTML={{__html: data.wpgraphql.page.homewonerreferral.howItWorks.sectionTitle}} />
+                            <img src={data.wpgraphql.page.homewonerreferral.howItWorks.sectionImage.sourceUrl} className="d-none d-md-block mx-auto" alt={data.wpgraphql.page.homewonerreferral.howItWorks.sectionImage.altText} />
+                            <img src={data.wpgraphql.page.homewonerreferral.howItWorks.mobileViewImage.sourceUrl} className="d-md-none mx-auto" alt={data.wpgraphql.page.homewonerreferral.howItWorks.mobileViewImage.altText} />
                             
                         </div>
                         <div className="mb-3 text-center">
@@ -114,6 +115,10 @@ export const query = graphql`
                     sectionImage {
                         altText
                         sourceUrl
+                    }
+                    mobileViewImage {
+                      sourceUrl
+                      altText
                     }
                   }
                   unsecuredHomeLoans {
