@@ -66,9 +66,9 @@ return (
                   <div className="single-footer-widget">
                       <h6>CONTACT</h6>
                       <ul>
-                          <li><Link to={"/"}>Corporate Offices</Link></li>
-                          <li><Link to={"/"}>Hours of Operation</Link></li>
-                          <li><Link to={"/"}>Do Not Sell My Info</Link></li>
+                          <li><Link to={"/contact/#corporateOffices"}>Corporate Offices</Link></li>
+                          <li><Link to={"/contact/hoursOfOperation"}>Hours of Operation</Link></li>
+                          <li><Link to={"/contact/doNotSell"}>Do Not Sell My Info</Link></li>
                       </ul>
                   </div>
               </div>
@@ -79,7 +79,7 @@ return (
                     </p>
                     
                       <ul>
-                          <li><Link to={"/"}>Terms of Use</Link></li>
+                          <li><Link to={"/terms-of-use"}>Terms of Use</Link></li>
                           <li><Link to={"/"}>Privacy Notice</Link></li>
                           <li><Link to={"/"}>Online Privacy Statement</Link></li>
                       </ul>

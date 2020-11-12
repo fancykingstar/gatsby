@@ -23,7 +23,7 @@ const IndexPage = ({data}) => {
                     if(i === 0){
                       return (
                         <div className="col-md-4" key={item.links.title + i}>
-                          <div className="header-btn"><a className="mr-auto" href="https://enerbank.com/partnerportalapp/" target="_blank" rel="noopener noreferrer" dangerouslySetInnerHTML={{ __html: item.links.title }} /></div>
+                          <div className="header-btn"><a className="mr-auto" href="homeowner/#howtopay" dangerouslySetInnerHTML={{ __html: item.links.title }} /></div>
                         </div>
                       )
                     }else if(i === 2){

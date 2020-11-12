@@ -22,7 +22,9 @@ const AppMethod = (props) => {
 									'}'
 								].join('\n')
 							}}></style>
-							<div className="modal_banner banner_bg" style={{ backgroundImage: "url(" + props.popData.innerpagebanner.pagebanner.bannner.sourceUrl + ")" }}></div>
+							<div className="modal_banner banner_bg" >
+								<img src={props.popData.innerpagebanner.pagebanner.bannner.sourceUrl} className="object-fit-cover" />
+							</div>
 						</>						
 					)}
 

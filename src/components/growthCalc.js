@@ -150,15 +150,15 @@ const GrowthCalc = (props) => {
 						<div className="p-5 pb-0 pt-sm-4">
 							<form action="" className="calc_form">
 								<div className="row">
-									<div className="mr-auto px-3 pt-3 current_growth">Current</div>
-									<div className="ml-auto pt-3 growth_result col-sm-3">Result</div>
+									<div className="mr-auto px-3 pt-3 current_growth d-none d-lg-block">Current</div>
+									<div className="ml-auto pt-3 growth_result col-sm-3 d-none d-lg-block">Result</div>
 								</div>
 								<div className="row border-bottom">
 									<div className="col-lg-4 ptb-2">
 										<label htmlFor="monthly-leads" className="text-sm theme-text d-block">Monthly Leads</label>
 										<div className="d-flex align-items-center">
 											<input type="text" name="monthlyLeadsInput" className="border-radius5 calc-input" id="monthly-leads" placeholder="0" onChange={ handleChangeInput } />
-											<div className="pl-5"><span className="font-b">x</span></div>
+											<div className="pl-3 pl-md-5"><span className="font-b">x</span></div>
 										</div>							
 									</div>
 									<div className="col-lg-5 ptb-2">
@@ -169,21 +169,21 @@ const GrowthCalc = (props) => {
 												<span className="checkmark"></span>
 												25%
 											</label>
-										<div className="pl-5">
+										<div className="pl-3 pl-md-5">
 											<label className="check_count">
 												<input type="radio" name="monthlyLeadsIncrement" className="monthly-leads circle two" value="50%" checked={state.monthlyLeadsIncrement === '50%'} onChange={handleCheckInput} />
 												<span className="checkmark"></span>
 												50%
 											</label>
 										</div>
-										<div className="pl-5">
+										<div className="pl-3 pl-md-5">
 											<label className="check_count">
 												<input type="radio" name="monthlyLeadsIncrement" className="monthly-leads circle three" value="100%" checked={state.monthlyLeadsIncrement === '100%'} onChange={handleCheckInput} />
 												<span className="checkmark"></span>
 												100%
 											</label>
 										</div>
-										<div className="m-auto equal">
+										<div className="ml-auto m-lg-auto equal">
 											<span className="font-b">=</span></div>
 										</div>
 									</div>
@@ -197,7 +197,7 @@ const GrowthCalc = (props) => {
 										<label htmlFor="close-rate" className="text-sm theme-text d-block">Close Rate</label>
 										<div className="d-flex align-items-center">                        	
 											<input type="text" name="closeRateInput" className="border-radius5 calc-input" id="close-rate" value={state.closeRateInput} placeholder="0%" onChange={ handleChangeInput } onBlur={handleValidValue} />
-											<div className="pl-5"><span className="font-b">x</span></div>
+											<div className="pl-3 pl-md-5"><span className="font-b">x</span></div>
 										</div>							
 									</div>
 									<div className="col-lg-5 ptb-2">
@@ -208,21 +208,21 @@ const GrowthCalc = (props) => {
 												<span className="checkmark"></span>
 												25%
 											</label>
-										<div className="pl-5">
+										<div className="pl-3 pl-md-5">
 											<label className="check_count">
 												<input type="radio" name="closeRateIncrement" className="close-rate circle two" value="50%" checked={state.closeRateIncrement === '50%'} onChange={handleCheckInput} />
 												<span className="checkmark"></span>
 												50%
 											</label>
 										</div>
-										<div className="pl-5">
+										<div className="pl-3 pl-md-5">
 											<label className="check_count">
 												<input type="radio" name="closeRateIncrement" className="close-rate circle three" value="100%" checked={state.closeRateIncrement === '100%'} onChange={handleCheckInput} />
 												<span className="checkmark"></span>
 												100%
 											</label>
 										</div>
-										<div className="m-auto equal"><span className="font-b">=</span></div>
+										<div className="ml-auto m-lg-auto equal"><span className="font-b">=</span></div>
 										</div>
 									</div>
 									<div className="col-lg-3 bg_blue ptb-2 result-col">
@@ -236,7 +236,7 @@ const GrowthCalc = (props) => {
 										<label htmlFor="project-size" className="text-sm theme-text d-block">Average Project Size</label>
 										<div className="d-flex align-items-center">                        	
 											<input type="text" name="projectSizeInput" className="border-radius5 calc-input" id="project-size" value={state.projectSizeInput} placeholder="$0" onChange={ handleChangeInput } onBlur={handleValidValue} />
-											<div className="pl-5"><span className="font-b">x</span></div>
+											<div className="pl-3 pl-md-5"><span className="font-b">x</span></div>
 										</div>							
 									</div>
 									<div className="col-lg-5 ptb-2">
@@ -247,21 +247,21 @@ const GrowthCalc = (props) => {
 												<span className="checkmark"></span>
 												30%
 											</label>
-											<div className="pl-5">
+											<div className="pl-3 pl-md-5">
 												<label className="check_count">
 													<input type="radio" name="projectSizeIncrement" className="project-size circle two" value="40%" checked={state.projectSizeIncrement === '40%'} onChange={handleCheckInput} />
 													<span className="checkmark"></span>
 													40%
 												</label>
 											</div>
-											<div className="pl-5">
+											<div className="pl-3 pl-md-5">
 												<label className="check_count">
 													<input type="radio" name="projectSizeIncrement" className="project-size circle three" value="50%" checked={state.projectSizeIncrement === '50%'} onChange={handleCheckInput} />
 													<span className="checkmark"></span>
 													50%
 												</label>
 											</div>
-											<div className="m-auto equal"><span className="font-b">=</span></div>
+											<div className="ml-auto m-lg-auto equal"><span className="font-b">=</span></div>
 									</div>
 									</div>
 									<div className="col-lg-3 bg_blue ptb-2 result-col">
@@ -275,7 +275,7 @@ const GrowthCalc = (props) => {
 										<label htmlFor="annual-revenue" className="text-sm theme-text d-block">Annual Revenue</label>
 										<div className="d-flex align-items-center">                        	
 											<input type="text" name="annualRevenueOld" className="border-radius5 calc-output" id="annual-revenue" value={state.annualRevenueOld} placeholder="$0" readOnly="readonly" />
-											<div className="pl-5"><span className="font-b">&gt;</span></div>
+											<div className="pl-3 pl-md-5"><span className="font-b">&gt;</span></div>
 										</div> 							
 									</div>
 									<div className="col-lg-5">
