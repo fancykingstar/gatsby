@@ -60,7 +60,7 @@ const Header = ({ siteTitle }) => {
                       <ul>
                         <li><button onClick={loginForm} className="btn-link">Account Log In</button>|</li>
                         <li><a href="https://enerbankusa.documentinbox.com/Inbox/app#login">View / Sign Loan Docs</a>|</li>
-                        <li><Link to={'/'}>PartnerPortal</Link>|</li>
+                        <li><a href="https://enerbank.com/partnerportalapp/" target="_blank">PartnerPortal</a>|</li>
                         {/* <li><Link to={'/'}>Dealer Resource Center</Link></li> */}
                         <li><button className="btn-link" onClick={showbenefitpopup()} >Payment Estimator</button></li>
                         {/* <li><button className="mx-0 px-0 calculator btn-link" style={{background: "url(" + calc_icon + ")" }} onClick={showbenefitpopup()} /></li> */}
