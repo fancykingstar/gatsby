@@ -775,6 +775,9 @@ display: flex; align-items: center; justify-content: center; }
 .equal{ padding-bottom: 25px; }
 /* about page css */
 .leadership-heading{ background: linear-gradient(180deg, white, transparent); }
+@media (max-width:576px){
+  .leadership-heading{ position:relative !important; padding:0 !important; }
+}
 .directorName{ font-weight:600; color: #4d4d4d; font-size: 24px; }
 .community-logo{ max-height: 120px; height: 120px !important; width: auto; }
 .director-col{ position: relative; overflow: hidden; }
@@ -852,7 +855,7 @@ display: flex; align-items: center; justify-content: center; }
 
 /* homewoner-referral */
 .unsecuredhomeloan ul{ width: 80%; margin: 0 auto; }
-.unsecuredhomeloan ul li{ line-height: normal; margin-bottom: 20px; }
+.unsecuredhomeloan ul li{ margin-bottom: 20px; }
 
 /* contractor-referral */
 .howitworks{ counter-reset: howitworks; width: calc(80%); margin: 0 auto; }
