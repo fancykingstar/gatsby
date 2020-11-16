@@ -97,7 +97,7 @@ const IndexPage = ({data}) => {
           <div className="row align-items-center justify-content-end">
             <div className="col-sm-6 px-lg-0 home-about-right">
               <div className="row">                
-                <div className="single-services col px-4 px-lg-5">
+                <div className="single-services col px-4 px-lg-5"> 
                   <Link to={node.home_section.aboutArea[1].anchorBtn[0].addLink.url} className="btn genric-btn primary f-bold mb-4">{node.home_section.aboutArea[1].anchorBtn[0].addLink.title}</Link>
                   <p className="m-0" dangerouslySetInnerHTML={{ __html: node.home_section.aboutArea[1].addText }} />
                 </div>
