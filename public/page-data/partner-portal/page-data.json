@@ -1,0 +1,1 @@
+{"componentChunkName":"component---src-templates-partner-portal-js","path":"/partner-portal","result":{"errors":[{"message":"Variable \"$databaseId\" of required type \"ID!\" was not provided.","locations":[{"line":1,"column":68}]}],"pageContext":{}}}

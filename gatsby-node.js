@@ -149,6 +149,16 @@ exports.createPages = async ({ graphql, actions }) => {
                     },
                   })
               break;
+          case "privacy-policy":
+                  createPage({
+                    path: "privacy-policy",
+                    component: path.resolve(`./src/templates/privacy-policy.js`),
+                    context: {
+                      slug: node.slug,
+                      databaseId: node.databaseId,
+                    },
+                  })
+              break;
           default:
                 createPage({
                   path: node.slug,
@@ -173,19 +183,21 @@ exports.createPages = async ({ graphql, actions }) => {
         createPage({
           path: "feedback",
           component: path.resolve(`./src/templates/feedback.js`),
-          // context: {
-          //   slug: node.slug,
-          //   databaseId: node.databaseId,
-          // },
         })
 
         createPage({
           path: "contact-us",
           component: path.resolve(`./src/templates/lead.js`),
-          // context: {
-          //   slug: node.slug,
-          //   databaseId: node.databaseId,
-          // },
+        })
+
+        createPage({
+          path: "payment-estimator",
+          component: path.resolve(`./src/templates/payment-estimator.js`),
+        })
+
+        createPage({
+          path: "do-not-sell-my-info",
+          component: path.resolve(`./src/templates/doNotSellMyInfo.js`),
         })
   });
 

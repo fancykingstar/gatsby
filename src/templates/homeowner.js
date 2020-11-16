@@ -21,6 +21,7 @@ const blockElements = {
 }
 
 const HomeOwnerPage = ({data}) => {
+    const node = data.wpgraphql.page;
     const [collapse, setCollapse] = useState(false);
     // const [status, setStatus] = useState('Closed');
     // const onEntering = () => setStatus('Opening...');
@@ -37,28 +38,27 @@ const HomeOwnerPage = ({data}) => {
         setValue(event.target.value);
     };
 
-  return (  
+  return (
     <Layout>
-        <SEO title={data.wpgraphql.page.title} description={data.wpgraphql.page.excerpt}/>
+        <SEO title={node.title} description={node.excerpt}/>
 
-        {data.wpgraphql.page.top_banner.banner.backgroundImage && (
-            <section className="banner-area pos_relative" id="home" style={{ backgroundImage: "url(" + data.wpgraphql.page.top_banner.banner.backgroundImage.sourceUrl + ")" }}>
+        {node.top_banner.banner.backgroundImage && (
+            <section className="banner-area pos_relative" id="home">
+                <img src={node.top_banner.banner.backgroundImage.sourceUrl} alt={node.top_banner.banner.backgroundImage.altText} />
                 <div className="background-holder">
-                    <Video videoSrcURL={data.wpgraphql.page.video_section.video.videoUrl} allow="autoplay" videoTitle="EnnerBankUSA. America's home improvement lender of choice" videoWidth="100%" videoHeight="500" />
-                </div>
-                <div className="container">
-                    <div className="row h-half d-flex align-items-end pb-5">
-                        { data.wpgraphql.page.top_banner.banner.bannerLinks.map((item, i) => {
+                <Video videoSrcURL={node.video_section.video.videoUrl} allow="autoplay" videoTitle="EnnerBankUSA. America's home improvement lender of choice" videoWidth="100%" videoHeight="500" />
+                    <div className="container d-flex align-items-end p-0 pb-md-5 position-absolute banner-btn-container">
+                        { node.top_banner.banner.bannerLinks.map((item, i) => {
                             if(i === 1){
                                 const links = item.links.url
                                 return (
-                                    <div className="col-md-4" key={item.fieldGroupName+i}>
+                                    <div className="col-md-4 py-2 py-md-0" key={item.fieldGroupName+i}>
                                         <div className="header-btn"><a className="mr-auto" href={links} target="_blank" dangerouslySetInnerHTML={{ __html: item.links.title}} /></div>
                                     </div>
                                 )
                             }else{
                                 return (
-                                    <div className="col-md-4" key={item.fieldGroupName+i}>
+                                    <div className="col-md-4 py-2 py-md-0" key={item.fieldGroupName+i}>
                                         <div className="header-btn"><Link className="mr-auto" to={item.links.url} dangerouslySetInnerHTML={{ __html: item.links.title}} /></div>
                                     </div>
                                 )
@@ -71,13 +71,13 @@ const HomeOwnerPage = ({data}) => {
 
         <section className="service-area section-gap" id="whychoosebank">
             <div className="container">
-                {data.wpgraphql.page.content && (
-                    <div className="row justify-content-center" dangerouslySetInnerHTML={{ __html: data.wpgraphql.page.content}} />
+                {node.content && (
+                    <div className="row justify-content-center" dangerouslySetInnerHTML={{ __html: node.content}} />
                 )}
 
                 <div className="benefit-option">
                     <ul>
-                        {data.wpgraphql.page.home_owner.benefitOption.map((item, i) =>
+                        {node.home_owner.benefitOption.map((item, i) =>
                             (
                                 <li key={item.fieldGroupName + i}>
                                     <div className="box-circle icon bg-blue content-center">
@@ -91,12 +91,12 @@ const HomeOwnerPage = ({data}) => {
                 </div>
             </div>
         </section>
-        <section className="pt-30 pb-30 relative" style={{background: 'url('+ data.wpgraphql.page.home_owner.paymentBanner.sourceUrl +') center', backgroundRepeat: 'no-repeat', backgroundSize: 'cover', minHeight: '515px'}}></section>
+        <section className="pt-3 pb-3 relative" style={{background: 'url('+ node.home_owner.paymentBanner.sourceUrl +') center', backgroundRepeat: 'no-repeat', backgroundSize: 'cover', minHeight: '515px'}}></section>
         
         <section className="section-gap container" id="howtopay">
-            <h2 className="mb-30 text-center"><span>Six Ways to Make a Payment</span></h2>
+            <h2 className="mb-5 mb-md-3 text-center"><span>Six Ways to Make a Payment</span></h2>
             <Tabbordion blockElements={blockElements} animateContent={'height'} mode={'toggle'} className="accordion loan_offer mx-4 mx-lg-5" name="accordion">
-                {data.wpgraphql.page.accordion.tabpanel.map((item, i) =>
+                {node.accordion.tabpanel.map((item, i) =>
                     (
                         <TabPanel key={item.fieldGroupName + i}>
                             <TabLabel className="w-100 text-left btn btn-link">{item.tablabel}</TabLabel>
@@ -156,6 +156,7 @@ export const query = graphql`
                     banner {
                         backgroundImage {
                            sourceUrl
+                           altText
                         }
                         bannerLinks {
                             fieldGroupName
@@ -171,6 +172,7 @@ export const query = graphql`
                     makePaymentWay
                     paymentBanner {
                         sourceUrl
+                        altText
                     }
                     benefitOption {
                         fieldGroupName

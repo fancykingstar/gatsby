@@ -37,7 +37,7 @@ const About = ({data}) => {
                     <div className="col-md-11 m-auto" dangerouslySetInnerHTML={{__html: content.content}} />
                 </div>
             </section>
-            {/* End banner Area */}
+            {/* Video Area */}
             {content.video_section.video.videoUrl && (
                 <section className="video-section mb-5">
                     <div className="container">
@@ -52,7 +52,7 @@ const About = ({data}) => {
             {/* enerbank leadership */}
             <section className="container-fluid">
                 <div className="row flex-column">
-                    <div className="position-absolute w-100 pb-5 leadership-heading" dangerouslySetInnerHTML={{__html: content.about.enerbankLeadership.leadershipHeading}} />
+                    <div className="position-absolute w-100 pb-5 leadership-heading px-3" dangerouslySetInnerHTML={{__html: content.about.enerbankLeadership.leadershipHeading}} />
                     <img src={content.about.enerbankLeadership.leadershipBanner.sourceUrl} alt="Leader Banner" className="w-100" />
                 </div>
             </section>
@@ -67,7 +67,7 @@ const About = ({data}) => {
                 </div>
             </section>
             {/* Community Involvement */}
-            <div className="container py-5 my-5 communityinvolvement" id="communityinvolvement">
+            <div className="container py-5 my-0 my-md-5 communityinvolvement" id="communityinvolvement">
                 <h3 className="h2 text-center mb-3">{content.about.communityInvolvement.ciHeading}</h3>
                 <p>{content.about.communityInvolvement.ciBrif}</p>
                 <div className="row my-5">

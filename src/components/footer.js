@@ -67,8 +67,8 @@ return (
                       <h6>CONTACT</h6>
                       <ul>
                           <li><Link to={"/contact/#corporateOffices"}>Corporate Offices</Link></li>
-                          <li><Link to={"/contact/hoursOfOperation"}>Hours of Operation</Link></li>
-                          <li><Link to={"/contact/doNotSell"}>Do Not Sell My Info</Link></li>
+                          <li><Link to={"/contact/#hoursOfOperation"}>Hours of Operation</Link></li>
+                          <li><Link to={"/do-not-sell-my-info"}>Do Not Sell My Info</Link></li>
                       </ul>
                   </div>
               </div>
@@ -80,8 +80,8 @@ return (
                     
                       <ul>
                           <li><Link to={"/terms-of-use"}>Terms of Use</Link></li>
-                          <li><Link to={"/"}>Privacy Notice</Link></li>
-                          <li><Link to={"/"}>Online Privacy Statement</Link></li>
+                          <li><a href="http://enerbank.com/images/pdfs/Privacy-Notice.pdf" target="_blank">Privacy Notice</a></li>
+                          <li><Link to={"/privacy-policy"}>Online Privacy Statement</Link></li>
                       </ul>
                       
                     <p>                       
