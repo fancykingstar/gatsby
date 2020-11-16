@@ -92,7 +92,7 @@ const IndexPage = ({data}) => {
           </div>
         </div>
       </section>
-      <section className="home-about-area2 py-md-4 position-relative">
+      <section className="home-about-area2 py-md-5 position-relative">
         <div className="container">
           <div className="row align-items-center justify-content-end">
             <div className="col-sm-6 px-lg-0 home-about-right">
