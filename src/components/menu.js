@@ -115,17 +115,9 @@ export default (props) => {
                                 <div className="header-top-right">
                                     <ul>
                                         <li><button onClick={props.loginForm} className="btn-link">Account Log In</button>|</li>
-                                        <li><Link to={'/'}>View / Sign Loan Docs</Link>|</li>
-                                        <li><Link to={'/'}>PartnerPortal</Link>|</li>
-                                        <li><button className="btn-link" onClick={props.headerTop()} >Payment Estimator</button></li>
-                                        {/* <li><Link to={'/'}>Dealer Resource Center</Link></li> */}
-                                        {/* <li>
-                                            <Link to={'/'} onClick={showbenefitpopup()}>
-                                            <i className="fa mr-15">
-                                                <img src={calc_icon} alt="calculator icon" title="" />
-                                            </i>
-                                            </Link>
-                                        </li> */}
+                                        <li><a href="https://enerbankusa.documentinbox.com/Inbox/app#login" target="_blank">View / Sign Loan Docs</a>|</li>
+                                        <li><a href="https://enerbank.com/partnerportalapp/" target="_blank">PartnerPortal</a>|</li>
+                                        <li><Link to={'/payment-estimator'}>Payment Estimator</Link></li>
                                     </ul>
                                 </div>
                             </div>

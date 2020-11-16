@@ -28,7 +28,7 @@ import pdffile from "../images/pdf.svg"
 import { any } from "prop-types";
 
 const LoanProgramPage = ({ data }) => {
-	const content = data.wpgraphql.page;
+	const node = data.wpgraphql.page;
 
 	const [visible, setVisible] = useState(false);
 	const [popType, setPopType] = useState('payment_options');
@@ -117,7 +117,7 @@ const LoanProgramPage = ({ data }) => {
 
 	return (
 		<Layout>
-			<SEO title={content.title} description={content.excerpt} />
+			<SEO title={node.title} description={node.excerpt} />
 			<style dangerouslySetInnerHTML={{
 				__html: [
 					'body{',
@@ -126,20 +126,17 @@ const LoanProgramPage = ({ data }) => {
 				].join('\n')
 			}}></style>
 
-			{content.top_banner.banner.backgroundImage && (
-				<section className="banner-area pos_relative" id="home" style={{ backgroundImage: "url(" + content.top_banner.banner.backgroundImage.sourceUrl + ")" }}>
+			{node.top_banner.banner.backgroundImage && (
+				<section className="banner-area pos_relative" id="home">
+					<img src={node.top_banner.banner.backgroundImage.sourceUrl} alt={node.top_banner.banner.backgroundImage.altText} />
 					<div className="background-holder">
-						<Video videoSrcURL={data.wpgraphql.page.video_section.video.videoUrl} allow="autoplay" videoTitle="EnnerBankUSA. America's home improvement lender of choice" videoWidth="100%" />
-					</div>
-					<div className="container">
-						<div className="row h-half d-flex align-items-end pb-5">
-							{content.top_banner.banner.bannerLinks.map((item, i) =>
-								(
-									<div className="col-md-4" key={item.fieldGroupName + i}>
-										<div className="header-btn mr-3 ml-3"><Link to={item.links.url} dangerouslySetInnerHTML={{ __html: item.links.title }} /></div>
-									</div>
-								)
-							)}
+						<Video videoSrcURL={node.video_section.video.videoUrl} allow="autoplay" videoTitle="EnnerBank improvement lender of choice" videoWidth="100%" videoHeight="500" />
+						<div className="container d-flex align-items-end p-0 pb-md-5 position-absolute banner-btn-container">
+							{node.top_banner.banner.bannerLinks.map((item, i) =>(
+								<div className="col-md-4" key={item.fieldGroupName + i}>
+									<div className="header-btn mr-3 ml-3"><Link to={item.links.url} dangerouslySetInnerHTML={{ __html: item.links.title }} /></div>
+								</div>
+							))}
 						</div>
 					</div>
 				</section>
@@ -148,7 +145,7 @@ const LoanProgramPage = ({ data }) => {
 			<section className="container">
 				<div className="row">
 					<div className="mx-auto col-12 col-md-11 py-md-5 mt-4 mb-md-3">
-						<div className="payment-program" dangerouslySetInnerHTML={{__html:content.content}} />
+						<div className="payment-program" dangerouslySetInnerHTML={{__html:node.content}} />
 					</div>
 				</div>
 
@@ -160,26 +157,26 @@ const LoanProgramPage = ({ data }) => {
 				</div>
 			</section>
 			
-			{content.loan_program.paymentOptionsBenefits.paymentOptionHeading && (
+			{node.loan_program.paymentOptionsBenefits.paymentOptionHeading && (
 				<div className="bg-blue mt-5" id="paymentoptbenefits">
 					<h2 className="text-center py-4 h1 font-weight-bold text-white">
-						{content.loan_program.paymentOptionsBenefits.paymentOptionHeading}
+						{node.loan_program.paymentOptionsBenefits.paymentOptionHeading}
 					</h2>
 				</div>
 			)}
 
 			<div className="container">
-				{content.loan_program.paymentOptionsBenefits.paymentOptionBrif && (
+				{node.loan_program.paymentOptionsBenefits.paymentOptionBrif && (
 					<div className="row">
 						<div className="mx-auto col-12 col-md-11 my-3 my-lg-5 py-3">
-							<div className="font-weight-bold" dangerouslySetInnerHTML={{ __html: content.loan_program.paymentOptionsBenefits.paymentOptionBrif }} />
+							<div className="font-weight-bold" dangerouslySetInnerHTML={{ __html: node.loan_program.paymentOptionsBenefits.paymentOptionBrif }} />
 						</div>
 					</div>
 				)}
-				{content.loan_program.paymentOptionsBenefits.paymentOptions && (
+				{node.loan_program.paymentOptionsBenefits.paymentOptions && (
 					<div className="payment-option row">
 						<ul className="col-12 px-3">
-							{content.loan_program.paymentOptionsBenefits.paymentOptions.map((item, i) =>
+							{node.loan_program.paymentOptionsBenefits.paymentOptions.map((item, i) =>
 								(
 									<li key={item.fieldGroupName + i}>
 										<Link to={'/'} onClick={showbenefitpopup(item, 'payment_options')} data-title={item.paymentOptionTitle} data-content="Advertising payment options is a great way to set you apart from your competitors and produce more leads for your business.">
@@ -195,9 +192,9 @@ const LoanProgramPage = ({ data }) => {
 					</div>
 				)}
 
-				{content.loan_program.offeringPaymentOption && (
+				{node.loan_program.offeringPaymentOption && (
 					<div className="my-3 my-md-5 py-4 row">
-						{content.loan_program.offeringPaymentOption.map((item, i) => (
+						{node.loan_program.offeringPaymentOption.map((item, i) => (
 							(i === 0) 
 								?
 									<div key={item.fieldGroupName + i} className="box-shadow bg-white rounded text-center col-12 col-md-6 p-0 mb-3 mx-auto">
@@ -226,34 +223,34 @@ const LoanProgramPage = ({ data }) => {
 				)}
 			</div>
 
-			{content.loan_program.joinLoanProgram && (
+			{node.loan_program.joinLoanProgram && (
 				<section className="joinLoanProgram" id="joinloanprogram">
-					{content.loan_program.joinLoanProgram.loanProgramMethodHeading && (
+					{node.loan_program.joinLoanProgram.loanProgramMethodHeading && (
 						<div className="bg-blue">
 							<h3 className="text-center py-4 h1 f-bold text-white">
-								{content.loan_program.joinLoanProgram.loanProgramMethodHeading}
+								{node.loan_program.joinLoanProgram.loanProgramMethodHeading}
 							</h3>
 						</div>
 					)}
 					<div className="container">						
 						<div className="row pb-4">
-							<h3 className="mx-auto col-12 col-md-11 my-5 pt-md-3" dangerouslySetInnerHTML={{ __html: content.loan_program.joinLoanProgram.loanProgramIntro }} />
+							<h3 className="mx-auto col-12 col-md-11 my-5 pt-md-3" dangerouslySetInnerHTML={{ __html: node.loan_program.joinLoanProgram.loanProgramIntro }} />
 							<Link to={'/'} className="m-auto px-5 btn btn-primary">Join Now</Link>
 						</div>
-						<h3 className="h2 text-center f-bold color-blue border-heading mt-5 mb-3"><span>{content.loan_program.joinLoanProgram.sectionTitle}</span></h3>
-						{content.loan_program.joinLoanProgram.loanProgramMethods && (
+						<h3 className="h2 text-center f-bold color-blue border-heading mt-5 mb-3"><span>{node.loan_program.joinLoanProgram.sectionTitle}</span></h3>
+						{node.loan_program.joinLoanProgram.loanProgramMethods && (
 							<div className="row mt-4 mb-5 justify-content-center">
 								{data.wpgraphql.popupplural.edges.map(cate => {
 									(cate.node.slug === "loanprogrammethods") && (
 										cate.node.popupPost.edges.map(post => {
-											content.loan_program.joinLoanProgram.loanProgramMethods.map((item, i) => 
+											node.loan_program.joinLoanProgram.loanProgramMethods.map((item, i) => 
 												(item.popSlug === post.node.slug) && (programMethod[i] = post.node)
 											)
 										})
 									)
 								})}
 								
-								{content.loan_program.joinLoanProgram.loanProgramMethods.map((item, i) => (
+								{node.loan_program.joinLoanProgram.loanProgramMethods.map((item, i) => (
 									<div className="col-md-6 col-lg-4 mb-4 mb-lg-0 justify-content-center" key={item.fieldGroupName + i}>
 										<div className="card wygbox box-shadow loan-program-method">
 											<style dangerouslySetInnerHTML={{
@@ -266,7 +263,7 @@ const LoanProgramPage = ({ data }) => {
 											<div className={'wygthumb ' + item.popSlug}>
 												<img src={item.programMethodsBgImage.sourceUrl} className="card-img-top" alt="Dealer Resource Center" />
 											</div>
-											<div className="card-body pb-0">
+											<div className="card-body">
 												<h3 className="card-title" dangerouslySetInnerHTML={{ __html: item.programMethodTitle }} />
 												<p className="card-text mb-3 mt-auto" dangerouslySetInnerHTML={{ __html: item.programMethodBrif }} />
 											</div>
@@ -285,35 +282,35 @@ const LoanProgramPage = ({ data }) => {
 				</section>
 			)}
 
-			{content.loan_program.onlineAppIntegration && (
+			{node.loan_program.onlineAppIntegration && (
 				<>
 					<div className="container pt-1">
-						{content.loan_program.onlineAppIntegration.appIntegrationBrif && (
+						{node.loan_program.onlineAppIntegration.appIntegrationBrif && (
 							<div className="mt-5 pt-4 pb-3 px-4 px-lg-5 box-shadow">
-								<h3 className="h1 text-blue text-center mb-4 ">{content.loan_program.onlineAppIntegration.appIntegrationHeading}</h3>
-								<p dangerouslySetInnerHTML={{__html: content.loan_program.onlineAppIntegration.appIntegrationBrif}} />
+								<h3 className="h1 text-blue text-center mb-4 ">{node.loan_program.onlineAppIntegration.appIntegrationHeading}</h3>
+								<p dangerouslySetInnerHTML={{__html: node.loan_program.onlineAppIntegration.appIntegrationBrif}} />
 							</div>
 						)}
 
-						{content.loan_program.onlineAppIntegration.appIntegrationStep && (
+						{node.loan_program.onlineAppIntegration.appIntegrationStep && (
 							<div className="p-3 p-sm-4 p-lg-5 mb-5" style={{ backgroundColor: '#e6e7e8' }}>
-								<img src={content.loan_program.onlineAppIntegration.appIntegrationStep.sourceUrl} alt="app integration step" />
+								<img src={node.loan_program.onlineAppIntegration.appIntegrationStep.sourceUrl} alt="app integration step" />
 							</div>
 						)}
 
-						{content.loan_program.onlineAppIntegration.appIntegrationOption && (
+						{node.loan_program.onlineAppIntegration.appIntegrationOption && (
 							<div className="row pt-5">
 								{data.wpgraphql.popupplural.edges.map(cate => {
 									(cate.node.slug === "appintegrationoptions") && (
 										cate.node.popupPost.edges.map((post) => {
-											content.loan_program.onlineAppIntegration.appIntegrationOption.map((item, i) => 
+											node.loan_program.onlineAppIntegration.appIntegrationOption.map((item, i) => 
 												(item.popSlug === post.node.slug) && (onlineApp[i] = post.node)
 											)
 										})
 									)
 								})}
 
-								{content.loan_program.onlineAppIntegration.appIntegrationOption.map((item, i) => {
+								{node.loan_program.onlineAppIntegration.appIntegrationOption.map((item, i) => {
 									const appIntOpt = ['loantype', 'training']
 									return(
 										<div key={item.fieldGroupName + i} className={'card box-shadow bg-white rounded text-center payment-option-box col-12 col-md-6 mb-3 mb-lg-0 p-0 ml-md-3 ml-lg-5 ' + appIntOpt[i]}>
@@ -321,7 +318,7 @@ const LoanProgramPage = ({ data }) => {
 												<img src={item.integrationOptionBgImage.sourceUrl} className="card-img-top" alt={item.integrationOptionBgImage.altText} />
 											</div>
 											<div className="p-4 card-body">
-												<h3 className="mb-10 flex-fill" dangerouslySetInnerHTML={{__html: item.integrationOptionHeading}} />
+												<h3 className="mb-1 flex-fill" dangerouslySetInnerHTML={{__html: item.integrationOptionHeading}} />
 												<p className="card-text mb-3 flex-fill" dangerouslySetInnerHTML={{ __html: item.integrationOptionBrif }} />
 												<button className="btn-link text-lg mt-auto" onClick={showbenefitpopup(onlineApp[i], item.popSlug)}>Learn More</button>
 											</div>
@@ -334,7 +331,7 @@ const LoanProgramPage = ({ data }) => {
 				</>
 			)}
 
-			{content.loan_program && (
+			{node.loan_program && (
 				<div className="container">					
 					<div className="row">
 						<div className="mx-auto col-12 col-md-11">
@@ -342,8 +339,8 @@ const LoanProgramPage = ({ data }) => {
 								<h3 className="h2 text-center font-weight-bold mb-3">What’s Your Specialty? We’ve Got Loans for Whatever You Do!</h3>
 								<p>We offer loans for a ton of different home improvement project types. From the foundation all the way up to the roof — inside, outside, large or small — our loans are tailored to meet virtually any home improvement need. Contact us to discover which loans will best suit your business model.</p>
 							</div>
-							<div className="text-center mt-5 pb-5"><a className="m-auto px-5 btn btn-primary font-weight-bold" href="/contact">Contact Us</a></div>
-							<div className="py-md-5 pb-0 mb-5 payment-program">
+							<div className="text-center pb-5"><a className="m-auto px-5 btn btn-primary font-weight-bold" href="/contact">Contact Us</a></div>
+							<div className="py-md-5 pb-0 payment-program">
 								<h3 className="h2 text-center font-weight-bold mb-3">Our Contractor Support is Second to None</h3>
 								<p>We built our whole business around working with home improvement contractors across the nation. Because we only do home improvement loans, we can provide specialized and unparalleled service, starting with your dedicated relationship manager.</p>
 							</div>
@@ -355,7 +352,7 @@ const LoanProgramPage = ({ data }) => {
 							return(
 								(cate.node.slug === "loanservices") && (
 									cate.node.popupPost.edges.map((post) => {
-										content.loan_program.loanServices.map((item, i) => 
+										node.loan_program.loanServices.map((item, i) => 
 											(item.popSlug === post.node.slug) && (
 												services[i] = post.node
 											)
@@ -364,7 +361,7 @@ const LoanProgramPage = ({ data }) => {
 								))
 							)
 						})}
-						{content.loan_program.loanServices.map((item, i) => {
+						{node.loan_program.loanServices.map((item, i) => {
 							return(
 								<div className="col-md-6 col-lg-4 mb-4 mb-lg-0" key={item.fieldGroupName+i}>
 									<div className="single-offer card-body rounded">
@@ -381,8 +378,8 @@ const LoanProgramPage = ({ data }) => {
 					</div>
 
 					<div className="p-4 m-lg-5">
-						<h3 className="h2 text-center font-weight-bold">{content.loan_program.loanProvider.sectionHeading}</h3>
-						<p className="text-center py-2">{content.loan_program.loanProvider.sectionBrif}</p>
+						<h3 className="h2 text-center font-weight-bold">{node.loan_program.loanProvider.sectionHeading}</h3>
+						<p className="text-center py-2">{node.loan_program.loanProvider.sectionBrif}</p>
 						<div className="d-flex justify-content-center howselectloan">
 							{data.wpgraphql.popupplural.edges.map((cate) => {
 								(cate.node.slug === "selectloanprogram") && (
@@ -394,19 +391,19 @@ const LoanProgramPage = ({ data }) => {
 								)
 							})}
 							<button className="btn-link" onClick={showbenefitpopup(viewLoanProviderPDF, 'viewFile')}>VIEW</button>
-							<div className="display-inline-block box-20" dangerouslySetInnerHTML={{__html: content.loan_program.loanProvider.yearBlock}} />    
-							<button className="pdffile" onClick={() => DownloadFile(content.loan_program.loanProvider.downloadDoc.mediaItemUrl)}><img src={pdffile} alt="download PDF file icon" /> PDF</button>
+							<div className="display-inline-block box-20" dangerouslySetInnerHTML={{__html: node.loan_program.loanProvider.yearBlock}} />    
+							<button className="pdffile" onClick={() => DownloadFile(node.loan_program.loanProvider.downloadDoc.mediaItemUrl)}><img src={pdffile} alt="download PDF file icon" /> PDF</button>
 						</div>
 					</div>
 				</div>
 			)}
 
 			<div className="bg-blue mt-5" id="createloanprogram">
-				<h3 className="text-center py-4 h1 f-bold text-white">{content.loan_program.createLoanOption.sectionHeading}</h3>
+				<h3 className="text-center py-4 h1 f-bold text-white">{node.loan_program.createLoanOption.sectionHeading}</h3>
 			</div>
 
 			<div className="container">
-				<div className="py-5 px-md-5 pb-0 mb-5 payment-program">					
+				<div className="py-5 px-md-5 pb-0 payment-program">					
 					<h3 className="h2 text-center mb-3 font-weight-bold">What’s a Loan Program?</h3>
 					<p>At its core, a payment options program is a way for you and your authorized dealers to achieve sales goals and overcome sales-related challenges. Your customized, private-label loan program is designed to achieve your organization’s goals while building brand recognition.</p>
 				</div>
@@ -416,18 +413,18 @@ const LoanProgramPage = ({ data }) => {
 					<p>If your organization works with a network of contractors, installers, dealers, or other authorized clients who work in the home improvement business, you should create a loan program. It’s a smart and easy way to boost your growth and gain brand loyalty.</p>
 				</div>
 				
-				<h3 className="h2 text-center mb-3 font-weight-bold">Why Should You Create a Loan Program?</h3>
+				<h3 className="h2 text-center mb-4 mb-md-3 font-weight-bold">Why Should You Create a Loan Program?</h3>
 				<div className="row flex-wrap my-4 my-lg-5">						
 					{data.wpgraphql.popupplural.edges.map((cate) => {
 						(cate.node.slug === "createloanprogram") && (
 							cate.node.popupPost.edges.map((post) => {
-								content.loan_program.createLoanOption.sectionOption.map((item, i) => {
+								node.loan_program.createLoanOption.sectionOption.map((item, i) => {
 									(item.popSlug === post.node.slug) && (createProgram[i] = post.node)
 								})
 							})
 						)
 					})}
-					{content.loan_program.createLoanOption.sectionOption.map((item, i) => {
+					{node.loan_program.createLoanOption.sectionOption.map((item, i) => {
 						const appIntOpt = ['whatsinit', 'whatsinitdealers']
 						return (
 							<div key={item.fieldGroupName + i}  className={'box-shadow bg-white rounded text-center payment-option-box col-12 col-md-12 col-md mb-3 mb-lg-0 p-0 mr-md-3 mr-lg-5 '+ appIntOpt[i]}>
@@ -444,21 +441,21 @@ const LoanProgramPage = ({ data }) => {
 				</div>
 			</div>
 
-			<h3 className="h2 text-center p-md-5 mt-4 mb-2 font-weight-bold">Why EnerBank is the Right Choice as Your Loan Program Partner</h3>
+			<h3 className="h2 text-center px-3 p-md-5 mt-4 mb-2 font-weight-bold">Why EnerBank is the Right Choice as Your Loan Program Partner</h3>
 
 			<div className="container">
 				<div className="row justify-content-center">
 					{data.wpgraphql.popupplural.edges.map((cate) => {
 						(cate.node.slug === "rightchoiceloanprogram") && (
 							cate.node.popupPost.edges.map((post) => {
-								content.loan_program.rightChoice.map((item, i) => {
+								node.loan_program.rightChoice.map((item, i) => {
 									(item.popSlug === post.node.slug) && (rightChoice[i] = post.node)
 								})
 							})
 						)
 					})}
 					
-					{content.loan_program.rightChoice.map((item, i) => {
+					{node.loan_program.rightChoice.map((item, i) => {
 						return(
 							<div className="col-md-6 col-lg-4 mb-4 mb-lg-0" key={item.fieldGroupName+i}>
 								<div className="single-offer card-body">
@@ -478,7 +475,7 @@ const LoanProgramPage = ({ data }) => {
 				<style dangerouslySetInnerHTML={{
 					__html: [
 						'.easyApp:after {',
-							'background: #0077C8 url(' + content.loan_program.easyApplication.easyApplicationBanner.sourceUrl + ') no-repeat left/cover',
+							'background: #0077C8 url(' + node.loan_program.easyApplication.easyApplicationBanner.sourceUrl + ') no-repeat left/cover',
 						'}'
 					].join('\n')
 				}}></style>
@@ -486,9 +483,9 @@ const LoanProgramPage = ({ data }) => {
 					<div className="row">
 						<div className="col-12 col-sm-5"></div>
 						<div className="col-12 col-sm-7">
-							<h3 className="text-white mb-4">{content.loan_program.easyApplication.easyApplicationHeading}</h3>
+							<h3 className="text-white mb-4">{node.loan_program.easyApplication.easyApplicationHeading}</h3>
 							<ul>
-								{content.loan_program.easyApplication.easyApplicationProcess.map((item, i) => {
+								{node.loan_program.easyApplication.easyApplicationProcess.map((item, i) => {
 									return(										
 										<li key={item.fieldGroupName + i}>{item.easyApplicationSteps}</li>
 									)
@@ -500,8 +497,8 @@ const LoanProgramPage = ({ data }) => {
 			</div>
 		
 			<div className="m-md-4 m-lg-5">
-				<h3 className="h2 f-bold text-center font-weight-bold">{content.loan_program.selectPartner.sectionHeading}</h3>
-				<p className="text-center py-2">{content.loan_program.selectPartner.sectionBrif}</p>
+				<h3 className="h2 px-3 f-bold text-center font-weight-bold">{node.loan_program.selectPartner.sectionHeading}</h3>
+				<p className="text-center py-2">{node.loan_program.selectPartner.sectionBrif}</p>
 				<div className="d-flex justify-content-center howselectloan">
 					{data.wpgraphql.popupplural.edges.map((cate) => {
 						(cate.node.slug === "selectloanprogram") && (
@@ -513,12 +510,12 @@ const LoanProgramPage = ({ data }) => {
 						)
 					})}
 					<button className="btn-link" onClick={showbenefitpopup(viewLoanPartnerPDF, 'viewFile')}>VIEW</button>
-					<div className="display-inline-block box-20" dangerouslySetInnerHTML={{__html: content.loan_program.selectPartner.yearBlock}} />    
-					<button className="pdffile" onClick={() => DownloadFile(content.loan_program.selectPartner.downloadDoc.mediaItemUrl)}><img src={pdffile} alt="download PDF file icon" /> PDF</button>
+					<div className="display-inline-block box-20" dangerouslySetInnerHTML={{__html: node.loan_program.selectPartner.yearBlock}} />    
+					<button className="pdffile" onClick={() => DownloadFile(node.loan_program.selectPartner.downloadDoc.mediaItemUrl)}><img src={pdffile} alt="download PDF file icon" /> PDF</button>
 				</div>
 			</div>
 
-			{content.loan_program.partnerSays && (
+			{node.loan_program.partnerSays && (
 				<>
 					<div className="container">
 						<h3 className="h2 text-center mx-md-5 mb-3 my-5 my-md-2 p-md-5 font-weight-bold">
@@ -528,7 +525,7 @@ const LoanProgramPage = ({ data }) => {
 					</div>
 
 					<Carousel showArrows={true} centerMode infiniteLoop>
-						{content.loan_program.partnerSays.map((item, i) =>
+						{node.loan_program.partnerSays.map((item, i) =>
 							(
 								<div key={item.fieldGroupName + i}>
 									<img src={item.partnerLogo.sourceUrl} alt={item.partnerLogo.altText} className="img-fluid mb-4" />
