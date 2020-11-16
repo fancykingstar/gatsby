@@ -42,7 +42,7 @@ const Header = ({ siteTitle }) => {
                     <ul>
                       <li><button onClick={loginForm} className="btn-link">Account Log In</button>|</li>
                       <li><a href="https://enerbankusa.documentinbox.com/Inbox/app#login" target="_blank">View / Sign Loan Docs</a>|</li>
-                      <li><a href="https://enerbank.com/partnerportalapp/" target="_blank">PartnerPortal</a>|</li>
+                      <li><Link to={'/paymentportalapp'} >PartnerPortal</Link>|</li>
                       <li><Link to={'/payment-estimator'} className="btn-link" >Payment Estimator</Link></li>
                     </ul>
                   </div>
