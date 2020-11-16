@@ -52,8 +52,8 @@ const IndexPage = ({data}) => {
       </section>
       <section className="home-about-area position-relative">
         <div className="container">
-          <div className="row align-items-center justify-content-end">
-            <div className="col-sm-3 px-5 pl-md-0 pr-md-3 gift_card text-center">
+          <div className="row align-items-center justify-content-end py-4">
+            <div className="col-sm-3 px-5 pl-md-0 px-md-3 gift_card text-center">
                 <img src={node.home_section.aboutArea[0].addLogo.sourceUrl} alt={node.home_section.aboutArea[0].addLogo.altText} />
             </div>
             <div className="col-sm-9 col-lg-6 px-lg-0 home-about-right">
@@ -97,7 +97,7 @@ const IndexPage = ({data}) => {
           <div className="row align-items-center justify-content-end">
             <div className="col-sm-6 px-lg-0 home-about-right">
               <div className="row">                
-                <div className="single-services col p-4 p-lg-5">
+                <div className="single-services col px-4 px-lg-5">
                   <Link to={node.home_section.aboutArea[1].anchorBtn[0].addLink.url} className="btn genric-btn primary f-bold mb-4">{node.home_section.aboutArea[1].anchorBtn[0].addLink.title}</Link>
                   <p className="m-0" dangerouslySetInnerHTML={{ __html: node.home_section.aboutArea[1].addText }} />
                 </div>
