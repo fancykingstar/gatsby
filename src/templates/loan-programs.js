@@ -339,7 +339,7 @@ const LoanProgramPage = ({ data }) => {
 								<h3 className="h2 text-center font-weight-bold mb-3">What’s Your Specialty? We’ve Got Loans for Whatever You Do!</h3>
 								<p>We offer loans for a ton of different home improvement project types. From the foundation all the way up to the roof — inside, outside, large or small — our loans are tailored to meet virtually any home improvement need. Contact us to discover which loans will best suit your business model.</p>
 							</div>
-							<div className="text-center pb-5"><a className="m-auto px-5 btn btn-primary font-weight-bold" href="/contact">Contact Us</a></div>
+							<div className="text-center pb-5"><a className="m-auto px-5 btn btn-primary font-weight-bold" href="/contact-us">Contact Us</a></div>
 							<div className="py-md-5 pb-0 payment-program">
 								<h3 className="h2 text-center font-weight-bold mb-3">Our Contractor Support is Second to None</h3>
 								<p>We built our whole business around working with home improvement contractors across the nation. Because we only do home improvement loans, we can provide specialized and unparalleled service, starting with your dedicated relationship manager.</p>

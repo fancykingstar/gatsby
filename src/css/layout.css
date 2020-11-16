@@ -95,7 +95,7 @@ h1, h2, h3, h4, h5, h6 { line-height: 1.5em }
 .navbar-toggler-icon {
   background-image: url(../images/mobile-menu.svg);
 }
-#loginBox{ background:#4D4D4D; position:absolute; top:44px; left:0; min-width:390px; z-index:9; padding: 30px; text-align:left;}
+#loginBox{ background:#4D4D4D; position:absolute; top:44px; left: 50%; transform: translateX(-50%); min-width:390px; z-index:9; padding: 30px; text-align:left;}
 #loginBox p{ line-height:28px; color:#fff; letter-spacing:0; font-size:15px;}
 #loginBox h3{ margin:0px 0 15px 0; padding:0px; line-height:24px; font-size:20px; color:#fff;}
 #closeButton{ position:absolute; top:15px; right:25px; cursor:pointer;}
