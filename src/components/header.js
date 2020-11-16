@@ -21,19 +21,13 @@ const Header = ({ siteTitle }) => {
         {theme => (
           <header>
             {accLogin && (
-              <div className="info-panel">
-                  <div id="loginBox">
-                      <a id="closeButton" onClick={closeLoginForm}><img src={close_icon} alt="close icon" /></a>
-                        <form id="loginForm">
-                            <h3>Account Log In</h3>
-                            <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonumy nibh euismod tinci ut laoreet dolore. Sed et pharetra dolor, et nibh euismod vehicula sem. </p>
-                            <div className="row">
-                                <div className="col-md-6"><input type="text" className="form-control" placeholder="Username"/></div>
-                                <div className="col-md-6"><input type="password" className="form-control" placeholder="Password"/></div>
-                                <div className="col-md-6"><input type="submit" className="btn btn-outline-light px-4" value="Submit"/></div>
-                            </div>
-                        </form>
-                    </div>
+              <div id="loginBox" className="container mx-auto">
+                  <a id="closeButton" onClick={closeLoginForm}><img src={close_icon} alt="close icon" /></a>
+                  <h4 className="modal-title mb-4 text-white" id="modalTitle">Borrower Account Log In</h4>
+                  <div id="modalContent" className="small line-height-normal">
+                    <p style={{lineHeight: 'normal'}}>If your account number starts with 456 <br/><a href="https://accounts.enerbank.com" target="_blank">Click Here </a></p>
+                    <p style={{lineHeight: 'normal'}}>Otherwise <br/><a href="https://enerbankpayments.com/">Click Here</a></p>
+                  </div>
               </div>
             )}            
             <div className="header-top menu">

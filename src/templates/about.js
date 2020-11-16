@@ -100,7 +100,7 @@ const About = ({data}) => {
                         content.about.boardOfDirectors.directors.map((item, i) => {
                             return(
                                 <div className="col-sm-6 col-md-6 col-lg-4" key={item.directorThumb.id}>
-                                    <div className="mb-4 text-center director-col" onClick={showbenefitpopup({title: item.directorName, image: item.directorThumb.sourceUrl})}>
+                                    <div className="mb-4 text-center director-col" onClick={showbenefitpopup(item)}>
                                         <img src={item.directorThumb.sourceUrl} alt={item.directorThumb.altText} />
                                         <div className="director-profile" dangerouslySetInnerHTML={{__html: item.directorOverlay}} />
                                         <p className="directorName">{item.directorName}</p>
@@ -145,7 +145,9 @@ const About = ({data}) => {
                     <Link to={'/contact-us'} className="btn bg-blue d-inline-block text-white mx-auto px-5">Contact Us</Link>
                 </div>                
             </div>
-            <DirectorOne visiblity={visible} handleClose={hidebenefitpopup} popData={popData} />
+            {visible && (
+                <DirectorOne visiblity={visible} handleClose={hidebenefitpopup} popData={popData} />
+            )}            
     </Layout>
   
 )}
@@ -200,8 +202,10 @@ export const query = graphql`
                     boardBrif
                     fieldGroupName
                     directors {
+                      directorDescription
                       directorName
                       directorOverlay
+                      directorPosition
                       fieldGroupName
                       directorThumb {
                         sourceUrl

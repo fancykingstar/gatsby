@@ -11,6 +11,8 @@ import { Collapse } from 'reactstrap';
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import Video from "../components/video";
+import close_icon from '../images/closed_icon-blue.svg'
+import { Modal } from 'react-bootstrap';
 
 // accordian
 const blockElements = {
@@ -28,6 +30,16 @@ const HomeOwnerPage = ({data}) => {
     // const onEntered = () => setStatus('Opened');
     // const onExiting = () => setStatus('Closing...');
     // const onExited = () => setStatus('Closed');
+
+    const [accLogin, togglePanel] = useState(false);
+    const loginForm = () => {
+      togglePanel(true);
+    }
+
+    const closeLoginForm = () => {
+      togglePanel(false);
+    }
+
     const toggle = (e) => {
         e.preventDefault();
         setCollapse(!collapse)
@@ -54,6 +66,12 @@ const HomeOwnerPage = ({data}) => {
                                 return (
                                     <div className="col-md-4 py-2 py-md-0" key={item.fieldGroupName+i}>
                                         <div className="header-btn"><a className="mr-auto" href={links} target="_blank" dangerouslySetInnerHTML={{ __html: item.links.title}} /></div>
+                                    </div>
+                                )
+                            }else if(i === 0){
+                                return (
+                                    <div className="col-md-4 py-2 py-md-0" key={item.fieldGroupName+i}>
+                                        <div className="header-btn"><a className="mr-auto btn" onClick={loginForm} dangerouslySetInnerHTML={{ __html: item.links.title}} /></div>
                                     </div>
                                 )
                             }else{
@@ -131,6 +149,22 @@ const HomeOwnerPage = ({data}) => {
 
             </Collapse>
         </section>
+
+        
+        {accLogin && (
+            <Modal show={accLogin} animation={true} centered={true} size="md">
+                <button type="button" className="close text-black" data-dismiss="modal" aria-label="Close" onClick={closeLoginForm}>
+                    <img src={close_icon} width="16" alt="close icon" style={{fill:'#4d4d4d', opacity: 1}} />
+                </button>
+                <div className="p-4">
+                    <h4 className="modal-title mb-4" id="modalTitle">Borrower Account Log In</h4>
+                    <div id="modalContent" className="small line-height-normal">
+                        <p style={{lineHeight: 'normal'}}>If your account number starts with 456 <br/><a href="https://accounts.enerbank.com" target="_blank">Click Here </a></p>
+                        <p style={{lineHeight: 'normal'}}>Otherwise <br/><a href="https://enerbankpayments.com/">Click Here</a></p>
+                    </div>
+                </div>
+            </Modal>
+        )}
 
   </Layout>
   
