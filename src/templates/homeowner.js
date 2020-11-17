@@ -127,8 +127,8 @@ const HomeOwnerPage = ({data}) => {
             </Tabbordion>
 
             <div className="text-center mt-4">
-                <button className="btn btn-primary f-bold equal-wd mb-4">Account Log In</button><br/>
-                <button className="btn btn-primary f-bold equal-wd mb-4">Automatic Debit Form (PDF)</button>
+                <button className="btn btn-primary f-bold equal-wd mb-4" onClick={loginForm}>Account Log In</button><br/>
+                <a href="https://devgbpress.enerbank.com/automatic-debt-authorization-form/" target="_blank" className="btn btn-primary f-bold equal-wd mb-4" >Automatic Debit Form (PDF)</a>
                 <p>Question about a loan? Have a comment? We want to hear from you.</p>
                 {/* feedback form */}
                 {/* <button onClick={toggle} className="btn btn-primary f-bold equal-wd mb-4">Leave Feedback</button> */}

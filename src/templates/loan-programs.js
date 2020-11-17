@@ -144,7 +144,7 @@ const LoanProgramPage = ({ data }) => {
 
 			<section className="container">
 				<div className="row">
-					<div className="mx-auto col-12 col-md-11 py-md-5 mt-4 mb-md-3">
+					<div className="mx-auto col-12 col-md-11 py-md-5 mt-md-4 mb-md-3">
 						<div className="payment-program" dangerouslySetInnerHTML={{__html:node.content}} />
 					</div>
 				</div>
