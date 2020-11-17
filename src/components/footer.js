@@ -42,13 +42,13 @@ return (
                   <div className="single-footer-widget">
                       <h6>ABOUT</h6>
                       <ul>
-                          <li><a href="/about#companyoverview" >Company Overview</a></li>
-                          <li><a href="/about#leadership">Leadership</a></li>
-                          <li><a href="/about#codeofconduct">Code of Conduct</a></li>
-                          <li><a href="/about#memberfdic">Member FDIC</a></li>
-                          <li><a href="/about#communityinvolvement">Community Involvement</a></li>
-                          <li><a href="/about#boardofdirectors">Board of Directors</a></li>
-                          <li><a href="/feedback">Feedback</a></li>
+                          <li><a href="/about/#companyoverview" >Company Overview</a></li>
+                          <li><a href="/about/#leadership">Leadership</a></li>
+                          {/* <li><a href="/about#codeofconduct">Code of Conduct</a></li> */}
+                          {/* <li><a href="/about#memberfdic">Member FDIC</a></li> */}
+                          <li><a href="/about/#communityinvolvement">Community Involvement</a></li>
+                          <li><a href="/about/#boardofdirectors">Board of Directors</a></li>
+                          {/* <li><a href="/feedback">Feedback</a></li> */}
                           <li><a href="/blog">Blog</a></li>
                       </ul>											
                   </div>
@@ -80,7 +80,7 @@ return (
                     
                       <ul>
                           <li><Link to={"/terms-of-use"}>Terms of Use</Link></li>
-                          <li><a href="http://enerbank.com/images/pdfs/Privacy-Notice.pdf" target="_blank">Privacy Notice</a></li>
+                          <li><a href="https://devgbpress.enerbank.com/privacy-notice/" target="_blank">Privacy Notice</a></li>
                           <li><Link to={"/privacy-policy"}>Online Privacy Statement</Link></li>
                       </ul>
                       
@@ -99,9 +99,9 @@ return (
               </div>
 
               <div className="mediaIcon">
-                  <Link to={"/"}><FontAwesomeIcon icon={ faFacebookF } /></Link>
-                  <Link to={"/"}><FontAwesomeIcon icon={ faTwitter } /></Link>
-                  <Link to={"/"}><FontAwesomeIcon icon={ faLinkedinIn } /></Link>
+                  <a href="https://www.facebook.com/enerbank"><FontAwesomeIcon icon={ faFacebookF } /></a>
+                  <a href="https://twitter.com/enerbank"><FontAwesomeIcon icon={ faTwitter } /></a>
+                  <a href="https://www.linkedin.com/authwall?trk=bf&trkInfo=AQEBJQklYrIpYQAAAXXX4bnA7rC_wMy1FrE-q85ty0Lwod8_B8MAPPFJHs4B9HUfF-spVaWlBBpY_g-9p7xuGppFP08d6nkfuDdqzYW0V0Re_DPAkxSWMkluZ65ZsVBrX4q6zVU=&originalReferer=&sessionRedirect=https%3A%2F%2Fwww.linkedin.com%2Fcompany%2F3077782%3Ftrk%3Dtyah%26trkInfo%3DtarId%253A1395948482719%252Ctas%253Aenerbank%252Cidx%253A1-1-1"><FontAwesomeIcon icon={ faLinkedinIn } /></a>
               </div>
             </div>
           </div>

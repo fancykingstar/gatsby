@@ -50,7 +50,7 @@ const About = ({data}) => {
                 </section>
             )}
             {/* enerbank leadership */}
-            <section className="container-fluid">
+            <section className="container-fluid" id="leadership">
                 <div className="row flex-column">
                     <div className="position-absolute w-100 pb-5 leadership-heading px-3" dangerouslySetInnerHTML={{__html: content.about.enerbankLeadership.leadershipHeading}} />
                     <img src={content.about.enerbankLeadership.leadershipBanner.sourceUrl} alt="Leader Banner" className="w-100" />
@@ -101,8 +101,10 @@ const About = ({data}) => {
                             return(
                                 <div className="col-sm-6 col-md-6 col-lg-4" key={item.directorThumb.id}>
                                     <div className="mb-4 text-center director-col" onClick={showbenefitpopup(item)}>
-                                        <img src={item.directorThumb.sourceUrl} alt={item.directorThumb.altText} />
-                                        <div className="director-profile" dangerouslySetInnerHTML={{__html: item.directorOverlay}} />
+                                        <div className="position-relative mb-3">
+                                            <img src={item.directorThumb.sourceUrl} alt={item.directorThumb.altText} />
+                                            <div className="director-profile" dangerouslySetInnerHTML={{__html: item.directorOverlay}} />
+                                        </div>
                                         <p className="directorName">{item.directorName}</p>
                                     </div>
                                 </div>

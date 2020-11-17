@@ -13,7 +13,7 @@ const CareerPage = ({data, props}) => {
     <Layout>
       <SEO title={data.wpgraphql.page.title} description={data.wpgraphql.page.excerpt}/>
       <section className="video-section">
-        <h1 className="text-center pt-5 pb-3"><span>Why Work at EnerBank? </span></h1>
+        <h1 className="text-center mt-md-4 pt-5 pb-3"><span>Why Work at EnerBank? </span></h1>
         <div className="container">
           <div className="row d-flex align-items-end">
             <div className="col-md-10 m-auto embed-container" ref={handstick}>
