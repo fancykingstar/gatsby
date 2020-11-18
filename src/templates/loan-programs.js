@@ -238,7 +238,7 @@ const LoanProgramPage = ({ data }) => {
 					)}
 					<div className="container">						
 						<div className="row pb-4">
-							<h3 className="mx-auto col-12 col-md-11 my-5 pt-md-3" dangerouslySetInnerHTML={{ __html: node.loan_program.joinLoanProgram.loanProgramIntro }} />
+							<p className="mx-auto col-12 col-md-11 my-5 pt-md-3 font-weight-bold text-center" dangerouslySetInnerHTML={{ __html: node.loan_program.joinLoanProgram.loanProgramIntro }} />
 							<Link to={'/contact-us'} className="m-auto px-5 btn btn-primary">Join Now</Link>
 						</div>
 						<h3 className="h2 text-center f-bold color-blue border-heading mt-5 mb-3"><span>{node.loan_program.joinLoanProgram.sectionTitle}</span></h3>
