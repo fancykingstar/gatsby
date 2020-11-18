@@ -54,35 +54,39 @@ const HomeOwnerPage = ({data}) => {
     <Layout>
         <SEO title={node.title} description={node.excerpt}/>
 
-        {node.top_banner.banner.backgroundImage && (
-            <section className="banner-area pos_relative" id="home">
-                <img src={node.top_banner.banner.backgroundImage.sourceUrl} alt={node.top_banner.banner.backgroundImage.altText} />
+        {node.video_section.video.videoUrl && (
+            <section className="banner-area pos_relative fullscreen" id="home">
+                {node.top_banner.banner.backgroundImage && (
+                    <img src={node.top_banner.banner.backgroundImage.sourceUrl} alt={node.top_banner.banner.backgroundImage.altText} />
+                )}
                 <div className="background-holder">
-                <Video videoSrcURL={node.video_section.video.videoUrl} allow="autoplay" videoTitle="EnnerBankUSA. America's home improvement lender of choice" videoWidth="100%" videoHeight="500" />
-                    <div className="container d-flex align-items-end p-0 pb-md-5 position-absolute banner-btn-container">
-                        { node.top_banner.banner.bannerLinks.map((item, i) => {
-                            if(i === 1){
-                                const links = item.links.url
-                                return (
-                                    <div className="col-md-4 py-2 py-md-0" key={item.fieldGroupName+i}>
-                                        <div className="header-btn"><a className="mr-auto" href={links} target="_blank" dangerouslySetInnerHTML={{ __html: item.links.title}} /></div>
-                                    </div>
-                                )
-                            }else if(i === 0){
-                                return (
-                                    <div className="col-md-4 py-2 py-md-0" key={item.fieldGroupName+i}>
-                                        <div className="header-btn"><a className="mr-auto btn" onClick={loginForm} dangerouslySetInnerHTML={{ __html: item.links.title}} /></div>
-                                    </div>
-                                )
-                            }else{
-                                return (
-                                    <div className="col-md-4 py-2 py-md-0" key={item.fieldGroupName+i}>
-                                        <div className="header-btn"><Link className="mr-auto" to={item.links.url} dangerouslySetInnerHTML={{ __html: item.links.title}} /></div>
-                                    </div>
-                                )
-                            }
-                        })}
-                    </div>
+                    <Video videoSrcURL={node.video_section.video.videoUrl} allow="autoplay" videoTitle="EnnerBankUSA. America's home improvement lender of choice" videoWidth="100%" videoHeight="500" />
+                    {node.top_banner.banner.bannerLinks && (
+                        <div className="container d-md-flex align-items-end p-0 pb-md-4 pb-lg-5 position-absolute banner-btn-container">
+                            { node.top_banner.banner.bannerLinks.map((item, i) => {
+                                if(i === 1){
+                                    const links = item.links.url
+                                    return (
+                                        <div className="col-md-4 py-1 py-md-2 py-md-0" key={item.fieldGroupName+i}>
+                                            <div className="header-btn"><a className="mr-auto" href={links} target="_blank" dangerouslySetInnerHTML={{ __html: item.links.title}} /></div>
+                                        </div>
+                                    )
+                                }else if(i === 0){
+                                    return (
+                                        <div className="col-md-4 py-1 py-md-2 py-md-0" key={item.fieldGroupName+i}>
+                                            <div className="header-btn"><a className="mr-auto btn" onClick={loginForm} dangerouslySetInnerHTML={{ __html: item.links.title}} /></div>
+                                        </div>
+                                    )
+                                }else{
+                                    return (
+                                        <div className="col-md-4 py-1 py-md-2 py-md-0" key={item.fieldGroupName+i}>
+                                            <div className="header-btn"><Link className="mr-auto" to={item.links.url} dangerouslySetInnerHTML={{ __html: item.links.title}} /></div>
+                                        </div>
+                                    )
+                                }
+                            })}
+                        </div>
+                    )}
                 </div>
             </section>
         )}
