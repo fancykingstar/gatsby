@@ -126,18 +126,22 @@ const LoanProgramPage = ({ data }) => {
 				].join('\n')
 			}}></style>
 
-			{node.top_banner.banner.backgroundImage && (
-				<section className="banner-area pos_relative" id="home">
-					<img src={node.top_banner.banner.backgroundImage.sourceUrl} alt={node.top_banner.banner.backgroundImage.altText} />
+			{node.video_section.video.videoUrl && (
+				<section className="banner-area pos_relative fullscreen" id="home">
+					{node.top_banner.banner.backgroundImage && (
+						<img src={node.top_banner.banner.backgroundImage.sourceUrl} alt={node.top_banner.banner.backgroundImage.altText} />
+					)}
 					<div className="background-holder">
 						<Video videoSrcURL={node.video_section.video.videoUrl} allow="autoplay" videoTitle="EnnerBank improvement lender of choice" videoWidth="100%" videoHeight="500" />
-						<div className="container d-flex align-items-end p-0 pb-md-5 position-absolute banner-btn-container">
-							{node.top_banner.banner.bannerLinks.map((item, i) =>(
-								<div className="col-md-4" key={item.fieldGroupName + i}>
-									<div className="header-btn mr-3 ml-3"><Link to={item.links.url} dangerouslySetInnerHTML={{ __html: item.links.title }} /></div>
-								</div>
-							))}
-						</div>
+						{node.top_banner.banner.bannerLinks && (
+							<div className="container d-flex align-items-end p-0 pb-md-5 position-absolute banner-btn-container">
+								{node.top_banner.banner.bannerLinks.map((item, i) =>(
+									<div className="col-md-4" key={item.fieldGroupName + i}>
+										<div className="header-btn mr-3 ml-3"><Link to={item.links.url} dangerouslySetInnerHTML={{ __html: item.links.title }} /></div>
+									</div>
+								))}
+							</div>
+						)}
 					</div>
 				</section>
 			)}
@@ -235,7 +239,7 @@ const LoanProgramPage = ({ data }) => {
 					<div className="container">						
 						<div className="row pb-4">
 							<h3 className="mx-auto col-12 col-md-11 my-5 pt-md-3" dangerouslySetInnerHTML={{ __html: node.loan_program.joinLoanProgram.loanProgramIntro }} />
-							<Link to={'/'} className="m-auto px-5 btn btn-primary">Join Now</Link>
+							<Link to={'/contact-us'} className="m-auto px-5 btn btn-primary">Join Now</Link>
 						</div>
 						<h3 className="h2 text-center f-bold color-blue border-heading mt-5 mb-3"><span>{node.loan_program.joinLoanProgram.sectionTitle}</span></h3>
 						{node.loan_program.joinLoanProgram.loanProgramMethods && (
