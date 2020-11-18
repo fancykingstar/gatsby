@@ -6,40 +6,45 @@ import { Helmet } from 'react-helmet'
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import Video from "../components/video";
+import gift1 from "../images/amazon-gift-bg1.jpg"
 
 const IndexPage = ({data}) => {
   const node = data.wpgraphql.pageBy;
   return (
     <Layout>
       <SEO title={node.title} description={'America\'s home improvement lender of choice'} />
-      {node.top_banner.banner.backgroundImage && (
-        <section className="banner-area pos_relative" id="home">
-            <img src={node.top_banner.banner.backgroundImage.sourceUrl} alt={node.top_banner.banner.backgroundImage.altText} />
+      {node.video_section.video.videoUrl && (
+        <section className="banner-area pos_relative fullscreen" id="home">
+            {node.top_banner.banner.backgroundImage && (
+              <img src={node.top_banner.banner.backgroundImage.sourceUrl} alt={node.top_banner.banner.backgroundImage.altText} />
+            )}
             <div className="background-holder">
                 <Video videoSrcURL={node.video_section.video.videoUrl} allow="autoplay" videoTitle="EnnerBank improvement lender of choice" videoWidth="100%" videoHeight="500" />
-                <div className="container d-flex align-items-end p-0 pb-md-5 position-absolute banner-btn-container">
-                    { node.top_banner.banner.bannerLinks.map((item, i) => {
-                        if(i === 0){
-                          return (
-                            <div className="col-md-4 py-2 py-md-0" key={item.links.title + i}>
-                              <div className="header-btn"><a className="mr-auto" href="homeowner/#howtopay" dangerouslySetInnerHTML={{ __html: item.links.title }} /></div>
-                            </div>
-                          )
-                        }else if(i === 2){
-                          return (
-                            <div className="col-md-4 py-2 py-md-0" key={item.links.title + i}>
-                              <div className="header-btn"><Link className="ml-auto" to={'loan-programs/#joinloanprogram'} dangerouslySetInnerHTML={{ __html: item.links.title }} /></div>
-                            </div>
-                          )
-                        }else{
-                          return (
-                            <div className="col-md-4 py-2 py-md-0" key={item.links.title + i}>
-                              <div className="header-btn"><Link className="mx-auto" to={'loan-programs/#createloanprogram'} dangerouslySetInnerHTML={{ __html: item.links.title }} /></div>
-                            </div>
-                          )
-                        }
-                    })}
-                </div>
+                {node.top_banner.banner.bannerLinks && (
+                    <div className="container d-md-flex align-items-end p-0 pb-md-4 pb-lg-5 position-absolute banner-btn-container">
+                        { node.top_banner.banner.bannerLinks.map((item, i) => {
+                            if(i === 0){
+                              return (
+                                <div className="col-md-4 py-1 py-md-2 py-md-0" key={item.links.title + i}>
+                                  <div className="header-btn"><a className="mr-auto" href="homeowner/#howtopay" dangerouslySetInnerHTML={{ __html: item.links.title }} /></div>
+                                </div>
+                              )
+                            }else if(i === 2){
+                              return (
+                                <div className="col-md-4 py-1 py-md-2 py-md-0" key={item.links.title + i}>
+                                  <div className="header-btn"><Link className="ml-auto" to={'loan-programs/#joinloanprogram'} dangerouslySetInnerHTML={{ __html: item.links.title }} /></div>
+                                </div>
+                              )
+                            }else{
+                              return (
+                                <div className="col-md-4 py-1 py-md-2 py-md-0" key={item.links.title + i}>
+                                  <div className="header-btn"><Link className="mx-auto" to={'loan-programs/#createloanprogram'} dangerouslySetInnerHTML={{ __html: item.links.title }} /></div>
+                                </div>
+                              )
+                            }
+                        })}
+                    </div>
+                )}
             </div>
         </section>
       )}
@@ -50,10 +55,16 @@ const IndexPage = ({data}) => {
           </div>
         </div>
       </section>
+        <style dangerouslySetInnerHTML={{__html:[
+          '.home-about-area:after{',
+            'background: url('+ node.home_section.aboutArea[0].addImage.sourceUrl +') no-repeat center center/cover',
+          '}'
+        ].join('\n')}} ></style>
+        
       <section className="home-about-area position-relative">
         <div className="container">
-          <div className="row align-items-center justify-content-end py-4">
-            <div className="col-sm-3 px-5 pl-md-0 px-md-3 gift_card text-center">
+          <div className="row align-items-center justify-content-end py-md-4">
+            <div className="col-sm-3 p-5 py-md-0 px-md-3 gift_card text-center">
                 <img src={node.home_section.aboutArea[0].addLogo.sourceUrl} alt={node.home_section.aboutArea[0].addLogo.altText} />
             </div>
             <div className="col-sm-9 col-lg-6 px-lg-0 home-about-right">
@@ -92,6 +103,13 @@ const IndexPage = ({data}) => {
           </div>
         </div>
       </section>
+
+      <style dangerouslySetInnerHTML={{__html:[
+        '.home-about-area2:after{',
+          'background: url('+ node.home_section.aboutArea[1].addImage.sourceUrl +') no-repeat top center/cover',
+        '}'
+      ].join('\n')}} ></style>
+
       <section className="home-about-area2 py-md-5 position-relative">
         <div className="container">
           <div className="row align-items-center justify-content-end">
@@ -125,7 +143,7 @@ export const pageQuery = graphql`
             fieldGroupName
             addImage {
               id
-              srcSet
+              sourceUrl
               altText
             }
             anchorBtn {
