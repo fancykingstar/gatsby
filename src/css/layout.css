@@ -208,15 +208,12 @@ body.mobile-nav-active #mobile-nav-toggle { color: #fff }
 .primary-btn.white:hover { background: #fff; color: #29A9E0 }
 .primary-btn.white:hover span { color: #29A9E0 }
 .overlay { position: absolute; left: 0; right: 0; top: 0; bottom: 0 }
-.banner-area { background-position: center; background-size: cover }
-.banner-area .fullscreen{ min-height:420px;}
+.banner-area { background-position: center; background-size: cover; }
+/* .banner-area.fullscreen{ min-height:406px;} */
 .service-area .header-text h1{ text-align: center; font-weight: 600; margin-bottom: 25px; }
 .header-text.text-center p{ text-align: center !important; }
 .video-section{ position:relative; }
 .banner-btn-container{ bottom: 0px; left:50%; transform: translateX(-50%);  }
-@media (max-width: 767px) {
-    .banner-area .fullscreen { height: 100% !important }
-}
 .banner-area .primary-btn { padding-left: 30px; padding-right: 30px }
 .banner-content { text-align: left }
 .banner-content h1 { color: #fff; font-size: 48px; font-weight: 700; line-height: 1em; margin-top: 20px; margin-bottom: 20px }
@@ -249,10 +246,10 @@ body.mobile-nav-active #mobile-nav-toggle { color: #fff }
     .single-service { text-align: center; margin-bottom: 30px }
 }
 .home-about-area { background-color: #0077C8 }
-.home-about-area:after { position: absolute; content: ""; top: 0; left: 0; width: 28%; height: 100%; background: url(../images/amazon-gift-bg1.jpg) no-repeat center center/cover; z-index: 1 }
+.home-about-area:after { position: absolute; content: ""; top: 0; left: 0; width: 28%; height: 100%; z-index: 1 }
 
 .home-about-area2 { background-color: #0077C8 }
-.home-about-area2:after { position: absolute; content: ""; top: 0; left: 0; width: 48%; height: 100%; background: url(../images/about-loan.jpg) no-repeat top center/cover; z-index: 1 }
+.home-about-area2:after { position: absolute; content: ""; top: 0; left: 0; width: 48%; height: 100%; z-index: 1 }
 @media (max-width: 576px) {
   .home-about-area, .home-about-area2{ padding-top: 200px !important; }
   .home-about-area:after, .home-about-area2:after { height:200px; width:100%; }
@@ -590,13 +587,47 @@ body.mobile-nav-active #mobile-nav-toggle { color: #fff }
 .start_drc p { font-size: 13px; line-height: normal; margin: 15px 0 35px; }
 .start_drc a { font-size: 13px; border: 1px solid #fff; padding: 10px 20px; color: #fff; border-radius: 3px; }
 
-.background-holder { position: absolute; width: 100%; height: 100%; top: 0px; left: 0; background-size: cover; background-position: center; overflow: hidden;}
+.background-holder { 
+  position: absolute; width: 100%; height: 100%; top: 0px; left: 0; background-size: cover; background-position: center; 
+  overflow: hidden; 
+}
 .background-holder iframe { width: 100vw; height: 56.25vw; min-height: 100vh; min-width: 177.77vh; position: absolute; top: 50%;
     left: 50%; transform: translate(-50%, -50%); }
 
-@media (max-width:576px){
-    .banner-area {  min-height: 52vh; }
-    .banner-btn-container{ height: 100%; left:0; transform: none; transform: none; justify-content: center; flex-direction: column; }
+@media (min-width: 0px){
+  .banner-area.fullscreen { min-height:150px; }
+  .header-btn a{ padding: 5px 30px; font-size:16px; }
+}
+@media (min-width: 768px){
+  .banner-area.fullscreen { min-height:228px; }
+}
+@media (min-width: 768px){
+  .banner-area.fullscreen { min-height:228px; }
+  .header-btn a{ padding: 15px 30px; font-size:16px; line-height: normal; }
+}
+@media (min-width: 1024px){
+  .banner-area.fullscreen { min-height:305px; }
+  .header-btn a{ font-size:26px; }
+}
+@media (min-width: 1440px){
+  .banner-area.fullscreen{ min-height:406px;}
+}
+/* responsive vimeo video */
+.embed-container { 
+  position: relative; 
+  padding-bottom: 56.25%; 
+  /* padding-bottom: 45.25%;  */
+  height: 0; overflow: hidden; 
+  width: 100%; 
+} 
+
+.embed-container iframe, 
+.embed-container object, 
+.embed-container embed { 
+  position: absolute; 
+  top: 0; left: 0; 
+  width: 100%; 
+  height: 100%; 
 }
 .pos_relative{ position: relative; }
 .color-blue { color: #0077C8; }
@@ -949,25 +980,6 @@ display: flex; align-items: center; justify-content: center; }
 .dark { background-color: #2a2b2d; color: #fff; transition: all 0.6s ease; }
 .light { transition: all 0.6s ease; background-color: #fefefe; }
 .dark a, .dark a:visited { color: #fff; }
-
-
-/* responsive vimeo video */
-.embed-container { 
-  position: relative; 
-  padding-bottom: 56.25%; 
-  /* padding-bottom: 45.25%;  */
-  height: 0; overflow: hidden; 
-  width: 100%; 
-} 
-
-.embed-container iframe, 
-.embed-container object, 
-.embed-container embed { 
-  position: absolute; 
-  top: 0; left: 0; 
-  width: 100%; 
-  height: 100%; 
-}
 
 /* supportHeading */
 .supportHeading{ font-size: 22px; }
