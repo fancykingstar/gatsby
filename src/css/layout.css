@@ -458,7 +458,7 @@ body.mobile-nav-active #mobile-nav-toggle { color: #fff }
 
 @media screen and (max-width:991px){
   .payment-option ul, .benefit-option ul{ flex-wrap: wrap; }
-  .payment-option ul li{ width: 30%; flex-basis: 30%; margin: 10px 0; }
+  .payment-option ul li, .benefit-option ul li{ width: 33.33%; flex-basis: 33.33%; }
 }
 @media screen and (max-width:576px){
   .payment-option ul li, .benefit-option ul li{ width: 50%; flex-basis: 50%; }
