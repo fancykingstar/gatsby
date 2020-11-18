@@ -366,6 +366,7 @@ const LoanProgramPage = ({ data }) => {
 							)
 						})}
 						{node.loan_program.loanServices.map((item, i) => {
+							console.log('service', services[i])
 							return(
 								<div className="col-md-6 col-lg-4 mb-4 mb-lg-0" key={item.fieldGroupName+i}>
 									<div className="single-offer card-body rounded">

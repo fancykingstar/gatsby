@@ -25,8 +25,8 @@ const Training = (props) => {
 							<div className="modal_banner banner_bg" style={{ backgroundImage: "url(" + props.popData.innerpagebanner.pagebanner.bannner.sourceUrl + ")" }}></div>
 						</>
 					)}
-					<div className="p-5 px-sm-8 py-sm-5">
-						<div className="small line-height-normal" dangerouslySetInnerHTML={{__html:props.popData.content}} />
+					<div className="p-5">
+						<div className="line-height-normal" dangerouslySetInnerHTML={{__html:props.popData.content}} />
 					</div>
 				</div>
 			</Modal>
