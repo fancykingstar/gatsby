@@ -12,8 +12,8 @@ const States = (props) => {
 					</button>
 					<h3 className="h2 font-weight-bold">All 50 States</h3>
 				</div>
-				<div className="modal_content p-4 py-sm-5">
-					<div className="small line-height-normal" style={{'lineHeight': '22px'}} dangerouslySetInnerHTML={{__html:props.popData.content}} />
+				<div className="modal_content p-5">
+					<div className="line-height-normal" style={{'lineHeight': '22px'}} dangerouslySetInnerHTML={{__html:props.popData.content}} />
 					<img className="img-fluid p-0 p-md-5 pb-0 mx-auto d-block" src={props.popData.innerpagebanner.pagebanner.bannner.sourceUrl} alt={props.popData.innerpagebanner.pagebanner.bannner.altText} />
 				</div>
 			</Modal>
