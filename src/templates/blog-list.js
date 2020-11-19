@@ -15,7 +15,7 @@ const CareerPage = ({data}) => {
     <Layout>
       <SEO title={'Blog'} description={'America\'s home improvement lender of choice'}/>
       <section className="video-section">
-        <h1 className="mt-4 mb-10 text-center mb-5"><span>Blog </span></h1>
+        <h1 className="mt-4 pt-5 mb-10 text-center mb-5"><span>Blog </span></h1>
         <div className="container">
           {
             data.wpgraphql.posts.edges.sort( (a, b) => b.node.date - a.node.date ).map((item, i) => {
