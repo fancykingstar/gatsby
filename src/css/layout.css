@@ -450,7 +450,7 @@ body.mobile-nav-active #mobile-nav-toggle { color: #fff }
 /* .payment-option ul li .bg-blue:hover{ background: #29a9e0; } */
 .payment-option ul li .icon, .benefit-option ul li .icon{ margin: auto; width: 87px; height: 87px; }
 .payment-option ul li div img, .benefit-option ul li div img{ max-width: 100%; }
-.payment-option ul li a, .payment-option ul li p{ line-height: normal; margin: 10px 0; font-weight: 500; color:#000; }
+.payment-option ul li a, .payment-option ul li p{ line-height: normal; margin: 10px 0; font-weight: 500; color:#4d4d4d; }
 
 .benefit-option ul li{ padding: 0 15px; width: 16.66%; }
 .benefit-option ul li .icon{ margin-bottom: 10px; }
