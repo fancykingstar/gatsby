@@ -156,8 +156,8 @@ const LoanProgramPage = ({ data }) => {
 				<div className="row video-section">
 					<div className="m-auto col-12 col-md-11 embed-container">
 						<Video videoSrcURL="https://www.youtube.com/embed/PKnMxIz4FWw?byline=0&title=0" videoTitle="EnerBank Atmospheric Video" videoWidth="100%" videoHeight="500" />
-						<p className="text-center font-weight-bold mt-2 mb-4">Watch: Discover the key to unlocking business growth</p>
-					</div>      
+					</div>
+					<p className="text-center font-weight-bold mt-2 mb-4 mx-auto">Watch: Discover the key to unlocking business growth</p>
 				</div>
 			</section>
 			
