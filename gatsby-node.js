@@ -119,6 +119,16 @@ exports.createPages = async ({ graphql, actions }) => {
                     },
                   })
               break;
+          case "text-to-pay-feature":
+              createPage({
+                path: "text-to-pay-feature",
+                component: path.resolve(`./src/templates/text-to-pay-feature.js`), 
+                context: {
+                  slug: node.slug,
+                  databaseId: node.databaseId,
+                },
+              })
+              break;
           case "referral-terms":
                   createPage({
                     path: "referral-terms",
