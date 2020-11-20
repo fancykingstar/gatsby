@@ -12,14 +12,12 @@ const CareerPage = ({data, props}) => {
   return (  
     <Layout>
       <SEO title={data.wpgraphql.page.title} description={data.wpgraphql.page.excerpt}/>
+      <h1 className="text-center mt-md-4 pt-5 pb-3"><span>Why Work at EnerBank? </span></h1>
       <section className="video-section">
-        <h1 className="text-center mt-md-4 pt-5 pb-3"><span>Why Work at EnerBank? </span></h1>
         <div className="container">
-          <div className="row d-flex align-items-end">
-            <div className="col-md-10 m-auto embed-container" ref={handstick}>
+            <div className="embed-container" ref={handstick}>
                 <Video videoSrcURL="https://player.vimeo.com/video/371895200" videoTitle="EnnerBankUSA. America's home improvement lender of choice" videoWidth="100%" videoHeight="500" />
             </div>
-          </div>
         </div>
       </section>
     {/* section-gap */}
@@ -27,7 +25,7 @@ const CareerPage = ({data, props}) => {
           <div className="row">
             <div className="col-md-12 career-service" dangerouslySetInnerHTML={{__html: data.wpgraphql.page.content}} />
             <div className="col-md-12 header-text" id="availableposition">
-              <h2 className="mb-20 text-center"><span>Available Positions</span></h2>
+              <h2 className="mb-4 text-center"><span>Available Positions</span></h2>
             </div>
             <Helmet>
                 <script src={withPrefix('script.js')} type="text/javascript" name="hirebridge-script" />
@@ -84,34 +82,36 @@ export const query = graphql`
 
       }      
 
-      careerplural {
-        edges {
-          node {
-            careerPost {
-              edges {
-                node {
-                  id
-                  title
-                  careers {
-                    availablePositions {
-                      fieldGroupName
-                      location
-                      positionTitle
-                      viewJobDetail {
-                        target
-                        title
-                        url
-                      }
-                    }
-                  }
-                  excerpt
-                  slug
-                }
-              }
-            }
-          }
-        }
-      }
+      
     }
   }
 `
+
+// careerplural {
+//   edges {
+//     node {
+//       careerPost {
+//         edges {
+//           node {
+//             id
+//             title
+//             careers {
+//               availablePositions {
+//                 fieldGroupName
+//                 location
+//                 positionTitle
+//                 viewJobDetail {
+//                   target
+//                   title
+//                   url
+//                 }
+//               }
+//             }
+//             excerpt
+//             slug
+//           }
+//         }
+//       }
+//     }
+//   }
+// }

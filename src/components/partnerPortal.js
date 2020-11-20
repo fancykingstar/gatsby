@@ -29,7 +29,7 @@ const PartnerPortal = (props) => {
 						</>
 					)}
 										
-					<div className="p-5 py-sm-5">
+					<div className="p-4 py-sm-5">
 						<div className="line-height-normal">
 							<div dangerouslySetInnerHTML={{__html:props.popData.content}} />
 						</div>
@@ -38,7 +38,7 @@ const PartnerPortal = (props) => {
 						<div className="container">
 							<div className="row">
 								<div className="col-md-12">
-									<ul className="portal_list py-5">
+									<ul className="portal_list pt-5 py-md-5">
 										{props.popData.partnerportal.portalservice.servicegroup.map((item, i) => (
 											<li key={item.fieldGroupName + i}>{item.servicetitle}</li>                
 										))}

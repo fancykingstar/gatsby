@@ -49,6 +49,7 @@ const BlogPage = ({data}) => {
                 <div className="col-8">
                   <h3 className="text-blue" dangerouslySetInnerHTML={{ __html: data.wpgraphql.post.title }} />
                   <h4 className="f-bold mb-3 my-1">Posted {moment(data.wpgraphql.post.date).format("MMMM D, Y")} by EnerBank USA</h4>
+                  <img src={data.wpgraphql.post.featuredImage.sourceUrl} alt={data.wpgraphql.post.featuredImage.altText} className="img-fluid" />
                   <div dangerouslySetInnerHTML={{ __html: data.wpgraphql.post.content }} />
                 </div>
                 <div className="col-4">
