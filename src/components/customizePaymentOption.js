@@ -10,7 +10,7 @@ const CustomizedPaymentOptionsProgram = (props) => {
 					<button type="button" className="close text-white" data-dismiss="modal" aria-label="Close" onClick={props.handleClose}>
 						<img src={close_icon} width="25" alt="close icon" />
 					</button>
-					<h2 className="h2 text-white font-weight-bold">{props.popData.title} Questions</h2>
+					<h2 className="h2 text-white font-weight-bold">{props.popData.title}</h2>
 				</div>
 				<div className="modal_content">
 					<div className="p-4 px-md-5 mx-md-5 my-3">
