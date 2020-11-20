@@ -340,7 +340,7 @@ const LoanProgramPage = ({ data }) => {
 					<div className="row">
 						<div className="mx-auto col-12 col-md-11">
 							<div className="mt-5 py-md-4 pb-0 payment-program">
-								<h3 className="h2 text-center font-weight-bold mb-3">What’s Your Specialty? We’ve Got Loans for Whatever You Do!</h3>
+								<h3 className="h2 text-center font-weight-bold mb-3">What’s Your Specialty? We’ve Got Loans for Almost Any Project!</h3>
 								<p>We offer loans for a ton of different home improvement project types. From the foundation all the way up to the roof — inside, outside, large or small — our loans are tailored to meet virtually any home improvement need. Contact us to discover which loans will best suit your business model.</p>
 							</div>
 							<div className="text-center pb-5"><a className="m-auto px-5 btn btn-primary font-weight-bold" href="/contact-us">Contact Us</a></div>
@@ -366,7 +366,6 @@ const LoanProgramPage = ({ data }) => {
 							)
 						})}
 						{node.loan_program.loanServices.map((item, i) => {
-							console.log('service', services[i])
 							return(
 								<div className="col-md-6 col-lg-4 mb-4 mb-lg-0" key={item.fieldGroupName+i}>
 									<div className="single-offer card-body rounded">
@@ -446,7 +445,7 @@ const LoanProgramPage = ({ data }) => {
 				</div>
 			</div>
 
-			<h3 className="h2 text-center px-3 p-md-5 mt-4 mb-2 font-weight-bold">Why EnerBank is the Right Choice as Your Loan Program Partner</h3>
+			<h3 className="h2 text-center px-3 p-md-5 mt-4 mb-2 font-weight-bold">Why EnerBank is the Right Choice as Your Loan Program Provider</h3>
 
 			<div className="container">
 				<div className="row justify-content-center">
@@ -524,7 +523,7 @@ const LoanProgramPage = ({ data }) => {
 				<>
 					<div className="container">
 						<h3 className="h2 text-center mx-md-5 mb-3 my-5 my-md-2 p-md-5 font-weight-bold">
-							<span>What Our Partners Say</span>
+							<span>{node.loan_program.testimonialHeading}</span>
 							<hr style={{ height: '2px', background: '#444', marginTop: '1.5rem' }}></hr>
 						</h3>
 					</div>
@@ -684,6 +683,7 @@ query($databaseId: ID!) {
 			}
 
 			loan_program {
+				testimonialHeading
 				partnerSays {
 					fieldGroupName
 					partnerComment
