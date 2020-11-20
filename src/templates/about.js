@@ -74,15 +74,20 @@ const About = ({data}) => {
                     <div className="gridgallery col-lg-12">
                         {content.about.communityInvolvement.ciLogos.map((item, i) => {
                             if(i === 0){
+                                console.log(item)
                                 return(
                                     <div className="horizontal" key={item.logo.id}>
-                                        <img alt="PHP" className="d-block mx-auto community-logo" src={item.logo.sourceUrl} data-holder-rendered="true" />
+                                        {/* <Link to={item.links}> */}
+                                            <img alt="PHP" className="d-block mx-auto community-logo" src={item.logo.sourceUrl} data-holder-rendered="true" />
+                                        {/* </Link> */}
                                     </div>
                                 )
                             }else{
                                 return(
                                     <div className="verticle" key={item.logo.id}>
-                                        <img alt="PHP" className="d-block mx-auto community-logo" src={item.logo.sourceUrl} data-holder-rendered="true" />
+                                        {/* <Link to={item.links}> */}
+                                            <img alt="PHP" className="d-block mx-auto community-logo" src={item.logo.sourceUrl} data-holder-rendered="true" />
+                                        {/* </Link> */}
                                     </div>
                                 )
                             }
@@ -195,9 +200,11 @@ export const query = graphql`
                     ciBrif
                     ciHeading
                     ciLogos {
-                      logo {
-                        sourceUrl
-                      }
+                        fieldGroupName
+                        links
+                        logo {
+                            sourceUrl
+                        }
                     }
                   }
                   boardOfDirectors {
