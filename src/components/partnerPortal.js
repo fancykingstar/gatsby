@@ -29,7 +29,7 @@ const PartnerPortal = (props) => {
 						</>
 					)}
 										
-					<div className="p-4 py-sm-5">
+					<div className="p-4 p-sm-5">
 						<div className="line-height-normal">
 							<div dangerouslySetInnerHTML={{__html:props.popData.content}} />
 						</div>

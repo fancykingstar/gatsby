@@ -74,20 +74,19 @@ const About = ({data}) => {
                     <div className="gridgallery col-lg-12">
                         {content.about.communityInvolvement.ciLogos.map((item, i) => {
                             if(i === 0){
-                                console.log(item)
                                 return(
                                     <div className="horizontal" key={item.logo.id}>
-                                        {/* <Link to={item.links}> */}
+                                        <a href={item.links} target="_blank">
                                             <img alt="PHP" className="d-block mx-auto community-logo" src={item.logo.sourceUrl} data-holder-rendered="true" />
-                                        {/* </Link> */}
+                                        </a>
                                     </div>
                                 )
                             }else{
                                 return(
                                     <div className="verticle" key={item.logo.id}>
-                                        {/* <Link to={item.links}> */}
+                                        <a href={item.links} target="_blank">
                                             <img alt="PHP" className="d-block mx-auto community-logo" src={item.logo.sourceUrl} data-holder-rendered="true" />
-                                        {/* </Link> */}
+                                        </a>
                                     </div>
                                 )
                             }
