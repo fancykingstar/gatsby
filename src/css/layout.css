@@ -573,7 +573,7 @@ body.mobile-nav-active #mobile-nav-toggle { color: #fff }
 .modal_banner p { position: absolute; width: 100%; left: 0; bottom: 30px; z-index: 2; text-align: center; color:#fff; z-index: 99; font-size:24px; }
 
 .portal_list { margin: 0 0 30px 20px; padding: 0; list-style: disc; list-style-position: inside; }
-.portal_list li { margin: 0; padding: 0 15px; text-align: left; font-size: 16px; line-height: 26px; width: 50%; float: left; }
+.portal_list li { margin: 0 0 15px; padding: 0 15px; text-align: left; font-size: 22px; line-height: 26px; width: 50%; float: left; }
 @media (max-width: 767px){
   .portal_list{ margin: 0; }
   .portal_list li{ width: 100%; float: none; }
@@ -900,7 +900,7 @@ display: flex; align-items: center; justify-content: center; }
 .howitworks li{ margin-bottom: 20px; line-height: normal; position: relative; padding-left: 120px; list-style: none; }
 .howitworks li p{ margin: 5px 0; }
 .howitworks li:before{ 
-  position: absolute; top: 50%; left: 0; transform: translateY(-50%); 
+  position: absolute; top: 5px; left: 0;
   width:80px; background: #7c7f81; border-radius: 5px; color: #fff; 
   counter-increment: howitworks; content: counter(howitworks); text-align: center; font-size: 2rem; font-weight: 500; padding: 5px;
 }
