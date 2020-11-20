@@ -42,7 +42,7 @@ const About = ({data}) => {
                 <section className="video-section mb-5">
                     <div className="container">
                     <div className="row d-flex align-items-end">
-                        <div className="col-md-10 m-auto embed-container" ref={handstick}>  {/*  onClick={this.handleClick} */}
+                        <div className="col-md-12 m-auto embed-container" ref={handstick}>  {/*  onClick={this.handleClick} */}
                             <Video videoSrcURL={content.video_section.video.videoUrl} videoTitle="CEO Intro For About Us Page" videoWidth="100%" videoHeight="500" />
                         </div>
                     </div>
@@ -57,7 +57,7 @@ const About = ({data}) => {
                 </div>
             </section>
 
-            <section className="bg-blue" id="memberfdic">
+            {/* <section className="bg-blue" id="memberfdic">
                 <div className="container py-5 text-white">
                     <div className="col-12 col-md-11 mx-auto">
                         <div className="d-flex flex-column" dangerouslySetInnerHTML={{__html: content.about.memberFdic.fdicDescription}} />
@@ -65,7 +65,7 @@ const About = ({data}) => {
                         <img className="d-block mt-5 mx-auto" alt="Fdic logo" src={content.about.memberFdic.fdicLogo.sourceUrl} data-holder-rendered="true" />
                     </div>
                 </div>
-            </section>
+            </section> */}
             {/* Community Involvement */}
             <div className="container py-5 my-0 my-md-5 communityinvolvement" id="communityinvolvement">
                 <h3 className="h2 text-center mb-3">{content.about.communityInvolvement.ciHeading}</h3>
