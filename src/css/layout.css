@@ -68,6 +68,7 @@ h1, h2, h3, h4, h5, h6 { line-height: 1.5em }
 .btn-primary:hover{ background: #2aa9e0; border-color: #2aa9e0; }
 .btn-black { background: #333; color: #fff; }
 .btn-black:hover{ color:#fff; }
+.list-style-disc{ list-style: disc !important; }
 
 /* custom css */
 .header-top { font-size: 12px; background-color: #fff }
@@ -572,7 +573,11 @@ body.mobile-nav-active #mobile-nav-toggle { color: #fff }
 .modal_banner p { position: absolute; width: 100%; left: 0; bottom: 30px; z-index: 2; text-align: center; color:#fff; z-index: 99; font-size:24px; }
 
 .portal_list { margin: 0 0 30px 20px; padding: 0; list-style: disc; list-style-position: inside; }
-.portal_list li { margin: 0; padding: 0 15px; text-align: left; font-size: 16px; line-height: 26px; width: 33.33%; float: left; }
+.portal_list li { margin: 0; padding: 0 15px; text-align: left; font-size: 16px; line-height: 26px; width: 50%; float: left; }
+@media (max-width: 767px){
+  .portal_list{ margin: 0; }
+  .portal_list li{ width: 100%; float: none; }
+}
 
 #dealerPage h4 { font-weight: 500; font-size: 24px; margin: 0 auto; margin-bottom: 25px !important; }
 .dealerResource { margin: 0 15px; padding: 20px 20px 70px; height: 100%; position: relative; box-shadow: 0 0 6px #aaa; }
@@ -669,7 +674,7 @@ body.mobile-nav-active #mobile-nav-toggle { color: #fff }
   
 .start_drc p{ font-size:13px; line-height: normal; margin: 15px 0 35px; }
 .start_drc a{ font-size:13px; border: 1px solid #fff; padding: 10px 20px; color: #fff; border-radius: 3px; }
-.start_drc2 a{ font-size:16px; border: 1px solid #fff; padding: 10px 20px; color: #fff; border-radius: 3px; }
+.start_drc2 a{ font-size:16px; border: 1px solid #fff; padding: 10px 20px; color: #fff; border-radius: 3px; display: inline-block; margin: 0 25px; }
   
 /* Benefits to Creating a Loan Program */
 .modal_banner{ background-repeat:no-repeat; background-size: cover; position:relative; }
@@ -712,11 +717,12 @@ display: flex; align-items: center; justify-content: center; }
 .hrbr-btn-primary:hover, .hrbr-btn:hover{ color:#fff !important; }
 .hrbr-btn-primary{ width: auto !important; font-weight:600 !important; }
 #hrbr-widget h3, #hrbr-widget .h3{ color:#0077C8 !important; font-weight: 600; }
-.hrbr-row .hrbr-btn{ margin: 15px !important; }
+.hrbr-row .hrbr-btn{ margin-top: 15px !important; margin-bottom: 15px !important; margin-right: 15px !important; }
+.hrbr-row .hrbr-btn + .hrbr-btn{ margin-left: 15px !important; margin-right: 15px !important; }
 
 .jobs_list, .hrbr-job-list{margin: 0 !important; padding: 0 !important;}
 .jobs_list li, .hrbr-job-list li{margin: 0 0 40px 0 !important; padding: 30px 0 30px 0 !important; border-top: none; border-bottom: solid 1px #0077C8 !important; }
-.jobs_list li h3, .hrbr-job-list li .hrbr-title{ font-family: 'Roboto', sans-serif !important; font-size: 24px !important; font-weight: 500 !important; color:#0077C8 !important; margin:0 0 0 0 !important; padding: 0 !important; }
+.jobs_list li h3, .hrbr-job-list li .hrbr-title{ font-family: 'Roboto', sans-serif !important; font-size: 24px !important; color:#0077C8 !important; margin:0 0 0 0 !important; padding: 0 !important; }
 .jobs_list li .job_location, .hrbr-job-list li .hrbr-location, .hrbr-job-list li .hrbr-location small{ font-size: 20px !important; font-weight: 600 !important; color: #4D4D4D !important; margin: 5px 0 5px 0 !important; }
 .hrbr-job-list li p{ 
     color: #4d4d4d !important;
@@ -724,7 +730,8 @@ display: flex; align-items: center; justify-content: center; }
     font-size: 18px !important;
     letter-spacing: 1px !important;
     font-weight: 300 !important;
-    line-height: 1.9em !important; 
+    line-height: inherit;
+    margin-bottom:15px;
 }
 #hrbr-page-message ul{ margin-left: 16px; }
 /* .hrbr-wr-fl .hrbr-row-filters{ width: 440px !important; } */
@@ -740,7 +747,7 @@ display: flex; align-items: center; justify-content: center; }
 .hrbr-wrapper-pagination > li > a{ color: #29A9E0 !important; }
 
 /* career service */
-.career-service{ margin: 50px 25px 50px; }
+.career-service{ padding: 50px 25px 50px; }
 .career-service ul{ display: flex; flex-wrap: wrap; margin: 30px 25px 50px; }
 .career-service ul li{ flex-basis: 50%; font-weight: 500; font-size: 16px; color: #4d4d4d; }
 
