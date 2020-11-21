@@ -215,7 +215,7 @@ exports.createPages = async ({ graphql, actions }) => {
   const blogPostResults = await graphql(`
     query GET_POSTS {
         wpgraphql {
-            posts {
+            posts(first: 1000) {
                 edges {
                     node {
                         databaseId

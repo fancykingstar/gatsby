@@ -3,7 +3,7 @@ import { Link } from "gatsby"
 import PropTypes from "prop-types"
 import ThemeContext from "../context/ThemeContext"
 import Menu from './menu'
-import close_icon from '../images/close_icon.svg'
+import close_icon from '../images/closed_icon-blue.svg'
 
 const Header = ({ siteTitle }) => {
 
@@ -22,7 +22,7 @@ const Header = ({ siteTitle }) => {
           <header>
             {accLogin && (
               <div id="loginBox" className="container mx-auto">
-                  <a id="closeButton" onClick={closeLoginForm}><img src={close_icon} alt="close icon" /></a>
+                  <a id="closeButton" onClick={closeLoginForm}><img src={close_icon} alt="close icon" width="22" style={{fill: '#fff'}} /></a>
                   <h4 className="modal-title mb-4 text-white" id="modalTitle">Borrower Account Log In</h4>
                   <div id="modalContent" className="small line-height-normal">
                     <p style={{lineHeight: 'normal'}}>If your account number starts with 456 <br/><a href="https://account.enerbank.com" target="_blank">Click Here </a></p>
