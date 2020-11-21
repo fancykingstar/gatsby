@@ -157,8 +157,8 @@ const HomeOwnerPage = ({data}) => {
         
         {accLogin && (
             <Modal show={accLogin} animation={true} centered={true} size="md">
-                <button type="button" className="close text-black" data-dismiss="modal" aria-label="Close" onClick={closeLoginForm}>
-                    <img src={close_icon} width="16" alt="close icon" style={{fill:'#4d4d4d', opacity: 1}} />
+                <button type="button" className="close text-black" data-dismiss="modal" aria-label="Close" onClick={closeLoginForm} style={{opacity: 1}} >
+                    <img src={close_icon} width="22" alt="close icon" style={{fill:'#4d4d4d'}} />
                 </button>
                 <div className="p-4">
                     <h4 className="modal-title mb-4" id="modalTitle">Borrower Account Log In</h4>
