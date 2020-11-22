@@ -23,6 +23,8 @@
     "gatsby-source-filesystem": "^2.1.46",
     "gatsby-source-graphql": "^2.1.33",
     "gatsby-transformer-sharp": "^2.3.13",
+    "graphql-tag": "^2.11.0",
+    "jquery": "^3.5.1",
     "prop-types": "^15.7.2",
     "react": "^16.12.0",
     "react-bootstrap": "^1.0.1",

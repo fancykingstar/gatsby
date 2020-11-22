@@ -518,7 +518,7 @@ body.mobile-nav-active #mobile-nav-toggle { color: #fff }
 .loan_offer .btn:after { width: 17px; height: 3px; right: 2px; top: 19px; }
 .loan_offer .btn:before { width: 3px; height: 17px; right: 9px; top: 12px; }
 .loan_offer .btn.collapsed:after { width: 17px; height: 3px; right: 2px; top: 19px; }
-.modal .close{ position: absolute; right: 13px; top: 10px; }
+.modal .close{ position: absolute; right: 13px; top: 10px; opacity: 1; }
 @media (max-width: 576px){
   .modal .close{color: #fff; opacity: 1 !important;}
 }
@@ -989,3 +989,5 @@ display: flex; align-items: center; justify-content: center; }
 
 .blog-post{ display: flex; flex-direction: column; }
 .blog-post img{ height: 250px; width: 100%; }
+#Map area{ background-color: rgba(0, 0, 0, 0.5); }
+img[usemap] { border: none; height: auto; max-width: 100%; width: auto; }
