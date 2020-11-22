@@ -117,7 +117,7 @@ const HomeOwnerPage = ({data}) => {
         
         <section className="section-gap container" id="howtopay">
             <h2 className="mb-5 mb-md-3 text-center"><span>Six Ways to Make a Payment</span></h2>
-            <Tabbordion blockElements={blockElements} animateContent={'height'} mode={'toggle'} className="accordion loan_offer mx-4 mx-lg-5" name="accordion">
+            <Tabbordion blockElements={blockElements} animateContent={'height'} className="accordion loan_offer mx-4 mx-lg-5" name="accordion">
                 {node.accordion.tabpanel.map((item, i) =>
                     (
                         <TabPanel key={item.fieldGroupName + i}>

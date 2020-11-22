@@ -30,7 +30,7 @@ const CareerPage = ({data, props}) => {
             <Helmet>
                 <script src={withPrefix('script.js')} type="text/javascript" name="hirebridge-script" />
             </Helmet>
-            <div id="hrbr-widget">&nbsp;</div>            
+            <div id="hrbr-widget">&nbsp;</div>
           </div>
       </section>
     </Layout>
