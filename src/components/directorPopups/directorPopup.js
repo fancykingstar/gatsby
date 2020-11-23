@@ -2,7 +2,7 @@ import React from 'react';
 import { Modal } from 'react-bootstrap';
 import close_icon from '../../images/closed_icon-blue.svg'
 
-const DirectorOne = (props) => {
+const DirectorPopup = (props) => {
 		const data = props.popData
 		return (
 			<Modal show={props.visiblity} animation={true} centered={true} size="full" id="dealerPopup">
@@ -29,4 +29,4 @@ const DirectorOne = (props) => {
 		)
 		
 }
-export default DirectorOne
+export default DirectorPopup
