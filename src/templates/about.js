@@ -1,5 +1,6 @@
 import React, { useState, useRef, useEffect } from "react";
 import { graphql, Link, withPrefix } from "gatsby";
+import ImageMap from "image-map";
 import Helmet from "react-helmet"
 import "react-tabbordion/demo/accordion.css";
 import Layout from "../components/layout"
@@ -12,9 +13,7 @@ import DirectorOne from '../components/directorPopups/directorPopup1'
 // import images
 import VisionUnsplash from '../images/absolutvision-unsplash.jpg';
 import BakerUnsplash from '../images/kaitlyn-baker-unsplash.jpg';
-
 import leadershipBanner from '../images/leadership-banner.jpg'
-import $ from 'jquery';
 
 const About = ({data}) => {
     const content = data.wpgraphql.page;
@@ -30,7 +29,9 @@ const About = ({data}) => {
     
     const hidebenefitpopup = () => {
         setVisible(false);
-    }   
+    }
+    
+    console.log(ImageMap)
     
     // useEffect(() => {
     //     const usemap = $('img[useMap]')
@@ -72,9 +73,8 @@ const About = ({data}) => {
             <section className="container-fluid" id="leadership">
                 <div className="row flex-column">
                     <div className="position-absolute w-100 pb-5 leadership-heading px-3" dangerouslySetInnerHTML={{__html: content.about.enerbankLeadership.leadershipHeading}} />
-                    <img src={content.about.enerbankLeadership.leadershipBanner.sourceUrl} alt="Leader Banner" useMap="#Map" />
-                    {/* <img src={leadershipBanner} usemap="#Map" border="0" /> */}
-                    <map name="Map" id="Map">
+                    <img src={content.about.enerbankLeadership.leadershipBanner.sourceUrl} alt="Leader Banner" useMap="#image-map" />
+                    <map name="image-map" id="image-map">
                         <area shape="poly" coords="190,806,196,678,202,655,203,626,201,606,195,530,184,465,177,418,174,358,177,318,190,288,199,253,240,236,260,229,272,213,285,203,280,187,272,177,274,165,279,160,282,143,287,129,298,119,311,116,324,114,333,122,343,127,351,139,351,163,352,173,352,186,348,195,340,210,339,222,349,234,354,240,366,249,381,253,398,263,405,274,414,309,417,351,421,374,427,386,427,397,422,424,418,465,417,515,407,533,406,547,393,567,373,569,359,567,347,579,350,604,346,681,338,736,333,772,327,806" href="#" alt={''} />
                         <area shape="poly" coords="458,800,456,735,456,693,454,652,450,596,447,561,427,518,432,366,441,334,451,299,459,278,465,263,480,263,498,257,504,250,477,235,454,228,438,215,448,182,456,171,453,157,449,137,439,123,420,118,400,121,382,137,373,154,372,184,379,196,381,212,374,220,357,234,399,264,417,288,423,337,420,535,410,554,394,574,365,582,339,802" href="#" alt={''} />
                         <area shape="poly" coords="514,253,530,239,532,225,527,211,522,207,517,196,519,189,519,173,521,152,529,140,536,127,560,123,578,126,592,137,598,151,599,168,600,182,602,196,595,209,594,228,602,243,614,257,642,276,659,282,669,291,672,311,674,334,686,368,683,401,679,427,683,456,661,519,647,552,644,591,643,628,640,694,636,731,642,797,633,804,579,801,546,620,535,649,529,694,514,732,517,777,510,802,461,796,445,549,432,522,431,466,435,367,459,290,466,268,514,255" href="#" alt={''} />
