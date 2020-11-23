@@ -61,7 +61,6 @@ const CareerPage = ({data}) => {
               setShow(true);
               e.target.reset();
           }else if(xhr.readyState === 4 && xhr.status === 400){
-              console.log(JSON.parse(xhr.responseText).errors[0].message)
               setMessage(JSON.parse(xhr.responseText).errors[0].message);
               setShow(true);
           }else if(xhr.readyState === 4 && xhr.status === 403){
@@ -118,7 +117,6 @@ const CareerPage = ({data}) => {
                 {
                   data.wpgraphql.posts.edges.map((item, i) => {
                     if(i === 0){
-                      console.log(item)
                       return(
                         <div key={item.node.id}>
                           {item.node.featuredImage ? <img src={item.node.featuredImage.sourceUrl} alt="item.node.featuredImage.altText" className="w-100 mb-4" /> : ''}
