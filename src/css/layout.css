@@ -989,5 +989,5 @@ display: flex; align-items: center; justify-content: center; }
 
 .blog-post{ display: flex; flex-direction: column; }
 .blog-post img{ height: 250px; width: 100%; }
-#Map area{ background-color: rgba(0, 0, 0, 0.5); }
+#Map area{ cursor: pointer; }
 img[usemap] { border: none; height: auto; max-width: 100%; width: auto; }
