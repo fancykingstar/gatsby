@@ -96,21 +96,19 @@ const About = ({data}) => {
                 </section>
             )}
             {/* enerbank leadership */}
-            <section className="container-fluid" id="leadership">
-                <div className="row flex-column">
-                    <div className="position-absolute w-100 pb-5 leadership-heading px-3" dangerouslySetInnerHTML={{__html: content.about.enerbankLeadership.leadershipHeading}} />
-                    <img src={content.about.enerbankLeadership.leadershipBanner.sourceUrl} alt="Leader Banner" useMap="#Map" />                    
-                    <map name="Map" id="Map">
-                        {content.about.boardOfDirectors.directors && (
-                            content.about.boardOfDirectors.directors.map((item, i) => {
-                                return(
-                                    <area shape="poly" coords={areaCoords[i].coords} alt={item.directorThumb.altText} key={item.fieldGroupName + i} onClick={showbenefitpopup(item, 'director')} />
-                                )                               
-                            })
-                        )}
-                    </map>
-                </div>                
-            </section>
+            <div id="leadership">
+                <div className="position-absolute w-100 pb-5 leadership-heading px-3" dangerouslySetInnerHTML={{__html: content.about.enerbankLeadership.leadershipHeading}} />
+                <img src={content.about.enerbankLeadership.leadershipBanner.sourceUrl} alt="Leader Banner" useMap="#Map" className="w-100" />                    
+                <map name="Map" id="Map">
+                    {content.about.boardOfDirectors.directors && (
+                        content.about.boardOfDirectors.directors.map((item, i) => {
+                            return(
+                                <area shape="poly" coords={areaCoords[i].coords} alt={item.directorThumb.altText} key={item.fieldGroupName + i} onClick={showbenefitpopup(item, 'director')} />
+                            )                               
+                        })
+                    )}
+                </map>
+            </div>
             <div className="container">
                 <div className="row mt-5 d-lg-none">
                     {content.about.boardOfDirectors.directors && (
