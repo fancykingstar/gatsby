@@ -7,7 +7,7 @@ import SEO from "../components/seo"
 import Video from "../components/video";
 
 // import popup
-import MemberPopup from '../components/directorPopups/directorPopup'
+import MemberPopup from '../components/directorPopups/memberPopup'
 import DirectorPopup from '../components/directorPopups/directorPopup'
 
 // import images
@@ -19,20 +19,20 @@ import BakerUnsplash from '../images/kaitlyn-baker-unsplash.jpg';
 
 const About = ({data}) => {
     const content = data.wpgraphql.page;
-    const [visibleMember, setVisibleMember] = useState(false);
-    const [visibleDirector, setVisibleDirector] = useState(false);
+    const [visible, setVisible] = useState(false);
+    const [popType, setPopType] = useState('');
     const [popData, setPopData] = useState('');
     const handstick = useRef(null)
 
     const showbenefitpopup = (param, type) => event => {
-        console.log(type)
 		event.preventDefault();
 		setPopData(param);
-		setVisibleMember(true);
+        setVisible(true);
+        setPopType(type);
 	}
     
     const hidebenefitpopup = () => {
-        setVisibleMember(false);
+        setVisible(false); 
     }
 
     const areaCoords = [
@@ -231,11 +231,11 @@ const About = ({data}) => {
                     <Link to={'/contact-us'} className="btn bg-blue d-inline-block text-white mx-auto px-5">Contact Us</Link>
                 </div>                
             </div>
-            {visibleMember && (
-                <MemberPopup visiblity={visibleMember} handleClose={hidebenefitpopup} popData={popData} />
+            {(visible && popType === 'member') && (
+                <MemberPopup visiblity={visible} handleClose={hidebenefitpopup} popData={popData} />
             )}
-            {visibleDirector && (
-                <DirectorPopup visiblity={visibleDirector} handleClose={hidebenefitpopup} popData={popData} />
+            {(visible && popType === 'director') && (
+                <DirectorPopup visiblity={visible} handleClose={hidebenefitpopup} popData={popData} />
             )}
     </Layout>
   
