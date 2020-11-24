@@ -22,8 +22,8 @@ return (
                   <div className="single-footer-widget">
                       <h6>HOMEOWNER</h6>
                       <ul>
-                          <li><a href="/homeowner/#whychoosebank">Why Choose EnerBank</a></li>
-                          {/* <li><Link onClick={() => customUrl('/homeowner/#whychoosebank')}>Why Choose EnerBank</Link></li> */}
+                          {/* <li><a href="/homeowner/#whychoosebank">Why Choose EnerBank</a></li> */}
+                          <li><Link to={'/homeowner/#whychoosebank'} onClick={() => customUrl('/homeowner/#whychoosebank')}>Why Choose EnerBank</Link></li>
                           <li><a href="/homeowner/#howtopay">How to Pay</a></li>
                       </ul>											
                   </div>
@@ -80,7 +80,7 @@ return (
                     
                       <ul>
                           <li><Link to={"/terms-of-use"}>Terms of Use</Link></li>
-                          <li><a href="https://devgbpress.enerbank.com/privacy-notice/" target="_blank">Privacy Notice</a></li>
+                          <li><a href="https://devgbpress.enerbank.com/privacy-notice/" rel="noopener noreferrer" target="_blank">Privacy Notice</a></li>
                           <li><Link to={"/privacy-policy"}>Online Privacy Statement</Link></li>
                       </ul>
                       
