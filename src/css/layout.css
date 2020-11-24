@@ -990,5 +990,5 @@ display: flex; align-items: center; justify-content: center; }
 
 .blog-post{ display: flex; flex-direction: column; }
 .blog-post img{ height: 250px; width: 100%; }
-#Map area{ cursor: pointer !important; }
+#leadership svg path{ cursor: pointer !important; }
 img[usemap] { border: none; height: auto; max-width: 100%; width: auto; }
