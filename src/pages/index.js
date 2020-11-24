@@ -1,12 +1,11 @@
 import React from "react"
 import { Link, graphql } from "gatsby"
-import { Helmet } from 'react-helmet'
+// import { Helmet } from 'react-helmet'
 
 
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import Video from "../components/video";
-import gift1 from "../images/amazon-gift-bg1.jpg"
 
 const IndexPage = ({data}) => {
   const node = data.wpgraphql.pageBy;

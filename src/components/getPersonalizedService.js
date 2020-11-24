@@ -30,51 +30,43 @@ const GetPersonalizedService = (props) => {
 						<div className="row mt-sm-5">
 							<div className="col-lg-12">
 								<ul className="testimonial-list">
-									{props.popData.appmethod.paperlessmethod.map((item, i) => {
-										if(i<3){
-											return (
-												<li key={item.fieldGroupName + i}>
-													<div className="user-icon"><img src={item.sectionicon.sourceUrl} alt={item.sectionicon.altText} /></div>
-													<div className="ballon">
-														<h4 dangerouslySetInnerHTML={{__html: item.sectiontitle}} />
-														<div dangerouslySetInnerHTML={{__html: item.sectionContent}} />
-													</div>
-												</li>
-											)
-										}
-									})}
-									{props.popData.bannerrepeater.bannerGroup.map((item, i) => {
-										if(i === 0){
-											return (
-												<div className="my-5 pt-5" key={item.fieldGroupName + i}>
-													<img src={item.banner.sourceUrl} alt={'banner' + i} />
-													<p className="mb-5"></p>
+									{props.popData.appmethod.paperlessmethod.map((item, i) => (
+										i < 3 ?
+											<li key={item.fieldGroupName + i}>
+												<div className="user-icon"><img src={item.sectionicon.sourceUrl} alt={item.sectionicon.altText} /></div>
+												<div className="ballon">
+													<h4 dangerouslySetInnerHTML={{__html: item.sectiontitle}} />
+													<div dangerouslySetInnerHTML={{__html: item.sectionContent}} />
 												</div>
-											)
-										}
-									})}
-									{props.popData.appmethod.paperlessmethod.map((item, i) => {
-										if(i>2){
-											return (
-												<li key={item.fieldGroupName + i}>
-													<div className="user-icon"><img src={item.sectionicon.sourceUrl} alt={item.sectionicon.altText} /></div>
-													<div className="ballon">
-														<h4 dangerouslySetInnerHTML={{__html: item.sectiontitle}} />
-														<div dangerouslySetInnerHTML={{__html: item.sectionContent}} />
-													</div>
-												</li>
-											)
-										}
-									})}
-									{props.popData.bannerrepeater.bannerGroup.map((item, i) => {
-										if(i === 1){
-											return (
-												<div className="mt-5 pt-5" key={item.fieldGroupName + i}>
-													<img src={item.banner.sourceUrl} alt={'banner' + i} />
+											</li>
+										: ''
+									))}
+									{props.popData.bannerrepeater.bannerGroup.map((item, i) => (
+										i === 0 ?											
+											<div className="my-5 pt-5" key={item.fieldGroupName + i}>
+												<img src={item.banner.sourceUrl} alt={'banner' + i} />
+												<p className="mb-5"></p>
+											</div>
+										: ''
+									))}
+									{props.popData.appmethod.paperlessmethod.map((item, i) => (
+										i > 2 ?
+											<li key={item.fieldGroupName + i}>
+												<div className="user-icon"><img src={item.sectionicon.sourceUrl} alt={item.sectionicon.altText} /></div>
+												<div className="ballon">
+													<h4 dangerouslySetInnerHTML={{__html: item.sectiontitle}} />
+													<div dangerouslySetInnerHTML={{__html: item.sectionContent}} />
 												</div>
-											)
-										}
-									})}
+											</li>
+										: ''
+									))}
+									{props.popData.bannerrepeater.bannerGroup.map((item, i) => (
+										i === 1 ?
+											<div className="mt-5 pt-5" key={item.fieldGroupName + i}>
+												<img src={item.banner.sourceUrl} alt={'banner' + i} />
+											</div>
+										: ''
+									))}
 								</ul>
 							</div>                    
 						</div>

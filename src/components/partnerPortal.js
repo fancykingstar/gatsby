@@ -2,6 +2,8 @@ import React from 'react';
 import { Modal } from 'react-bootstrap';
 import { Link } from "gatsby";
 import close_icon from '../images/closed_icon.svg'
+import apple_btn from '../images/apple-store-btn.png'
+import google_btn from '../images/google-play-btn.png'
 
 const PartnerPortal = (props) => {
 	if (props.popData.length !== 0) {
@@ -24,7 +26,7 @@ const PartnerPortal = (props) => {
 								].join('\n')
 							}}></style>
 							<div className="modal_banner banner_bg">
-								<img src={props.popData.innerpagebanner.pagebanner.bannner.sourceUrl} className="object-fit-cover" />
+								<img src={props.popData.innerpagebanner.pagebanner.bannner.sourceUrl} className="object-fit-cover" alt={props.popData.innerpagebanner.bannner.altText} />
 							</div>
 						</>
 					)}
@@ -32,6 +34,10 @@ const PartnerPortal = (props) => {
 					<div className="p-4 p-sm-5">
 						<div className="line-height-normal">
 							<div dangerouslySetInnerHTML={{__html:props.popData.content}} />
+							<div id="download">
+				                <a href="https://apps.apple.com/us/app/enerbank-usa-partner-portal/id1501254896" rel="noopener noreferrer" target="_blank" class="mb-4 mb-md-0"><img src={apple_btn} alt="apple-store-btn" width="120" /></a> 
+				                <a href="https://play.google.com/store/apps/details?id=com.enerbank.partnerportal" rel="noopener noreferrer" target="_blank" class="mb-4 mb-md-0 ml-3"><img src={google_btn} alt="google-play-btn" width="120" /></a>
+				            </div>
 						</div>
 					</div>
 					<div className="bg-blue start_drc start_drc2">
