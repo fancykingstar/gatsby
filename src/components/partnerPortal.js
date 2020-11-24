@@ -53,7 +53,7 @@ const PartnerPortal = (props) => {
 							</div>							
 							<div className="row">
 								<div className="mx-auto text-center my-5">
-									<Link to={'/'}>{props.popData.partnerportal.portalservice.accessportallink.title}</Link>
+									<a href="https://portal.enerbank.com/" target="_blank">{props.popData.partnerportal.portalservice.accessportallink.title}</a>
 								</div>
 							</div>
 						</div>
