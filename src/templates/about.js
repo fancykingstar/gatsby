@@ -80,8 +80,8 @@ const About = ({data}) => {
             {/* enerbank leadership */}
             <div id="leadership" className="position-relative d-none d-lg-block">
                 <div className="position-absolute w-100 pb-5 leadership-heading px-3" dangerouslySetInnerHTML={{__html: content.about.enerbankLeadership.leadershipHeading}} />
-                <img src={content.about.enerbankLeadership.leadershipBanner.sourceUrl} alt="Leader Banner" className="w-100" />
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1604.606 1005.106" className="position-absolute" style={{top:0, zIndex:1}}>
+                <img src={content.about.enerbankLeadership.leadershipBanner.sourceUrl} alt="Leader Banner" className="w-100 d-block" />
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1604.606 1005.106" className="position-absolute" style={{top:0, zIndex:99}}>
                     <g id="Group_1" data-name="Group 1" transform="translate(-156.5 -38.894)">
                         {content.about.boardOfDirectors.directors && (
                             content.about.boardOfDirectors.directors.map((item, i) => {
@@ -92,7 +92,7 @@ const About = ({data}) => {
                                         overlay={popover(item)}
                                         key={item.fieldGroupName + i}
                                     >
-                                        <path id="Path_1" data-name="Path 1" d={svgCodes[i].data} fill="transparent" stroke="#707070" strokeWidth="0" onClick={showbenefitpopup(item, 'director')} />
+                                        <path id={svgCodes[i].id} data-name={'Path ' + i} d={svgCodes[i].data} fill="transparent" stroke="#707070" strokeWidth="0" onClick={showbenefitpopup(item, 'director')} />
                                     </OverlayTrigger>
                                 )})
                             )
@@ -103,7 +103,7 @@ const About = ({data}) => {
             </div>
             <div className="container d-lg-none" id="leadership">
                 <div className="row mt-5">
-                <div className="w-100 pb-5 leadership-heading px-3" dangerouslySetInnerHTML={{__html: content.about.enerbankLeadership.leadershipHeading}} />
+                <div className="position-absolute w-100 pb-5 leadership-heading px-3" dangerouslySetInnerHTML={{__html: content.about.enerbankLeadership.leadershipHeading}} />
                     {content.about.boardOfDirectors.directors && (
                         content.about.boardOfDirectors.directors.map((item, i) => {
                             return(
