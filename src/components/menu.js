@@ -94,15 +94,15 @@ export default (props) => {
                                 {data.wpgraphql.menuItems.edges.map(({ node }) => (
                                     <li key={node.id} className="nav-item">
                                         {('#' !== node.url) ? (
-                                            <Link to={`/${node.connectedObject.slug}`} className="nav-link">{node.label}</Link>
+                                            <Link to={`/${node.connectedObject.slug}`} activeClassName="active" className="nav-link">{node.label}</Link>
                                         ) : (
-                                            <Link to={`/`} className="nav-link">{node.label}</Link>
+                                            <Link to={`/`} activeClassName="active" className="nav-link">{node.label}</Link>
                                         )}
                                         {(node.childItems.edges.length > 0) && (
                                             <ul className="sub-nav">
                                                 {node.childItems.edges.map(({ node }) => (
                                                     <li key={node.id} className="nav-item">
-                                                        <Link to={`/${node.connectedObject.slug}`} className="nav-link">{node.label}</Link>
+                                                        <Link to={`/${node.connectedObject.slug}`} activeClassName="active" className="nav-link">{node.label}</Link>
                                                     </li>
                                                 ))}
                                             </ul>
@@ -115,7 +115,7 @@ export default (props) => {
                                 <div className="header-top-right">
                                     <ul>
                                         <li><button onClick={props.loginForm} className="btn-link">Account Log In</button>|</li>
-                                        <li><a href="https://enerbankusa.documentinbox.com/Inbox/app#login" target="_blank">View / Sign Loan Docs</a>|</li>
+                                        <li><a href="https://enerbankusa.documentinbox.com/Inbox/app#login" rel="noopener noreferrer" target="_blank">View / Sign Loan Docs</a>|</li>
                                         <li><Link to={'/partnerportalapp/index.html'} >PartnerPortal</Link>|</li>
                                         <li><Link to={'/payment-estimator'} className="btn-link" >Payment Estimator</Link></li>
                                     </ul>

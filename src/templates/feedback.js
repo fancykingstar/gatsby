@@ -176,7 +176,6 @@ const Feedback = () => {
                     <div className="form-group mb-0">
                         <label className="font-weight-bold small" htmlFor="message">Message<span className="text-danger">*</span></label>
                         <textarea
-                            className="form-control"
                             rows="5"
                             name="message"
                             id="message"

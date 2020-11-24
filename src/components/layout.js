@@ -1,9 +1,9 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import { StaticQuery, graphql, withPrefix  } from 'gatsby'
-import Helmet from "react-helmet"
+import { StaticQuery, graphql  } from 'gatsby'
+// import Helmet from "react-helmet"
 import 'bootstrap/dist/css/bootstrap.min.css';
-import ThemeContext from '../context/ThemeContext'
+// import ThemeContext from '../context/ThemeContext'
 
 import Header from './header'
 import Footer from './footer'

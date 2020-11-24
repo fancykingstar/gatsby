@@ -1,11 +1,9 @@
 import React, { useState } from "react"
-import close_icon from '../images/closed_icon.svg'
-
 import { graphql } from "gatsby";
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 
-const PaymentEstimator = (props) => {
+const PaymentEstimator = () => {
 
 	const [loanAmount, setLoanAmount] = useState('');
 	const [totalYears, setTotalYears] = useState('');
@@ -32,6 +30,7 @@ const PaymentEstimator = (props) => {
 
 	return (
 		<Layout>
+			<SEO title={'Payment Estimator'} description={''} />
 			<h2 className="h2 text-white font-weight-bold">Enerbank Payment Estimator</h2>
 			<div className="p-5 pb-0 pt-sm-4 text-center">
 				<p className="text-center">See a monthly payment estimate — <br/>just plug in the relevant numbers and hit <strong className="text-blue">Calculate!</strong></p>
