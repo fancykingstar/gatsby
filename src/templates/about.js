@@ -1,7 +1,9 @@
 import React, { useState, useRef } from "react";
 import { graphql, Link, withPrefix } from "gatsby";
-import Helmet from "react-helmet"
-import "react-tabbordion/demo/accordion.css";
+import ImageMapper from 'react-image-mapper';
+import OverlayTrigger from 'react-bootstrap/OverlayTrigger'
+import Tooltip from 'react-bootstrap/Tooltip'
+import Popover from 'react-bootstrap/Popover'
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import Video from "../components/video";
@@ -13,9 +15,6 @@ import DirectorPopup from '../components/directorPopups/directorPopup'
 // import images
 import VisionUnsplash from '../images/absolutvision-unsplash.jpg';
 import BakerUnsplash from '../images/kaitlyn-baker-unsplash.jpg';
-
-// import leadershipBanner from '../images/leadership-banner.jpg'
-// import $ from 'jquery';
 
 const About = ({data}) => {
     const content = data.wpgraphql.page;
@@ -35,44 +34,27 @@ const About = ({data}) => {
         setVisible(false); 
     }
 
-    const areaCoords = [
-        {
-            coords: '514,253,530,239,532,225,527,211,522,207,517,196,519,189,519,173,521,152,529,140,536,127,560,123,578,126,592,137,598,151,599,168,600,182,602,196,595,209,594,228,602,243,614,257,642,276,659,282,669,291,672,311,674,334,686,368,683,401,679,427,683,456,661,519,647,552,644,591,643,628,640,694,636,731,642,797,633,804,579,801,546,620,535,649,529,694,514,732,517,777,510,802,461,796,445,549,432,522,431,466,435,367,459,290,466,268,514,255'
-        },
-        {
-            coords: '458,800,456,735,456,693,454,652,450,596,447,561,427,518,432,366,441,334,451,299,459,278,465,263,480,263,498,257,504,250,477,235,454,228,438,215,448,182,456,171,453,157,449,137,439,123,420,118,400,121,382,137,373,154,372,184,379,196,381,212,374,220,357,234,399,264,417,288,423,337,420,535,410,554,394,574,365,582,339,802'
-        },
-        {
-            coords: '619,180,628,171,620,149,612,119,616,94,623,78,644,69,660,66,671,75,678,84,684,99,685,114,691,123,687,141,686,161,696,174,713,181,696,207,698,227,702,243,700,259,701,277,675,288,647,276,625,263,610,246,599,233,598,210,606,188,621,182'
-        },
-        {
-            coords: '715,168,738,154,755,153,775,159,790,171,798,199,799,226,792,244,797,266,802,277,824,281,837,284,849,327,855,362,855,397,852,442,843,471,851,521,850,558,840,683,839,801,777,803,764,619,761,627,761,708,769,801,694,802,677,588,661,571,663,537,683,345,669,294,704,279,701,211'
-        },
-        {
-            coords: '808,239,821,232,839,225,853,218,873,216,884,207,885,192,876,172,874,163,872,153,875,133,879,115,899,101,916,101,933,108,945,124,953,140,946,164,940,181,937,196,952,214,962,216,969,233,976,249,977,262,971,274,953,280,932,286,920,294,912,307,905,334,897,362,896,382,889,407,893,435,904,466,920,490,925,505,926,545,926,574,936,632,940,684,941,736,942,804,911,805,915,768,912,728,910,693,911,667,903,629,903,645,898,664,901,686,902,719,899,747,898,776,895,797,899,803,841,800,854,533,849,468,854,448,857,360,854,331,838,286,807,270,801,256,811,241,809,242'
-        },
-        {
-            coords: '960,198,963,181,968,170,975,159,986,151,1009,151,1026,157,1041,167,1047,184,1047,204,1049,217,1043,227,1040,246,1066,267,1105,282,1125,295,1127,323,1132,355,1134,397,1130,425,1118,457,1106,467,1117,565,1112,571,1117,725,1117,802,1040,804,1033,789,1023,728,1021,785,1020,805,944,803,929,588,928,509,907,468,893,421,899,366,921,299,945,287,966,280,976,270,981,255,961,200'
-        },
-        {
-            coords: '190,806,196,678,202,655,203,626,201,606,195,530,184,465,177,418,174,358,177,318,190,288,199,253,240,236,260,229,272,213,285,203,280,187,272,177,274,165,279,160,282,143,287,129,298,119,311,116,324,114,333,122,343,127,351,139,351,163,352,173,352,186,348,195,340,210,339,222,349,234,354,240,366,249,381,253,398,263,405,274,414,309,417,351,421,374,427,386,427,397,422,424,418,465,417,515,407,533,406,547,393,567,373,569,359,567,347,579,350,604,346,681,338,736,333,772,327,806'
-        }
+    const svgCodes = [
+        {id:"charles-knadler", data: "M793.093,354.478l15.172-9.655,8.276-16.552-8.276-24.827-15.172-27.586V244.135s-8.276-24.827,0-28.965,23.448-26.207,23.448-26.207H859.3l24.827,6.9L899.3,220.687v23.448l8.276,23.448s-8.276,16.551-8.276,20.689V320l8.276,24.827L939.3,373.788l46.9,19.31H729.645l13.793-19.31Z"},
+        {id:"blain-bagley", data: "M631.716,212.411,653.784,186.2h26.207l20.689,6.9,17.931,19.31,5.517,42.758-5.517,20.689-8.276,16.551L700.68,306.2l78.62,42.758-12.414,16.551-33.1,9.655s-48.275-1.379-53.792,0-35.862-19.31-35.862-19.31l-30.344-22.069-9.655-6.9,27.586-34.482V268.962l-17.931-13.793V238.617Z"},
+        {id:"joel-cannon", data: "M915.85,271.72l20.689-20.689L925.5,226.2,915.85,194.48V144.826l20.689-23.448,31.724-6.9,17.931,6.9,11.034,13.793,9.655,16.551v20.689l9.655,12.414v20.689l-9.655,15.172,9.655,23.448,17.931,15.172v84.137l-37.241,23.448-44.137,6.9L925.5,329.651l-20.689-28.965Z"},
+        {id:"kristin-dittmer", data:"M1046.882,237.238l28.965-15.172h20.689l19.31,6.9,23.448,15.172,8.276,27.586v51.034l-8.276,26.207,8.276,17.931,38.62,17.931,17.931,17.931,6.9,24.827-30.344,33.1H1019.3L997.228,448.27l-6.9-45.517,17.931-17.931,22.069-6.9,8.276-35.862Z"},
+        {id:"neil-fellows", data: "M1154.467,335.168l41.379-20.689,51.034-15.172,6.9-15.172-6.9-19.31-8.276-20.689V186.2l8.276-13.793,19.31-11.034,20.689-5.517,23.448,5.517,19.31,17.931,9.655,22.069v19.31l-9.655,34.482-9.655,28.965,19.31,15.172,12.414,6.9,8.276,28.965,11.034,17.931-19.31,27.586L1295.155,393.1l-99.309-5.517-34.482-23.448Z"},
+        {id:"robb-kerry", data: "M1350.326,280.719V251.031l15.172-19.31,23.448-11.034h28.965l27.586,16.551,12.414,19.31v59.31H1445.5l12.414,27.586,11.034,17.931,33.1,13.793,41.379,13.793,12.414,22.069v34.482l-274.479,6.9,16.552-51.034,40-12.414,27.586-13.793,5.517-31.724Z"},
+        {id:"rob-palmer", data: "M473.1,326.892,499.3,297.927,507.579,280,492.407,253.79l6.9-42.758L513.1,184.825l28.965-9.655h17.931l24.827,15.172,12.414,20.689V280L584.82,297.927l-6.9,12.414,6.9,16.552,19.31,17.931-26.206,26.207-17.931,12.414-52.413-12.414Z"}
     ]
-    
-    // useEffect(() => {
-    //     const usemap = $('img[useMap]')
-    //     console.log(usemap)
-    //     const script = document.createElement('script');
-    //     script.src = 'http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js';
-    //     document.body.appendChild(script);
 
-    //     script.onload = () => {
-    //         usemap.rwdImageMaps();
-    //     };
-    // })
-    // const status = useScript(
-    //     'http://mattstow.com/experiment/responsive-image-maps/jquery.rwdImageMaps.min.js'
-    // );
+    const renderTooltip = (props) => (
+        <Tooltip id="button-tooltip" {...props}>
+          Simple tooltip
+        </Tooltip>
+    );
+    const popover = (props) => (
+        <Popover id="popover-basic" className="p-3">
+          <h3 className="text-blue pb-1 mb-1" style={{borderBottom: '2px solid #0077C8'}}>{props.directorName}</h3>
+          <p className="text-sm mb-0">{props.directorPosition}</p>
+        </Popover>
+    );
     
   return (  
     <Layout>
@@ -96,21 +78,32 @@ const About = ({data}) => {
                 </section>
             )}
             {/* enerbank leadership */}
-            <div id="leadership">
+            <div id="leadership" className="position-relative d-none d-lg-block">
                 <div className="position-absolute w-100 pb-5 leadership-heading px-3" dangerouslySetInnerHTML={{__html: content.about.enerbankLeadership.leadershipHeading}} />
-                <img src={content.about.enerbankLeadership.leadershipBanner.sourceUrl} alt="Leader Banner" useMap="#Map" className="w-100 d-none d-lg-block" />                    
-                <map name="Map" id="Map">
-                    {content.about.boardOfDirectors.directors && (
-                        content.about.boardOfDirectors.directors.map((item, i) => {
-                            return(
-                                <area shape="poly" coords={areaCoords[i].coords} alt={item.directorThumb.altText} key={item.fieldGroupName + i} onClick={showbenefitpopup(item, 'director')} />
-                            )                               
-                        })
-                    )}
-                </map>
+                <img src={content.about.enerbankLeadership.leadershipBanner.sourceUrl} alt="Leader Banner" className="w-100" />
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1604.606 1005.106" className="position-absolute" style={{top:0, zIndex:1}}>
+                    <g id="Group_1" data-name="Group 1" transform="translate(-156.5 -38.894)">
+                        {content.about.boardOfDirectors.directors && (
+                            content.about.boardOfDirectors.directors.map((item, i) => {
+                                return(
+                                    <OverlayTrigger
+                                        placement="bottom"
+                                        delay={{ show: 250, hide: 400 }}
+                                        overlay={popover(item)}
+                                        key={item.fieldGroupName + i}
+                                    >
+                                        <path id="Path_1" data-name="Path 1" d={svgCodes[i].data} fill="transparent" stroke="#707070" strokeWidth="0" onClick={showbenefitpopup(item, 'director')} />
+                                    </OverlayTrigger>
+                                )})
+                            )
+                        }
+                        <path id="Path_8" data-name="Path 8" d="M157,1042.072V39.394H1760.606V1042.072Z" fill="none" stroke="#707070" strokeWidth="0"/>
+                    </g>
+                </svg>
             </div>
-            <div className="container">
-                <div className="row mt-5 d-lg-none">
+            <div className="container d-lg-none" id="leadership">
+                <div className="row mt-5">
+                <div className="w-100 pb-5 leadership-heading px-3" dangerouslySetInnerHTML={{__html: content.about.enerbankLeadership.leadershipHeading}} />
                     {content.about.boardOfDirectors.directors && (
                         content.about.boardOfDirectors.directors.map((item, i) => {
                             return(

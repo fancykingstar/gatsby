@@ -1,23 +1,10 @@
-import React, { useRef, useState } from "react";
+import React from "react";
 
-import { graphql, withPrefix } from "gatsby";
+import { graphql} from "gatsby";
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 
-import { Tabbordion, TabPanel, TabLabel, TabContent } from 'react-tabbordion';
-import "react-tabbordion/demo/accordion.css";
-
-// accordian
-const blockElements = {
-  animator: 'accordion-animator',
-  content: 'accordion-content',
-  panel: 'accordion-panel',
-  label: 'accordion-title',
-}
-
-const CareerPage = ({data, props}) => {
-  const [expand, setExpand] = useState(false);
-  
+const CareerPage = ({data}) => {
 
   return (  
     <Layout>
@@ -32,7 +19,7 @@ const CareerPage = ({data, props}) => {
         <div className="text-center my-5" dangerouslySetInnerHTML={{__html: data.wpgraphql.page.content}} />
         <div className="row">
           <div className="col-12">
-            <table className="table table-striped">
+            <table className="table table-striped mb-5">
               <thead>
                 <tr>
                   <th className="text-blue">Name</th>

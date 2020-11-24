@@ -1,18 +1,16 @@
-import React, { useRef, useState } from "react";
+import React from "react";
 import { graphql } from "gatsby";
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 
-const ReferralProgramDetail = ({data, props}) => {
-  const [expand, setExpand] = useState(false);
-  
+const ReferralProgramDetail = ({data}) => {  
 
   return (  
     <Layout>
       <SEO title={data.wpgraphql.page.title} description={data.wpgraphql.page.excerpt}/>
       {/* section-gap */}
       <section  className="container">
-  <h1 className="text-center my-5">{data.wpgraphql.page.title}</h1>
+        <h1 className="text-center my-5">{data.wpgraphql.page.title}</h1>
         <div className="row">
           <div className="col-12">
             {data.wpgraphql.page.terms.terms.map((item, i) => (

@@ -22,10 +22,10 @@ const Header = ({ siteTitle }) => {
           <header>
             {accLogin && (
               <div id="loginBox" className="container mx-auto">
-                  <a id="closeButton" onClick={closeLoginForm}><img src={close_icon} alt="close icon" width="22" style={{fill: '#fff'}} /></a>
+                  <button id="closeButton" className="btn-link" onClick={closeLoginForm}><img src={close_icon} alt="close icon" width="22" style={{fill: '#fff'}} /></button>
                   <h4 className="modal-title mb-4 text-white" id="modalTitle">Borrower Account Log In</h4>
                   <div id="modalContent" className="small line-height-normal">
-                    <p style={{lineHeight: 'normal'}}>If your account number starts with 456 <br/><a href="https://account.enerbank.com" target="_blank">Click Here </a></p>
+                    <p style={{lineHeight: 'normal'}}>If your account number starts with 456 <br/><a href="https://account.enerbank.com" rel="noopener noreferrer" target="_blank">Click Here </a></p>
                     <p style={{lineHeight: 'normal'}}>Otherwise <br/><a href="https://enerbankpayments.com/">Click Here</a></p>
                   </div>
               </div>
@@ -35,7 +35,7 @@ const Header = ({ siteTitle }) => {
                   <div className="ml-auto header-top-right py-2">
                     <ul>
                       <li><button onClick={loginForm} className="btn-link">Account Log In</button>|</li>
-                      <li><a href="https://enerbankusa.documentinbox.com/Inbox/app#login" target="_blank">View / Sign Loan Docs</a>|</li>
+                      <li><a href="https://enerbankusa.documentinbox.com/Inbox/app#login" rel="noopener noreferrer" target="_blank">View / Sign Loan Docs</a>|</li>
                       <li><Link to={'/partnerportalapp'} >PartnerPortal</Link>|</li>
                       <li><Link to={'/payment-estimator'} className="btn-link" >Payment Estimator</Link></li>
                     </ul>
