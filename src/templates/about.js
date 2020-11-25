@@ -49,7 +49,7 @@ const About = ({data}) => {
         </Tooltip>
     );
     const popover = (props) => (
-        <Popover id="popover-basic" className="p-3">
+        <Popover id="popover-basic" className="p-3" style={{background: 'rgba(255, 255, 255, 0.85)'}}>
           <h3 className="text-blue pb-1 mb-1" style={{borderBottom: '2px solid #0077C8'}}>{props.directorName}</h3>
           <p className="text-sm mb-0">{props.directorPosition}</p>
         </Popover>
@@ -102,7 +102,7 @@ const About = ({data}) => {
             </div>
             <div className="container d-lg-none" id="leadership">
                 <div className="row mt-5">
-                <div className="position-absolute w-100 pb-5 leadership-heading px-3" dangerouslySetInnerHTML={{__html: content.about.enerbankLeadership.leadershipHeading}} />
+                <div className="w-100 pb-5 leadership-heading px-3" dangerouslySetInnerHTML={{__html: content.about.enerbankLeadership.leadershipHeading}} />
                     {content.about.boardOfDirectors.directors && (
                         content.about.boardOfDirectors.directors.map((item, i) => {
                             return(

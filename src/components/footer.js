@@ -6,6 +6,7 @@ import bbbLogo from '../images/darkgray-seal-bbb.png'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faFacebookF, faTwitter, faLinkedinIn } from '@fortawesome/free-brands-svg-icons'
 import { Button } from 'react-bootstrap'
+import privacyNoticePdf from '../pdf/Privacy-Notice.pdf'
 
 const Footer = () => {
     const externalLink = (url) => {
@@ -81,7 +82,7 @@ return (
                     
                       <ul>
                           <li><Button variant="outline-light" className="border-0" onClick={() => customLink('/terms-of-use')}>Terms of Use</Button></li>
-                          <li><Button variant="outline-light" className="border-0" onClick={() => externalLink('/https://devgbpress.enerbank.com/privacy-notice/')}>Privacy Notice</Button></li>
+                          <li><Button variant="outline-light" className="border-0" onClick={() => externalLink(privacyNoticePdf)}>Privacy Notice</Button></li>
                           <li><Button variant="outline-light" className="border-0" onClick={() => customLink('/privacy-policy')}>Online Privacy Statement</Button></li>
                       </ul>
                       
@@ -99,9 +100,9 @@ return (
               </div>
 
               <div className="mediaIcon">
-                  <Button variant="outline-light" className="border-0" onClick={() => externalLink('/https://www.facebook.com/enerbank')}><FontAwesomeIcon icon={ faFacebookF } /></Button>
-                  <Button variant="outline-light" className="border-0" onClick={() => externalLink('/https://twitter.com/enerbank')}><FontAwesomeIcon icon={ faTwitter } /></Button>
-                  <Button variant="outline-light" className="border-0" onClick={() => externalLink('/https://www.linkedin.com/authwall?trk=bf&trkInfo=AQEBJQklYrIpYQAAAXXX4bnA7rC_wMy1FrE-q85ty0Lwod8_B8MAPPFJHs4B9HUfF-spVaWlBBpY_g-9p7xuGppFP08d6nkfuDdqzYW0V0Re_DPAkxSWMkluZ65ZsVBrX4q6zVU=&originalReferer=&sessionRedirect=https%3A%2F%2Fwww.linkedin.com%2Fcompany%2F3077782%3Ftrk%3Dtyah%26trkInfo%3DtarId%253A1395948482719%252Ctas%253Aenerbank%252Cidx%253A1-1-1')}><FontAwesomeIcon icon={ faLinkedinIn } /></Button>
+                  <Button variant="outline-light" className="border-0" onClick={() => externalLink('https://www.facebook.com/enerbank')}><FontAwesomeIcon icon={ faFacebookF } /></Button>
+                  <Button variant="outline-light" className="border-0" onClick={() => externalLink('https://twitter.com/enerbank')}><FontAwesomeIcon icon={ faTwitter } /></Button>
+                  <Button variant="outline-light" className="border-0" onClick={() => externalLink('https://www.linkedin.com/authwall?trk=bf&trkInfo=AQEBJQklYrIpYQAAAXXX4bnA7rC_wMy1FrE-q85ty0Lwod8_B8MAPPFJHs4B9HUfF-spVaWlBBpY_g-9p7xuGppFP08d6nkfuDdqzYW0V0Re_DPAkxSWMkluZ65ZsVBrX4q6zVU=&originalReferer=&sessionRedirect=https%3A%2F%2Fwww.linkedin.com%2Fcompany%2F3077782%3Ftrk%3Dtyah%26trkInfo%3DtarId%253A1395948482719%252Ctas%253Aenerbank%252Cidx%253A1-1-1')}><FontAwesomeIcon icon={ faLinkedinIn } /></Button>
               </div>
             </div>
           </div>
