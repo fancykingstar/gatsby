@@ -81,7 +81,7 @@ const PaymentEstimator = () => {
 							</div> */}
 						</div>
 					</div>
-					<p>*The monthly payment calculations provided here estimates only. Your customer's exact loan payment amount will be determined by EnerBank USA at time of application. The accuracy of these calculations is not guaranteed nor is its applicability to your individual circumstances. Your customers should always obtain personal advice from qualified professionals.</p>
+					<p>*The monthly payment calculations provided here are estimates only. The exact loan payment amount will be determined by EnerBank USA at time of application. The accuracy of these calculations is not guaranteed nor is its applicability to your individual circumstances. You should always obtain personal advice from qualified professionals.</p>
 				</form>
 			</div>
 		</Layout>

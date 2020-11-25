@@ -2,9 +2,13 @@ import React from "react";
 import { graphql } from "gatsby";
 import Layout from "../components/layout"
 import SEO from "../components/seo"
+import { Button } from 'react-bootstrap'
+import privacyNoticePdf from '../pdf/Privacy-Notice.pdf'
 
 const PrivacyPolicy = ({data, props}) => {
-  
+  const externalLink = (url) => {
+		window.open(url, '_blank');
+  }
 
   return (  
     <Layout>
@@ -18,6 +22,7 @@ const PrivacyPolicy = ({data, props}) => {
               <div key={item.fieldGroupName + i} className="mb-5">
                 <h3 className="text-blue mb-1">{item.question}</h3>
                 <div dangerouslySetInnerHTML={{__html: item.answer}} />
+                <p>Click <Button variant="outline-light" className="border-0" onClick={() => externalLink(privacyNoticePdf)}>here</Button> for a copy of the Privacy Policy that the Bank provides to its loan customers.</p>
               </div>
             ))}
           </div>
