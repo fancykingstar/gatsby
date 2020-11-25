@@ -239,7 +239,7 @@ const Feedback = () => {
                         </div>
                     </div>
                     <div className="form-group small text-muted">
-                        <label>Request Type Selection</label>
+                        <label htmlFor="reportInfo">Request Type Selection</label>
                         <div><input type="checkbox" name="reportInfo" id="reportInfo" /> Personal Information Report</div>
                         <div><input type="checkbox" name="doNotSellInfo" id="doNotSellInfo" /> Opt- Out Right- Do not sell my personal information</div>
                         <div><input type="checkbox" name="deleteInfo" id="deleteInfo" /> Delete My Personal Information</div>
