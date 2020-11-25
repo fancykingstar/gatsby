@@ -1,6 +1,5 @@
 import React, { useState, useRef } from "react";
 import { graphql, Link, withPrefix } from "gatsby";
-import ImageMapper from 'react-image-mapper';
 import OverlayTrigger from 'react-bootstrap/OverlayTrigger'
 import Tooltip from 'react-bootstrap/Tooltip'
 import Popover from 'react-bootstrap/Popover'
@@ -78,7 +77,7 @@ const About = ({data}) => {
                 </section>
             )}
             {/* enerbank leadership */}
-            <div id="leadership" className="position-relative d-none d-lg-block">
+            <div id="leadership" className="position-relative d-none d-lg-block pt-5">
                 <div className="position-absolute w-100 pb-5 leadership-heading px-3" dangerouslySetInnerHTML={{__html: content.about.enerbankLeadership.leadershipHeading}} />
                 <img src={content.about.enerbankLeadership.leadershipBanner.sourceUrl} alt="Leader Banner" className="w-100 d-block" />
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1604.606 1005.106" className="position-absolute" style={{top:0, zIndex:99}}>
@@ -167,7 +166,7 @@ const About = ({data}) => {
 
                 <div className="row">
                     <div className="col-12 col-md-10 m-auto" dangerouslySetInnerHTML={{__html: content.about.cmsEnergy}} />
-                    <div className="col-12 col-md-10 m-auto" dangerouslySetInnerHTML={{__html: content.about.teamMembers.boardBrif}} />
+                    <div id="boardofdirectors" className="col-12 col-md-10 m-auto" dangerouslySetInnerHTML={{__html: content.about.teamMembers.boardBrif}} />
                 </div>
                 
                 <div className="row mt-5">

@@ -24,7 +24,7 @@ const CareerPage = ({data, props}) => {
       <section  className="container">
           <div className="row">
             <div className="col-md-12 career-service" dangerouslySetInnerHTML={{__html: data.wpgraphql.page.content}} />
-            <div className="col-md-12 header-text" id="availableposition">
+            <div className="col-md-12 header-text pt-4" id="availableposition">
               <h2 className="mb-4 text-center"><span>Available Positions</span></h2>
             </div>
             <Helmet>
