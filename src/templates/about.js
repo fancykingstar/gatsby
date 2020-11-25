@@ -1,6 +1,5 @@
 import React, { useState, useRef } from "react";
 import { graphql, Link, withPrefix } from "gatsby";
-import ImageMapper from 'react-image-mapper';
 import OverlayTrigger from 'react-bootstrap/OverlayTrigger'
 import Tooltip from 'react-bootstrap/Tooltip'
 import Popover from 'react-bootstrap/Popover'
