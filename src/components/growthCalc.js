@@ -288,7 +288,7 @@ const GrowthCalc = (props) => {
 								</div>
 							</form>
 							<div className="row">
-								<div className="calc_bottom">On average, our contractors have seen significant increase in inbound leads, close rates, average job sizes and annual revenue by offering payment options to every customer.</div>
+								<div className="calc_bottom">On average, our contractors have seen significant increase in inbound leads, close rates, average job sizes and annual revenue by offering payment options to every customer. Individual results may vary.</div>
 							</div>
 						</div>                  
 					</div>              
