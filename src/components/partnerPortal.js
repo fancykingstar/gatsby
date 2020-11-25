@@ -1,11 +1,15 @@
 import React from 'react';
 import { Modal } from 'react-bootstrap';
-import { Link } from "gatsby";
+import { navigate } from "gatsby"
+import { Button } from 'react-bootstrap'
 import close_icon from '../images/closed_icon.svg'
 import apple_btn from '../images/apple-store-btn.png'
 import google_btn from '../images/google-play-btn.png'
 
 const PartnerPortal = (props) => {
+	const externalLink = (url) => {
+		window.open(url, '_blank');
+    }
 	if (props.popData.length !== 0) {
 		return (
 			<Modal show={props.visiblity} animation={true} centered={true} size="full" id="partnerPopup">
@@ -26,7 +30,7 @@ const PartnerPortal = (props) => {
 								].join('\n')
 							}}></style>
 							<div className="modal_banner banner_bg">
-								<img src={props.popData.innerpagebanner.pagebanner.bannner.sourceUrl} className="object-fit-cover" alt={props.popData.innerpagebanner.bannner.altText} />
+								<img src={props.popData.innerpagebanner.pagebanner.bannner.sourceUrl} className="object-fit-cover" alt={props.popData.innerpagebanner.pagebanner.bannner.altText} />
 							</div>
 						</>
 					)}
@@ -35,8 +39,8 @@ const PartnerPortal = (props) => {
 						<div className="line-height-normal">
 							<div dangerouslySetInnerHTML={{__html:props.popData.content}} />
 							<div id="download">
-				                <a href="https://apps.apple.com/us/app/enerbank-usa-partner-portal/id1501254896" rel="noopener noreferrer" target="_blank" class="mb-4 mb-md-0"><img src={apple_btn} alt="apple-store-btn" width="120" /></a> 
-				                <a href="https://play.google.com/store/apps/details?id=com.enerbank.partnerportal" rel="noopener noreferrer" target="_blank" class="mb-4 mb-md-0 ml-3"><img src={google_btn} alt="google-play-btn" width="120" /></a>
+								<Button variant="outline-light" className="border-0 p-0 mb-4 mb-md-0" onClick={() => externalLink('https://apps.apple.com/us/app/enerbank-usa-partner-portal/id1501254896')}><img src={apple_btn} alt="apple-store-btn" width="120" /></Button> 
+				                <Button variant="outline-light" className="border-0 p-0 mb-4 mb-md-0 ml-3" onClick={() => externalLink('https://play.google.com/store/apps/details?id=com.enerbank.partnerportal')}><img src={google_btn} alt="google-play-btn" width="120" /></Button>
 				            </div>
 						</div>
 					</div>
@@ -53,7 +57,7 @@ const PartnerPortal = (props) => {
 							</div>							
 							<div className="row">
 								<div className="mx-auto text-center my-5">
-									<a href="https://portal.enerbank.com/" target="_blank">{props.popData.partnerportal.portalservice.accessportallink.title}</a>
+									<Button variant="outline-light" onClick={() => externalLink('https://portal.enerbank.com/')} >{props.popData.partnerportal.portalservice.accessportallink.title}</Button>
 								</div>
 							</div>
 						</div>

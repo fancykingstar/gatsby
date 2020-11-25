@@ -349,8 +349,10 @@ body.mobile-nav-active #mobile-nav-toggle { color: #fff }
 .single-footer-widget p.text-muted{ font-size: 11px; line-height:normal !important; color:#fff !important; letter-spacing:0;}
 .single-footer-widget ul{ margin-bottom: 1rem; }
 .single-footer-widget ul li { margin:0px; padding:0; line-height:14px; }
-.single-footer-widget ul li a, .single-footer-widget ul li button { color: #fff; -webkit-transition: all 0.3s ease 0s; -moz-transition: all 0.3s ease 0s; -o-transition: all 0.3s ease 0s; transition: all 0.3s ease 0s; font-size: 11px; letter-spacing:0.2px; line-height: 14px; padding: 5px 0; display: block; font-weight:500; }
-.single-footer-widget ul li a:hover, .single-footer-widget ul li button:hover { color: #999; }
+.single-footer-widget ul li a, .single-footer-widget ul li button,
+.single-footer-widget ul li button:focus, .single-footer-widget ul li button:active,
+.single-footer-widget ul li button:active:focus { color: #fff !important; background: none !important; -webkit-transition: all 0.3s ease 0s; -moz-transition: all 0.3s ease 0s; -o-transition: all 0.3s ease 0s; transition: all 0.3s ease 0s; font-size: 11px; letter-spacing:0.2px; line-height: 14px; padding: 5px 0; display: block; font-weight:500; }
+.single-footer-widget ul li a:hover, .single-footer-widget ul li button:hover, .single-footer-widget ul li button:hover:focus{ color: #999 !important; background: none !important; }
 .footer-bottom { padding-top: 40px; margin-top: 20px }
 .footer-text a, .footer-text i { color: #eee }
 .whole-wrap { background-color: #fff }
@@ -748,7 +750,7 @@ display: flex; align-items: center; justify-content: center; }
 .hrbr-wrapper-pagination > li > a{ color: #29A9E0 !important; }
 
 /* career service */
-.career-service{ padding: 50px 25px 50px; }
+.career-service{ padding: 50px 25px 20px; }
 .career-service ul{ display: flex; flex-wrap: wrap; margin: 30px 25px 50px; }
 .career-service ul li{ flex-basis: 50%; font-weight: 500; font-size: 16px; color: #4d4d4d; }
 
