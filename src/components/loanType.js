@@ -43,7 +43,7 @@ const LoanType = (props) => {
 								</div>
 								<div className="p-0 px-md-4 py-sm-3">
 									{/* Collapsed List */}
-									<Tabbordion blockElements={blockElements} animateContent={'height'} className="accordion loan_offer mx-0 mx-md-4 mx-lg-5" name="accordion">
+									<Tabbordion blockElements={blockElements} animateContent={'height'} mode={'toggle'} className="accordion loan_offer mx-0 mx-md-4 mx-lg-5" name="accordion">
 										{props.popData.accordion.tabpanel.map((item, i) => {
 											return (
 												<TabPanel key={item.fieldGroupName + i}>
