@@ -96,7 +96,7 @@ h1, h2, h3, h4, h5, h6 { line-height: 1.5em }
 .navbar-toggler-icon {
   background-image: url(../images/mobile-menu.svg);
 }
-#loginBox{ background:#4D4D4D; position:absolute; top:44px; left: 50%; transform: translateX(-50%); min-width:390px; z-index:9; padding: 30px; text-align:left;}
+#loginBox{ background:#4D4D4D; position:absolute; top:44px; left: 50%; transform: translateX(-50%); min-width:390px; z-index:998; padding: 30px; text-align:left;}
 #loginBox p{ line-height:28px; color:#fff; letter-spacing:0; font-size:15px;}
 #loginBox h3{ margin:0px 0 15px 0; padding:0px; line-height:24px; font-size:20px; color:#fff;}
 #closeButton{ position:absolute; top:15px; right:25px; cursor:pointer;}
@@ -351,7 +351,7 @@ body.mobile-nav-active #mobile-nav-toggle { color: #fff }
 .single-footer-widget ul li { margin:0px; padding:0; line-height:14px; }
 .single-footer-widget ul li a, .single-footer-widget ul li button,
 .single-footer-widget ul li button:focus, .single-footer-widget ul li button:active,
-.single-footer-widget ul li button:active:focus { color: #fff !important; background: none !important; -webkit-transition: all 0.3s ease 0s; -moz-transition: all 0.3s ease 0s; -o-transition: all 0.3s ease 0s; transition: all 0.3s ease 0s; font-size: 11px; letter-spacing:0.2px; line-height: 14px; padding: 5px 0; display: block; font-weight:500; }
+.single-footer-widget ul li button:active:focus { color: #fff !important; background: none !important; -webkit-transition: all 0.3s ease 0s; -moz-transition: all 0.3s ease 0s; -o-transition: all 0.3s ease 0s; transition: all 0.3s ease 0s; font-size: 11px; letter-spacing:0.2px; line-height: 14px; padding: 5px 0; display: block; font-weight:500; text-align:left; }
 .single-footer-widget ul li a:hover, .single-footer-widget ul li button:hover, .single-footer-widget ul li button:hover:focus{ color: #999 !important; background: none !important; }
 .footer-bottom { padding-top: 40px; margin-top: 20px }
 .footer-text a, .footer-text i { color: #eee }
@@ -603,8 +603,8 @@ body.mobile-nav-active #mobile-nav-toggle { color: #fff }
     left: 50%; transform: translate(-50%, -50%); }
 
 @media (min-width: 0px){
-  .banner-area.fullscreen { min-height:150px; }
-  .header-btn a{ padding: 5px 30px; font-size:16px; }
+  .banner-area.fullscreen { min-height:250px; }
+  .header-btn a{ padding: 5px 10px; font-size:16px; }
 }
 @media (min-width: 768px){
   .banner-area.fullscreen { min-height:228px; }
@@ -817,7 +817,7 @@ display: flex; align-items: center; justify-content: center; }
 /* about page css */
 .leadership-heading{ background: linear-gradient(180deg, white, transparent); }
 @media (max-width:576px){
-  .leadership-heading{ position:relative !important; padding:0 !important; }
+  .leadership-heading{ position:relative !important; padding:0 !important; background: none; }
 }
 .directorName{ font-weight:600; color: #4d4d4d; font-size: 24px; }
 .community-logo{ max-height: 120px; height: 120px !important; width: auto; }

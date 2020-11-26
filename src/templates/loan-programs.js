@@ -134,10 +134,10 @@ const LoanProgramPage = ({ data }) => {
 					<div className="background-holder">
 						<Video videoSrcURL={node.video_section.video.videoUrl} allow="autoplay" videoTitle="EnnerBank improvement lender of choice" videoWidth="100%" videoHeight="500" />
 						{node.top_banner.banner.bannerLinks && (
-							<div className="container d-flex align-items-end p-0 pb-md-5 position-absolute banner-btn-container">
+							<div className="container d-flex flex-column flex-md-row align-items-end px-0 pb-3 pb-md-5 position-absolute banner-btn-container">
 								{node.top_banner.banner.bannerLinks.map((item, i) =>(
 									<div className="col-md-4" key={item.fieldGroupName + i}>
-										<div className="header-btn mr-3 ml-3"><Link to={item.links.url} dangerouslySetInnerHTML={{ __html: item.links.title }} /></div>
+										<div className="header-btn mx-md-3 mb-2 mb-md-0"><Link to={item.links.url} dangerouslySetInnerHTML={{ __html: item.links.title }} /></div>
 									</div>
 								))}
 							</div>
@@ -148,7 +148,7 @@ const LoanProgramPage = ({ data }) => {
 
 			<section className="container">
 				<div className="row">
-					<div className="mx-auto col-12 col-md-11 py-md-5 mt-md-4 mb-md-3">
+					<div className="mx-auto col-12 col-md-11 pt-4 py-md-5 mt-md-4 mb-md-3">
 						<div className="payment-program" dangerouslySetInnerHTML={{__html:node.content}} />
 					</div>
 				</div>
@@ -162,7 +162,7 @@ const LoanProgramPage = ({ data }) => {
 			</section>
 			
 			{node.loan_program.paymentOptionsBenefits.paymentOptionHeading && (
-				<div className="bg-blue mt-5" id="paymentoptbenefits">
+				<div className="bg-blue mt-4 mt-md-4" id="paymentoptbenefits">
 					<h2 className="text-center py-4 h1 font-weight-bold text-white">
 						{node.loan_program.paymentOptionsBenefits.paymentOptionHeading}
 					</h2>
@@ -203,7 +203,7 @@ const LoanProgramPage = ({ data }) => {
 								?
 									<div key={item.fieldGroupName + i} className="box-shadow bg-white rounded text-center col-12 col-md-6 p-0 mb-3 mx-auto">
 										<Link to={'/'} onClick={showbenefitpopup(item, 'growthCalc')}>
-											<div className="bg-blue p-5 rounded-top">
+											<div className="bg-blue p-5 mx-3 mx-md-auto rounded-top">
 												<img className="img-fluid" src={item.offeringPaymentIcon.sourceUrl} alt="Growth Calculator icon" />
 											</div>
 											<div className="p-4 text-black" dangerouslySetInnerHTML={{ __html: item.offeringPaymentBrif }} />
@@ -228,9 +228,9 @@ const LoanProgramPage = ({ data }) => {
 			</div>
 
 			{node.loan_program.joinLoanProgram && (
-				<section className="joinLoanProgram" id="joinloanprogram">
+				<section className="joinLoanProgram">
 					{node.loan_program.joinLoanProgram.loanProgramMethodHeading && (
-						<div className="bg-blue">
+						<div className="bg-blue" id="joinloanprogram">
 							<h3 className="text-center py-4 h1 f-bold text-white">
 								{node.loan_program.joinLoanProgram.loanProgramMethodHeading}
 							</h3>

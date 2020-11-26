@@ -65,7 +65,7 @@ const About = ({data}, props) => {
             )}
             {/* enerbank leadership */}
             
-            <div id="leadership" className="position-relative d-none d-lg-block pt-2">
+            <div id="leadership" className="position-relative d-none d-lg-block pt-2 pb-4">
                 <div className="position-absolute w-100 pb-5 leadership-heading px-3" style={{top:0}} dangerouslySetInnerHTML={{__html: content.about.enerbankLeadership.leadershipHeading}} />
                 <img src={content.about.enerbankLeadership.leadershipBanner.sourceUrl} alt="Leader Banner" className="w-100 d-block" />
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1604.606 1005.106" className="position-absolute" style={{top:0, zIndex:99}}>
@@ -126,7 +126,7 @@ const About = ({data}, props) => {
             </section> */}
             {/* Community Involvement */}
             <div className="container pb-5 my-0 my-md-3 my-lg-5 communityinvolvement" id="communityinvolvement">
-                <h3 className="h2 text-center mb-5">{content.about.communityInvolvement.ciHeading}</h3>
+                <h3 className="h2 text-center mb-4">{content.about.communityInvolvement.ciHeading}</h3>
                 <p>{content.about.communityInvolvement.ciBrif}</p>
                 <div className="row my-5">
                     <div className="gridgallery col-lg-12">
@@ -187,7 +187,7 @@ const About = ({data}, props) => {
                                     <h3 className="mb-30">News / Media</h3>
                                     <p>See the latest corporate news about EnerBank USA and related topics</p>
                                 </div>
-                                <Link to={'/'} className="pb-4 px-4 font-weight-bold mt-auto">Right Here</Link>
+                                <a href="http://news.enerbank.com/" rel="noopener noreferrer" target="_blank" className="pb-4 px-4 font-weight-bold mt-auto">Right Here</a>
                             </div>
                             <div className="card box-shadow bg-white rounded text-center col-xs-12 col-md mb-3 mb-lg-0 p-0 ml-md-3 ml-lg-5">
                                 <div className="wygthumb blog">
