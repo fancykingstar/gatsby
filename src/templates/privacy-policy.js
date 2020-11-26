@@ -15,7 +15,7 @@ const PrivacyPolicy = ({data, props}) => {
       <SEO title={data.wpgraphql.page.title} description={data.wpgraphql.page.excerpt}/>
       {/* section-gap */}
       <section  className="container">
-        <div className="text-center my-5" dangerouslySetInnerHTML={{__html: data.wpgraphql.page.content}} />
+        <div className="text-center mt-5" dangerouslySetInnerHTML={{__html: data.wpgraphql.page.content}} />
         <div className="row">
           <div className="col-12">
             {data.wpgraphql.page.terms.terms.map((item, i) => (
@@ -24,7 +24,7 @@ const PrivacyPolicy = ({data, props}) => {
                 <div dangerouslySetInnerHTML={{__html: item.answer}} />                
               </div>
             ))}
-            <p>Click <a href="/#" className="btn-link" onClick={(e) => externalLink(e, privacyNoticePdf)}>here</a> for a copy of the Privacy Policy that the Bank provides to its loan customers.</p>
+            <p className="mb-5">Click <a href="/#" className="btn-link" onClick={(e) => externalLink(e, privacyNoticePdf)}>here</a> for a copy of the Privacy Policy that the Bank provides to its loan customers.</p>
           </div>
         </div>
       </section>
