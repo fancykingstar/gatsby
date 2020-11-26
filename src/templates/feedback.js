@@ -160,14 +160,14 @@ const Feedback = () => {
                     </div>
                     <div className="form-group row">
                         <div className="col-lg-6">
-                            <label className="font-weight-bold small" htmlFor="perContact">Perfect Contact</label>
+                            <label className="font-weight-bold small" htmlFor="perContact">Preferred Contact</label>
                             <select
                                 className="form-control"
                                 name="perfectContact"
                                 id="perfectContact"
                                 ref={register}                                
                             >
-                                <option value="">Select Perfect Contact</option>
+                                <option value="">Select Preferred Contact</option>
                                 <option value="phone">Phone</option>
                                 <option value="email">Email</option>
                             </select>
@@ -200,7 +200,7 @@ const Feedback = () => {
         <Modal show={show} onHide={handleClose}>
             <Modal.Body className="p-4 mt-5 text-center" dangerouslySetInnerHTML={{__html: message}} />
             <Modal.Footer className="border-0">
-                <Button variant="primary mb-3 mx-auto" onClick={handleClose}>Ok</Button>
+                <Button variant="primary mb-3 mx-auto" onClick={handleClose}>OK</Button>
             </Modal.Footer>
         </Modal>
     </Layout>

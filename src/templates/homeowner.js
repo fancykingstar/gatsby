@@ -62,25 +62,25 @@ const HomeOwnerPage = ({data}) => {
                 <div className="background-holder">
                     <Video videoSrcURL={node.video_section.video.videoUrl} allow="autoplay" videoTitle="EnnerBankUSA. America's home improvement lender of choice" videoWidth="100%" videoHeight="500" />
                     {node.top_banner.banner.bannerLinks && (
-                        <div className="container d-md-flex align-items-end p-0 pb-md-4 pb-lg-5 position-absolute banner-btn-container">
+                        <div className="container d-md-flex align-items-end px-0 pb-3 pb-md-4 pb-lg-5 position-absolute banner-btn-container">
                             { node.top_banner.banner.bannerLinks.map((item, i) => {
                                 if(i === 1){
                                     const links = item.links.url
                                     return (
-                                        <div className="col-md-4 py-1 py-md-2 py-md-0" key={item.fieldGroupName+i}>
-                                            <div className="header-btn"><a className="mr-auto" href={links} target="_blank" dangerouslySetInnerHTML={{ __html: item.links.title}} /></div>
+                                        <div className="col-md-4" key={item.fieldGroupName+i}>
+                                            <div className="header-btn mx-md-3 mb-2 mb-md-0"><a className="mr-auto" href={links} target="_blank" dangerouslySetInnerHTML={{ __html: item.links.title}} /></div>
                                         </div>
                                     )
                                 }else if(i === 0){
                                     return (
-                                        <div className="col-md-4 py-1 py-md-2 py-md-0" key={item.fieldGroupName+i}>
-                                            <div className="header-btn"><a className="mr-auto btn" onClick={loginForm} dangerouslySetInnerHTML={{ __html: item.links.title}} /></div>
+                                        <div className="col-md-4" key={item.fieldGroupName+i}>
+                                            <div className="header-btn mx-md-3 mb-2 mb-md-0"><a className="mr-auto btn" onClick={loginForm} dangerouslySetInnerHTML={{ __html: item.links.title}} /></div>
                                         </div>
                                     )
                                 }else{
                                     return (
-                                        <div className="col-md-4 py-1 py-md-2 py-md-0" key={item.fieldGroupName+i}>
-                                            <div className="header-btn"><Link className="mr-auto" to={item.links.url} dangerouslySetInnerHTML={{ __html: item.links.title}} /></div>
+                                        <div className="col-md-4" key={item.fieldGroupName+i}>
+                                            <div className="header-btn mx-md-3 mb-2 mb-md-0"><Link className="mr-auto" to={item.links.url} dangerouslySetInnerHTML={{ __html: item.links.title}} /></div>
                                         </div>
                                     )
                                 }
@@ -163,8 +163,8 @@ const HomeOwnerPage = ({data}) => {
                 <div className="p-4">
                     <h4 className="modal-title mb-4" id="modalTitle">Borrower Account Log In</h4>
                     <div id="modalContent" className="small line-height-normal">
-                        <p style={{lineHeight: 'normal'}}>If your account number starts with 456 <br/><a href="https://account.enerbank.com" target="_blank">Click Here </a></p>
-                        <p style={{lineHeight: 'normal'}}>Otherwise <br/><a href="https://enerbankpayments.com/">Click Here</a></p>
+                        <p style={{lineHeight: 'normal'}}>If your account number starts with 456 <br/><a href="https://account.enerbank.com" target="_blank" rel="noopener noreferrer">Click Here </a></p>
+                        <p style={{lineHeight: 'normal'}}>Otherwise <br/><a href="https://enerbankpayments.com/" rel="noopener noreferrer">Click Here</a></p>
                     </div>
                 </div>
             </Modal>

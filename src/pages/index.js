@@ -20,24 +20,24 @@ const IndexPage = ({data}) => {
             <div className="background-holder">
                 <Video videoSrcURL={node.video_section.video.videoUrl} allow="autoplay" videoTitle="EnnerBank improvement lender of choice" videoWidth="100%" videoHeight="500" />
                 {node.top_banner.banner.bannerLinks && (
-                    <div className="container d-md-flex align-items-end p-0 pb-md-4 pb-lg-5 position-absolute banner-btn-container">
+                    <div className="container d-md-flex align-items-end px-0 pb-3 pb-md-4 pb-lg-5 position-absolute banner-btn-container">
                         { node.top_banner.banner.bannerLinks.map((item, i) => {
                             if(i === 0){
                               return (
-                                <div className="col-md-4 py-1 py-md-2 py-md-0" key={item.links.title + i}>
-                                  <div className="header-btn"><a className="mr-auto" href="homeowner/#howtopay" dangerouslySetInnerHTML={{ __html: item.links.title }} /></div>
+                                <div className="col-md-4" key={item.links.title + i}>
+                                  <div className="header-btn mx-md-3 mb-2 mb-md-0"><a className="mr-auto" href="homeowner/#howtopay" dangerouslySetInnerHTML={{ __html: item.links.title }} /></div>
                                 </div>
                               )
                             }else if(i === 2){
                               return (
-                                <div className="col-md-4 py-1 py-md-2 py-md-0" key={item.links.title + i}>
-                                  <div className="header-btn"><Link className="ml-auto" to={'loan-programs/#joinloanprogram'} dangerouslySetInnerHTML={{ __html: item.links.title }} /></div>
+                                <div className="col-md-4" key={item.links.title + i}>
+                                  <div className="header-btn mx-md-3 mb-2 mb-md-0"><Link className="ml-auto" to={'loan-programs/#joinloanprogram'} dangerouslySetInnerHTML={{ __html: item.links.title }} /></div>
                                 </div>
                               )
                             }else{
                               return (
-                                <div className="col-md-4 py-1 py-md-2 py-md-0" key={item.links.title + i}>
-                                  <div className="header-btn"><Link className="mx-auto" to={'loan-programs/#createloanprogram'} dangerouslySetInnerHTML={{ __html: item.links.title }} /></div>
+                                <div className="col-md-4" key={item.links.title + i}>
+                                  <div className="header-btn mx-md-3 mb-2 mb-md-0"><Link className="mx-auto" to={'loan-programs/#createloanprogram'} dangerouslySetInnerHTML={{ __html: item.links.title }} /></div>
                                 </div>
                               )
                             }

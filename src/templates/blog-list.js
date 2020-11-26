@@ -113,7 +113,7 @@ const CareerPage = ({data}) => {
               </div>
             </div>
             <div className="row">
-              <div className="col-8">
+              <div className="col-md-8">
                 {
                   data.wpgraphql.posts.edges.map((item, i) => {
                     if(i === 0){
@@ -128,7 +128,7 @@ const CareerPage = ({data}) => {
                   })
                 }
               </div>
-              <div className="col-4">
+              <div className="col-md-4">
                 <form className="bg-blue px-4 py-3 rounded growBussiness" onSubmit={handleSubmit(onSubmit)}>
                   <p>Ready to Grow Your Business with EnerBank USA? Start Here.</p>
                   <div className="form-group">

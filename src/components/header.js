@@ -26,7 +26,7 @@ const Header = ({ siteTitle }) => {
                   <h4 className="modal-title mb-4 text-white" id="modalTitle">Borrower Account Log In</h4>
                   <div id="modalContent" className="small line-height-normal">
                     <p style={{lineHeight: 'normal'}}>If your account number starts with 456 <br/><a href="https://account.enerbank.com" rel="noopener noreferrer" target="_blank">Click Here </a></p>
-                    <p style={{lineHeight: 'normal'}}>Otherwise <br/><a href="https://enerbankpayments.com/">Click Here</a></p>
+                    <p style={{lineHeight: 'normal'}}>Otherwise <br/><a href="https://enerbankpayments.com/" rel="noopener noreferrer">Click Here</a></p>
                   </div>
               </div>
             )}            
@@ -36,7 +36,7 @@ const Header = ({ siteTitle }) => {
                     <ul>
                       <li><button onClick={loginForm} className="btn-link">Account Log In</button>|</li>
                       <li><a href="https://enerbankusa.documentinbox.com/Inbox/app#login" rel="noopener noreferrer" target="_blank">View / Sign Loan Docs</a>|</li>
-                      <li><Link to={'/partnerportalapp'} >PartnerPortal</Link>|</li>
+                      <li><a href="http://partnerportalapp.enerbank.com/" rel="noopener noreferrer" target="_blank">PartnerPortal</a>|</li>
                       <li><Link to={'/payment-estimator'} className="btn-link" >Payment Estimator</Link></li>
                     </ul>
                   </div>
