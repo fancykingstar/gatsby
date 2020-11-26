@@ -2,12 +2,12 @@ import React from "react";
 import { graphql } from "gatsby";
 import Layout from "../components/layout"
 import SEO from "../components/seo"
-import { Button } from 'react-bootstrap'
 import privacyNoticePdf from '../pdf/Privacy-Notice.pdf'
 
 const PrivacyPolicy = ({data, props}) => {
-  const externalLink = (url) => {
-		window.open(url, '_blank');
+  const externalLink = (event, url) => {
+    window.open(url, '_blank');
+    event.preventDefault();
   }
 
   return (  
@@ -21,10 +21,10 @@ const PrivacyPolicy = ({data, props}) => {
             {data.wpgraphql.page.terms.terms.map((item, i) => (
               <div key={item.fieldGroupName + i} className="mb-5">
                 <h3 className="text-blue mb-1">{item.question}</h3>
-                <div dangerouslySetInnerHTML={{__html: item.answer}} />
-                <p>Click <Button variant="outline-light" className="border-0" onClick={() => externalLink(privacyNoticePdf)}>here</Button> for a copy of the Privacy Policy that the Bank provides to its loan customers.</p>
+                <div dangerouslySetInnerHTML={{__html: item.answer}} />                
               </div>
             ))}
+            <p>Click <a href="/#" className="btn-link" onClick={(e) => externalLink(e, privacyNoticePdf)}>here</a> for a copy of the Privacy Policy that the Bank provides to its loan customers.</p>
           </div>
         </div>
       </section>
