@@ -32,7 +32,7 @@ const PaymentEstimator = () => {
 			<SEO title={'Payment Estimator'} description={''} />
 			<h2 className="h2 text-white font-weight-bold">Enerbank Payment Estimator</h2>
 			<div className="p-5 pb-0 pt-sm-4 text-center">
-				<p className="text-center">See a monthly payment estimate — <br/>just plug in the relevant numbers and hit <strong className="text-blue">Calculate!</strong></p>
+				<p className="text-center">Generate a monthly payment estimate — <br/>just plug in the relevant numbers and hit <strong className="text-blue">Calculate!</strong></p>
 				<form className="estimatorForm">
 					<div className="paymentEstimator">
 						<div className="formHeading">Payment Estimator Tool</div>
