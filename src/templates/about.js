@@ -1,8 +1,7 @@
 import React, { useState, useRef } from "react";
 import { graphql, Link, withPrefix } from "gatsby";
-import OverlayTrigger from 'react-bootstrap/OverlayTrigger'
-import Tooltip from 'react-bootstrap/Tooltip'
-import Popover from 'react-bootstrap/Popover'
+import { Card, Popover } from 'react-bootstrap'
+import PopoverStickOnHover from '../components/PopoverStickOnHover'
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import Video from "../components/video";
@@ -15,7 +14,7 @@ import DirectorPopup from '../components/directorPopups/directorPopup'
 import VisionUnsplash from '../images/absolutvision-unsplash.jpg';
 import BakerUnsplash from '../images/kaitlyn-baker-unsplash.jpg';
 
-const About = ({data}) => {
+const About = ({data}, props) => {
     const content = data.wpgraphql.page;
     const [visible, setVisible] = useState(false);
     const [popType, setPopType] = useState('');
@@ -42,18 +41,6 @@ const About = ({data}) => {
         {id:"robb-kerry", data: "M1350.326,280.719V251.031l15.172-19.31,23.448-11.034h28.965l27.586,16.551,12.414,19.31v59.31H1445.5l12.414,27.586,11.034,17.931,33.1,13.793,41.379,13.793,12.414,22.069v34.482l-274.479,6.9,16.552-51.034,40-12.414,27.586-13.793,5.517-31.724Z"},
         {id:"rob-palmer", data: "M473.1,326.892,499.3,297.927,507.579,280,492.407,253.79l6.9-42.758L513.1,184.825l28.965-9.655h17.931l24.827,15.172,12.414,20.689V280L584.82,297.927l-6.9,12.414,6.9,16.552,19.31,17.931-26.206,26.207-17.931,12.414-52.413-12.414Z"}
     ]
-
-    const renderTooltip = (props) => (
-        <Tooltip id="button-tooltip" {...props}>
-          Simple tooltip
-        </Tooltip>
-    );
-    const popover = (props) => (
-        <Popover id="popover-basic" className="p-3" style={{background: 'rgba(255, 255, 255, 0.85)'}}>
-          <h3 className="text-blue pb-1 mb-1" style={{borderBottom: '2px solid #0077C8'}}>{props.directorName}</h3>
-          <p className="text-sm mb-0">{props.directorPosition}</p>
-        </Popover>
-    );
     
   return (  
     <Layout>
@@ -77,22 +64,23 @@ const About = ({data}) => {
                 </section>
             )}
             {/* enerbank leadership */}
-            <div id="leadership" className="position-relative d-none d-lg-block pt-5">
-                <div className="position-absolute w-100 pb-5 leadership-heading px-3" dangerouslySetInnerHTML={{__html: content.about.enerbankLeadership.leadershipHeading}} />
+            
+            <div id="leadership" className="position-relative d-none d-lg-block pt-2">
+                <div className="position-absolute w-100 pb-5 leadership-heading px-3" style={{top:0}} dangerouslySetInnerHTML={{__html: content.about.enerbankLeadership.leadershipHeading}} />
                 <img src={content.about.enerbankLeadership.leadershipBanner.sourceUrl} alt="Leader Banner" className="w-100 d-block" />
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1604.606 1005.106" className="position-absolute" style={{top:0, zIndex:99}}>
                     <g id="Group_1" data-name="Group 1" transform="translate(-156.5 -38.894)">
                         {content.about.boardOfDirectors.directors && (
                             content.about.boardOfDirectors.directors.map((item, i) => {
                                 return(
-                                    <OverlayTrigger
-                                        placement="bottom"
-                                        delay={{ show: 250, hide: 400 }}
-                                        overlay={popover(item)}
-                                        key={item.fieldGroupName + i}
-                                    >
-                                        <path id={svgCodes[i].id} data-name={'Path ' + i} d={svgCodes[i].data} fill="transparent" stroke="#707070" strokeWidth="0" onClick={showbenefitpopup(item, 'director')} />
-                                    </OverlayTrigger>
+                                    <PopoverStickOnHover component={
+                                        <Card className="py-2 px-3" style={{background: 'rgba(255, 255, 255, 0.85)'}}>
+                                            <h3 className="text-blue pb-1 mb-1" style={{borderBottom: '2px solid #0077C8', cursor: 'pointer'}} onClick={showbenefitpopup(item, 'director')} >{item.directorName}</h3>
+                                            <p className="text-sm mb-0">{item.directorPosition}</p>
+                                        </Card>
+                                    } placement={'bottom'} key={item.fieldGroupName + i}>
+                                        <path key={item.fieldGroupName + i} id={svgCodes[i].id} data-name={'Path ' + i} d={svgCodes[i].data} fill="transparent" stroke="#707070" strokeWidth="0"/>
+                                    </PopoverStickOnHover>
                                 )})
                             )
                         }
@@ -102,7 +90,7 @@ const About = ({data}) => {
             </div>
             <div className="container d-lg-none" id="leadership">
                 <div className="row mt-5">
-                <div className="w-100 pb-5 leadership-heading px-3" dangerouslySetInnerHTML={{__html: content.about.enerbankLeadership.leadershipHeading}} />
+                <div className="w-100 pb-3 leadership-heading px-3" dangerouslySetInnerHTML={{__html: content.about.enerbankLeadership.leadershipHeading}} />
                     {content.about.boardOfDirectors.directors && (
                         content.about.boardOfDirectors.directors.map((item, i) => {
                             return(
@@ -137,8 +125,8 @@ const About = ({data}) => {
                 </div>
             </section> */}
             {/* Community Involvement */}
-            <div className="container py-5 my-0 my-md-5 communityinvolvement" id="communityinvolvement">
-                <h3 className="h2 text-center mb-3">{content.about.communityInvolvement.ciHeading}</h3>
+            <div className="container pb-5 my-0 my-md-3 my-lg-5 communityinvolvement" id="communityinvolvement">
+                <h3 className="h2 text-center mb-5">{content.about.communityInvolvement.ciHeading}</h3>
                 <p>{content.about.communityInvolvement.ciBrif}</p>
                 <div className="row my-5">
                     <div className="gridgallery col-lg-12">

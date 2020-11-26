@@ -13,7 +13,6 @@ const HomeOwnerReferral = ({data}) => {
     const { register, handleSubmit, errors } = useForm();
     const handleClose = () => setShow(false);
     const onSubmit = (data, e) => {
-        console.log(data)
         var xhr = new XMLHttpRequest();
         var url = 'https://api.hsforms.com/submissions/v3/integration/submit/381510/c2c00221-fc69-48c4-bbd6-2135ae5bfcae'
         var sendData =  {
