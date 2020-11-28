@@ -831,16 +831,16 @@ display: flex; align-items: center; justify-content: center; }
 .news_media:after { background: rgba(77, 77, 77, 0.6) url(../images/about_eb_news-media-wht.svg) no-repeat center; }
 .blog:after { background: rgba(77, 77, 77, 0.6) url(../images/about_eb_blog-wht.svg) no-repeat center; }
 .mediaIcon{ display:flex; justify-content: space-between; margin: 20px auto 0; width: 150px; }
-.mediaIcon a{ font-size: 1.3rem; color:#4d4d4d; background: #fff; border-radius: 50%; width:40px; height:40px; display: flex; align-items: center; justify-content: center; border: 1px solid #fff;}
-.mediaIcon a:hover{ color:#999; background: #4d4d4d; border: 1px solid #999; }
+.mediaIcon button{ font-size: 1.3rem; color:#4d4d4d; background: #fff; border-radius: 50%; width:40px; height:40px; display: flex; align-items: center; justify-content: center; border: 1px solid #fff;}
+.mediaIcon button:hover{ color:#999; background: #4d4d4d; border: 1px solid #999; }
 @media (max-width:576px){
   .footer-rightpad img{ max-width:80%; }
-  .mediaIcon a{ width: 35px; height:35px; }
+  .mediaIcon button{ width: 35px; height:35px; }
 }
 .est-btn{ text-transform: uppercase; }
 /* paymentEstimator */
 #paymentEstimator .modal_content h2{ margin: 30px 0 20px; }
-.estimatorForm{ max-width: 500px; margin: 50px auto 0; }
+.estimatorForm{ max-width: 700px; margin: 30px auto 0; }
 .paymentEstimator{ border: 1px solid #0077C8; border-radius: 5px; overflow: hidden; }
 .paymentEstimator .formHeading, .paymentEstimator .formFooter{ background: #0077C8; border-radius: 5px 5px 0 0; padding: 10px; color:#fff; font-size: 28px; font-weight: 500; margin-bottom: 40px; }
 .paymentEstimator label{ font-weight:500; font-size:14px; text-align: right; }
