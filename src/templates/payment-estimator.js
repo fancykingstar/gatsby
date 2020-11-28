@@ -1,70 +1,126 @@
 import React, { useState } from "react"
+import { canUseDOM } from "react-helmet";
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 
 const PaymentEstimator = () => {
+	const digitOnly = /[0-9]/;
+	const [state, setState] = useState({
+		loanAmount: '',
+		totalYears: '',
+		interestRate: '',
+		monthlyPayment: ''
+	})
+	const isEnabled = !state.loanAmount.lenght && state.totalYears > 0 && !state.interestRate.lenght
 
-	const [loanAmount, setLoanAmount] = useState('');
-	const [totalYears, setTotalYears] = useState('');
-	const [interestRate, setInterestRate] = useState('');
-	const [monthlyPayment, setMonthlyPayment] = useState('');
-	const isEnabled = loanAmount > 0 && totalYears > 0 && interestRate > 0
+	const validDigit = (evt) => {
+		var val = getNumber(evt.target.value)
+		var result;
+        if (!digitOnly.test(val)) {
+            result = '0';
+        } else {
+            result = parseFloat(val);
+		}
+		return result;
+	}
+	var getNumber = (number) => {
+		return parseInt(number.replace("$","").replace("%","").replace(",",""));
+	}
 
-	const handleInput = (evt) => {
-		if(evt.target.name === 'loanAmount'){
-			setLoanAmount(evt.target.value)
-		}else if(evt.target.name === 'totalYears'){
-			setTotalYears(evt.target.value)
-		}else{
-			setInterestRate(evt.target.value)
+	const handleChangeInput = (evt) =>{		
+		const inputValue = validDigit(evt);
+		const inputId = evt.target.id;
+		handleInput(evt, inputId, inputValue);
+	}
+
+	const handleInput = (evt, ele, val) => {
+		console.log(val.toString().indexOf('%') === -1)
+		switch(ele) {
+			case "loanAmount":
+				setState({
+					...state,
+					loanAmount: parseFloat(val) > 0 ? '$' + parseFloat(val) : 0,
+				})
+				break
+			case "totalYears":
+				setState({
+					...state,
+					totalYears: parseFloat(val),
+				})
+				break
+			case "interestRate":
+				setState({
+					...state,
+					interestRate: parseFloat(val),
+				})
+				break;
+			default:
+				break;
+		}
+	}
+
+	const valueWithSign = (event) => {
+		console.log('hi')
+		if(event.target.name === 'interestRate'){
+			setState({
+				...state,
+				interestRate: event.target.value > 0 ? event.target.value + '%' : 0,
+			})
 		}
 	}
 
 	const estimateCalc = (e) => {
 		e.preventDefault();
+		const totalYears = state.totalYears
+		const loanAmount = state.loanAmount ? state.loanAmount.replace("$","") : ''
+		const interestRate = state.interestRate ? state.interestRate.replace("%","") : ''
+
 		const totalMonth = totalYears * 12;
 		const totalPayment = (Number(loanAmount) + (Number(loanAmount) * interestRate) / 100) / totalMonth
-		setMonthlyPayment(totalPayment ? totalPayment.toFixed(2) : 0)
+		setState({
+			...state,
+			monthlyPayment: totalPayment ? totalPayment.toFixed(2) : 0
+		})
 	}
 
 	return (
 		<Layout>
 			<SEO title={'Payment Estimator'} description={''} />
-			<h2 className="h2 text-white font-weight-bold">Enerbank Payment Estimator</h2>
-			<div className="p-5 pb-0 pt-sm-4 text-center">
-				<p className="text-center">Generate a monthly payment estimate — <br/>just plug in the relevant numbers and hit <strong className="text-blue">Calculate!</strong></p>
-				<form className="estimatorForm">
+			<section className="container">
+				<h1 className="text-center mt-5 mb-1">Enerbank Payment Estimator</h1>
+				<p className="text-center">Generate a monthly payment estimate — just plug in the relevant numbers and hit <strong className="text-blue">Calculate!</strong></p>
+				<form className="estimatorForm text-center">
 					<div className="paymentEstimator">
 						<div className="formHeading">Payment Estimator Tool</div>
 						<div className="formMiddle">
 							<div className="form-group row">
-								<label htmlFor="staticEmail" className="col-sm-6 col-form-label">Total Loan Amount</label>
-								<div className="col-sm-6"> {/* (e)=> setLoanAmount(e.target.value) */}
-									<input type="number" className="form-control" name="loanAmount" id="loanAmount" placeholder="0" value={loanAmount} onChange={handleInput} />
+								<label htmlFor="staticEmail" className="col-sm-6 col-md-4 col-form-label">Total Loan Amount</label>
+								<div className="col-sm-6 col-md-8"> {/* (e)=> setLoanAmount(e.target.value) */}
+									<input type="text" className="form-control" name="loanAmount" id="loanAmount" placeholder="0" value={state.loanAmount} onChange={handleChangeInput} />
 								</div>
 							</div>
 							<div className="form-group row">
-								<label htmlFor="inputPassword" className="col-sm-6 col-form-label">Total Number of Years</label>
-								<div className="col-sm-6"> {/* (e)=> setTotalYears(e.target.value) */}
-									<input type="number" className="form-control" name="totalYears" id="noOfYears" placeholder="0" value={totalYears} onChange={handleInput} />
+								<label htmlFor="inputPassword" className="col-sm-6 col-md-4 col-form-label">Total Number of Years</label>
+								<div className="col-sm-6 col-md-8"> {/* (e)=> setTotalYears(e.target.value) */}
+									<input type="number" className="form-control" name="totalYears" id="totalYears" placeholder="0" value={state.totalYears} onChange={handleChangeInput} />
 								</div>
 							</div>
 							<div className="form-group row">
-								<label htmlFor="inputPassword" className="col-sm-6 col-form-label">Interest Rate %(APR)</label>
-								<div className="col-sm-6"> {/* (e)=> setInterestRate(e.target.value) */}
-									<input type="number" className="form-control" name="interestRate" id="interestRate" placeholder="0" value={interestRate} onChange={handleInput} />
+								<label htmlFor="inputPassword" className="col-sm-6 col-md-4 col-form-label">Interest Rate %(APR)</label>
+								<div className="col-sm-6 col-md-8"> {/* (e)=> setInterestRate(e.target.value) */}
+									<input type="text" className="form-control" name="interestRate" id="interestRate" placeholder="0" value={state.interestRate} onChange={handleChangeInput} onBlur={valueWithSign} />
 								</div>
 							</div>
 							<div className="form-group row">
-								<div className="col-sm-6 ml-auto text-left">
+								<div className="col-sm-3 col-md-8 ml-auto text-left">
 									<button className="btn btn-primary px-4 py-1" disabled={!isEnabled} onClick={estimateCalc}>Calculate</button>
 								</div>
 							</div>
 						</div>
 						<div className="formFooter">
 							<div className="form-group row m-0">
-								<div className="col-sm-6 col-form-label">Monthly Payment</div>
-								<div className="col-sm-6 text-left py-2">{monthlyPayment}</div>
+								<div className="col-sm-6 col-md-4 col-form-label">Monthly Payment</div>
+								<div className="col-sm-6 col-md-8 text-left py-2">{'$ ' + state.monthlyPayment}</div>
 							</div>
 						</div>
 						<div className="formMiddle mt-4" style={{display: 'none'}}>
@@ -81,9 +137,9 @@ const PaymentEstimator = () => {
 							</div> */}
 						</div>
 					</div>
-					<p>*The monthly payment calculations provided here are estimates only. The exact loan payment amount will be determined by EnerBank USA at time of application. The accuracy of these calculations is not guaranteed nor is its applicability to your individual circumstances. You should always obtain personal advice from qualified professionals.</p>
+					<p className="mb-5">*The monthly payment calculations provided here are estimates only. The exact loan payment amount will be determined by EnerBank USA at time of application. The accuracy of these calculations is not guaranteed nor is its applicability to your individual circumstances. You should always obtain personal advice from qualified professionals.</p>
 				</form>
-			</div>
+			</section>
 		</Layout>
 	)
 }
