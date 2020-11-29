@@ -1,5 +1,5 @@
 import React, { useState } from "react"
-import { canUseDOM } from "react-helmet";
+// import { canUseDOM } from "react-helmet";
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 
@@ -34,7 +34,6 @@ const PaymentEstimator = () => {
 	}
 
 	const handleInput = (evt, ele, val) => {
-		console.log(val.toString().indexOf('%') === -1)
 		switch(ele) {
 			case "loanAmount":
 				setState({
@@ -60,7 +59,6 @@ const PaymentEstimator = () => {
 	}
 
 	const valueWithSign = (event) => {
-		console.log('hi')
 		if(event.target.name === 'interestRate'){
 			setState({
 				...state,
@@ -120,7 +118,7 @@ const PaymentEstimator = () => {
 						<div className="formFooter">
 							<div className="form-group row m-0">
 								<div className="col-sm-6 col-md-4 col-form-label">Monthly Payment</div>
-								<div className="col-sm-6 col-md-8 text-left py-2">{'$ ' + state.monthlyPayment}</div>
+								<div className="col-sm-6 col-md-8 text-left py-2">{state.monthlyPayment ? '$ ' + state.monthlyPayment : ''}</div>
 							</div>
 						</div>
 						<div className="formMiddle mt-4" style={{display: 'none'}}>
