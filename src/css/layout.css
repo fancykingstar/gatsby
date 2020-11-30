@@ -700,7 +700,7 @@ display: flex; align-items: center; justify-content: center; }
 #loantypeExample .card-body{padding-left: 0 !important;padding-right: 0 !important;}
 #loantypeExample .card-body h4{margin-bottom: 20px;}
 
-.accordion-content { color: #4d4d4d; }
+.accordion-content { color: #4d4d4d !important; }
 .accordion-animator{ margin-bottom: 10px !important; }
 .accordion-content ul{ list-style: disc !important; }
 
