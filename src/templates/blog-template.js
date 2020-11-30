@@ -14,6 +14,7 @@ const BlogPage = ({data}) => {
   const [show, setShow] = useState(false);
   const [message, setMessage] = useState(false);
   const { register, handleSubmit, errors } = useForm();
+  const { register: register2, handleSubmit: handleSubscribe, errors: errors2 } = useForm();
   const handleClose = () => setShow(false);
   const onSubmit = (data, e) => {
       var xhr = new XMLHttpRequest();
@@ -67,6 +68,43 @@ const BlogPage = ({data}) => {
       }
       xhr.send(finel_data);
   }
+
+  const onSubmitEmail = (data, e) => {
+    var xhr = new XMLHttpRequest();
+      var url = 'https://api.hsforms.com/submissions/v3/integration/submit/381510/a14474d3-8b5a-4392-9713-c806454971a6'
+      var sendData =  {
+          "fields": [
+              {
+                  'name': 'email',
+                  'value': data.email,
+              },
+          ],
+      }
+      var finel_data = JSON.stringify(sendData);
+      xhr.open('POST', url);
+      xhr.setRequestHeader('Content-Type', 'application/json');
+      xhr.setRequestHeader('Access-Control-Allow-Origin', '*');
+      xhr.setRequestHeader('Access-Control-Allow-Methods', 'POST');
+      xhr.onreadystatechange = function(){        
+          if(xhr.readyState === 4 && xhr.status === 200){
+              // alert(xhr.responseText.split('"', 4)[3]);
+              setMessage(xhr.responseText.split('"', 4)[3])
+              setShow(true);
+              e.target.reset();
+          }else if(xhr.readyState === 4 && xhr.status === 400){
+              setMessage(JSON.parse(xhr.responseText).errors[0].message);
+              setShow(true);
+          }else if(xhr.readyState === 4 && xhr.status === 403){
+              setMessage(xhr.responseText);
+              setShow(true);
+          }else if(xhr.readyState === 4 && xhr.status === 404){
+              setMessage(xhr.responseText);
+              setShow(true);
+          }
+      }
+      xhr.send(finel_data);
+  }
+
   return (
     <Layout>
       <SEO title={data.wpgraphql.post.title} description={data.wpgraphql.post.excerpt}/>
@@ -79,7 +117,7 @@ const BlogPage = ({data}) => {
                 </div>
                 <div className="col-12 col-md-6">
                   <form className="row formtop">
-                    <div className="col-12 col-md-6">
+                    <div className="col-12 col-md-6 d-none">
                       <label htmlFor="serchBlog">Search Blog</label>                      
                       <div className="input-group">
                         <input type="text" name="serchBlog" id="serchBlog" className="form-control border-right-0" placeholder="Search Blog" />
@@ -90,14 +128,27 @@ const BlogPage = ({data}) => {
                         </div>
                       </div>
                     </div>
-                    <div className="col-12 col-md-6">
-                      <label htmlFor="subscribeEmail">Subscribe to Email Updates</label>                      
-                      <div className="input-group">
-                        <input type="text" name="subscribeEmail" id="subscribeEmail" className="form-control border-right-0" placeholder="Email Address" />
-                        <div className="input-group-append">
-                          <span className="input-group-text bg-blue border-0" id="basic-addon2">Go</span>
+                    <div className="col-12 col-md-6 ml-auto">
+                      <label htmlFor="subscribeEmail">Subscribe to Email Updates</label>
+                      <form onSubmit={handleSubscribe(onSubmitEmail)}>
+                        <div className="input-group">
+                          <input
+                              name="email"
+                              type="email"
+                              id="email"
+                              className={errors2.email && errors2.email.type === "required" ? 'form-control border-right-0 is-invalid' : 'form-control border-right-0'}
+                              aria-invalid={errors2.email ? "true" : "false"}
+                              ref={register2({ required: true })}
+                              placeholder="Email Address"
+                          />
+                          <div className="input-group-append">
+                              <button className="btn btn-primary text-white border-0">Go</button>
+                          </div>
+                          {errors2.email && errors2.email.type === "required" && (
+                              <span role="alert" className="small invalid-feedback">Email is required</span>
+                          )}
                         </div>
-                      </div>
+                      </form>
                     </div>
                   </form>
                 </div>
