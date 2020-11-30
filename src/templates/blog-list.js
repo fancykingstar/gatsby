@@ -170,8 +170,9 @@ const CareerPage = ({data}) => {
                       return(
                         <div key={item.node.id}>
                           {item.node.featuredImage ? <img src={item.node.featuredImage.sourceUrl} alt="item.node.featuredImage.altText" className="w-100 mb-4" /> : ''}
-                          <h3 className="text-blue mb-2"><Link to={item.node.slug}>{item.node.title}</Link></h3>
+                          <h3 className="text-blue mb-2"><a href={item.node.slug}>{item.node.title}</a></h3>
                           <div dangerouslySetInnerHTML={{ __html: item.node.excerpt }} />
+                          <a href={item.node.slug} className="btn-link p-0">Read More</a>
                         </div>
                       )
                     }
