@@ -71,8 +71,8 @@ const Feedback = () => {
         <SEO title={'Feedback'} description={'America\'s home improvement lender of choice'}/>
         <section className="container my-5 p-4">
             <div className="col-lg-10 mx-auto">
-                <h1 className="text-center mb-5">Comments and Questions</h1>
-                <p className="mb-0 text-blue font-weight-bold">Question about a loan? Have a comment? We want to hear from you.</p>
+                <h1 className="text-center mb-5">Like What You See?</h1>
+                <p className="mb-0 text-blue font-weight-bold">Learn more about how our unbeatable choice of payment options can increase leads, boost close rate, and grow average project size. Complete the form below and we’ll be in touch to get you started.</p>
                 <p className="small text-warning mb-5">*indicates required fields</p>
         
                 <form onSubmit={handleSubmit(onSubmit)}>
@@ -155,7 +155,7 @@ const Feedback = () => {
                             )}
                         </div>
                     </div>
-                    <div className="form-group small text-muted">Please do not provide confidential information via this form. We'll contact you to discuss the detail of your inquiry.</div>
+                    {/* <div className="form-group small text-muted">Please do not provide confidential information via this form. We'll contact you to discuss the detail of your inquiry.</div> */}
                     <div className="form-group">
                         <button className="btn btn-primary px-4">Submit</button>
                     </div>
