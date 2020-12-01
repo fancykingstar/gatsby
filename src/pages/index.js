@@ -90,7 +90,7 @@ const IndexPage = ({data}) => {
               (
                 <div className="col-lg-4 pb-4 p-md-0" key={item.fieldGroupName+i}>
                   <div className="single-offer card-body">
-                    <i className="icon_circil">
+                    <i className="icon_circle">
                       <img className="img-fluid" src={item.businessIcon.sourceUrl} alt={item.businessIcon.altText} />
                     </i>
                     <div className="py-4" dangerouslySetInnerHTML={{ __html: item.businessContent }}></div>
