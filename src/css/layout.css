@@ -278,7 +278,7 @@ body.mobile-nav-active #mobile-nav-toggle { color: #fff }
 .single-offer { padding: 40px 30px 30px; margin:0 25px; border-radius: 0px; background-color: #fff; box-shadow: 0px 2px 8px 0px rgba(0,121,94,.2);
     text-align: center;	height:100%; }
 .single-offer > div{ flex: 1 1 auto;  }
-.single-offer i.icon_circil{ border-radius:50%; width:85px; height:85px; background:#0077C8; text-align:center;margin:auto; line-height: 79px; }
+.single-offer i.icon_circle{ border-radius:50%; width:85px; height:85px; background:#0077C8; text-align:center;margin:auto; line-height: 79px; }
 .single-offer h4 { padding: 30px 0; font-size:20px; font-weight:500; color:#0077C8; letter-spacing:0;}
 .single-offer p{ font-size:16px; line-height:24px; }
 .single-offer:hover{box-shadow: 0px 2px 10px 0px rgba(0,121,94,.35);}
