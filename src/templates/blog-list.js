@@ -169,7 +169,7 @@ const CareerPage = ({data}) => {
                     if(i === 0){
                       return(
                         <div key={item.node.id}>
-                          {item.node.featuredImage ? <img src={item.node.featuredImage.sourceUrl} alt="item.node.featuredImage.altText" className="w-100 mb-4" /> : ''}
+                          {item.node.featuredImage ? <a href={item.node.slug}><img src={item.node.featuredImage.sourceUrl} alt="item.node.featuredImage.altText" className="w-100 mb-4" /></a> : ''}
                           <h3 className="text-blue mb-2"><a href={item.node.slug}>{item.node.title}</a></h3>
                           <div dangerouslySetInnerHTML={{ __html: item.node.excerpt }} />
                           <a href={item.node.slug} className="btn-link p-0">Read More</a>
@@ -263,19 +263,17 @@ const CareerPage = ({data}) => {
             <div className="row">
                 {
                   data.wpgraphql.posts.edges.sort( (a, b) => b.node.date - a.node.date ).map((item, i) => {
-                    // if(i < 10){
+                    if(i > 10){
                       return(
                           <div className="col-md-6 col-lg-4 mb-5 blog-post" key={item.node.id} >
-                            {item.node.featuredImage ? <img src={item.node.featuredImage.sourceUrl} alt="item.node.featuredImage.altText" /> : ''}
-                            <h3 className="text-blue mt-4"><a href={item.node.slug}>{item.node.title}</a></h3>
-                            <strong className="mb-2">
-                                {moment(item.node.date).format("MMMM D, Y")}
-                            </strong>
-                            <div  dangerouslySetInnerHTML={{__html: item.node.excerpt}} className="mb-auto" />
-                            <a href={item.node.slug} className="btn-link p-0">Read More</a>
+                              {item.node.featuredImage ? <a href={item.node.slug} className="btn-link p-0"><img src={item.node.featuredImage.sourceUrl} alt="item.node.featuredImage.altText" /></a> : ''}
+                              <h3 className="text-blue mt-4"><a href={item.node.slug}>{item.node.title}</a></h3>
+                              <strong className="mb-2">{moment(item.node.date).format("MMMM D, Y")}</strong>
+                              <div  dangerouslySetInnerHTML={{__html: item.node.excerpt}} className="mb-auto" />
+                              <a href={item.node.slug} className="btn-link p-0">Read More</a>
                           </div>
                       )
-                    // }
+                    }
                   })
                 }          
               {/* <Pagination records_per_page={10} objLength={data.wpgraphql.posts.edges.length} currentPage={1} /> */}
