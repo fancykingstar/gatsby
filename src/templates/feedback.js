@@ -200,7 +200,7 @@ const Feedback = () => {
         <Modal show={show} onHide={handleClose}>
             <Modal.Body className="p-4 mt-5 text-center" dangerouslySetInnerHTML={{__html: message}} />
             <Modal.Footer className="border-0">
-                <Button variant="primary mb-3 mx-auto" onClick={handleClose}>OK</Button>
+                <Button variant="primary mb-3 mx-auto" onClick={handleClose}>Ok</Button>
             </Modal.Footer>
         </Modal>
     </Layout>

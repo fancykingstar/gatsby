@@ -173,7 +173,7 @@ const LoanProgramPage = ({ data }) => {
 				{node.loan_program.paymentOptionsBenefits.paymentOptionBrif && (
 					<div className="row">
 						<div className="mx-auto col-12 col-md-11 my-3 my-lg-5 py-3">
-							<div className="font-weight-bold" dangerouslySetInnerHTML={{ __html: node.loan_program.paymentOptionsBenefits.paymentOptionBrif }} />
+							<div dangerouslySetInnerHTML={{ __html: node.loan_program.paymentOptionsBenefits.paymentOptionBrif }} />
 						</div>
 					</div>
 				)}
