@@ -209,6 +209,11 @@ exports.createPages = async ({ graphql, actions }) => {
           path: "do-not-sell-my-info",
           component: path.resolve(`./src/templates/doNotSellMyInfo.js`),
         })
+
+        createPage({
+          path: "refferal-thank-you",
+          component: path.resolve(`./src/templates/refferal-thank-you.js`),
+        })        
   });
 
   /** Create Blog Posts **/

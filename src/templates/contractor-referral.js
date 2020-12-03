@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useForm } from "react-hook-form";
 import { Modal, Button } from 'react-bootstrap'
-import { graphql } from "gatsby";
+import { graphql, navigate } from "gatsby";
 
 import Layout from "../components/layout"
 import SEO from "../components/seo"
@@ -83,11 +83,12 @@ const HomeOwnerPage = ({data}) => {
         xhr.onreadystatechange = function(){
             if(xhr.readyState === 4 && xhr.status === 200){
                 // alert(xhr.responseText.split('"', 4)[3]);
-                setMessage(xhr.responseText.split('"', 4)[3])
-                setShow(true);
-                e.target.reset();
+                // setMessage(xhr.responseText.split('"', 4)[3])
+                // setShow(true);
+                // e.target.reset();
+                navigate('refferal-thank-you');
             }else if(xhr.readyState === 4 && xhr.status === 400){
-                console.log(JSON.parse(xhr.responseText).errors[0].message)
+                // console.log(JSON.parse(xhr.responseText).errors[0].message)
                 setMessage(JSON.parse(xhr.responseText).errors[0].message);
                 setShow(true);
             }else if(xhr.readyState === 4 && xhr.status === 403){
