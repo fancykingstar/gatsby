@@ -201,7 +201,7 @@ const LoanProgramPage = ({ data }) => {
 						{node.loan_program.offeringPaymentOption.map((item, i) => (
 							(i === 0) 
 								?
-									<div key={item.fieldGroupName + i} className="box-shadow bg-white rounded text-center col-12 col-md-6 p-0 mb-3 mx-auto">
+									<div key={item.fieldGroupName + i} className="box-shadow bg-white rounded text-center col-12 col-md-5 p-0 mb-3 mx-auto">
 										<Link to={'/'} onClick={showbenefitpopup(item, 'growthCalc')}>
 											<div className="bg-blue p-5 mx-3 mx-md-auto rounded-top">
 												<img className="img-fluid" src={item.offeringPaymentIcon.sourceUrl} alt="Growth Calculator icon" />
@@ -272,7 +272,7 @@ const LoanProgramPage = ({ data }) => {
 												<p className="card-text mb-3 mt-auto" dangerouslySetInnerHTML={{ __html: item.programMethodBrif }} />
 											</div>
 											{(() => (
-												!item.popSlug ? 
+												item.popSlug === 'dealer-resource-center' ? 
 													<button className="border-0 rounded-bottom bg-blue text-white text-lg py-3" onClick={showbenefitpopup(programMethod[i], item.popSlug)}>Coming Soon</button>
 												:
 													<button className="btn-link text-lg py-3" onClick={showbenefitpopup(programMethod[i], item.popSlug)}>Learn More</button>
@@ -369,7 +369,7 @@ const LoanProgramPage = ({ data }) => {
 							return(
 								<div className="col-md-6 col-lg-4 mb-4 mb-lg-0" key={item.fieldGroupName+i}>
 									<div className="single-offer card-body rounded">
-										<i className="icon_circil">
+										<i className="icon_circle">
 											<img className="img-fluid" src={item.serviceIcon.sourceUrl} alt="News" />
 										</i>
 										<h4>{item.serviceHeading}</h4>
@@ -463,7 +463,7 @@ const LoanProgramPage = ({ data }) => {
 						return(
 							<div className="col-md-6 col-lg-4 mb-4 mb-lg-0" key={item.fieldGroupName+i}>
 								<div className="single-offer card-body">
-									<i className="icon_circil">
+									<i className="icon_circle">
 										<img className="img-fluid" src={item.rightChoiceIcon.sourceUrl} alt="item.serviceIcon.altText" />
 									</i>
 									<div className="py-4 flex-fill" dangerouslySetInnerHTML={{__html: item.rightChoiceDesc}} />

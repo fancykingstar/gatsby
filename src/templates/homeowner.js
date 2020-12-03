@@ -1,18 +1,15 @@
 import React, { useState } from "react";
-
-import { Link } from "gatsby";
-import { graphql } from "gatsby";
+import { graphql, Link } from "gatsby";
+import { Modal } from 'react-bootstrap';
+import { Collapse } from 'reactstrap';
 
 import { Tabbordion, TabPanel, TabLabel, TabContent } from 'react-tabbordion';
-import "react-tabbordion/demo/accordion.css";
+// import "react-tabbordion/demo/accordion.css";
 
-import { Collapse } from 'reactstrap';
-// , Button, CardBody, Card
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import Video from "../components/video";
 import close_icon from '../images/closed_icon-blue.svg'
-import { Modal } from 'react-bootstrap';
 
 // accordian
 const blockElements = {
@@ -25,12 +22,6 @@ const blockElements = {
 const HomeOwnerPage = ({data}) => {
     const node = data.wpgraphql.page;
     const [collapse, setCollapse] = useState(false);
-    // const [status, setStatus] = useState('Closed');
-    // const onEntering = () => setStatus('Opening...');
-    // const onEntered = () => setStatus('Opened');
-    // const onExiting = () => setStatus('Closing...');
-    // const onExited = () => setStatus('Closed');
-
     const [accLogin, togglePanel] = useState(false);
     const loginForm = () => {
       togglePanel(true);

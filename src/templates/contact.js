@@ -28,7 +28,6 @@ const CareerPage = ({data, props}) => {
       <section  className="container">
         <h1 className="text-center mt-md-4 py-5">Contact Us</h1>
         <div className="row">
-        {/*  mode={'toggle'} */}
         <Tabbordion blockElements={blockElements} animateContent={'height'} className="accordion loan_offer mx-4 mx-lg-5" name="accordion">
           {data.wpgraphql.page.contact.supportSection.map((item, i) => {
             return(
