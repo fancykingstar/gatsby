@@ -572,7 +572,7 @@ body.mobile-nav-active #mobile-nav-toggle { color: #fff }
 .text-md { font-size: 18px; font-weight: 500; line-height: 24px; }
 .text-lg { font-size: 22px; font-weight: 500; line-height: 28px; }
 .modal_banner { background-size: cover; position: relative; }
-.modal_banner:before { content: ""; position: absolute; left: 0; top: 0; width: 100%; height: 100%; z-index: 99; background-size:15% !important; }
+.modal_banner:before { content: ""; position: absolute; left: 0; top: 0; width: 100%; height: 100%; z-index: 99; background-size: 115px !important; }
 .modal_banner p { position: absolute; width: 100%; left: 0; bottom: 30px; z-index: 2; text-align: center; color:#fff; z-index: 99; font-size:24px; }
 
 .portal_list { margin: 0 0 30px 20px; padding: 0; list-style: disc; list-style-position: inside; }
@@ -582,14 +582,14 @@ body.mobile-nav-active #mobile-nav-toggle { color: #fff }
   .portal_list li{ width: 100%; float: none; }
 }
 
-#dealerPage h4 { font-weight: 500; font-size: 24px; margin: 0 auto; margin-bottom: 25px !important; }
+/* #dealerPage h4 { font-weight: 500; font-size: 24px; margin: 0 auto; margin-bottom: 25px !important; }
 .dealerResource { margin: 0 15px; padding: 20px 20px 10px; height: 100%; position: relative; box-shadow: 0 0 6px #aaa; }
 .dealerResource img { margin: 0 auto; max-width: 70px; display: block; }
 .dealerResource div { font-size: 15px; font-weight: bold; line-height: normal; height: 30px; margin: 15px 0; }
 .dealerResource p { font-size: 12px; line-height: 18px; text-align: center; }
 .dealerResource a { background: #007ac2; color: #fff; font-size: 13px; display: inline-block; margin: 0 auto; padding: 0px 20px;
     border-radius: 5px; position: absolute; bottom: 30px; left: 50%; transform: translateX(-50%); 
-}
+} */
 .start_drc { color: #fff; text-align: center; /*padding: 30px 25px 50px;*/ }
 .start_drc div { font-size: 24px; font-weight: 500; }
 .start_drc p { font-size: 13px; line-height: normal; margin: 15px 0 35px; }
@@ -669,7 +669,7 @@ body.mobile-nav-active #mobile-nav-toggle { color: #fff }
 #dealerPopup .modal_banner p{ position: absolute; width:100%; left:0; bottom:30px; z-index:2; text-align: center; }
 /* #dealerPopup .modal_banner:before{ content: ""; position: absolute; left: 0; top: 0; width: 100%; height: 100%; z-index: 1; background: rgba(0,0,0,0.4) url(../images/dealer-resource-center.svg) no-repeat center calc(50% - 30px); background-size: 150px; } */
 #dealerPopup h4{ font-weight:500; font-size:24px; margin-bottom: 25px !important; }
-.dealerResource{ margin:0 15px; padding:20px 20px 70px; height:100%; position: relative; box-shadow: 0 0 6px #aaa; }
+.dealerResource{ margin:0 15px; padding:20px 20px 10px; height:100%; position: relative; box-shadow: 0 0 6px #aaa; }
 .dealerResource img{ margin:0 auto; max-width: 70px; display:block; }
 .dealerResource div{ font-size: 15px; font-weight: bold; line-height: normal; height: 30px; margin: 15px 0; }
 .dealerResource p{ font-size: 12px; line-height: 18px; text-align: center; }
