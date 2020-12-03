@@ -243,7 +243,7 @@ const LoanProgramPage = ({ data }) => {
 						</div>
 						<h3 className="h2 text-center f-bold color-blue border-heading mt-5 mb-3"><span>{node.loan_program.joinLoanProgram.sectionTitle}</span></h3>
 						{node.loan_program.joinLoanProgram.loanProgramMethods && (
-							<div className="row mt-4 mb-5 justify-content-center">
+							<div className="row mt-4 mb-md-5 justify-content-center">
 								{data.wpgraphql.popupplural.edges.map(cate => {
 									(cate.node.slug === "loanprogrammethods") && (
 										cate.node.popupPost.edges.map(post => {
