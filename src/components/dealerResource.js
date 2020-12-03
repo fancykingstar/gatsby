@@ -31,11 +31,11 @@ const DealerResource = (props) => {
 							</>
 						)}
 											
-						<div className="p-5 py-sm-5">
+						<div className="px-3 py-5 p-sm-5">
 							<div className="small line-height-normal text-center" dangerouslySetInnerHTML={{__html:props.popData.content}} />
 							<div className="row">
 								{props.popData.dealerresourcecenter.powerfulltool.map((item, i) => (
-									<div className="col-lg-4 d-flex flex-column mb-md-5 mb-lg-0" key={item.fieldGroupName + i} >
+									<div className="col-lg-4 d-flex flex-column mb-3 mb-md-4 mb-lg-0" key={item.fieldGroupName + i} >
 										<div className="border dealerResource rounded">                
 											<img src={item.sectionicon.sourceUrl} alt={item.sectionicon.slug} />
 											<div className="text-blue text-center">{item.sectiontitle}</div>
