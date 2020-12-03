@@ -1,7 +1,7 @@
 import React, { useState } from "react";
+import { graphql, navigate } from "gatsby";
 import { useForm } from "react-hook-form";
 import { Modal, Button } from 'react-bootstrap'
-import { graphql, navigate } from "gatsby";
 
 import Layout from "../components/layout"
 import SEO from "../components/seo"
@@ -117,7 +117,7 @@ const HomeOwnerPage = ({data}) => {
                     <div className="text-center" dangerouslySetInnerHTML={{__html: data.wpgraphql.page.referralform.contractorsInfoForm.formHeading}} />
                     <form className="contractor-form d-flex flex-wrap" onSubmit={handleSubmit(onSubmit)}>
                         {data.wpgraphql.page.referralform.contractorsInfoForm.formField.map((item, i) => {
-                            console.log(item.fieldName, errors[item.fieldName])
+                            // console.log(item.fieldName, errors[item.fieldName])
                             return(
                                 <div className="form-group col-12" key={item.fieldGroupName + i}>
                                     <label htmlFor={item.fieldName}>{item.fieldTitle} <span className="text-danger">*</span></label>

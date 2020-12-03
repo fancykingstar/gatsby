@@ -213,7 +213,7 @@ exports.createPages = async ({ graphql, actions }) => {
         createPage({
           path: "refferal-thank-you",
           component: path.resolve(`./src/templates/refferal-thank-you.js`),
-        })        
+        })
   });
 
   /** Create Blog Posts **/

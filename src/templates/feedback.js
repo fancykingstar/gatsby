@@ -61,7 +61,7 @@ const Feedback = () => {
                 setShow(true);
                 e.target.reset();
             }else if(xhr.readyState === 4 && xhr.status === 400){
-                console.log(JSON.parse(xhr.responseText).errors[0].message)
+                // console.log(JSON.parse(xhr.responseText).errors[0].message)
                 setMessage(JSON.parse(xhr.responseText).errors[0].message);
                 setShow(true);
             }else if(xhr.readyState === 4 && xhr.status === 403){

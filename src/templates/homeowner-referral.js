@@ -1,7 +1,7 @@
 import React, { useState } from "react";
+import { graphql, navigate } from "gatsby";
 import { useForm } from "react-hook-form";
 import { Modal, Button } from 'react-bootstrap'
-import { graphql, navigate } from "gatsby";
 
 import Layout from "../components/layout"
 import SEO from "../components/seo"
@@ -77,7 +77,7 @@ const HomeOwnerReferral = ({data}) => {
                 // e.target.reset();
                 navigate('refferal-thank-you');
             }else if(xhr.readyState === 4 && xhr.status === 400){
-                console.log(JSON.parse(xhr.responseText).errors[0].message)
+                // console.log(JSON.parse(xhr.responseText).errors[0].message)
                 setMessage(JSON.parse(xhr.responseText).errors[0].message);
                 setShow(true);
             }else if(xhr.readyState === 4 && xhr.status === 403){
@@ -124,7 +124,7 @@ const HomeOwnerReferral = ({data}) => {
                             <div className="text-center" dangerouslySetInnerHTML={{__html: data.wpgraphql.page.referralform.contractorsInfoForm.formHeading}} />
                             <form className="homeowner-form d-flex flex-wrap" onSubmit={handleSubmit(onSubmit)}>
                                 {data.wpgraphql.page.referralform.contractorsInfoForm.formField.map((item, i) => {
-                                    console.log(item.fieldName, errors[item.fieldName])
+                                    // console.log(item.fieldName, errors[item.fieldName])
                                     return(
                                         (i === 0 || i === 5)
                                             ?   
