@@ -40,7 +40,7 @@ const DealerResource = (props) => {
 											<img src={item.sectionicon.sourceUrl} alt={item.sectionicon.slug} />
 											<div className="text-blue text-center">{item.sectiontitle}</div>
 											<p>{item.sectioncontent}</p>
-											<Link to={'/'}>{item.sectionlink.title}</Link>
+											{/* <Link to={'/'}>{item.sectionlink.title}</Link> */}
 										</div>
 									</div>
 								))}
