@@ -1,6 +1,5 @@
 import React from 'react';
 import { Modal } from 'react-bootstrap';
-import { Link } from "gatsby";
 import close_icon from '../images/closed_icon.svg'
 
 const DealerResource = (props) => {

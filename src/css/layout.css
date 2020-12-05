@@ -252,9 +252,15 @@ body.mobile-nav-active #mobile-nav-toggle { color: #fff }
 
 .home-about-area2 { background-color: #0077C8 }
 .home-about-area2:after { position: absolute; content: ""; top: 0; left: 0; width: 48%; height: 100%; z-index: 1 }
+
+@media (max-width: 960px) {
+  .single-service { text-align: center; margin-bottom: 30px }
+  .home-about-area:after{ background:none; }
+}
 @media (max-width: 576px) {
   .home-about-area, .home-about-area2{ padding-top: 200px !important; }
-  .home-about-area:after, .home-about-area2:after { height:200px; width:100%; }
+  .home-about-area:after, .home-about-area2:after { height:200px; width:100%; } 
+  .home-about-area:after{ background:block; }
 }
 @media (max-width: 991px) {
     .home-about-area .justify-content-end { justify-content: flex-start !important }

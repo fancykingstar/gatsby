@@ -15,7 +15,8 @@ const blockElements = {
   label: 'accordion-title',
 }
 
-const CareerPage = ({data, props}) => {
+const CareerPage = ({data}) => {
+  // console.log(window.location.hash)
   return (  
     <Layout>
       <SEO title={data.wpgraphql.page.title} description={data.wpgraphql.page.excerpt}/>
