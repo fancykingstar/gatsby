@@ -63,13 +63,13 @@ const IndexPage = ({data}) => {
       <section className="home-about-area position-relative">
         <div className="container">
           <div className="row align-items-center justify-content-end py-md-4">
-            <div className="col-sm-3 p-5 py-md-0 px-md-3 gift_card text-center">
+            <div className="col-sm-3 col-md-5 p-5 py-md-0 px-md-3 gift_card text-center">
                 <img src={node.home_section.aboutArea[0].addLogo.sourceUrl} alt={node.home_section.aboutArea[0].addLogo.altText} />
             </div>
-            <div className="col-sm-9 col-lg-6 px-lg-0 home-about-right">
-              <div className="d-flex flex-column flex-sm-row">
-                  <div className="single-services col d-flex flex-column justify-content-center" dangerouslySetInnerHTML={{ __html: node.home_section.aboutArea[0].addText }} />
-                  <div className="single-services col align-item-center">
+            <div className="col-sm-9 col-md-7 col-lg-6 px-lg-0 home-about-right">
+              <div className="d-flex flex-column flex-lg-row">
+                  <div className="single-services d-flex flex-column justify-content-center" dangerouslySetInnerHTML={{ __html: node.home_section.aboutArea[0].addText }} />
+                  <div className="single-services align-item-center">
                     {node.home_section.aboutArea[0].anchorBtn.map((item, i) => {
                         return <Link to={item.addLink.url} key={item.fieldGroupName + i} className="btn d-block genric-btn primary my-4 f-bold" dangerouslySetInnerHTML={{ __html: item.addLink.title }} />
                     })}
@@ -86,18 +86,33 @@ const IndexPage = ({data}) => {
           </div>              
 
           <div className="row pt-5 pb-3">
-            { node.home_section.businessOption.businessBlock.map((item, i) => 
-              (
-                <div className="col-lg-4 pb-4 p-md-0" key={item.fieldGroupName+i}>
-                  <div className="single-offer card-body">
-                    <i className="icon_circle">
-                      <img className="img-fluid" src={item.businessIcon.sourceUrl} alt={item.businessIcon.altText} />
-                    </i>
-                    <div className="py-4" dangerouslySetInnerHTML={{ __html: item.businessContent }}></div>
-                    <Link to={item.businessButton.url} className="btn btn-primary f-bold">{item.businessButton.title}</Link>
+            { node.home_section.businessOption.businessBlock.map((item, i) => {
+              if(item.businessButton.url.indexOf("http://") === 0 || item.businessButton.url.indexOf("https://") === 0){
+                return (
+                  <div className="col-lg-4 pb-4 p-md-0" key={item.fieldGroupName+i}>
+                    <div className="single-offer card-body">
+                      <i className="icon_circle">
+                        <img className="img-fluid" src={item.businessIcon.sourceUrl} alt={item.businessIcon.altText} />
+                      </i>
+                      <div className="py-4" dangerouslySetInnerHTML={{ __html: item.businessContent }}></div>
+                      <a href={item.businessButton.url} target="_blank" className="btn btn-primary f-bold">{item.businessButton.title}</a>
+                    </div>
                   </div>
-                </div>
-              ) 
+                )
+              }else{
+                return (
+                  <div className="col-lg-4 pb-4 p-md-0" key={item.fieldGroupName+i}>
+                    <div className="single-offer card-body">
+                      <i className="icon_circle">
+                        <img className="img-fluid" src={item.businessIcon.sourceUrl} alt={item.businessIcon.altText} />
+                      </i>
+                      <div className="py-4" dangerouslySetInnerHTML={{ __html: item.businessContent }}></div>
+                      <Link to={item.businessButton.url} className="btn btn-primary f-bold">{item.businessButton.title}</Link>
+                    </div>
+                  </div>
+                )
+              }
+            }
             )}
           </div>
         </div>

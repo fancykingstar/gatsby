@@ -26,7 +26,7 @@ const Header = ({ siteTitle }) => {
                   <h4 className="modal-title mb-4 text-white" id="modalTitle">Borrower Account Log In</h4>
                   <div id="modalContent" className="small line-height-normal">
                     <p style={{lineHeight: 'normal'}}>If your account number starts with 456 <br/><a href="https://account.enerbank.com" rel="noopener noreferrer" target="_blank">Click Here </a></p>
-                    <p style={{lineHeight: 'normal'}}>Otherwise <br/><a href="https://enerbankpayments.com/" rel="noopener noreferrer">Click Here</a></p>
+                    <p style={{lineHeight: 'normal'}}>Otherwise <br/><a href="https://enerbankpayments.com/" rel="noopener noreferrer" target="_blank">Click Here</a></p>
                   </div>
               </div>
             )}            
