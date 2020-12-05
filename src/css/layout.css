@@ -175,6 +175,7 @@ body.mobile-nav-active #mobile-nav-toggle { color: #fff }
     #header #logo img { max-height: 50px }
 }
 @media (max-width: 767px) {
+  .navbar-toggler{ width: 40px; height: 35px; }
   #mobile-nav-toggle { top: 15px }
   .menu{ display: none; }
   .sticky-menu{ display: block; } 
@@ -232,11 +233,11 @@ body.mobile-nav-active #mobile-nav-toggle { color: #fff }
 .banner-img { text-align: right }
 @media (max-width: 767px) {
     .banner-img { width: 60%; text-align: center; margin-left: auto; margin-right: auto }
-    .header-btn a { max-width: 100%; }
+    .header-btn a { margin: 0 auto; }
     .header-btn br, .header-btn br:after{ content: ''; }
 }
 @media screen and (max-width:480px){
-  .header-btn a{ max-width:none; }
+  /* .header-btn a{ max-width:none; } */
 }
 .single-service h3 { padding: 20px 0; -webkit-transition: all 0.3s ease 0s; -moz-transition: all 0.3s ease 0s; -o-transition: all 0.3s ease 0s; transition: all 0.3s ease 0s; font-size: 18px }
 .single-service:hover { cursor: pointer }
@@ -254,16 +255,24 @@ body.mobile-nav-active #mobile-nav-toggle { color: #fff }
 .home-about-area2:after { position: absolute; content: ""; top: 0; left: 0; width: 48%; height: 100%; z-index: 1 }
 
 @media (max-width: 960px) {
-  .single-service { text-align: center; margin-bottom: 30px }
-  .home-about-area:after{ background:none; }
+  .single-service { text-align: center; margin-bottom: 30px }  
+}
+@media (max-width:1024px){
+  .home-about-area:after{ width: 26%; }
+}
+@media (max-width: 991px) {
+    .home-about-area .justify-content-end { justify-content: flex-start !important }
+}
+@media (max-width: 960px) and (min-width: 767px){
+  .home-about-area:after{ background:none !important; }
+}
+@media (max-width: 960px){
+  .home-about-area2:after{ width: 32%; }
 }
 @media (max-width: 576px) {
   .home-about-area, .home-about-area2{ padding-top: 200px !important; }
   .home-about-area:after, .home-about-area2:after { height:200px; width:100%; } 
   .home-about-area:after{ background:block; }
-}
-@media (max-width: 991px) {
-    .home-about-area .justify-content-end { justify-content: flex-start !important }
 }
 .home-about-area h1 { margin-bottom: 20px }
 .home-about-area .home-about-right { max-width: 580px; }
@@ -275,7 +284,7 @@ body.mobile-nav-active #mobile-nav-toggle { color: #fff }
 .home-about-area .single-services p, .home-about-area2 .single-services p{ color:#fff; font-size:16px; line-height:24px; font-weight:400; margin: 0; }
 .home-about-area .single-services .lnr { margin-top: 30px; font-size: 30px; color: #29A9E0 }
 @media (max-width: 414px) {
-    .home-about-area .single-services p { font-size: 12px; width: 88% }
+    .home-about-area .single-services p { width: 88% }
     .single-services a{ line-height: normal; padding: 12px; }
 }
 
