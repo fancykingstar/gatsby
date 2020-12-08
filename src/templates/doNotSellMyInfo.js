@@ -117,7 +117,7 @@ const Feedback = () => {
                     </div>
                     <div className="form-group row">
                         <div className="col-lg-6">
-                            <label className="font-weight-bold small" htmlFor="firstName">Last 4 of SS#<span className="text-danger">*</span></label>
+                            <label className="font-weight-bold small" htmlFor="lastFourOf">Last 4 of SS#<span className="text-danger">*</span></label>
                             <input
                                 name="lastFourOf"
                                 type="text"
@@ -131,7 +131,7 @@ const Feedback = () => {
                             )}
                         </div>
                         <div className="col-lg-6">
-                            <label className="font-weight-bold small" htmlFor="lastName">Date of birth<span className="text-danger">*</span></label>
+                            <label className="font-weight-bold small" htmlFor="dateOfBirth">Date of birth<span className="text-danger">*</span></label>
                             <input
                                 name="dateOfBirth"
                                 type="text"
@@ -147,7 +147,7 @@ const Feedback = () => {
                     </div>
                     <div className="form-group row">
                         <div className="col-lg-12">
-                            <label className="font-weight-bold small" htmlFor="firstName">Address<span className="text-danger">*</span></label>
+                            <label className="font-weight-bold small" htmlFor="address">Address<span className="text-danger">*</span></label>
                             <input
                                 name="address"
                                 type="text"
@@ -163,7 +163,7 @@ const Feedback = () => {
                     </div>
                     <div className="form-group row">
                         <div className="col-lg-4">
-                            <label className="font-weight-bold small" htmlFor="firstName">City<span className="text-danger">*</span></label>
+                            <label className="font-weight-bold small" htmlFor="city">City<span className="text-danger">*</span></label>
                             <input
                                 name="city"
                                 type="text"
@@ -177,7 +177,7 @@ const Feedback = () => {
                             )}
                         </div>
                         <div className="col-lg-4">
-                            <label className="font-weight-bold small" htmlFor="lastName">State<span className="text-danger">*</span></label>
+                            <label className="font-weight-bold small" htmlFor="state">State<span className="text-danger">*</span></label>
                             <input
                                 name="state"
                                 type="text"
@@ -191,7 +191,7 @@ const Feedback = () => {
                             )}
                         </div>
                         <div className="col-lg-4">
-                            <label className="font-weight-bold small" htmlFor="lastName">Zipcode<span className="text-danger">*</span></label>
+                            <label className="font-weight-bold small" htmlFor="zipcode">Zipcode<span className="text-danger">*</span></label>
                             <input
                                 name="zipcode"
                                 type="text"
@@ -221,7 +221,7 @@ const Feedback = () => {
                             )}
                         </div>
                         <div className="col-lg-6">
-                            <label className="font-weight-bold small" htmlFor="phone">Phone Number<span className="text-danger">*</span></label>
+                            <label className="font-weight-bold small" htmlFor="phoneNumber">Phone Number<span className="text-danger">*</span></label>
                             <input
                                 name="phoneNumber"
                                 type="tel"
