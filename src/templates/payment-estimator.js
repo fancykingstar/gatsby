@@ -14,43 +14,45 @@ const PaymentEstimator = () => {
 	const isEnabled = !state.loanAmount.lenght && state.totalYears > 0 && !state.interestRate.lenght
 
 	const validDigit = (evt) => {
-		var val = getNumber(evt.target.value)
-		var result;
-        if (!digitOnly.test(val)) {
-            result = '0';
-        } else {
-            result = parseFloat(val);
-		}
-		return result;
+		// var val = getNumber(evt.target.value)
+		// var result;
+        // if (!digitOnly.test(val)) {
+        //     result += '';
+        // } else {
+        //     result = val;
+		// }
+		// return result;
 	}
 	var getNumber = (number) => {
-		return parseInt(number.replace("$","").replace("%","").replace(",",""));
+		return number.replace("$","").replace("%","").replace(",","");
 	}
 
 	const handleChangeInput = (evt) =>{		
-		const inputValue = validDigit(evt);
+		// const inputValue = validDigit(evt);
+		const inputValue = evt.target.value;
 		const inputId = evt.target.id;
 		handleInput(evt, inputId, inputValue);
 	}
 
 	const handleInput = (evt, ele, val) => {
+		console.log(getNumber(val))
 		switch(ele) {
 			case "loanAmount":
 				setState({
 					...state,
-					loanAmount: parseFloat(val) > 0 ? '$' + parseFloat(val) : 0,
+					loanAmount: getNumber(val) > 0 ? '$' + getNumber(val) : val + '',
 				})
 				break
 			case "totalYears":
 				setState({
 					...state,
-					totalYears: parseFloat(val),
+					totalYears: val,
 				})
 				break
 			case "interestRate":
 				setState({
 					...state,
-					interestRate: parseFloat(val),
+					interestRate: parseInt(val),
 				})
 				break;
 			default:
@@ -116,9 +118,9 @@ const PaymentEstimator = () => {
 							</div>
 						</div>
 						<div className="formFooter">
-							<div className="form-group row m-0">
-								<div className="col-sm-6 col-md-4 col-form-label text-right">Monthly Payment</div>
-								<div className="col-sm-6 col-md-8 text-left py-2">{state.monthlyPayment ? '$ ' + state.monthlyPayment : ''}</div>
+							<div className="form-group row m-0 text-center text-md-left">
+								<div className="col-sm-6 col-md-4 col-form-label text-md-right d-inline-block d-md-block">Monthly Payment</div>
+								<div className="col-sm-6 col-md-8 py-2">{state.monthlyPayment ? '$ ' + state.monthlyPayment : ''}</div>
 							</div>
 						</div>
 						<div className="formMiddle mt-4" style={{display: 'none'}}>
