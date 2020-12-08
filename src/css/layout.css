@@ -596,6 +596,9 @@ body.mobile-nav-active #mobile-nav-toggle { color: #fff }
   .portal_list{ margin: 0; }
   .portal_list li{ width: 100%; float: none; }
 }
+@media (max-width: 576px){
+  .portal_list li{ font-size: 18px; }
+}
 
 /* #dealerPage h4 { font-weight: 500; font-size: 24px; margin: 0 auto; margin-bottom: 25px !important; }
 .dealerResource { margin: 0 15px; padding: 20px 20px 10px; height: 100%; position: relative; box-shadow: 0 0 6px #aaa; }
