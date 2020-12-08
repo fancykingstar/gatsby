@@ -36,7 +36,7 @@ select { display: block }
 .card-panel { margin: 0; padding: 60px }
 .btn i, .btn-large i, .btn-floating i, .btn-large i, .btn-flat i { font-size: 1em; line-height: inherit }
 .gray-bg { background: #f9f9ff }
-b, sup, sub, u, del { color: #29A9E0 }
+/* b, sup, sub, u, del { color: #29A9E0 } */
 h1, h2, h3, h4, h5, h6 { font-family: 'Roboto', sans-serif; color: #4D4D4D; line-height: 1.2em !important; margin-bottom: 0; margin-top: 0; font-weight: 600 }
 .h1, .h2, .h3, .h4, .h5, .h6 { margin-bottom: 0; margin-top: 0; font-family: 'Roboto', sans-serif; font-weight: 500; color: #4D4D4D }
 h1, .h1 { font-size: 40px }
@@ -1009,3 +1009,8 @@ display: flex; align-items: center; justify-content: center; }
 .blog-post img{ height: 250px; width: 100%; }
 #leadership svg path{ cursor: pointer !important; }
 img[usemap] { border: none; height: auto; max-width: 100%; width: auto; }
+/* download-app */
+.download-app{ margin-left: 15px; }
+@media (max-width: 420px){
+  .download-app{ margin-left: 10px; }
+}
