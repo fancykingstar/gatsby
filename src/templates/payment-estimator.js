@@ -120,7 +120,7 @@ const PaymentEstimator = () => {
 						<div className="formFooter">
 							<div className="form-group row m-0 text-center text-md-left">
 								<div className="col-sm-6 col-md-4 col-form-label text-md-right d-inline-block d-md-block">Monthly Payment</div>
-								<div className="col-sm-6 col-md-8 py-2">{state.monthlyPayment ? '$ ' + state.monthlyPayment : ''}</div>
+								<div className="col-sm-6 col-md-8 py-2 text-md-right">{state.monthlyPayment ? '$' + state.monthlyPayment : ''}</div>
 							</div>
 						</div>
 						<div className="formMiddle mt-4" style={{display: 'none'}}>
