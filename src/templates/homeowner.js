@@ -47,9 +47,9 @@ const HomeOwnerPage = ({data}) => {
 
         {node.video_section.video.videoUrl && (
             <section className="banner-area pos_relative fullscreen" id="home">
-                {node.top_banner.banner.backgroundImage && (
+                {/* {node.top_banner.banner.backgroundImage && (
                     <img src={node.top_banner.banner.backgroundImage.sourceUrl} alt={node.top_banner.banner.backgroundImage.altText} />
-                )}
+                )} */}
                 <div className="background-holder">
                     <Video videoSrcURL={node.video_section.video.videoUrl} allow="autoplay" videoTitle="EnnerBankUSA. America's home improvement lender of choice" videoWidth="100%" videoHeight="500" />
                     {node.top_banner.banner.bannerLinks && (
