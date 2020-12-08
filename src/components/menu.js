@@ -116,7 +116,7 @@ export default (props) => {
                                     <ul>
                                         <li><button onClick={props.loginForm} className="btn-link">Account Log In</button>|</li>
                                         <li><a href="https://enerbankusa.documentinbox.com/Inbox/app#login" rel="noopener noreferrer" target="_blank">View / Sign Loan Docs</a>|</li>
-                                        <li><Link to={'http://partnerportalapp.enerbank.com/'}  rel="noopener noreferrer" target="_blank">PartnerPortal</Link>|</li>
+                                        <li><Link to={'https://portal.enerbank.com/'}  rel="noopener noreferrer" target="_blank">PartnerPortal</Link>|</li>
                                         <li><Link to={'/payment-estimator'} className="btn-link" >Payment Estimator</Link></li>
                                     </ul>
                                 </div>
