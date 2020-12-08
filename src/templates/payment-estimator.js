@@ -52,7 +52,7 @@ const PaymentEstimator = () => {
 			case "interestRate":
 				setState({
 					...state,
-					interestRate: parseInt(val),
+					interestRate: val,
 				})
 				break;
 			default:
@@ -94,25 +94,25 @@ const PaymentEstimator = () => {
 						<div className="formHeading">Payment Estimator Tool</div>
 						<div className="formMiddle">
 							<div className="form-group row">
-								<label htmlFor="staticEmail" className="col-sm-6 col-md-4 col-form-label">Total Loan Amount</label>
+								<label htmlFor="loanAmount" className="col-sm-6 col-md-4 col-form-label">Total Loan Amount</label>
 								<div className="col-sm-6 col-md-8"> {/* (e)=> setLoanAmount(e.target.value) */}
 									<input type="text" className="form-control" name="loanAmount" id="loanAmount" placeholder="0" value={state.loanAmount} onChange={handleChangeInput} />
 								</div>
 							</div>
 							<div className="form-group row">
-								<label htmlFor="inputPassword" className="col-sm-6 col-md-4 col-form-label">Total Number of Years</label>
+								<label htmlFor="totalYears" className="col-sm-6 col-md-4 col-form-label">Total Number of Years</label>
 								<div className="col-sm-6 col-md-8"> {/* (e)=> setTotalYears(e.target.value) */}
 									<input type="number" className="form-control" name="totalYears" id="totalYears" placeholder="0" value={state.totalYears} onChange={handleChangeInput} />
 								</div>
 							</div>
 							<div className="form-group row">
-								<label htmlFor="inputPassword" className="col-sm-6 col-md-4 col-form-label">Interest Rate %(APR)</label>
+								<label htmlFor="interestRate" className="col-sm-6 col-md-4 col-form-label">Interest Rate %(APR)</label>
 								<div className="col-sm-6 col-md-8"> {/* (e)=> setInterestRate(e.target.value) */}
 									<input type="text" className="form-control" name="interestRate" id="interestRate" placeholder="0" value={state.interestRate} onChange={handleChangeInput} onBlur={valueWithSign} />
 								</div>
 							</div>
 							<div className="form-group row">
-								<div className="col-sm-3 col-md-8 ml-auto text-left">
+								<div className="col-sm-3 col-md-8 ml-auto text-right">
 									<button className="btn btn-primary px-4 py-1" disabled={!isEnabled} onClick={estimateCalc}>Calculate</button>
 								</div>
 							</div>
