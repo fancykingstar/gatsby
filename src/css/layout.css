@@ -1015,5 +1015,5 @@ img[usemap] { border: none; height: auto; max-width: 100%; width: auto; }
 /* download-app */
 .download-app{ margin-left: 15px; }
 @media (max-width: 420px){
-  .download-app{ margin-left: 10px; }
+  .googleplay-app{ margin-left: 10px; }
 }

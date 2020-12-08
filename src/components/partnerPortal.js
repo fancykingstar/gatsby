@@ -38,9 +38,9 @@ const PartnerPortal = (props) => {
 					<div className="p-4 p-sm-5">
 						<div className="line-height-normal">
 							<div dangerouslySetInnerHTML={{__html:props.popData.content}} />
-							<div id="download">
-								<Button variant="outline-light" className="border-0 p-0 mb-4 mb-md-0" onClick={() => externalLink('https://apps.apple.com/us/app/enerbank-usa-partner-portal/id1501254896')}><img src={apple_btn} alt="apple-store-btn" width="120" /></Button> 
-				                <Button variant="outline-light" className="border-0 p-0 mb-4 mb-md-0 download-app" onClick={() => externalLink('https://play.google.com/store/apps/details?id=com.enerbank.partnerportal')}><img src={google_btn} alt="google-play-btn" width="120" /></Button>
+							<div id="download text-center d-inline-block mx-auto">
+								<Button variant="outline-light" className="border-0 p-0 my-4 mb-md-0" onClick={() => externalLink('https://apps.apple.com/us/app/enerbank-usa-partner-portal/id1501254896')}><img src={apple_btn} alt="apple-store-btn" width="120" /></Button> <br/>
+				                <Button variant="outline-light" className="border-0 p-0 my-4 mb-md-0 googleplay-app" onClick={() => externalLink('https://play.google.com/store/apps/details?id=com.enerbank.partnerportal')}><img src={google_btn} alt="google-play-btn" width="120" /></Button>
 				            </div>
 						</div>
 					</div>
