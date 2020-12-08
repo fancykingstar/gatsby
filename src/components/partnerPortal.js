@@ -56,7 +56,7 @@ const PartnerPortal = (props) => {
 								</div>							
 							</div>							
 							<div className="row">
-								<div className="mx-auto text-center my-5">
+								<div className="mx-4 mx-md-auto text-center my-5">
 									<Button variant="outline-light" onClick={() => externalLink('https://portal.enerbank.com/')} >{props.popData.partnerportal.portalservice.accessportallink.title}</Button>
 								</div>
 							</div>
