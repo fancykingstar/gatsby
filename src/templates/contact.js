@@ -26,8 +26,8 @@ const CareerPage = ({data}) => {
         </section>
       )}
       {/* section-gap */}
-      <section  className="container">
-        <h1 className="text-center mt-md-4 py-5">Contact Us</h1>
+      <section  className="container py-5">
+        <h1 className="text-center pb-3">Contact Us</h1>
         <div className="row">
         <Tabbordion blockElements={blockElements} animateContent={'height'} className="accordion loan_offer mx-4 mx-lg-5" name="accordion">
           {data.wpgraphql.page.contact.supportSection.map((item, i) => {
