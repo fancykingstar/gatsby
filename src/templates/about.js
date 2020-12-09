@@ -197,7 +197,7 @@ const About = ({data}, props) => {
                                     <h3 className="mb-30">EnerBank Blog</h3>
                                     <p>Get best practices, tips, and other useful information and perspectives on home improvement and payment options from the</p>
                                 </div>
-                                <Link to={'/blog'} className="pb-4 px-4 font-weight-bold mt-auto">EnerBank USA blog</Link>
+                                <Link to={'/blog'} className="pb-4 px-4 font-weight-bold mt-auto">EnerBank USA Blog</Link>
                             </div>
                         </div>
                     {/* </div> */}
