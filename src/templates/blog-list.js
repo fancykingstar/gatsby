@@ -15,7 +15,7 @@ import Pagination from "../components/pagination"
 
 const CareerPage = ({data}) => {
   // const changePage = (page) => {
-  //   console.log(page)
+    console.log(data)
   // }
 
   const [show, setShow] = useState(false);
@@ -117,7 +117,7 @@ const CareerPage = ({data}) => {
   
   return (  
     <Layout>
-        <SEO title={'Blog'} description={'America\'s home improvement lender of choice'} />        
+        <SEO title={'Blog'} description={'America\'s home improvement lender of choice'} />
         <section className="section-gap blogpost">
           <div className="container">
             <div className="row mb-5">
@@ -170,7 +170,7 @@ const CareerPage = ({data}) => {
                       return(
                         <div key={item.node.id}>
                           {item.node.featuredImage ? <a href={item.node.slug}><img src={item.node.featuredImage.sourceUrl} alt="item.node.featuredImage.altText" className="w-100 mb-4" /></a> : ''}
-                          <h3 className="text-blue mb-2"><a href={item.node.slug}>{item.node.title}</a></h3>
+                          <a href={item.node.slug}><h3 className="text-blue mb-2" dangerouslySetInnerHTML={{__html: item.node.title}} /></a>
                           <div dangerouslySetInnerHTML={{ __html: item.node.excerpt }} />
                           <a href={item.node.slug} className="btn-link p-0">Read More</a>
                         </div>
@@ -263,11 +263,11 @@ const CareerPage = ({data}) => {
             <div className="row">
                 {
                   data.wpgraphql.posts.edges.sort( (a, b) => b.node.date - a.node.date ).map((item, i) => {
-                    if(i > 10){
+                    if(i !== 0){
                       return(
                           <div className="col-md-6 col-lg-4 mb-5 blog-post" key={item.node.id} >
                               {item.node.featuredImage ? <a href={item.node.slug} className="btn-link p-0"><img src={item.node.featuredImage.sourceUrl} alt="item.node.featuredImage.altText" /></a> : ''}
-                              <h3 className="text-blue mt-4"><a href={item.node.slug}>{item.node.title}</a></h3>
+                              <a href={item.node.slug}><h3 className="text-blue mt-4" dangerouslySetInnerHTML={{__html: item.node.title}} /></a>
                               <strong className="mb-2">{moment(item.node.date).format("MMMM D, Y")}</strong>
                               <div  dangerouslySetInnerHTML={{__html: item.node.excerpt}} className="mb-auto" />
                               <a href={item.node.slug} className="btn-link p-0">Read More</a>
