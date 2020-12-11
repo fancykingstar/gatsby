@@ -77,6 +77,7 @@ const About = ({data}, props) => {
                                         <Card className="py-2 px-3" style={{background: 'rgba(255, 255, 255, 0.85)'}}>
                                             <h3 className="text-blue pb-1 mb-1" style={{borderBottom: '2px solid #0077C8', cursor: 'pointer'}} onClick={showbenefitpopup(item, 'director')} >{item.directorName}</h3>
                                             <p className="text-sm mb-0">{item.directorPosition}</p>
+					    <a rel="noopener noreferrer" className="font-weight-bold mt-auto text-left py-1" style={{cursor: 'pointer', color: "#0077C8", fontSize: "13px"}}>Click to Read More</a>
                                         </Card>
                                     } placement={'bottom'} key={item.fieldGroupName + i}>
                                         <path key={item.fieldGroupName + i} id={svgCodes[i].id} data-name={'Path ' + i} d={svgCodes[i].data} fill="transparent" stroke="#707070" strokeWidth="0"/>
@@ -187,7 +188,7 @@ const About = ({data}, props) => {
                                     <h3 className="mb-30">News / Media</h3>
                                     <p>See the latest corporate news about EnerBank USA and related topics</p>
                                 </div>
-                                <a href="http://news.enerbank.com/" rel="noopener noreferrer" target="_blank" className="pb-4 px-4 font-weight-bold mt-auto">Right Here</a>
+                                <a href="http://news.enerbank.com/" rel="noopener noreferrer" className="pb-4 px-4 font-weight-bold mt-auto">Click here to Read More</a>
                             </div>
                             <div className="card box-shadow bg-white rounded text-center col-xs-12 col-md mb-3 mb-lg-0 p-0 ml-md-3 ml-lg-5">
                                 <div className="wygthumb blog">
@@ -197,7 +198,7 @@ const About = ({data}, props) => {
                                     <h3 className="mb-30">EnerBank Blog</h3>
                                     <p>Get best practices, tips, and other useful information and perspectives on home improvement and payment options from the</p>
                                 </div>
-                                <Link to={'/blog'} className="pb-4 px-4 font-weight-bold mt-auto">EnerBank USA Blog</Link>
+                                <Link to={'/blog'} className="pb-4 px-4 font-weight-bold mt-auto">Read EnerBank USA Blog</Link>
                             </div>
                         </div>
                     {/* </div> */}
