@@ -484,8 +484,8 @@ body.mobile-nav-active #mobile-nav-toggle { color: #fff }
 }
 
 /* hover effect */
-.payment-option ul li:hover, .benefit-option ul li:hover{ transform: scale(1.2); }
-.payment-option ul li:hover p, .benefit-option ul li:hover p{ color: #29a9e0; }
+.payment-option ul li:hover{ transform: scale(1.2); }
+.payment-option ul li:hover p{ color: #29a9e0; }
 
 .genric-btn { display: inline-block; outline: none; line-height: 40px; padding: 2px 30px; font-size: .8em; text-align: center; text-decoration: none;
     font-weight: 500; cursor: pointer; -webkit-transition: all 0.3s ease 0s; -moz-transition: all 0.3s ease 0s; -o-transition: all 0.3s ease 0s;
