@@ -11,16 +11,16 @@ const GrowthCalc = (props) => {
 		closeRateIncrement: '50%',
 		projectSizeIncrement: '30%',
 
-		monthlyLeadsInput: '0',
-		closeRateInput: '0',
-		projectSizeInput: '0',
+		monthlyLeadsInput: '',
+		closeRateInput: '',
+		projectSizeInput: '',
 
-		monthlyLeadsResult: '0',
-		closeRateResult: '0',
-		projectSizeResult: '0',
+		monthlyLeadsResult: '',
+		closeRateResult: '',
+		projectSizeResult: '',
 
-		annualRevenueOld: '0',
-		annualRevenueGrow: '0',
+		annualRevenueOld: '',
+		annualRevenueGrow: '',
 
 	})
 
@@ -28,15 +28,15 @@ const GrowthCalc = (props) => {
 		var val = getNumber(evt.target.value)
 		var result;
         if (!digitOnly.test(val)) {
-            result = '0';
+            result += '';
         } else {
-            result = parseFloat(val);
+            result = val;
 		}
 		return result;
 	}
 	
 	var getNumber = (number) => {
-		return parseInt(number.replace("$","").replace("%","").replace(",",""));
+		return typeof number === 'string' ? Number(number.replace("$","").replace("%","").replace(",","")) : number
 	}
 
 	var calcValue = (ele, val, inc) => {
@@ -49,9 +49,9 @@ const GrowthCalc = (props) => {
 					...state,
 					[input]: val,
 					[increament]: inc,
-					[result]: parseFloat(val) + Math.round(parseFloat(val) * parseFloat(inc) / 100 ),
-					annualRevenueOld: '$' + (parseFloat(val) + parseFloat(state.closeRateInput) + getNumber(state.projectSizeInput)),
-					annualRevenueGrow: '$' + (parseFloat(val) + Math.round(parseFloat(val) * parseFloat(inc) / 100 ) + parseFloat(state.closeRateResult) + getNumber(state.projectSizeResult)),
+					[result]: getNumber(val) + Math.round(getNumber(val) * getNumber(inc) / 100 ),
+					annualRevenueOld: '$' + (getNumber(val) + getNumber(state.closeRateInput) + getNumber(state.projectSizeInput)),
+					annualRevenueGrow: '$' + (getNumber(val) + Math.round(getNumber(val) * getNumber(inc) / 100 ) + getNumber(state.closeRateResult) + getNumber(state.projectSizeResult)),
 				})
 				break;
 			case "closeRateInput":
@@ -59,9 +59,9 @@ const GrowthCalc = (props) => {
 					...state,
 					[input]: val,
 					[increament]: inc,
-					[result]: (parseFloat(val) + Math.round(parseFloat(val) * parseFloat(inc) / 100 )) + '%',
-					annualRevenueOld: '$' + (parseFloat(val) + parseFloat(state.monthlyLeadsInput) + getNumber(state.projectSizeInput)),
-					annualRevenueGrow: '$' + (parseFloat(val) + Math.round(parseFloat(val) * parseFloat(inc) / 100 ) + parseFloat(state.monthlyLeadsResult) + getNumber(state.projectSizeResult)),
+					[result]: (getNumber(val) + Math.round(getNumber(val) * getNumber(inc) / 100 )) + '%',
+					annualRevenueOld: '$' + (getNumber(val) + getNumber(state.monthlyLeadsInput) + getNumber(state.projectSizeInput)),
+					annualRevenueGrow: '$' + (getNumber(val) + Math.round(getNumber(val) * getNumber(inc) / 100 ) + getNumber(state.monthlyLeadsResult) + getNumber(state.projectSizeResult)),
 				})
 				break;
 			case "projectSizeInput":
@@ -69,9 +69,9 @@ const GrowthCalc = (props) => {
 					...state,
 					[input]: val,
 					[increament]: inc,
-					[result]: parseFloat(val) + Math.round(parseFloat(val) * parseFloat(inc) / 100 ),
-					annualRevenueOld: '$' + (parseFloat(val) + parseFloat(state.monthlyLeadsInput) + parseFloat(state.closeRateInput)),
-					annualRevenueGrow: '$' + (parseFloat(val) + Math.round(parseFloat(val) * parseFloat(inc) / 100 ) + parseFloat(state.monthlyLeadsResult) + parseFloat(state.closeRateResult)),
+					[result]: getNumber(val) + Math.round(getNumber(val) * getNumber(inc) / 100 ),
+					annualRevenueOld: '$' + (getNumber(val) + getNumber(state.monthlyLeadsInput) + getNumber(state.closeRateInput)),
+					annualRevenueGrow: '$' + (getNumber(val) + Math.round(getNumber(val) * getNumber(inc) / 100 ) + getNumber(state.monthlyLeadsResult) + parseFloat(state.closeRateResult)),
 				})
 				break;
 			default:
@@ -106,7 +106,8 @@ const GrowthCalc = (props) => {
 	}
 
 	const handleChangeInput = (evt) =>{		
-		const inputValue = validDigit(evt);
+		// const inputValue = validDigit(evt);
+		const inputValue = evt.target.value;
 		const inputEle = evt.target.name;
 		const inputId = inputEle.split("Input")[0];
 		calcValue(inputId, inputValue, state[inputId + 'Increment']);
