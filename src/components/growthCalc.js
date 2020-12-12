@@ -50,8 +50,8 @@ const GrowthCalc = (props) => {
 					[input]: val,
 					[increament]: inc,
 					[result]: getNumber(val) + Math.round(getNumber(val) * getNumber(inc) / 100 ),
-					annualRevenueOld: '$' + (getNumber(val) + getNumber(state.closeRateInput) + getNumber(state.projectSizeInput)),
-					annualRevenueGrow: '$' + (getNumber(val) + Math.round(getNumber(val) * getNumber(inc) / 100 ) + getNumber(state.closeRateResult) + getNumber(state.projectSizeResult)),
+					annualRevenueOld: '$' + (getNumber(val) * getNumber(state.closeRateInput) * getNumber(state.projectSizeInput) * 0.12),
+					annualRevenueGrow: '$' + ((getNumber(val) + Math.round(getNumber(val) * getNumber(inc) / 100 )) * getNumber(state.closeRateResult) * getNumber(state.projectSizeResult) * 0.12),
 				})
 				break;
 			case "closeRateInput":
@@ -60,8 +60,8 @@ const GrowthCalc = (props) => {
 					[input]: val,
 					[increament]: inc,
 					[result]: (getNumber(val) + Math.round(getNumber(val) * getNumber(inc) / 100 )) + '%',
-					annualRevenueOld: '$' + (getNumber(val) + getNumber(state.monthlyLeadsInput) + getNumber(state.projectSizeInput)),
-					annualRevenueGrow: '$' + (getNumber(val) + Math.round(getNumber(val) * getNumber(inc) / 100 ) + getNumber(state.monthlyLeadsResult) + getNumber(state.projectSizeResult)),
+					annualRevenueOld: '$' + (getNumber(val) * getNumber(state.monthlyLeadsInput) * getNumber(state.projectSizeInput) * 0.12),
+					annualRevenueGrow: '$' + ((getNumber(val) + Math.round(getNumber(val) * getNumber(inc) / 100 )) * getNumber(state.monthlyLeadsResult) * getNumber(state.projectSizeResult) * 0.12),
 				})
 				break;
 			case "projectSizeInput":
@@ -70,8 +70,8 @@ const GrowthCalc = (props) => {
 					[input]: val,
 					[increament]: inc,
 					[result]: getNumber(val) + Math.round(getNumber(val) * getNumber(inc) / 100 ),
-					annualRevenueOld: '$' + (getNumber(val) + getNumber(state.monthlyLeadsInput) + getNumber(state.closeRateInput)),
-					annualRevenueGrow: '$' + (getNumber(val) + Math.round(getNumber(val) * getNumber(inc) / 100 ) + getNumber(state.monthlyLeadsResult) + parseFloat(state.closeRateResult)),
+					annualRevenueOld: '$' + (getNumber(val) * getNumber(state.monthlyLeadsInput) * getNumber(state.closeRateInput) * 0.12),
+					annualRevenueGrow: '$' + ((getNumber(val) + Math.round(getNumber(val) * getNumber(inc) / 100 )) * getNumber(state.monthlyLeadsResult) * parseFloat(state.closeRateResult) * 0.12),
 				})
 				break;
 			default:
@@ -122,19 +122,7 @@ const GrowthCalc = (props) => {
 		// get increament value 
 		const eleValue = evt.target.value;
 		// set input checkbox true
-		if(inputId === 'projectSize'){
-			calcValue(inputId, getNumber(inputValue), eleValue);
-			setState({
-				...state,
-				projectSizeInput: inputValue,
-				projectSizeIncrement: eleValue,
-				projectSizeResult: '$' + (getNumber(inputValue) + Math.round(getNumber(inputValue) * getNumber(eleValue) / 100 )),
-				annualRevenueOld: '$' + (getNumber(inputValue) + parseFloat(state.monthlyLeadsInput) + parseFloat(state.closeRateInput)),
-				annualRevenueGrow: '$' + (getNumber(inputValue) + Math.round(getNumber(inputValue) * getNumber(eleValue) / 100 ) + parseFloat(state.monthlyLeadsResult) + parseFloat(state.closeRateResult)),
-			});
-		}else{
-			calcValue(inputId, inputValue, eleValue);
-		}
+		calcValue(inputId, inputValue, eleValue);
 	}
 
 	if (props.popData.length !== 0) {
