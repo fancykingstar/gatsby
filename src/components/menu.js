@@ -81,7 +81,7 @@ export default (props) => {
                 <nav className="navbar navbar-expand-lg main-menu">
                     <div className="container">
                         {/* navbar brand logo */}
-                        <Link to="/" id="logo" className="navbar-brand"><img src={logo} alt="EnerBank Logo" title="" /></Link>
+                        <Link to="/" id="logo" className="navbar-brand"><img src={logo} alt="EnerBank Logo" title="EnerBank Logo" /></Link>
                         {/* navbar toggler */}
                         <button className={menuClass ? 'navbar-toggler' : 'navbar-toggler collapsed'} type="button" data-toggle="collapse" data-target="#navbarText" 
                         aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation" onClick={showMenu}>

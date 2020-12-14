@@ -33,7 +33,9 @@ const GetPersonalizedService = (props) => {
 									{props.popData.appmethod.paperlessmethod.map((item, i) => (
 										i < 3 ?
 											<li key={item.fieldGroupName + i}>
-												<div className="user-icon"><img src={item.sectionicon.sourceUrl} alt={item.sectionicon.altText} /></div>
+												<div className="user-icon">
+													<img src={item.sectionicon.sourceUrl} alt={item.sectionicon.altText} />
+												</div>
 												<div className="ballon">
 													<h4 dangerouslySetInnerHTML={{__html: item.sectiontitle}} />
 													<div dangerouslySetInnerHTML={{__html: item.sectionContent}} />
@@ -44,7 +46,7 @@ const GetPersonalizedService = (props) => {
 									{props.popData.bannerrepeater.bannerGroup.map((item, i) => (
 										i === 0 ?											
 											<div className="my-5 pt-5" key={item.fieldGroupName + i}>
-												<img src={item.banner.sourceUrl} alt={'banner' + i} />
+												<img src={item.banner.sourceUrl} alt={item.altText} />
 												<p className="mb-5"></p>
 											</div>
 										: ''
@@ -52,7 +54,9 @@ const GetPersonalizedService = (props) => {
 									{props.popData.appmethod.paperlessmethod.map((item, i) => (
 										i > 2 ?
 											<li key={item.fieldGroupName + i}>
-												<div className="user-icon"><img src={item.sectionicon.sourceUrl} alt={item.sectionicon.altText} /></div>
+												<div className="user-icon">
+													<img src={item.sectionicon.sourceUrl} alt={item.sectionicon.altText} />
+												</div>
 												<div className="ballon">
 													<h4 dangerouslySetInnerHTML={{__html: item.sectiontitle}} />
 													<div dangerouslySetInnerHTML={{__html: item.sectionContent}} />
@@ -63,7 +67,7 @@ const GetPersonalizedService = (props) => {
 									{props.popData.bannerrepeater.bannerGroup.map((item, i) => (
 										i === 1 ?
 											<div className="mt-5 pt-5" key={item.fieldGroupName + i}>
-												<img src={item.banner.sourceUrl} alt={'banner' + i} />
+												<img src={item.banner.sourceUrl} alt={item.altText} />
 											</div>
 										: ''
 									))}

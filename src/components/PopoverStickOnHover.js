@@ -44,22 +44,22 @@ function PopoverStickOnHover({ delay, onMouseEnter, children, component, placeme
     return (
         <>
             {displayChild}
-            <Overlay
-                show={showPopover}
-                placement={placement}
-                target={childNode}
-                shouldUpdatePosition
-            >
-                <Popover
-                    onMouseEnter={() => {
-                        setShowPopover(true);
-                    }}
-                    onMouseLeave={handleMouseLeave}
-                    id="popover"
+                <Overlay
+                    show={showPopover}
+                    placement={placement}
+                    target={childNode}
+                    shouldUpdatePosition
                 >
-                    {component}
-                </Popover>
-            </Overlay>
+                    <Popover
+                        onMouseEnter={() => {
+                            setShowPopover(true);
+                        }}
+                        onMouseLeave={handleMouseLeave}
+                        id="popover"
+                    >
+                        {component}
+                    </Popover>
+                </Overlay>
         </>
     );
 }

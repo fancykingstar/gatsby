@@ -58,7 +58,9 @@ const LoanType = (props) => {
 									{/* End Collapsed List Area */}
 								</div>
 								{props.popData.innerpagebanner.pagebanner.bannner && (
-									<div className="mt-5 text-center mb-4"><img src={props.popData.innerpagebanner.pagebanner.bannner.sourceUrl} alt={props.popData.innerpagebanner.pagebanner.bannner.altText} /></div>
+									<div className="mt-5 text-center mb-4">
+										<img src={props.popData.innerpagebanner.pagebanner.bannner.sourceUrl} alt={props.popData.innerpagebanner.pagebanner.bannner.altText} />
+									</div>
 								)}
 							</div>
 						</section>

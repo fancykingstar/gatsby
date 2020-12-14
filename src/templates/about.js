@@ -67,7 +67,7 @@ const About = ({data}, props) => {
             
             <div id="leadership" className="position-relative d-none d-lg-block pt-2 pb-4">
                 <div className="position-absolute w-100 pb-5 leadership-heading px-3" style={{top:0}} dangerouslySetInnerHTML={{__html: content.about.enerbankLeadership.leadershipHeading}} />
-                <img src={content.about.enerbankLeadership.leadershipBanner.sourceUrl} alt="Leader Banner" className="w-100 d-block" />
+                <img src={content.about.enerbankLeadership.leadershipBanner.sourceUrl} alt="Leaders Banner" className="w-100 d-block" />
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1604.606 1005.106" className="position-absolute" style={{top:0, zIndex:99}}>
                     <g id="Group_1" data-name="Group 1" transform="translate(-156.5 -38.894)">
                         {content.about.boardOfDirectors.directors && (

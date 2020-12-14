@@ -1,4 +1,4 @@
-import React from 'react';
+import React from 'react'; 
 import { Modal } from 'react-bootstrap';
 import { navigate } from "gatsby"
 import { Button } from 'react-bootstrap'
@@ -29,7 +29,7 @@ const PartnerPortal = (props) => {
 									'}'
 								].join('\n')
 							}}></style>
-							<div className="modal_banner banner_bg">
+							<div className="modal_banner banner_bg" title="partner portal modal banner">
 								<img src={props.popData.innerpagebanner.pagebanner.bannner.sourceUrl} className="object-fit-cover" alt={props.popData.innerpagebanner.pagebanner.bannner.altText} />
 							</div>
 						</>

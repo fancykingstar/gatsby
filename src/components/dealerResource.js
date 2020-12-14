@@ -24,7 +24,7 @@ const DealerResource = (props) => {
 										'}'
 									].join('\n')
 								}}></style>
-								<div className="modal_banner banner_bg" style={{ backgroundImage: "url(" + props.popData.innerpagebanner.pagebanner.bannner.sourceUrl + ")" }}>
+								<div className="modal_banner banner_bg" style={{ backgroundImage: "url(" + props.popData.innerpagebanner.pagebanner.bannner.sourceUrl + ")" }} title="Dlealer resource Modal Banner" >
 									<p dangerouslySetInnerHTML={{__html:props.popData.innerpagebanner.pagebanner.bannertext}}></p>
 								</div>
 							</>

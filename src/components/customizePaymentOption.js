@@ -21,7 +21,9 @@ const CustomizedPaymentOptionsProgram = (props) => {
 								)}
 							))}
 						</ul>
-						<div className="p5"><img className="img-fluid p-5 pb-0 mx-auto d-block" src={props.popData.innerpagebanner.pagebanner.bannner.sourceUrl} alt={props.popData.innerpagebanner.pagebanner.bannner.altText} /></div>
+						<div className="p5">
+							<img className="img-fluid p-5 pb-0 mx-auto d-block" src={props.popData.innerpagebanner.pagebanner.bannner.sourceUrl} alt={props.popData.innerpagebanner.pagebanner.bannner.altText} />
+						</div>
 					</div>
 				</div>
 			</Modal>
