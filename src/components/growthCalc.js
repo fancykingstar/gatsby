@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Modal } from 'react-bootstrap';
+import CurrencyFormat from "react-currency-format"
 import close_icon from '../images/closed_icon.svg'
 
 const GrowthCalc = (props) => {
@@ -43,6 +44,18 @@ const GrowthCalc = (props) => {
 		return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
 	}
 
+	const addCommas = (nStr) => {
+		nStr += ""
+		var x = nStr.split(".")
+		var x1 = x[0]
+		var x2 = x.length > 1 ? "." + x[1] : ""
+		var rgx = /(\d+)(\d{3})/
+		while (rgx.test(x1)) {
+			x1 = x1.replace(rgx, "$1" + "," + "$2")
+		}
+		return x1 + x2
+	}
+
 	var calcValue = (ele, val, inc) => {
 		const input = [ele] + 'Input';
 		const result = [ele] + 'Result';
@@ -69,6 +82,7 @@ const GrowthCalc = (props) => {
 				})
 				break;
 			case "projectSizeInput":
+				console.log("23423423432")
 				setState({
 					...state,
 					[input]: val,
@@ -86,7 +100,6 @@ const GrowthCalc = (props) => {
 	const handleValidValue = (evt) => {
 		const eleId  = evt.target.id;
 		const eleval  = evt.target.value;
-
 		if(eleval > 0){
 			switch(eleId) {
 				case "close-rate":
@@ -99,8 +112,8 @@ const GrowthCalc = (props) => {
 				case "project-size":
 					setState({
 						...state,
-						projectSizeInput: '$' + eleval,
-						projectSizeResult: '$' + state.projectSizeResult
+						projectSizeInput: '$' + addCommas(eleval),
+						projectSizeResult: '$' + addCommas(state.projectSizeResult)
 					})
 					break;
 				default:
@@ -109,7 +122,7 @@ const GrowthCalc = (props) => {
 		}
 	}
 
-	const handleChangeInput = (evt) =>{		
+	const handleChangeInput = (evt) =>{
 		// const inputValue = validDigit(evt);
 		const inputValue = evt.target.value;
 		const inputEle = evt.target.name;
@@ -227,8 +240,19 @@ const GrowthCalc = (props) => {
 								<div className="row border-bottom">
 									<div className="col-lg-4 ptb-2">
 										<label htmlFor="project-size" className="text-sm theme-text d-block">Average Project Size</label>
-										<div className="d-flex align-items-center">                        	
-											<input type="text" name="projectSizeInput" className="border-radius5 calc-input" id="project-size" value={state.projectSizeInput} placeholder="$0" onChange={ handleChangeInput } onBlur={handleValidValue} />
+										<div className="d-flex align-items-center">
+											<CurrencyFormat
+												value={state.projectSizeInput || ""}
+												thousandSeparator={true}
+												prefix={"$"}
+												className="border-radius5 calc-input"
+												name="projectSizeInput"
+												placeholder="$0"
+												onValueChange={(values) => {
+													const { formattedValue, value } = values
+													calcValue("projectSize", value, state['projectSizeIncrement']);
+												}}
+											/>
 											<div className="pl-3 pl-md-5"><span className="font-b">x</span></div>
 										</div>							
 									</div>
@@ -259,15 +283,31 @@ const GrowthCalc = (props) => {
 									</div>
 									<div className="col-lg-3 bg_blue ptb-2 result-col">
 										<label htmlFor="project-size-result" className="text-sm theme-text text-white d-block">Average Project Size</label>
-										<input type="text" name="projectSizeResult" className="border-radius5 calc-output" id="project-size-result" value={state.projectSizeResult} placeholder="$0" readOnly={state.readonly} />
+										<CurrencyFormat
+											value={state.projectSizeResult || ""}
+											thousandSeparator={true}
+											prefix={"$"}
+											className="border-radius5 calc-input bg-white"
+											name="projectSizeInput"
+											placeholder="$0"
+											disabled
+										/>
 									</div>		
 								</div>
 								
 								<div className="row border-bottom">
 									<div className="col-lg-4 ptb-2">
 										<label htmlFor="annual-revenue" className="text-sm theme-text d-block">Annual Revenue</label>
-										<div className="d-flex align-items-center">                        	
-											<input type="text" name="annualRevenueOld" className="border-radius5 calc-output" id="annual-revenue" value={state.annualRevenueOld} placeholder="$0" readOnly="readonly" />
+										<div className="d-flex align-items-center">
+											<CurrencyFormat
+												value={state.annualRevenueOld || ""}
+												thousandSeparator={true}
+												prefix={"$"}
+												className="border-radius5 calc-input bg-white"
+												name="annualRevenueOld"
+												placeholder="$0"
+												disabled
+											/>
 											<div className="pl-3 pl-md-5"><span className="font-b">&gt;</span></div>
 										</div> 							
 									</div>
@@ -276,7 +316,15 @@ const GrowthCalc = (props) => {
 									</div>
 									<div className="col-lg-3 bg_blue ptb-2 result-col">
 										<label htmlFor="annual-revenue-result" className="text-sm theme-text text-white d-block">Annual Revenue</label>
-										<input type="text" name="annualRevenueGrow" className="border-radius5 calc-output" id="annual-revenue-result" value={state.annualRevenueGrow} placeholder="$0" readOnly={state.readonly} />
+										<CurrencyFormat
+											value={state.annualRevenueGrow || ""}
+											thousandSeparator={true}
+											prefix={"$"}
+											className="border-radius5 calc-input bg-white"
+											name="annualRevenueGrow"
+											placeholder="$0"
+											disabled
+										/>
 									</div>
 								</div>
 							</form>
