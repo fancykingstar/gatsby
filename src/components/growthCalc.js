@@ -35,8 +35,12 @@ const GrowthCalc = (props) => {
 		return result;
 	}
 	
-	var getNumber = (number) => {
+	const getNumber = (number) => {
 		return typeof number === 'string' ? Number(number.replace("$","").replace("%","").replace(",","")) : number
+	}
+
+	const numberWithCommas = (x) => {
+		return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
 	}
 
 	var calcValue = (ele, val, inc) => {
