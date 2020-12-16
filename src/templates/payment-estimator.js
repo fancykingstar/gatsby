@@ -75,8 +75,8 @@ const PaymentEstimator = () => {
 	const estimateCalc = (e) => {
 		e.preventDefault();
 		const totalYears = state.totalYears
-		const loanAmount = state.loanAmount ? state.loanAmount.replace("$","") : ''
-		const interestRate = state.interestRate ? state.interestRate.replace("%","") : ''
+		const loanAmount = state.loanAmount ? getNumber(state.loanAmount) : ''
+		const interestRate = state.interestRate ? getNumber(state.interestRate) : ''
 
 		const totalMonth = parseFloat(totalYears) * 12;
 		const interest = parseFloat(interestRate) / 100 / 12;
