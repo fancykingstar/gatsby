@@ -14,9 +14,6 @@ import { faSearch } from '@fortawesome/free-solid-svg-icons'
 import Pagination from "../components/pagination"
 
 const CareerPage = ({data}) => {
-  // const changePage = (page) => {
-    console.log(data)
-  // }
 
   const [show, setShow] = useState(false);
   const [message, setMessage] = useState(false);
@@ -257,7 +254,7 @@ const CareerPage = ({data}) => {
                   </div>
                   <button type="submit" className="btn btn-outline-light px-5">Submit</button>
                 </form>
-              </div> 
+              </div>
             </div>
             <hr className="mt-4 mb-5" />
             <div className="row">

@@ -77,10 +77,10 @@ const About = ({data}, props) => {
                                         <Card className="py-2 px-3" style={{background: 'rgba(255, 255, 255, 0.85)'}}>
                                             <h3 className="text-blue pb-1 mb-1" style={{borderBottom: '2px solid #0077C8', cursor: 'pointer'}} onClick={showbenefitpopup(item, 'director')} >{item.directorName}</h3>
                                             <p className="text-sm mb-0">{item.directorPosition}</p>
-					    <a rel="noopener noreferrer" className="font-weight-bold mt-auto text-left py-1" style={{cursor: 'pointer', color: "#0077C8", fontSize: "13px"}}>Click to Read More</a>
+					                        <a rel="noopener noreferrer" className="font-weight-bold mt-auto text-left py-1" style={{cursor: 'pointer', color: "#0077C8", fontSize: "13px"}}>Click to Read More</a>
                                         </Card>
                                     } placement={'bottom'} key={item.fieldGroupName + i}>
-                                        <path key={item.fieldGroupName + i} id={svgCodes[i].id} data-name={'Path ' + i} d={svgCodes[i].data} fill="transparent" stroke="#707070" strokeWidth="0"/>
+                                        <path key={item.fieldGroupName + i} id={svgCodes[i].id} data-name={'Path ' + i} d={svgCodes[i].data} fill="transparent" stroke="#707070" strokeWidth="0" onClick={showbenefitpopup(item, 'director')}/>
                                     </PopoverStickOnHover>
                                 )})
                             )

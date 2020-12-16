@@ -24,11 +24,11 @@ const HomeOwnerPage = ({data}) => {
     const [collapse, setCollapse] = useState(false);
     const [accLogin, togglePanel] = useState(false);
     const loginForm = () => {
-      togglePanel(true);
+        togglePanel(true);
     }
 
     const closeLoginForm = () => {
-      togglePanel(false);
+        togglePanel(false);
     }
 
     const toggle = (e) => {

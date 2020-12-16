@@ -23,8 +23,12 @@ const PaymentEstimator = () => {
 		// }
 		// return result;
 	}
-	var getNumber = (number) => {
+	const getNumber = (number) => {
 		return number.replace("$","").replace("%","").replace(",","");
+	}
+
+	const numberWithCommas = (x) => {
+		return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
 	}
 
 	const handleChangeInput = (evt) =>{		
@@ -35,12 +39,11 @@ const PaymentEstimator = () => {
 	}
 
 	const handleInput = (evt, ele, val) => {
-		console.log(getNumber(val))
 		switch(ele) {
 			case "loanAmount":
 				setState({
 					...state,
-					loanAmount: getNumber(val) > 0 ? '$' + getNumber(val) : val + '',
+					loanAmount: getNumber(val) > 0 ? '$' + numberWithCommas(getNumber(val)) : val + '',
 				})
 				break
 			case "totalYears":
@@ -64,7 +67,7 @@ const PaymentEstimator = () => {
 		if(event.target.name === 'interestRate'){
 			setState({
 				...state,
-				interestRate: event.target.value > 0 ? event.target.value + '%' : 0,
+				interestRate: event.target.value > 0 ? numberWithCommas(event.target.value) + '%' : 0,
 			})
 		}
 	}
@@ -74,7 +77,6 @@ const PaymentEstimator = () => {
 		const totalYears = state.totalYears
 		const loanAmount = state.loanAmount ? state.loanAmount.replace("$","") : ''
 		const interestRate = state.interestRate ? state.interestRate.replace("%","") : ''
-		console.log(totalYears, loanAmount, interestRate)
 
 		const totalMonth = parseFloat(totalYears) * 12;
 		const interest = parseFloat(interestRate) / 100 / 12;

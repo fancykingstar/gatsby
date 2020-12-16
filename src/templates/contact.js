@@ -22,7 +22,7 @@ const CareerPage = ({data}) => {
       <SEO title={data.wpgraphql.page.title} description={data.wpgraphql.page.excerpt}/>
       {data.wpgraphql.page.top_banner.banner.backgroundImage && (
         <section className="banner-area pos_relative" id="home">
-          <img src={data.wpgraphql.page.top_banner.banner.backgroundImage.sourceUrl} className="object-fit-cover" />
+          <img src={data.wpgraphql.page.top_banner.banner.backgroundImage.sourceUrl} className="object-fit-cover" alt={''} />
         </section>
       )}
       {/* section-gap */}

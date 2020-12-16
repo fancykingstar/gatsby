@@ -182,37 +182,37 @@ exports.createPages = async ({ graphql, actions }) => {
         }
         
         createPage({
-          path: "blog",
-          component: path.resolve(`./src/templates/blog-list.js`), 
-          context: {
-            slug: node.slug,
-            databaseId: node.databaseId,
-          },
+            path: "blog",
+            component: path.resolve(`./src/templates/blog-list.js`), 
+            context: {
+              slug: node.slug,
+              databaseId: node.databaseId,
+            },
         })
       
         createPage({
-          path: "feedback",
-          component: path.resolve(`./src/templates/feedback.js`),
+            path: "feedback",
+            component: path.resolve(`./src/templates/feedback.js`),
         })
 
         createPage({
-          path: "contact-us",
-          component: path.resolve(`./src/templates/lead.js`),
+            path: "contact-us",
+            component: path.resolve(`./src/templates/lead.js`),
         })
 
         createPage({
-          path: "payment-estimator",
-          component: path.resolve(`./src/templates/payment-estimator.js`),
+            path: "payment-estimator",
+            component: path.resolve(`./src/templates/payment-estimator.js`),
         })
 
         createPage({
-          path: "do-not-sell-my-info",
-          component: path.resolve(`./src/templates/doNotSellMyInfo.js`),
+            path: "do-not-sell-my-info",
+            component: path.resolve(`./src/templates/doNotSellMyInfo.js`),
         })
 
         createPage({
-          path: "refferal-thank-you",
-          component: path.resolve(`./src/templates/refferal-thank-you.js`),
+            path: "refferal-thank-you",
+            component: path.resolve(`./src/templates/refferal-thank-you.js`),
         })
   });
 
