@@ -306,6 +306,7 @@ const GrowthCalc = (props) => {
 												className="border-radius5 calc-input bg-white"
 												name="annualRevenueOld"
 												placeholder="$0"
+												decimalScale="2"
 												disabled
 											/>
 											<div className="pl-3 pl-md-5"><span className="font-b">&gt;</span></div>
@@ -323,6 +324,7 @@ const GrowthCalc = (props) => {
 											className="border-radius5 calc-input bg-white"
 											name="annualRevenueGrow"
 											placeholder="$0"
+											decimalScale="2"
 											disabled
 										/>
 									</div>
