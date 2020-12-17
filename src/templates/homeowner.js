@@ -59,7 +59,7 @@ const HomeOwnerPage = ({data}) => {
                                     const links = item.links.url
                                     return (
                                         <div className="col-md-4" key={item.fieldGroupName+i}>
-                                            <div className="header-btn mx-md-3 mb-2 mb-md-0"><a className="mr-auto" href={links} target="_blank" dangerouslySetInnerHTML={{ __html: item.links.title}} /></div>
+                                            <div className="header-btn mx-md-3 mb-2 mb-md-0"><a className="mr-auto" href={links} dangerouslySetInnerHTML={{ __html: item.links.title}} /></div>
                                         </div>
                                     )
                                 }else if(i === 0){

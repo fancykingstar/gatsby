@@ -95,7 +95,7 @@ const IndexPage = ({data}) => {
                         <img className="img-fluid" src={item.businessIcon.sourceUrl} alt={item.businessIcon.altText} />
                       </i>
                       <div className="py-4" dangerouslySetInnerHTML={{ __html: item.businessContent }}></div>
-                      <a href={item.businessButton.url} target="_blank" className="btn btn-primary f-bold">{item.businessButton.title}</a>
+                      <a href={item.businessButton.url} className="btn btn-primary f-bold">{item.businessButton.title}</a>
                     </div>
                   </div>
                 )
